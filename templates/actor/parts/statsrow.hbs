@@ -14,6 +14,17 @@
         </div>
         {{/unless}}
         {{/each}}
+
+        {{!-- BODY Stats --}}
+        <div class="footer-stat field stat" style="display: flex; align-items: center; background: #12121a; border: 1px solid #1a1a28; padding: 2px 5px;">
+            <label style="color: #ff2d7b; font-weight: bold; margin-right: 5px;">{{localize (localizeStat "bt")}}</label>
+            <div class="stat-inputs" style="display: flex; gap: 2px;">
+                <input type="number" name="system.stats.bt.base" value="{{system.stats.bt.base}}" class="stat-base" style="width: 20px; background: transparent; border: none; color: #e0e0e8; font-family: monospace; text-align: right;"/>
+                <span style="color: #667788;">+</span>
+                <input class="stat-temp" type="number" name="system.stats.bt.tempMod" value="{{system.stats.bt.tempMod}}" style="width: 20px; background: transparent; border: none; color: #e0e0e8; font-family: monospace;"/>
+            </div>
+            <input class="stat-total action stat-roll val" data-stat-name="bt" value="{{system.stats.bt.total}}" readonly style="background: transparent; border: none; width: 25px; text-align: center; cursor: pointer; color: #00e5ff; font-weight: bold;">
+        </div>
         
         {{!-- MA Stats --}}
         <div class="footer-stat field stat" style="display: flex; align-items: center; background: #12121a; border: 1px solid #1a1a28; padding: 2px 5px;">
