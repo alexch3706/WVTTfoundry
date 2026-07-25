@@ -20,10 +20,10 @@
     </div>
 </div>
 
-{{#if (equals items.length 0)}}
+{{#if (equals gearTabItems.length 0)}}
     <div class="inactive">{{CPLocal "DragItemsPrompt"}}</div>
 {{/if}}
-<div class="field-list">
+<div class="field-list one-col gear-list">
     {{#each gearTabItems}}
         {{> itemListing}}
     {{/each}}

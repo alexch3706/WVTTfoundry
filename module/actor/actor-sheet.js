@@ -7,6 +7,7 @@ import { getAttackDieEntryMode, isCorebookFidelityEnabled } from "../combat/sett
 import { promptAttackDieEntry } from "../combat/attack-die-entry.js";
 import { buildWoundStateHints } from "./wound-hints.js";
 import { buildArmorRepairUpdate, getArmorItemStatus, getCyberwareArmorStatus } from "../combat/armor-maintenance.js";
+import { resolveActorSheetLayout } from "./actor-sheet-layout.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -21,7 +22,7 @@ export class CyberpunkActorSheet extends ActorSheet {
       classes: ["cyberpunk", "sheet", "actor"],
       template: "systems/cyberpunk2020-rilerena/templates/actor/actor-sheet.hbs",
       // Default window dimensions
-      width: 900,
+      width: 1200,
       height: 900,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "skills" }]
     });
@@ -36,6 +37,34 @@ export class CyberpunkActorSheet extends ActorSheet {
     if (isFirstRender && !this._minimized && typeof this.maximize === "function") {
       this.maximize();
     }
+    this._applyActorSheetLayout();
+  }
+
+  /* -------------------------------------------- */
+
+  /** @override */
+  setPosition(options = {}) {
+    const position = super.setPosition(options);
+    this._applyActorSheetLayout({ width: position.width });
+    return position;
+  }
+
+  _applyActorSheetLayout({ width, activeTab } = {}) {
+    const root = this.element?.find?.(".sheet-terminal")?.[0];
+    if(!root) return;
+
+    const selectedTab = activeTab
+      || root.querySelector(".sheet-tabs [data-tab].active")?.dataset.tab
+      || this._activeActorSheetTab
+      || this.options.tabs?.[0]?.initial
+      || "skills";
+    const sheetWidth = Number(width ?? this.position?.width ?? this.options.width);
+    const layout = resolveActorSheetLayout({ width: sheetWidth, activeTab: selectedTab });
+
+    root.classList.toggle("layout-wide", layout.mode === "wide");
+    root.classList.toggle("layout-compact", layout.mode === "compact");
+    root.classList.toggle("combat-focus", layout.combatFocus);
+    this._activeActorSheetTab = selectedTab;
   }
 
   /* -------------------------------------------- */
@@ -159,6 +188,11 @@ export class CyberpunkActorSheet extends ActorSheet {
   activateListeners(html) {
     html = $(html);
     super.activateListeners(html);
+
+    html.find(".sheet-tabs [data-tab]").click(ev => {
+      const activeTab = ev.currentTarget.dataset.tab;
+      this._applyActorSheetLayout({ activeTab });
+    });
 
     /**
    * Get an owned item from a click event, for any event trigger with a data-item-id property

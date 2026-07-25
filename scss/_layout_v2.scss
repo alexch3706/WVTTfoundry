@@ -4,7 +4,7 @@
 
 .cyberpunk.sheet-terminal {
     display: grid;
-    grid-template-columns: 260px 1fr 420px;
+    grid-template-columns: 240px minmax(0, 1fr) 360px;
     grid-template-rows: 1fr auto;
     grid-template-areas: 
       "left center right"
@@ -13,6 +13,37 @@
     background: $bg-deep;
     gap: 0;
     min-height: 600px; /* Ensure there is room */
+
+    &.layout-compact {
+        grid-template-columns: 240px minmax(0, 1fr);
+        grid-template-areas:
+          "left center"
+          "footer footer";
+
+        .pane-right {
+            display: none;
+        }
+    }
+
+    &.combat-focus {
+        grid-template-areas:
+          "left right right"
+          "footer footer footer";
+
+        .pane-center {
+            display: none;
+        }
+
+        .pane-right {
+            display: flex;
+        }
+    }
+
+    &.layout-compact.combat-focus {
+        grid-template-areas:
+          "left right"
+          "footer footer";
+    }
 
     &.sheet {
         padding: 0;

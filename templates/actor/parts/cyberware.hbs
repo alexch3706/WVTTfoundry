@@ -9,10 +9,10 @@
     </div>
 </div>
 
-{{#if (equals items.length 0)}}
+{{#if (equals gear.cyberware.length 0)}}
     <div class="inactive">{{CPLocal "DragItemsPrompt"}}</div>
 {{/if}}
-<div class="field-list">
+<div class="field-list one-col cyberware-list">
     {{#each gear.cyberware as |cyber|}}
         <div class="field gear item-edit full-width" data-item-id="{{cyber.id}}">
             <div class="field-image" style="background-image: url({{cyber.img}})" data-item-id="{{cyber.id}}"></div>

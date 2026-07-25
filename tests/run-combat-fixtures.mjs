@@ -20,6 +20,7 @@ import { runTemplatePlacementTests } from "./combat/template-placement.test.js";
 import { runCyberlimbSchemaTests } from "./combat/cyberlimb-schema.test.js";
 import { runCombatSnapshotTests } from "./combat/combat-snapshot.test.js";
 import { runActorDataTests } from "./actor/actor-data.test.js";
+import { runActorSheetLayoutTests } from "./actor/actor-sheet-layout.test.js";
 const results = [
   ...await runCombatFixtures(),
   await runCombatCommitTests(),
@@ -37,7 +38,8 @@ const results = [
   ...await runTemplatePlacementTests(),
   ...runCyberlimbSchemaTests(),
   ...runCombatSnapshotTests(),
-  ...runActorDataTests()
+  ...runActorDataTests(),
+  ...runActorSheetLayoutTests()
 ];
 
 for(const result of results) {
