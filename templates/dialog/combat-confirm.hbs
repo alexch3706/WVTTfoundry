@@ -1,0 +1,70 @@
+<section class="combat-confirm" aria-labelledby="{{headingId}}">
+    <h2 id="{{headingId}}">{{CPLocal "CombatApplyHeading"}}</h2>
+
+    <div class="combat-confirm-targets" role="list" aria-label="{{CPLocal "Targets"}}">
+        {{#each targets}}
+            <div class="combat-confirm-target" role="listitem">
+                <strong>{{name}}</strong>
+                <span class="combat-confirm-target-meta">
+                    {{#if notFired}}
+                        <span class="combat-confirm-result not-fired">{{CPLocal "NotFired"}}</span>
+                    {{else if hit}}
+                        {{#if hasHits}}
+                            <span class="combat-confirm-result hit">{{CPLocal "CombatTargetHit" hits=hitCount}}</span>
+                        {{else}}
+                            <span class="combat-confirm-result hit">{{CPLocal "CombatTargetSuccess"}}</span>
+                        {{/if}}
+                    {{else}}
+                        <span class="combat-confirm-result miss">{{CPLocal "CombatTargetMiss"}}</span>
+                    {{/if}}
+                    {{#if hasRollDetails}}
+                        <small>{{CPLocal "CombatRollVsTarget" roll=rollTotal target=targetNumber}}</small>
+                    {{/if}}
+                </span>
+            </div>
+        {{/each}}
+    </div>
+
+    {{#if changes.length}}
+        <h3>{{CPLocal "CombatChangesHeading"}}</h3>
+        <ul class="combat-confirm-changes">
+            {{#each changes}}
+                <li>
+                    <strong>{{subject}}</strong>
+                    <span>
+                        {{#if (equals kind "ammo")}}
+                            {{CPLocal "CombatChangeAmmo"}}
+                        {{else if (equals kind "wounds")}}
+                            {{CPLocal "CombatChangeWounds"}}
+                        {{else if (equals kind "armor")}}
+                            {{CPLocal "CombatChangeArmor"}}
+                        {{else if (equals kind "sdp")}}
+                            {{CPLocal "CombatChangeSDP"}}
+                        {{else}}
+                            {{CPLocal "CombatChangeState"}}
+                        {{/if}}
+                        {{#if detail}}<small>({{detail}})</small>{{/if}}:
+                        <code>{{before}} → {{after}}</code>
+                    </span>
+                </li>
+            {{/each}}
+        </ul>
+    {{else}}
+        <p class="combat-confirm-empty">{{CPLocal "CombatNoAutomaticChanges"}}</p>
+    {{/if}}
+
+    {{#if warnings.length}}
+        <div class="combat-confirm-warnings" role="alert">
+            <strong>{{CPLocal "Warnings"}}</strong>
+            <ul>
+                {{#each warnings}}
+                    <li>{{message}}</li>
+                {{/each}}
+            </ul>
+        </div>
+    {{/if}}
+
+    {{#unless canCommit}}
+        <p class="combat-confirm-blocked" role="alert">{{CPLocal "CombatCannotApply"}}</p>
+    {{/unless}}
+</section>

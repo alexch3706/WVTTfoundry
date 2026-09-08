@@ -134,7 +134,7 @@ Verify that missing actor context or state conflicts block the commit path and a
 To execute the automated suite of deterministic combat fixtures (verifying normalization, outcomes, hit locations, and fallbacks in code):
 1. Open a terminal in the project root directory.
 2. Run the command: `node tests/run-combat-fixtures.mjs`.
-3. Verify that the output displays `9 combat fixture(s) passed`.
+3. Verify that the output ends with `155 fixture(s): 155 passed, 0 failed`.
 
 ---
 

@@ -8,6 +8,15 @@ const updateFuncs = {
 // I know there's a lot of await in here, and I think it might be possible to not wait for the results of updating entities. But I also don't know if it would blow foundry up to get so many update requests so far.
 
 let migrationSuccess = true;
+
+export function isPrimaryActiveGM(currentUser, users = []) {
+    if(!currentUser?.isGM) return false;
+    const candidates = Array.from(users?.contents || users || [])
+        .filter(user => user?.isGM && user?.active)
+        .sort((left, right) => String(left.id).localeCompare(String(right.id)));
+    return candidates.length === 0 || candidates[0]?.id === currentUser.id;
+}
+
 // Handle migration of things. The shape of it nabbed from 5e
 export async function migrateWorld() {
     migrationSuccess = true;
@@ -55,6 +64,7 @@ async function migrateDocument(document, withUpdataData = defaultDataUse) {
         let migrateDataFunc = updateFuncs[document.documentName];
         if(migrateDataFunc === undefined) {
             console.log(`No migrate function for document with documentName field "${document.documentName}"`);
+            return;
         }
         const updateData = await migrateDataFunc(document);
         await withUpdataData(document, updateData);
@@ -79,26 +89,33 @@ export async function migrateActor(actor) {
     // No need to migrate items currently
     let actorUpdates = {}
 
-    if(typeof(actor.system.damage) == "string") {
+    if(typeof(actor.system.damage) === "string") {
         console.log("Making damage a number");
-        actorUpdates[`system.damage`] = 0;
+        const numericDamage = Number(actor.system.damage);
+        actorUpdates[`system.damage`] = Number.isFinite(numericDamage) ? numericDamage : 0;
     }
     if(actor.type == "character") {
         const prototypeToken = actor.prototypeToken || actor.token || {};
         const actorLink = prototypeToken.actorLink;
-        const hasVision = prototypeToken.sight?.enabled ?? prototypeToken.vision;
-        if(!actorLink) {
-            console.log(`Making ${actor.name}'s default token be linked to the actor, and be friendly`);
+        if(actorLink === undefined || actorLink === null) {
+            console.log(`Giving ${actor.name}'s default token an explicit actor link setting`);
             actorUpdates[`prototypeToken.actorLink`] = true;
+        }
+        if(prototypeToken.disposition === undefined || prototypeToken.disposition === null) {
             actorUpdates[`prototypeToken.disposition`] = 1;
         }
-        if(!hasVision) {
-            console.log(`Making ${actor.name}'s default token actually have vision`);
-            if (prototypeToken.sight !== undefined) {
+        if (prototypeToken.sight !== undefined) {
+            if(prototypeToken.sight?.enabled === undefined || prototypeToken.sight?.enabled === null) {
+                console.log(`Giving ${actor.name}'s default token an explicit vision setting`);
                 actorUpdates[`prototypeToken.sight.enabled`] = true;
-                actorUpdates[`prototypeToken.sight.range`] = 30;
-            } else {
-                actorUpdates[`token.vision`] = true;
+                if(prototypeToken.sight?.range === undefined || prototypeToken.sight?.range === null) {
+                    actorUpdates[`prototypeToken.sight.range`] = 30;
+                }
+            }
+        } else if(prototypeToken.vision === undefined || prototypeToken.vision === null) {
+            console.log(`Making ${actor.name}'s default token actually have vision`);
+            actorUpdates[`token.vision`] = true;
+            if(prototypeToken.dimSight === undefined || prototypeToken.dimSight === null) {
                 actorUpdates[`token.dimSight`] = 30;
             }
         }
@@ -184,14 +201,57 @@ export function migrateItem(item) {
         console.log(`${item.name} has no source field. Giving it one.`)
         itemUpdates["system.source"] = "";
     }
-    if(item.type == "weapon") {
-        if(!system.rangeDamages) {
+    if(item.type === "skill") {
+        // A previous Skill sheet wrote the chip toggle to `system.chipped`,
+        // while runtime calculations read `system.isChipped`. Preserve that
+        // user choice before removing the obsolete field.
+        if(system.chipped !== undefined) {
+            const legacyChipped = normalizeLegacyBoolean(system.chipped);
+            // The template may already have supplied the default false even
+            // when the persisted legacy choice was true. Prefer an enabled
+            // value from either field so migration cannot silently unchip a
+            // skill that was configured through the old Item sheet.
+            if(system.isChipped === undefined || (legacyChipped && !normalizeLegacyBoolean(system.isChipped))) {
+                itemUpdates["system.isChipped"] = legacyChipped;
+            }
+            itemUpdates["system.-=chipped"] = null;
+        }
+    }
+    if(item.type === "weapon") {
+        if(Array.isArray(system.rangeDamages)) {
+            // Older migrations initialized this field as a five-element
+            // array. Convert the four supported bands without discarding any
+            // formulas a world may have persisted there.
+            const [pointBlank = "", close = "", medium = "", far = ""] = system.rangeDamages;
+            itemUpdates["system.rangeDamages"] = { pointBlank, close, medium, far };
+        }
+        else if(!system.rangeDamages) {
             console.log(`${item.name} has no place to put damages per range. Instantiating those.`);
             const weaponModel = game.model?.Item?.weapon || game.system?.template?.Item?.weapon;
-            itemUpdates["system.rangeDamages"] = weaponModel?.rangeDamages || [0, 0, 0, 0, 0];
+            itemUpdates["system.rangeDamages"] = weaponModel?.rangeDamages || {
+                pointBlank: "",
+                close: "",
+                medium: "",
+                far: ""
+            };
+        }
+        else if(system.rangeDamages.short !== undefined) {
+            // The old sheet saved the close-range formula under `short`; the
+            // schema and resolver use `close`.
+            if(!system.rangeDamages.close && system.rangeDamages.short) {
+                itemUpdates["system.rangeDamages.close"] = system.rangeDamages.short;
+            }
+            itemUpdates["system.rangeDamages.-=short"] = null;
         }
     }
     return itemUpdates;
+}
+
+function normalizeLegacyBoolean(value) {
+    if(typeof value === "string") {
+        return ["true", "1", "on", "yes"].includes(value.trim().toLowerCase());
+    }
+    return value === true || value === 1;
 }
 
 export async function migrateCompendium(compendium) {
@@ -208,9 +268,8 @@ export async function migrateCompendium(compendium) {
             try {
                 let document = await compendium.getDocument(id);
                 await migrateDocument(document, async (doc, updateData) => {
-                    updateData._id = id; // use _id for updateDocument
                     if (!foundry.utils.isEmpty(updateData)) {
-                        await compendium.updateDocument(updateData);
+                        await doc.update(updateData);
                     }
                 });
             } catch(err) {

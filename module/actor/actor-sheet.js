@@ -32,11 +32,7 @@ export class CyberpunkActorSheet extends ActorSheet {
 
   /** @override */
   async _render(force=false, options={}) {
-    let isFirstRender = !this.rendered;
     await super._render(force, options);
-    if (isFirstRender && !this._minimized && typeof this.maximize === "function") {
-      this.maximize();
-    }
     this._applyActorSheetLayout();
   }
 
@@ -223,6 +219,17 @@ export class CyberpunkActorSheet extends ActorSheet {
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
+
+    html.find('[data-keyboard-action="true"]').on("keydown", event => {
+      if(event.key !== "Enter" && event.key !== " ") return;
+      if(event.repeat) return;
+      event.preventDefault();
+      // Some compact sheet rows contain a focused attack action inside an
+      // editable item row. Do not let the same keypress bubble up and trigger
+      // both actions.
+      event.stopPropagation();
+      event.currentTarget.click();
+    });
     
     // Find elements with stuff like html.find('.cssClass').click(this.function.bind(this));
     // Bind makes the "this" object in the function this.
@@ -310,6 +317,7 @@ export class CyberpunkActorSheet extends ActorSheet {
     html.find('.fire-weapon').click(async ev => {
       ev.stopPropagation();
       let item = getEventItem(this, ev);
+      if(!item || item.type !== "weapon") return;
       let isRanged = item.isRanged();
 
       let onConfirm = undefined;
@@ -336,9 +344,16 @@ export class CyberpunkActorSheet extends ActorSheet {
           const hasAoE = !!item.system?.aoe?.type;
 
           if ((hasAoE || isLegacyShotgun) && !isAutoshotgun) {
-            const { promptUseAoETemplate, drawAoETemplateAndGetTargets, buildAoETemplateTargetingOptions } = await import("../combat/template-placement.js");
-            if (await promptUseAoETemplate(item)) {
+            const { AOE_TEMPLATE_CHOICE, promptUseAoETemplate, drawAoETemplateAndGetTargets, buildAoETemplateTargetingOptions } = await import("../combat/template-placement.js");
+            const templateChoice = await promptUseAoETemplate(item);
+            if(templateChoice === AOE_TEMPLATE_CHOICE.canceled) {
+              return;
+            }
+            if (templateChoice === AOE_TEMPLATE_CHOICE.template) {
               const shotgunTemplateResult = await drawAoETemplateAndGetTargets(item, attackerToken);
+              if(shotgunTemplateResult?.canceled) {
+                return;
+              }
               const affectedTargets = Array.isArray(shotgunTemplateResult)
                 ? shotgunTemplateResult
                 : shotgunTemplateResult?.affectedTargets || [];
@@ -356,9 +371,13 @@ export class CyberpunkActorSheet extends ActorSheet {
             if (isAutoWeapon) {
               const shotsLeft = Number(item.system?.shotsLeft) || 0;
               if (shotsLeft > 0) {
-                const { promptUseSuppressiveFireTemplate, placePersistentSuppressiveFireTemplate } = await import("../combat/template-placement.js");
-                suppressiveFireOptions = await promptUseSuppressiveFireTemplate(item, Math.min(shotsLeft, item.system?.rof || 999));
-                if (suppressiveFireOptions) {
+                const { SUPPRESSIVE_TEMPLATE_CHOICE, promptUseSuppressiveFireTemplate, placePersistentSuppressiveFireTemplate } = await import("../combat/template-placement.js");
+                const suppressiveChoice = await promptUseSuppressiveFireTemplate(item, Math.min(shotsLeft, item.system?.rof || 999));
+                if(suppressiveChoice?.choice === SUPPRESSIVE_TEMPLATE_CHOICE.canceled) {
+                  return;
+                }
+                if (suppressiveChoice?.choice === SUPPRESSIVE_TEMPLATE_CHOICE.template) {
+                  suppressiveFireOptions = suppressiveChoice;
                   const { getMaxRangeBracketDistance } = await import("../lookups.js");
                   const maxDistance = getMaxRangeBracketDistance(item.system?.range || 50, 'RangeClose');
                   const isPlaced = await placePersistentSuppressiveFireTemplate(attackerToken, item, suppressiveFireOptions.roundsFired, suppressiveFireOptions.zoneWidth, maxDistance);
@@ -366,6 +385,7 @@ export class CyberpunkActorSheet extends ActorSheet {
                     await item.update({ "system.shotsLeft": shotsLeft - suppressiveFireOptions.roundsFired });
                     return; // Exit, because it's a persistent hazard now, no immediate attack roll needed
                   }
+                  return;
                 }
               }
             }
@@ -443,6 +463,9 @@ export class CyberpunkActorSheet extends ActorSheet {
               return;
             }
             const autoshotgunPlacement = await drawAutoshotgunPatternsAndGetTargets(item, attackerToken, shellCount);
+            if(autoshotgunPlacement.canceled) {
+              return;
+            }
             fireOptions.autoshotgunPatterns = autoshotgunPlacement.patterns;
           }
           if (shotgunTemplateTargeting?.hazardZone) {

@@ -3,13 +3,20 @@ import assert from "node:assert/strict";
 import { COMBAT_CHAT_STATUS } from "../../module/combat/combat-outcome.js";
 import {
   applyCombatUpdates,
+  buildCombatChangeSummary,
+  buildCombatTargetSummaries,
   buildCombatPreviewData,
+  collectCombatOutcomeWarnings,
+  previewAndConfirmCombatOutcome,
   previewAndApplyCombatOutcome
 } from "../../module/combat/combat-commit.js";
 import { planCombatUpdates } from "../../module/combat/state-planner.js";
 
 export async function runCombatCommitTests() {
   assertPreviewData();
+  assertCombatConfirmationProjection();
+  await assertCombatChangeSummary();
+  await assertDialogDefaultsToCancelAndSettles();
   await assertConfirmAppliesUpdatesInOrder();
   await assertConfirmPersistsMultipleLayerAblation();
   await assertCancelDoesNotApplyUpdates();
@@ -18,6 +25,9 @@ export async function runCombatCommitTests() {
   await assertInvalidPlanBlocksCommit();
   await assertUnresolvedDocumentBlocksCommit();
   await assertResolverRejectionBlocksCommit();
+  await assertPermissionBlockedPreview();
+  await assertPermissionRevokedAfterPreviewBlocksCommit();
+  await assertSourceStateChangedBeforePreviewBlocksCommit();
   await assertEmbeddedUpdateWithoutIdBlocksCommit();
   await assertWriteRejectionReturnsPartialFailure();
   await assertDuplicateConfirmIsBlocked();
@@ -28,6 +38,209 @@ export async function runCombatCommitTests() {
   return {
     name: "combat-commit"
   };
+}
+
+async function assertDialogDefaultsToCancelAndSettles() {
+  const outcome = buildOutcome();
+  const adapter = createFakeAdapter({
+    initialItems: {
+      "Actor.attacker.Item.heavy-pistol": { system: { shotsLeft: 10 } }
+    },
+    initialActors: {
+      "Actor.target": {
+        system: { damage: 0 },
+        items: {
+          "armor-jacket": { _id: "armor-jacket", system: { coverage: { torso: { ablation: 0 } } } }
+        }
+      }
+    }
+  });
+  let dialogData;
+  let dialogOptions;
+  class FakeDialog {
+    constructor(data, options) {
+      dialogData = data;
+      dialogOptions = options;
+    }
+    render() { return this; }
+  }
+
+  const resultPromise = previewAndConfirmCombatOutcome(outcome, {
+    adapter,
+    DialogClass: FakeDialog,
+    renderDialogTemplate: async (_path, data) => `<section>${data.headingId}</section>`
+  });
+  await new Promise(resolve => setTimeout(resolve, 0));
+
+  assert.equal(dialogData.default, "cancel", "combat confirmation is fail-safe by default");
+  assert.ok(dialogData.buttons.confirm, "valid plans expose an Apply action");
+  assert.ok(dialogOptions.classes.includes("cyberpunk"), "dialog shell receives system styling");
+  await dialogData.buttons.cancel.callback();
+  const result = await resultPromise;
+  assert.equal(result.status, COMBAT_CHAT_STATUS.canceled, "cancel action settles the combat flow");
+}
+
+function assertCombatConfirmationProjection() {
+  const targets = buildCombatTargetSummaries([
+    {
+      target: { name: "Not fired" },
+      attack: { notFired: true, hit: false },
+      hits: []
+    },
+    {
+      target: { name: "Grappled" },
+      attack: { hit: true, roll: { total: 19 }, targetNumber: 15 },
+      hits: []
+    }
+  ]);
+  assert.equal(targets[0].notFired, true, "jammed targets are not mislabeled as misses");
+  assert.equal(targets[0].hit, false);
+  assert.equal(targets[1].hit, true, "non-damage successes remain successful");
+  assert.equal(targets[1].hasHits, false, "non-damage successes do not claim zero damage hits");
+  assert.equal(targets[1].rollTotal, 19);
+
+  const warnings = collectCombatOutcomeWarnings({
+    warnings: [{ code: "root", message: "Root warning" }],
+    targets: [{
+      attack: { warnings: [{ code: "jam", message: "Weapon jammed" }] },
+      hits: [{ warnings: [{ code: "critical", message: "Critical injury" }] }]
+    }]
+  }, [{ code: "root", message: "Root warning" }]);
+  assert.deepEqual(warnings.map(warning => warning.code), ["root", "jam", "critical"], "dialog keeps non-blocking combat warnings without duplicates");
+}
+
+async function assertPermissionBlockedPreview() {
+  const outcome = buildOutcome();
+  const adapter = createFakeAdapter({
+    unownedActors: ["Actor.target"]
+  });
+  const previewResult = await previewAndApplyCombatOutcome(outcome, { adapter });
+
+  assert.equal(previewResult.status, COMBAT_CHAT_STATUS.manual, "unowned targets require GM resolution");
+  assert.equal(previewResult.preview.canCommit, false, "permission failure disables confirmation");
+  assert.ok(
+    previewResult.preview.warnings.some(warning => warning.source?.code === "insufficient-update-permission"),
+    "preview explains the missing update permission"
+  );
+
+  const confirmResult = await previewAndApplyCombatOutcome(outcome, {
+    adapter,
+    decision: "confirm",
+    messageId: previewResult.messageId,
+    plannedUpdates: previewResult.preview.plan
+  });
+  assert.equal(confirmResult.status, COMBAT_CHAT_STATUS.manual);
+  const mutations = adapter.calls.filter(call =>
+    call.type === "item.update"
+    || call.type === "actor.update"
+    || call.type === "actor.updateEmbeddedDocuments"
+  );
+  assert.deepEqual(mutations, [], "permission-blocked combat cannot spend ammo or mutate a target");
+}
+
+async function assertPermissionRevokedAfterPreviewBlocksCommit() {
+  const outcome = buildOutcome();
+  const unownedActors = [];
+  const adapter = createFakeAdapter({ unownedActors });
+  const previewResult = await previewAndApplyCombatOutcome(outcome, { adapter });
+  assert.equal(previewResult.preview.canCommit, true, "owned targets can initially be confirmed");
+
+  unownedActors.push("Actor.target");
+  const confirmResult = await previewAndApplyCombatOutcome(outcome, {
+    adapter,
+    decision: "confirm",
+    messageId: previewResult.messageId,
+    plannedUpdates: previewResult.preview.plan
+  });
+
+  assert.equal(confirmResult.status, COMBAT_CHAT_STATUS.manual, "revoked permission blocks confirmation");
+  assert.ok(
+    confirmResult.preview.warnings.some(warning => warning.source?.code === "insufficient-update-permission"),
+    "confirmation reports the live permission failure"
+  );
+  const mutations = adapter.calls.filter(call =>
+    call.type === "item.update"
+    || call.type === "actor.update"
+    || call.type === "actor.updateEmbeddedDocuments"
+  );
+  assert.deepEqual(mutations, [], "permission changes after preview cannot produce a partial commit");
+}
+
+async function assertSourceStateChangedBeforePreviewBlocksCommit() {
+  const outcome = buildOutcome();
+  const adapter = createFakeAdapter({
+    initialItems: {
+      "Actor.attacker.Item.heavy-pistol": { system: { shotsLeft: 10 } }
+    },
+    initialActors: {
+      "Actor.target": {
+        system: { damage: 3 },
+        items: {
+          "armor-jacket": { _id: "armor-jacket", system: { coverage: { torso: { ablation: 0 } } } }
+        }
+      }
+    }
+  });
+  const previewResult = await previewAndApplyCombatOutcome(outcome, { adapter });
+
+  assert.equal(previewResult.status, COMBAT_CHAT_STATUS.manual, "state changes before preview require recalculation");
+  assert.ok(
+    previewResult.preview.warnings.some(warning => warning.source?.code === "source-state-changed"),
+    "preview explains that the source snapshot is stale"
+  );
+  const woundChange = buildCombatChangeSummary(outcome, previewResult.preview.plan)
+    .find(change => change.kind === "wounds");
+  assert.equal(woundChange.before, 3, "summary reports current document state, not the stale outcome value");
+
+  const confirmResult = await previewAndApplyCombatOutcome(outcome, {
+    adapter,
+    decision: "confirm",
+    messageId: previewResult.messageId,
+    plannedUpdates: previewResult.preview.plan
+  });
+  assert.equal(confirmResult.status, COMBAT_CHAT_STATUS.manual);
+  assert.equal(adapter.state.actors["Actor.target"].system.damage, 3, "stale attack cannot overwrite newer damage");
+}
+
+async function assertCombatChangeSummary() {
+  const outcome = buildOutcome();
+  const adapter = createFakeAdapter({
+    initialItems: {
+      "Actor.attacker.Item.heavy-pistol": { system: { shotsLeft: 10 } }
+    },
+    initialActors: {
+      "Actor.target": {
+        system: { damage: 0 },
+        items: {
+          "armor-jacket": { _id: "armor-jacket", system: { coverage: { torso: { ablation: 0 } } } }
+        }
+      }
+    }
+  });
+  const previewResult = await previewAndApplyCombatOutcome(outcome, { adapter });
+  const changes = buildCombatChangeSummary(outcome, previewResult.preview.plan);
+
+  assert.deepEqual(changes, [
+    {
+      kind: "ammo",
+      subject: "Heavy Pistol",
+      before: 10,
+      after: 9
+    },
+    {
+      kind: "wounds",
+      subject: "Guard",
+      before: 0,
+      after: 5
+    },
+    {
+      kind: "armor",
+      subject: "armor-jacket",
+      before: 0,
+      after: 1,
+      detail: "torso"
+    }
+  ], "confirmation summary exposes every automatic state change");
 }
 
 function assertPreviewData() {
@@ -327,7 +540,7 @@ function buildOutcome(overrides = {}) {
                 total: 6
               }
             },
-            damage: 5
+            damage: 0
           }
         },
         attack: {
@@ -468,13 +681,21 @@ function createFakeAdapter(options = {}) {
 
   const ensureItemState = (itemUuid) => {
     if(!state.items[itemUuid]) {
-      state.items[itemUuid] = {};
+      state.items[itemUuid] = { system: { shotsLeft: 10 } };
     }
     return state.items[itemUuid];
   };
   const ensureActorState = (actorUuid) => {
     if(!state.actors[actorUuid]) {
-      state.actors[actorUuid] = { system: {}, items: {} };
+      state.actors[actorUuid] = {
+        system: { damage: 0 },
+        items: {
+          "armor-jacket": {
+            _id: "armor-jacket",
+            system: { coverage: { torso: { ablation: 0 } } }
+          }
+        }
+      };
     }
     if(!state.actors[actorUuid].items) {
       state.actors[actorUuid].items = {};
@@ -494,6 +715,7 @@ function createFakeAdapter(options = {}) {
       }
       const itemState = ensureItemState(itemUuid);
       return {
+        isOwner: !(options.unownedItems || []).includes(itemUuid),
         system: itemState.system || (itemState.system = {}),
         async update(update) {
           applyUpdateData(itemState, update);
@@ -514,6 +736,7 @@ function createFakeAdapter(options = {}) {
       }
       const actorState = ensureActorState(actorUuid);
       return {
+        isOwner: !(options.unownedActors || []).includes(actorUuid),
         system: actorState.system || (actorState.system = {}),
         items: {
           get(itemId) {
@@ -698,7 +921,8 @@ async function assertChatOutcomeLifecycle() {
       type: "chatMessage.create",
       messageId: "msg-1",
       chatData: {
-        content: "<mock-rendered-template-for-preview>"
+        content: "<mock-rendered-template-for-preview>",
+        flags: expectedOutcomeFlags(previewResult.chatData)
       }
     }
   ], "preview chat calls");
@@ -725,7 +949,8 @@ async function assertChatOutcomeLifecycle() {
       type: "chatMessage.update",
       messageId: "msg-1",
       updateData: {
-        content: "<mock-rendered-template-for-committed>"
+        content: "<mock-rendered-template-for-committed>",
+        flags: expectedOutcomeFlags(confirmResult.chatData)
       }
     }
   ], "confirm chat calls");
@@ -751,10 +976,19 @@ async function assertChatOutcomeLifecycle() {
       type: "chatMessage.update",
       messageId: "msg-1",
       updateData: {
-        content: "<mock-rendered-template-for-canceled>"
+        content: "<mock-rendered-template-for-canceled>",
+        flags: expectedOutcomeFlags(cancelResult.chatData)
       }
     }
   ], "cancel chat calls");
+}
+
+function expectedOutcomeFlags(chatData) {
+  return {
+    cyberpunk2020: {
+      combatOutcome: chatData
+    }
+  };
 }
 
 function buildExpectedChatStatus(status) {

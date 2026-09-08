@@ -86,7 +86,7 @@
     }
 
     // Roll dice icon on hover
-    &:hover > .field-image.roll {
+    &:hover > .field-image.roll:not(:disabled) {
         background-image: url("../../../icons/svg/d10-grey.svg") !important;
     }
 

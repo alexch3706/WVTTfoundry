@@ -6,8 +6,9 @@
         <div class="damageholder" style="gap: 2px;">
             {{!-- damageBoxes gives context. WoundNo is which wound, classes dictate which are filled and which have left/right borders --}}
             {{#damageBoxes stateNo ../system.damage}}
-                {{!-- span instead of radio, because radio doesn't allow clicking of current wound to toggle --}}
-                <span data-damage={{woundNo}} class="damage {{classes}}" style="width:12px;height:12px;"></span>
+                <button type="button" data-damage="{{woundNo}}" class="damage {{classes}}"
+                    aria-label="{{stateName.label}} — {{CPLocal 'Damage'}} {{displayedWound}}"
+                    aria-pressed="{{#if isChecked}}true{{else}}false{{/if}}"{{#unless @root.editable}} disabled aria-disabled="true"{{/unless}}></button>
             {{/damageBoxes}}
         </div>
     </div>

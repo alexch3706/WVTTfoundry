@@ -1,6 +1,7 @@
 {{!-- Really I want there to be the same kind of deleting for items and skills, but there's not enough real estate to add the Xs, and too much interactivity to move things around. May need some UI thinking --}}
 <div class="field skill" data-item-id="{{skill.id}}">
-    <label class="skill-roll action" data-skill-id="{{skill.id}}">{{skill.name}}</label>
+    <label class="skill-roll action" data-skill-id="{{skill.id}}" role="button" data-keyboard-action="true"
+        tabindex="{{#if @root.editable}}0{{else}}-1{{/if}}"{{#unless @root.editable}} aria-disabled="true"{{/unless}}>{{skill.name}}</label>
     {{!-- TODO: Add data-item-id for this to work --}}
     {{#with skill.system}}
         <label class="chip-toggle" data-skill-id="{{../skill.id}}">
@@ -12,14 +13,16 @@
                 {{~/if~}}
             </div>
             <div class="chip-icon {{#unless isChipped}}inactive{{/unless}}"></div>
-            <input type="checkbox" data-skill-id="{{../skill.id}}" {{checked isChipped}}/>
+            <input type="checkbox" data-skill-id="{{../skill.id}}" {{checked isChipped}}{{#unless @root.editable}} disabled aria-disabled="true"{{/unless}}/>
         </label>
 
     <span>
-        <i class="fas fa-trash item-delete" data-item-id="{{../skill.id}}"></i>
-        <i class="fas fa-edit item-edit" data-item-id="{{../skill.id}}"></i>
+        <i class="fas fa-trash item-delete" data-item-id="{{../skill.id}}" role="button" data-keyboard-action="true"
+            tabindex="{{#if @root.editable}}0{{else}}-1{{/if}}" aria-label="{{CPLocal 'DeleteItem'}}"{{#unless @root.editable}} aria-disabled="true"{{/unless}}></i>
+        <i class="fas fa-edit item-edit" data-item-id="{{../skill.id}}" role="button" data-keyboard-action="true"
+            tabindex="{{#if @root.editable}}0{{else}}-1{{/if}}" aria-label="{{CPLocal 'EditItem'}}"{{#unless @root.editable}} aria-disabled="true"{{/unless}}></i>
     </span>
 
-    <input type="number" data-skill-id="{{../skill.id}}" class="skill-level smallnumber nogrow" value="{{#if isChipped}}{{chipLevel}}{{else}}{{level}}{{/if}}"/>
+    <input type="number" data-skill-id="{{../skill.id}}" class="skill-level smallnumber nogrow" value="{{#if isChipped}}{{chipLevel}}{{else}}{{level}}{{/if}}"{{#unless @root.editable}} readonly aria-readonly="true"{{/unless}}/>
     {{/with}}
 </div>

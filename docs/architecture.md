@@ -1,6 +1,6 @@
 # Architecture Documentation
 
-Last updated: 2026-05-24
+Last updated: 2026-09-05
 
 ## Executive Summary
 
@@ -12,7 +12,7 @@ There is no independent application runtime. Foundry is the runtime, dependency 
 
 ```mermaid
 flowchart TD
-    A["system.json"] --> B["Foundry loads module/cyberpunk2020.js"]
+    A["system.json"] --> B["Foundry loads module/cyberpunk2020-rilerena.js"]
     B --> C["Hooks.once(init)"]
     C --> D["Register CyberpunkActor and CyberpunkItem"]
     C --> E["Register ActorSheet and ItemSheet"]
@@ -27,7 +27,7 @@ flowchart TD
 
 ### Bootstrap
 
-`module/cyberpunk2020.js` owns Foundry integration:
+`module/cyberpunk2020-rilerena.js` owns Foundry integration:
 
 - exposes `game.cyberpunk.entities`
 - exposes `game.cyberpunk.migrateWorld`
@@ -45,7 +45,7 @@ flowchart TD
 Key responsibilities:
 
 - default character token configuration on create
-- default skill item seeding from `cyberpunk2020.default-skills`
+- default skill item seeding from `cyberpunk2020-rilerena.default-skills`
 - derived stats in `prepareData`
 - hit-location lookup construction
 - equipped armor stopping power aggregation
@@ -121,9 +121,9 @@ Templates are split by UI surface:
 
 ### Styling Layer
 
-The styling source is `scss/cyberpunk2020.scss`, importing partials for fields, interactivity, stats, wounds, skills, item sheets, gear, cards, and combat.
+The styling source is `scss/cyberpunk2020-rilerena.scss`, importing partials for fields, interactivity, stats, wounds, skills, item sheets, gear, cards, and combat.
 
-The compiled artifact `css/cyberpunk2020.css` is loaded by Foundry through `system.json`.
+The compiled artifact `css/cyberpunk2020-rilerena.css` is loaded by Foundry through `system.json`.
 
 ## Data Architecture
 
@@ -157,14 +157,20 @@ The repository contains item packs for default skills, role skills, weapons, arm
 
 `module/settings.js` registers:
 
-- `cyberpunk2020.systemMigrationVersion`, world scope, hidden config
-- `cyberpunk2020.trainedSkillsFirst`, client scope, configurable
+- `cyberpunk2020-rilerena.systemMigrationVersion`, world scope, hidden config
+- `cyberpunk2020-rilerena.trainedSkillsFirst`, client scope, configurable
+- `cyberpunk2020-rilerena.stagedPenetration`, world scope, configurable
+- `cyberpunk2020-rilerena.corebookFidelityMode`, world scope, configurable
+- `cyberpunk2020-rilerena.combatDamageCommitMode`, world scope, configurable
+- `cyberpunk2020-rilerena.attackDieEntryMode`, world scope, configurable
+- `cyberpunk2020-rilerena.enableScanlines`, client scope, configurable
+- `cyberpunk2020-rilerena.enableGlow`, client scope, configurable
 
 The skill sorting code reads `trainedSkillsFirst`.
 
 ## Migrations
 
-Migration execution is GM-only and version-gated from `module/cyberpunk2020.js`.
+Migration execution is GM-only and version-gated from `module/cyberpunk2020-rilerena.js`.
 
 Current migration responsibilities:
 
@@ -175,7 +181,7 @@ Current migration responsibilities:
 - add missing `rangeDamages` to weapons
 - attempt unlocked compendium migration
 
-Migration code is a high-risk refactor area because it currently mixes async operations with un-awaited calls in several loops.
+Migration code remains a high-risk refactor area because it updates worlds and unlocked compendia in place and still requires live Foundry verification.
 
 ## Architectural Risks
 
@@ -184,7 +190,7 @@ Migration code is a high-risk refactor area because it currently mixes async ope
 - Several update calls are not awaited where ordering may matter.
 - Template paths are hardcoded in multiple places.
 - Foundry v12 compatibility is partially accommodated (`getStatNames`) but the architecture is still v10/v11-era sheet/document style.
-- There is no automated regression harness, so runtime verification depends on Foundry manual checks.
+- The automated regression harness does not emulate the Foundry client, so runtime and compatibility verification still depends on manual Foundry checks.
 
 ## Refactor Direction
 

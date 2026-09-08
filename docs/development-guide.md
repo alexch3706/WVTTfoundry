@@ -1,6 +1,6 @@
 # Development Guide
 
-Last updated: 2026-05-24
+Last updated: 2026-09-05
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ Last updated: 2026-05-24
 This repository is a FoundryVTT system package. The normal development loop is:
 
 1. Edit JavaScript, Handlebars, Sass, language, or data files.
-2. If Sass changed, compile `scss/cyberpunk2020.scss` to `css/cyberpunk2020.css`.
+2. If Sass changed, compile `scss/cyberpunk2020-rilerena.scss` to `css/cyberpunk2020-rilerena.css`.
 3. Load or reload the system in Foundry.
 4. Manually verify the affected sheet, roll, item, actor, or pack behavior.
 
@@ -22,16 +22,18 @@ This repository is a FoundryVTT system package. The normal development loop is:
 README documents watch mode:
 
 ```sh
-sass --watch scss/cyberpunk2020.scss css/cyberpunk2020.css
+sass --watch scss/cyberpunk2020-rilerena.scss css/cyberpunk2020-rilerena.css
 ```
 
 One-off compile command:
 
 ```sh
-sass scss/cyberpunk2020.scss css/cyberpunk2020.css
+sass scss/cyberpunk2020-rilerena.scss css/cyberpunk2020-rilerena.css
 ```
 
-There are no detected npm scripts, test scripts, bundler commands, or CI commands.
+There is no npm package script or JavaScript bundler. Run the local regression suite with
+`node tests/run-combat-fixtures.mjs`; GitHub Actions repeats that suite, validates JavaScript,
+JSON and Handlebars syntax, and verifies that the committed CSS matches the Sass source.
 
 ## Common Change Workflows
 
@@ -118,9 +120,9 @@ Manual verification:
 
 ## Verification Standards
 
-Because no automated test harness is present, completion notes should state exactly what was done:
+Completion notes should distinguish automated checks from live Foundry verification and state exactly what was done:
 
-- static review only
+- automated runner and syntax checks run or not run
 - Sass compile run or not run
 - Foundry runtime/manual check run or not run
 - specific sheet/roll/data path verified
@@ -132,7 +134,7 @@ Avoid saying "tested" unless an actual test or runtime check happened.
 - `system.json`: package contract
 - `template.json`: actor/item data contract
 - `module/migrate.js`: old-world compatibility
-- `packs/*.db`: compendium data
+- `packs/*/`: LevelDB compendium data
 - `module/item/item.js`: combat, ammo, vehicle, armor behavior
 - `module/actor/actor.js`: derived character data
 - `module/templates.js`: template preload paths

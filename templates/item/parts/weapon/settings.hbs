@@ -5,15 +5,14 @@
     {{> (template "fields/boolean") label="AP" edit="system.ap"}}
     {{> (template "fields/number") label="Range" edit="system.range"}}
 
-    {{!-- Un-commented to support shotgun range damage resolution --}}
+    {{!-- Damage bands consumed by the shotgun resolver. --}}
     <details class="field span-two-cells">
-        <summary>{{localize "Advanced"}}</summary>
+        <summary>{{CPLocal "Advanced"}}</summary>
         <div class="field-list">
-            {{> (template "fields/string") label=(concat (localize "DamageShort") "(" (localize "PointBlank") ")")  edit="system.rangeDamages.pointBlank"}}
-            {{> (template "fields/string") label=(concat (localize "DamageShort") "(" (localize "Short") ")")  edit="system.rangeDamages.short"}}
-            {{> (template "fields/string") label=(concat (localize "DamageShort") "(" (localize "Medium") ")")  edit="system.rangeDamages.medium"}}
-            {{> (template "fields/string") label=(concat (localize "DamageShort") "(" (localize "Far") ")")  edit="system.rangeDamages.far"}}
-            {{> (template "fields/string") label=(concat (localize "DamageShort") "(" (localize "Extreme") ")")  edit="system.rangeDamages.extreme"}}
+            {{> (template "fields/string") label=(concat (CPLocal "DamageShort") " (" (CPLocal "PointBlank") ")") edit="system.rangeDamages.pointBlank"}}
+            {{> (template "fields/string") label=(concat (CPLocal "DamageShort") " (" (CPLocal "Close") ")") edit="system.rangeDamages.close"}}
+            {{> (template "fields/string") label=(concat (CPLocal "DamageShort") " (" (CPLocal "Medium") ")") edit="system.rangeDamages.medium"}}
+            {{> (template "fields/string") label=(concat (CPLocal "DamageShort") " (" (CPLocal "Long") ")") edit="system.rangeDamages.far"}}
         </div>
     </details>
 </div>

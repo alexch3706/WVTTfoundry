@@ -6,6 +6,23 @@
 // ============================================
 
 .gear {
+    > button.field-image,
+    > button.gear-edit {
+        flex: 0 0 32px;
+        min-width: 32px;
+        min-height: 28px;
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+        color: $accent-cyan;
+    }
+
+    > button.gear-edit:not(:disabled):hover {
+        color: $text-primary;
+        background-color: $bg-elevated;
+    }
+
     // Gear name label
     label {
         min-width: 128px;

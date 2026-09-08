@@ -1,12 +1,12 @@
 # Cyberpunk2020VTT Project Overview
 
-Last updated: 2026-05-24
+Last updated: 2026-09-05
 
 ## Executive Summary
 
 Cyberpunk2020VTT is a FoundryVTT game system package for R. Talsorian Games' Cyberpunk 2020. The repository is a single-package Foundry system, not a standalone web application. Foundry loads it directly through `system.json`, runs JavaScript modules in the Foundry client runtime, renders Handlebars sheets/templates, and loads data from Foundry compendium pack files.
 
-The codebase is compact and brownfield: most behavior lives in a small number of plain JavaScript files under `module/`, while sheet presentation is split between Handlebars templates under `templates/` and Sass under `scss/`. There is no package manager workflow, no automated test harness, no bundler, and no TypeScript layer.
+The codebase is compact and brownfield: most behavior lives in plain JavaScript files under `module/`, while sheet presentation is split between Handlebars templates under `templates/` and Sass under `scss/`. There is no package manager workflow, bundler, or TypeScript layer; a Node-based regression runner covers combat mechanics and selected UI/data contracts.
 
 ## Project Classification
 
@@ -18,27 +18,27 @@ The codebase is compact and brownfield: most behavior lives in a small number of
 | UI layer | Foundry `ActorSheet` / `ItemSheet` plus Handlebars `.hbs` templates |
 | Styling | Sass source compiled to tracked CSS |
 | Data model | Foundry `template.json` system template |
-| Data assets | Foundry `.db` compendium packs |
+| Data assets | Foundry LevelDB compendium directories under `packs/` |
 | Localization | `en`, `es`, `it` language files |
-| Tests | No automated test harness detected |
+| Tests | `node tests/run-combat-fixtures.mjs` plus GitHub Actions CI |
 
 ## Technology Summary
 
 | Category | Technology | Version / Source | Notes |
 | --- | --- | --- | --- |
-| Foundry package | `cyberpunk2020` | `system.json` version `0.3.12` | Manifest declares minimum Foundry 10, verified 11, maximum 12 |
-| Runtime entry | ES module | `module/cyberpunk2020.js` | Loaded through `system.json -> esmodules` |
+| Foundry package | `cyberpunk2020-rilerena` | `system.json` version `1.1.0` | Manifest declares minimum Foundry 10, verified 12, maximum 13 |
+| Runtime entry | ES module | `module/cyberpunk2020-rilerena.js` | Loaded through `system.json -> esmodules` |
 | Actor layer | Foundry `Actor` subclass | `module/actor/actor.js` | Computes derived character data and rolls |
 | Item layer | Foundry `Item` subclass | `module/item/item.js` | Handles weapons, armor, vehicles, and item rolls |
 | Sheets | Foundry sheet subclasses | `module/actor/actor-sheet.js`, `module/item/item-sheet.js` | jQuery-style `activateListeners(html)` event wiring |
 | Templates | Handlebars | `templates/` | Preloaded through `module/templates.js` |
-| Styling | Sass | `scss/cyberpunk2020.scss` | Compiled artifact is `css/cyberpunk2020.css` |
-| Compendia | Foundry packs | `packs/*.db` | Plain text JSON-line-like pack assets in this repo |
+| Styling | Sass | `scss/cyberpunk2020-rilerena.scss` | Compiled artifact is `css/cyberpunk2020-rilerena.css` |
+| Compendia | Foundry LevelDB packs | `packs/*/` | One directory per packaged compendium |
 
 ## Current Capability Surface
 
 - Character and NPC actor sheets share the same data preparation flow.
-- Character creation can seed default skill items from the `cyberpunk2020.default-skills` pack.
+- Character creation can seed default skill items from the `cyberpunk2020-rilerena.default-skills` pack.
 - Actor data preparation computes stat totals, armor stopping power by hit location, encumbrance REF modifier, movement, carry/lift, body type modifier, wounds, humanity loss, and EMP total.
 - Actor sheet tabs cover skills, combat, gear, cyberware, and life notes.
 - Item sheets support skill, weapon, armor, cyberware, vehicle, and misc item types through dynamic partials.

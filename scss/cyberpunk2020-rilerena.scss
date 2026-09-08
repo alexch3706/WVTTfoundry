@@ -10,17 +10,22 @@
 // Global Styles
 // ============================================
 
-* {
+.cyberpunk,
+.cyberpunk * {
     scrollbar-width: thin;
 }
-*::-webkit-scrollbar {
-    width: 4px;
+.cyberpunk::-webkit-scrollbar,
+.cyberpunk *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
-*::-webkit-scrollbar-track {
+.cyberpunk::-webkit-scrollbar-track,
+.cyberpunk *::-webkit-scrollbar-track {
     background-color: $bg-deep;
     border-radius: 0px;
 }
-*::-webkit-scrollbar-thumb {
+.cyberpunk::-webkit-scrollbar-thumb,
+.cyberpunk *::-webkit-scrollbar-thumb {
     border-width: 0px;
     background-color: $accent-cyan;
 }
@@ -28,15 +33,16 @@
 // ============================================
 // CRT Scanlines — optional, toggled via .fx-scanlines on body
 // ============================================
+.fx-scanlines .cyberpunk section.window-content {
+    position: relative;
+}
+
 .fx-scanlines .cyberpunk section.window-content::after {
     content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    inset: 0;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 1;
     background: repeating-linear-gradient(
         0deg,
         rgba(0, 0, 0, 0.12) 0px,
@@ -195,7 +201,7 @@
 }
 
 // ── Profile image ────────────────────────────
-.profile-img {
+.cyberpunk .profile-img {
     max-height: 170px;
     max-width: 20%;
     flex-shrink: 2;
@@ -270,12 +276,18 @@
 
 // ── Details animation ────────────────────────
 // Nabbed from https://stackoverflow.com/a/38215801/5708707
-details[open] summary ~ * {
+.cyberpunk details[open] summary ~ * {
     animation: sweep .5s ease-in-out;
 }
 @keyframes sweep {
     0%    {opacity: 0; margin-left: -10px}
     100%  {opacity: 1; margin-left: 0px}
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cyberpunk details[open] summary ~ * {
+        animation: none;
+    }
 }
 
 // ============================================
@@ -289,5 +301,6 @@ details[open] summary ~ * {
 @import "itemSheets";
 @import "gear";
 @import "cards";
+@import "combatConfirm";
 @import "combat-tab";
 @import "layout_v2";

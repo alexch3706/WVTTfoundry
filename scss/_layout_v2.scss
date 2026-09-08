@@ -69,6 +69,7 @@
             
             img {
                 width: 100%;
+                max-width: 100%;
                 height: auto;
                 max-height: 200px;
                 object-fit: cover;
@@ -98,11 +99,17 @@
             background: transparent;
 
             .nav-cmd {
+                appearance: none;
+                width: 100%;
+                border: 0;
+                border-left: 2px solid transparent;
+                background: transparent;
                 font-family: $font-mono;
+                font-size: inherit;
+                text-align: left;
                 color: $text-secondary;
                 padding: 8px 10px;
                 cursor: pointer;
-                border-left: 2px solid transparent;
                 transition: all $transition-fast;
                 text-transform: lowercase;
 
@@ -169,7 +176,6 @@
                     border: none;
                     color: inherit;
                     width: 100%;
-                    outline: none;
                 }
             }
         }

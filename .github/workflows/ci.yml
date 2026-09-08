@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Check JavaScript syntax
+        run: find module tests -type f \( -name '*.js' -o -name '*.mjs' \) -print0 | sort -z | xargs -0 -n1 node --check
+
+      - name: Validate JSON data
+        run: find . -path './.git' -prune -o -name '*.json' -type f -print0 | xargs -0 -n1 node -e 'JSON.parse(require("node:fs").readFileSync(process.argv[1], "utf8"))'
+
+      - name: Compile Handlebars templates
+        run: npx --yes handlebars@4.7.8 $(find templates -type f -name '*.hbs' -print | sort) -f /tmp/cyberpunk2020-templates.js
+
+      - name: Run combat and UI contract suite
+        run: node tests/run-combat-fixtures.mjs
+
+      - name: Verify generated fixture coverage map
+        run: git diff --exit-code -- tests/combat/fixture-coverage-map.md
+
+      - name: Verify compiled Sass artifact
+        run: |
+          npx --yes sass@1.104.0 --style=compressed --source-map scss/cyberpunk2020-rilerena.scss css/cyberpunk2020-rilerena.css
+          git diff --exit-code -- css/cyberpunk2020-rilerena.css css/cyberpunk2020-rilerena.css.map

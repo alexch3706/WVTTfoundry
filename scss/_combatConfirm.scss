@@ -1,0 +1,105 @@
+// ============================================
+// COMBAT COMMIT REVIEW
+// ============================================
+
+.combat-confirm {
+    color: $text-primary;
+    background: $bg-deep;
+    padding: $spacing-md;
+
+    h2,
+    h3 {
+        color: $accent-cyan;
+        border-bottom: $border-width solid $border-primary;
+        margin: 0 0 $spacing-md;
+        padding-bottom: $spacing-sm;
+    }
+
+    h3 {
+        margin-top: $spacing-lg;
+        font-size: 1rem;
+    }
+}
+
+.combat-confirm-targets {
+    display: grid;
+    gap: $spacing-sm;
+}
+
+.combat-confirm-target {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-md;
+    padding: $spacing-sm $spacing-md;
+    background: $bg-surface;
+    border-left: 2px solid $border-primary;
+    min-width: 0;
+}
+
+.combat-confirm-target-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 0;
+
+    small {
+        color: $text-secondary;
+        overflow-wrap: anywhere;
+        text-align: right;
+    }
+}
+
+.combat-confirm-result {
+    font-family: $font-mono;
+    font-weight: bold;
+
+    &.hit {
+        color: $status-hit;
+    }
+
+    &.miss {
+        color: $status-miss;
+    }
+
+    &.not-fired {
+        color: $text-secondary;
+    }
+}
+
+.combat-confirm-changes {
+    display: grid;
+    gap: $spacing-sm;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: $spacing-md;
+        padding: $spacing-md;
+        background: $bg-surface;
+        border: $border-width solid $border-dim;
+    }
+
+    code {
+        color: $accent-cyan;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+}
+
+.combat-confirm-empty {
+    color: $text-secondary;
+}
+
+.combat-confirm-warnings,
+.combat-confirm-blocked {
+    margin-top: $spacing-lg;
+    padding: $spacing-md;
+    color: $accent-amber;
+    border: $border-width solid $accent-amber;
+    background: rgba($accent-amber, 0.08);
+}

@@ -1,22 +1,22 @@
 # Deferred Risks — Story 6-4: Direct-Mutation & Awaited-Update Audit Findings
 
-> Generated: 2026-05-30
+> Last reviewed: 2026-09-05
 > Owner: @maintainer
 > Status: Partially Resolved
 
 ---
 
-## DEFERRED-6.4-1: Serial Migration Performance
+## DEFERRED-6.4-1: Mixed Serial and Chunked Migration Performance
 
 **Severity:** Low
 
-**Description:** Serial `await`-ing every document migration (actor items → standalone items → compendium documents) could be slow in worlds with hundreds of actors/items. Each migration runs sequentially, blocking the ready hook.
+**Description:** World actors, embedded items, standalone items, and compendium packs are traversed sequentially in the `ready` migration. Documents inside each compendium are processed concurrently in awaited chunks of 50. Large worlds may therefore still spend noticeable time in the outer serial loops, while the chunk size bounds compendium load.
 
 **Acceptability:** Acceptable for MVP. Migration runs once per version upgrade. Even with 500+ documents, the total time should stay under a few seconds.
 
 **Owner:** @maintainer
 
-**Follow-up:** Epic 6 post-MVP or optimisation pass — consider batching or concurrent-but-tracked migration if profiling shows >5s delay.
+**Follow-up:** Profile a large backed-up world. If migration exceeds 5s, consider bounded batches for world documents as well as the existing compendium chunks.
 
 ---
 

@@ -165,7 +165,7 @@
               {
                 "damageRoll": { "formula": "4d6", "total": 24, "maximized": true },
                 "shotgun": {
-                  "bracket": "close",
+                  "bracket": "pointBlank",
                   "damageFormula": "4d6",
                   "patternWidthMeters": 1,
                   "templateId": "shotgun",
@@ -222,7 +222,7 @@
             "hits": [
               {
                 "shotgun": {
-                  "bracket": "close",
+                  "bracket": "pointBlank",
                   "damageFormula": "4d6",
                   "patternWidthMeters": 1,
                   "templateId": "shotgun",
@@ -296,7 +296,7 @@
         "manualResolution": {
           "required": true,
           "reason": "missing-rule-data",
-          "message": "One or more targets require manual resolution before this outcome can be committed."
+          "message": "Missing finite measured distance for shotgun spread.\\nWeapon ammo state is unavailable; resolve ammo manually."
         },
         "targets": [
           {
@@ -425,7 +425,7 @@
         "manualResolution": {
           "required": true,
           "reason": "missing-rule-data",
-          "message": "One or more targets require manual resolution before this outcome can be committed."
+          "message": "Missing shotgun damage formula for medium range.\\nWeapon ammo state is unavailable; resolve ammo manually."
         },
         "targets": [
           {

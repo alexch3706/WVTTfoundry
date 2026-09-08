@@ -15,7 +15,7 @@
             </span>
             <textarea class="flavor" name="system.flavor" placeholder="{{CPLocal 'Flavor'}}">{{system.flavor}}</textarea>
         </div>
-        <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+        <img class="item-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" alt="{{item.name}}"/>
 
         {{#if conformance}}
         {{> "systems/cyberpunk2020-rilerena/templates/item/parts/shared/conformance-badge.hbs" scope=conformance.scope labelKey=conformance.labelKey}}

@@ -1,6 +1,6 @@
 # Project Documentation Index
 
-Last updated: 2026-05-30
+Last updated: 2026-09-05
 
 ## Project Overview
 
@@ -9,12 +9,12 @@ Last updated: 2026-05-30
 - **Repository structure:** Monolith
 - **Primary language:** Plain JavaScript ES modules
 - **Architecture:** Foundry document/sheet/template architecture
-- **Current package version:** `0.3.12`
-- **Foundry compatibility:** manifest-declared minimum `10`, verified `11`, maximum `12`
+- **Current package version:** `1.1.0`
+- **Foundry compatibility:** manifest-declared minimum `10`, verified `12`, maximum `13`
 
 ## Quick Reference
 
-- **Runtime entry:** `module/cyberpunk2020.js`
+- **Runtime entry:** `module/cyberpunk2020-rilerena.js`
 - **Manifest:** `system.json`
 - **Data template:** `template.json`
 - **Actor logic:** `module/actor/actor.js`
@@ -22,9 +22,9 @@ Last updated: 2026-05-30
 - **Item logic:** `module/item/item.js`
 - **Item sheet:** `module/item/item-sheet.js`
 - **Templates:** `templates/`
-- **Sass source:** `scss/cyberpunk2020.scss`
-- **Compiled CSS:** `css/cyberpunk2020.css`
-- **Compendium packs:** `packs/*.db`
+- **Sass source:** `scss/cyberpunk2020-rilerena.scss`
+- **Compiled CSS:** `css/cyberpunk2020-rilerena.css`
+- **Compendium packs:** LevelDB directories under `packs/`
 
 ## Generated Documentation
 

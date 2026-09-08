@@ -35,7 +35,34 @@ export function runCombatSnapshotTests() {
     results.push({ name: "assertZeroSDPIsIgnored", passed: false });
   }
 
+  try {
+    assertDamagedCyberlimbSDPIsPreserved();
+    results.push({ name: "assertDamagedCyberlimbSDPIsPreserved", passed: true });
+  } catch(e) {
+    console.error(e);
+    results.push({ name: "assertDamagedCyberlimbSDPIsPreserved", passed: false });
+  }
+
   return results;
+}
+
+function assertDamagedCyberlimbSDPIsPreserved() {
+  const mockActor = {
+    system: {
+      stats: {}, damage: 0, isFBC: false,
+      hitLocations: {
+        rarm: { label: "Right Arm", type: "cybernetic", sdp: { value: 20, max: 30 } }
+      }
+    },
+    itemTypes: {
+      cyberware: [
+        { id: "1", system: { equipped: true, location: "rarm", sdp: 30 } }
+      ]
+    }
+  };
+  const snapshot = buildActorCombatSnapshot(mockActor, { includeEquipment: true });
+  assert.equal(snapshot.hitLocations.rarm.sdp?.value, 20, "combat snapshots must not heal damaged cyberlimbs");
+  assert.equal(snapshot.hitLocations.rarm.sdp?.max, 30);
 }
 
 function assertCyberwareSDPOverlay() {

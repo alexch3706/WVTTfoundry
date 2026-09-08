@@ -2,10 +2,12 @@
 <div class="combat-tab">
     <section class="combat-rolls">
         <div class="flexrow flexwrap fillwidth">
-            <div class="field roll-initiative">
+            <div class="field roll-initiative" role="button" data-keyboard-action="true"
+                tabindex="{{#if @root.editable}}0{{else}}-1{{/if}}"{{#unless @root.editable}} aria-disabled="true"{{/unless}}>
                 <label class="fillwidth action">{{CPLocal "Initiative"}}</label>
             </div>
-            <div class="field stun-death-save">
+            <div class="field stun-death-save" role="button" data-keyboard-action="true"
+                tabindex="{{#if @root.editable}}0{{else}}-1{{/if}}"{{#unless @root.editable}} aria-disabled="true"{{/unless}}>
                 {{!-- Action on label to override pointer --}}
                 <label class="fillwidth action">{{CPLocal "StunDeathSave"}}</label>
             </div>
@@ -20,9 +22,9 @@
 
         {{> (template "actor/parts/armor-display") hitLocations=system.hitLocations hitLocsName="hitLocations"}}
         <div class="field margin-bottom">
-            <label for="system.stats.ref.armorMod">{{CPLocal "Encumbrance"}}</label>
+            <label for="{{@root.actor.id}}-system.stats.ref.armorMod">{{CPLocal "Encumbrance"}}</label>
             <span class="flex-pad"></span>
-            <input type="number" name="system.stats.ref.armorMod" value="{{system.stats.ref.armorMod}}" class="number nogrow not-editable" readonly>
+            <input id="{{@root.actor.id}}-system.stats.ref.armorMod" type="number" name="system.stats.ref.armorMod" value="{{system.stats.ref.armorMod}}" class="number nogrow not-editable" readonly>
         </div>
         
         <div class="field-list one-col">
@@ -50,7 +52,8 @@
             <h2>{{CPLocal "Weapons"}}</h2>
         </header>
         {{#each gear.weapons as |weapon|}}
-            <div class="fire-weapon field action" data-item-id="{{weapon.id}}">
+            <div class="fire-weapon field action" data-item-id="{{weapon.id}}" role="button" data-keyboard-action="true"
+                tabindex="{{#if @root.editable}}0{{else}}-1{{/if}}" aria-label="{{CPLocal 'Attack'}}: {{weapon.name}}"{{#unless @root.editable}} aria-disabled="true"{{/unless}}>
                 <div class="no-action field-image" style="background-image: url({{weapon.img}})" data-item-id="{{weapon.id}}"></div>
                 <label class="name">{{weapon.name}}</label>
                 <span class="flex-pad"></span>

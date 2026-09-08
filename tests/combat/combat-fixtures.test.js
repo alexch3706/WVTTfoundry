@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { readFile, readdir } from "node:fs/promises";
 
 import { resolveCombatAction } from "../../module/combat/combat-resolver.js";
 import { resolveBodyTypeDamage } from "../../module/combat/attack-resolver.js";
@@ -13,17 +13,6 @@ import { detectAndPromptTacticalRaycasts } from "../../module/combat/tactical-ra
 import { getAttackDieEntryMode, isCorebookFidelityEnabled, filterSupportedFireModes } from "../../module/combat/settings-helpers.js";
 import { buildShotgunTemplateTargetingOptions, buildAoETemplateTargetingOptions } from "../../module/combat/template-placement.js";
 import { CyberpunkItem } from "../../module/item/item.js";
-
-const FIXTURE_URLS = [
-  new URL("./fixtures/ranged-single-shot.json", import.meta.url),
-  new URL("./fixtures/three-round-burst.json", import.meta.url),
-  new URL("./fixtures/ranged-full-auto.json", import.meta.url),
-
-  new URL("./fixtures/reliability-jam.json", import.meta.url),
-  new URL("./fixtures/melee-baseline.json", import.meta.url),
-  new URL("./fixtures/shotgun-template.json", import.meta.url),
-  new URL("./fixtures/fbc-baseline.json", import.meta.url)
-];
 
 export async function runCombatFixtures() {
   const results = [];
@@ -51,7 +40,13 @@ export async function runCombatFixtures() {
   assertCyberpunkItemAdapterPreservesAutoshotgunPatterns();
   assertSettingsHelpers();
 
-  for(const fixtureUrl of FIXTURE_URLS) {
+  const fixtureDirectory = new URL("./fixtures/", import.meta.url);
+  const fixtureUrls = (await readdir(fixtureDirectory))
+    .filter(filename => filename.endsWith(".json"))
+    .sort()
+    .map(filename => new URL(filename, fixtureDirectory));
+
+  for(const fixtureUrl of fixtureUrls) {
     const fixture = JSON.parse(await readFile(fixtureUrl, "utf8"));
     results.push(await runFixture(fixture));
   }
@@ -60,6 +55,10 @@ export async function runCombatFixtures() {
 }
 
 async function runFixture(fixture) {
+  if(fixture.casesOnly === true) {
+    await assertSingleShotCases(fixture);
+    return { name: fixture.name };
+  }
   const roller = createScriptedRoller(fixture.rolls);
   const context = clonePlainData(fixture.context);
   const isSuppressiveFire = (String(context?.action?.fireMode || "").toLowerCase() === "suppressivefire");

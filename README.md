@@ -2,7 +2,7 @@
 
 > *R. Talsorian Games' [Cyberpunk 2020](https://talsorianstore.com/products/cyberpunk-2020) for FoundryVTT. Time to get chromed, and frag some slags.*
 
-A FoundryVTT game system package (version **1.0.0**) — not a standalone app. Loaded by Foundry through `system.json`, runs as ES modules in the Foundry client, renders Handlebars sheets, and ships with full item compendia.
+A FoundryVTT game system package (version **1.1.0**) — not a standalone app. Loaded by Foundry through `system.json`, runs as ES modules in the Foundry client, renders Handlebars sheets, and ships with full item compendia.
 
 ---
 
@@ -70,8 +70,8 @@ The project has a dedicated **mechanics resolver** (`module/combat/`) that produ
 
 - **Resolver layer** (`module/combat/`) — pure mechanics modules with zero Foundry runtime dependency. `CombatOutcome` is the single source of truth for chat, preview, commit, and tests.
 - **State planner** — planned updates collected and validated before any Foundry document mutates.
-- **Deterministic fixtures** — 7 JSON fixture files + 2356 lines of test assertions covering all combat modes, runnable outside a live world.
-- **No bundler, no TypeScript, no build step.** Plain JS ES modules loaded directly by Foundry.
+- **Deterministic fixtures** — 8 JSON fixture files plus focused assertion modules covering combat and UI contracts, runnable outside a live world.
+- **No JavaScript bundler or TypeScript.** Plain ES modules are loaded directly by Foundry; Sass compilation is the only asset build step.
 
 ### Compendia
 
@@ -128,7 +128,7 @@ See [`docs/`](./docs/), especially [`docs/combat-mechanics-audit.md`](./docs/com
    ```
 3. Run combat fixture tests:
    ```bash
-   node tests/combat/combat-fixtures.test.js
+   node tests/run-combat-fixtures.mjs
    ```
 4. Load Foundry, select the **Cyberpunk 2020** system, and create a world to test UI changes.
 
@@ -148,7 +148,7 @@ module/
 templates/              # Handlebars templates (actor, item, chat, dialog)
 scss/                   # Sass source → compiled CSS
 tests/combat/           # Fixtures and assertion tests
-packs/                  # Compendium .db files
+packs/                  # LevelDB compendium directories
 docs/                   # Architecture, component inventory, data models
 ```
 

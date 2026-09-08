@@ -12,6 +12,7 @@ import { runAttackTypeClassificationTests } from "./combat/attack-type-classific
 
 import { runHumanityPersistenceTests } from "./combat/humanity-persistence.test.js";
 import { runRangeDcTests } from "./combat/range-dcs.test.js";
+import { runRangeBracketTests } from "./combat/range-bracket.test.js";
 import { runArmorMaintenanceTests } from "./combat/armor-maintenance.test.js";
 import { runDerivedStatOverrideTests } from "./combat/derived-stat-overrides.test.js";
 import { runWoundHintTests } from "./combat/wound-hints.test.js";
@@ -21,6 +22,10 @@ import { runCyberlimbSchemaTests } from "./combat/cyberlimb-schema.test.js";
 import { runCombatSnapshotTests } from "./combat/combat-snapshot.test.js";
 import { runActorDataTests } from "./actor/actor-data.test.js";
 import { runActorSheetLayoutTests } from "./actor/actor-sheet-layout.test.js";
+import { runActorSheetAccessibilityTests } from "./actor/actor-sheet-accessibility.test.js";
+import { runItemUiContractTests } from "./actor/item-ui-contracts.test.js";
+import { runMigrationTests } from "./actor/migration.test.js";
+import { runModifiersDialogTests } from "./combat/modifiers-dialog.test.js";
 const results = [
   ...await runCombatFixtures(),
   await runCombatCommitTests(),
@@ -31,6 +36,7 @@ const results = [
   ...await runAttackTypeClassificationTests(),
   ...await runHumanityPersistenceTests(),
   ...await runRangeDcTests(),
+  ...runRangeBracketTests(),
   ...runArmorMaintenanceTests(),
   ...runDerivedStatOverrideTests(),
   ...runWoundHintTests(),
@@ -39,7 +45,11 @@ const results = [
   ...runCyberlimbSchemaTests(),
   ...runCombatSnapshotTests(),
   ...runActorDataTests(),
-  ...runActorSheetLayoutTests()
+  ...runActorSheetLayoutTests(),
+  ...runActorSheetAccessibilityTests(),
+  ...runItemUiContractTests(),
+  ...await runMigrationTests(),
+  await runModifiersDialogTests()
 ];
 
 for(const result of results) {

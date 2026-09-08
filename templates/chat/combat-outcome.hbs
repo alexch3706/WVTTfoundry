@@ -33,7 +33,7 @@
     </div>
     {{/if}}
 
-    {{#each targets as |targetOutcome|}}
+    {{#each targets as |targetOutcome targetIndex|}}
         <div class="field-list one-col section-divider">
             <div class="field">
                 <span>{{CPLocal "Target"}}: </span>
@@ -293,7 +293,7 @@
                         {{#each targetOutcome.saves as |save|}}
                         <div class="field save-prompt save-{{save.type}}">
                             <span>{{save.type}} Save: </span>
-                            <span class="flex-pad">BT{{save.bodyType}} − {{save.penalty}} = {{save.threshold}}+</span>
+                            <span class="flex-pad">BT{{save.bodyType}} − {{save.penalty}} = {{save.threshold}}; d10 ≤ {{save.threshold}}</span>
                             {{#if (compare save.type "===" "death")}}
                             <span class="formula-text">(Mortal {{save.mortalLevel}})</span>
                             {{/if}}
@@ -301,8 +301,10 @@
                         {{/each}}
                         {{#if ../isCommitted}}
                         <div class="save-actions flexrow" style="gap: 5px; margin-top: 5px;">
-                            <button class="save-action-autoroll" data-target-uuid="{{targetOutcome.target.actorUuid}}">Auto-roll Saves (NPC)</button>
-                            <button class="save-action-manual" data-target-uuid="{{targetOutcome.target.actorUuid}}">Resolve Manually</button>
+                            <button type="button" class="save-action-autoroll" data-target-index="{{targetIndex}}"
+                                data-target-uuid="{{targetOutcome.target.actorUuid}}" data-target-token-uuid="{{targetOutcome.target.tokenUuid}}">Auto-roll Saves (NPC)</button>
+                            <button type="button" class="save-action-manual" data-target-index="{{targetIndex}}"
+                                data-target-uuid="{{targetOutcome.target.actorUuid}}" data-target-token-uuid="{{targetOutcome.target.tokenUuid}}">Resolve Manually</button>
                         </div>
                         {{/if}}
                     </div>

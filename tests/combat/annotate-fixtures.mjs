@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Annotate every singleShotCase in all 7 fixture JSON files with a ruleReference string.
+ * Annotate every singleShotCase in every fixture JSON file with a ruleReference string.
  * Reads each file, adds ruleReference to every case, writes back.
  */
 
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, readdir, writeFile } from "node:fs/promises";
 
 const FIXTURE_DIR = new URL("./fixtures/", import.meta.url);
 
@@ -106,29 +106,6 @@ const ANNOTATIONS = {
         "CP2020 p.100: Full Auto multi-target jam aborts remaining targets"
     }
   },
-  "suppressive-fire.json": {
-    outcomeEvidence: "CP2020 p.100: Suppressive Fire; DC = roundsFired / fireZoneWidth",
-    cases: {
-      "suppressive fire - target 1 passes save, target 2 fails save with 3 hits":
-        "CP2020 p.100: Suppressive Fire save vs DC; failed save = 1d6 hits",
-      "suppressive fire - missing fireZoneWidth returns manual":
-        "Audit 6.2: Missing suppressive fire inputs block resolution",
-      "suppressive fire - missing roundsFired returns manual":
-        "Audit 6.2: Missing suppressive fire inputs block resolution",
-      "suppressive-fire-all-pass":
-        "CP2020 p.100: All targets pass save = no hits",
-      "suppressive-fire-all-fail":
-        "CP2020 p.100: All targets fail save = 1d6 hits each",
-      "suppressive-fire-high-rof":
-        "CP2020 p.100: High ROF = higher save DC (60 / 3 = 20); CP2020 p.99: Natural 10 on save = success",
-      "suppressive-fire-armored-targets":
-        "CP2020 p.100: Suppressive hits resolved through armor pipeline",
-      "suppressive-fire-zero-ammo":
-        "CP2020 p.100: Suppressive fire consumes all remaining ammo; missing ammo warning",
-      "suppressive-fire-wide-zone":
-        "CP2020 p.100: Wide zone = lower DC (30 / 30 = 1), capped at minimum 2"
-    }
-  },
   "reliability-jam.json": {
     outcomeEvidence: "CP2020 p.99: Weapon Reliability and Jams; fumble behavior varies by reliability tier",
     cases: {
@@ -218,7 +195,12 @@ const ANNOTATIONS = {
 
 async function main() {
   let missingCount = 0;
-  for (const [filename, annotations] of Object.entries(ANNOTATIONS)) {
+  const fixtureFiles = (await readdir(FIXTURE_DIR))
+    .filter(filename => filename.endsWith(".json"))
+    .sort();
+
+  for (const filename of fixtureFiles) {
+    const annotations = ANNOTATIONS[filename] || { cases: {} };
     const url = new URL(filename, FIXTURE_DIR);
     const data = JSON.parse(await readFile(url, "utf8"));
     let modified = false;
@@ -233,11 +215,12 @@ async function main() {
 
     // Annotate each singleShotCase
     for (const singleCase of (data.singleShotCases || [])) {
+      if (singleCase.ruleReference) continue;
       const ref = annotations.cases[singleCase.name];
-      if (ref && !singleCase.ruleReference) {
+      if (ref) {
         singleCase.ruleReference = ref;
         modified = true;
-      } else if (!ref) {
+      } else {
         console.error(`WARNING: No annotation found for case "${singleCase.name}" in ${filename}`);
         missingCount++;
       }
@@ -257,7 +240,7 @@ async function main() {
   }
 }
 
-main().catch(e => {
+await main().catch(e => {
   console.error(e);
   process.exit(1);
 });

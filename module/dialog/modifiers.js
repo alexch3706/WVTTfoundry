@@ -46,8 +46,15 @@ import { isCorebookFidelityEnabled } from "../combat/settings-helpers.js"
       // Woo! This should be much more flexible than the previous implementation
       // My gods did it require thinking about the shape of things, because loosely-typed can be a headache
 
+      // The dialog enriches modifiers with template metadata below. Work on a
+      // copy so a re-render cannot mutate the options supplied by the caller or
+      // append another "extra modifier" group each time.
+      const modifierGroups = (this.options.modifierGroups || []).map(group =>
+        (group || []).map(modifier => ({ ...modifier }))
+      );
+
       let data = {
-        modifierGroups: this.options.modifierGroups,
+        modifierGroups,
         targetTokens: this.options.targetTokens,
         // You can't refer to indices in FormApplication form entries as far as I know, so let's give them a place to live
         defaultValues: {},
@@ -78,14 +85,14 @@ import { isCorebookFidelityEnabled } from "../combat/settings-helpers.js"
     /* -------------------------------------------- */
   
     /** @override */
-    _updateObject(event, formData) {
-      const updateData = formData;
-      // Update the object
-      this.object = updateData;
-      this.submit().then((form) => {
-        // We don't need to use .values
-        let result = this.object;
-        this.options.onConfirm(result);
-      });
+    async _updateObject(event, formData) {
+      // FormApplication.submit() has already called this method. Calling
+      // submit() again from here re-enters _updateObject and can execute an
+      // attack more than once. Treat this method as the single confirmation
+      // boundary instead.
+      this.object = formData;
+      if(typeof this.options.onConfirm === "function") {
+        await this.options.onConfirm(formData);
+      }
     }
  }

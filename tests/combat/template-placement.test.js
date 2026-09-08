@@ -1,6 +1,13 @@
 import assert from "node:assert/strict";
 
-import { drawAoETemplateAndGetTargets, drawAutoshotgunPatternsAndGetTargets } from "../../module/combat/template-placement.js";
+import {
+  AOE_TEMPLATE_CHOICE,
+  SUPPRESSIVE_TEMPLATE_CHOICE,
+  drawAoETemplateAndGetTargets,
+  drawAutoshotgunPatternsAndGetTargets,
+  promptUseAoETemplate,
+  promptUseSuppressiveFireTemplate
+} from "../../module/combat/template-placement.js";
 
 export async function runTemplatePlacementTests() {
   const results = [];
@@ -104,6 +111,21 @@ export async function runTemplatePlacementTests() {
       const result = await promise;
       assert.equal(result.hazardZone.lifecycle, "transient");
       assert.equal(createdTemplateDeleted, true, "shotgun cone MeasuredTemplate should be deleted after evidence is collected");
+
+      globalThis.canvas.scene.createEmbeddedDocuments = async () => {
+        throw new Error("permission denied");
+      };
+      const failedPlacement = drawAoETemplateAndGetTargets(
+        { system: { aoe: { type: "cone", value: 10 } } },
+        { id: "attacker-token", center: { x: 100, y: 100 } }
+      );
+      await new Promise(resolve => setTimeout(resolve, 0));
+      handlers.pointerdown({ stopPropagation: () => {} });
+      const failedResult = await Promise.race([
+        failedPlacement,
+        new Promise((_, reject) => setTimeout(() => reject(new Error("failed placement did not settle")), 250))
+      ]);
+      assert.equal(failedResult.canceled, true, "Foundry API rejection cancels instead of hanging the attack");
     } catch (e) {
       console.error(e);
       passed = false;
@@ -308,10 +330,87 @@ export async function runTemplatePlacementTests() {
     results.push({ name: "template-placement: autoshotgun canceled placement returns warning pattern", passed });
   }
 
+  async function testAutoshotgunExplicitCancelAbortsRemainingPatterns() {
+    let passed = true;
+    try {
+      const calls = [];
+      const result = await drawAutoshotgunPatternsAndGetTargets(
+        { name: "CAWS", system: { aoe: { type: "cone", value: 20 } } },
+        { id: "attacker-token" },
+        3,
+        {
+          drawPattern: async (item, attackerToken, shellIndex) => {
+            calls.push(shellIndex);
+            return { affectedTargets: [], canceled: true };
+          }
+        }
+      );
+
+      assert.equal(result.canceled, true, "an explicit placement cancellation cancels the attack");
+      assert.equal(result.canceledShellIndex, 1);
+      assert.deepEqual(result.patterns, [], "a canceled pattern is not treated as attack evidence");
+      assert.deepEqual(calls, [1], "remaining shell templates are not requested after cancellation");
+    } catch (e) {
+      console.error(e);
+      passed = false;
+    }
+    results.push({ name: "template-placement: explicit autoshotgun cancel aborts remaining patterns", passed });
+  }
+
+  async function testTemplatePromptsDistinguishNormalAndCancel() {
+    let passed = true;
+    const OriginalDialog = globalThis.Dialog;
+    try {
+      let dialogConfig;
+      globalThis.Dialog = class {
+        constructor(config) {
+          dialogConfig = config;
+        }
+        render() {
+          return this;
+        }
+      };
+
+      const normalPromise = promptUseAoETemplate({ system: { aoe: { type: "cone" } } });
+      dialogConfig.buttons.normal.callback();
+      assert.equal(await normalPromise, AOE_TEMPLATE_CHOICE.normal);
+
+      const cancelPromise = promptUseAoETemplate({ system: { aoe: { type: "cone" } } });
+      dialogConfig.close();
+      assert.equal(await cancelPromise, AOE_TEMPLATE_CHOICE.canceled);
+
+      const suppressiveNormalPromise = promptUseSuppressiveFireTemplate({}, 10);
+      dialogConfig.buttons.normal.callback();
+      assert.deepEqual(await suppressiveNormalPromise, { choice: SUPPRESSIVE_TEMPLATE_CHOICE.normal });
+
+      const suppressiveCancelPromise = promptUseSuppressiveFireTemplate({}, 10);
+      dialogConfig.buttons.cancel.callback();
+      assert.deepEqual(await suppressiveCancelPromise, { choice: SUPPRESSIVE_TEMPLATE_CHOICE.canceled });
+
+      const suppressiveClampPromise = promptUseSuppressiveFireTemplate({}, 10);
+      dialogConfig.buttons.template.callback({
+        find: selector => ({ val: () => selector === "#suppressiveRounds" ? "999" : "0" })
+      });
+      assert.deepEqual(await suppressiveClampPromise, {
+        choice: SUPPRESSIVE_TEMPLATE_CHOICE.template,
+        roundsFired: 10,
+        zoneWidth: 1
+      }, "suppressive values are bounded independently of HTML validation");
+    } catch (e) {
+      console.error(e);
+      passed = false;
+    } finally {
+      globalThis.Dialog = OriginalDialog;
+    }
+    results.push({ name: "template-placement: prompts distinguish normal roll from cancel attack", passed });
+  }
+
   await testShotgunConeTemplateIsTransient();
   await testAutoshotgunPatternsAreCollectedSequentially();
   await testAutoshotgunPatternsSanitizeLiveTargets();
   await testAutoshotgunCanceledPlacementReturnsWarningPattern();
+  await testAutoshotgunExplicitCancelAbortsRemainingPatterns();
+  await testTemplatePromptsDistinguishNormalAndCancel();
 
   return results;
 }

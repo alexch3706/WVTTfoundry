@@ -5,7 +5,7 @@ import { CyberpunkActor } from "../actor/actor.js";
 import { resolveCombatAction } from "../combat/combat-resolver.js";
 import { classifyAttackTypeSupport } from "../combat/conformance-helpers.js";
 import { isCorebookFidelityEnabled } from "../combat/settings-helpers.js";
-import { buildCombatPreviewData, previewAndApplyCombatOutcome } from "../combat/combat-commit.js";
+import { previewAndApplyCombatOutcome, previewAndConfirmCombatOutcome } from "../combat/combat-commit.js";
 import { buildActorCombatSnapshot, buildWeaponCombatSnapshot, clonePlainData, compactPlainObject } from "../combat/combat-snapshot.js";
 
 /**
@@ -234,67 +234,8 @@ export class CyberpunkItem extends Item {
       return await previewAndApplyCombatOutcome(outcome, { decision: "confirm" });
     }
 
-    // "previewConfirm" — preview card then confirm/cancel dialog
-    const previewResult = await previewAndApplyCombatOutcome(outcome);
-
-    return new Promise((resolve) => {
-      let resolved = false;
-      const preview = buildCombatPreviewData(outcome);
-      const targetSummary = (preview.targets || []).map(t => {
-        const name = t.target?.name || "Unknown";
-        const hitInfo = t.hits ? `${t.hits.length} hit(s)` : "miss";
-        return `${name}: ${hitInfo}`;
-      }).join("<br>");
-      const ammoDelta = outcome.ammo?.delta !== undefined ? `Ammo: ${outcome.ammo.delta} round(s)` : "";
-
-      const dialog = new Dialog({
-        title: (typeof game !== "undefined" ? game.i18n.localize : (s) => s)("CYBERPUNK.CombatOutcomeTitle") || "Combat Outcome",
-        content: `
-          <p><strong>${(typeof game !== "undefined" ? game.i18n.localize : (s) => s)("CYBERPUNK.ReviewCombatOutcome") || "Review combat outcome:"}</strong></p>
-          <p>${ammoDelta}</p>
-          <p>${targetSummary}</p>
-          ${preview.warnings.length > 0 ? `<p style="color:#b88a00">⚠ ${preview.warnings.map(w => w.message).join("; ")}</p>` : ""}
-        `,
-        buttons: {
-          confirm: {
-            label: (typeof game !== "undefined" ? game.i18n.localize : (s) => s)("CYBERPUNK.Yes"),
-            callback: async () => {
-              if (resolved) return;
-              resolved = true;
-              resolve(await previewAndApplyCombatOutcome(outcome, {
-                decision: "confirm",
-                messageId: previewResult.messageId,
-                plannedUpdates: previewResult.preview?.plan || previewResult.preview?.plannedUpdates
-              }));
-            }
-          },
-          cancel: {
-            label: (typeof game !== "undefined" ? game.i18n.localize : (s) => s)("CYBERPUNK.No"),
-            callback: async () => {
-              if (resolved) return;
-              resolved = true;
-              resolve(await previewAndApplyCombatOutcome(outcome, {
-                decision: "cancel",
-                messageId: previewResult.messageId,
-                plannedUpdates: previewResult.preview?.plan || previewResult.preview?.plannedUpdates
-              }));
-            }
-          }
-        },
-        default: "confirm",
-        close: () => {
-          if (!resolved) {
-            resolved = true;
-            previewAndApplyCombatOutcome(outcome, {
-              decision: "cancel",
-              messageId: previewResult.messageId,
-              plannedUpdates: previewResult.preview?.plan || previewResult.preview?.plannedUpdates
-            }).then(resolve);
-          }
-        }
-      });
-      dialog.render(true);
-    });
+    // "previewConfirm" — preview card then safe confirm/cancel dialog.
+    return await previewAndConfirmCombatOutcome(outcome);
   }
 
   __getDamageCommitMode() {

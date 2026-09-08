@@ -5,6 +5,31 @@ import { properCase, localize, getDefaultSkills } from "../utils.js"
 import { resolveArmor } from "../combat/armor-resolver.js";
 import { applyDerivedStatOverrides } from "./derived-stats.js";
 
+const COMBAT_SENSE_LOCALIZATION_KEY = "SkillCombatSense";
+const AWARENESS_NOTICE_LOCALIZATION_KEY = "SkillAwarenessNotice";
+
+function normalizeSkillIdentifier(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}]+/gu, "");
+}
+
+function localizedSkillAliases(localizationKey, fallbackNames = []) {
+  const fullKey = `CYBERPUNK.${localizationKey}`;
+  const aliases = [...fallbackNames, localizationKey];
+  const i18n = globalThis.game?.i18n;
+
+  try {
+    const localized = i18n?.localize?.(fullKey);
+    if(localized && localized !== fullKey) aliases.push(localized);
+  } catch {
+    // The actor data API is also exercised outside a running Foundry client.
+  }
+
+  return aliases;
+}
+
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
@@ -260,16 +285,64 @@ export class CyberpunkActor extends Actor {
   // TODO: Make this doable with just skill name
   static realSkillValue(skill) {
     // Sometimes we use this to sort raw item data before it becomes a full-fledged item. So we use either system or data, as needed
-    let data = skill.system || skill;
+    let data = skill?.system || skill;
+    if(!data) return 0;
     let value = data.level;
     if(data.isChipped) {
       value = data.chipLevel || 0;
     }
-    return value;
+    const numericValue = Number(value);
+    return Number.isFinite(numericValue) ? numericValue : 0;
   }
 
-  getSkillVal(skillName) {
-    return CyberpunkActor.realSkillValue(this.itemTypes.skill.find(skill => skill.name === skillName));
+  findItemSkill(...names) {
+    const wantedNames = new Set(names.flat().map(normalizeSkillIdentifier).filter(Boolean));
+    const itemSkills = this.itemTypes?.skill
+      || this.items?.filter?.(item => item.type === "skill")
+      || [];
+
+    return Array.from(itemSkills).find(skill => {
+      const identifiers = [
+        skill?.name,
+        skill?.system?.key,
+        skill?.system?.skillKey,
+        skill?.system?.slug
+      ];
+      return identifiers.some(identifier => wantedNames.has(normalizeSkillIdentifier(identifier)));
+    });
+  }
+
+  getSkillVal(skillName, aliases = []) {
+    return CyberpunkActor.realSkillValue(this.findItemSkill(skillName, aliases));
+  }
+
+  getCombatSenseValue() {
+    const aliases = localizedSkillAliases(COMBAT_SENSE_LOCALIZATION_KEY, ["Combat Sense", "CombatSense"]);
+    return CyberpunkActor.realSkillValue(this.findItemSkill(aliases));
+  }
+
+  isAwarenessNoticeSkill(skill) {
+    const aliases = localizedSkillAliases(AWARENESS_NOTICE_LOCALIZATION_KEY, ["Awareness/Notice", "AwarenessNotice"]);
+    const wantedNames = new Set(aliases.map(normalizeSkillIdentifier));
+    return [skill?.name, skill?.system?.key, skill?.system?.skillKey, skill?.system?.slug]
+      .some(identifier => wantedNames.has(normalizeSkillIdentifier(identifier)));
+  }
+
+  /**
+   * Add stable roll-data projections for values which live in embedded skill Items.
+   * Foundry uses this object when evaluating the system initiative formula.
+   */
+  getRollData() {
+    const rollData = super.getRollData();
+    return {
+      ...rollData,
+      itemSkills: {
+        ...(rollData?.itemSkills || {}),
+        combatSense: {
+          value: this.getCombatSenseValue()
+        }
+      }
+    };
   }
 
   rollSkill(skillId) {
@@ -283,9 +356,8 @@ export class CyberpunkActor extends Actor {
     if(skillData.stat) {
       rollParts.push(`@stats.${skillData.stat}.total`);
     }
-    // TODO: When using localized names for skills, this will not work
-    if(skill.name === "Awareness/Notice") {
-      rollParts.push("@skills.CombatSense.value");
+    if(this.isAwarenessNoticeSkill(skill)) {
+      rollParts.push(this.getCombatSenseValue());
     }
 
     let roll = new Multiroll(skill.name)

@@ -1,3 +1,5 @@
+import { renderFoundryTemplate } from "./foundry-compat.js";
+
 export const BaseDie = "1d10x10";
 export const DefaultRollTemplate = "systems/cyberpunk2020-rilerena/templates/chat/default-roll.hbs";
 
@@ -145,7 +147,7 @@ export function classifyRollDice(roll) {
             user: game.user.id,
             speaker: speaker,
             sound: "sounds/dice.wav",
-            content: await renderTemplate(templatePath, fullTemplateData)
+            content: await renderFoundryTemplate(templatePath, fullTemplateData)
         };
         await ChatMessage.create(chatData);
         return this;

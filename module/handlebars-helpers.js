@@ -134,6 +134,7 @@ export function registerHandlebarsHelpers() {
         // Per box in wound
         for(let boxNo = 1; boxNo <= woundsPerState; boxNo++) {
             let thisWound = previousBoxes + boxNo;
+            const displayedWound = thisWound;
             let isChecked = thisWound == damage;
             let classes = "";
             if(boxNo === 1) {
@@ -153,7 +154,8 @@ export function registerHandlebarsHelpers() {
             }
             ret += options.fn({
                 classes: classes, 
-                woundNo: thisWound, 
+                woundNo: thisWound,
+                displayedWound,
                 isChecked: isChecked
             });
         }

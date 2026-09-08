@@ -1,6 +1,6 @@
 # MVP Combat Foundry Verification Checklist
 
-> Last updated: 2026-05-30
+> Last updated: 2026-09-05
 > Target: Corebook Fidelity MVP release readiness
 
 ## Pre-Check: Automated Fixture Suite
@@ -9,7 +9,7 @@ Before running any manual Foundry checks, verify the fixture suite passes:
 
 - [ ] `node tests/run-combat-fixtures.mjs` — all fixtures pass (0 failures)
 - [ ] Coverage map (`tests/combat/fixture-coverage-map.md`) is up to date
-- [ ] No unexpected fixture-count regression (current baseline: 82 cases)
+- [ ] No unexpected test-count regression (current runner baseline: 155 checks; coverage map: 98 JSON fixture cases)
 
 If any fixture fails, stop. Resolver mechanics are not reliable until the fixture suite is green.
 
@@ -148,7 +148,7 @@ Detailed steps in `docs/testing/foundry-manual-checks.md §8.1–§8.12`.
 | Area | Epic | Status | Notes |
 |------|------|--------|-------|
 | Resolver Contracts | 1 | 🟢 | Documented in `docs/resolver-contracts.md` |
-| Fixture Suite | 1–5 | 🟢 | 82 fixtures passing, coverage map generated |
+| Fixture Suite | 1–5 | 🟢 | 155 checks passing; 98 JSON fixture cases indexed |
 | Target Normalization | 2 | 🟢 | UUID-rich target refs, manual-resolution fallback |
 | Single-Shot Firearm | 2 | 🟢 | Preview/confirm, ammo, chat evidence |
 | Armor/AP/BTM/Wounds/Saves | 3 | 🟢 | Full pipeline; staged penetration toggle |
@@ -172,9 +172,9 @@ The following areas cannot be fully verified by pure fixtures or existing manual
 | Gap ID | Area | Description | Owner | Follow-up |
 |--------|------|-------------|-------|-----------|
 | GAP-6.7-3 | Mortal 7+ Persistent Dead State | Current implementation suppresses new save prompts as dead/manual state but does not persist an explicit dead status. | @alexch3706 | Post-MVP: Implement persisted dead-state automation |
-| GAP-6.7-4 | Serial Migration Performance | All migrations run sequentially in `ready` hook. Acceptable for MVP. | @alexch3706 | Post-MVP: Batch/concurrent migration if >5s |
+| GAP-6.7-4 | Migration Performance | World documents and packs are traversed serially; documents inside each compendium run in awaited chunks of 50. | @alexch3706 | Profile a large backup; batch outer loops if >5s |
 | GAP-6.7-5 | Armor Coverage Morphing in `prepareData()` | `_prepareArmorData` mutates coverage inside `prepareData()` — gated by threshold, unlikely to trigger. | @alexch3706 | Epic 6 post-MVP: Move to explicit event handler |
-| GAP-6.7-6 | Foundry v12 Maximum Compatibility | Manifest declares `maximum: 12` but `verified: 11`. v12 behavior not fully tested. | @alexch3706 | Verify on Foundry v12 before full release |
+| GAP-6.7-6 | Foundry v13 Maximum Compatibility | Manifest declares `maximum: 13` but `verified: 12`. v13 behavior is not fully tested. | @alexch3706 | Verify on Foundry v13 before marking it verified |
 | GAP-6.7-7 | Exotic Weapon Guard | Exotic weapon types that do not match the resolver classification are flagged manual, but specific exotic types (bows, thrown) lack dedicated manual check steps. | @alexch3706 | Add exotic-type manual checks in follow-up |
 | GAP-6.7-8 | Legacy Fallback Ammo Updates | DEFERRED-6.4-2: Ammo mutations in legacy fallback path lack await/state planner | @alexch3706 | Post-MVP: Remove legacy path |
 

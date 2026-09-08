@@ -1,22 +1,25 @@
 {{#*inline "itemListing"}}
-  <div class="field gear item-edit rc-item-delete" data-item-id="{{id}}">
-            <div class="field-image roll fire-weapon action" style="background-image: url({{img}})" data-item-id="{{id}}"></div>
+  <div class="field gear rc-item-delete" data-item-id="{{id}}">
+            {{#if (equals type "weapon")}}<button type="button" class="field-image roll fire-weapon action" style="background-image: url({{img}})" data-item-id="{{id}}" title="{{CPLocal "Attack"}}" aria-label="{{CPLocal 'Attack'}}: {{name}}"{{#unless @root.editable}} disabled aria-disabled="true"{{/unless}}></button>{{else}}<div class="field-image" style="background-image: url({{img}})" data-item-id="{{id}}"></div>{{/if}}
             <label>{{name}}</label>
             <span class="flex-pad"></span>
             <span>
                 <p class="inactive">{{type}}</p>
             </span>
+            <button type="button" class="gear-edit item-edit action" data-item-id="{{id}}" title="{{CPLocal 'EditItem'}}" aria-label="{{CPLocal 'EditItem'}}: {{name}}"{{#unless @root.editable}} disabled aria-disabled="true"{{/unless}}>
+                <i class="fas fa-edit" aria-hidden="true"></i>
+            </button>
         </div>
 {{/inline}}
 
 <div class="field-list no-wrap">
     <div class="field">
-        <label for="system.eurobucks">{{CPLocal "Eurobucks"}}</label>
-        <input name="system.eurobucks" type="number" value="{{system.eurobucks}}">
+        <label for="{{@root.actor.id}}-system.eurobucks">{{CPLocal "Eurobucks"}}</label>
+        <input id="{{@root.actor.id}}-system.eurobucks" name="system.eurobucks" type="number" value="{{system.eurobucks}}">
     </div>
     <div class="field">
-        <label for="system.carryWeight">{{CPLocal "Weight"}}</label>
-        <input class="not-editable" name="system.carryWeight" type="number" value="{{system.carryWeight}}" readonly>
+        <label for="{{@root.actor.id}}-system.carryWeight">{{CPLocal "Weight"}}</label>
+        <input id="{{@root.actor.id}}-system.carryWeight" class="not-editable" name="system.carryWeight" type="number" value="{{system.carryWeight}}" readonly>
     </div>
 </div>
 

@@ -1,6 +1,6 @@
 # Data Models and Assets
 
-Last updated: 2026-05-24
+Last updated: 2026-09-05
 
 ## Foundry System Template
 
@@ -89,38 +89,51 @@ The current code mutates `system` during preparation for derived data. Refactors
 
 ## Compendium Pack Inventory
 
-| Pack | Manifest Name | Type Count |
+The 28 packs declared by `system.json` are LevelDB directories:
+
+| Pack Path | Manifest Name | Document Type |
 | --- | --- | --- |
-| `packs/default-skills.db` | `default-skills` | 90 skills |
-| `packs/role-skills.db` | `role-skills` | 10 skills |
-| `packs/pistols.db` | `pistols` | 338 weapons |
-| `packs/rifles.db` | `rifles` | 397 weapons |
-| `packs/smgs.db` | `smgs` | 8 weapons |
-| `packs/armor.db` | `armor` | 16 armor items |
-| `packs/cyberware.db` | `cyberware` | 481 cyberware items |
-| `packs/chipware.db` | `chipware` | 203 cyberware items |
-| `packs/vehicles.db` | `vehicles` | 16 vehicle items |
-| `packs/communication.db` | `communication` | 10 misc items |
-| `packs/electronics.db` | `electronics` | 17 misc items |
-| `packs/entertainment.db` | `entertainment` | 12 misc items |
-| `packs/fashion.db` | `fashion` | 32 misc items |
-| `packs/furnishing.db` | `furnishing` | 10 misc items |
-| `packs/medical.db` | `medical` | 10 misc items |
-| `packs/netrunningEquipment.db` | `netrunningEquipment` | 15 misc items |
-| `packs/rentalandservices.db` | `rentalandservices` | 40 misc items |
-| `packs/security.db` | `security` | 26 misc items |
-| `packs/sellTheDead.db` | `sellthedead` | 27 misc items |
-| `packs/surveillance.db` | `surveillance` | 5 misc items |
-| `packs/tools.db` | `tools` | 13 misc items |
-| `packs/roll-tables.db` | `roll-tables` | 1 roll-table-like document |
+| `packs/roll-tables` | `roll-tables` | `RollTable` |
+| `packs/default-skills` | `default-skills` | `Item` |
+| `packs/role-skills` | `role-skills` | `Item` |
+| `packs/pistols` | `pistols` | `Item` |
+| `packs/rifles` | `rifles` | `Item` |
+| `packs/cyberware` | `cyberware` | `Item` |
+| `packs/chipware` | `chipware` | `Item` |
+| `packs/communication` | `communication` | `Item` |
+| `packs/electronics` | `electronics` | `Item` |
+| `packs/entertainment` | `entertainment` | `Item` |
+| `packs/fashion` | `fashion` | `Item` |
+| `packs/furnishing` | `furnishing` | `Item` |
+| `packs/medical` | `medical` | `Item` |
+| `packs/netrunningEquipment` | `netrunningEquipment` | `Item` |
+| `packs/security` | `security` | `Item` |
+| `packs/surveillance` | `surveillance` | `Item` |
+| `packs/tools` | `tools` | `Item` |
+| `packs/rentalandservices` | `rentalandservices` | `Item` |
+| `packs/sellTheDead` | `sellthedead` | `Item` |
+| `packs/armor` | `armor` | `Item` |
+| `packs/vehicles` | `vehicles` | `Item` |
+| `packs/melee` | `melee` | `Item` |
+| `packs/smgs` | `smgs` | `Item` |
+| `packs/shotguns` | `shotguns` | `Item` |
+| `packs/heavyWeapons` | `heavyWeapons` | `Item` |
+| `packs/bows` | `bows` | `Item` |
+| `packs/exotics` | `exotics` | `Item` |
+| `packs/weapons_other` | `weapons_other` | `Item` |
+
+The tracked `packs/ammo`, `packs/gear`, and `packs/netware` directories are not
+declared in `system.json`, so Foundry does not expose them. Treat them as orphaned
+assets until their contents are reviewed and either declared or removed in a
+separate compendium-content change.
 
 ## Localization Data
 
 Declared languages:
 
-- `en`, 352 keys
-- `es`, 348 keys
-- `it`, 387 keys
+- `en`, 442 keys
+- `es`, 434 keys
+- `it`, 473 keys
 
 Most application strings use the `CYBERPUNK.` namespace. Settings use `SETTINGS.*` keys.
 

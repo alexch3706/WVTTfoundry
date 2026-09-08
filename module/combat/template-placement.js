@@ -1,5 +1,17 @@
 import { buildActorCombatSnapshot } from "./combat-snapshot.js";
 
+export const AOE_TEMPLATE_CHOICE = Object.freeze({
+  template: "template",
+  normal: "normal",
+  canceled: "canceled"
+});
+
+export const SUPPRESSIVE_TEMPLATE_CHOICE = Object.freeze({
+  template: "template",
+  normal: "normal",
+  canceled: "canceled"
+});
+
 export async function promptUseAoETemplate(item) {
   const aoeType = item?.system?.aoe?.type;
   const name = aoeType ? `${aoeType} Template` : "Cone Template";
@@ -11,15 +23,19 @@ export async function promptUseAoETemplate(item) {
       buttons: {
         template: {
           label: `Draw ${name}`,
-          callback: () => resolve(true)
+          callback: () => resolve(AOE_TEMPLATE_CHOICE.template)
         },
         normal: {
-          label: "Skip / Normal Roll",
-          callback: () => resolve(false)
+          label: "Normal Roll",
+          callback: () => resolve(AOE_TEMPLATE_CHOICE.normal)
+        },
+        cancel: {
+          label: "Cancel Attack",
+          callback: () => resolve(AOE_TEMPLATE_CHOICE.canceled)
         }
       },
       default: "template",
-      close: () => resolve(false)
+      close: () => resolve(AOE_TEMPLATE_CHOICE.canceled)
     }).render(true);
   });
 }
@@ -74,6 +90,13 @@ export async function drawAutoshotgunPatternsAndGetTargets(item, attackerToken, 
   for(let index = 0; index < count; index++) {
     const shellIndex = index + 1;
     const placement = await drawPattern(item, attackerToken, shellIndex);
+    if(placement?.canceled === true) {
+      return {
+        patterns,
+        canceled: true,
+        canceledShellIndex: shellIndex
+      };
+    }
     const affectedTargets = Array.isArray(placement)
       ? placement
       : placement?.affectedTargets || [];
@@ -304,61 +327,48 @@ function shotgunTargetKey(target = {}) {
 }
 
 export async function drawAoETemplateAndGetTargets(item, attackerToken) {
-  return new Promise(async (resolve) => {
-    if (!globalThis.canvas?.ready) {
-      ui.notifications?.warn("Canvas is not ready. Cannot place template.");
-      return resolve([]);
-    }
+  return new Promise((resolve) => {
+    let template;
+    let interactionFinished = false;
+    let settled = false;
 
-    // Handle both Token Document and Token placeable
-    const origin = attackerToken?.center || attackerToken?.object?.center || attackerToken?.bounds?.center;
-    if (!origin) {
-      ui.notifications?.warn("Attacker token origin not found.");
-      return resolve([]);
-    }
-
-    const gridDistance = canvas.scene.grid.distance;
-
-    const aoeType = item?.system?.aoe?.type || "cone";
-    const aoeDistance = Number(item?.system?.aoe?.value) || 10;
-
-    const templateData = {
-      t: aoeType,
-      user: game.user.id,
-      distance: aoeDistance,
-      direction: 0,
-      x: origin.x,
-      y: origin.y,
-      fillColor: game.user.color || "#ff0000"
+    const finish = (result) => {
+      if(settled) return;
+      settled = true;
+      resolve(result);
     };
-
-    if (aoeType === "cone") {
-      templateData.angle = 45;
-    }
-
-    const doc = new CONFIG.MeasuredTemplate.documentClass(templateData, { parent: canvas.scene });
-    let template = new CONFIG.MeasuredTemplate.objectClass(doc);
-    
-    // Draw preview manually to avoid missing API
-    await template.draw();
-    if (template.layer?.preview) {
-      template.layer.preview.addChild(template);
-    } else if (canvas.templates?.preview) {
-      canvas.templates.preview.addChild(template);
-    }
-
-    let isResolved = false;
 
     const cleanup = () => {
-      isResolved = true;
-      if (template.parent) template.parent.removeChild(template);
-      template.destroy();
-      canvas.stage.off("pointermove", onMove);
-      canvas.stage.off("pointerdown", onConfirm);
-      canvas.app.view.removeEventListener("contextmenu", onCancel, { capture: true });
+      if(interactionFinished) return;
+      interactionFinished = true;
+      try {
+        if(template?.parent) template.parent.removeChild(template);
+      } catch(error) {
+        console.warn("Failed to remove AoE template preview:", error);
+      }
+      try {
+        template?.destroy?.();
+      } catch(error) {
+        console.warn("Failed to destroy AoE template preview:", error);
+      }
+      globalThis.canvas?.stage?.off?.("pointermove", onMove);
+      globalThis.canvas?.stage?.off?.("pointerdown", onConfirm);
+      globalThis.canvas?.app?.view?.removeEventListener?.("contextmenu", onCancel, { capture: true });
     };
 
+    const failPlacement = (error, message = "Template placement failed. Attack canceled; please try again.") => {
+      if(error) console.error("AoE template placement failed:", error);
+      cleanup();
+      ui.notifications?.warn(message);
+      finish({ affectedTargets: [], canceled: true });
+    };
+
+    let origin;
+    let gridDistance;
+    let aoeType;
+
     const onMove = (event) => {
+      if(interactionFinished) return;
       event.stopPropagation();
       const pos = event.data.getLocalPosition(canvas.tokens);
       const ray = new Ray(origin, pos);
@@ -367,87 +377,140 @@ export async function drawAoETemplateAndGetTargets(item, attackerToken) {
     };
 
     const onCancel = (event) => {
+      if(interactionFinished) return;
       event.preventDefault();
       event.stopPropagation();
       cleanup();
-      resolve([]);
+      finish({ affectedTargets: [], canceled: true });
     };
 
     const onConfirm = async (event) => {
+      if(interactionFinished) return;
       event.stopPropagation();
-      cleanup();
-      
-      const createdDocs = await canvas.scene.createEmbeddedDocuments("MeasuredTemplate", [template.document.toObject()]);
-      if (!createdDocs || createdDocs.length === 0) return resolve([]);
-      
-      const createdDoc = createdDocs[0];
-      const hazardZone = buildAoEHazardZone({
-        templateUuid: createdDoc.uuid,
-        templateId: createdDoc.id,
-        type: aoeType,
-        origin: { x: createdDoc.x, y: createdDoc.y },
-        direction: createdDoc.direction,
-        angle: createdDoc.angle,
-        width: createdDoc.distance,
-        distance: createdDoc.distance,
-        inclusion: "intersected"
-      }, 0);
-      
-      // Wait for object to be instantiated
-      setTimeout(async () => {
-        const templateObj = createdDoc.object;
-        if (!templateObj) {
-          await deleteTransientTemplateDocument(createdDoc);
-          return resolve({ affectedTargets: [], hazardZone });
+      let createdDoc;
+      try {
+        const templateDocumentData = template.document.toObject();
+        cleanup();
+
+        const createdDocs = await canvas.scene.createEmbeddedDocuments("MeasuredTemplate", [templateDocumentData]);
+        if (!createdDocs || createdDocs.length === 0) {
+          return failPlacement(undefined);
         }
 
-        const tokens = canvas.tokens.placeables.filter(t => {
-          // Exclude the attacker from directional AoEs like cones and rays, as they emanate outward.
-          // Circular/rectangular templates like grenades can legitimately hit the attacker if dropped nearby.
-          if ((aoeType === "cone" || aoeType === "ray") && t.id === attackerToken.id) {
-            return false;
+        createdDoc = createdDocs[0];
+        const hazardZone = buildAoEHazardZone({
+          templateUuid: createdDoc.uuid,
+          templateId: createdDoc.id,
+          type: aoeType,
+          origin: { x: createdDoc.x, y: createdDoc.y },
+          direction: createdDoc.direction,
+          angle: createdDoc.angle,
+          width: createdDoc.distance,
+          distance: createdDoc.distance,
+          inclusion: "intersected"
+        }, 0);
+
+        // Wait for the placeable object to be instantiated before hit testing.
+        setTimeout(async () => {
+          try {
+            const templateObj = createdDoc.object;
+            if (!templateObj) {
+              await deleteTransientTemplateDocument(createdDoc);
+              return failPlacement(undefined, "Placed template could not be read. Attack canceled; please try again.");
+            }
+
+            const tokens = canvas.tokens.placeables.filter(t => {
+              // Exclude the attacker from directional AoEs like cones and rays, as they emanate outward.
+              // Circular/rectangular templates like grenades can legitimately hit the attacker if dropped nearby.
+              if ((aoeType === "cone" || aoeType === "ray") && t.id === attackerToken.id) {
+                return false;
+              }
+
+              const tCenter = t.center || { x: t.x + (t.w/2), y: t.y + (t.h/2) };
+              return templateObj.shape.contains(tCenter.x - templateObj.document.x, tCenter.y - templateObj.document.y);
+            });
+
+            const augmentedTokens = tokens.map(t => {
+              const tCenter = t.center || { x: t.x + (t.w/2), y: t.y + (t.h/2) };
+              const ray = new Ray(origin, tCenter);
+              const distancePx = ray.distance;
+              const distanceMeters = (distancePx / canvas.grid.size) * gridDistance;
+
+              t.tactical = t.tactical || {};
+              t.tactical.template = {
+                templateUuid: createdDoc.uuid,
+                templateId: createdDoc.id,
+                type: aoeType,
+                origin: { x: createdDoc.x, y: createdDoc.y },
+                direction: createdDoc.direction,
+                angle: createdDoc.angle,
+                width: createdDoc.distance,
+                distance: createdDoc.distance,
+                targetDistance: distanceMeters,
+                inclusion: "intersected"
+              };
+              return t;
+            });
+
+            await deleteTransientTemplateDocument(createdDoc);
+            finish({
+              affectedTargets: augmentedTokens,
+              hazardZone: {
+                ...hazardZone,
+                affectedTokenCount: augmentedTokens.length
+              }
+            });
+          } catch(error) {
+            await deleteTransientTemplateDocument(createdDoc);
+            failPlacement(error);
           }
-
-          const tCenter = t.center || { x: t.x + (t.w/2), y: t.y + (t.h/2) };
-          return templateObj.shape.contains(tCenter.x - templateObj.document.x, tCenter.y - templateObj.document.y);
-        });
-        
-        const augmentedTokens = tokens.map(t => {
-          const tCenter = t.center || { x: t.x + (t.w/2), y: t.y + (t.h/2) };
-          const ray = new Ray(origin, tCenter);
-          const distancePx = ray.distance;
-          const distanceMeters = (distancePx / canvas.grid.size) * gridDistance;
-
-          t.tactical = t.tactical || {};
-          t.tactical.template = {
-            templateUuid: createdDoc.uuid,
-            templateId: createdDoc.id,
-            type: aoeType,
-            origin: { x: createdDoc.x, y: createdDoc.y },
-            direction: createdDoc.direction,
-            angle: createdDoc.angle,
-            width: createdDoc.distance,
-            distance: createdDoc.distance,
-            targetDistance: distanceMeters,
-            inclusion: "intersected"
-          };
-          return t;
-        });
-
-        await deleteTransientTemplateDocument(createdDoc);
-        resolve({
-          affectedTargets: augmentedTokens,
-          hazardZone: {
-            ...hazardZone,
-            affectedTokenCount: augmentedTokens.length
-          }
-        });
-      }, 100);
+        }, 100);
+      } catch(error) {
+        if(createdDoc) await deleteTransientTemplateDocument(createdDoc);
+        failPlacement(error);
+      }
     };
 
-    canvas.stage.on("pointermove", onMove);
-    canvas.stage.on("pointerdown", onConfirm);
-    canvas.app.view.addEventListener("contextmenu", onCancel, { capture: true, once: true });
+    const initialize = async () => {
+      if (!globalThis.canvas?.ready) {
+        return failPlacement(undefined, "Canvas is not ready. Attack canceled; cannot place template.");
+      }
+
+      // Handle both Token Document and Token placeable.
+      origin = attackerToken?.center || attackerToken?.object?.center || attackerToken?.bounds?.center;
+      if (!origin) {
+        return failPlacement(undefined, "Attacker token origin not found. Attack canceled.");
+      }
+
+      gridDistance = canvas.scene.grid.distance;
+      aoeType = item?.system?.aoe?.type || "cone";
+      const aoeDistance = Number(item?.system?.aoe?.value) || 10;
+      const templateData = {
+        t: aoeType,
+        user: game.user.id,
+        distance: aoeDistance,
+        direction: 0,
+        x: origin.x,
+        y: origin.y,
+        fillColor: game.user.color || "#ff0000"
+      };
+      if (aoeType === "cone") templateData.angle = 45;
+
+      const doc = new CONFIG.MeasuredTemplate.documentClass(templateData, { parent: canvas.scene });
+      template = new CONFIG.MeasuredTemplate.objectClass(doc);
+      await template.draw();
+      if (template.layer?.preview) {
+        template.layer.preview.addChild(template);
+      } else if (canvas.templates?.preview) {
+        canvas.templates.preview.addChild(template);
+      }
+
+      canvas.stage.on("pointermove", onMove);
+      canvas.stage.on("pointerdown", onConfirm);
+      canvas.app.view.addEventListener("contextmenu", onCancel, { capture: true, once: true });
+    };
+
+    initialize().catch(error => failPlacement(error));
   });
 }
 
@@ -463,12 +526,13 @@ async function deleteTransientTemplateDocument(templateDocument) {
 }
 
 export async function promptUseSuppressiveFireTemplate(weapon, maxRounds) {
+  const boundedMaxRounds = Math.max(1, Math.floor(Number(maxRounds) || 1));
   return new Promise((resolve) => {
     let content = `
       <form>
         <div class="form-group">
-          <label>Rounds Fired (Max ${maxRounds}):</label>
-          <input type="number" id="suppressiveRounds" value="${maxRounds}" min="1" max="${maxRounds}" />
+          <label>Rounds Fired (Max ${boundedMaxRounds}):</label>
+          <input type="number" id="suppressiveRounds" value="${boundedMaxRounds}" min="1" max="${boundedMaxRounds}" />
         </div>
         <div class="form-group">
           <label>Zone Width (meters):</label>
@@ -484,113 +548,146 @@ export async function promptUseSuppressiveFireTemplate(weapon, maxRounds) {
         template: {
           label: "Draw Corridor Template",
           callback: (html) => {
-            const roundsFired = parseInt(html.find('#suppressiveRounds').val(), 10) || maxRounds;
-            const zoneWidth = parseInt(html.find('#suppressiveWidth').val(), 10) || 2;
-            resolve({ roundsFired, zoneWidth });
+            const requestedRounds = Number.parseInt(html.find('#suppressiveRounds').val(), 10);
+            const requestedWidth = Number.parseFloat(html.find('#suppressiveWidth').val());
+            const roundsFired = Math.max(1, Math.min(
+              boundedMaxRounds,
+              Number.isFinite(requestedRounds) ? requestedRounds : boundedMaxRounds
+            ));
+            const zoneWidth = Math.max(1, Number.isFinite(requestedWidth) ? requestedWidth : 2);
+            resolve({ choice: SUPPRESSIVE_TEMPLATE_CHOICE.template, roundsFired, zoneWidth });
           }
         },
+        normal: {
+          label: "Normal Attack",
+          callback: () => resolve({ choice: SUPPRESSIVE_TEMPLATE_CHOICE.normal })
+        },
         cancel: {
-          label: "Cancel",
-          callback: () => resolve(null)
+          label: "Cancel Attack",
+          callback: () => resolve({ choice: SUPPRESSIVE_TEMPLATE_CHOICE.canceled })
         }
       },
       default: "template",
-      close: () => resolve(null)
+      close: () => resolve({ choice: SUPPRESSIVE_TEMPLATE_CHOICE.canceled })
     }).render(true);
   });
 }
 
 export async function placePersistentSuppressiveFireTemplate(attackerToken, weaponItem, bulletsFired, zoneWidth, maxDistance) {
-  return new Promise(async (resolve) => {
-    if (!globalThis.canvas?.ready) {
-      ui.notifications?.warn("Canvas is not ready. Cannot place template.");
-      return resolve(false);
-    }
+  return new Promise((resolve) => {
+    let template;
+    let interactionFinished = false;
+    let settled = false;
 
-    const origin = attackerToken?.center || attackerToken?.object?.center || attackerToken?.bounds?.center;
-    if (!origin) {
-      ui.notifications?.warn("Attacker token origin not found.");
-      return resolve(false);
-    }
-
-    const gridDistance = canvas.scene.grid.distance;
-
-    // Use the builder from suppressive-fire-tracker
-    const { buildSuppressiveFireTemplateData } = await import("./suppressive-fire-tracker.js");
-    
-    let damageFormula = weaponItem.system?.damage || "1d6";
-    // Usually suppressive fire deals 1D6 hits per failed save, and the damage of the weapon is per hit.
-    // The tracker will handle rolling hits vs weapon damage.
-
-    const templateData = buildSuppressiveFireTemplateData({
-        attackerTokenId: attackerToken.id,
-        attackerActorId: attackerToken.actor?.id,
-        weaponItemId: weaponItem.id,
-        damageFormula: damageFormula,
-        bulletsFired: bulletsFired,
-        zoneWidth: zoneWidth,
-        maxDistance: maxDistance,
-        origin: origin,
-        combatRound: game.combat?.round || 0,
-        combatTurn: game.combat?.turn || 0,
-        combatId: game.combat?.id || ""
-    });
-
-    // Add UI fields
-    templateData.user = game.user.id;
-    templateData.direction = 0;
-    templateData.fillColor = game.user.color || "#ff0000";
-
-    const doc = new CONFIG.MeasuredTemplate.documentClass(templateData, { parent: canvas.scene });
-    let template = new CONFIG.MeasuredTemplate.objectClass(doc);
-    
-    await template.draw();
-    if (template.layer?.preview) {
-      template.layer.preview.addChild(template);
-    } else if (canvas.templates?.preview) {
-      canvas.templates.preview.addChild(template);
-    }
-
-    let isResolved = false;
-
-    const cleanup = () => {
-      isResolved = true;
-      if (template.parent) template.parent.removeChild(template);
-      template.destroy();
-      canvas.stage.off("pointermove", onMove);
-      canvas.stage.off("pointerdown", onConfirm);
-      canvas.app.view.removeEventListener("contextmenu", onCancel, { capture: true });
+    const finish = (placed) => {
+      if(settled) return;
+      settled = true;
+      resolve(placed);
     };
 
+    const cleanup = () => {
+      if(interactionFinished) return;
+      interactionFinished = true;
+      try {
+        if(template?.parent) template.parent.removeChild(template);
+      } catch(error) {
+        console.warn("Failed to remove suppressive-fire preview:", error);
+      }
+      try {
+        template?.destroy?.();
+      } catch(error) {
+        console.warn("Failed to destroy suppressive-fire preview:", error);
+      }
+      globalThis.canvas?.stage?.off?.("pointermove", onMove);
+      globalThis.canvas?.stage?.off?.("pointerdown", onConfirm);
+      globalThis.canvas?.app?.view?.removeEventListener?.("contextmenu", onCancel, { capture: true });
+    };
+
+    const failPlacement = (error, message = "Suppressive-fire template placement failed. Attack canceled; please try again.") => {
+      if(error) console.error("Suppressive-fire template placement failed:", error);
+      cleanup();
+      ui.notifications?.warn(message);
+      finish(false);
+    };
+
+    let origin;
+
     const onMove = (event) => {
+      if(interactionFinished) return;
       event.stopPropagation();
       const pos = event.data.getLocalPosition(canvas.tokens);
       const ray = new Ray(origin, pos);
-      template.document.updateSource({ 
+      template.document.updateSource({
         direction: Math.normalizeDegrees(Math.toDegrees(ray.angle))
       });
       template.refresh();
     };
 
     const onCancel = (event) => {
+      if(interactionFinished) return;
       event.preventDefault();
       event.stopPropagation();
       cleanup();
-      resolve(false);
+      finish(false);
     };
 
     const onConfirm = async (event) => {
+      if(interactionFinished) return;
       event.stopPropagation();
-      cleanup();
-      
-      const createdDocs = await canvas.scene.createEmbeddedDocuments("MeasuredTemplate", [template.document.toObject()]);
-      if (!createdDocs || createdDocs.length === 0) return resolve(false);
-      
-      resolve(true);
+      try {
+        const templateDocumentData = template.document.toObject();
+        cleanup();
+        const createdDocs = await canvas.scene.createEmbeddedDocuments("MeasuredTemplate", [templateDocumentData]);
+        finish(Array.isArray(createdDocs) && createdDocs.length > 0);
+      } catch(error) {
+        failPlacement(error);
+      }
     };
 
-    canvas.stage.on("pointermove", onMove);
-    canvas.stage.on("pointerdown", onConfirm);
-    canvas.app.view.addEventListener("contextmenu", onCancel, { capture: true, once: true });
+    const initialize = async () => {
+      if (!globalThis.canvas?.ready) {
+        return failPlacement(undefined, "Canvas is not ready. Attack canceled; cannot place template.");
+      }
+
+      origin = attackerToken?.center || attackerToken?.object?.center || attackerToken?.bounds?.center;
+      if (!origin) {
+        return failPlacement(undefined, "Attacker token origin not found. Attack canceled.");
+      }
+
+      // Use the builder from suppressive-fire-tracker.
+      const { buildSuppressiveFireTemplateData } = await import("./suppressive-fire-tracker.js");
+      const damageFormula = weaponItem.system?.damage || "1d6";
+      const templateData = buildSuppressiveFireTemplateData({
+        attackerTokenId: attackerToken.id,
+        attackerActorId: attackerToken.actor?.id,
+        weaponItemId: weaponItem.id,
+        damageFormula,
+        bulletsFired,
+        zoneWidth,
+        maxDistance,
+        origin,
+        combatRound: game.combat?.round || 0,
+        combatTurn: game.combat?.turn || 0,
+        combatId: game.combat?.id || ""
+      });
+      templateData.user = game.user.id;
+      templateData.direction = 0;
+      templateData.fillColor = game.user.color || "#ff0000";
+
+      const doc = new CONFIG.MeasuredTemplate.documentClass(templateData, { parent: canvas.scene });
+      template = new CONFIG.MeasuredTemplate.objectClass(doc);
+      await template.draw();
+      if (template.layer?.preview) {
+        template.layer.preview.addChild(template);
+      } else if (canvas.templates?.preview) {
+        canvas.templates.preview.addChild(template);
+      }
+
+      canvas.stage.on("pointermove", onMove);
+      canvas.stage.on("pointerdown", onConfirm);
+      canvas.app.view.addEventListener("contextmenu", onCancel, { capture: true, once: true });
+    };
+
+    initialize().catch(error => failPlacement(error));
   });
 }

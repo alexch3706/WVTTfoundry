@@ -10,20 +10,20 @@
         </div>
 
         <div class="field">
-            <label class="larger" for="system.sdp.value" title="{{CPLocal "SDPFull"}}">{{CPLocal "SDP"}}</label>
+            <label class="larger" for="{{@root.item.id}}-system.sdp.value" title="{{CPLocal "SDPFull"}}">{{CPLocal "SDP"}}</label>
             <span class="flexrow flex-pad">
-                <input type="number" name="system.sdp.value" value="{{value}}"> 
+                <input id="{{@root.item.id}}-system.sdp.value" type="number" name="system.sdp.value" value="{{value}}">
                 <span class="nogrow">/</span>
-                <input type="number" name="system.sdp.max" value="{{max}}">
+                <input id="{{@root.item.id}}-system.sdp.max" type="number" name="system.sdp.max" value="{{max}}" aria-label="{{CPLocal 'SDP'}} max">
             </span>
         </div>
+    </div>
     {{/with}}
 
     <div class="field">
-        <label for="system.sp" title="{{CPLocal "SPFull"}}">{{CPLocal "SP"}}</label>
+        <label for="{{@root.item.id}}-system.sp" title="{{CPLocal "SPFull"}}">{{CPLocal "SP"}}</label>
         <span class="flex-pad"></span>
-        <input type="number" class="number nogrow" name="system.sp" value="{{system.sp}}">
-        </span>
+        <input id="{{@root.item.id}}-system.sp" type="number" class="number nogrow" name="system.sp" value="{{system.sp}}">
     </div>
 </div>
 <div class="field-list">
@@ -39,18 +39,18 @@
     </div>
     <div class="field">
         {{!-- Make larger to indicate a kind of heading almost --}}
-        <label class="larger" for="system.speed.value">{{CPLocal "Speed"}}</label>
+        <label class="larger" for="{{@root.item.id}}-system.speed.value">{{CPLocal "Speed"}}</label>
         <span class="flexrow flex-pad">
-            <input type="number" name="system.speed.value" value="{{value}}"> 
+            <input id="{{@root.item.id}}-system.speed.value" type="number" name="system.speed.value" value="{{value}}">
             <span class="nogrow">/</span>
-            <input type="number" name="system.speed.max" value="{{max}}">
+            <input id="{{@root.item.id}}-system.speed.max" type="number" name="system.speed.max" value="{{max}}" aria-label="{{CPLocal 'Speed'}} max">
             <span class="nogrow">mph</span>
         </span>
     </div>
      <div class="field">
-        <label for="system.speed.value">{{CPLocal "Accel"}}</label>
+        <label for="{{@root.item.id}}-system.speed.acceleration">{{CPLocal "Accel"}}</label>
         <span class="flexrow flex-pad">
-            <input type="number" name="system.speed.acceleration" value="{{acceleration}}"> 
+            <input id="{{@root.item.id}}-system.speed.acceleration" type="number" name="system.speed.acceleration" value="{{acceleration}}">
             <span class="nogrow">{{CPLocal "MPH"}}</span>
         </span>
     </div>
@@ -62,9 +62,9 @@
     </div>
    <div class="field">
        {{!-- This should I guess be maneuver? But safe works a lot better meaningwise --}}
-        <label for="system.speed.value">{{CPLocal "Safe"}}</label>
+        <label for="{{@root.item.id}}-system.speed.maneuver">{{CPLocal "Safe"}}</label>
         <span class="flexrow flex-pad">
-            <input type="number" name="system.speed.maneuver" value="{{maneuver}}"> 
+            <input id="{{@root.item.id}}-system.speed.maneuver" type="number" name="system.speed.maneuver" value="{{maneuver}}">
             <span class="nogrow">{{CPLocal "MPH"}}</span>
         </span>
     </div>
@@ -83,27 +83,27 @@
         </div>
     </div>
     <div class="field">
-        <label class="larger" for="system.speed.value">{{CPLocal "Fuel"}}</label>
+        <label class="larger" for="{{@root.item.id}}-system.fuel.value">{{CPLocal "Fuel"}}</label>
         <span class="flexrow flex-pad">
-            <input type="number" name="system.fuel.value" value="{{value}}"> 
+            <input id="{{@root.item.id}}-system.fuel.value" type="number" name="system.fuel.value" value="{{value}}">
             <span class="nogrow">/</span>
-            <input type="number" name="system.fuel.max" value="{{max}}">
+            <input id="{{@root.item.id}}-system.fuel.max" type="number" name="system.fuel.max" value="{{max}}" aria-label="{{CPLocal 'Fuel'}} max">
             <span class="nogrow">{{CPLocal "Gallon"}}</span>
         </span>
     </div>
     {{!-- TODO: This should probably use selectable --}}
      <div class="field">
-        <label for="system.speed.value">{{CPLocal "Type"}}</label>
+        <label for="{{@root.item.id}}-system.fuel.type">{{CPLocal "Type"}}</label>
         <span class="flexrow flex-pad">
-            <input type="text" name="system.fuel.type" value="{{type}}"> 
+            <input id="{{@root.item.id}}-system.fuel.type" type="text" name="system.fuel.type" value="{{type}}">
         </span>
     </div>
     {{!-- There's a reason I don't use meter here - it's evil to style, and IE doesn't support it. If anyone playing this is using IE, they're already in the dystopia --}}
 
    <div class="field">
-        <label for="system.fuel.efficiency">{{CPLocal "Efficiency"}}</label>
+        <label for="{{@root.item.id}}-system.fuel.efficiency">{{CPLocal "Efficiency"}}</label>
         <span class="flexrow flex-pad">
-            <input type="number" name="system.fuel.efficiency" value="{{efficiency}}"> 
+            <input id="{{@root.item.id}}-system.fuel.efficiency" type="number" name="system.fuel.efficiency" value="{{efficiency}}">
             <span class="nogrow">{{CPLocal "MPG"}}</span>
         </span>
     </div>
@@ -113,15 +113,15 @@
 {{!-- Miscellaneous vehicle-only other --}}
 <div class="field-list">
     <div class="field">
-        <label for="system.passengers">{{CPLocal "Passengers"}}</label>
+        <label for="{{@root.item.id}}-system.passengers">{{CPLocal "Passengers"}}</label>
         <span class="flexrow flex-pad">
-            <input type="number" name="system.passengers" value="{{system.passengers}}"> 
+            <input id="{{@root.item.id}}-system.passengers" type="number" name="system.passengers" value="{{system.passengers}}">
         </span>
     </div>
     <div class="field">
-        <label for="system.maneuverability.value">{{CPLocal "ManeuverabilityFull"}}</label>
+        <label for="{{@root.item.id}}-system.maneuverability.value">{{CPLocal "ManeuverabilityFull"}}</label>
         <span class="flexrow flex-pad">
-            <input type="number" name="system.maneuverability.value" value="{{system.maneuverability.value}}"> 
+            <input id="{{@root.item.id}}-system.maneuverability.value" type="number" name="system.maneuverability.value" value="{{system.maneuverability.value}}">
         </span>
     </div>
 </div>

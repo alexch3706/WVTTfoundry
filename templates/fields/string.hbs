@@ -1,6 +1,7 @@
 <div class="field">
-    <label for="{{edit}}">{{CPLocal label}}</label>
+    <label for="{{#if @root.actor}}{{@root.actor.id}}-{{/if}}{{#if @root.item}}{{@root.item.id}}-{{/if}}{{edit}}">{{CPLocal label}}</label>
     <span class="flex-pad"></span>
-    <input {{#if readOnly}}readonly{{/if}} class="textsize" name="{{edit}}" 
+    <input {{#if readOnly}}readonly{{/if}} class="textsize"
+        id="{{#if @root.actor}}{{@root.actor.id}}-{{/if}}{{#if @root.item}}{{@root.item.id}}-{{/if}}{{edit}}" name="{{edit}}"
         type="text" value="{{deepLookup . edit}}"/>
 </div>

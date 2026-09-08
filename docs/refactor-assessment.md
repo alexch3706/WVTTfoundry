@@ -1,6 +1,6 @@
 # Refactor Assessment
 
-Last updated: 2026-05-24
+Last updated: 2026-09-05
 
 ## Purpose
 
@@ -89,7 +89,7 @@ Recommended refactor depth:
 
 Current state:
 
-- Manifest declares maximum 12, verified 11.
+- Manifest declares maximum 13, verified 12.
 - `getStatNames()` contains a v11/v12 branching attempt.
 - The rest of the code is still classic Foundry sheet/document style.
 

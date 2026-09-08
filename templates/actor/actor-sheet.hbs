@@ -2,7 +2,7 @@
     <!-- LEFT PANE -->
     <aside class="pane-left">
         <div class="portrait-wrapper">
-            <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+            <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" alt="{{actor.name}}"/>
         </div>
         
         <div class="biometrics">
@@ -40,11 +40,11 @@
         {{> "systems/cyberpunk2020-rilerena/templates/actor/parts/woundtracker.hbs"}}
 
         <nav class="system-nav sheet-tabs tabs" data-group="primary">
-            <a class="nav-cmd item" data-tab="skills">&gt; cd /sys/skills</a>
-            <a class="nav-cmd item" data-tab="combat">&gt; cd /sys/combat</a>
-            <a class="nav-cmd item" data-tab="gear">&gt; cd /sys/gear</a>
-            <a class="nav-cmd item" data-tab="cyber">&gt; cd /sys/cyberware</a>
-            <a class="nav-cmd item" data-tab="life">&gt; cd /sys/life_log</a>
+            <button type="button" class="nav-cmd item" data-tab="skills">&gt; cd /sys/skills</button>
+            <button type="button" class="nav-cmd item" data-tab="combat">&gt; cd /sys/combat</button>
+            <button type="button" class="nav-cmd item" data-tab="gear">&gt; cd /sys/gear</button>
+            <button type="button" class="nav-cmd item" data-tab="cyber">&gt; cd /sys/cyberware</button>
+            <button type="button" class="nav-cmd item" data-tab="life">&gt; cd /sys/life_log</button>
         </nav>
     </aside>
 

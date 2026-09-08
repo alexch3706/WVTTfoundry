@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-09-05
+
+### Fixed
+- Corrected Skill chip and shotgun range-damage field bindings, including migration of previously saved legacy fields.
+- Restored Item Sheet defaults, Vehicle Sheet markup, Item-based Combat Sense initiative and Awareness bonuses, and weapon-only Gear fire actions.
+- Prevented recursive attack-modifier submission and made template placement cancellation explicit.
+- Corrected Stun/Death Save roll-under guidance and validation.
+- Added a safe combat review dialog that shows planned ammo, wound, armor, and SDP changes before applying them.
+- Blocked automatic combat commits when the current user cannot update every affected document.
+- Prevented duplicate automatic save and suppressive-fire resolution across connected clients.
+- Preserved legacy chipped skills, numeric damage values, range brackets, explicit token link/vision choices, and already-damaged cyberlimb SDP during migration and combat previews.
+- Added compatible chat hooks and Handlebars template helpers for Foundry V12 and V13.
+- Fixed actor-sheet portrait sizing, focus behavior, control labels, wound controls, and globally leaking visual effects.
+
+### Changed
+- Actor Sheets no longer maximize automatically.
+- Combat confirmation now defaults to Cancel and hides Apply when manual resolution is required.
+- Added focused regression checks for item UI contracts, modifier submission, accessibility, migration, and combat change summaries.
+
 ## [1.0.0] - 2026-06-13
 
 This milestone release marks the culmination of 8 major development epics. The system has been fundamentally rebuilt from the ground up to have a strict, rule-accurate, stateless combat resolver that completely overhauls how combat is played, validated, and recorded in Foundry VTT.

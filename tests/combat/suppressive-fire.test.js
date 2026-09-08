@@ -1,5 +1,5 @@
 import assert from "assert";
-import { calculateSuppressiveFireSaveDC, buildSuppressiveFireTemplateData, handleSuppressiveFireCombatTurn, resolveSuppressiveFireDamageFromChat } from "../../module/combat/suppressive-fire-tracker.js";
+import { bindSuppressiveFireChatActions, calculateSuppressiveFireSaveDC, buildSuppressiveFireTemplateData, canRetrySuppressiveDamageResolution, handleSuppressiveFireCombatTurn, resolveSuppressiveFireDamageFromChat } from "../../module/combat/suppressive-fire-tracker.js";
 import { resolveSuppressiveFireDamageOutcome } from "../../module/combat/attack-resolver.js";
 import { planCombatUpdates } from "../../module/combat/state-planner.js";
 
@@ -17,6 +17,10 @@ export async function runSuppressiveFireTests() {
       assert.strictEqual(calculateSuppressiveFireSaveDC(30, 3), 10);
       assert.strictEqual(calculateSuppressiveFireSaveDC(25, 2), 12);
       assert.strictEqual(calculateSuppressiveFireSaveDC(0, 2), 0);
+      assert.strictEqual(canRetrySuppressiveDamageResolution({ status: "canceled", applied: {} }), false);
+      assert.strictEqual(canRetrySuppressiveDamageResolution({ status: "missing-combat-document", applied: {} }), true);
+      assert.strictEqual(canRetrySuppressiveDamageResolution({ status: "manual", applied: { actorUpdates: 1 } }), false);
+      assert.strictEqual(canRetrySuppressiveDamageResolution({ status: "committed", applied: {} }), false);
     } catch (e) {
       console.error(e);
       passed = false;
@@ -66,6 +70,134 @@ export async function runSuppressiveFireTests() {
     addResult("suppressive-fire: Template data builder", passed);
   }
 
+  function testCrossVersionChatBindingIsGmAuthoritative() {
+    let passed = true;
+    const previousGame = globalThis.game;
+    try {
+      const makeButton = dataset => ({
+        dataset: { ...dataset },
+        disabled: false,
+        attributes: {},
+        listeners: {},
+        setAttribute(name, value) { this.attributes[name] = value; },
+        removeAttribute(name) { delete this.attributes[name]; },
+        addEventListener(type, listener) { this.listeners[type] = listener; }
+      });
+      const makeRoot = (hitsButton, damageButton) => ({
+        querySelectorAll(selector) {
+          if(selector === ".roll-suppressive-hits") return [hitsButton];
+          if(selector === ".roll-damage") return [damageButton];
+          return [];
+        }
+      });
+
+      globalThis.game = {
+        system: { id: "cyberpunk2020-rilerena" },
+        user: { id: "player", isGM: false },
+        users: [{ id: "gm", isGM: true, active: true }]
+      };
+      const playerHits = makeButton({ templateId: "template", actorId: "actor" });
+      const playerDamage = makeButton({ templateId: "template", actorId: "actor", hits: "2" });
+      bindSuppressiveFireChatActions({ getFlag: () => undefined }, makeRoot(playerHits, playerDamage));
+      assert.strictEqual(playerHits.disabled, true, "non-GM V13 chat actions should be disabled");
+      assert.strictEqual(playerDamage.disabled, true, "non-GM damage actions should be disabled");
+
+      globalThis.game.user = { id: "gm", isGM: true };
+      bindSuppressiveFireChatActions({ getFlag: () => undefined }, makeRoot(playerHits, playerDamage));
+      assert.strictEqual(playerHits.disabled, false, "an existing hit action should refresh for the new primary GM");
+      assert.strictEqual(playerDamage.disabled, false, "an existing damage action should refresh for the new primary GM");
+
+      const gmHits = makeButton({ templateId: "template", actorId: "actor" });
+      const gmDamage = makeButton({ templateId: "template", actorId: "actor", hits: "2" });
+      bindSuppressiveFireChatActions({ getFlag: () => undefined }, [makeRoot(gmHits, gmDamage)]);
+      assert.strictEqual(gmHits.disabled, false, "primary GM V12 chat actions should remain enabled");
+      assert.strictEqual(typeof gmHits.listeners.click, "function");
+      assert.strictEqual(typeof gmDamage.listeners.click, "function");
+    } catch(error) {
+      console.error(error);
+      passed = false;
+    } finally {
+      globalThis.game = previousGame;
+    }
+    addResult("suppressive-fire: V12/V13 chat actions are GM-authoritative", passed);
+  }
+
+  async function testFailedChatLockPreventsSuppressiveHitEffects() {
+    let passed = true;
+    const previousGame = globalThis.game;
+    const previousCanvas = globalThis.canvas;
+    const previousUi = globalThis.ui;
+    const previousRoll = globalThis.Roll;
+    const previousChatMessage = globalThis.ChatMessage;
+    try {
+      let rollCount = 0;
+      let templateUpdateCount = 0;
+      let chatCount = 0;
+      const hitsButton = {
+        dataset: { templateId: "template-1", actorId: "actor-1" },
+        disabled: false,
+        attributes: {},
+        listeners: {},
+        setAttribute(name, value) { this.attributes[name] = value; },
+        removeAttribute(name) { delete this.attributes[name]; },
+        addEventListener(type, listener) { this.listeners[type] = listener; }
+      };
+      const root = {
+        querySelectorAll(selector) {
+          return selector === ".roll-suppressive-hits" ? [hitsButton] : [];
+        }
+      };
+      const message = {
+        getFlag() { return undefined; },
+        async setFlag() { throw new Error("permission denied"); }
+      };
+      globalThis.game = {
+        system: { id: "cyberpunk2020-rilerena" },
+        user: { id: "gm", isGM: true },
+        users: [{ id: "gm", isGM: true, active: true }]
+      };
+      globalThis.canvas = {
+        scene: {
+          templates: {
+            get: () => ({
+              flags: { cyberpunk2020: { suppressiveFire: { remainingHitCap: 10 } } },
+              async update() { templateUpdateCount += 1; }
+            })
+          }
+        }
+      };
+      globalThis.ui = { notifications: { warn() {}, error() {} } };
+      globalThis.Roll = class {
+        async evaluate() {
+          rollCount += 1;
+          return { total: 3 };
+        }
+      };
+      globalThis.ChatMessage = {
+        getSpeaker: () => ({}),
+        async create() { chatCount += 1; }
+      };
+
+      bindSuppressiveFireChatActions(message, root);
+      await hitsButton.listeners.click({ preventDefault() {}, currentTarget: hitsButton });
+
+      assert.strictEqual(rollCount, 0, "the hit roll must not start without a durable chat lock");
+      assert.strictEqual(templateUpdateCount, 0, "the template cap must not change without a durable chat lock");
+      assert.strictEqual(chatCount, 0, "no follow-up card should be created without a durable chat lock");
+      assert.strictEqual(hitsButton.disabled, false, "a failed pre-lock remains retryable");
+    } catch(error) {
+      console.error(error);
+      passed = false;
+    } finally {
+      globalThis.game = previousGame;
+      globalThis.canvas = previousCanvas;
+      globalThis.ui = previousUi;
+      globalThis.Roll = previousRoll;
+      globalThis.ChatMessage = previousChatMessage;
+    }
+    addResult("suppressive-fire: failed chat lock prevents hit side effects", passed);
+  }
+
   async function testIntersectionLogic() {
     let passed = true;
     try {
@@ -113,6 +245,75 @@ export async function runSuppressiveFireTests() {
         };
         const resultNotIntersect = await checkAndResolveIntersection(tokenDocumentNotIntersecting, template);
         assert.strictEqual(resultNotIntersect, false, "Should return false for non-intersecting token");
+
+        const previousChatMessage = globalThis.ChatMessage;
+        let promptCount = 0;
+        try {
+          const concurrentFlags = {
+            remainingHitCap: 10,
+            saveDC: 5,
+            resolvedTokenIds: []
+          };
+          const concurrentTemplate = {
+            document: {
+              id: "template-concurrent",
+              x: 0,
+              y: 0,
+              flags: { cyberpunk2020: { suppressiveFire: concurrentFlags } },
+              async update(data) {
+                // Yield before exposing the persisted record to reproduce
+                // overlapping updateToken/moveToken hooks on Foundry V13.
+                await Promise.resolve();
+                concurrentFlags.resolvedTokenIds = data["flags.cyberpunk2020.suppressiveFire.resolvedTokenIds"];
+              }
+            },
+            shape: { contains: () => true }
+          };
+          const concurrentToken = {
+            id: "token-concurrent",
+            x: 0,
+            y: 0,
+            width: 1,
+            height: 1,
+            object: { center: { x: 50, y: 50 } },
+            actor: { id: "actor-concurrent", name: "Concurrent Target" }
+          };
+          globalThis.ChatMessage = {
+            getSpeaker: () => ({}),
+            async create() { promptCount += 1; }
+          };
+
+          const [firstResolution, overlappingResolution] = await Promise.all([
+            checkAndResolveIntersection(concurrentToken, concurrentTemplate),
+            checkAndResolveIntersection(concurrentToken, concurrentTemplate)
+          ]);
+          assert.strictEqual(firstResolution, true);
+          assert.strictEqual(overlappingResolution, false);
+          assert.strictEqual(promptCount, 1, "overlapping movement hooks must create one save prompt");
+
+          concurrentFlags.resolvedTokenIds = [];
+          promptCount = 0;
+          const secondToken = {
+            ...concurrentToken,
+            id: "token-concurrent-two",
+            actor: { id: "actor-concurrent-two", name: "Second Concurrent Target" }
+          };
+          const [firstTokenResolution, secondTokenResolution] = await Promise.all([
+            checkAndResolveIntersection(concurrentToken, concurrentTemplate),
+            checkAndResolveIntersection(secondToken, concurrentTemplate)
+          ]);
+          assert.strictEqual(firstTokenResolution, true);
+          assert.strictEqual(secondTokenResolution, true);
+          assert.deepStrictEqual(
+            concurrentFlags.resolvedTokenIds.map(record => record.id).sort(),
+            ["token-concurrent", "token-concurrent-two"]
+          );
+          assert.strictEqual(promptCount, 2, "different tokens should queue without losing either resolution record");
+          assert.strictEqual(await checkAndResolveIntersection(secondToken, concurrentTemplate), false);
+          assert.strictEqual(promptCount, 2, "a persisted token resolution must not be prompted again in the same turn");
+        } finally {
+          globalThis.ChatMessage = previousChatMessage;
+        }
 
     } catch (e) {
         console.error(e);
@@ -439,6 +640,8 @@ export async function runSuppressiveFireTests() {
 
   testSaveDC();
   testTemplateDataBuilder();
+  testCrossVersionChatBindingIsGmAuthoritative();
+  await testFailedChatLockPreventsSuppressiveHitEffects();
   await testIntersectionLogic();
   await testTemplateSurvivesAdvanceAwayFromShooter();
   await testTemplateExpiresWhenShooterTurnStartsAgain();

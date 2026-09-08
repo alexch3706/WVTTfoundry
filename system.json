@@ -3,7 +3,7 @@
   "name": "cyberpunk2020-rilerena",
   "title": "Cyberpunk 2020 (Rilerena fork)",
   "description": "R. Talsorian Games' Cyberpunk 2020 System",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "compatibility": {
     "minimum": "10",
     "verified": "12",
@@ -245,7 +245,7 @@
     }
   ],
   "socket": false,
-  "initiative": "1d10x10 + @stats.ref.total + @skills.CombatSense.value",
+  "initiative": "1d10x10 + @stats.ref.total + @itemSkills.combatSense.value",
   "grid": {
     "distance": 5,
     "units": "m"

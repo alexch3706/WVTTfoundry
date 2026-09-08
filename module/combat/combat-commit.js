@@ -1,6 +1,7 @@
 import { buildCombatChatData } from "./combat-chat.js";
 import { COMBAT_CHAT_STATUS, COMBAT_WARNING_SEVERITY } from "./combat-outcome.js";
 import { planCombatUpdates } from "./state-planner.js";
+import { renderFoundryTemplate } from "../foundry-compat.js";
 
 const UNSAFE_PLAN_WARNING_CODES = Object.freeze([
   "invalid-actor-update",
@@ -10,7 +11,9 @@ const UNSAFE_PLAN_WARNING_CODES = Object.freeze([
   "unserializable-update-value",
   "unserializable-embedded-item-update",
   "conflicting-update-path",
-  "conflicting-embedded-update-path"
+  "conflicting-embedded-update-path",
+  "insufficient-update-permission",
+  "source-state-changed"
 ]);
 const COMMIT_GUARD_REGISTRY = new Map();
 const COMMIT_GUARD_TTL_MS = 5 * 60 * 1000;
@@ -44,10 +47,265 @@ export function buildCombatPreviewData(outcome = {}, plannedUpdates = undefined,
   };
 }
 
+/**
+ * Build a compact, user-facing list of the state changes represented by a
+ * prepared combat plan. This deliberately stays plain-data-only so the same
+ * summary can be rendered in a dialog or asserted in tests.
+ */
+export function buildCombatChangeSummary(outcome = {}, plan = {}) {
+  const changes = [];
+  const targetDataByActor = new Map();
+  const armorNamesByActor = new Map();
+
+  for(const targetOutcome of outcome.targets || []) {
+    const actorUuid = targetOutcome?.target?.actorUuid;
+    if(!actorUuid) continue;
+    targetDataByActor.set(actorUuid, targetOutcome);
+    armorNamesByActor.set(actorUuid, new Map(
+      (targetOutcome?.target?.snapshot?.equippedArmor || [])
+        .filter(armor => armor?.id)
+        .map(armor => [armor.id, armor.name || armor.id])
+    ));
+  }
+
+  const ammoUpdate = (plan.itemUpdates || []).find(entry =>
+    entry.itemUuid === outcome?.weapon?.itemUuid
+    && Object.prototype.hasOwnProperty.call(entry.update || {}, "system.shotsLeft")
+  );
+  if(ammoUpdate) {
+    changes.push(changeRow({
+      kind: "ammo",
+      subject: outcome?.weapon?.name || "Weapon",
+      before: findPreparedBaseline(plan, "itemUpdates", {
+        itemUuid: ammoUpdate.itemUuid,
+        path: "system.shotsLeft"
+      }),
+      after: ammoUpdate.update["system.shotsLeft"]
+    }));
+  }
+
+  for(const entry of plan.actorUpdates || []) {
+    for(const [path, after] of Object.entries(entry.update || {})) {
+      const targetOutcome = targetDataByActor.get(entry.actorUuid);
+      const sdpMatch = /^system\.hitLocations\.([^.]+)\.sdp\.value$/.exec(path);
+      const isWoundDamage = path === "system.damage";
+      changes.push(changeRow({
+        kind: isWoundDamage ? "wounds" : (sdpMatch ? "sdp" : "state"),
+        subject: targetOutcome?.target?.name || entry.actorUuid,
+        before: findPreparedBaseline(plan, "actorUpdates", {
+          actorUuid: entry.actorUuid,
+          path
+        }),
+        after,
+        detail: sdpMatch?.[1]
+          || (isWoundDamage ? targetOutcome?.damage?.nextWoundState?.label : path)
+      }));
+    }
+  }
+
+  for(const batch of plan.embeddedItemUpdates || []) {
+    const targetOutcome = targetDataByActor.get(batch.actorUuid);
+    const armorNames = armorNamesByActor.get(batch.actorUuid) || new Map();
+    for(const update of batch.updates || []) {
+      for(const [path, after] of Object.entries(update || {})) {
+        if(path === "_id") continue;
+        const ablationMatch = /^system\.coverage\.([^.]+)\.ablation$/.exec(path);
+        changes.push(changeRow({
+          kind: ablationMatch ? "armor" : "state",
+          subject: armorNames.get(update._id) || update._id || targetOutcome?.target?.name || batch.actorUuid,
+          before: findPreparedBaseline(plan, "embeddedItemUpdates", {
+            actorUuid: batch.actorUuid,
+            type: batch.type,
+            itemId: update._id,
+            path
+          }),
+          after,
+          detail: ablationMatch?.[1] || path
+        }));
+      }
+    }
+  }
+
+  for(const entry of plan.itemUpdates || []) {
+    for(const [path, after] of Object.entries(entry.update || {})) {
+      if(path === "system.shotsLeft" && entry === ammoUpdate) continue;
+      changes.push(changeRow({
+        kind: "state",
+        subject: entry.itemUuid === outcome?.weapon?.itemUuid
+          ? outcome?.weapon?.name || entry.itemUuid
+          : entry.itemUuid,
+        before: findPreparedBaseline(plan, "itemUpdates", {
+          itemUuid: entry.itemUuid,
+          path
+        }),
+        after,
+        detail: path
+      }));
+    }
+  }
+
+  return changes;
+}
+
+export function buildCombatTargetSummaries(targets = []) {
+  return (targets || []).map(target => {
+    const hits = Array.isArray(target?.hits) ? target.hits : [];
+    const notFired = target?.attack?.notFired === true;
+    const hit = !notFired && (target?.attack?.hit === true || hits.length > 0);
+    const rollTotal = target?.attack?.roll?.total;
+    const targetNumber = target?.attack?.targetNumber;
+    return {
+      name: target?.target?.name,
+      notFired,
+      hit,
+      hitCount: hits.length,
+      hasHits: hits.length > 0,
+      hasRollDetails: rollTotal !== undefined || targetNumber !== undefined,
+      rollTotal: rollTotal ?? "?",
+      targetNumber: targetNumber ?? "?",
+      saveCount: Array.isArray(target?.saves) ? target.saves.length : 0,
+      manual: target?.manualResolution?.required === true
+    };
+  });
+}
+
+export function collectCombatOutcomeWarnings(outcome = {}, extraWarnings = []) {
+  const warnings = [];
+  const addWarnings = entries => {
+    for(const entry of entries || []) {
+      const normalized = typeof entry === "string" ? { message: entry } : entry;
+      if(!normalized?.message) continue;
+      if(warnings.some(existing =>
+        existing.message === normalized.message
+        && (existing.code || "") === (normalized.code || "")
+      )) continue;
+      warnings.push(clonePlainData(normalized));
+    }
+  };
+
+  addWarnings(extraWarnings);
+  addWarnings(outcome?.warnings);
+  addWarnings(outcome?.action?.warnings);
+  addWarnings((outcome?.pendingDecisions || []).map(decision => ({
+    code: decision?.code || "pending-decision",
+    message: decision?.message || decision?.label || decision?.reason
+  })));
+
+  for(const target of outcome?.targets || []) {
+    addWarnings(target?.warnings);
+    addWarnings(target?.attack?.warnings);
+    addWarnings(target?.damage?.warnings);
+    addWarnings((target?.pendingDecisions || []).map(decision => ({
+      code: decision?.code || "pending-decision",
+      message: decision?.message || decision?.label || decision?.reason
+    })));
+    for(const hit of target?.hits || []) {
+      addWarnings(hit?.warnings);
+      addWarnings(hit?.armor?.warnings);
+    }
+  }
+  return warnings;
+}
+
+export async function previewAndConfirmCombatOutcome(outcome = {}, options = {}) {
+  const {
+    DialogClass = globalThis.Dialog,
+    renderDialogTemplate = renderFoundryTemplate,
+    titleKey = "CombatApplyTitle",
+    ...commitOptions
+  } = options;
+  const previewResult = await previewAndApplyCombatOutcome(outcome, commitOptions);
+  if(typeof DialogClass !== "function" || typeof renderDialogTemplate !== "function") {
+    return previewResult;
+  }
+
+  const preview = previewResult.preview;
+  const plan = preview?.plan || {};
+  const headingId = `combat-confirm-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  const dialogData = {
+    headingId,
+    canCommit: preview?.canCommit === true,
+    changes: buildCombatChangeSummary(outcome, plan),
+    targets: buildCombatTargetSummaries(preview?.targets || []).map(target => ({
+      ...target,
+      name: target.name || localizeCombatUi("UnknownTarget")
+    })),
+    warnings: collectCombatOutcomeWarnings(outcome, [
+      ...(preview?.warnings || []),
+      ...(plan?.warnings || [])
+    ])
+  };
+
+  let content;
+  try {
+    content = await renderDialogTemplate(
+      "systems/cyberpunk2020-rilerena/templates/dialog/combat-confirm.hbs",
+      dialogData
+    );
+  } catch(error) {
+    console.error("Failed to render combat confirmation:", error);
+    return previewAndApplyCombatOutcome(outcome, {
+      ...commitOptions,
+      decision: "cancel",
+      messageId: previewResult.messageId,
+      plannedUpdates: plan
+    });
+  }
+
+  return new Promise((resolve, reject) => {
+    let resolved = false;
+    const settleDecision = async (decision) => {
+      if(resolved) return;
+      resolved = true;
+      try {
+        resolve(await previewAndApplyCombatOutcome(outcome, {
+          ...commitOptions,
+          decision,
+          messageId: previewResult.messageId,
+          plannedUpdates: plan
+        }));
+      } catch(error) {
+        reject(error);
+      }
+    };
+
+    const buttons = {
+      cancel: {
+        label: localizeCombatUi("CombatCancelAction"),
+        callback: () => settleDecision("cancel")
+      }
+    };
+    if(dialogData.canCommit) {
+      buttons.confirm = {
+        label: localizeCombatUi("CombatApplyAction"),
+        callback: () => settleDecision("confirm")
+      };
+    }
+
+    try {
+      new DialogClass({
+        title: localizeCombatUi(titleKey),
+        content,
+        buttons,
+        default: "cancel",
+        close: () => {
+          if(!resolved) settleDecision("cancel");
+        }
+      }, {
+        classes: ["cyberpunk", "combat-confirm-dialog"],
+        width: 520
+      }).render(true);
+    } catch(error) {
+      console.error("Failed to open combat confirmation:", error);
+      settleDecision("cancel");
+    }
+  });
+}
+
 export async function previewAndApplyCombatOutcome(outcome = {}, options = {}) {
   const adapter = options.adapter || createFoundryCombatAdapter();
   const rawPlan = options.plannedUpdates || planCombatUpdates(outcome);
-  const plan = await ensureCommitPlanPrepared(rawPlan, adapter);
+  const plan = await ensureCommitPlanPrepared(rawPlan, adapter, outcome);
   const preview = buildCombatPreviewData(outcome, plan, options);
   const commitKey = resolveCommitKey(options, outcome, plan);
 
@@ -265,14 +523,16 @@ export async function applyCombatUpdates(plan = {}, adapter = createFoundryComba
   };
 }
 
-async function ensureCommitPlanPrepared(plan = {}, adapter = createFoundryCombatAdapter()) {
+async function ensureCommitPlanPrepared(plan = {}, adapter = createFoundryCombatAdapter(), outcome = {}) {
   const clonedPlan = clonePlainData(plan || {});
   if(!clonedPlan.commitNonce) {
     clonedPlan.commitNonce = typeof globalThis.crypto?.randomUUID === "function" ? globalThis.crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
   }
-  if(clonedPlan?.freshnessChecks?.prepared) {
-    return clonedPlan;
-  }
+  const freshnessAlreadyPrepared = clonedPlan?.freshnessChecks?.prepared === true;
+  // Permission is live state, unlike the baseline values captured for stale
+  // preview detection. Re-evaluate it for every preview and confirm attempt.
+  clonedPlan.warnings = (clonedPlan.warnings || [])
+    .filter(warning => warning?.code !== "insufficient-update-permission");
 
   const checks = {
     itemUpdates: [],
@@ -284,11 +544,19 @@ async function ensureCommitPlanPrepared(plan = {}, adapter = createFoundryCombat
     if(!item) {
       continue;
     }
-    for(const path of Object.keys(entry.update || {})) {
+    if(!canCurrentUserUpdate(item)) {
+      addPlanWarning(clonedPlan, "insufficient-update-permission", `You cannot update item ${entry.itemUuid}; combat changes require a GM.`);
+    }
+    for(const path of freshnessAlreadyPrepared ? [] : Object.keys(entry.update || {})) {
+      const currentValue = clonePlainData(readDataPath(item, path));
+      warnIfSourceStateChanged(clonedPlan, outcome, "itemUpdates", {
+        itemUuid: entry.itemUuid,
+        path
+      }, currentValue);
       checks.itemUpdates.push({
         itemUuid: entry.itemUuid,
         path,
-        baselineValue: clonePlainData(readDataPath(item, path))
+        baselineValue: currentValue
       });
     }
   }
@@ -297,11 +565,19 @@ async function ensureCommitPlanPrepared(plan = {}, adapter = createFoundryCombat
     if(!actor) {
       continue;
     }
-    for(const path of Object.keys(entry.update || {})) {
+    if(!canCurrentUserUpdate(actor)) {
+      addPlanWarning(clonedPlan, "insufficient-update-permission", `You cannot update actor ${entry.actorUuid}; combat changes require a GM.`);
+    }
+    for(const path of freshnessAlreadyPrepared ? [] : Object.keys(entry.update || {})) {
+      const currentValue = clonePlainData(readDataPath(actor, path));
+      warnIfSourceStateChanged(clonedPlan, outcome, "actorUpdates", {
+        actorUuid: entry.actorUuid,
+        path
+      }, currentValue);
       checks.actorUpdates.push({
         actorUuid: entry.actorUuid,
         path,
-        baselineValue: clonePlainData(readDataPath(actor, path))
+        baselineValue: currentValue
       });
     }
   }
@@ -310,7 +586,10 @@ async function ensureCommitPlanPrepared(plan = {}, adapter = createFoundryCombat
     if(!actor) {
       continue;
     }
-    for(const update of batch.updates || []) {
+    if(!canCurrentUserUpdate(actor)) {
+      addPlanWarning(clonedPlan, "insufficient-update-permission", `You cannot update actor ${batch.actorUuid}; armor changes require a GM.`);
+    }
+    for(const update of freshnessAlreadyPrepared ? [] : (batch.updates || [])) {
       const itemId = update?._id;
       const embedded = resolveEmbeddedDocument(actor, batch.type, itemId);
       if(!embedded) {
@@ -320,20 +599,29 @@ async function ensureCommitPlanPrepared(plan = {}, adapter = createFoundryCombat
         if(path === "_id") {
           continue;
         }
+        const currentValue = clonePlainData(readDataPath(embedded, path));
+        warnIfSourceStateChanged(clonedPlan, outcome, "embeddedItemUpdates", {
+          actorUuid: batch.actorUuid,
+          type: batch.type,
+          itemId,
+          path
+        }, currentValue);
         checks.embeddedItemUpdates.push({
           actorUuid: batch.actorUuid,
           type: batch.type,
           itemId,
           path,
-          baselineValue: clonePlainData(readDataPath(embedded, path))
+          baselineValue: currentValue
         });
       }
     }
   }
-  clonedPlan.freshnessChecks = {
-    prepared: true,
-    ...checks
-  };
+  if(!freshnessAlreadyPrepared) {
+    clonedPlan.freshnessChecks = {
+      prepared: true,
+      ...checks
+    };
+  }
   return clonedPlan;
 }
 
@@ -397,10 +685,7 @@ export function createFoundryCombatAdapter() {
       return resolveFoundryDocument(actorUuid);
     },
     async renderTemplate(templatePath, data) {
-      if (typeof globalThis.renderTemplate !== "function") {
-        throw new Error("Foundry renderTemplate is unavailable; inject a combat commit adapter for tests or non-Foundry runtimes.");
-      }
-      return globalThis.renderTemplate(templatePath, data);
+      return renderFoundryTemplate(templatePath, data);
     },
     async createChatMessage(chatData) {
       if (typeof globalThis.ChatMessage?.create !== "function") {
@@ -441,6 +726,9 @@ async function preflightCombatUpdates(plan, adapter) {
       warnings.push(commitWarning("missing-item-document", `Item document ${entry.itemUuid} could not be resolved for commit.`));
       continue;
     }
+    if(!canCurrentUserUpdate(item)) {
+      addUniqueCommitWarning(warnings, "insufficient-update-permission", `You cannot update item ${entry.itemUuid}; combat changes require a GM.`);
+    }
     items.set(entry.itemUuid, item);
   }
 
@@ -448,6 +736,9 @@ async function preflightCombatUpdates(plan, adapter) {
     const actor = await resolveActorForPreflight(actors, adapter, batch.actorUuid, warnings);
     if(!actor || typeof actor.updateEmbeddedDocuments !== "function") {
       warnings.push(commitWarning("missing-actor-document", `Actor document ${batch.actorUuid} could not be resolved for embedded item commit.`));
+    }
+    else if(!canCurrentUserUpdate(actor)) {
+      addUniqueCommitWarning(warnings, "insufficient-update-permission", `You cannot update actor ${batch.actorUuid}; armor changes require a GM.`);
     }
     for(const update of batch.updates || []) {
       if(!update?._id) {
@@ -460,6 +751,9 @@ async function preflightCombatUpdates(plan, adapter) {
     const actor = await resolveActorForPreflight(actors, adapter, entry.actorUuid, warnings);
     if(!actor || typeof actor.update !== "function") {
       warnings.push(commitWarning("missing-actor-document", `Actor document ${entry.actorUuid} could not be resolved for commit.`));
+    }
+    else if(!canCurrentUserUpdate(actor)) {
+      addUniqueCommitWarning(warnings, "insufficient-update-permission", `You cannot update actor ${entry.actorUuid}; combat changes require a GM.`);
     }
   }
 
@@ -554,10 +848,112 @@ function buildTargetPreviewData(targetOutcome = {}) {
     target: extractActorRef(targetOutcome.target),
     attack: clonePlainData(targetOutcome.attack || {}),
     hits: cloneArray(targetOutcome.hits),
+    damage: clonePlainData(targetOutcome.damage || {}),
+    saves: cloneArray(targetOutcome.saves),
     plannedUpdates: summarizePlannedUpdates(targetOutcome.plannedUpdates),
     manualResolution: normalizeManualResolution(targetOutcome.manualResolution),
     warnings: cloneArray(targetOutcome.warnings)
   };
+}
+
+function changeRow({ kind, subject, before, after, detail = undefined }) {
+  return {
+    kind,
+    subject,
+    before: before === undefined ? "?" : clonePlainData(before),
+    after: after === undefined ? "?" : clonePlainData(after),
+    ...(detail ? { detail } : {})
+  };
+}
+
+function findPreparedBaseline(plan, category, expected = {}) {
+  const checks = plan?.freshnessChecks?.[category] || [];
+  const match = checks.find(check => Object.entries(expected)
+    .every(([key, value]) => check?.[key] === value));
+  return match?.baselineValue;
+}
+
+function canCurrentUserUpdate(document) {
+  const user = globalThis.game?.user;
+  if(user && typeof document?.canUserModify === "function") {
+    try {
+      return document.canUserModify(user, "update") !== false;
+    } catch {
+      // Fall back to the ownership flag exposed by Foundry Documents.
+    }
+  }
+  return document?.isOwner !== false;
+}
+
+function addPlanWarning(plan, code, message) {
+  plan.warnings = Array.isArray(plan.warnings) ? plan.warnings : [];
+  if(plan.warnings.some(warning => warning?.code === code && warning?.message === message)) {
+    return;
+  }
+  plan.warnings.push({
+    code,
+    severity: COMBAT_WARNING_SEVERITY.warning,
+    message
+  });
+}
+
+function addUniqueCommitWarning(warnings, code, message) {
+  if(warnings.some(warning => warning?.code === code && warning?.message === message)) {
+    return;
+  }
+  warnings.push(commitWarning(code, message));
+}
+
+function warnIfSourceStateChanged(plan, outcome, category, expected, currentValue) {
+  const sourceValue = findOutcomeSourceBaseline(outcome, category, expected);
+  if(sourceValue === undefined || isFreshnessValueEqual(currentValue, sourceValue)) {
+    return;
+  }
+  const subject = expected.itemUuid || expected.actorUuid || "document";
+  addPlanWarning(
+    plan,
+    "source-state-changed",
+    `State changed while the attack was being prepared (${subject} ${expected.path}). Recalculate the attack before applying changes.`
+  );
+}
+
+function findOutcomeSourceBaseline(outcome, category, expected) {
+  if(category === "itemUpdates" && expected.itemUuid === outcome?.weapon?.itemUuid) {
+    if(expected.path === "system.shotsLeft" && outcome?.ammo?.before !== undefined) {
+      return clonePlainData(outcome.ammo.before);
+    }
+    return clonePlainData(readSnapshotPath(outcome?.weapon?.snapshot, expected.path));
+  }
+
+  const targetOutcome = (outcome?.targets || [])
+    .find(target => target?.target?.actorUuid === expected.actorUuid);
+  if(!targetOutcome) {
+    return undefined;
+  }
+  if(category === "actorUpdates") {
+    return clonePlainData(readSnapshotPath(targetOutcome?.target?.snapshot, expected.path));
+  }
+  if(category === "embeddedItemUpdates") {
+    const item = (targetOutcome?.target?.snapshot?.equippedArmor || [])
+      .find(armor => armor?.id === expected.itemId);
+    return clonePlainData(readDataPath(item, expected.path));
+  }
+  return undefined;
+}
+
+function readSnapshotPath(snapshot, documentPath) {
+  const snapshotPath = String(documentPath || "").replace(/^system\./, "");
+  return readDataPath(snapshot, snapshotPath);
+}
+
+function localizeCombatUi(key) {
+  const fullKey = `CYBERPUNK.${key}`;
+  try {
+    const localized = globalThis.game?.i18n?.localize?.(fullKey);
+    return localized && localized !== fullKey ? localized : key;
+  } catch {
+    return key;
+  }
 }
 
 function summarizePlannedUpdates(plannedUpdates = {}) {

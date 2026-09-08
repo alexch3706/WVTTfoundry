@@ -1,5 +1,6 @@
 {
   "name": "unsupported-modes",
+  "casesOnly": true,
   "context": {
     "action": {
       "type": "ranged",
@@ -251,6 +252,7 @@
       "shotsLeft": 30,
       "bulletsFired": 1
     },
-    "itemUpdates": []
+    "itemUpdates": [],
+    "ruleReference": "Audit 6.2: Exotic weapon type and missing-input guards"
   }
 }

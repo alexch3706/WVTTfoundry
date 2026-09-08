@@ -35,9 +35,17 @@ export function buildActorCombatSnapshot(actor, options = {}) {
     }
 
     for (const loc in specificSdpOverlays) {
-      hitLocations[loc].type = "cybernetic";
-      hitLocations[loc].sdp = {
-        value: specificSdpOverlays[loc]
+      const location = hitLocations[loc];
+      const maxSdp = specificSdpOverlays[loc];
+      const liveSdp = Number(location.sdp?.value);
+      const hasCurrentCyberneticSdp = location.type === "cybernetic" && Number.isFinite(liveSdp);
+      location.type = "cybernetic";
+      location.sdp = {
+        ...(location.sdp || {}),
+        // Equipment defines the ceiling, but an already damaged limb must
+        // keep its live SDP instead of being healed every time we snapshot it.
+        value: hasCurrentCyberneticSdp ? Math.min(liveSdp, maxSdp) : maxSdp,
+        max: maxSdp
       };
     }
   }

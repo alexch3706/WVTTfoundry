@@ -1,6 +1,6 @@
 # Component and UI Inventory
 
-Last updated: 2026-05-24
+Last updated: 2026-09-05
 
 ## Runtime Components
 
@@ -58,7 +58,7 @@ Last updated: 2026-05-24
 
 | Sass File | Purpose |
 | --- | --- |
-| `scss/cyberpunk2020.scss` | global variables, sheet shell, layout utilities, imports |
+| `scss/cyberpunk2020-rilerena.scss` | global variables, sheet shell, layout utilities, imports |
 | `scss/_fields.scss` | field control look and feel |
 | `scss/_statsrow.scss` | stats and derived stats |
 | `scss/_woundtracker.scss` | wound state UI |

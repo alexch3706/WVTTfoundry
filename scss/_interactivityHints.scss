@@ -6,41 +6,65 @@
 // ============================================
 
 // ── Inactive (greyed-out, e.g. unchipped skills) ──
-.inactive {
+.cyberpunk .inactive {
     filter: opacity(0.5);
 }
 
 // ── Clickable action elements ──
-.action {
-    cursor: pointer;
+.cyberpunk .action {
     transition: color $transition-fast, text-shadow $transition-fast;
 
-    > * {
+    &:not(:disabled) {
         cursor: pointer;
+
+        > * {
+            cursor: pointer;
+        }
+
+        // Hover — cyan highlight + optional glow
+        &:hover {
+            color: $accent-cyan;
+
+            .fx-glow & {
+                text-shadow: $glow-subtle;
+            }
+        }
     }
 
-    // Hover — cyan highlight + optional glow
-    &:hover {
-        color: $accent-cyan;
+    &:disabled {
+        cursor: not-allowed;
 
-        .fx-glow & {
-            text-shadow: $glow-subtle;
+        > * {
+            cursor: not-allowed;
         }
     }
 }
 
 // ── Non-firing children within an action ──
-.no-action {
+.cyberpunk .no-action {
     cursor: default;
 }
 
 // ── Not editable — locked fields ──
-.not-editable {
+.cyberpunk .not-editable {
     cursor: not-allowed;
     color: $text-dim;
 }
 
 // ── Hidden elements ──
-.invisible {
+.cyberpunk .invisible {
     display: none;
+}
+
+// Keep keyboard focus visible on every native control used by system sheets.
+.cyberpunk a:focus-visible,
+.cyberpunk button:focus-visible,
+.cyberpunk input:focus-visible,
+.cyberpunk select:focus-visible,
+.cyberpunk textarea:focus-visible,
+.cyberpunk summary:focus-visible,
+.cyberpunk [tabindex]:focus-visible {
+    outline: 2px solid $border-active;
+    outline-offset: 2px;
+    box-shadow: $glow-subtle;
 }
