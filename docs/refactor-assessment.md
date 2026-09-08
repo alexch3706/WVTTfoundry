@@ -1,5 +1,7 @@
 # Refactor Assessment
 
+> Historical note (2026-09-08): this assessment predates the V14 port. Compatibility facts in it are retained as project history; use [V14 technical debt](./tech-debt-foundry-version.md) and the [V14 upgrade guide](./v14-upgrade-guide.md) for current release decisions.
+
 Last updated: 2026-09-05
 
 ## Purpose
@@ -85,7 +87,7 @@ Recommended refactor depth:
 - Split only dense templates that are actively being changed.
 - Do not rename template paths without updating preloads and helper-generated paths.
 
-### 5. Foundry v12 Compatibility
+### 5. Foundry compatibility (historical V12 assessment)
 
 Current state:
 

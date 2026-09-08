@@ -17,6 +17,7 @@ import { runArmorMaintenanceTests } from "./combat/armor-maintenance.test.js";
 import { runDerivedStatOverrideTests } from "./combat/derived-stat-overrides.test.js";
 import { runWoundHintTests } from "./combat/wound-hints.test.js";
 import { runSuppressiveFireTests } from "./combat/suppressive-fire.test.js";
+import { runRegionZoneTests } from "./combat/region-zones.test.js";
 import { runTemplatePlacementTests } from "./combat/template-placement.test.js";
 import { runCyberlimbSchemaTests } from "./combat/cyberlimb-schema.test.js";
 import { runCombatSnapshotTests } from "./combat/combat-snapshot.test.js";
@@ -26,6 +27,8 @@ import { runActorSheetAccessibilityTests } from "./actor/actor-sheet-accessibili
 import { runItemUiContractTests } from "./actor/item-ui-contracts.test.js";
 import { runMigrationTests } from "./actor/migration.test.js";
 import { runModifiersDialogTests } from "./combat/modifiers-dialog.test.js";
+import { runV14CompatibilityTests } from "./v14-compat.test.js";
+import { runSystemManifestTests } from "./system-manifest.test.mjs";
 const results = [
   ...await runCombatFixtures(),
   await runCombatCommitTests(),
@@ -41,15 +44,18 @@ const results = [
   ...runDerivedStatOverrideTests(),
   ...runWoundHintTests(),
   ...await runSuppressiveFireTests(),
+  ...await runRegionZoneTests(),
   ...await runTemplatePlacementTests(),
   ...runCyberlimbSchemaTests(),
   ...runCombatSnapshotTests(),
-  ...runActorDataTests(),
+  ...await runActorDataTests(),
   ...runActorSheetLayoutTests(),
   ...runActorSheetAccessibilityTests(),
   ...runItemUiContractTests(),
   ...await runMigrationTests(),
-  await runModifiersDialogTests()
+  await runModifiersDialogTests(),
+  ...await runV14CompatibilityTests(),
+  ...await runSystemManifestTests()
 ];
 
 for(const result of results) {

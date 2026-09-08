@@ -1,0 +1,78 @@
+name: Release Foundry system
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify release tag and package metadata
+        shell: bash
+        run: |
+          git fetch --no-tags origin main:refs/remotes/origin/main
+          if ! git merge-base --is-ancestor "${GITHUB_SHA}^{commit}" refs/remotes/origin/main; then
+            echo "Release commit ${GITHUB_SHA} is not part of origin/main" >&2
+            exit 1
+          fi
+          if ! git diff --quiet "${GITHUB_SHA}^{commit}" refs/remotes/origin/main -- system.json; then
+            echo "The tagged system.json differs from the update manifest currently published on main" >&2
+            exit 1
+          fi
+          version="$(node -p "require('./system.json').version")"
+          if [[ "${GITHUB_REF_NAME}" != "v${version}" ]]; then
+            echo "Tag ${GITHUB_REF_NAME} does not match system.json version ${version}" >&2
+            exit 1
+          fi
+          node tests/system-manifest.test.mjs
+          node tests/pack-compatibility.test.mjs
+          node tests/run-combat-fixtures.mjs
+
+      - name: Build installable archive
+        shell: bash
+        run: |
+          version="$(node -p "require('./system.json').version")"
+          package_root="dist/cyberpunk2020-rilerena"
+          archive="dist/cyberpunk2020-rilerena-v${version}.zip"
+          mkdir -p "${package_root}/packs"
+          cp -a system.json template.json README.md CHANGELOG.md "${package_root}/"
+          cp -a css docs fonts img lang module templates "${package_root}/"
+          while IFS= read -r pack_path; do
+            cp -a "${pack_path}" "${package_root}/packs/"
+          done < <(node -e 'for (const pack of require("./system.json").packs) console.log(pack.path)')
+          (
+            cd "${package_root}"
+            zip -X -q -r "../../${archive}" .
+          )
+          sha256sum "${archive}" > "${archive}.sha256"
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          version="$(node -p "require('./system.json').version")"
+          archive="dist/cyberpunk2020-rilerena-v${version}.zip"
+          gh release create "${GITHUB_REF_NAME}" \
+            "${archive}" \
+            "${archive}.sha256" \
+            system.json \
+            --title "Cyberpunk 2020 (Rilerena fork) ${GITHUB_REF_NAME}" \
+            --generate-notes

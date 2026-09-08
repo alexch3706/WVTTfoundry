@@ -94,6 +94,9 @@ export function clamp(x, min, max) {
 
 export async function getDefaultSkills() {
     const pack = game.packs.get("cyberpunk2020-rilerena.default-skills");
+    if(!pack) {
+        throw new Error("Required compendium cyberpunk2020-rilerena.default-skills is unavailable.");
+    }
     const content = await pack.getDocuments();
     return content;
 }

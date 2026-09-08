@@ -1,6 +1,6 @@
 # Cyberpunk2020VTT Project Overview
 
-Last updated: 2026-09-05
+Last updated: 2026-09-08
 
 ## Executive Summary
 
@@ -26,14 +26,14 @@ The codebase is compact and brownfield: most behavior lives in plain JavaScript 
 
 | Category | Technology | Version / Source | Notes |
 | --- | --- | --- | --- |
-| Foundry package | `cyberpunk2020-rilerena` | `system.json` version `1.1.0` | Manifest declares minimum Foundry 10, verified 12, maximum 13 |
+| Foundry package | `cyberpunk2020-rilerena` | `system.json` version `2.0.0` | V14 only; API/manifest target `14.365`, pending live-world sign-off |
 | Runtime entry | ES module | `module/cyberpunk2020-rilerena.js` | Loaded through `system.json -> esmodules` |
 | Actor layer | Foundry `Actor` subclass | `module/actor/actor.js` | Computes derived character data and rolls |
 | Item layer | Foundry `Item` subclass | `module/item/item.js` | Handles weapons, armor, vehicles, and item rolls |
 | Sheets | Foundry sheet subclasses | `module/actor/actor-sheet.js`, `module/item/item-sheet.js` | jQuery-style `activateListeners(html)` event wiring |
 | Templates | Handlebars | `templates/` | Preloaded through `module/templates.js` |
 | Styling | Sass | `scss/cyberpunk2020-rilerena.scss` | Compiled artifact is `css/cyberpunk2020-rilerena.css` |
-| Compendia | Foundry LevelDB packs | `packs/*/` | One directory per packaged compendium |
+| Compendia | Foundry V14 LevelDB packs | `packs/*/` | 28 declared packs / 2,124 schema-audited documents |
 
 ## Current Capability Surface
 

@@ -22,7 +22,7 @@ jobs:
           node-version: 22
 
       - name: Check JavaScript syntax
-        run: find module tests -type f \( -name '*.js' -o -name '*.mjs' \) -print0 | sort -z | xargs -0 -n1 node --check
+        run: find module tests tools -type f \( -name '*.js' -o -name '*.mjs' \) -print0 | sort -z | xargs -0 -n1 node --check
 
       - name: Validate JSON data
         run: find . -path './.git' -prune -o -name '*.json' -type f -print0 | xargs -0 -n1 node -e 'JSON.parse(require("node:fs").readFileSync(process.argv[1], "utf8"))'
@@ -32,6 +32,11 @@ jobs:
 
       - name: Run combat and UI contract suite
         run: node tests/run-combat-fixtures.mjs
+
+      - name: Validate V14 manifest and compendia
+        run: |
+          node tests/system-manifest.test.mjs
+          node tests/pack-compatibility.test.mjs
 
       - name: Verify generated fixture coverage map
         run: git diff --exit-code -- tests/combat/fixture-coverage-map.md

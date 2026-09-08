@@ -1,6 +1,22 @@
-# Foundry VTT Manual Testing Guide: Single-Shot Firearm Resolution
+# Foundry VTT V14 Manual Testing Guide
 
-This guide outlines the step-by-step verification process for the Corebook Fidelity single-shot combat resolver path in **Foundry VTT**. Use this document to manually audit UI/UX flows, sheet updates, and chat log output.
+This guide outlines the step-by-step verification process for the Corebook Fidelity combat resolver in **Foundry VTT 14.365**. Use it to audit migration, V14 Region placement, UI flows, sheet updates, and chat output.
+
+## 0. V14 migration and Region preflight
+
+Run these checks first on a disposable copy of a backed-up V13 world. Follow the complete [V14 upgrade guide](../v14-upgrade-guide.md); keep modules disabled until the system-only checks pass.
+
+1. Confirm Foundry reports build `14.365` and system version `2.0.0`.
+2. Log in as the sole active GM. Confirm the system migration completes once and does not repeat after a reload.
+3. Open the 28 system compendia and verify the Hit Location RollTable can be rolled and an Item can be dragged to an Actor.
+4. From a weapon with an AoE, place cone, circle, rectangle, and line shapes where available:
+   - the preview follows the cursor and directional shapes remain anchored at the attacker;
+   - Escape/right-click cancellation returns cleanly, creates no Scene Region, and spends no ammunition;
+   - target inclusion uses token center and elevation;
+   - completing the attack leaves no transient AoE Region behind.
+5. Place suppressive fire and verify exactly one persistent Scene Region is created. Move an eligible token through it, resolve the save once, and advance combat until the shooter's next turn; the Region must then be deleted.
+6. Repeat the Region checks as a player. A denied persistent placement must produce a notification and cancel safely; it must not leave a hanging dialog or partial combat mutation.
+7. Check the browser console with compatibility warnings enabled. Record every system-originated warning or exception as a release blocker.
 
 ---
 
@@ -134,7 +150,7 @@ Verify that missing actor context or state conflicts block the commit path and a
 To execute the automated suite of deterministic combat fixtures (verifying normalization, outcomes, hit locations, and fallbacks in code):
 1. Open a terminal in the project root directory.
 2. Run the command: `node tests/run-combat-fixtures.mjs`.
-3. Verify that the output ends with `155 fixture(s): 155 passed, 0 failed`.
+3. Verify that the output ends with `177 fixture(s): 177 passed, 0 failed`.
 
 ---
 

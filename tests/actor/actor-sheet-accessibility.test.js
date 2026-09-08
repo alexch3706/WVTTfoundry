@@ -22,6 +22,14 @@ export function runActorSheetAccessibilityTests() {
     assert.doesNotMatch(source, /\bthis\.maximize\s*\(/);
   });
 
+  test("skill filtering rejects stale caches and uses the displayed Actor", () => {
+    const source = projectFile("module/actor/actor-sheet.js");
+    assert.doesNotMatch(source, /game\.actors\.get\(id\)\.itemTypes\.skill/);
+    assert.match(source, /cachedIDs\.length === currentIDs\.length/);
+    assert.match(source, /cachedIDs\.every\(id => currentIDSet\.has\(id\)\)/);
+    assert.match(source, /this\.actor\.items\.get\(id\)\?\.name/);
+  });
+
   test("shared field labels reference their controls", () => {
     for (const file of ["boolean", "number", "select", "string"]) {
       const template = projectFile(`templates/fields/${file}.hbs`);

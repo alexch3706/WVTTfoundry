@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 
 import {
   buildTurnStartDeathSaveReminder,
-  handleCombatTurnDeathSaveReminder
+  handleCombatTurnDeathSaveReminder,
+  registerCombatTurnDeathSaveHook
 } from "../../module/combat/death-save-turn.js";
 import {
   bindSaveChatActions,
@@ -31,6 +32,19 @@ export async function runDeathSaveTurnTests() {
     const result = await handleCombatTurnDeathSaveReminder(undefined, {}, {}, { adapter });
     assert.equal(result.status, "skipped");
     assert.equal(adapter.messages.length, 0);
+  });
+
+  await test("registers the all-client post-update V14 turn hook", () => {
+    const previousHooks = globalThis.Hooks;
+    const registrations = [];
+    try {
+      globalThis.Hooks = { on: (name, callback) => registrations.push({ name, callback }) };
+      registerCombatTurnDeathSaveHook();
+      assert.deepEqual(registrations.map(entry => entry.name), ["combatTurnChange"]);
+      assert.equal(typeof registrations[0].callback, "function");
+    } finally {
+      globalThis.Hooks = previousHooks;
+    }
   });
 
   await test("does not emit before initiative starts", async () => {

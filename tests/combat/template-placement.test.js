@@ -5,127 +5,103 @@ import {
   SUPPRESSIVE_TEMPLATE_CHOICE,
   drawAoETemplateAndGetTargets,
   drawAutoshotgunPatternsAndGetTargets,
+  placePersistentSuppressiveFireTemplate,
   promptUseAoETemplate,
   promptUseSuppressiveFireTemplate
 } from "../../module/combat/template-placement.js";
 
 export async function runTemplatePlacementTests() {
   const results = [];
+  const originalCanvas = globalThis.canvas;
+  const originalGame = globalThis.game;
+  const originalUi = globalThis.ui;
 
   async function testShotgunConeTemplateIsTransient() {
     let passed = true;
     try {
-      let createdTemplateDeleted = false;
-      const handlers = {};
-      const createdDoc = {
-        id: "shotgun-template",
-        uuid: "Scene.test.MeasuredTemplate.shotgun-template",
-        x: 100,
-        y: 100,
-        direction: 45,
-        angle: 45,
-        distance: 10,
-        delete: async () => { createdTemplateDeleted = true; }
-      };
-      createdDoc.object = {
-        document: createdDoc,
-        shape: {
-          contains: () => false
-        }
-      };
-
+      const placementCalls = [];
+      const testedPoints = [];
+      let warningCount = 0;
       globalThis.game = {
         user: { id: "user-1", color: "#ff0000" }
       };
-      globalThis.ui = { notifications: { warn: () => {} } };
-      globalThis.Ray = class {
-        constructor(origin, destination) {
-          this.angle = Math.atan2(destination.y - origin.y, destination.x - origin.x);
-          this.distance = Math.hypot(destination.x - origin.x, destination.y - origin.y);
-        }
-      };
-      Math.normalizeDegrees = Math.normalizeDegrees || ((degrees) => ((degrees % 360) + 360) % 360);
-      Math.toDegrees = Math.toDegrees || ((radians) => radians * 180 / Math.PI);
-
-      globalThis.CONFIG = {
-        MeasuredTemplate: {
-          documentClass: class {
-            constructor(data) {
-              this.data = data;
-              this.x = data.x;
-              this.y = data.y;
-              this.direction = data.direction;
-              this.angle = data.angle;
-              this.distance = data.distance;
-            }
-            updateSource(update) {
-              Object.assign(this, update);
-            }
-            toObject() {
-              return { ...this.data, direction: this.direction };
-            }
-          },
-          objectClass: class {
-            constructor(doc) {
-              this.document = doc;
-              this.layer = { preview: { addChild: () => {} } };
-            }
-            async draw() {}
-            refresh() {}
-            destroy() {}
-          }
-        }
-      };
+      globalThis.ui = { notifications: { warn: () => { warningCount += 1; } } };
       globalThis.canvas = {
         ready: true,
-        scene: {
-          grid: { distance: 1 },
-          createEmbeddedDocuments: async () => [createdDoc]
-        },
-        grid: { size: 100 },
-        templates: { preview: { addChild: () => {} } },
+        dimensions: { distancePixels: 10, distance: 1, size: 100 },
+        level: { id: "level-1" },
+        scene: { grid: { distance: 1 } },
         tokens: {
-          placeables: []
+          placeables: [
+            { id: "attacker-token", center: { x: 100, y: 100 }, document: { id: "attacker-token", elevation: 0 } },
+            { id: "inside-token", center: { x: 200, y: 100 }, document: { id: "inside-token", elevation: 5 } },
+            { id: "outside-token", center: { x: 500, y: 100 }, document: { id: "outside-token", elevation: 2 } }
+          ]
         },
-        stage: {
-          on: (event, handler) => { handlers[event] = handler; },
-          off: (event) => { delete handlers[event]; }
-        },
-        app: {
-          view: {
-            addEventListener: () => {},
-            removeEventListener: () => {}
+        regions: {
+          placeRegion: async (data, options) => {
+            placementCalls.push({ data, options });
+            const shape = {
+              ...data.shapes[0],
+              updateSource(update) {
+                Object.assign(this, update);
+              }
+            };
+            const moveResult = options.onMove({
+              shape,
+              position: { x: 200, y: 200 },
+              preview: { renderFlags: { set: () => {} } }
+            });
+            assert.equal(moveResult, false);
+            return {
+              id: "shotgun-region",
+              uuid: "Scene.test.Region.shotgun-region",
+              shapes: [shape],
+              testPoint(point) {
+                testedPoints.push(point);
+                return point.x < 300;
+              }
+            };
           }
         }
       };
 
-      const promise = drawAoETemplateAndGetTargets(
+      const result = await drawAoETemplateAndGetTargets(
+        { name: "Shotgun", system: { aoe: { type: "cone", value: 10 } } },
+        { id: "attacker-token", center: { x: 100, y: 100 } }
+      );
+      assert.equal(placementCalls.length, 1);
+      assert.equal(placementCalls[0].options.create, false, "shotgun AoE uses an ephemeral RegionDocument");
+      assert.equal(placementCalls[0].data.shapes[0].type, "cone");
+      assert.equal(placementCalls[0].data.shapes[0].radius, 100, "Scene units are converted to pixels");
+      assert.deepEqual(testedPoints, [
+        { x: 200, y: 100, elevation: 5 },
+        { x: 500, y: 100, elevation: 2 }
+      ], "RegionDocument.testPoint receives token center and elevation; the directional attacker is excluded");
+      assert.deepEqual(result.affectedTargets.map(token => token.id), ["inside-token"]);
+      assert.equal(result.hazardZone.lifecycle, "transient");
+      assert.equal(result.hazardZone.templateId, "shotgun-region", "legacy evidence aliases remain available");
+      assert.equal(result.hazardZone.regionId, "shotgun-region", "Region identity is exposed explicitly");
+      assert.equal(result.hazardZone.templateUuid, "Scene.test.Region.shotgun-region");
+      assert.equal(result.affectedTargets[0].tactical.template.targetDistance, 10);
+      assert.equal(result.affectedTargets[0].tactical.template.direction, 45);
+
+      globalThis.canvas.regions.placeRegion = async () => null;
+      const canceledResult = await drawAoETemplateAndGetTargets(
         { system: { aoe: { type: "cone", value: 10 } } },
         { id: "attacker-token", center: { x: 100, y: 100 } }
       );
-      await new Promise(resolve => setTimeout(resolve, 0));
-      handlers.pointerdown({
-        stopPropagation: () => {}
-      });
+      assert.equal(canceledResult.canceled, true, "Foundry Region cancellation cancels the attack");
 
-      const result = await promise;
-      assert.equal(result.hazardZone.lifecycle, "transient");
-      assert.equal(createdTemplateDeleted, true, "shotgun cone MeasuredTemplate should be deleted after evidence is collected");
-
-      globalThis.canvas.scene.createEmbeddedDocuments = async () => {
+      globalThis.canvas.regions.placeRegion = async () => {
         throw new Error("permission denied");
       };
-      const failedPlacement = drawAoETemplateAndGetTargets(
+      const failedResult = await drawAoETemplateAndGetTargets(
         { system: { aoe: { type: "cone", value: 10 } } },
         { id: "attacker-token", center: { x: 100, y: 100 } }
       );
-      await new Promise(resolve => setTimeout(resolve, 0));
-      handlers.pointerdown({ stopPropagation: () => {} });
-      const failedResult = await Promise.race([
-        failedPlacement,
-        new Promise((_, reject) => setTimeout(() => reject(new Error("failed placement did not settle")), 250))
-      ]);
       assert.equal(failedResult.canceled, true, "Foundry API rejection cancels instead of hanging the attack");
+      assert.equal(warningCount, 1, "API failures notify the user but ordinary cancellation does not");
     } catch (e) {
       console.error(e);
       passed = false;
@@ -144,7 +120,7 @@ export async function runTemplatePlacementTests() {
               id: "target-shell-1",
               tactical: {
                 template: {
-                  templateUuid: "Scene.test.MeasuredTemplate.autoshotgun-shell-1",
+                  templateUuid: "Scene.test.Region.autoshotgun-shell-1",
                   templateId: "autoshotgun-shell-1",
                   type: "cone",
                   origin: { x: 0, y: 0 },
@@ -158,7 +134,7 @@ export async function runTemplatePlacementTests() {
             }
           ],
           hazardZone: {
-            templateUuid: "Scene.test.MeasuredTemplate.autoshotgun-shell-1",
+            templateUuid: "Scene.test.Region.autoshotgun-shell-1",
             templateId: "autoshotgun-shell-1",
             type: "cone",
             origin: { x: 0, y: 0 },
@@ -174,7 +150,7 @@ export async function runTemplatePlacementTests() {
               id: "target-shell-2",
               tactical: {
                 template: {
-                  templateUuid: "Scene.test.MeasuredTemplate.autoshotgun-shell-2",
+                  templateUuid: "Scene.test.Region.autoshotgun-shell-2",
                   templateId: "autoshotgun-shell-2",
                   type: "cone",
                   origin: { x: 0.5, y: 0 },
@@ -188,7 +164,7 @@ export async function runTemplatePlacementTests() {
             }
           ],
           hazardZone: {
-            templateUuid: "Scene.test.MeasuredTemplate.autoshotgun-shell-2",
+            templateUuid: "Scene.test.Region.autoshotgun-shell-2",
             templateId: "autoshotgun-shell-2",
             type: "cone",
             origin: { x: 0.5, y: 0 },
@@ -241,7 +217,7 @@ export async function runTemplatePlacementTests() {
         distance: { value: 8, units: "m", source: "template" },
         tactical: {
           template: {
-            templateUuid: "Scene.test.MeasuredTemplate.autoshotgun-live",
+            templateUuid: "Scene.test.Region.autoshotgun-live",
             templateId: "autoshotgun-live",
             type: "cone",
             origin: { x: 0, y: 0 },
@@ -263,7 +239,7 @@ export async function runTemplatePlacementTests() {
           drawPattern: async () => ({
             affectedTargets: [liveTarget],
             hazardZone: {
-              templateUuid: "Scene.test.MeasuredTemplate.autoshotgun-live",
+              templateUuid: "Scene.test.Region.autoshotgun-live",
               templateId: "autoshotgun-live",
               type: "cone",
               origin: { x: 0, y: 0 },
@@ -302,7 +278,7 @@ export async function runTemplatePlacementTests() {
             ? {
                 affectedTargets: [],
                 hazardZone: {
-                  templateUuid: "Scene.test.MeasuredTemplate.autoshotgun-empty",
+                  templateUuid: "Scene.test.Region.autoshotgun-empty",
                   templateId: "autoshotgun-empty",
                   type: "cone",
                   origin: { x: 0, y: 0 },
@@ -357,6 +333,91 @@ export async function runTemplatePlacementTests() {
     results.push({ name: "template-placement: explicit autoshotgun cancel aborts remaining patterns", passed });
   }
 
+  async function testSuppressiveFireCreatesPersistentAnchoredRegion() {
+    let passed = true;
+    try {
+      const placementCalls = [];
+      let warningCount = 0;
+      globalThis.game = {
+        user: { id: "user-1", color: "#ff0000" },
+        combat: { id: "combat-1", round: 3, turn: 2 }
+      };
+      globalThis.ui = { notifications: { warn: () => { warningCount += 1; } } };
+      globalThis.canvas = {
+        ready: true,
+        dimensions: { distancePixels: 20, distance: 1, size: 100 },
+        level: { id: "level-1" },
+        scene: { grid: { distance: 1 } },
+        regions: {
+          placeRegion: async (data, options) => {
+            placementCalls.push({ data, options });
+            const shape = {
+              ...data.shapes[0],
+              updateSource(update) {
+                Object.assign(this, update);
+              }
+            };
+            options.onMove({
+              shape,
+              position: { x: 100, y: 200 },
+              preview: { renderFlags: { set: () => {} } }
+            });
+            assert.deepEqual(
+              { x: shape.x, y: shape.y, rotation: shape.rotation },
+              { x: 100, y: 100, rotation: 90 },
+              "pointer movement rotates the line while keeping it anchored to the attacker"
+            );
+            return { id: "suppressive-region", uuid: "Scene.test.Region.suppressive-region" };
+          }
+        }
+      };
+
+      const placed = await placePersistentSuppressiveFireTemplate(
+        { id: "attacker-token", center: { x: 100, y: 100 }, actor: { id: "actor-1" } },
+        { id: "weapon-1", system: { damage: "3d6" } },
+        12,
+        2,
+        20
+      );
+      assert.equal(placed, true);
+      assert.equal(placementCalls[0].options.create, true, "suppressive-fire Regions persist in the Scene");
+      assert.deepEqual(placementCalls[0].data.shapes[0], {
+        type: "line",
+        x: 100,
+        y: 100,
+        length: 400,
+        width: 40,
+        rotation: 0,
+        gridBased: false
+      });
+      assert.equal(placementCalls[0].data.flags.cyberpunk2020.suppressiveFire.saveDC, 6);
+      assert.equal(placementCalls[0].data.flags.cyberpunk2020.suppressiveFire.createdRound, 3);
+
+      globalThis.canvas.regions.placeRegion = async () => null;
+      assert.equal(await placePersistentSuppressiveFireTemplate(
+        { id: "attacker-token", center: { x: 100, y: 100 }, actor: { id: "actor-1" } },
+        { id: "weapon-1", system: { damage: "3d6" } },
+        12,
+        2,
+        20
+      ), false, "canceling Region placement does not create a suppressive-fire zone");
+
+      globalThis.canvas.regions.placeRegion = async () => { throw new Error("permission denied"); };
+      assert.equal(await placePersistentSuppressiveFireTemplate(
+        { id: "attacker-token", center: { x: 100, y: 100 }, actor: { id: "actor-1" } },
+        { id: "weapon-1", system: { damage: "3d6" } },
+        12,
+        2,
+        20
+      ), false, "Region API errors settle the placement as failed");
+      assert.equal(warningCount, 1);
+    } catch(e) {
+      console.error(e);
+      passed = false;
+    }
+    results.push({ name: "template-placement: suppressive fire creates a persistent anchored Region", passed });
+  }
+
   async function testTemplatePromptsDistinguishNormalAndCancel() {
     let passed = true;
     const OriginalDialog = globalThis.Dialog;
@@ -405,12 +466,19 @@ export async function runTemplatePlacementTests() {
     results.push({ name: "template-placement: prompts distinguish normal roll from cancel attack", passed });
   }
 
-  await testShotgunConeTemplateIsTransient();
-  await testAutoshotgunPatternsAreCollectedSequentially();
-  await testAutoshotgunPatternsSanitizeLiveTargets();
-  await testAutoshotgunCanceledPlacementReturnsWarningPattern();
-  await testAutoshotgunExplicitCancelAbortsRemainingPatterns();
-  await testTemplatePromptsDistinguishNormalAndCancel();
+  try {
+    await testShotgunConeTemplateIsTransient();
+    await testAutoshotgunPatternsAreCollectedSequentially();
+    await testAutoshotgunPatternsSanitizeLiveTargets();
+    await testAutoshotgunCanceledPlacementReturnsWarningPattern();
+    await testAutoshotgunExplicitCancelAbortsRemainingPatterns();
+    await testSuppressiveFireCreatesPersistentAnchoredRegion();
+    await testTemplatePromptsDistinguishNormalAndCancel();
+  } finally {
+    globalThis.canvas = originalCanvas;
+    globalThis.game = originalGame;
+    globalThis.ui = originalUi;
+  }
 
   return results;
 }

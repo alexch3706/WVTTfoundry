@@ -79,8 +79,8 @@ export async function resolveCombatAction(context, options = {}, roller = undefi
       }
     }
 
-    // Suppressive Fire is no longer resolved here. It is handled by the persistent hazard tracker
-    // when tokens intersect the MeasuredTemplate.
+    // Suppressive Fire is no longer resolved here. It is handled by the
+    // persistent hazard tracker when tokens intersect the Region.
 
     const rangedManualOutcome = validateSupportedRangedContext(context, resolvedRoller);
     if(rangedManualOutcome) {

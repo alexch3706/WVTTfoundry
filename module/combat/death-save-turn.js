@@ -1,4 +1,5 @@
 import { getDeathSaveState, requiresRecurringDeathSave } from "./save-resolver.js";
+import { isPrimaryActiveGm } from "../foundry-compat.js";
 
 const emittedTurnKeys = new Set();
 const MAX_EMITTED_TURN_KEYS = 500;
@@ -7,8 +8,8 @@ export function registerCombatTurnDeathSaveHook() {
   if(typeof Hooks === "undefined" || !Hooks?.on) {
     return;
   }
-  Hooks.on("combatTurn", (combat, updateData, updateOptions) => {
-    handleCombatTurnDeathSaveReminder(combat, updateData, updateOptions).catch(error => {
+  Hooks.on("combatTurnChange", (combat, prior, current) => {
+    handleCombatTurnDeathSaveReminder(combat, current, { prior, current }).catch(error => {
       console.warn("CYBERPUNK | Failed to create turn-start Death Save reminder", error);
     });
   });
@@ -77,12 +78,12 @@ export function buildTurnStartDeathSaveReminder(actor, context = {}) {
 function createFoundryDeathSaveTurnAdapter() {
   return {
     isAuthoritativeClient() {
-      return !!game?.user?.isGM;
+      return isPrimaryActiveGm();
     },
     async createReminderMessage(reminder, { combatant } = {}) {
       const content = renderReminderContent(reminder);
       await ChatMessage.create({
-        user: game.user.id,
+        author: game.user.id,
         speaker: ChatMessage.getSpeaker({ actor: combatant?.actor }),
         content
       });
@@ -95,9 +96,6 @@ function isActiveStartedCombat(combat) {
     return false;
   }
   if(combat.started === false) {
-    return false;
-  }
-  if(combat.isActive === false) {
     return false;
   }
   if(combat.started === true) {

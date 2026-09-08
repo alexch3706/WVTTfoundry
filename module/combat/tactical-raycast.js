@@ -51,7 +51,7 @@ export async function detectAndPromptTacticalRaycasts(attackerToken, targetToken
       continue;
     }
 
-    const wallDocument = collision.edges?.[0]?.document || collision.document;
+    const wallDocument = getCollisionWallDocument(collision);
     const obstruction = {
       id: wallDocument?.id || "unknown-wall",
       uuid: wallDocument?.uuid || "unknown-uuid",
@@ -93,6 +93,13 @@ export async function detectAndPromptTacticalRaycasts(attackerToken, targetToken
   }
 
   return augmentedTargets;
+}
+
+/** Resolve a WallDocument from the public PolygonVertex -> EdgeSet -> object API. */
+export function getCollisionWallDocument(collision) {
+  const firstEdge = collision?.edges ? Array.from(collision.edges)[0] : undefined;
+  const wallObject = firstEdge?.object;
+  return wallObject?.document || wallObject || collision?.document;
 }
 
 function findFirstLivingTarget(targets, attackerOrigin) {

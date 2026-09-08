@@ -10,6 +10,17 @@ export function registerSystemSettings() {
     default: ""
   });
 
+  // Durable recovery journal for packs which were locked before a migration.
+  // If a relock is interrupted, the next launch must restore that state before
+  // the migration can be considered complete.
+  game.settings.register(game.system.id, "migrationPendingPackRelocks", {
+    name: "Pending migration pack relocks",
+    scope: "world",
+    config: false,
+    type: String,
+    default: "[]"
+  });
+
   game.settings.register(game.system.id, "trainedSkillsFirst", {
     name: "SETTINGS.TrainedSkillsFirst",
     hint: "SETTINGS.TrainedSkillsFirstHint",

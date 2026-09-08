@@ -5,11 +5,20 @@
 import { resolveSuppressiveFireDamageOutcome } from "./attack-resolver.js";
 import { buildActorCombatSnapshot, buildWeaponCombatSnapshot } from "./combat-snapshot.js";
 import { previewAndApplyCombatOutcome, previewAndConfirmCombatOutcome } from "./combat-commit.js";
+import {
+    buildSuppressiveFireRegionData,
+    getPrimaryRegionShape,
+    getRegionDocument,
+    regionContainsToken
+} from "./region-zones.js";
+import { isPrimaryActiveGm, resolveFoundryUuid } from "../foundry-compat.js";
 
 const ACTIVE_SUPPRESSIVE_CHAT_ACTIONS = new Set();
 const SUPPRESSIVE_INTERSECTION_QUEUES = new WeakMap();
 const SUPPRESSIVE_HITS_RESOLUTION_FLAG = "suppressiveFireHitsResolution";
 const SUPPRESSIVE_DAMAGE_RESOLUTION_FLAG = "suppressiveFireDamageResolution";
+const LEGACY_SYSTEM_ID = "cyberpunk2020";
+const CURRENT_SYSTEM_ID = "cyberpunk2020-rilerena";
 
 /**
  * Calculates the Save DC for a Suppressive Fire zone.
@@ -23,80 +32,29 @@ export function calculateSuppressiveFireSaveDC(bulletsFired, zoneWidth) {
 }
 
 /**
- * Builds the data object for a new Suppressive Fire MeasuredTemplate.
+ * Legacy API alias which now builds data for a Foundry V14 RegionDocument.
  */
 export function buildSuppressiveFireTemplateData(params) {
-    const {
-        attackerTokenId,
-        attackerActorId,
-        weaponItemId,
-        damageFormula,
-        bulletsFired,
-        zoneWidth,
-        maxDistance,
-        origin,
-        combatRound,
-        combatTurn,
-        combatId
-    } = params;
-
-    const saveDC = calculateSuppressiveFireSaveDC(bulletsFired, zoneWidth);
-
-    return {
-        t: "ray",
-        distance: maxDistance || 10,
-        width: zoneWidth,
-        x: origin.x,
-        y: origin.y,
-        flags: {
-            cyberpunk2020: {
-                suppressiveFire: {
-                    shooterActorId: attackerActorId,
-                    shooterTokenId: attackerTokenId,
-                    weaponItemId,
-                    damageFormula,
-                    bulletsFired,
-                    remainingHitCap: bulletsFired,
-                    saveDC,
-                    zoneWidth,
-                    createdCombatId: combatId,
-                    createdRound: combatRound,
-                    createdTurn: combatTurn,
-                    expiresAtRound: combatRound + 1, // Will be refined later
-                    expiresAtTurn: combatTurn,
-                    resolvedTokenIds: []
-                }
-            }
-        }
-    };
+    return buildSuppressiveFireRegionData(params);
 }
 
 /**
  * Hook registration for Suppressive Fire
  */
 export function registerSuppressiveFireHooks() {
-    // Only GM handles the resolution to avoid duplicate resolution from multiple clients
-    Hooks.on("updateToken", (tokenDocument, change, options, userId) => {
-        if (!isPrimaryActiveGmClient()) return;
-        if (change.x === undefined && change.y === undefined) return;
+    // V14 emits moveToken for token movement. Registering updateToken as well
+    // would enqueue the same suppressive-fire check twice.
+    Hooks.on("moveToken", (tokenDocument, movement, operation, user) => {
+        if (!isPrimaryActiveGm()) return;
         void handleTokenMovement(tokenDocument).catch(reportSuppressiveHookError);
     });
 
-    // In V13+ we can use moveToken
-    Hooks.on("moveToken", (tokenDocument, change, options, userId) => {
-        if (!isPrimaryActiveGmClient()) return;
-        void handleTokenMovement(tokenDocument).catch(reportSuppressiveHookError);
+    Hooks.on("combatTurnChange", (combat, prior, current) => {
+        if (!isPrimaryActiveGm()) return;
+        void handleSuppressiveFireCombatTurn(combat, current, { prior, current }).catch(reportSuppressiveHookError);
     });
 
-    Hooks.on("combatTurn", (combat, updateData, updateOptions) => {
-        if (!isPrimaryActiveGmClient()) return;
-        void handleSuppressiveFireCombatTurn(combat, updateData).catch(reportSuppressiveHookError);
-    });
-
-    // V12 passes a jQuery wrapper to renderChatMessage; V13 passes an
-    // HTMLElement to renderChatMessageHTML. Bind both without duplicating
-    // listeners when a compatibility shim emits both hooks.
-    Hooks.on("renderChatMessage", bindSuppressiveFireChatActions);
+    // Foundry V14 passes the rendered HTMLElement as the second argument.
     Hooks.on("renderChatMessageHTML", bindSuppressiveFireChatActions);
 }
 
@@ -106,15 +64,15 @@ function reportSuppressiveHookError(error) {
 }
 
 export function bindSuppressiveFireChatActions(message, html) {
-    const root = html?.querySelectorAll ? html : html?.[0];
-    if(!root?.querySelectorAll) return;
+    if(!html?.querySelectorAll) return;
+    const root = html;
 
-    const mayResolve = isPrimaryActiveGmClient();
+    const mayResolve = isPrimaryActiveGm();
     const hitsLocked = isMessageResolutionLocked(readMessageResolution(message, SUPPRESSIVE_HITS_RESOLUTION_FLAG));
     const damageLocked = isMessageResolutionLocked(readMessageResolution(message, SUPPRESSIVE_DAMAGE_RESOLUTION_FLAG));
 
     for(const button of root.querySelectorAll(".roll-suppressive-hits")) {
-        const actionKey = `suppressive-hits:${button?.dataset?.templateId || "unknown"}`;
+        const actionKey = `suppressive-hits:${getActionRegionReference(button)}`;
         setActionDisabled(button, !mayResolve || hitsLocked || ACTIVE_SUPPRESSIVE_CHAT_ACTIONS.has(actionKey));
         if(button.dataset.cyberpunkSuppressiveBound === "true") continue;
         button.dataset.cyberpunkSuppressiveBound = "true";
@@ -124,7 +82,7 @@ export function bindSuppressiveFireChatActions(message, html) {
     }
 
     for(const button of root.querySelectorAll(".roll-damage")) {
-        const actionKey = `suppressive-damage:${button?.dataset?.templateId || "unknown"}:${button?.dataset?.actorId || "unknown"}`;
+        const actionKey = `suppressive-damage:${getActionRegionReference(button)}:${getActionActorReference(button)}`;
         setActionDisabled(button, !mayResolve || damageLocked || ACTIVE_SUPPRESSIVE_CHAT_ACTIONS.has(actionKey));
         if(button.dataset.cyberpunkSuppressiveBound === "true") continue;
         button.dataset.cyberpunkSuppressiveBound = "true";
@@ -134,19 +92,87 @@ export function bindSuppressiveFireChatActions(message, html) {
     }
 }
 
+function getSuppressiveFireState(regionLike) {
+    const region = getRegionDocument(regionLike);
+    if(!region) return { region: null, flags: null, scope: null };
+
+    const scopes = [
+        LEGACY_SYSTEM_ID,
+        globalThis.game?.system?.id,
+        CURRENT_SYSTEM_ID
+    ].filter((scope, index, values) => scope && values.indexOf(scope) === index);
+
+    for(const scope of scopes) {
+        const flags = region.flags?.[scope]?.suppressiveFire;
+        if(flags) return { region, flags, scope };
+    }
+    return { region, flags: null, scope: null };
+}
+
+function getSuppressiveFireUpdatePath(scope, property) {
+    return `flags.${scope || LEGACY_SYSTEM_ID}.suppressiveFire.${property}`;
+}
+
+function getRegionById(regionId) {
+    return getRegionDocument(globalThis.canvas?.scene?.regions?.get?.(regionId));
+}
+
+function getActionRegionReference(action) {
+    return action?.dataset?.regionUuid || action?.dataset?.templateId || "unknown";
+}
+
+function getActionActorReference(action) {
+    return action?.dataset?.tokenUuid || action?.dataset?.actorUuid || action?.dataset?.actorId || "unknown";
+}
+
+async function resolveDocumentUuid(uuid, resolver = resolveFoundryUuid) {
+    if(!uuid || typeof resolver !== "function") return undefined;
+    try {
+        return await resolver(uuid);
+    } catch {
+        return undefined;
+    }
+}
+
+async function resolveRegionReference({ regionUuid, templateId }, resolver) {
+    const uuidRegion = getRegionDocument(await resolveDocumentUuid(regionUuid, resolver));
+    if(uuidRegion) return uuidRegion;
+
+    const viewedRegion = getRegionById(templateId);
+    if(viewedRegion) return viewedRegion;
+
+    const scenes = Array.from(globalThis.game?.scenes?.contents || globalThis.game?.scenes || []);
+    const matches = scenes
+        .map(scene => getRegionDocument(scene?.regions?.get?.(templateId)))
+        .filter(Boolean);
+    return matches.length === 1 ? matches[0] : undefined;
+}
+
+async function resolveActorReference({ actorUuid, tokenUuid, actorId }, resolver) {
+    const token = await resolveDocumentUuid(tokenUuid, resolver);
+    if(token?.actor) return token.actor;
+
+    const actor = await resolveDocumentUuid(actorUuid, resolver);
+    if(actor) return actor;
+    return globalThis.game?.actors?.get?.(actorId);
+}
+
 async function handleSuppressiveHitsAction(event, message) {
     event.preventDefault();
     const action = event.currentTarget;
     const templateId = action?.dataset?.templateId;
+    const regionUuid = action?.dataset?.regionUuid;
     const actorId = action?.dataset?.actorId;
-    if(action?.disabled || !templateId || !actorId) return;
-    if(!isPrimaryActiveGmClient()) {
+    const actorUuid = action?.dataset?.actorUuid;
+    const tokenUuid = action?.dataset?.tokenUuid;
+    if(action?.disabled || (!templateId && !regionUuid) || (!actorId && !actorUuid && !tokenUuid)) return;
+    if(!isPrimaryActiveGm()) {
         return globalThis.ui?.notifications?.warn("Only the active GM can resolve suppressive fire.");
     }
 
     // Serialize cap updates per template on the authoritative GM client. Two
     // target messages must not consume the same remaining-hit snapshot.
-    const actionKey = `suppressive-hits:${templateId}`;
+    const actionKey = `suppressive-hits:${regionUuid || templateId}`;
     if(ACTIVE_SUPPRESSIVE_CHAT_ACTIONS.has(actionKey)) {
         return globalThis.ui?.notifications?.warn("Another suppressive-fire roll is already being resolved.");
     }
@@ -159,15 +185,15 @@ async function handleSuppressiveHitsAction(event, message) {
             keepDisabled = true;
             return;
         }
-        const templateDoc = globalThis.canvas?.scene?.templates?.get?.(templateId);
-        if (!templateDoc) {
-            globalThis.ui?.notifications?.warn("Suppressive fire template no longer exists.");
+        const region = await resolveRegionReference({ regionUuid, templateId });
+        if (!region) {
+            globalThis.ui?.notifications?.warn("Suppressive fire zone no longer exists.");
             return;
         }
 
-        const flags = templateDoc.flags?.cyberpunk2020?.suppressiveFire;
+        const { flags, scope } = getSuppressiveFireState(region);
         if (!flags) return;
-        const remainingHitCap = Math.max(0, Number(flags.remainingHitCap) || 0);
+        const remainingHitCap = Math.max(0, Number(flags.remainingHitCap ?? flags.bulletsFired) || 0);
         if (remainingHitCap <= 0) {
             globalThis.ui?.notifications?.warn("This suppressive fire zone is depleted.");
             return;
@@ -176,7 +202,10 @@ async function handleSuppressiveHitsAction(event, message) {
         const lockPersisted = await persistMessageResolution(message, SUPPRESSIVE_HITS_RESOLUTION_FLAG, {
             status: "pending",
             templateId,
-            actorId
+            regionUuid,
+            actorId,
+            actorUuid,
+            tokenUuid
         });
         if(!lockPersisted) {
             globalThis.ui?.notifications?.warn("Could not lock this suppressive-fire action. No hits were rolled.");
@@ -187,14 +216,17 @@ async function handleSuppressiveHitsAction(event, message) {
         const roll = await new Roll("1d6").evaluate();
         const hits = Math.max(0, Math.min(Number(roll.total) || 0, remainingHitCap));
         const newCap = remainingHitCap - hits;
-        await templateDoc.update({ "flags.cyberpunk2020.suppressiveFire.remainingHitCap": newCap });
+        await region.update({ [getSuppressiveFireUpdatePath(scope, "remainingHitCap")]: newCap });
 
-        const actor = globalThis.game?.actors?.get?.(actorId);
+        const actor = await resolveActorReference({ actorUuid, tokenUuid, actorId });
         const actorName = escapeChatHtml(actor?.name || "Target");
-        const safeTemplateId = escapeChatHtml(templateId);
-        const safeActorId = escapeChatHtml(actorId);
+        const safeTemplateId = escapeChatHtml(templateId || region.id);
+        const safeRegionUuid = escapeChatHtml(regionUuid || region.uuid);
+        const safeActorId = escapeChatHtml(actorId || actor?.id);
+        const safeActorUuid = escapeChatHtml(actorUuid || actor?.uuid);
+        const safeTokenUuid = escapeChatHtml(tokenUuid);
         await ChatMessage.create({
-            user: game.user.id,
+            author: game.user.id,
             speaker: ChatMessage.getSpeaker({ actor }),
             content: `
                 <div class="cyberpunk2020-chat-card">
@@ -204,7 +236,7 @@ async function handleSuppressiveHitsAction(event, message) {
                     <div class="card-content">
                         <p><strong>${actorName}</strong> takes <strong>${hits}</strong> hits from the suppressive fire zone!</p>
                         <p>Remaining hits in zone: ${newCap}</p>
-                        <button type="button" class="roll-damage" data-hits="${hits}" data-template-id="${safeTemplateId}" data-actor-id="${safeActorId}">Roll Damage</button>
+                        <button type="button" class="roll-damage" data-hits="${hits}" data-template-id="${safeTemplateId}" data-region-uuid="${safeRegionUuid}" data-actor-id="${safeActorId}" data-actor-uuid="${safeActorUuid}" data-token-uuid="${safeTokenUuid}">Roll Damage</button>
                     </div>
                 </div>
             `
@@ -212,7 +244,10 @@ async function handleSuppressiveHitsAction(event, message) {
         const completedPersisted = await persistMessageResolution(message, SUPPRESSIVE_HITS_RESOLUTION_FLAG, {
             status: "completed",
             templateId,
-            actorId
+            regionUuid,
+            actorId,
+            actorUuid,
+            tokenUuid
         });
         if(!completedPersisted) {
             globalThis.ui?.notifications?.warn("Hits were resolved, but the chat lock could not be finalized. Resolve any follow-up manually.");
@@ -223,7 +258,10 @@ async function handleSuppressiveHitsAction(event, message) {
             await persistMessageResolution(message, SUPPRESSIVE_HITS_RESOLUTION_FLAG, {
                 status: "partial",
                 templateId,
-                actorId
+                regionUuid,
+                actorId,
+                actorUuid,
+                tokenUuid
             });
         }
         globalThis.ui?.notifications?.error(keepDisabled
@@ -240,13 +278,22 @@ async function handleSuppressiveDamageAction(event, message) {
     const action = event.currentTarget;
     const hits = Number.parseInt(action?.dataset?.hits, 10);
     const templateId = action?.dataset?.templateId;
+    const regionUuid = action?.dataset?.regionUuid;
     const actorId = action?.dataset?.actorId;
-    if(action?.disabled || !templateId || !actorId || !Number.isInteger(hits) || hits <= 0) return;
-    if(!isPrimaryActiveGmClient()) {
+    const actorUuid = action?.dataset?.actorUuid;
+    const tokenUuid = action?.dataset?.tokenUuid;
+    if(
+        action?.disabled
+        || (!templateId && !regionUuid)
+        || (!actorId && !actorUuid && !tokenUuid)
+        || !Number.isInteger(hits)
+        || hits <= 0
+    ) return;
+    if(!isPrimaryActiveGm()) {
         return globalThis.ui?.notifications?.warn("Only the active GM can resolve suppressive fire.");
     }
 
-    const actionKey = `suppressive-damage:${templateId}:${actorId}`;
+    const actionKey = `suppressive-damage:${regionUuid || templateId}:${tokenUuid || actorUuid || actorId}`;
     if(ACTIVE_SUPPRESSIVE_CHAT_ACTIONS.has(actionKey)) return;
     ACTIVE_SUPPRESSIVE_CHAT_ACTIONS.add(actionKey);
     setActionDisabled(action, true);
@@ -259,7 +306,10 @@ async function handleSuppressiveDamageAction(event, message) {
         const lockPersisted = await persistMessageResolution(message, SUPPRESSIVE_DAMAGE_RESOLUTION_FLAG, {
             status: "pending",
             templateId,
-            actorId
+            regionUuid,
+            actorId,
+            actorUuid,
+            tokenUuid
         });
         if(!lockPersisted) {
             globalThis.ui?.notifications?.warn("Could not lock this suppressive-fire damage action. No damage was applied.");
@@ -267,12 +317,22 @@ async function handleSuppressiveDamageAction(event, message) {
         }
         keepDisabled = true;
 
-        const result = await resolveSuppressiveFireDamageFromChat({ templateId, actorId, hits });
+        const result = await resolveSuppressiveFireDamageFromChat({
+            templateId,
+            regionUuid,
+            actorId,
+            actorUuid,
+            tokenUuid,
+            hits
+        });
         if(result?.status === "committed") {
             const completedPersisted = await persistMessageResolution(message, SUPPRESSIVE_DAMAGE_RESOLUTION_FLAG, {
                 status: "completed",
                 templateId,
-                actorId
+                regionUuid,
+                actorId,
+                actorUuid,
+                tokenUuid
             });
             if(!completedPersisted) {
                 globalThis.ui?.notifications?.warn("Damage was applied, but the chat lock could not be finalized. Do not repeat this action.");
@@ -281,14 +341,20 @@ async function handleSuppressiveDamageAction(event, message) {
             const retryPersisted = await persistMessageResolution(message, SUPPRESSIVE_DAMAGE_RESOLUTION_FLAG, {
                 status: "retryable",
                 templateId,
-                actorId
+                regionUuid,
+                actorId,
+                actorUuid,
+                tokenUuid
             });
             keepDisabled = !retryPersisted;
         } else {
             await persistMessageResolution(message, SUPPRESSIVE_DAMAGE_RESOLUTION_FLAG, {
                 status: result?.status === "canceled" ? "canceled" : "partial",
                 templateId,
-                actorId
+                regionUuid,
+                actorId,
+                actorUuid,
+                tokenUuid
             });
             globalThis.ui?.notifications?.warn(result?.status === "canceled"
                 ? "Suppressive-fire damage was canceled. Resolve these existing hits manually if needed."
@@ -300,7 +366,10 @@ async function handleSuppressiveDamageAction(event, message) {
             await persistMessageResolution(message, SUPPRESSIVE_DAMAGE_RESOLUTION_FLAG, {
                 status: "partial",
                 templateId,
-                actorId
+                regionUuid,
+                actorId,
+                actorUuid,
+                tokenUuid
             });
         }
         globalThis.ui?.notifications?.error(keepDisabled
@@ -310,16 +379,6 @@ async function handleSuppressiveDamageAction(event, message) {
         ACTIVE_SUPPRESSIVE_CHAT_ACTIONS.delete(actionKey);
         if(!keepDisabled) setActionDisabled(action, false);
     }
-}
-
-function isPrimaryActiveGmClient() {
-    const currentUser = globalThis.game?.user;
-    if(!currentUser?.isGM) return false;
-    const users = Array.from(globalThis.game?.users?.contents || globalThis.game?.users || []);
-    const activeGms = users
-        .filter(user => user?.isGM && user?.active)
-        .sort((left, right) => String(left.id).localeCompare(String(right.id)));
-    return activeGms.length === 0 || activeGms[0]?.id === currentUser.id;
 }
 
 function readMessageResolution(message, flag) {
@@ -380,25 +439,43 @@ function escapeChatHtml(value) {
         .replaceAll("'", "&#039;");
 }
 
-export async function resolveSuppressiveFireDamageFromChat({ templateId, actorId, hits }, options = {}) {
-    const templateDoc = canvas.scene.templates.get(templateId);
-    if (!templateDoc) {
-        ui.notifications?.warn("Suppressive fire template no longer exists.");
+function finiteNumber(value, fallback) {
+    const number = Number(value);
+    return Number.isFinite(number) ? number : fallback;
+}
+
+export async function resolveSuppressiveFireDamageFromChat({
+    templateId,
+    regionUuid,
+    actorId,
+    actorUuid,
+    tokenUuid,
+    hits
+}, options = {}) {
+    const uuidResolver = options.fromUuid || resolveFoundryUuid;
+    const region = await resolveRegionReference({ regionUuid, templateId }, uuidResolver);
+    if (!region) {
+        globalThis.ui?.notifications?.warn("Suppressive fire zone no longer exists.");
         return { status: "missing-template" };
     }
 
-    const flags = templateDoc.flags.cyberpunk2020?.suppressiveFire;
+    const { flags } = getSuppressiveFireState(region);
     if (!flags) {
         return { status: "missing-suppressive-fire-flags" };
     }
 
-    const targetActor = game.actors.get(actorId);
-    const shooterActor = game.actors.get(flags.shooterActorId);
-    const weaponItem = shooterActor?.items?.get(flags.weaponItemId)
+    const targetActor = await resolveActorReference({ actorUuid, tokenUuid, actorId }, uuidResolver);
+    const shooterActor = await resolveActorReference({
+        actorUuid: flags.shooterActorUuid,
+        tokenUuid: flags.shooterTokenUuid,
+        actorId: flags.shooterActorId
+    }, uuidResolver);
+    const weaponItem = await resolveDocumentUuid(flags.weaponItemUuid, uuidResolver)
+        || shooterActor?.items?.get(flags.weaponItemId)
         || shooterActor?.itemTypes?.weapon?.find(item => item.id === flags.weaponItemId);
 
     if (!targetActor || !shooterActor || !weaponItem) {
-        ui.notifications?.warn("Suppressive fire damage could not resolve actor or weapon data.");
+        globalThis.ui?.notifications?.warn("Suppressive fire damage could not resolve actor or weapon data.");
         return { status: "missing-combat-document" };
     }
 
@@ -407,20 +484,11 @@ export async function resolveSuppressiveFireDamageFromChat({ templateId, actorId
             type: "ranged",
             fireMode: "Suppressive",
             source: "Suppressive Fire Zone",
-            hazardZone: {
-                kind: "suppressive-fire",
-                templateUuid: templateDoc.uuid,
-                templateId: templateDoc.id,
-                type: templateDoc.t,
-                origin: { x: templateDoc.x, y: templateDoc.y },
-                direction: templateDoc.direction,
-                width: flags.zoneWidth,
-                distance: templateDoc.distance,
-                lifecycle: "persistent"
-            }
+            hazardZone: buildSuppressiveFireHazardEvidence(region, flags)
         },
         attacker: {
             actorUuid: shooterActor.uuid,
+            tokenUuid: flags.shooterTokenUuid,
             name: shooterActor.name,
             snapshot: buildActorCombatSnapshot(shooterActor, { includeEmptySkills: true })
         },
@@ -431,14 +499,57 @@ export async function resolveSuppressiveFireDamageFromChat({ templateId, actorId
         },
         target: {
             actorUuid: targetActor.uuid,
+            tokenUuid,
             name: targetActor.name,
             snapshot: buildActorCombatSnapshot(targetActor, { includeEquipment: true })
         },
         hitCount: hits
     }, options.resolverOptions || {}, options.roller || activeSuppressiveFireRoller);
 
-    const commitKey = options.commitKey || buildSuppressiveFireCommitKey({ templateId, actorId });
+    const commitKey = options.commitKey || buildSuppressiveFireCommitKey({
+        templateId: templateId || region.id,
+        regionUuid: regionUuid || region.uuid,
+        actorId,
+        actorUuid: actorUuid || targetActor.uuid,
+        tokenUuid
+    });
     return await previewAndConfirmSuppressiveFireOutcome(outcome, { ...options, commitKey });
+}
+
+function buildSuppressiveFireHazardEvidence(region, flags) {
+    const shape = getPrimaryRegionShape(region);
+    const shapeType = String(shape?.type || "").toLowerCase();
+    const distancePixels = Number(
+        region?.parent?.dimensions?.distancePixels
+        ?? globalThis.canvas?.dimensions?.distancePixels
+    );
+    const canConvertDistance = Number.isFinite(distancePixels) && distancePixels > 0;
+    const lengthPixels = shapeType === "rectangle" ? Number(shape?.width) : Number(shape?.length);
+    const widthPixels = shapeType === "rectangle" ? Number(shape?.height) : Number(shape?.width);
+    const shapeDistance = canConvertDistance && Number.isFinite(lengthPixels)
+        ? Math.abs(lengthPixels) / distancePixels
+        : undefined;
+    const shapeWidth = canConvertDistance && Number.isFinite(widthPixels)
+        ? Math.abs(widthPixels) / distancePixels
+        : undefined;
+
+    return {
+        kind: "suppressive-fire",
+        // Preserve template aliases for stored combat evidence and chat APIs.
+        templateUuid: region.uuid,
+        templateId: region.id,
+        regionUuid: region.uuid,
+        regionId: region.id,
+        type: "ray",
+        origin: {
+            x: finiteNumber(shape?.x, 0),
+            y: finiteNumber(shape?.y, 0)
+        },
+        direction: finiteNumber(shape?.rotation, 0),
+        width: shapeWidth ?? finiteNumber(flags.zoneWidth, 0),
+        distance: shapeDistance ?? finiteNumber(flags.maxDistance, 0),
+        lifecycle: "persistent"
+    };
 }
 
 async function previewAndConfirmSuppressiveFireOutcome(outcome, options = {}) {
@@ -453,12 +564,12 @@ async function previewAndConfirmSuppressiveFireOutcome(outcome, options = {}) {
     });
 }
 
-function buildSuppressiveFireCommitKey({ templateId, actorId }) {
+function buildSuppressiveFireCommitKey({ templateId, regionUuid, actorId, actorUuid, tokenUuid }) {
     const combat = game?.combat;
     return [
         "suppressive-fire",
-        templateId,
-        actorId,
+        regionUuid || templateId,
+        tokenUuid || actorUuid || actorId,
         combat?.id || "no-combat",
         combat?.round ?? "no-round",
         combat?.turn ?? "no-turn"
@@ -496,19 +607,29 @@ async function activeSuppressiveFireRoller(request = {}) {
     };
 }
 
-function getActiveSuppressiveFireTemplates() {
-    if (!canvas || !canvas.templates) return [];
-    return canvas.templates.placeables.filter(t => 
-        t.document.flags?.cyberpunk2020?.suppressiveFire &&
-        t.document.flags.cyberpunk2020.suppressiveFire.remainingHitCap > 0
-    );
+function getActiveSuppressiveFireRegions(scene = globalThis.canvas?.scene) {
+    const regions = scene?.regions;
+    if(!regions) return [];
+    const documents = Array.isArray(regions.contents)
+        ? regions.contents
+        : typeof regions.values === "function"
+            ? Array.from(regions.values())
+            : Array.isArray(regions)
+                ? regions
+                : [];
+
+    return documents
+        .map(getRegionDocument)
+        .filter(region => {
+            const { flags } = getSuppressiveFireState(region);
+            return flags && Math.max(0, Number(flags.remainingHitCap ?? flags.bulletsFired) || 0) > 0;
+        });
 }
 
 async function handleTokenMovement(tokenDocument) {
-    if (!tokenDocument.object) return;
-    const templates = getActiveSuppressiveFireTemplates();
-    for (const template of templates) {
-        await checkAndResolveIntersection(tokenDocument, template);
+    const regions = getActiveSuppressiveFireRegions(tokenDocument?.parent);
+    for (const region of regions) {
+        await checkAndResolveIntersection(tokenDocument, region);
     }
 }
 
@@ -516,75 +637,102 @@ export async function handleSuppressiveFireCombatTurn(combat, updateData = {}) {
     const currentCombatant = getUpdatedCombatant(combat, updateData);
     if (!currentCombatant || !currentCombatant.tokenId) return;
 
-    const templates = getActiveSuppressiveFireTemplates();
-    for (const template of templates) {
-        const flags = template.document.flags.cyberpunk2020.suppressiveFire;
+    const scene = getCombatScene(combat);
+    const regions = getActiveSuppressiveFireRegions(scene);
+    for (const region of regions) {
+        const { flags } = getSuppressiveFireState(region);
+        if(!flags) continue;
 
-        // 1. If the current combatant is the shooter, expire their templates
+        // 1. If the current combatant is the shooter, expire their Regions.
         if (flags.shooterTokenId === currentCombatant.tokenId) {
-            await expireSuppressiveFireTemplate(template);
+            await expireSuppressiveFireTemplate(region);
             continue;
         }
 
         // 2. Check if the current combatant starts their turn inside the zone
-        const tokenDocument = canvas.tokens.get(currentCombatant.tokenId)?.document;
+        const tokenDocument = currentCombatant.token
+            || scene?.tokens?.get?.(currentCombatant.tokenId)
+            || globalThis.canvas?.tokens?.get?.(currentCombatant.tokenId)?.document;
         if (tokenDocument) {
-            await checkAndResolveIntersection(tokenDocument, template);
+            await checkAndResolveIntersection(tokenDocument, region, { combat });
         }
     }
 }
 
-function getUpdatedCombatant(combat, updateData = {}) {
-    const turn = Number(updateData.turn);
-    if (Number.isInteger(turn) && Array.isArray(combat?.turns)) {
-        return combat.turns[turn] || combat.combatant;
+export function getUpdatedCombatant(combat, updateData = {}) {
+    const turns = Array.isArray(combat?.turns) ? combat.turns : [];
+    if(
+        (Object.prototype.hasOwnProperty.call(updateData, "combatantId") && updateData.combatantId === null)
+        || (Object.prototype.hasOwnProperty.call(updateData, "turn") && updateData.turn === null)
+    ) return null;
+
+    const referencedCombatant = turns.find(combatant =>
+        (updateData.combatantId && combatant?.id === updateData.combatantId)
+        || (updateData.tokenId && combatant?.tokenId === updateData.tokenId)
+    );
+    if(referencedCombatant) return referencedCombatant;
+
+    if(updateData.turn !== null && updateData.turn !== undefined) {
+        const turn = Number(updateData.turn);
+        if(Number.isInteger(turn)) return turns[turn] || combat?.combatant;
     }
     return combat?.combatant;
 }
 
-async function expireSuppressiveFireTemplate(template) {
-    // Depending on world setting, delete or deactivate
-    // For now, we will delete it as requested initially, or mark it depleted
-    await template.document.delete();
+function getCombatScene(combat) {
+    const sceneReference = combat?.scene;
+    if(sceneReference && typeof sceneReference === "object") return sceneReference;
+    if(sceneReference) {
+        return globalThis.game?.scenes?.get?.(sceneReference)
+            || (globalThis.canvas?.scene?.id === sceneReference ? globalThis.canvas.scene : undefined);
+    }
+    return globalThis.canvas?.scene;
 }
 
-export async function checkAndResolveIntersection(tokenDocument, template) {
-    const templateDocument = template?.document;
-    if(!templateDocument || (typeof templateDocument !== "object" && typeof templateDocument !== "function")) return false;
+async function expireSuppressiveFireTemplate(region) {
+    // Depending on world setting, delete or deactivate
+    // For now, we will delete it as requested initially, or mark it depleted
+    await region.delete();
+}
+
+export async function checkAndResolveIntersection(tokenDocument, regionLike, context = {}) {
+    const region = getRegionDocument(regionLike);
+    if(!region || (typeof region !== "object" && typeof region !== "function")) return false;
 
     // Capture the triggering combat moment before waiting behind another token
-    // which is resolving against this template.
-    const combatId = globalThis.game?.combat?.id || "none";
-    const combatRound = globalThis.game?.combat?.round || 0;
-    const combatTurn = globalThis.game?.combat?.turn || 0;
+    // which is resolving against this Region.
+    const activeCombat = context.combat || globalThis.game?.combat;
+    const combatId = activeCombat?.id || "none";
+    const combatRound = activeCombat?.round ?? 0;
+    const combatTurn = activeCombat?.turn ?? 0;
     const resolutionId = `${combatId}-${combatRound}-${combatTurn}`;
 
-    return await withSuppressiveTemplateLock(templateDocument, async () => {
+    return await withSuppressiveTemplateLock(region, async () => {
         // Re-read after acquiring the lock. Another token may have appended to
         // this shared array while this movement hook was queued.
-        const flags = templateDocument.flags?.cyberpunk2020?.suppressiveFire;
-        if(!flags || flags.remainingHitCap <= 0) return false;
-        const resolvedTokens = flags.resolvedTokenIds || [];
-        const tokenResolutionRecord = resolvedTokens.find(r => r.id === tokenDocument.id && r.resolutionId === resolutionId);
+        const { flags, scope } = getSuppressiveFireState(region);
+        if(!flags || Math.max(0, Number(flags.remainingHitCap ?? flags.bulletsFired) || 0) <= 0) return false;
+        const resolvedTokens = Array.isArray(flags.resolvedTokenIds) ? flags.resolvedTokenIds : [];
+        const tokenResolutionRecord = resolvedTokens.some(record =>
+            typeof record === "string"
+                ? record === tokenDocument.id
+                : record?.id === tokenDocument.id && record?.resolutionId === resolutionId
+        );
 
         if (tokenResolutionRecord) {
             return false; // Already resolved for this event
         }
 
-        // Check geometric intersection
-        const tCenter = tokenDocument.object?.center || {
-            x: tokenDocument.x + (tokenDocument.width * (globalThis.canvas?.grid?.size || 100) / 2),
-            y: tokenDocument.y + (tokenDocument.height * (globalThis.canvas?.grid?.size || 100) / 2)
-        };
-        const intersects = template.shape?.contains(tCenter.x - template.document.x, tCenter.y - template.document.y);
+        // RegionDocument.testPoint evaluates the token center and elevation.
+        const intersects = regionContainsToken(region, tokenDocument);
 
         if (intersects) {
             // Mark as resolved first to prevent loops
             const newResolved = [...resolvedTokens, { id: tokenDocument.id, resolutionId }];
-            await template.document.update({ "flags.cyberpunk2020.suppressiveFire.resolvedTokenIds": newResolved });
+            await region.update({ [getSuppressiveFireUpdatePath(scope, "resolvedTokenIds")]: newResolved });
 
             // Prompt the save dialog
-            await promptSuppressiveFireSave(tokenDocument, template);
+            await promptSuppressiveFireSave(tokenDocument, region);
             return true;
         }
         return false;
@@ -607,19 +755,23 @@ async function withSuppressiveTemplateLock(templateDocument, callback) {
     }
 }
 
-export async function promptSuppressiveFireSave(tokenDocument, template) {
-    const flags = template.document.flags.cyberpunk2020.suppressiveFire;
+export async function promptSuppressiveFireSave(tokenDocument, regionLike) {
+    const { region, flags } = getSuppressiveFireState(regionLike);
+    if(!region || !flags) return;
     const actor = tokenDocument.actor;
     if (!actor) return;
     const actorName = escapeChatHtml(actor.name || "Target");
     const saveDC = escapeChatHtml(flags.saveDC);
     const remainingHitCap = escapeChatHtml(flags.remainingHitCap);
-    const templateId = escapeChatHtml(template.document.id);
+    const templateId = escapeChatHtml(region.id);
+    const regionUuid = escapeChatHtml(region.uuid);
     const actorId = escapeChatHtml(actor.id);
+    const actorUuid = escapeChatHtml(actor.uuid);
+    const tokenUuid = escapeChatHtml(tokenDocument.uuid);
 
     // Dispatch a chat message asking for the save
     let chatData = {
-        user: globalThis.game?.user?.id || "test",
+        author: globalThis.game?.user?.id || "test",
         speaker: globalThis.ChatMessage?.getSpeaker({ actor: actor }) || { alias: actor.name },
         content: `
             <div class="cyberpunk2020-chat-card">
@@ -632,7 +784,7 @@ export async function promptSuppressiveFireSave(tokenDocument, template) {
                     <p><strong>Remaining Hits in Zone:</strong> ${remainingHitCap}</p>
                     <p><i>Roll REF + Athletics + 1D10 vs ${saveDC}.</i></p>
                     <hr>
-                    <button type="button" class="roll-suppressive-hits" data-template-id="${templateId}" data-actor-id="${actorId}">Failed Save! Roll 1D6 Hits</button>
+                    <button type="button" class="roll-suppressive-hits" data-template-id="${templateId}" data-region-uuid="${regionUuid}" data-actor-id="${actorId}" data-actor-uuid="${actorUuid}" data-token-uuid="${tokenUuid}">Failed Save! Roll 1D6 Hits</button>
                 </div>
             </div>
         `

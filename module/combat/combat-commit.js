@@ -1,7 +1,7 @@
 import { buildCombatChatData } from "./combat-chat.js";
 import { COMBAT_CHAT_STATUS, COMBAT_WARNING_SEVERITY } from "./combat-outcome.js";
 import { planCombatUpdates } from "./state-planner.js";
-import { renderFoundryTemplate } from "../foundry-compat.js";
+import { foundryValuesEqual, renderFoundryTemplate, resolveFoundryUuid } from "../foundry-compat.js";
 
 const UNSAFE_PLAN_WARNING_CODES = Object.freeze([
   "invalid-actor-update",
@@ -1043,10 +1043,7 @@ function clonePlainData(data) {
 }
 
 function isFreshnessValueEqual(a, b) {
-  if (typeof globalThis.foundry?.utils?.objectsEqual === "function") {
-    return globalThis.foundry.utils.objectsEqual(a, b);
-  }
-  return JSON.stringify(a) === JSON.stringify(b);
+  return foundryValuesEqual(a, b);
 }
 
 function readDataPath(document, path) {
@@ -1142,10 +1139,7 @@ function pruneCommitGuardRegistry() {
 }
 
 async function resolveFoundryDocument(uuid) {
-  if(typeof globalThis.fromUuid !== "function") {
-    throw new Error("Foundry fromUuid is unavailable; inject a combat commit adapter for tests or non-Foundry runtimes.");
-  }
-  return globalThis.fromUuid(uuid);
+  return resolveFoundryUuid(uuid);
 }
 
 export async function createOrUpdateCombatChatMessage(outcome = {}, resultStatus, options = {}) {
@@ -1196,12 +1190,10 @@ export async function createOrUpdateCombatChatMessage(outcome = {}, resultStatus
       flags: messageFlags
     };
     const userId = options.userId || (typeof globalThis.game?.user?.id === "string" ? globalThis.game.user.id : undefined);
-    if (userId) chatMessageData.user = userId;
+    if (userId) chatMessageData.author = userId;
     if (speaker && Object.keys(speaker).length > 0) chatMessageData.speaker = speaker;
     const msgStyle = globalThis.CONST?.CHAT_MESSAGE_STYLES?.OTHER;
-    const msgType = globalThis.CONST?.CHAT_MESSAGE_TYPES?.OTHER;
     if (msgStyle !== undefined) chatMessageData.style = msgStyle;
-    else if (msgType !== undefined) chatMessageData.type = msgType;
 
     const createdId = await adapter.createChatMessage(chatMessageData);
     if (!createdId) {

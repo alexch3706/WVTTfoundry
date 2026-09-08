@@ -10,13 +10,13 @@
 
 **Severity:** Low
 
-**Description:** World actors, embedded items, standalone items, and compendium packs are traversed sequentially in the `ready` migration. Documents inside each compendium are processed concurrently in awaited chunks of 50. Large worlds may therefore still spend noticeable time in the outer serial loops, while the chunk size bounds compendium load.
+**Description:** World actors, embedded items, standalone items, unlinked-token Actors, and world-owned compendium documents are traversed sequentially in the `ready` migration. Large worlds may therefore spend noticeable time in the migration, but ordering, pack lock restoration, and failure attribution remain deterministic.
 
 **Acceptability:** Acceptable for MVP. Migration runs once per version upgrade. Even with 500+ documents, the total time should stay under a few seconds.
 
 **Owner:** @maintainer
 
-**Follow-up:** Profile a large backed-up world. If migration exceeds 5s, consider bounded batches for world documents as well as the existing compendium chunks.
+**Follow-up:** Profile a large backed-up world. If migration is too slow, consider bounded concurrency only after adding equivalent fail-closed and pack lock-restoration coverage.
 
 ---
 

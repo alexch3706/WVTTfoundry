@@ -1,15 +1,17 @@
-# MVP Combat Foundry Verification Checklist
+# Foundry V14 Release Verification Checklist
 
-> Last updated: 2026-09-05
-> Target: Corebook Fidelity MVP release readiness
+> Last updated: 2026-09-08
+> Target: Cyberpunk 2020 `2.0.0` on Foundry VTT `14.365`
 
 ## Pre-Check: Automated Fixture Suite
 
 Before running any manual Foundry checks, verify the fixture suite passes:
 
 - [ ] `node tests/run-combat-fixtures.mjs` — all fixtures pass (0 failures)
+- [ ] `node tests/system-manifest.test.mjs` — V14 package metadata and every declared path pass
+- [ ] `node tests/pack-compatibility.test.mjs` — 28 packs / 2,124 documents / 0 legacy-schema issues
 - [ ] Coverage map (`tests/combat/fixture-coverage-map.md`) is up to date
-- [ ] No unexpected test-count regression (current runner baseline: 155 checks; coverage map: 98 JSON fixture cases)
+- [ ] No unexpected test-count regression (current runner baseline: 177 checks; coverage map: 98 JSON fixture cases)
 
 If any fixture fails, stop. Resolver mechanics are not reliable until the fixture suite is green.
 
@@ -19,8 +21,14 @@ If any fixture fails, stop. Resolver mechanics are not reliable until the fixtur
 
 ### Section A: Environment Setup (§1)
 
+- [ ] A-1: A disposable copy was opened and saved on latest stable V13 with the compatible 1.x system, then shut down and backed up again; restore was rehearsed
+- [ ] A-2: Foundry build is exactly `14.365`, system is `2.0.0`, and modules are disabled for the first system-only pass
+- [ ] A-3: System migration completes once under the primary active GM and does not repeat after reload
+- [ ] A-4: All 28 declared compendia open; Hit Location RollTable rolls; Item drag/drop works
+- [ ] A-5: AoE Regions cover cone/circle/rectangle/line placement, cancellation, elevation, and transient cleanup
+- [ ] A-6: Suppressive-fire Region persists, triggers once per token/combat moment, and expires on the shooter's next turn
 - [ ] A0: Configure system settings: verify "Corebook Fidelity" behavior is understood (note if ON or OFF for this test run)
-- [ ] A1: Clean test world loaded. Document exact Foundry version (e.g., v11.315) and system version in your test report.
+- [ ] A1: Clean test world loaded. Document exact Foundry and system versions in your test report.
 - [ ] A2: Attacker actor created with weapon and stats (§1.1)
 - [ ] A3: Target actor created with armor and stats (§1.2)
 - [ ] A4: Both tokens placed on active scene at a specific measurable distance (e.g., 10m) to verify range DCs
@@ -148,7 +156,8 @@ Detailed steps in `docs/testing/foundry-manual-checks.md §8.1–§8.12`.
 | Area | Epic | Status | Notes |
 |------|------|--------|-------|
 | Resolver Contracts | 1 | 🟢 | Documented in `docs/resolver-contracts.md` |
-| Fixture Suite | 1–5 | 🟢 | 155 checks passing; 98 JSON fixture cases indexed |
+| Fixture Suite | 1–5 | 🟢 | 177 checks passing; 98 JSON fixture cases indexed |
+| Foundry V14 compatibility | V14 | Needs live check | Static public-API, Region, manifest, and pack checks pass; run copied-world QA on 14.365 |
 | Target Normalization | 2 | 🟢 | UUID-rich target refs, manual-resolution fallback |
 | Single-Shot Firearm | 2 | 🟢 | Preview/confirm, ammo, chat evidence |
 | Armor/AP/BTM/Wounds/Saves | 3 | 🟢 | Full pipeline; staged penetration toggle |
@@ -172,9 +181,9 @@ The following areas cannot be fully verified by pure fixtures or existing manual
 | Gap ID | Area | Description | Owner | Follow-up |
 |--------|------|-------------|-------|-----------|
 | GAP-6.7-3 | Mortal 7+ Persistent Dead State | Current implementation suppresses new save prompts as dead/manual state but does not persist an explicit dead status. | @alexch3706 | Post-MVP: Implement persisted dead-state automation |
-| GAP-6.7-4 | Migration Performance | World documents and packs are traversed serially; documents inside each compendium run in awaited chunks of 50. | @alexch3706 | Profile a large backup; batch outer loops if >5s |
+| GAP-6.7-4 | Migration Performance | World documents and world-owned pack documents are traversed serially for deterministic fail-closed behavior. | @alexch3706 | Profile a large backup; introduce bounded concurrency only with equivalent failure/lock-restoration tests |
 | GAP-6.7-5 | Armor Coverage Morphing in `prepareData()` | `_prepareArmorData` mutates coverage inside `prepareData()` — gated by threshold, unlikely to trigger. | @alexch3706 | Epic 6 post-MVP: Move to explicit event handler |
-| GAP-6.7-6 | Foundry v13 Maximum Compatibility | Manifest declares `maximum: 13` but `verified: 12`. v13 behavior is not fully tested. | @alexch3706 | Verify on Foundry v13 before marking it verified |
+| GAP-V14-LIVE | Foundry V14 live runtime | Automated checks cannot emulate the licensed browser/canvas runtime or Forge world migration. | @alexch3706 | Complete this checklist on a copied world running 14.365 before production migration |
 | GAP-6.7-7 | Exotic Weapon Guard | Exotic weapon types that do not match the resolver classification are flagged manual, but specific exotic types (bows, thrown) lack dedicated manual check steps. | @alexch3706 | Add exotic-type manual checks in follow-up |
 | GAP-6.7-8 | Legacy Fallback Ammo Updates | DEFERRED-6.4-2: Ammo mutations in legacy fallback path lack await/state planner | @alexch3706 | Post-MVP: Remove legacy path |
 

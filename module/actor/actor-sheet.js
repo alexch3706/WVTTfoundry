@@ -8,6 +8,7 @@ import { promptAttackDieEntry } from "../combat/attack-die-entry.js";
 import { buildWoundStateHints } from "./wound-hints.js";
 import { buildArmorRepairUpdate, getArmorItemStatus, getCyberwareArmorStatus } from "../combat/armor-maintenance.js";
 import { resolveActorSheetLayout } from "./actor-sheet-layout.js";
+import { measureTokenDistance } from "../foundry-compat.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -91,35 +92,36 @@ export class CyberpunkActorSheet extends ActorSheet {
     sheetData.skillsSort = this.actor.system.skillsSortedBy || "Name";
     sheetData.skillsSortChoices = Object.keys(SortOrders);
     sheetData.filteredSkillIDs = this._filterSkills(sheetData);
-    sheetData.skillDisplayList = sheetData.filteredSkillIDs.map(id => this.actor.items.get(id));
+    sheetData.skillDisplayList = sheetData.filteredSkillIDs
+      .map(id => this.actor.items.get(id))
+      .filter(Boolean);
   }
 
   // Handle searching skills
   _filterSkills(sheetData) {
-    let id = sheetData.actor._id;
-
     if(sheetData.system.transient.skillFilter == null) {
       sheetData.system.transient.skillFilter = "";
     }
-    let upperSearch = sheetData.system.transient.skillFilter.toUpperCase();
-    let listToFilter = sheetData.system.sortedSkillIDs || game.actors.get(id).itemTypes.skill.map(skill => skill.id);
+    const upperSearch = sheetData.system.transient.skillFilter.toUpperCase();
+    const skillItems = Array.from(this.actor.itemTypes?.skill || []);
+    const currentIDs = skillItems.map(skill => skill.id);
+    const currentIDSet = new Set(currentIDs);
+    const cachedIDs = sheetData.system.sortedSkillIDs;
+    const cacheMatchesCurrentItems = Array.isArray(cachedIDs)
+      && cachedIDs.length === currentIDs.length
+      && new Set(cachedIDs).size === cachedIDs.length
+      && cachedIDs.every(id => currentIDSet.has(id));
+    const listToFilter = cacheMatchesCurrentItems
+      ? cachedIDs
+      : sortSkills(skillItems, SortOrders[sheetData.skillsSort] || SortOrders.Name).map(skill => skill.id);
 
     // Only filter if we need to
     if(upperSearch === "") {
       return listToFilter;
     }
-    else {
-      // If we searched previously and the old search had results, we can filter those instead of the whole lot
-      if(sheetData.system.transient.oldSearch != null 
-        && sheetData.filteredSkillIDs != null
-        && upperSearch.startsWith(oldSearch)) {
-        listToFilter = sheetData.filteredSkillIDs; 
-      }
-      return listToFilter.filter(id => {
-        let skillName = this.actor.items.get(id).name;
-        return skillName.toUpperCase().includes(upperSearch);
-      });
-    }
+    return listToFilter.filter(id =>
+      this.actor.items.get(id)?.name?.toUpperCase().includes(upperSearch)
+    );
   }
 
   _addWoundTrack(sheetData) {
@@ -414,8 +416,9 @@ export class CyberpunkActorSheet extends ActorSheet {
             return;
           }
           const rawTarget = selectedTargets.find(t => t.id === tt.id || t.document?.uuid === tt.tokenUuid) || selectedTargets[idx];
-          if (rawTarget && globalThis.canvas?.grid?.measureDistance) {
-            const dist = globalThis.canvas.grid.measureDistance(attackerToken, rawTarget);
+          if (rawTarget) {
+            const dist = measureTokenDistance(attackerToken, rawTarget);
+            if(dist === undefined) return;
             tt.distance = { value: dist, units: globalThis.canvas.grid.units || "m", source: "standard-grid" };
           }
         });

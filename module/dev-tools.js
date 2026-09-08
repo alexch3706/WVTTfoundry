@@ -2,7 +2,7 @@
 // To use the below functions in console, run `const DevTools = await import("./systems/cyberpunk2020-rilerena/module/dev-tools.js")`
 // You can then run them with DevTools.functionName
 // It's entirely possible this file may be removed at some point, as it's kinda useful for development but not for the system itself.
-import { attackSkills } from "./lookups";
+import { attackSkills } from "./lookups.js";
 
 /**
 * Async generator that iterates over the actual items under the hood of a compendium. Used as follows:
@@ -14,10 +14,9 @@ import { attackSkills } from "./lookups";
 * @param {*} packID The pack's ID - eg "cyberpunk2020-rilerena.name"
 */
 export async function* compendiumItems(packID) {
-    let pack = game.packs.get(packID);
-    for(let {_id} of pack.index.values()) {
-        yield await pack.getDocument(_id);
-    }
+    const pack = game.packs.get(packID);
+    if(!pack) throw new Error(`Unknown compendium ${packID}`);
+    for(const document of await pack.getDocuments()) yield document;
 }
 
 /**

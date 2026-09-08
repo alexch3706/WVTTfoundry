@@ -1,6 +1,6 @@
 # Project Documentation Index
 
-Last updated: 2026-09-05
+Last updated: 2026-09-08
 
 ## Project Overview
 
@@ -9,8 +9,8 @@ Last updated: 2026-09-05
 - **Repository structure:** Monolith
 - **Primary language:** Plain JavaScript ES modules
 - **Architecture:** Foundry document/sheet/template architecture
-- **Current package version:** `1.1.0`
-- **Foundry compatibility:** manifest-declared minimum `10`, verified `12`, maximum `13`
+- **Current package version:** `2.0.0`
+- **Foundry compatibility:** V14 only; verified against the `14.365` API/manifest target, pending live-world sign-off
 
 ## Quick Reference
 
@@ -36,8 +36,9 @@ Last updated: 2026-09-05
 - [Component and UI Inventory](./component-inventory.md)
 - [Data Models and Assets](./data-models.md)
 - [Development Guide](./development-guide.md)
+- [Foundry V14 Upgrade Guide](./v14-upgrade-guide.md)
 - [Refactor Assessment](./refactor-assessment.md)
-- [MVP Verification Checklist](./verification-checklist.md) — readiness review sign-off checklist for Foundry runtime checks
+- [V14 Verification Checklist](./verification-checklist.md) — release sign-off checklist for Foundry runtime checks
 - [Combat Mechanics Audit](./combat-mechanics-audit.md) — adherence check between Combat Resolver and Corebook rules
 
 ## Existing Documentation

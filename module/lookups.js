@@ -23,7 +23,7 @@ export let attackSkills = {
 }
 
 export function getStatNames() {
-    const actorModel = game.model?.Actor || game.system?.template?.Actor;
+    const actorModel = game.model?.Actor;
     if (!actorModel) {
         return ["int", "ref", "tech", "cool", "attr", "luck", "ma", "body", "emp"];
     }
@@ -172,7 +172,7 @@ export let defaultAreaLookup = {
     10: "rLeg"
 }
 export function defaultHitLocations() {
-    const actorModel = game.model?.Actor || game.system?.template?.Actor;
+    const actorModel = game.model?.Actor;
     const hitLocs = actorModel?.templates?.hitLocations?.hitLocations || actorModel?.character?.hitLocations;
     if (hitLocs) return hitLocs;
     

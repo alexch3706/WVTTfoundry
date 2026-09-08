@@ -1,5 +1,15 @@
 import assert from "assert";
-import { bindSuppressiveFireChatActions, calculateSuppressiveFireSaveDC, buildSuppressiveFireTemplateData, canRetrySuppressiveDamageResolution, handleSuppressiveFireCombatTurn, resolveSuppressiveFireDamageFromChat } from "../../module/combat/suppressive-fire-tracker.js";
+import {
+  bindSuppressiveFireChatActions,
+  buildSuppressiveFireTemplateData,
+  calculateSuppressiveFireSaveDC,
+  canRetrySuppressiveDamageResolution,
+  getUpdatedCombatant,
+  handleSuppressiveFireCombatTurn,
+  promptSuppressiveFireSave,
+  registerSuppressiveFireHooks,
+  resolveSuppressiveFireDamageFromChat
+} from "../../module/combat/suppressive-fire-tracker.js";
 import { resolveSuppressiveFireDamageOutcome } from "../../module/combat/attack-resolver.js";
 import { planCombatUpdates } from "../../module/combat/state-planner.js";
 
@@ -21,6 +31,12 @@ export async function runSuppressiveFireTests() {
       assert.strictEqual(canRetrySuppressiveDamageResolution({ status: "missing-combat-document", applied: {} }), true);
       assert.strictEqual(canRetrySuppressiveDamageResolution({ status: "manual", applied: { actorUpdates: 1 } }), false);
       assert.strictEqual(canRetrySuppressiveDamageResolution({ status: "committed", applied: {} }), false);
+      const firstCombatant = { id: "first", tokenId: "first-token" };
+      assert.strictEqual(
+        getUpdatedCombatant({ combatant: firstCombatant, turns: [firstCombatant] }, { combatantId: null, tokenId: null, turn: null }),
+        null,
+        "a cleared V14 combat turn must not wrap around to combatant zero"
+      );
     } catch (e) {
       console.error(e);
       passed = false;
@@ -30,11 +46,19 @@ export async function runSuppressiveFireTests() {
 
   function testTemplateDataBuilder() {
     let passed = true;
+    const previousCanvas = globalThis.canvas;
     try {
+      globalThis.canvas = {
+        dimensions: { distancePixels: 100 },
+        level: { id: "level-1" }
+      };
       const data = buildSuppressiveFireTemplateData({
         attackerTokenId: "t1",
+        attackerTokenUuid: "Scene.s1.Token.t1",
         attackerActorId: "a1",
+        attackerActorUuid: "Actor.a1",
         weaponItemId: "w1",
+        weaponItemUuid: "Actor.a1.Item.w1",
         damageFormula: "2d6",
         bulletsFired: 20,
         zoneWidth: 2,
@@ -45,20 +69,30 @@ export async function runSuppressiveFireTests() {
         combatId: "c1"
       });
 
-      assert.strictEqual(data.t, "ray");
-      assert.strictEqual(data.distance, 10);
-      assert.strictEqual(data.width, 2);
+      const shape = data.shapes?.[0];
+      assert.ok(shape, "Region data must contain a primary shape");
+      assert.strictEqual(shape.type, "line");
+      assert.strictEqual(shape.x, 100);
+      assert.strictEqual(shape.y, 100);
+      assert.strictEqual(shape.length, 1000);
+      assert.strictEqual(shape.width, 200);
+      assert.strictEqual(shape.rotation, 0);
+      assert.strictEqual(shape.gridBased, false);
       
       const flags = data.flags?.cyberpunk2020?.suppressiveFire;
       assert.ok(flags, "Flags must be defined");
       assert.strictEqual(flags.shooterActorId, "a1");
+      assert.strictEqual(flags.shooterActorUuid, "Actor.a1");
       assert.strictEqual(flags.shooterTokenId, "t1");
+      assert.strictEqual(flags.shooterTokenUuid, "Scene.s1.Token.t1");
       assert.strictEqual(flags.weaponItemId, "w1");
+      assert.strictEqual(flags.weaponItemUuid, "Actor.a1.Item.w1");
       assert.strictEqual(flags.damageFormula, "2d6");
       assert.strictEqual(flags.bulletsFired, 20);
       assert.strictEqual(flags.remainingHitCap, 20);
       assert.strictEqual(flags.saveDC, 10); // 20 / 2
       assert.strictEqual(flags.zoneWidth, 2);
+      assert.strictEqual(flags.maxDistance, 10);
       assert.strictEqual(flags.createdCombatId, "c1");
       assert.strictEqual(flags.createdRound, 1);
       assert.strictEqual(flags.createdTurn, 2);
@@ -66,13 +100,16 @@ export async function runSuppressiveFireTests() {
     } catch(e) {
       console.error(e);
       passed = false;
+    } finally {
+      globalThis.canvas = previousCanvas;
     }
-    addResult("suppressive-fire: Template data builder", passed);
+    addResult("suppressive-fire: V14 Region data builder", passed);
   }
 
-  function testCrossVersionChatBindingIsGmAuthoritative() {
+  function testV14ChatBindingIsGmAuthoritative() {
     let passed = true;
     const previousGame = globalThis.game;
+    const previousHooks = globalThis.Hooks;
     try {
       const makeButton = dataset => ({
         dataset: { ...dataset },
@@ -99,7 +136,7 @@ export async function runSuppressiveFireTests() {
       const playerHits = makeButton({ templateId: "template", actorId: "actor" });
       const playerDamage = makeButton({ templateId: "template", actorId: "actor", hits: "2" });
       bindSuppressiveFireChatActions({ getFlag: () => undefined }, makeRoot(playerHits, playerDamage));
-      assert.strictEqual(playerHits.disabled, true, "non-GM V13 chat actions should be disabled");
+      assert.strictEqual(playerHits.disabled, true, "non-GM V14 chat actions should be disabled");
       assert.strictEqual(playerDamage.disabled, true, "non-GM damage actions should be disabled");
 
       globalThis.game.user = { id: "gm", isGM: true };
@@ -109,17 +146,35 @@ export async function runSuppressiveFireTests() {
 
       const gmHits = makeButton({ templateId: "template", actorId: "actor" });
       const gmDamage = makeButton({ templateId: "template", actorId: "actor", hits: "2" });
-      bindSuppressiveFireChatActions({ getFlag: () => undefined }, [makeRoot(gmHits, gmDamage)]);
-      assert.strictEqual(gmHits.disabled, false, "primary GM V12 chat actions should remain enabled");
+      bindSuppressiveFireChatActions({ getFlag: () => undefined }, makeRoot(gmHits, gmDamage));
+      assert.strictEqual(gmHits.disabled, false, "primary GM V14 chat actions should remain enabled");
       assert.strictEqual(typeof gmHits.listeners.click, "function");
       assert.strictEqual(typeof gmDamage.listeners.click, "function");
+
+      const legacyWrapperHits = makeButton({ templateId: "legacy", actorId: "actor" });
+      bindSuppressiveFireChatActions(
+        { getFlag: () => undefined },
+        [makeRoot(legacyWrapperHits, makeButton({ templateId: "legacy", actorId: "actor", hits: "2" }))]
+      );
+      assert.strictEqual(legacyWrapperHits.listeners.click, undefined, "V14-only binding must ignore jQuery wrappers");
+
+      const registeredHooks = [];
+      globalThis.Hooks = { on: name => registeredHooks.push(name) };
+      registerSuppressiveFireHooks();
+      assert.ok(registeredHooks.includes("moveToken"), "V14 movement hook should be registered");
+      assert.ok(!registeredHooks.includes("updateToken"), "movement must not be processed twice through updateToken");
+      assert.ok(registeredHooks.includes("renderChatMessageHTML"), "V14 HTMLElement hook should be registered");
+      assert.ok(registeredHooks.includes("combatTurnChange"), "post-update V14 combat hook should be registered");
+      assert.ok(!registeredHooks.includes("combatTurn"), "initiating-client pre-update combat hook should not be registered");
+      assert.ok(!registeredHooks.includes("renderChatMessage"), "legacy jQuery chat hook should not be registered");
     } catch(error) {
       console.error(error);
       passed = false;
     } finally {
       globalThis.game = previousGame;
+      globalThis.Hooks = previousHooks;
     }
-    addResult("suppressive-fire: V12/V13 chat actions are GM-authoritative", passed);
+    addResult("suppressive-fire: V14 HTMLElement chat actions are GM-authoritative", passed);
   }
 
   async function testFailedChatLockPreventsSuppressiveHitEffects() {
@@ -157,8 +212,9 @@ export async function runSuppressiveFireTests() {
         users: [{ id: "gm", isGM: true, active: true }]
       };
       globalThis.canvas = {
+        dimensions: { size: 100 },
         scene: {
-          templates: {
+          regions: {
             get: () => ({
               flags: { cyberpunk2020: { suppressiveFire: { remainingHitCap: 10 } } },
               async update() { templateUpdateCount += 1; }
@@ -200,214 +256,312 @@ export async function runSuppressiveFireTests() {
 
   async function testIntersectionLogic() {
     let passed = true;
+    const previousGame = globalThis.game;
+    const previousCanvas = globalThis.canvas;
+    const previousChatMessage = globalThis.ChatMessage;
     try {
-        const { checkAndResolveIntersection } = await import("../../module/combat/suppressive-fire-tracker.js");
-        globalThis.game = { combat: { id: "c1", round: 1, turn: 1 } };
-        
-        let updateCalled = false;
-        const template = {
-            document: {
-                x: 0,
-                y: 0,
-                flags: {
-                    cyberpunk2020: {
-                        suppressiveFire: {
-                            remainingHitCap: 10,
-                            saveDC: 15,
-                            resolvedTokenIds: []
-                        }
-                    }
-                },
-                update: async (data) => { updateCalled = true; }
-            },
-            shape: {
-                contains: (x, y) => { return x === 50 && y === 50; } // mocks intersection
-            }
-        };
+      const { checkAndResolveIntersection } = await import("../../module/combat/suppressive-fire-tracker.js");
+      globalThis.game = { combat: { id: "c1", round: 1, turn: 1 } };
+      globalThis.canvas = { dimensions: { size: 100 } };
+      globalThis.ChatMessage = { getSpeaker: () => ({}), async create() {} };
 
-        const tokenDocumentIntersecting = {
-            id: "tok1",
-            x: 0, y: 0, width: 1, height: 1,
-            object: { center: { x: 50, y: 50 } },
-            actor: { name: "Test Actor" }
-        };
-
-        const resultIntersect = await checkAndResolveIntersection(tokenDocumentIntersecting, template);
-        assert.ok(resultIntersect, "Should return true for intersecting token");
-        assert.ok(updateCalled, "Template should be updated with new resolved token ID");
-
-        // Now test non-intersecting
-        const tokenDocumentNotIntersecting = {
-            id: "tok2",
-            x: 0, y: 0, width: 1, height: 1,
-            object: { center: { x: 999, y: 999 } },
-            actor: { name: "Test Actor" }
-        };
-        const resultNotIntersect = await checkAndResolveIntersection(tokenDocumentNotIntersecting, template);
-        assert.strictEqual(resultNotIntersect, false, "Should return false for non-intersecting token");
-
-        const previousChatMessage = globalThis.ChatMessage;
-        let promptCount = 0;
-        try {
-          const concurrentFlags = {
-            remainingHitCap: 10,
-            saveDC: 5,
-            resolvedTokenIds: []
-          };
-          const concurrentTemplate = {
-            document: {
-              id: "template-concurrent",
-              x: 0,
-              y: 0,
-              flags: { cyberpunk2020: { suppressiveFire: concurrentFlags } },
-              async update(data) {
-                // Yield before exposing the persisted record to reproduce
-                // overlapping updateToken/moveToken hooks on Foundry V13.
-                await Promise.resolve();
-                concurrentFlags.resolvedTokenIds = data["flags.cyberpunk2020.suppressiveFire.resolvedTokenIds"];
-              }
-            },
-            shape: { contains: () => true }
-          };
-          const concurrentToken = {
-            id: "token-concurrent",
-            x: 0,
-            y: 0,
-            width: 1,
-            height: 1,
-            object: { center: { x: 50, y: 50 } },
-            actor: { id: "actor-concurrent", name: "Concurrent Target" }
-          };
-          globalThis.ChatMessage = {
-            getSpeaker: () => ({}),
-            async create() { promptCount += 1; }
-          };
-
-          const [firstResolution, overlappingResolution] = await Promise.all([
-            checkAndResolveIntersection(concurrentToken, concurrentTemplate),
-            checkAndResolveIntersection(concurrentToken, concurrentTemplate)
-          ]);
-          assert.strictEqual(firstResolution, true);
-          assert.strictEqual(overlappingResolution, false);
-          assert.strictEqual(promptCount, 1, "overlapping movement hooks must create one save prompt");
-
-          concurrentFlags.resolvedTokenIds = [];
-          promptCount = 0;
-          const secondToken = {
-            ...concurrentToken,
-            id: "token-concurrent-two",
-            actor: { id: "actor-concurrent-two", name: "Second Concurrent Target" }
-          };
-          const [firstTokenResolution, secondTokenResolution] = await Promise.all([
-            checkAndResolveIntersection(concurrentToken, concurrentTemplate),
-            checkAndResolveIntersection(secondToken, concurrentTemplate)
-          ]);
-          assert.strictEqual(firstTokenResolution, true);
-          assert.strictEqual(secondTokenResolution, true);
-          assert.deepStrictEqual(
-            concurrentFlags.resolvedTokenIds.map(record => record.id).sort(),
-            ["token-concurrent", "token-concurrent-two"]
-          );
-          assert.strictEqual(promptCount, 2, "different tokens should queue without losing either resolution record");
-          assert.strictEqual(await checkAndResolveIntersection(secondToken, concurrentTemplate), false);
-          assert.strictEqual(promptCount, 2, "a persisted token resolution must not be prompted again in the same turn");
-        } finally {
-          globalThis.ChatMessage = previousChatMessage;
+      let updateCalled = false;
+      const testedPoints = [];
+      const flags = {
+        remainingHitCap: 10,
+        saveDC: 15,
+        resolvedTokenIds: []
+      };
+      const region = {
+        id: "region-center-elevation",
+        flags: { cyberpunk2020: { suppressiveFire: flags } },
+        testPoint(point) {
+          testedPoints.push(point);
+          return point.x === 50 && point.y === 50 && point.elevation === 7;
+        },
+        async update(data) {
+          updateCalled = true;
+          flags.resolvedTokenIds = data["flags.cyberpunk2020.suppressiveFire.resolvedTokenIds"];
         }
+      };
 
+      const tokenDocumentIntersecting = {
+        id: "tok1",
+        x: 0,
+        y: 0,
+        width: 1,
+        height: 1,
+        elevation: 7,
+        object: { center: { x: 50, y: 50 } },
+        actor: { id: "actor-1", name: "Test Actor" }
+      };
+
+      const resultIntersect = await checkAndResolveIntersection(tokenDocumentIntersecting, region);
+      assert.strictEqual(resultIntersect, true, "RegionDocument.testPoint should resolve an intersecting token");
+      assert.strictEqual(updateCalled, true, "RegionDocument should persist the resolved token ID");
+      assert.deepStrictEqual(testedPoints[0], { x: 50, y: 50, elevation: 7 }, "containment must use token center and elevation");
+
+      const tokenDocumentNotIntersecting = {
+        id: "tok2",
+        x: 0,
+        y: 0,
+        width: 1,
+        height: 1,
+        elevation: 2,
+        object: { center: { x: 999, y: 999 } },
+        actor: { id: "actor-2", name: "Test Actor" }
+      };
+      assert.strictEqual(
+        await checkAndResolveIntersection(tokenDocumentNotIntersecting, region),
+        false,
+        "a token outside the Region should not resolve"
+      );
+
+      let promptCount = 0;
+      const concurrentFlags = {
+        remainingHitCap: 10,
+        saveDC: 5,
+        resolvedTokenIds: []
+      };
+      const concurrentRegion = {
+        id: "region-concurrent",
+        flags: { cyberpunk2020: { suppressiveFire: concurrentFlags } },
+        testPoint: () => true,
+        async update(data) {
+          // Yield before exposing the persisted record to reproduce overlapping
+          // updateToken/moveToken hooks on Foundry V14.
+          await Promise.resolve();
+          concurrentFlags.resolvedTokenIds = data["flags.cyberpunk2020.suppressiveFire.resolvedTokenIds"];
+        }
+      };
+      const concurrentToken = {
+        id: "token-concurrent",
+        x: 0,
+        y: 0,
+        width: 1,
+        height: 1,
+        elevation: 3,
+        object: { center: { x: 50, y: 50 } },
+        actor: { id: "actor-concurrent", name: "Concurrent Target" }
+      };
+      globalThis.ChatMessage = {
+        getSpeaker: () => ({}),
+        async create() { promptCount += 1; }
+      };
+
+      const [firstResolution, overlappingResolution] = await Promise.all([
+        checkAndResolveIntersection(concurrentToken, concurrentRegion),
+        checkAndResolveIntersection(concurrentToken, concurrentRegion)
+      ]);
+      assert.strictEqual(firstResolution, true);
+      assert.strictEqual(overlappingResolution, false);
+      assert.strictEqual(promptCount, 1, "overlapping movement hooks must create one save prompt");
+
+      concurrentFlags.resolvedTokenIds = [];
+      promptCount = 0;
+      const secondToken = {
+        ...concurrentToken,
+        id: "token-concurrent-two",
+        actor: { id: "actor-concurrent-two", name: "Second Concurrent Target" }
+      };
+      const [firstTokenResolution, secondTokenResolution] = await Promise.all([
+        checkAndResolveIntersection(concurrentToken, concurrentRegion),
+        checkAndResolveIntersection(secondToken, concurrentRegion)
+      ]);
+      assert.strictEqual(firstTokenResolution, true);
+      assert.strictEqual(secondTokenResolution, true);
+      assert.deepStrictEqual(
+        concurrentFlags.resolvedTokenIds.map(record => record.id).sort(),
+        ["token-concurrent", "token-concurrent-two"]
+      );
+      assert.strictEqual(promptCount, 2, "different tokens should queue without losing either resolution record");
+      assert.strictEqual(await checkAndResolveIntersection(secondToken, concurrentRegion), false);
+      assert.strictEqual(promptCount, 2, "a persisted token resolution must not be prompted again in the same turn");
     } catch (e) {
-        console.error(e);
-        passed = false;
+      console.error(e);
+      passed = false;
+    } finally {
+      globalThis.game = previousGame;
+      globalThis.canvas = previousCanvas;
+      globalThis.ChatMessage = previousChatMessage;
     }
-    addResult("suppressive-fire: Intersection logic and deduplication", passed);
+    addResult("suppressive-fire: V14 Region containment and deduplication", passed);
   }
 
   async function testTemplateSurvivesAdvanceAwayFromShooter() {
     let passed = true;
+    const previousCanvas = globalThis.canvas;
     try {
       let deleted = false;
-      const template = {
-        document: {
-          flags: {
-            cyberpunk2020: {
-              suppressiveFire: {
-                shooterTokenId: "shooter-token",
-                remainingHitCap: 10,
-                resolvedTokenIds: []
-              }
+      let containmentChecks = 0;
+      const region = {
+        flags: {
+          cyberpunk2020: {
+            suppressiveFire: {
+              shooterTokenId: "shooter-token",
+              remainingHitCap: 10,
+              resolvedTokenIds: []
             }
-          },
-          delete: async () => { deleted = true; }
-        }
+          }
+        },
+        testPoint: () => {
+          containmentChecks += 1;
+          return false;
+        },
+        delete: async () => { deleted = true; }
       };
 
       globalThis.canvas = {
-        templates: { placeables: [template] },
-        tokens: {
-          get: () => undefined
+        dimensions: { size: 100 },
+        scene: {
+          regions: { contents: [region] },
+          tokens: { get: () => undefined }
         }
       };
 
       const combat = {
-        combatant: { tokenId: "shooter-token" },
+        combatant: {
+          id: "next",
+          tokenId: "next-token",
+          token: {
+            id: "next-token",
+            x: 0,
+            y: 0,
+            width: 1,
+            height: 1,
+            elevation: 0
+          }
+        },
         turns: [
-          { tokenId: "shooter-token" },
-          { tokenId: "next-token" }
+          { id: "shooter", tokenId: "shooter-token" },
+          {
+            id: "next",
+            tokenId: "next-token",
+            token: {
+              id: "next-token",
+              x: 0,
+              y: 0,
+              width: 1,
+              height: 1,
+              elevation: 0
+            }
+          }
         ]
       };
 
-      await handleSuppressiveFireCombatTurn(combat, { turn: 1 });
+      await handleSuppressiveFireCombatTurn(combat, { combatantId: "next", tokenId: "next-token", turn: 1 });
 
-      assert.strictEqual(deleted, false, "template should survive when turn advances from shooter to next combatant");
+      assert.strictEqual(deleted, false, "Region should survive when turn advances from shooter to next combatant");
+      assert.strictEqual(containmentChecks, 1, "active zones must be looked up through Scene.regions");
     } catch (e) {
       console.error(e);
       passed = false;
+    } finally {
+      globalThis.canvas = previousCanvas;
     }
-    addResult("suppressive-fire: template survives turn advance away from shooter", passed);
+    addResult("suppressive-fire: Scene Region lookup survives turn advance away from shooter", passed);
   }
 
   async function testTemplateExpiresWhenShooterTurnStartsAgain() {
     let passed = true;
+    const previousCanvas = globalThis.canvas;
+    const previousGame = globalThis.game;
     try {
       let deleted = false;
-      const template = {
-        document: {
-          flags: {
-            cyberpunk2020: {
-              suppressiveFire: {
-                shooterTokenId: "shooter-token",
-                remainingHitCap: 10,
-                resolvedTokenIds: []
-              }
+      globalThis.game = { system: { id: "cyberpunk2020-rilerena" } };
+      const region = {
+        flags: {
+          "cyberpunk2020-rilerena": {
+            suppressiveFire: {
+              shooterTokenId: "shooter-token",
+              remainingHitCap: 10,
+              resolvedTokenIds: []
             }
-          },
-          delete: async () => { deleted = true; }
-        }
+          }
+        },
+        delete: async () => { deleted = true; }
       };
 
       globalThis.canvas = {
-        templates: { placeables: [template] },
-        tokens: {
-          get: () => undefined
+        scene: {
+          regions: { contents: [region] },
+          tokens: { get: () => undefined }
         }
       };
 
       const combat = {
-        combatant: { tokenId: "previous-token" },
+        combatant: { id: "shooter", tokenId: "shooter-token" },
         turns: [
-          { tokenId: "shooter-token" },
-          { tokenId: "previous-token" }
+          { id: "shooter", tokenId: "shooter-token" },
+          { id: "previous", tokenId: "previous-token" }
         ]
       };
 
-      await handleSuppressiveFireCombatTurn(combat, { turn: 0 });
+      await handleSuppressiveFireCombatTurn(combat, { combatantId: "shooter", tokenId: "shooter-token", turn: 0 });
 
-      assert.strictEqual(deleted, true, "template should expire when turn advances back to shooter");
+      assert.strictEqual(deleted, true, "Region should expire when turn advances back to shooter");
     } catch (e) {
       console.error(e);
       passed = false;
+    } finally {
+      globalThis.canvas = previousCanvas;
+      globalThis.game = previousGame;
     }
-    addResult("suppressive-fire: template expires when shooter turn starts again", passed);
+    addResult("suppressive-fire: Region expires when shooter turn starts again", passed);
+  }
+
+  async function testCombatTurnUsesCombatSceneWhenGmViewsAnotherScene() {
+    let passed = true;
+    const previousCanvas = globalThis.canvas;
+    const previousGame = globalThis.game;
+    try {
+      let combatRegionDeleted = false;
+      let viewedRegionDeleted = false;
+      const combatRegion = {
+        flags: {
+          "cyberpunk2020-rilerena": {
+            suppressiveFire: { shooterTokenId: "shooter-token", remainingHitCap: 10 }
+          }
+        },
+        delete: async () => { combatRegionDeleted = true; }
+      };
+      const viewedRegion = {
+        flags: {
+          "cyberpunk2020-rilerena": {
+            suppressiveFire: { shooterTokenId: "shooter-token", remainingHitCap: 10 }
+          }
+        },
+        delete: async () => { viewedRegionDeleted = true; }
+      };
+      const combatScene = {
+        id: "combat-scene",
+        regions: { contents: [combatRegion] },
+        tokens: { get: () => undefined }
+      };
+      globalThis.game = {
+        system: { id: "cyberpunk2020-rilerena" },
+        scenes: { get: id => id === combatScene.id ? combatScene : undefined }
+      };
+      globalThis.canvas = {
+        scene: { id: "viewed-scene", regions: { contents: [viewedRegion] } }
+      };
+
+      await handleSuppressiveFireCombatTurn({
+        scene: combatScene.id,
+        combatant: { id: "shooter", tokenId: "shooter-token" },
+        turns: [{ id: "shooter", tokenId: "shooter-token" }]
+      }, { combatantId: "shooter", tokenId: "shooter-token", turn: 0 });
+
+      assert.strictEqual(combatRegionDeleted, true, "the Region in the combat Scene should expire");
+      assert.strictEqual(viewedRegionDeleted, false, "the GM's viewed Scene must remain untouched");
+    } catch(error) {
+      console.error(error);
+      passed = false;
+    } finally {
+      globalThis.canvas = previousCanvas;
+      globalThis.game = previousGame;
+    }
+    addResult("suppressive-fire: turn automation resolves the combat Scene", passed);
   }
 
   async function testFailedSaveDamageUsesPerBulletPipeline() {
@@ -510,6 +664,9 @@ export async function runSuppressiveFireTests() {
 
   async function testChatDamageResolutionCommitsActorDamage() {
     let passed = true;
+    const previousGame = globalThis.game;
+    const previousUi = globalThis.ui;
+    const previousCanvas = globalThis.canvas;
     try {
       const targetState = { system: { damage: 0 } };
       const targetActor = {
@@ -562,22 +719,29 @@ export async function runSuppressiveFireTests() {
       };
       globalThis.ui = { notifications: { warn: () => {} } };
       globalThis.canvas = {
+        dimensions: { distancePixels: 100 },
         scene: {
-          templates: {
+          regions: {
             get: (id) => id === "template-1" ? {
               id: "template-1",
-              uuid: "Scene.test.MeasuredTemplate.template-1",
-              t: "ray",
-              x: 100,
-              y: 100,
-              direction: 0,
-              distance: 10,
+              uuid: "Scene.test.Region.template-1",
+              shapes: [{
+                type: "rectangle",
+                x: 100,
+                y: 100,
+                width: 1000,
+                height: 200,
+                rotation: 30,
+                anchorX: 0,
+                anchorY: 0.5
+              }],
               flags: {
                 cyberpunk2020: {
                   suppressiveFire: {
                     shooterActorId: "shooter-actor",
                     weaponItemId: "weapon-1",
-                    zoneWidth: 2
+                    zoneWidth: 99,
+                    maxDistance: 99
                   }
                 }
               }
@@ -631,22 +795,192 @@ export async function runSuppressiveFireTests() {
       assert.strictEqual(result.status, "committed");
       assert.strictEqual(targetState.system.damage, 6);
       assert.strictEqual(rollIndex, rolls.length);
+      assert.deepStrictEqual(result.preview.action.hazardZone, {
+        kind: "suppressive-fire",
+        templateUuid: "Scene.test.Region.template-1",
+        templateId: "template-1",
+        regionUuid: "Scene.test.Region.template-1",
+        regionId: "template-1",
+        type: "ray",
+        origin: { x: 100, y: 100 },
+        direction: 30,
+        width: 2,
+        distance: 10,
+        lifecycle: "persistent"
+      }, "damage evidence should derive geometry from a core-converted rectangle Region");
     } catch (e) {
       console.error(e);
       passed = false;
+    } finally {
+      globalThis.game = previousGame;
+      globalThis.ui = previousUi;
+      globalThis.canvas = previousCanvas;
     }
-    addResult("suppressive-fire: chat damage resolution commits actor damage", passed);
+    addResult("suppressive-fire: Region evidence and chat damage commit", passed);
+  }
+
+  async function testUnlinkedTokenDamageUsesUuidReferences() {
+    let passed = true;
+    const previousGame = globalThis.game;
+    const previousUi = globalThis.ui;
+    const previousCanvas = globalThis.canvas;
+    const previousChatMessage = globalThis.ChatMessage;
+    try {
+      const targetActorUuid = "Scene.combat.Token.target.Actor.base-target";
+      const targetTokenUuid = "Scene.combat.Token.target";
+      const shooterActorUuid = "Scene.combat.Token.shooter.Actor.base-shooter";
+      const shooterTokenUuid = "Scene.combat.Token.shooter";
+      const weaponUuid = `${shooterActorUuid}.Item.weapon-1`;
+      const regionUuid = "Scene.combat.Region.template-1";
+      const targetState = { system: { damage: 0 } };
+      const targetActor = {
+        id: "base-target",
+        uuid: targetActorUuid,
+        name: "Unlinked Target",
+        system: {
+          stats: { bt: { total: 6 } },
+          damage: 0,
+          hitLocations: { torso: { label: "Torso" } }
+        },
+        itemTypes: {}
+      };
+      const weaponItem = {
+        id: "weapon-1",
+        uuid: weaponUuid,
+        name: "Synthetic Rifle",
+        system: { damage: "4d6", ap: false, attackType: "Auto" }
+      };
+      const shooterActor = {
+        id: "base-shooter",
+        uuid: shooterActorUuid,
+        name: "Unlinked Shooter",
+        system: { stats: {}, damage: 0, hitLocations: {} },
+        itemTypes: { weapon: [weaponItem] },
+        items: { get: id => id === weaponItem.id ? weaponItem : undefined }
+      };
+      const targetToken = { id: "target", uuid: targetTokenUuid, actor: targetActor };
+      const shooterToken = { id: "shooter", uuid: shooterTokenUuid, actor: shooterActor };
+      const region = {
+        id: "template-1",
+        uuid: regionUuid,
+        parent: { dimensions: { distancePixels: 100 } },
+        shapes: [{ type: "rectangle", x: 0, y: 0, width: 1000, height: 200, rotation: 0 }],
+        flags: {
+          "cyberpunk2020-rilerena": {
+            suppressiveFire: {
+              shooterActorId: shooterActor.id,
+              shooterActorUuid,
+              shooterTokenId: shooterToken.id,
+              shooterTokenUuid,
+              weaponItemId: weaponItem.id,
+              weaponItemUuid: weaponUuid,
+              saveDC: 10,
+              remainingHitCap: 10,
+              zoneWidth: 2,
+              maxDistance: 10
+            }
+          }
+        }
+      };
+      const documents = new Map([
+        [regionUuid, region],
+        [targetTokenUuid, targetToken],
+        [targetActorUuid, targetActor],
+        [shooterTokenUuid, shooterToken],
+        [shooterActorUuid, shooterActor],
+        [weaponUuid, weaponItem]
+      ]);
+      let legacyActorLookups = 0;
+      globalThis.game = {
+        system: { id: "cyberpunk2020-rilerena" },
+        user: { id: "gm", isGM: true },
+        settings: { get: () => "direct" },
+        actors: { get() { legacyActorLookups += 1; return undefined; } },
+        scenes: { contents: [] }
+      };
+      globalThis.ui = { notifications: { warn() {} } };
+      globalThis.canvas = {
+        dimensions: { distancePixels: 25 },
+        scene: { id: "viewed-elsewhere", regions: { get: () => undefined } }
+      };
+      let promptData;
+      globalThis.ChatMessage = {
+        getSpeaker: () => ({ alias: targetActor.name }),
+        async create(data) { promptData = data; }
+      };
+
+      await promptSuppressiveFireSave(targetToken, region);
+      assert.match(promptData.content, new RegExp(`data-region-uuid="${regionUuid}"`));
+      assert.match(promptData.content, new RegExp(`data-actor-uuid="${targetActorUuid}"`));
+      assert.match(promptData.content, new RegExp(`data-token-uuid="${targetTokenUuid}"`));
+
+      const rolls = [
+        { id: "location", formula: "1d10 hit location", total: 4, die: { faces: 10, natural: 4 }, location: "torso" },
+        { id: "damage", formula: "4d6", total: 8, die: { faces: 6, natural: 8 } }
+      ];
+      let rollIndex = 0;
+      const adapter = {
+        async resolveItem() { return { update: async () => {} }; },
+        async resolveActor(uuid) {
+          assert.strictEqual(uuid, targetActorUuid, "commit must address the synthetic Actor UUID");
+          return {
+            system: targetState.system,
+            async update(update) { targetState.system.damage = update["system.damage"]; },
+            async updateEmbeddedDocuments() {}
+          };
+        },
+        async renderTemplate(templatePath, data) { return `<${data.status}>`; },
+        async createChatMessage() { return "message-unlinked"; },
+        async updateChatMessage() {}
+      };
+
+      const result = await resolveSuppressiveFireDamageFromChat({
+        templateId: region.id,
+        regionUuid,
+        actorId: targetActor.id,
+        actorUuid: targetActorUuid,
+        tokenUuid: targetTokenUuid,
+        hits: 1
+      }, {
+        decision: "confirm",
+        adapter,
+        fromUuid: async uuid => documents.get(uuid),
+        roller: async request => {
+          const roll = rolls[rollIndex++];
+          assert.strictEqual(request.id, roll.id);
+          return roll;
+        }
+      });
+
+      assert.strictEqual(result.status, "committed");
+      assert.strictEqual(targetState.system.damage, 6);
+      assert.strictEqual(legacyActorLookups, 0, "UUID resolution must not fall back to the shared base Actor");
+      assert.strictEqual(result.preview.targets[0].target.actorUuid, targetActorUuid);
+      assert.strictEqual(result.preview.targets[0].target.tokenUuid, targetTokenUuid);
+      assert.strictEqual(result.preview.action.hazardZone.width, 2, "Region Scene dimensions must win over the viewed canvas");
+    } catch(error) {
+      console.error(error);
+      passed = false;
+    } finally {
+      globalThis.game = previousGame;
+      globalThis.ui = previousUi;
+      globalThis.canvas = previousCanvas;
+      globalThis.ChatMessage = previousChatMessage;
+    }
+    addResult("suppressive-fire: unlinked token UUIDs survive cross-scene chat resolution", passed);
   }
 
   testSaveDC();
   testTemplateDataBuilder();
-  testCrossVersionChatBindingIsGmAuthoritative();
+  testV14ChatBindingIsGmAuthoritative();
   await testFailedChatLockPreventsSuppressiveHitEffects();
   await testIntersectionLogic();
   await testTemplateSurvivesAdvanceAwayFromShooter();
   await testTemplateExpiresWhenShooterTurnStartsAgain();
+  await testCombatTurnUsesCombatSceneWhenGmViewsAnotherScene();
   await testFailedSaveDamageUsesPerBulletPipeline();
   await testChatDamageResolutionCommitsActorDamage();
+  await testUnlinkedTokenDamageUsesUuidReferences();
   
   return results;
 }

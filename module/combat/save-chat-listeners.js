@@ -1,13 +1,12 @@
+import { isPrimaryActiveGm, resolveFoundryUuid } from "../foundry-compat.js";
+
 const ACTIVE_SAVE_ROLLS = new Set();
 const COMPLETED_SAVE_ROLLS = new Set();
 const SAVE_RESOLUTION_LOCKS = new WeakMap();
 const SAVE_RESOLUTION_FLAG = "combatSaveResolutions";
 
 export function registerSaveChatListeners() {
-  // Foundry V12 supplies a jQuery wrapper; V13 supplies an HTMLElement on the
-  // HTML-suffixed hook. Register both and mark bound nodes to tolerate a
-  // compatibility shim firing both hooks.
-  Hooks.on("renderChatMessage", bindSaveChatActions);
+  // Foundry V14 exposes chat-card HTML through the HTML-suffixed hook.
   Hooks.on("renderChatMessageHTML", bindSaveChatActions);
   const refreshAuthoritativeChatActions = () => {
     // Refresh GM-authoritative chat actions when the active primary GM changes.
@@ -25,7 +24,7 @@ export function bindSaveChatActions(message, html) {
   const root = html?.querySelectorAll ? html : html?.[0];
   if(!root?.querySelectorAll) return;
   const persistedResolutions = message.getFlag(systemId, SAVE_RESOLUTION_FLAG) || [];
-  const mayAutoRoll = isPrimaryActiveGmClient();
+  const mayAutoRoll = isPrimaryActiveGm();
 
   for(const button of root.querySelectorAll(".save-action-autoroll")) {
     const targetIndex = Number.parseInt(button.dataset.targetIndex, 10);
@@ -47,7 +46,7 @@ export function bindSaveChatActions(message, html) {
       event.preventDefault();
       const action = event.currentTarget;
       if (action.disabled || ACTIVE_SAVE_ROLLS.has(actionKey) || COMPLETED_SAVE_ROLLS.has(actionKey)) return;
-      if(!isPrimaryActiveGmClient()) {
+      if(!isPrimaryActiveGm()) {
         ui.notifications.warn("Only the active GM can auto-roll NPC saves.");
         return;
       }
@@ -66,7 +65,7 @@ export function bindSaveChatActions(message, html) {
       let rollsStarted = false;
       try {
         const targetUuid = targetData.target?.actorUuid;
-        const actor = targetUuid ? await fromUuid(targetUuid) : undefined;
+        const actor = targetUuid ? await resolveFoundryUuid(targetUuid) : undefined;
         if (!actor) {
           ui.notifications.warn(`Could not find actor ${targetUuid || "for this target"}`);
           setButtonsDisabled(autoRollActions, false);
@@ -134,7 +133,7 @@ async function autoRollSaves(actor, saves) {
     if (save.type === "stun" && hasFailedStun) {
       continue; // Skip further Stun Saves if target is already Stunned
     }
-    const roll = await new Roll("1d10").evaluate({ async: true });
+    const roll = await new Roll("1d10").evaluate();
     const threshold = resolveSaveThreshold(save);
     if (threshold === undefined) {
       ui.notifications.warn(`Save threshold is unavailable for ${actor.name}; resolve this save manually.`);
@@ -202,16 +201,6 @@ export function buildSaveResolutionKey(targetData = {}, targetIndex = 0) {
 
 function hasPersistedResolution(resolutions, key) {
   return Array.isArray(resolutions) && resolutions.some(entry => entry?.key === key);
-}
-
-function isPrimaryActiveGmClient() {
-  const currentUser = globalThis.game?.user;
-  if(!currentUser?.isGM) return false;
-  const users = Array.from(globalThis.game?.users?.contents || globalThis.game?.users || []);
-  const activeGms = users
-    .filter(user => user?.isGM && user?.active)
-    .sort((left, right) => String(left.id).localeCompare(String(right.id)));
-  return activeGms.length === 0 || activeGms[0]?.id === currentUser.id;
 }
 
 function setButtonsDisabled(buttons, disabled) {

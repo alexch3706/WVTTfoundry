@@ -1,6 +1,6 @@
 # Architecture Documentation
 
-Last updated: 2026-09-05
+Last updated: 2026-09-08
 
 ## Executive Summary
 
@@ -158,6 +158,7 @@ The repository contains item packs for default skills, role skills, weapons, arm
 `module/settings.js` registers:
 
 - `cyberpunk2020-rilerena.systemMigrationVersion`, world scope, hidden config
+- `cyberpunk2020-rilerena.migrationPendingPackRelocks`, world scope, hidden recovery journal
 - `cyberpunk2020-rilerena.trainedSkillsFirst`, client scope, configurable
 - `cyberpunk2020-rilerena.stagedPenetration`, world scope, configurable
 - `cyberpunk2020-rilerena.corebookFidelityMode`, world scope, configurable
@@ -176,12 +177,16 @@ Current migration responsibilities:
 
 - normalize `system.damage` from string to number
 - update character token linking and vision defaults
-- migrate old actor skill data into item skills
+- migrate old actor skill data into item skills, matching every shipped legacy locale, overlaying ActorDelta-specific progress onto inherited Item skills without replacing Item IDs, and failing closed on conflicting localized duplicates
 - add missing common `source` fields to items
 - add missing `rangeDamages` to weapons
-- attempt unlocked compendium migration
+- migrate unlinked-token synthetic Actors and persist orphan `ActorDelta` source through its owning TokenDocument
+- migrate mutable `world.*` compendia, journaling every locked pack before unlock and clearing it only after a confirmed relock; package-owned packs are converted and audited offline
+- migrate Actor, Item, Scene, and ActorDelta data nested inside world Adventure compendia through the owning Adventure document
+- fail closed without writing the migration-version marker when a CRUD operation is rejected, a pending pack relock remains, or a World collection/world pack (including its embedded collections) exposes `invalidDocumentIds` or recorded validation failures
+- preserve all public compendium IDs and paths, which already satisfy V14's package-ID validator
 
-Migration code remains a high-risk refactor area because it updates worlds and unlocked compendia in place and still requires live Foundry verification.
+Migration code remains a high-risk area because it updates World data in place and still requires live Foundry verification on a disposable copy.
 
 ## Architectural Risks
 
@@ -189,7 +194,7 @@ Migration code remains a high-risk refactor area because it updates worlds and u
 - Item behavior, roll logic, ammo updates, and chat rendering are tightly coupled in `module/item/item.js`.
 - Several update calls are not awaited where ordering may matter.
 - Template paths are hardcoded in multiple places.
-- Foundry v12 compatibility is partially accommodated (`getStatNames`) but the architecture is still v10/v11-era sheet/document style.
+- Foundry V14 runtime compatibility is isolated in public API helpers and Region-based spatial workflows. ApplicationV1 sheets remain an intentional, V14-supported compatibility boundary.
 - The automated regression harness does not emulate the Foundry client, so runtime and compatibility verification still depends on manual Foundry checks.
 
 ## Refactor Direction

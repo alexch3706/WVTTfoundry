@@ -1,15 +1,13 @@
 {
   "id": "cyberpunk2020-rilerena",
-  "name": "cyberpunk2020-rilerena",
   "title": "Cyberpunk 2020 (Rilerena fork)",
   "description": "R. Talsorian Games' Cyberpunk 2020 System",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "compatibility": {
-    "minimum": "10",
-    "verified": "12",
-    "maximum": "13"
+    "minimum": "14.365",
+    "verified": "14.365",
+    "maximum": "14"
   },
-  "templateVersion": 2,
   "authors": [
     {
       "name": "OctarineSourceror",
@@ -27,7 +25,9 @@
     "module/cyberpunk2020-rilerena.js"
   ],
   "styles": [
-    "css/cyberpunk2020-rilerena.css"
+    {
+      "src": "css/cyberpunk2020-rilerena.css"
+    }
   ],
   "packs": [
     {
@@ -247,12 +247,14 @@
   "socket": false,
   "initiative": "1d10x10 + @stats.ref.total + @itemSkills.combatSense.value",
   "grid": {
+    "type": 1,
     "distance": 5,
-    "units": "m"
+    "units": "m",
+    "diagonals": 0
   },
   "primaryTokenAttribute": null,
   "secondaryTokenAttribute": null,
   "url": "https://github.com/alexch3706/cyberpunk2020foundry",
   "manifest": "https://raw.githubusercontent.com/alexch3706/cyberpunk2020foundry/main/system.json",
-  "download": "https://github.com/alexch3706/cyberpunk2020foundry/archive/refs/heads/main.zip"
+  "download": "https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.0/cyberpunk2020-rilerena-v2.0.0.zip"
 }

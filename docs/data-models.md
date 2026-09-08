@@ -1,6 +1,6 @@
 # Data Models and Assets
 
-Last updated: 2026-09-05
+Last updated: 2026-09-08
 
 ## Foundry System Template
 
@@ -16,13 +16,12 @@ Actor types:
 Actor templates:
 
 - `stats`
-- `skills`
 - `info`
 - `lifepath`
 - `hitLocations`
 - `gear`
 
-The `character` type uses `info`, `lifepath`, `stats`, `skills`, `hitLocations`, and `gear`. The runtime currently prepares both `character` and `npc` through `_prepareCharacterData`.
+The `character` and `npc` types use `info`, `lifepath`, `stats`, `hitLocations`, and `gear`. Skills are persisted exclusively as embedded Item documents; the removed Actor `system.skills` object is read only by the `2.0.0` migration for legacy worlds. The runtime currently prepares both actor types through `_prepareCharacterData`.
 
 Important actor data areas:
 

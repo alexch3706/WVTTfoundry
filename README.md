@@ -2,7 +2,11 @@
 
 > *R. Talsorian Games' [Cyberpunk 2020](https://talsorianstore.com/products/cyberpunk-2020) for FoundryVTT. Time to get chromed, and frag some slags.*
 
-A FoundryVTT game system package (version **1.1.0**) — not a standalone app. Loaded by Foundry through `system.json`, runs as ES modules in the Foundry client, renders Handlebars sheets, and ships with full item compendia.
+A FoundryVTT game system package (version **2.0.0**) targeting **Foundry VTT 14 Stable 7 (build 365)** — not a standalone app. Loaded by Foundry through `system.json`, runs as ES modules in the Foundry client, renders Handlebars sheets, and ships with full item compendia.
+
+Upgrading an existing world is irreversible without a backup. First normalize a disposable copy on the latest stable V13, take a fresh backup of that copy, and then follow the [V14 upgrade guide](./docs/v14-upgrade-guide.md) before opening it in V14.
+
+The `2.0.0` migration covers world Actors/Items, unlinked-token Actor data, and world-owned compendia (including locked packs and Adventure contents). It fails without stamping completion if a persistence operation is rejected, a pack cannot be confirmed relocked, or Foundry reports an uninitialized/invalid World or embedded document. Existing compendium IDs and paths remain unchanged.
 
 ---
 
@@ -93,7 +97,7 @@ Full item packs for: default skills, role-specific skills, weapons, armor, cyber
 - **Mech sheet** — planned for later.
 - **Scene / map cover automation** — cover is manual input only.
 - **Active Effects for cyberware** — cyberware stats don't auto-modify actor stats.
-- **Full Foundry ApplicationV2** — architecture is v10/v11/v12 compatible (verified up to v12, maximum v13), but a full transition to ApplicationV2 is deferred.
+- **Full Foundry ApplicationV2 / TypeDataModel rewrite** — the current ApplicationV1 sheets and `template.json` model remain supported by V14; adopting the newer architecture is a separate modernization project, not part of the V14 compatibility release.
 
 See [`docs/`](./docs/), especially [`docs/combat-mechanics-audit.md`](./docs/combat-mechanics-audit.md), [`docs/deferred-risks-6.4.md`](./docs/deferred-risks-6.4.md), and [`docs/verification-checklist.md`](./docs/verification-checklist.md), for detailed scope tracking.
 
@@ -117,7 +121,7 @@ See [`docs/`](./docs/), especially [`docs/combat-mechanics-audit.md`](./docs/com
 
 ### How to Contribute
 
-1. Clone the repo into your Foundry `systems/` directory.
+1. Clone the repo into `Data/systems/cyberpunk2020-rilerena` (the folder name must match the manifest ID).
 2. Edit `.scss` files (not `.css`) and compile:
    ```bash
    sass scss/cyberpunk2020-rilerena.scss css/cyberpunk2020-rilerena.css
@@ -130,7 +134,12 @@ See [`docs/`](./docs/), especially [`docs/combat-mechanics-audit.md`](./docs/com
    ```bash
    node tests/run-combat-fixtures.mjs
    ```
-4. Load Foundry, select the **Cyberpunk 2020** system, and create a world to test UI changes.
+4. Validate the V14 manifest and every declared compendium:
+   ```bash
+   node tests/system-manifest.test.mjs
+   node tests/pack-compatibility.test.mjs
+   ```
+5. Load Foundry 14.365, select the **Cyberpunk 2020 (Rilerena fork)** system, and use a disposable test world for UI and migration checks.
 
 ### Repo Layout
 

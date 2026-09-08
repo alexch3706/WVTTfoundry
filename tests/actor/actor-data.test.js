@@ -2,9 +2,9 @@ import assert from "node:assert/strict";
 
 
 
-import { CyberpunkActor } from "../../module/actor/actor.js";
+import { buildActorCreationUpdates, CyberpunkActor } from "../../module/actor/actor.js";
 
-export function runActorDataTests() {
+export async function runActorDataTests() {
   const results = [];
   try {
     assertPartialCyberlimbSDP();
@@ -46,7 +46,82 @@ export function runActorDataTests() {
     results.push({ name: "assertMissingItemSkillsAreSafe", passed: false });
   }
 
+  try {
+    await assertV14ActorCreationLifecycle();
+    results.push({ name: "assertV14ActorCreationLifecycle", passed: true });
+  } catch(e) {
+    console.error(e);
+    results.push({ name: "assertV14ActorCreationLifecycle", passed: false });
+  }
+
   return results;
+}
+
+async function assertV14ActorCreationLifecycle() {
+  const previousGame = globalThis.game;
+  const actor = new CyberpunkActor();
+  let sourceUpdate;
+  actor.updateSource = update => { sourceUpdate = update; };
+
+  try {
+    globalThis.game = {
+      system: { id: "cyberpunk2020-rilerena" },
+      settings: { get: () => false },
+      packs: {
+        get: id => id === "cyberpunk2020-rilerena.default-skills" ? {
+          async getDocuments() {
+            return [
+              { name: "Stealth", type: "skill", toObject: () => ({ name: "Stealth", type: "skill", system: {} }) },
+              { name: "Athletics", type: "skill", toObject: () => ({ name: "Athletics", type: "skill", system: {} }) }
+            ];
+          }
+        } : undefined
+      }
+    };
+
+    const allowed = await actor._preCreate({
+      type: "character",
+      items: [{ name: "Starting Gear", type: "misc", system: {} }]
+    }, {}, { id: "creator" });
+
+    assert.equal(allowed, true, "the base lifecycle result must be preserved");
+    assert.equal(actor._mockBasePreCreateCalls, 1, "the V14 base pre-create lifecycle must run exactly once");
+    assert.equal(sourceUpdate["prototypeToken.actorLink"], true);
+    assert.equal(sourceUpdate["prototypeToken.sight.enabled"], true);
+    assert.equal(sourceUpdate["system.skillsSortedBy"], "Name");
+    assert.deepEqual(sourceUpdate.items.map(item => item.name), ["Starting Gear", "Athletics", "Stealth"]);
+    assert.equal(sourceUpdate._id, undefined, "pre-create source updates must not patch document IDs");
+
+    assert.deepEqual(
+      buildActorCreationUpdates({ type: "npc", items: [{ type: "skill" }] }, [{ type: "skill", name: "Default" }]),
+      {},
+      "actors which already contain skills must retain their creation source unchanged"
+    );
+
+    let packReads = 0;
+    globalThis.game.packs.get = () => {
+      packReads += 1;
+      throw new Error("the default pack must not be read");
+    };
+    const actorWithSkill = new CyberpunkActor();
+    let existingSkillUpdate;
+    actorWithSkill.updateSource = update => { existingSkillUpdate = update; };
+    await actorWithSkill._preCreate({ type: "character", items: [{ type: "skill", name: "Custom" }] });
+    assert.equal(packReads, 0, "actors created with skills must not read the defaults pack");
+    assert.deepEqual(existingSkillUpdate, {
+      "prototypeToken.actorLink": true,
+      "prototypeToken.sight.enabled": true
+    }, "character token defaults are independent from skill seeding");
+
+    const deniedActor = new CyberpunkActor();
+    deniedActor._mockPreCreateResult = false;
+    let deniedUpdateCalls = 0;
+    deniedActor.updateSource = () => { deniedUpdateCalls += 1; };
+    assert.equal(await deniedActor._preCreate({ type: "character" }), false);
+    assert.equal(deniedUpdateCalls, 0, "a canceled base lifecycle must not mutate creation data");
+  } finally {
+    globalThis.game = previousGame;
+  }
 }
 
 function assertPartialCyberlimbSDP() {

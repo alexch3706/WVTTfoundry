@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2026-09-08
+
+### Breaking
+- Raised the supported Foundry core generation to V14 only and verified the package metadata against V14 Stable 7 (`14.365`).
+- Replaced the removed `MeasuredTemplate` combat workflow with V14 Regions for shotgun areas and persistent suppressive-fire zones.
+- Preserved every existing compendium collection ID and path, including the historically mixed-case and underscored IDs accepted by V14, so existing UUIDs, macros, and third-party lookups do not require redirects.
+
+### Changed
+- Rebuilt all 28 declared compendia with the official Foundry pack tooling: 2,123 Item documents use `system`, 521 documents use `ownership`, all 2,124 legacy export records use `_stats.exportSource`, and the RollTable/result schemas and LevelDB keys use their canonical V14 forms.
+- Moved dice-term lookup, token centers, grid path measurement, value comparison, chat hooks, and chat style data to their public V14 APIs.
+- Restricted runtime compendium migration to mutable world-owned packs; shipped system packs are converted and audited offline, and unrelated module data is never rewritten.
+- Made World migration fail closed, durably recover interrupted pack relocks, verify persistence results and completion stamping, reject skipped/invalid Documents, preserve unlinked-token `ActorDelta` inheritance and tombstones, and overlay legacy skill progress without replacing existing Item IDs or Item-only fields.
+- Prevented stale legacy skill maps from resurrecting deleted default skills or generating blank role abilities, recognized names persisted under every shipped locale (including literal missing-translation keys), made ambiguous duplicate-skill state abort safely, and invalidated stale skill-sort caches before embedded Item changes.
+
+### Added
+- Added V14 Region placement/containment contracts, cross-scene synthetic-token coverage, cancellation and persistence coverage, manifest validation, and a non-mutating 2,124-document compendium audit.
+- Added a pinned, reproducible compendium migration tool and a tag-gated GitHub release workflow that produces an installable root-level archive and checksum.
+- Added a dedicated [V14 upgrade guide](docs/v14-upgrade-guide.md) with backup, module re-enable, validation, and rollback instructions.
+
 ## [1.1.0] - 2026-09-05
 
 ### Fixed

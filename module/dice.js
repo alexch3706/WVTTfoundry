@@ -1,4 +1,4 @@
-import { renderFoundryTemplate } from "./foundry-compat.js";
+import { isFoundryDieTerm, renderFoundryTemplate } from "./foundry-compat.js";
 
 export const BaseDie = "1d10x10";
 export const DefaultRollTemplate = "systems/cyberpunk2020-rilerena/templates/chat/default-roll.hbs";
@@ -81,12 +81,12 @@ export function classifyRollDice(roll) {
         this.rolls.push(roll);
         // This should be fine if there are no dice - they'll end up as undefined, and that's dealt with in Multiroll
         if(critThreshold === undefined) {
-            let firstDie = roll.terms?.find(term => term instanceof Die);
+            let firstDie = roll.terms?.find(isFoundryDieTerm);
             if(!!firstDie)
                 critThreshold = (firstDie.number * firstDie.faces);
         }
         if(fumbleThreshold === undefined) {
-            let firstDie = roll.terms?.find(term => term instanceof Die);
+            let firstDie = roll.terms?.find(isFoundryDieTerm);
             if(!!firstDie)
                 fumbleThreshold = firstDie.number;
         }
@@ -107,7 +107,7 @@ export function classifyRollDice(roll) {
      * Template provided should be one that loops through rolls.
      * Example data provided to the template:
      * {
-     *  user,
+     *  author,
      *  title,
      *  flavor,
      *  rolls: [
@@ -118,18 +118,18 @@ export function classifyRollDice(roll) {
      */
     async execute(speaker, templatePath, extraTemplateData={}) {
         await Promise.all(this.rolls.map(async (r) => {
-            if (!r._evaluated) {
+            if (r.total === undefined || r.total === null) {
                 return await r.evaluate();
             }
         }));
         
         const fullTemplateData = foundry.utils.mergeObject({
-            user: game.user.id,
+            author: game.user.id,
             title: this.title,
             flavor: this.flavor,
             rolls: this.rolls.map((roll, i) => {
                 let metaData = this.rollMetaData[i];
-                let firstDiceTerm = roll.terms.find(term => term instanceof Die) || roll.terms[0];
+                let firstDiceTerm = roll.terms.find(isFoundryDieTerm) || roll.terms[0];
                 // Add name, flavor, critThreshold, fumbleThreshold etc. Also add whether crit or fumble.
                 return foundry.utils.mergeObject(metaData, { 
                     roll: roll,
@@ -141,10 +141,9 @@ export function classifyRollDice(roll) {
         }, extraTemplateData || {});
 
         let chatData = {
-            type: CONST.CHAT_MESSAGE_STYLES?.ROLL ?? CONST.CHAT_MESSAGE_TYPES?.ROLL ?? 0,
             // Filter chat rolls to only those that actually have dice, for Dice So Nice. Doesn't seem to work without this filter if something "rolls" just a number
             rolls: this.rolls.filter(r=>r.dice.length > 0),
-            user: game.user.id,
+            author: game.user.id,
             speaker: speaker,
             sound: "sounds/dice.wav",
             content: await renderFoundryTemplate(templatePath, fullTemplateData)

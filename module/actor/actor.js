@@ -8,6 +8,24 @@ import { applyDerivedStatOverrides } from "./derived-stats.js";
 const COMBAT_SENSE_LOCALIZATION_KEY = "SkillCombatSense";
 const AWARENESS_NOTICE_LOCALIZATION_KEY = "SkillAwarenessNotice";
 
+export function buildActorCreationUpdates(data = {}, defaultSkillData = []) {
+  const items = Array.isArray(data.items) ? data.items : [];
+  const updates = {};
+
+  if(data.type === "character") {
+    updates["prototypeToken.actorLink"] = true;
+    updates["prototypeToken.sight.enabled"] = true;
+  }
+
+  const hasSkills = items.some(item => item?.type === "skill");
+  if(!hasSkills && defaultSkillData.length > 0) {
+    updates.items = [...items, ...defaultSkillData];
+    updates["system.skillsSortedBy"] = "Name";
+  }
+
+  return updates;
+}
+
 function normalizeSkillIdentifier(value) {
   return String(value || "")
     .normalize("NFKC")
@@ -38,25 +56,22 @@ export class CyberpunkActor extends Actor {
 
 
   /** @override */
-  async _onCreate(data, options={}) {
-    const updates = {_id: data._id};
-    if (data.type === "character" ) {
-      updates["prototypeToken.actorLink"] = true;
-      updates["prototypeToken.sight.enabled"] = true;
-    }
-    
-    // Check if we have skills already, don't wipe skill items if we do
-    let firstSkill = data.items.find(item => item.type === 'skill');
-    if (!firstSkill) {
-      // Using toObject is important - foundry REALLY doesn't like creating new documents from documents themselves
-      const skillsData = 
-        sortSkills(await getDefaultSkills(), SortOrders.Name)
+  async _preCreate(data = {}, options = {}, user) {
+    const allowed = await super._preCreate(data, options, user);
+    if(allowed === false) return false;
+
+    const items = Array.isArray(data.items) ? data.items : [];
+    let defaultSkillData = [];
+    if(!items.some(item => item?.type === "skill")) {
+      // Embedded creation data must be plain source objects, never live
+      // Compendium Item documents.
+      defaultSkillData = sortSkills(await getDefaultSkills(), SortOrders.Name)
         .map(item => item.toObject());
-      updates.items = [];
-      updates.items = data.items.concat(skillsData);
-      updates["system.skillsSortedBy"] = "Name";
-      this.update(updates);
     }
+
+    const updates = buildActorCreationUpdates(data, defaultSkillData);
+    if(Object.keys(updates).length > 0) this.updateSource(updates);
+    return allowed;
   }
 
   /**
@@ -385,11 +400,9 @@ export class CyberpunkActor extends Actor {
       return;
     }
 
-    // This... doesn't seem to actually roll the iniative, and the docs aren't telling in how to make this function do so
-    // So for now, we're going to have to add them to the combat, then ask the combat very nicely to roll this actor please
-    return this.rollInitiative(options = options).then( (combat) => {
-      combat.rollInitiative([combat.getCombatantByActor(this).id]);
-    });
+    // V14 Actor#rollInitiative creates the Combatant when requested and rolls
+    // it in the same public workflow. A second Combat roll would double-roll.
+    return this.rollInitiative(options);
   }
 
   rollStunDeath() {
