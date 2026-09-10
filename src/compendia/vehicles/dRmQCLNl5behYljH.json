@@ -1,0 +1,25 @@
+{
+  "_id": "dRmQCLNl5behYljH",
+  "_key": "!items!dRmQCLNl5behYljH",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "'Sidewinder' Custom Recumbent",
+  "system": {
+    "cost": 32000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 120<br><b>Acc/Dec:</b> 20/30<br><b>Crew:</b> 1<br><b>Range:</b> 400<br><b>Passengers:</b> 0<br><b>Cargo:</b> None<br><b>Maneuver:</b> +3<br><b>SDP:</b> 40 (2)<br><b>SP:</b> 10<br><b>Mass:</b> (0) 180kg",
+    "source": "Neo",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

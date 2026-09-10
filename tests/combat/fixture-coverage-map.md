@@ -32,21 +32,21 @@ assertion modules have no coverage. Those modules are listed separately below.
 | Save Prompts (Stun/Death) | ✅ 6 | `fbc-baseline.json` → biological saves bypassed<br>`ranged-single-shot.json` → structured head hit doubles wound damage<br>`ranged-single-shot.json` → structured unarmored hit resolves damage and stun save<br>`ranged-single-shot.json` → structured hit causing Mortal wound state generates stun and death saves<br>`ranged-single-shot.json` → structured stopped hit on already Mortal target does not resolve attack-time recurring death save reminder (6 total, showing 5) |
 | Mortal Wound & Death Saves | ✅ 2 | `ranged-single-shot.json` → structured hit causing Mortal wound state generates stun and death saves<br>`ranged-single-shot.json` → structured mortal 7+ suppresses death save as dead/manual state |
 | Recurring Death Save | ✅ 1 | `ranged-single-shot.json` → structured stopped hit on already Mortal target does not resolve attack-time recurring death save reminder |
-| Three-Round Burst | ✅ 9 | `reliability-jam.json` → burst-fumble-standard<br>`three-round-burst.json` → three-round burst success with 2 hits and progressive ablation<br>`three-round-burst.json` → three-round burst success with 1 bullet remaining in weapon<br>`three-round-burst.json` → three-round burst miss skips location/damage rolls and subtracts 3 ammo<br>`three-round-burst.json` → three-round-burst-close-range-advantage (9 total, showing 5) |
-| Full Auto | ✅ 11 | `ranged-full-auto.json` → full auto success with 3 hits and progressive ablation at close range (+3 mod)<br>`ranged-full-auto.json` → full auto layered armor second hit recalculates degraded effective SP<br>`ranged-full-auto.json` → full auto success at medium range with 10 bullets (-1 mod) and 1 hit<br>`ranged-full-auto.json` → full auto success with 5 bullets left at close range (0 mod) and 5 hits<br>`ranged-full-auto.json` → full auto multi-target later target hit preserves evidence and hit cap (11 total, showing 5) |
+| Three-Round Burst | ✅ 8 | `reliability-jam.json` → burst-fumble-standard<br>`three-round-burst.json` → three-round burst success with 2 hits and progressive ablation<br>`three-round-burst.json` → three-round burst success with 1 bullet remaining in weapon<br>`three-round-burst.json` → three-round burst miss skips location/damage rolls and subtracts 3 ammo<br>`three-round-burst.json` → three-round-burst-close-range-advantage (8 total, showing 5) |
+| Full Auto | ✅ 10 | `ranged-full-auto.json` → full auto success with 3 hits and progressive ablation at close range (+3 mod)<br>`ranged-full-auto.json` → full auto layered armor second hit recalculates degraded effective SP<br>`ranged-full-auto.json` → full auto success at medium range with 10 bullets (-1 mod) and 1 hit<br>`ranged-full-auto.json` → full auto success with 5 bullets left at close range (0 mod) and 5 hits<br>`ranged-full-auto.json` → full auto multi-target later target hit preserves evidence and hit cap (10 total, showing 5) |
 | ROF & Ammo | ✅ 5 | `ranged-full-auto.json` → full auto success at medium range with 10 bullets (-1 mod) and 1 hit<br>`ranged-full-auto.json` → full auto success with 5 bullets left at close range (0 mod) and 5 hits<br>`ranged-full-auto.json` → full auto multi-target success with 25 shots on 2 targets<br>`ranged-full-auto.json` → full auto multi-target later target hit preserves evidence and hit cap<br>`ranged-full-auto.json` → full-auto-single-target-miss |
 | Suppressive Fire | 0 | — |
-| Reliability & Jams | ✅ 14 | `melee-baseline.json` → melee-fumble<br>`ranged-full-auto.json` → full-auto-fumble-standard-jam<br>`ranged-full-auto.json` → full-auto-fumble-very-reliable<br>`ranged-full-auto.json` → full-auto-multi-target-jam-abort<br>`reliability-jam.json` → full-auto-fumble-standard (14 total, showing 5) |
+| Reliability & Jams | ✅ 17 | `melee-baseline.json` → melee-fumble<br>`ranged-full-auto.json` → full-auto-fumble-standard-jam<br>`ranged-full-auto.json` → full-auto-fumble-very-reliable<br>`ranged-full-auto.json` → full-auto-zero-ammo<br>`ranged-full-auto.json` → full-auto-multi-target-jam-abort (17 total, showing 5) |
 | Melee Opposed Roll | ✅ 5 | `melee-baseline.json` → melee-attacker-wins<br>`melee-baseline.json` → melee-defender-wins<br>`melee-baseline.json` → melee-tie<br>`melee-baseline.json` → melee-fumble<br>`melee-baseline.json` → melee-actorless-target |
 | Strength Damage Bonus | ✅ 5 | `melee-baseline.json` → melee-attacker-wins<br>`melee-baseline.json` → melee-bt13-vs-bt14<br>`melee-baseline.json` → melee-bt15-vs-bt15<br>`melee-baseline.json` → melee-bt10-vs-bt10<br>`melee-baseline.json` → melee-bt11-vs-bt11 |
 | Martial Arts | ✅ 2 | `melee-baseline.json` → martial-action-shell<br>`melee-baseline.json` → martial-unknown-action-fallback |
 | Grapple Family | ✅ 9 | `melee-baseline.json` → martial-grapple-karate<br>`melee-baseline.json` → martial-choke-requires-hold<br>`melee-baseline.json` → martial-escape-requires-grapple-hold<br>`melee-baseline.json` → martial-throw-requires-grapple-without-state<br>`melee-baseline.json` → martial-choke-without-hold-state (9 total, showing 5) |
 | Grapple Prerequisites | ✅ 3 | `melee-baseline.json` → martial-disarm-aikido<br>`melee-baseline.json` → martial-choke-requires-hold<br>`melee-baseline.json` → martial-throw-requires-grapple-without-state |
-| Attack Type Classification | ✅ 1 | `ranged-single-shot.json` → structured PointBlank unsupported damage formula rolls normally |
+| Attack Type Classification | ✅ 4 | `ranged-single-shot.json` → structured outcome warns when ammo is insufficient<br>`ranged-single-shot.json` → structured outcome warns when ammo state is missing<br>`ranged-single-shot.json` → structured outcome warns when ammo state is fractional<br>`ranged-single-shot.json` → structured PointBlank unsupported damage formula requires manual resolution |
 | Humanity & EMP | 0 | — |
-| Edge Case / Manual Resolution | ✅ 10 | `melee-baseline.json` → melee-actorless-target<br>`melee-baseline.json` → martial-choke-without-hold-state<br>`melee-baseline.json` → martial-escape-without-any-state<br>`ranged-single-shot.json` → structured manual cover penetration emits cover ablation evidence<br>`ranged-single-shot.json` → structured hit without location model is manual (10 total, showing 5) |
-| Ammo State & Updates | ✅ 10 | `ranged-full-auto.json` → full-auto-single-target-miss<br>`ranged-full-auto.json` → full-auto-zero-ammo<br>`ranged-single-shot.json` → structured outcome warns when ammo is insufficient<br>`ranged-single-shot.json` → structured outcome warns when ammo state is missing<br>`ranged-single-shot.json` → structured outcome warns when ammo state is fractional (10 total, showing 5) |
-| Audit Compliance | ✅ 14 | `melee-baseline.json` → melee-actorless-target<br>`ranged-full-auto.json` → full-auto-zero-ammo<br>`ranged-single-shot.json` → structured AP penetration plans staged armor ablation<br>`ranged-single-shot.json` → structured AP penetration respects staged penetration disabled<br>`ranged-single-shot.json` → structured hit without location model is manual (14 total, showing 5) |
+| Edge Case / Manual Resolution | ✅ 13 | `melee-baseline.json` → melee-actorless-target<br>`melee-baseline.json` → martial-choke-without-hold-state<br>`melee-baseline.json` → martial-escape-without-any-state<br>`ranged-full-auto.json` → full-auto-zero-ammo<br>`ranged-single-shot.json` → structured manual cover penetration emits cover ablation evidence (13 total, showing 5) |
+| Ammo State & Updates | ✅ 8 | `ranged-full-auto.json` → full-auto-single-target-miss<br>`ranged-single-shot.json` → structured outcome warns when ammo is insufficient<br>`ranged-single-shot.json` → structured outcome warns when ammo state is missing<br>`ranged-single-shot.json` → structured outcome warns when ammo state is fractional<br>`ranged-single-shot.json` → structured outcome warns when ammo update target is missing (8 total, showing 5) |
+| Audit Compliance | ✅ 12 | `melee-baseline.json` → melee-actorless-target<br>`ranged-single-shot.json` → structured AP penetration plans staged armor ablation<br>`ranged-single-shot.json` → structured AP penetration respects staged penetration disabled<br>`ranged-single-shot.json` → structured hit without location model is manual<br>`ranged-single-shot.json` → structured outcome warns when ammo is insufficient (12 total, showing 5) |
 | Corebook Fidelity Mode | ✅ 3 | `ranged-single-shot.json` → structured weapon conformance label in snapshot<br>`unsupported-modes.json` → full-auto-fidelity-supported<br>`unsupported-modes.json` → three-round-burst-fidelity-supported |
 
 ---
@@ -91,7 +91,7 @@ assertion modules have no coverage. Those modules are listed separately below.
 | `ranged-full-auto.json` | full-auto-fumble-standard-jam | CP2020 p.99: Natural 1 Fumble; CP2020 p.99: Standard reliability jam |
 | `ranged-full-auto.json` | full-auto-fumble-very-reliable | CP2020 p.99: VeryReliable does not jam on fumble |
 | `ranged-full-auto.json` | full-auto-long-range | CP2020 p.99: Range DC (Long=25); CP2020 p.100: Full Auto at Long range |
-| `ranged-full-auto.json` | full-auto-zero-ammo | CP2020 p.100: Full Auto requires ammo; Audit 6.4: Insufficient ammo warning |
+| `ranged-full-auto.json` | full-auto-zero-ammo | Item-data preflight: incomplete ammunition, reliability or damage data requir... |
 | `ranged-full-auto.json` | full-auto-multi-target-jam-abort | CP2020 p.100: Full Auto multi-target jam aborts remaining targets |
 | `ranged-full-auto.json` | ranged-full-auto-aimed-location | CP2020 p.100: Full Auto; CP2020 p.99: Aimed shot (-4) |
 | `ranged-single-shot.json` | structured cyberware staged penetration uses system-ablation update path | CP2020 p.105-106: Penetrated cyberware armor must stage-ablate through persis... |
@@ -112,16 +112,16 @@ assertion modules have no coverage. Those modules are listed separately below.
 | `ranged-single-shot.json` | structured cover stop does not stage-ablate personal armor | CP2020 p.105-106: When cover fully stops damage, personal armor is not penetr... |
 | `ranged-single-shot.json` | structured hit uses options-only aimed location | CP2020 p.99: Aimed shot (-4 to hit); CP2020 p.102: Hit Location table |
 | `ranged-single-shot.json` | structured hit without location model is manual | Audit 6.4: missing hit-location model blocks automated resolution |
-| `ranged-single-shot.json` | structured outcome warns when ammo is insufficient | Audit 6.4: Awaited update discipline — insufficient ammo blocks automated update |
-| `ranged-single-shot.json` | structured outcome warns when ammo state is missing | Audit 6.4: Missing ammo state blocks ammo updates |
-| `ranged-single-shot.json` | structured outcome warns when ammo state is fractional | Audit 6.4: Fractional ammo state is invalid |
+| `ranged-single-shot.json` | structured outcome warns when ammo is insufficient | Audit 6.4: Awaited update discipline — insufficient ammo blocks automated upd... |
+| `ranged-single-shot.json` | structured outcome warns when ammo state is missing | Audit 6.4: Missing ammo state blocks ammo updates; Item-data preflight blocks... |
+| `ranged-single-shot.json` | structured outcome warns when ammo state is fractional | Audit 6.4: Fractional ammo state is invalid; Item-data preflight blocks incom... |
 | `ranged-single-shot.json` | structured outcome warns when ammo update target is missing | Audit 6.4: Missing item UUID blocks ammo update planning |
 | `ranged-single-shot.json` | structured path falls back when range data is missing | Audit 6.4: Missing range data triggers legacy fallback |
 | `ranged-single-shot.json` | structured unarmored hit resolves damage and stun save | CP2020 p.107: Wound State table; CP2020 p.108: Stun/Shock save |
 | `ranged-single-shot.json` | structured hit causing Mortal wound state generates stun and death saves | CP2020 p.107: Mortal wound state (13+); CP2020 p.108: Death Saves |
 | `ranged-single-shot.json` | structured stopped hit on already Mortal target does not resolve attack-time recurring death save reminder | CP2020 p.108: Recurring Death Saves are turn-start reminders, not attack-time... |
 | `ranged-single-shot.json` | structured PointBlank range hit | CP2020 p.99: Range DC table (PointBlank=10); CP2020 p.99: point-blank always ... |
-| `ranged-single-shot.json` | structured PointBlank unsupported damage formula rolls normally | CP2020 p.99: PointBlank maximum damage; unsupported damage formulas must fall... |
+| `ranged-single-shot.json` | structured PointBlank unsupported damage formula requires manual resolution | CP2020 p.99: PointBlank maximum damage; unsupported damage formulas must fall... |
 | `ranged-single-shot.json` | structured Extreme range miss | CP2020 p.99: Range DC table (Extreme=30); CP2020 p.99: miss at DC 30 with 1d1... |
 | `ranged-single-shot.json` | structured weapon conformance label in snapshot | Audit 6.1: source-based conformance — CP2020 Corebook source classifies as co... |
 | `ranged-single-shot.json` | structured mortal 7+ suppresses death save as dead/manual state | CP2020 p.108: Mortal 7+ is treated as dead/manual state; no new Death Save pr... |
@@ -136,11 +136,11 @@ assertion modules have no coverage. Those modules are listed separately below.
 | `reliability-jam.json` | burst-fumble-standard | CP2020 p.99: ThreeRoundBurst fumble with Standard reliability = jam |
 | `reliability-jam.json` | semi-auto-fumble-standard | CP2020 p.99: Semi-auto fumble = miss but no jam (ammo still consumed) |
 | `reliability-jam.json` | full-auto-hit-no-fumble | CP2020 p.99: Non-fumble attack resolves normally |
-| `reliability-jam.json` | full-auto-fumble-missing-reliability | CP2020 p.99: Missing reliability defaults to standard jam behavior |
+| `reliability-jam.json` | full-auto-fumble-missing-reliability | Item-data preflight: incomplete ammunition, reliability or damage data requir... |
 | `shotgun-template.json` | Shotgun damages vary by distance | FNFF Shotgun Pattern (pg.113) |
 | `shotgun-template.json` | Shotgun missing template data returns manual resolution | FNFF Shotgun Pattern (pg.113) - requires template distances |
 | `shotgun-template.json` | Shotgun without template calculates range using target distance | Skip template UX fallback |
-| `shotgun-template.json` | Shotgun missing bracket damage returns manual resolution | FNFF Shotgun Pattern (pg.113) - requires trusted drop-off data |
+| `shotgun-template.json` | Shotgun missing bracket damage returns manual resolution | Item-data preflight: incomplete ammunition, reliability or damage data requir... |
 | `three-round-burst.json` | three-round burst success with 2 hits and progressive ablation | CP2020 p.99: Three-Round Burst; CP2020 p.106: Progressive armor ablation (sta... |
 | `three-round-burst.json` | three-round burst success with 1 bullet remaining in weapon | CP2020 p.99: Burst with limited ammo; CP2020 p.99: ammo delta = min(shotsLeft... |
 | `three-round-burst.json` | three-round burst miss skips location/damage rolls and subtracts 3 ammo | CP2020 p.99: Burst miss consumes 3 ammo; CP2020 p.99: skip damage rolls |
@@ -150,7 +150,7 @@ assertion modules have no coverage. Those modules are listed separately below.
 | `three-round-burst.json` | three-round-burst-fumble-very-reliable | CP2020 p.99: VeryReliable does not jam on fumble |
 | `three-round-burst.json` | three-round-burst-fumble-unreliable | CP2020 p.99: Unreliable jams and damages on fumble |
 | `three-round-burst.json` | three-round-burst-point-blank-max-damage-per-hit | CP2020 p.99: PointBlank ranged attacks use maximum weapon damage; CP2020 p.99... |
-| `three-round-burst.json` | three-round-burst-zero-ammo | CP2020 p.99: Burst requires ammo; Audit 6.4: Insufficient ammo warning |
+| `three-round-burst.json` | three-round-burst-zero-ammo | Item-data preflight: incomplete ammunition, reliability or damage data requir... |
 | `unsupported-modes.json` | full-auto-fidelity-supported | Audit 6.2: FullAuto is a supported attack type in Corebook Fidelity mode |
 | `unsupported-modes.json` | three-round-burst-fidelity-supported | Audit 6.2: ThreeRoundBurst is supported in Corebook Fidelity mode |
 

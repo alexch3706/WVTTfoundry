@@ -1,0 +1,124 @@
+{
+  "_id": "EqPdVyalQGSq90if",
+  "_key": "!items!EqPdVyalQGSq90if",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Protects hands only. Six body zones cannot treat hands as whole arms."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 82,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Neo, 56"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Synthetic Leather Gloves Hands",
+        "sourceValues": {
+          "cost": 50,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 4
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            }
+          },
+          "flavor": "",
+          "notes": "<p>50 Neo, 56</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Synthetic Leather Gloves Hands",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Protects hands only. Six body zones cannot treat hands as whole arms."
+      ],
+      "status": "manual"
+    },
+    "cost": 50,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>50 Neo, 56</p>",
+    "source": "Neo, 56",
+    "specialStoppingPower": 4,
+    "weight": null
+  },
+  "type": "armor"
+}

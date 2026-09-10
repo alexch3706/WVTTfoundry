@@ -1,0 +1,25 @@
+{
+  "_id": "FXQFjXduOagpnXYa",
+  "_key": "!items!FXQFjXduOagpnXYa",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Playbeing Addition",
+  "system": {
+    "cost": 3,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA+<br><b>Humanity Loss:</b> ½d6<br><p>Increased ATT, tactile boost, behavior chip, etc +3000</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,108 @@
+{
+  "_id": "3pSLeZxYCxzKXiec",
+  "_key": "!items!3pSLeZxYCxzKXiec",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Damage is not a supported dice formula; resolve the weapon effect manually.",
+            "Reliability is missing or has a conditional rule; verify the source.",
+            "The original damage notation contains additional or damaged rules; verify it before automation."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "CB3",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "C/R 5d6 (5.45)(B5)",
+        "sourceName": "Stolbovoy St-5",
+        "sourceValues": {
+          "accuracy": "-1",
+          "ammoType": "B5",
+          "attackType": "Auto",
+          "availability": null,
+          "concealability": "N",
+          "cost": 900,
+          "damage": "/ 5d6",
+          "flavor": "",
+          "notes": "",
+          "range": "400m",
+          "reliability": "VR*",
+          "rof": "1/30",
+          "shots": "30",
+          "source": "CB3",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Stolbovoy St-5",
+  "system": {
+    "accuracy": -1,
+    "ammoType": "5.45",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Damage is not a supported dice formula; resolve the weapon effect manually.",
+        "Reliability is missing or has a conditional rule; verify the source.",
+        "The original damage notation contains additional or damaged rules; verify it before automation."
+      ],
+      "status": "manual"
+    },
+    "availability": null,
+    "bodyMinimum": 5,
+    "concealability": "ConcealNoHide",
+    "cost": 900,
+    "damage": null,
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 400,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": null,
+    "rof": 30,
+    "shots": 30,
+    "shotsLeft": 30,
+    "source": "CB3",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "nW7jF5nO5UvVbU9P",
+  "_key": "!items!nW7jF5nO5UvVbU9P",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Orbital Crystal Cyberarm",
+  "system": {
+    "cost": 7000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 2d6<br><p>50/60 SDP, 4 option spaces, 1d6 punch</p>",
+    "source": "Chr1",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

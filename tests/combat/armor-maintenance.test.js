@@ -59,10 +59,15 @@ export function runArmorMaintenanceTests() {
 
     assert.deepEqual(getCyberwareArmorStatus(skinweave), {
       isArmor: true,
-      baseStoppingPower: 36,
-      ablation: 3,
-      currentStoppingPower: 33,
-      repairable: true
+      baseStoppingPower: 12,
+      ablation: 2,
+      currentStoppingPower: 12,
+      repairable: true,
+      locations: [
+        { location: "Torso", baseStoppingPower: 12, ablation: 2, currentStoppingPower: 10 },
+        { location: "lArm", baseStoppingPower: 12, ablation: 1, currentStoppingPower: 11 },
+        { location: "rArm", baseStoppingPower: 12, ablation: 0, currentStoppingPower: 12 }
+      ]
     });
     assert.deepEqual(buildArmorRepairUpdate(skinweave), {
       "system.coverage.Torso.ablation": 0,
@@ -87,15 +92,38 @@ export function runArmorMaintenanceTests() {
 
     assert.deepEqual(getArmorItemStatus(jacket), {
       isArmor: true,
-      baseStoppingPower: 34,
-      ablation: 3,
-      currentStoppingPower: 31,
-      repairable: true
+      baseStoppingPower: 14,
+      ablation: 2,
+      currentStoppingPower: 12,
+      repairable: true,
+      locations: [
+        { location: "Torso", baseStoppingPower: 14, ablation: 2, currentStoppingPower: 12 },
+        { location: "lArm", baseStoppingPower: 10, ablation: 1, currentStoppingPower: 9 },
+        { location: "rArm", baseStoppingPower: 10, ablation: 0, currentStoppingPower: 10 }
+      ]
     });
     assert.deepEqual(buildArmorRepairUpdate(jacket), {
       "system.coverage.Torso.ablation": 0,
       "system.coverage.lArm.ablation": 0
     });
+  });
+
+  test("depleted zones stay visible and over-ablation never reduces another zone", () => {
+    const armor = { type: "armor", system: { coverage: {
+      Torso: { stoppingPower: 10, ablation: 20 },
+      lArm: { stoppingPower: 10, ablation: 0 }
+    } } };
+    const status = getArmorItemStatus(armor);
+    assert.equal(status.currentStoppingPower, 10);
+    assert.equal(status.locations[0].currentStoppingPower, 0);
+    assert.equal(status.repairable, true);
+  });
+
+  test("protected objects are not displayed as body armor", () => {
+    const item = { type: "armor", system: { armorRole: "protectedObject", coverage: { Torso: { stoppingPower: 40, ablation: 2 } } } };
+    const status = getArmorItemStatus(item);
+    assert.equal(status.isArmor, false);
+    assert.equal(status.repairable, false);
   });
 
   return results;

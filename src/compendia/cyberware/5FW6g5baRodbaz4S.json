@@ -1,0 +1,25 @@
+{
+  "_id": "5FW6g5baRodbaz4S",
+  "_key": "!items!5FW6g5baRodbaz4S",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "CyberMaw Hand",
+  "system": {
+    "cost": 1200,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N/MA<br><b>Humanity Loss:</b> 3d6<br><p>2-3\" maw that does 1d6 damage/turn, -3 WA</p>",
+    "source": "I2.2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

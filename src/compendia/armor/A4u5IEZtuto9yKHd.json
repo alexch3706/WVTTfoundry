@@ -1,0 +1,124 @@
+{
+  "_id": "A4u5IEZtuto9yKHd",
+  "_key": "!items!A4u5IEZtuto9yKHd",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Choose the plated body location; the source does not specify whole-body coverage."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 83,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 3, 30"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Spyke Body Plating",
+        "sourceValues": {
+          "cost": 400,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 10
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 10
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 10
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 10
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 10
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 10
+            }
+          },
+          "flavor": "",
+          "notes": "<p>400-600 Chr 3, 30 +10 SDP</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Spyke Body Plating",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Choose the plated body location; the source does not specify whole-body coverage."
+      ],
+      "status": "manual"
+    },
+    "cost": 400,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>400-600 Chr 3, 30 +10 SDP</p>",
+    "source": "Chr 3, 30",
+    "specialStoppingPower": 10,
+    "weight": null
+  },
+  "type": "armor"
+}

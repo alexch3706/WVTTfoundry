@@ -1,0 +1,25 @@
+{
+  "_id": "4AWB5CrKppJd9FVd",
+  "_key": "!items!4AWB5CrKppJd9FVd",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Frame Alteration",
+  "system": {
+    "cost": 8000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 2d6<br><p>25% size change from actual body size</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

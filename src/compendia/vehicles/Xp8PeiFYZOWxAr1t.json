@@ -1,0 +1,25 @@
+{
+  "_id": "Xp8PeiFYZOWxAr1t",
+  "_key": "!items!Xp8PeiFYZOWxAr1t",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Kundalini Roadworks Shiva",
+  "system": {
+    "cost": 8000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 160<br><b>Acc/Dec:</b> 18/30<br><b>Crew:</b> 1<br><b>Range:</b> 250<br><b>Passengers:</b> 1<br><b>Cargo:</b> None<br><b>Maneuver:</b> +4<br><b>SDP:</b> 32 (2)<br><b>SP:</b> 0<br><b>Mass:</b> 128kg",
+    "source": "Chr1",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

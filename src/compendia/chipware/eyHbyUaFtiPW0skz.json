@@ -1,0 +1,36 @@
+{
+  "_id": "eyHbyUaFtiPW0skz",
+  "_key": "!items!eyHbyUaFtiPW0skz",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "name": "Sunny Day",
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "abbrev": "",
+    "cost": 2000,
+    "cyberwareSubtype": "OPTION",
+    "cyberwareType": "CHIPWARE",
+    "equipped": true,
+    "flags": {},
+    "flavor": "Feel happy; +4 vs Intimidation; +2 Resist Torture",
+    "humanityCost": "1d6/2",
+    "notes": "",
+    "slots": 0,
+    "source": "When Gravity Fails pg.54",
+    "spaces": 1,
+    "surgCode": "N",
+    "weight": 0
+  },
+  "type": "cyberware"
+}

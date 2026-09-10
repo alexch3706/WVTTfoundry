@@ -1,0 +1,25 @@
+{
+  "_id": "5T2QwaBVK7aesTJl",
+  "_key": "!items!5T2QwaBVK7aesTJl",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Permanent BOD Increase",
+  "system": {
+    "cost": 34001,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 0<br><p>Max +2</p>",
+    "source": "ES+",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

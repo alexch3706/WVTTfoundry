@@ -1,0 +1,95 @@
+{
+  "_id": "rrLCxitVRy5h86Q7",
+  "_key": "!items!rrLCxitVRy5h86Q7",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CP13",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "1d6+1 (.25 C)",
+        "sourceName": "Browning .25",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": ".25 C",
+          "attackType": "Auto",
+          "availability": "E",
+          "concealability": "J",
+          "cost": 20,
+          "damage": "1d6+1",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "UR",
+          "rof": "2",
+          "shots": "5",
+          "source": "CP13",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Browning .25",
+  "system": {
+    "accuracy": 1,
+    "ammoType": ".25 C",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Excellent",
+    "concealability": "ConcealJacket",
+    "cost": 20,
+    "damage": "1d6+1",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Unreliable",
+    "rof": 2,
+    "shots": 5,
+    "shotsLeft": 5,
+    "source": "CP13",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

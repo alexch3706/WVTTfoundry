@@ -1,0 +1,101 @@
+{
+  "_id": "ziCKfwACrj0oqdxb",
+  "_key": "!items!ziCKfwACrj0oqdxb",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Magazine capacity is missing or has alternatives; select the installed magazine."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "Chr1",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+1 (9mm)",
+        "sourceName": "Goncz-Taurus MP",
+        "sourceValues": {
+          "accuracy": "-1",
+          "ammoType": "9mm",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "J",
+          "cost": 300,
+          "damage": "2d6+1",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "ST",
+          "rof": "2/10",
+          "shots": "15/30",
+          "source": "Chr1",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Goncz-Taurus MP",
+  "system": {
+    "accuracy": -1,
+    "ammoType": "9mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Magazine capacity is missing or has alternatives; select the installed magazine."
+      ],
+      "status": "manual"
+    },
+    "availability": "Common",
+    "concealability": "ConcealJacket",
+    "cost": 300,
+    "damage": "2d6+1",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 10,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "Chr1",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

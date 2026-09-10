@@ -1,0 +1,25 @@
+{
+  "_id": "c9jKRQlEeCqJAbqE",
+  "_key": "!items!c9jKRQlEeCqJAbqE",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Cyberhand Coverings",
+  "system": {
+    "cost": 12,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> usual<br><p>Same range as listed in for cyberlimbs 100</p>",
+    "source": "Chr1",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "irYKZDkyy5u4Tfea",
+  "_key": "!items!irYKZDkyy5u4Tfea",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Corvette Cyberlegs (basic)",
+  "system": {
+    "cost": 4500,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 3d6<br><p>+3 MA, +1 on movement rolls</p>",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "1S8kFZ6zk8ZZ87q1",
+  "_key": "!items!1S8kFZ6zk8ZZ87q1",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "name": "Subdermal Moddy Rack",
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "abbrev": "",
+    "cost": 200,
+    "cyberwareSubtype": "OPTION",
+    "cyberwareType": "CHIPWARE",
+    "equipped": true,
+    "flags": {},
+    "flavor": "Holds 3 Moddy and 10 Daddy; difficult to spot",
+    "humanityCost": "1d6",
+    "notes": "",
+    "slots": 0,
+    "source": "When Gravity Fails pg.59",
+    "spaces": 1,
+    "surgCode": "M",
+    "weight": 0
+  },
+  "type": "cyberware"
+}

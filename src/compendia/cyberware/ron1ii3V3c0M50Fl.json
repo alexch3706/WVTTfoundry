@@ -1,0 +1,25 @@
+{
+  "_id": "ron1ii3V3c0M50Fl",
+  "_key": "!items!ron1ii3V3c0M50Fl",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Soldering Iron",
+  "system": {
+    "cost": 50,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> .5<br><p>Electric Soldering Iron finger</p>",
+    "source": "I1.1",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

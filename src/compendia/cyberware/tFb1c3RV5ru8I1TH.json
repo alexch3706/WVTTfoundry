@@ -1,0 +1,25 @@
+{
+  "_id": "tFb1c3RV5ru8I1TH",
+  "_key": "!items!tFb1c3RV5ru8I1TH",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "One-Shot Special",
+  "system": {
+    "cost": 250,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2<br><p>P -2 P E 1d6 (5mm) 1 1 ST 20m</p>",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "XIBc5Fs1jJb7Fl5i",
+  "_key": "!items!XIBc5Fs1jJb7Fl5i",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "name": "Cryotank Operation +1",
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "abbrev": "",
+    "cost": 150,
+    "cyberwareSubtype": "OPTION",
+    "cyberwareType": "CHIPWARE",
+    "equipped": true,
+    "flags": {},
+    "flavor": "APTR Skill chip",
+    "humanityCost": "0",
+    "notes": "",
+    "slots": 0,
+    "source": "Cyberpunk 2020 2nd ed. pg.83",
+    "spaces": 1,
+    "surgCode": "N",
+    "weight": 0
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,119 @@
+{
+  "_id": "I9tVCteNEV5S8WrS",
+  "_key": "!items!I9tVCteNEV5S8WrS",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 84,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 2, 9"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Total Body Plating",
+        "sourceValues": {
+          "cost": 6800,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 20
+            }
+          },
+          "flavor": "",
+          "notes": "<p>6,800 Chr 2, 9 heal 1pt/day</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Total Body Plating",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 6800,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 3,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>6,800 Chr 2, 9 heal 1pt/day</p>",
+    "source": "Chr 2, 9",
+    "weight": null
+  },
+  "type": "armor"
+}

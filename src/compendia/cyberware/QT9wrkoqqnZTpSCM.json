@@ -1,0 +1,25 @@
+{
+  "_id": "QT9wrkoqqnZTpSCM",
+  "_key": "!items!QT9wrkoqqnZTpSCM",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Tracking Device",
+  "system": {
+    "cost": 300,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> .5<br><p>3m range, 2 bugs, 3 km transmitter</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

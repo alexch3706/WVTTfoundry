@@ -1,0 +1,36 @@
+{
+  "_id": "Zl9i4QPHcgr44ZaE",
+  "_key": "!items!Zl9i4QPHcgr44ZaE",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "name": "Crypto Chips",
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "abbrev": "",
+    "cost": 600,
+    "cyberwareSubtype": "OPTION",
+    "cyberwareType": "CHIPWARE",
+    "equipped": true,
+    "flags": {},
+    "flavor": "Randomly generated substitution word code 600 per",
+    "humanityCost": "0",
+    "notes": "",
+    "slots": 0,
+    "source": "Chromebook 3 pg.37",
+    "spaces": 1,
+    "surgCode": "N",
+    "weight": 0
+  },
+  "type": "cyberware"
+}

@@ -2,7 +2,24 @@
 <div class="field-list">
     {{> (template "fields/number") label="Accuracy" edit="system.accuracy"}}
     {{> (template "fields/string") label="Damage" edit="system.damage"}}
-    {{> (template "fields/boolean") label="AP" edit="system.ap"}}
+    <div class="field">
+        <label for="weapon-ap-{{item.id}}">{{CPLocal "AP"}}</label>
+        <select id="weapon-ap-{{item.id}}" name="system.ap">
+            <option value="unknown" {{#unless (equals system.ap true)}}{{#unless (equals system.ap false)}}selected{{/unless}}{{/unless}}>{{CPLocal "CatalogUnknown"}}</option>
+            <option value="false" {{#if (equals system.ap false)}}selected{{/if}}>{{CPLocal "CatalogNormalAmmo"}}</option>
+            <option value="true" {{#if (equals system.ap true)}}selected{{/if}}>{{CPLocal "AP"}}</option>
+        </select>
+    </div>
+    {{#if (equals system.weaponType "Melee")}}
+    <div class="field">
+        <label for="melee-damage-type-{{item.id}}">{{CPLocal "CatalogMeleeDamageType"}}</label>
+        <select id="melee-damage-type-{{item.id}}" name="system.meleeDamageType">
+            <option value="">—</option>
+            <option value="edged" {{#if (equals system.meleeDamageType "edged")}}selected{{/if}}>{{CPLocal "CatalogEdged"}}</option>
+            <option value="blunt" {{#if (equals system.meleeDamageType "blunt")}}selected{{/if}}>{{CPLocal "CatalogBlunt"}}</option>
+        </select>
+    </div>
+    {{/if}}
     {{> (template "fields/number") label="Range" edit="system.range"}}
 
     {{!-- Damage bands consumed by the shotgun resolver. --}}
@@ -22,7 +39,15 @@
     {{> (template "fields/number") label="ShotsLeft" edit="system.shotsLeft"}}
     {{> (template "fields/number") label="Shots" edit="system.shots"}}
     {{> (template "fields/number") label="RoF" edit="system.rof"}}
-    {{> (template "fields/select") label="Reliability" edit="system.reliability" choices=reliabilities}}
+    {{> (template "fields/select") label="Reliability" edit="system.reliability" choices=reliabilities allowBlank=true}}
+    <div class="field span-two-cells">
+        <label for="weapon-fire-modes-{{item.id}}">{{CPLocal "CatalogFireModes"}}</label>
+        <select id="weapon-fire-modes-{{item.id}}" name="system.fireModes" multiple>
+            {{#each fireModeChoices as |mode|}}
+            <option value="{{mode.key}}" {{#if mode.selected}}selected{{/if}}>{{mode.label}}</option>
+            {{/each}}
+        </select>
+    </div>
 </div>
 
 {{!-- What kind of thing is this weapon, how it's used --}}
@@ -45,18 +70,19 @@
             <input type="text" list="possibleSkills" placeholder="Choose Skill" name="system.attackSkill" value="{{system.attackSkill}}"/>
         {{else}}
             <select name="system.attackSkill">
-                {{#each attackSkills as |skill|}}
-                <option value="{{skill}}" {{#if (equals ../system.attackSkill skill)}}selected{{/if}}>{{skill}}</option>
+                <option value="">—</option>
+                {{#each attackSkillChoices as |skill|}}
+                <option value="{{skill.key}}" {{#if (equals ../selectedAttackSkill skill.key)}}selected{{/if}}>{{skill.label}}</option>
                 {{/each}}
             </select>
         {{/if}}
     </div>
-    {{> (template "fields/select") label="Concealability" edit="system.concealability" choices=concealabilities}}
+    {{> (template "fields/select") label="Concealability" edit="system.concealability" choices=concealabilities allowBlank=true}}
 </div>
 
 {{!-- Market stuff --}}
 <div class="field-list">
-    {{> (template "fields/select") label="Availability" edit="system.availability" choices=availabilities}}
+    {{> (template "fields/select") label="Availability" edit="system.availability" choices=availabilities allowBlank=true}}
     {{!-- Ammo counts as market, as it doesn't affect things mechanically currently --}}
     {{> (template "fields/string") label="AmmoType" edit="system.ammoType"}}
 </div>

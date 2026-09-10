@@ -1,0 +1,119 @@
+{
+  "_id": "GZXayuJbzYkOxqcW",
+  "_key": "!items!GZXayuJbzYkOxqcW",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 82,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 2, 28"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Militech M73 Mirage Gear*",
+        "sourceValues": {
+          "cost": 1050,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 12
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 12
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 12
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 12
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 12
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 12
+            }
+          },
+          "flavor": "",
+          "notes": "<p>1050 Chr 2, 28 -2 A/N. 1.5kg</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Militech M73 Mirage Gear*",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 1050,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 12
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 12
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 12
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 12
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 12
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 12
+      }
+    },
+    "edgedHalfSP": true,
+    "encumbrance": 1,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>1050 Chr 2, 28 -2 A/N. 1.5kg</p>",
+    "source": "Chr 2, 28",
+    "weight": 1.5
+  },
+  "type": "armor"
+}

@@ -1,0 +1,95 @@
+{
+  "_id": "Z63YAgcZ1a0WmxFM",
+  "_key": "!items!Z63YAgcZ1a0WmxFM",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CP20",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+3 (10mm)",
+        "sourceName": "Dai Lung Streetmaster",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "10mm",
+          "attackType": "Auto",
+          "availability": "E",
+          "concealability": "J",
+          "cost": 250,
+          "damage": "2d6+3",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "UR",
+          "rof": "2",
+          "shots": "12",
+          "source": "CP20",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Dai Lung Streetmaster",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "10mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Excellent",
+    "concealability": "ConcealJacket",
+    "cost": 250,
+    "damage": "2d6+3",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Unreliable",
+    "rof": 2,
+    "shots": 12,
+    "shotsLeft": 12,
+    "source": "CP20",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "x22V4qAktQ9TKb9V",
+  "_key": "!items!x22V4qAktQ9TKb9V",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Cellular Cybermodem",
+  "system": {
+    "cost": 5000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1<br><p>Built in cellular deck</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

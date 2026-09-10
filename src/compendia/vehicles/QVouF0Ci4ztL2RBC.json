@@ -1,0 +1,25 @@
+{
+  "_id": "QVouF0Ci4ztL2RBC",
+  "_key": "!items!QVouF0Ci4ztL2RBC",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Kundalini GSR1200 Tetsuo",
+  "system": {
+    "cost": 25000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 204<br><b>Acc/Dec:</b> 36/45<br><b>Crew:</b> 1<br><b>Range:</b> 533<br><b>Passengers:</b> 0<br><b>Cargo:</b> 45kg, .4<br><b>Maneuver:</b> +4<br><b>SDP:</b> 34 (2)<br><b>SP:</b> 10<br><b>Mass:</b> (0) 136kg",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

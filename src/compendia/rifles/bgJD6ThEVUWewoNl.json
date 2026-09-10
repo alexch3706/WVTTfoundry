@@ -1,0 +1,98 @@
+{
+  "_id": "bgJD6ThEVUWewoNl",
+  "_key": "!items!bgJD6ThEVUWewoNl",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CB2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "6d6-1 (6.5 H) (B6)",
+        "sourceName": "Militech Dragon",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "B6",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "L",
+          "cost": 700,
+          "damage": "6d6-1",
+          "flavor": "",
+          "notes": "",
+          "range": "400m",
+          "reliability": "VR",
+          "rof": "30",
+          "shots": "35",
+          "source": "CB2",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Militech Dragon",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "6.5 H",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "bodyMinimum": 6,
+    "concealability": "ConcealLongcoat",
+    "cost": 700,
+    "damage": "6d6-1",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 400,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 30,
+    "shots": 35,
+    "shotsLeft": 35,
+    "source": "CB2",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

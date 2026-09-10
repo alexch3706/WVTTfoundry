@@ -1,0 +1,25 @@
+{
+  "_id": "1gbIu72luB2pvepm",
+  "_key": "!items!1gbIu72luB2pvepm",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Ability To Bear Children",
+  "system": {
+    "cost": 5000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 0<br><p>Includes psychological counselling</p>",
+    "source": "WGF",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "aqK4bBiwRBDh3BNH",
+  "_key": "!items!aqK4bBiwRBDh3BNH",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Hollow Claw",
+  "system": {
+    "cost": 250,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 2d6<br><p>Connected to poison sac/gland, 1d6/3* damage</p>",
+    "source": "WGF",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "to0WkEHlWs1yQbIc",
+  "_key": "!items!to0WkEHlWs1yQbIc",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "name": "Police Visual Rec Chip",
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "abbrev": "",
+    "cost": 200,
+    "cyberwareSubtype": "OPTION",
+    "cyberwareType": "CHIPWARE",
+    "equipped": true,
+    "flags": {},
+    "flavor": "Visual ID's on criminals and licenses; cost per level",
+    "humanityCost": "0",
+    "notes": "",
+    "slots": 0,
+    "source": "Chromebook 1 pg.76",
+    "spaces": 1,
+    "surgCode": "N",
+    "weight": 0
+  },
+  "type": "cyberware"
+}

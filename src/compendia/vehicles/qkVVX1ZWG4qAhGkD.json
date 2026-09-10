@@ -1,0 +1,25 @@
+{
+  "_id": "qkVVX1ZWG4qAhGkD",
+  "_key": "!items!qkVVX1ZWG4qAhGkD",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Mitsuzuki C21 Kenada",
+  "system": {
+    "cost": 755010550,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 155<br><b>Acc/Dec:</b> 31/45<br><b>Crew:</b> 1<br><b>Range:</b> 533<br><b>Passengers:</b> 0<br><b>Cargo:</b> 13kg, .75<br><b>Maneuver:</b> +4<br><b>SDP:</b> 20 (1)<br><b>SP:</b> 0<br><b>Mass:</b> 40kg",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

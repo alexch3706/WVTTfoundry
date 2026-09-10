@@ -1,0 +1,119 @@
+{
+  "_id": "FSUbTDzsd2t34FB0",
+  "_key": "!items!FSUbTDzsd2t34FB0",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "cyberware",
+        "provenance": {
+          "pdfPage": 84,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 2, 9"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Total Body Plating",
+        "sourceValues": {
+          "cost": 6800,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 20
+            }
+          },
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> CRx2<br><b>Humanity Loss:</b> 8d6<br><p>SP20, REF-3, ATTR/2, -1 Stealth</p>",
+          "source": "Chr2",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Total Body Plating",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 6800,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 20
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 3,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CRx2<br><b>Humanity Loss:</b> 8d6<br><p>SP20, REF-3, ATTR/2, -1 Stealth</p>",
+    "source": "Chr 2, 9",
+    "weight": null
+  },
+  "type": "cyberware"
+}

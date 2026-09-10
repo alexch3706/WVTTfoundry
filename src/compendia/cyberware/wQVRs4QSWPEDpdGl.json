@@ -1,0 +1,119 @@
+{
+  "_id": "wQVRs4QSWPEDpdGl",
+  "_key": "!items!wQVRs4QSWPEDpdGl",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "cyberware",
+        "provenance": {
+          "pdfPage": 84,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 2, 9"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Upgraded Skinweave",
+        "sourceValues": {
+          "cost": 2750,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 16
+            }
+          },
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2d6+4<br><p>16 SP, -2 ATTR loss, Diff 15 to spot</p>",
+          "source": "Chr2",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Upgraded Skinweave",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 2750,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      }
+    },
+    "edgedHalfSP": true,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2d6+4<br><p>16 SP, -2 ATTR loss, Diff 15 to spot</p>",
+    "source": "Chr 2, 9",
+    "weight": null
+  },
+  "type": "cyberware"
+}

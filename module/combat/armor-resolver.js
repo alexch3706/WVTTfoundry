@@ -2,6 +2,7 @@
  * Armor resolver for Cyberpunk 2020 combat.
  * Calculates effective stopping power (SP) at hit locations from equipped items.
  */
+import { contributesBodyArmor, validateArmorContract } from "../item/item-contract.js";
 
 const ARMOR_WARNING_SEVERITY = "warning";
 const LAYER_ORDER = Object.freeze({
@@ -16,7 +17,7 @@ const LAYER_ORDER = Object.freeze({
  * @param {string} location Hit location name.
  * @returns {Array<Object>} Active armor layer snapshots.
  */
-export function getEquippedArmorForLocation(targetSnapshot, location) {
+export function getEquippedArmorForLocation(targetSnapshot, location, options = {}) {
   const layers = [];
   if (!targetSnapshot || !location) {
     return layers;
@@ -27,6 +28,7 @@ export function getEquippedArmorForLocation(targetSnapshot, location) {
   // 1. Process equipped armor items
   for (const item of targetSnapshot.equippedArmor || []) {
     const system = item.system || item;
+    if (!contributesBodyArmor(system)) continue;
     if (system.equipped === false || item.equipped === false) {
       continue;
     }
@@ -36,12 +38,14 @@ export function getEquippedArmorForLocation(targetSnapshot, location) {
       const baseSP = Number(coverage.stoppingPower !== undefined ? coverage.stoppingPower : coverage.sp || 0);
       const ablation = normalizeAblation(coverage.ablation);
       const sp = Math.max(0, baseSP - ablation);
-      if (sp > 0) {
+      const edgedHalfSP = options.meleeDamageType === "edged" && system.edgedHalfSP === true;
+      if ((edgedHalfSP ? Math.floor(sp / 2) : sp) > 0) {
         layers.push({
           id: item.id,
           name: item.name,
           type: "armor",
-          stoppingPower: sp,
+          stoppingPower: edgedHalfSP ? Math.floor(sp / 2) : sp,
+          ...(edgedHalfSP ? { edgedHalfSP: true, stoppingPowerBeforeEdged: sp } : {}),
           baseStoppingPower: baseSP,
           ablation,
           coverageKey,
@@ -70,12 +74,14 @@ export function getEquippedArmorForLocation(targetSnapshot, location) {
       : getCyberwareStoppingPower(item, system);
     const ablation = coverage ? normalizeAblation(coverage.ablation) : normalizeAblation(system.ablation);
     const sp = Math.max(0, baseSP - ablation);
-    if (sp > 0) {
+    const edgedHalfSP = options.meleeDamageType === "edged" && system.edgedHalfSP === true;
+    if ((edgedHalfSP ? Math.floor(sp / 2) : sp) > 0) {
       layers.push({
         id: item.id,
         name: item.name,
         type: "cyberware",
-        stoppingPower: sp,
+        stoppingPower: edgedHalfSP ? Math.floor(sp / 2) : sp,
+        ...(edgedHalfSP ? { edgedHalfSP: true, stoppingPowerBeforeEdged: sp } : {}),
         baseStoppingPower: baseSP,
         ablation,
         coverageKey: coverageMatch?.key,
@@ -101,7 +107,25 @@ export function getEquippedArmorForLocation(targetSnapshot, location) {
  * @returns {Object} Resolution details with layers, warnings, and effectiveStoppingPower.
  */
 export function resolveArmor(weaponAP, targetSnapshot, location, options = {}) {
-  const personalLayers = orderArmorLayers(getEquippedArmorForLocation(targetSnapshot, location));
+  const issues = [];
+  for (const [type, items] of [["armor", targetSnapshot?.equippedArmor], ["cyberware", targetSnapshot?.equippedCyberware]]) {
+    for (const item of items || []) {
+      const system = item.system || item;
+      if (system.equipped === false || item.equipped === false) continue;
+      issues.push(...validateArmorContract(system, { type }).issues.map(issue => ({ ...issue, itemName: item.name })));
+    }
+  }
+  if (typeof weaponAP !== "boolean") issues.push({ code: "unknown-armor-penetration", message: "Armor penetration is not a boolean; resolve special penetration manually." });
+  if (issues.length) {
+    return {
+      layers: [], rawStoppingPower: null, effectiveStoppingPower: null,
+      personalArmor: { layers: [], rawStoppingPower: null, effectiveStoppingPower: null },
+      cover: { present: false }, armorPiercing: weaponAP,
+      manualResolution: { required: true, reason: "missing-rule-data", issues },
+      warnings: issues.map(issue => armorWarning(`item-data-${issue.code}`, `${issue.itemName ? `${issue.itemName}: ` : ""}${issue.message}`, "item-data-contract"))
+    };
+  }
+  const personalLayers = orderArmorLayers(getEquippedArmorForLocation(targetSnapshot, location, options));
   const coverCandidate = getManualCoverLayer(options.cover, location);
   const coverLayer = coverCandidate?.applied ? coverCandidate.layer : null;
   const warnings = buildArmorWarnings(personalLayers);

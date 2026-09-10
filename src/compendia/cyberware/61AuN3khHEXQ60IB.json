@@ -1,0 +1,25 @@
+{
+  "_id": "61AuN3khHEXQ60IB",
+  "_key": "!items!61AuN3khHEXQ60IB",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Nitrogen Binders",
+  "system": {
+    "cost": 1400,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1-2<br><p>Reduces depressurization by up to 100%</p>",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

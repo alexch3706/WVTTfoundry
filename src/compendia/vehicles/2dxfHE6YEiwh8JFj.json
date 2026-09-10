@@ -1,0 +1,25 @@
+{
+  "_id": "2dxfHE6YEiwh8JFj",
+  "_key": "!items!2dxfHE6YEiwh8JFj",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Covert Assault \"APC\"",
+  "system": {
+    "cost": 450000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 90<br><b>Acc/Dec:</b> 30/50<br><b>Crew:</b> 1<br><b>Range:</b> 300<br><b>Passengers:</b> 9<br><b>Cargo:</b> 500kg<br><b>Maneuver:</b> -3<br><b>SDP:</b> 75 (4)<br><b>SP:</b> 38<br><b>Mass:</b> (2) 3 tons",
+    "source": "SF",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

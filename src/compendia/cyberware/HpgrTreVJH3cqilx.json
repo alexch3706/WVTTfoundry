@@ -1,0 +1,25 @@
+{
+  "_id": "HpgrTreVJH3cqilx",
+  "_key": "!items!HpgrTreVJH3cqilx",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Third Eye",
+  "system": {
+    "cost": 750,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 3d6+<br><p>-1 ATTR/eye, max 2 extra</p>",
+    "source": "Chr3",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

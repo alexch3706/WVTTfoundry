@@ -1,0 +1,25 @@
+{
+  "_id": "bzxykW4Jtx8HNSRa",
+  "_key": "!items!bzxykW4Jtx8HNSRa",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "NewTeeth",
+  "system": {
+    "cost": 200,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 1d6/2<br><p>Ceramic teeth: MEL -1 NA C 1-2* NA 1 VR touch</p>",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -320,6 +320,8 @@ export class CyberpunkActorSheet extends ActorSheet {
       ev.stopPropagation();
       let item = getEventItem(this, ev);
       if(!item || item.type !== "weapon") return;
+      // Validate before drawing templates or spending rounds on persistent zones.
+      if(item.warnInvalidCombatData?.()) return;
       let isRanged = item.isRanged();
 
       let onConfirm = undefined;
@@ -341,7 +343,8 @@ export class CyberpunkActorSheet extends ActorSheet {
           const { normalizeTacticalTargets } = await import("../combat/target-normalizer.js");
           normalizeTacticalTargetsFn = normalizeTacticalTargets;
 
-          const isLegacyShotgun = item.system?.weaponType === "Shotgun" || item.system?.weaponType === "Shotgun ";
+          const isLegacyShotgun = String(item.system?.weaponType || "").trim() === "Shotgun"
+            || String(item.system?.attackType || "").trim().toLowerCase() === "shotgun";
           const isAutoshotgun = String(item.system?.attackType || "").toLowerCase().trim() === "autoshotgun";
           const hasAoE = !!item.system?.aoe?.type;
 
@@ -368,7 +371,7 @@ export class CyberpunkActorSheet extends ActorSheet {
             }
           } else if (!isAutoshotgun) {
             const fireModes = typeof item.__getFireModes === "function" ? item.__getFireModes() : [];
-            const isAutoWeapon = fireModes.includes("Suppressive") || fireModes.includes("FullAuto") || String(item.system?.attackType).toLowerCase() === "auto" || String(item.system?.weaponType).toLowerCase().includes("auto");
+            const isAutoWeapon = fireModes.includes("Suppressive");
 
             if (isAutoWeapon) {
               const shotsLeft = Number(item.system?.shotsLeft) || 0;
@@ -446,6 +449,7 @@ export class CyberpunkActorSheet extends ActorSheet {
         targetTokens: targetTokens,
         modifierGroups: modifierGroups,
         onConfirm: async (fireOptions) => {
+          if(item.warnInvalidCombatData?.(fireOptions)) return;
           if (suppressiveFireOptions && fireOptions.fireMode === "Suppressive") {
             fireOptions.roundsFired = suppressiveFireOptions.roundsFired;
             fireOptions.fireZoneWidth = suppressiveFireOptions.zoneWidth;

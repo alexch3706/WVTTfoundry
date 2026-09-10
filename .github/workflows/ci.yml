@@ -10,7 +10,7 @@ permissions:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: Check out repository
@@ -32,6 +32,11 @@ jobs:
 
       - name: Run combat and UI contract suite
         run: node tests/run-combat-fixtures.mjs
+
+      - name: Validate catalog semantics and safe world migration
+        run: |
+          node --test tests/*catalog*.test.mjs tests/item-contract.test.mjs
+          node tools/catalog.mjs check
 
       - name: Validate V14 manifest and compendia
         run: |

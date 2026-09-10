@@ -1,0 +1,25 @@
+{
+  "_id": "H1Bz5F4rLvUpwf6h",
+  "_key": "!items!H1Bz5F4rLvUpwf6h",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Arctic Cat DuraCat Ice Crawler",
+  "system": {
+    "cost": 40000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 20<br><b>Acc/Dec:</b> 5/5<br><b>Crew:</b> 1<br><b>Range:</b> 100<br><b>Passengers:</b> 7<br><b>Cargo:</b> 1000kg<br><b>Maneuver:</b> -2<br><b>SDP:</b> 30 (1)<br><b>SP:</b> 15<br><b>Mass:</b> (1) 1 ton",
+    "source": "NWP",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

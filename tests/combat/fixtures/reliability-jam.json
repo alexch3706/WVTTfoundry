@@ -479,57 +479,50 @@
           }
         }
       },
-      "rolls": [
-        {
-          "id": "attack",
-          "total": 18,
-          "die": {
-            "faces": 10,
-            "natural": 1
-          }
-        }
-      ],
+      "rolls": [],
       "expected": {
-        "action": {
-          "type": "ranged",
-          "fireMode": "FullAuto"
-        },
         "targets": [
           {
-            "attack": {
-              "roll": {
-                "isFumble": true,
-                "isJam": true
-              },
-              "targetNumber": 15,
-              "hit": false,
-              "margin": 0,
-              "warnings": []
-            },
-            "hits": []
-          }
-        ],
-        "warnings": [
-          {
-            "code": "weapon-jam",
-            "severity": "warning",
-            "message": "\"Assault Rifle\" jammed; clear stoppage before next shot."
-          }
-        ],
-        "pendingDecisions": [
-          {
-            "type": "jam",
-            "severity": "standard",
-            "message": "Clear \"Assault Rifle\" stoppage (weapon skill check or referee action)."
+            "hits": [],
+            "manualResolution": {
+              "required": true
+            }
           }
         ],
         "ammo": {
-          "before": 30,
-          "delta": -30,
-          "after": 0
-        }
+          "delta": 0
+        },
+        "plannedUpdates": {
+          "itemUpdates": [],
+          "chatStatus": "manual"
+        },
+        "manualResolution": {
+          "required": true,
+          "reason": "missing-rule-data",
+          "blockedUpdateCategories": [
+            "attacker-ammo",
+            "target-damage",
+            "target-armor",
+            "target-saves"
+          ]
+        },
+        "chat": {
+          "status": "manual"
+        },
+        "warnings": [
+          {
+            "code": "item-data-unknown-weapon-reliability",
+            "severity": "warning"
+          }
+        ]
       },
-      "ruleReference": "CP2020 p.99: Missing reliability defaults to standard jam behavior"
+      "ruleReference": "Item-data preflight: incomplete ammunition, reliability or damage data requires manual resolution before any roll or update.",
+      "expectedPlan": {
+        "actorUpdates": [],
+        "itemUpdates": [],
+        "embeddedItemUpdates": [],
+        "chatStatus": "manual"
+      }
     }
   ],
   "rolls": [

@@ -1,0 +1,118 @@
+{
+  "_id": "cutli7X2I4LKbOoE",
+  "_key": "!items!cutli7X2I4LKbOoE",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Verify armor coverage, SP variant, material and encumbrance against the source before automatic resolution."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Skinsuit* 0",
+        "sourceValues": {
+          "cost": 2500,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 6
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 6
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 6
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 6
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 6
+            }
+          },
+          "flavor": "",
+          "notes": "<p>2,500 DS, 59 1+1/3 hours of air</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Skinsuit* 0",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Verify armor coverage, SP variant, material and encumbrance against the source before automatic resolution."
+      ],
+      "status": "manual"
+    },
+    "cost": 2500,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 6
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 6
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 6
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 6
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 6
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>2,500 DS, 59 1+1/3 hours of air</p>",
+    "source": "CP20",
+    "weight": null
+  },
+  "type": "armor"
+}

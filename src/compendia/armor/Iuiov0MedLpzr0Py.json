@@ -1,0 +1,119 @@
+{
+  "_id": "Iuiov0MedLpzr0Py",
+  "_key": "!items!Iuiov0MedLpzr0Py",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 82,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "SW, 35"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Arasaka \"Blackjack\" Stealth*",
+        "sourceValues": {
+          "cost": 10000,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 16
+            }
+          },
+          "flavor": "",
+          "notes": "<p>10,000 SW, 35 +3 stealth, -4 A/N</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Arasaka \"Blackjack\" Stealth*",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 10000,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      }
+    },
+    "edgedHalfSP": true,
+    "encumbrance": 2,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>10,000 SW, 35 +3 stealth, -4 A/N</p>",
+    "source": "SW, 35",
+    "weight": null
+  },
+  "type": "armor"
+}

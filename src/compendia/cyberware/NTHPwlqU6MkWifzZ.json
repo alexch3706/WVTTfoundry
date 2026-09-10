@@ -1,0 +1,25 @@
+{
+  "_id": "NTHPwlqU6MkWifzZ",
+  "_key": "!items!NTHPwlqU6MkWifzZ",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Live Feed Optic",
+  "system": {
+    "cost": 1000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 1<br><p>2 mile range</p>",
+    "source": "I2.1",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

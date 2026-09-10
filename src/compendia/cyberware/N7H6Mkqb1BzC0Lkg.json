@@ -1,0 +1,25 @@
+{
+  "_id": "N7H6Mkqb1BzC0Lkg",
+  "_key": "!items!N7H6Mkqb1BzC0Lkg",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Corvette Cyberlegs (advan)",
+  "system": {
+    "cost": 5000500,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR/M<br><b>Humanity Loss:</b> 3d6+4<br><p>+8 MA, +2 on m ovement rolls</p>",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

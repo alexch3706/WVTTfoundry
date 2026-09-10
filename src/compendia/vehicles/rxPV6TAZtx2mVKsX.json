@@ -1,0 +1,25 @@
+{
+  "_id": "rxPV6TAZtx2mVKsX",
+  "_key": "!items!rxPV6TAZtx2mVKsX",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "XML-20 Support Walker (2 legs)",
+  "system": {
+    "cost": 332700,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 40<br><b>Acc/Dec:</b> 15/15<br><b>Crew:</b> 2<br><b>Range:</b> 400<br><b>Passengers:</b> 0<br><b>Cargo:</b> None<br><b>Maneuver:</b> -1<br><b>SDP:</b> 40 (2)<br><b>SP:</b> 40<br><b>Mass:</b> (2) 2.6 tons",
+    "source": "SOF2",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "g58RYLJFQUTRmgHh",
+  "_key": "!items!g58RYLJFQUTRmgHh",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "F81 \"Paradactyl\" Cyber-Glider 5 -",
+  "system": {
+    "cost": 2300,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 35<br><b>Acc/Dec:</b> 5/5<br><b>Crew:</b> 1<br><b>Range:</b> -<br><b>Passengers:</b> 0<br><b>Cargo:</b> None<br><b>Maneuver:</b> +2<br><b>SDP:</b> 10 (0)<br><b>SP:</b> 0<br><b>Mass:</b> 14.3kg",
+    "source": "SF",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

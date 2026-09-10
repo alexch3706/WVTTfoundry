@@ -44,6 +44,8 @@ jobs:
           node tests/system-manifest.test.mjs
           node tests/pack-compatibility.test.mjs
           node tests/run-combat-fixtures.mjs
+          node --test tests/*catalog*.test.mjs tests/item-contract.test.mjs
+          node tools/catalog.mjs check
 
       - name: Build installable archive
         shell: bash

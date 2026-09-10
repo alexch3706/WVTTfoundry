@@ -1,0 +1,25 @@
+{
+  "_id": "GjlvXKtRAU87px0z",
+  "_key": "!items!GjlvXKtRAU87px0z",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Kawasaki Blitzkrieg",
+  "system": {
+    "cost": 15000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 100<br><b>Acc/Dec:</b> 18/30<br><b>Crew:</b> 1<br><b>Range:</b> 500<br><b>Passengers:</b> 1<br><b>Cargo:</b> 60kg<br><b>Maneuver:</b> +1<br><b>SDP:</b> 35 (2)<br><b>SP:</b> 5<br><b>Mass:</b> (0) 160kg",
+    "source": "Neo",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

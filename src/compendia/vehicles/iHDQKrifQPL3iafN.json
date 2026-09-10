@@ -1,0 +1,25 @@
+{
+  "_id": "iHDQKrifQPL3iafN",
+  "_key": "!items!iHDQKrifQPL3iafN",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Spinelli Autotech Nomad",
+  "system": {
+    "cost": 55000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 100<br><b>Acc/Dec:</b> 15/40<br><b>Crew:</b> 1<br><b>Range:</b> 500<br><b>Passengers:</b> 1<br><b>Cargo:</b> 525kg, 3<br><b>Maneuver:</b> +0<br><b>SDP:</b> 40 (2)<br><b>SP:</b> 8<br><b>Mass:</b> (0) 1600kg",
+    "source": "Chr3",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

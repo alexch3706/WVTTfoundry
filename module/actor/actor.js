@@ -125,10 +125,12 @@ export class CyberpunkActor extends Actor {
 
     // Reflex is affected by encumbrance values too
     stats.ref.armorMod = 0;
-    equippedItems.filter(i => i.type === "armor").forEach(armor => {
+    equippedItems.filter(i => ["armor", "cyberware"].includes(i.type)
+      && !["protectedObject", "shield", "clothing"].includes(i.system.armorRole)).forEach(armor => {
       let armorData = armor.system;
-      if(armorData.encumbrance != null) {
-        stats.ref.armorMod -= armorData.encumbrance;
+      const penalty = Number(armorData.encumbrance);
+      if(armorData.encumbrance != null && Number.isFinite(penalty) && penalty >= 0) {
+        stats.ref.armorMod -= penalty;
       }
     });
 
@@ -200,9 +202,12 @@ export class CyberpunkActor extends Actor {
     body.lift = body.total * 40;
     body.modifier = system.isFBC ? 0 : btmFromBT(body.total);
     system.carryWeight = 0;
+    system.carryWeightUnknown = 0;
     equippedItems.forEach(item => {
-      let weight = item.system.weight || 0;
-      system.carryWeight += parseFloat(weight);
+      const weight = item.system.weight;
+      if(weight === null || weight === undefined || weight === "" || !Number.isFinite(Number(weight))) {
+        system.carryWeightUnknown++;
+      } else system.carryWeight += Number(weight);
     });
 
     // Apply wound effects

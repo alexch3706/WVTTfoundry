@@ -1,0 +1,105 @@
+{
+  "_id": "igQZzFaKrq15tc5H",
+  "_key": "!items!igQZzFaKrq15tc5H",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "P-11 fires a battery-activated rocket pack; verify rocket effects and power accounting."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "ES",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "book": "Eurosource",
+            "pages": "74",
+            "source": "cyberpunk-wiki",
+            "url": "https://cyberpunk.fandom.com/wiki/Heckler_%26_Koch_P-11"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "4d6+1 (6mm R)",
+        "sourceName": "H&K P-11",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "6mm R",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "J",
+          "cost": 700,
+          "damage": "4d6+1",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "VR",
+          "rof": "1",
+          "shots": "5",
+          "source": "ES",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "H&K P-11",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "6mm rocket",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Missile",
+    "automation": {
+      "reasons": [
+        "P-11 fires a battery-activated rocket pack; verify rocket effects and power accounting."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealJacket",
+    "cost": 700,
+    "damage": "4d6+1",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 1,
+    "shots": 5,
+    "shotsLeft": 5,
+    "source": "ES",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

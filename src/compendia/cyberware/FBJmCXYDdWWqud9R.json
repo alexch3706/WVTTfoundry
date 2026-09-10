@@ -1,0 +1,25 @@
+{
+  "_id": "FBJmCXYDdWWqud9R",
+  "_key": "!items!FBJmCXYDdWWqud9R",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Micro-Missile Launcher",
+  "system": {
+    "cost": 900,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2d6<br><p>Contains 4 mini-missiles, 4d6 damage each</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

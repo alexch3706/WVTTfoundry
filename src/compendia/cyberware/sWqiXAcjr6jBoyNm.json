@@ -1,0 +1,25 @@
+{
+  "_id": "sWqiXAcjr6jBoyNm",
+  "_key": "!items!sWqiXAcjr6jBoyNm",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Weave Maintenance",
+  "system": {
+    "cost": 500,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 0<br><p>Required after a Critical or higher wound is taken</p>",
+    "source": "DS",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

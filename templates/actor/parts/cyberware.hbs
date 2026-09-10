@@ -29,8 +29,19 @@
                 </span>
                 {{/if}}
             {{/with}}
+            {{#if (equals cyber.system.automation.status "manual")}}
+            <span class="inactive" title="{{#each cyber.system.automation.reasons}}{{this}} {{/each}}">{{CPLocal "CatalogManual"}}</span>
+            {{/if}}
             {{#if cyber.armorStatus.isArmor}}
-                <span title="{{CPLocal "ArmorCyberwareStatus"}}" class="inactive">{{CPLocal "SPFull"}} {{cyber.armorStatus.currentStoppingPower}}/{{cyber.armorStatus.baseStoppingPower}}</span>
+                <span title="{{CPLocal "ArmorCyberwareStatus"}}" class="inactive">
+                    {{#if cyber.armorStatus.locations}}
+                    {{#each cyber.armorStatus.locations as |segment|}}
+                    <span>{{shortCPLocal segment.location}} {{segment.currentStoppingPower}}/{{segment.baseStoppingPower}}{{#unless @last}} · {{/unless}}</span>
+                    {{/each}}
+                    {{else}}
+                    {{CPLocal "SPFull"}} {{cyber.armorStatus.currentStoppingPower}}/{{cyber.armorStatus.baseStoppingPower}}
+                    {{/if}}
+                </span>
                 {{#if cyber.armorStatus.repairable}}
                     <button type="button" class="repair-cyberware-armor" data-item-id="{{cyber.id}}" title="{{CPLocal "RepairArmor"}}">{{CPLocal "Repair"}}</button>
                 {{/if}}

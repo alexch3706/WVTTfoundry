@@ -1,0 +1,25 @@
+{
+  "_id": "Le4fHUnMt9CB0LVg",
+  "_key": "!items!Le4fHUnMt9CB0LVg",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Lark Mini-Scooter",
+  "system": {
+    "cost": 1650,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 70<br><b>Acc/Dec:</b> 14/30<br><b>Crew:</b> 1<br><b>Range:</b> 200<br><b>Passengers:</b> 0<br><b>Cargo:</b> 20kg<br><b>Maneuver:</b> +1<br><b>SDP:</b> 15 (1)<br><b>SP:</b> 0<br><b>Mass:</b> 60kg",
+    "source": "CGen",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

@@ -2,6 +2,7 @@ import { weaponTypes, sortedAttackTypes, concealability, availability, reliabili
 import { formulaHasDice } from "../dice.js";
 import { localize } from "../utils.js";
 import { classifyConformance } from "../combat/conformance-helpers.js";
+import { validateWeaponContract, validateArmorContract, WEAPON_FIRE_MODES } from "./item-contract.js";
 
 /**
  * Extend the basic ItemSheet with some very simple modifications
@@ -37,6 +38,13 @@ export class CyberpunkItemSheet extends ItemSheet {
     // This means the handlebars data and the form edit data actually mirror each other
     const data = await super.getData(options);
     data.system = this.item.system;
+    const validator = this.item.type === "weapon" ? validateWeaponContract
+      : ["armor", "cyberware"].includes(this.item.type) ? validateArmorContract : undefined;
+    if(validator) {
+      data.catalogIssues = validator(this.item.system, { type: this.item.type }).issues;
+      data.hasAutomation = true;
+    }
+    data.hasStructuredCoverage = Object.keys(this.item.system.coverage || {}).length > 0;
 
     switch (this.item.type) {
       case "weapon":
@@ -80,8 +88,19 @@ export class CyberpunkItemSheet extends ItemSheet {
     sheet.concealabilities = Object.values(concealability);
     sheet.availabilities = Object.values(availability);
     sheet.reliabilities = Object.values(reliability);
-    sheet.attackSkills = [...attackSkills[this.item.system.weaponType]
-      .map(x => localize("Skill"+x)), ...(this.actor?.trainedMartials() || [])];
+    const keys = attackSkills[this.item.system.weaponType] || [];
+    sheet.attackSkillChoices = keys.map(key => ({ key, label: localize("Skill" + key) }));
+    sheet.attackSkills = [...keys.map(x => localize("Skill"+x)), ...(this.actor?.trainedMartials() || [])];
+    for(const key of this.actor?.trainedMartials() || []) {
+      sheet.attackSkillChoices.push({ key, label: key });
+    }
+    const current = this.item.system.attackSkill;
+    sheet.selectedAttackSkill = sheet.attackSkillChoices.find(choice => choice.key === current || choice.label === current)?.key || current;
+    if(current && !sheet.attackSkillChoices.some(choice => choice.key === sheet.selectedAttackSkill)) {
+      sheet.attackSkillChoices.push({ key: current, label: current });
+    }
+    const configuredModes = Array.isArray(this.item.system.fireModes) ? this.item.system.fireModes : this.item.__getFireModes?.() || [];
+    sheet.fireModeChoices = WEAPON_FIRE_MODES.map(key => ({ key, label: localize(key), selected: configuredModes.includes(key) }));
 
     // TODO: Be not so inefficient for this
     if(!sheet.attackSkills.length && this.actor) {
@@ -93,6 +112,18 @@ export class CyberpunkItemSheet extends ItemSheet {
 
   _prepareArmor(sheet) {
     
+  }
+
+  async _updateObject(event, formData) {
+    if(this.item.type === "weapon") {
+      if(Object.prototype.hasOwnProperty.call(formData, "system.ap")) {
+        const value = formData["system.ap"];
+        formData["system.ap"] = value === true || value === "true" ? true : value === false || value === "false" ? false : null;
+      }
+      const selector = this.form?.querySelector?.('select[name="system.fireModes"]');
+      if(selector) formData["system.fireModes"] = Array.from(selector.selectedOptions, option => option.value);
+    }
+    return super._updateObject(event, formData);
   }
 
   /* -------------------------------------------- */
@@ -115,6 +146,12 @@ export class CyberpunkItemSheet extends ItemSheet {
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
+
+    html.find(".enable-cyberware-coverage").on("click", ev => {
+      ev.preventDefault();
+      html.find(".cyberware-coverage-fields").prop("disabled", false);
+      html.find(".enable-cyberware-coverage").hide();
+    });
 
     // Roll handlers, click handlers, etc. would go here, same as actor sheet.
     html.find(".item-roll").click(this.item.roll.bind(this));

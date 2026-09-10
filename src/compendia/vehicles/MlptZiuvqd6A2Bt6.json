@@ -1,0 +1,25 @@
+{
+  "_id": "MlptZiuvqd6A2Bt6",
+  "_key": "!items!MlptZiuvqd6A2Bt6",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "BAE Police Pursuit Crusier",
+  "system": {
+    "cost": 490000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 160<br><b>Acc/Dec:</b> 25/50<br><b>Crew:</b> 2<br><b>Range:</b> 300<br><b>Passengers:</b> 2<br><b>Cargo:</b> 500kg, 2<br><b>Maneuver:</b> +2<br><b>SDP:</b> 100 (5)<br><b>SP:</b> 25<br><b>Mass:</b> (1) 4 tons",
+    "source": "UK",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

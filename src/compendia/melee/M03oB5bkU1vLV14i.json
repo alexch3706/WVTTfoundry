@@ -1,0 +1,99 @@
+{
+  "_id": "M03oB5bkU1vLV14i",
+  "_key": "!items!M03oB5bkU1vLV14i",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "PAC",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 57,
+            "section": "3.11",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "3d6* -",
+        "sourceName": "Kukri",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": null,
+          "attackType": "Melee",
+          "availability": "P",
+          "concealability": "L",
+          "cost": 50150,
+          "damage": "3d6* -",
+          "flavor": "",
+          "notes": "",
+          "range": "1m",
+          "reliability": null,
+          "rof": "-",
+          "shots": "-",
+          "source": "PAC",
+          "weaponType": "Melee",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Kukri",
+  "system": {
+    "accuracy": 0,
+    "ammoType": null,
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Melee",
+    "attackType": "Melee",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealLongcoat",
+    "cost": 50150,
+    "damage": "3d6",
+    "fireModes": [],
+    "flavor": "",
+    "meleeDamageType": "edged",
+    "notes": "",
+    "range": 1,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": null,
+    "rof": null,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "PAC",
+    "weaponType": "Melee",
+    "weight": null
+  },
+  "type": "weapon"
+}

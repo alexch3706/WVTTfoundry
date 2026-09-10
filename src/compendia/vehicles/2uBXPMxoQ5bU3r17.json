@@ -1,0 +1,25 @@
+{
+  "_id": "2uBXPMxoQ5bU3r17",
+  "_key": "!items!2uBXPMxoQ5bU3r17",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Harley-Davidson Thundergod",
+  "system": {
+    "cost": 5040,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 100<br><b>Acc/Dec:</b> 18/30<br><b>Crew:</b> 1<br><b>Range:</b> 370<br><b>Passengers:</b> 1<br><b>Cargo:</b> 45kg<br><b>Maneuver:</b> +1<br><b>SDP:</b> 35 (2)<br><b>SP:</b> 0<br><b>Mass:</b> 140kg",
+    "source": "Chr1",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

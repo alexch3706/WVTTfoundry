@@ -66,15 +66,20 @@ export function buildActorCombatSnapshot(actor, options = {}) {
 export function buildWeaponCombatSnapshot(item) {
   const system = item?.system || {};
   return {
+    weaponType: system.weaponType,
     damage: system.damage,
     ap: system.ap,
     shotsLeft: system.shotsLeft,
+    shots: system.shots,
     rof: system.rof,
     reliability: system.reliability,
     range: system.range,
     accuracy: system.accuracy,
     attackType: system.attackType,
     attackSkill: system.attackSkill,
+    meleeDamageType: system.meleeDamageType,
+    fireModes: clonePlainData(system.fireModes),
+    automation: clonePlainData(system.automation),
     rangeDamages: system.rangeDamages ? clonePlainData(system.rangeDamages) : undefined
   };
 }

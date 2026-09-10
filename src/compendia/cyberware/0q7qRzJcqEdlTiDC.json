@@ -1,0 +1,25 @@
+{
+  "_id": "0q7qRzJcqEdlTiDC",
+  "_key": "!items!0q7qRzJcqEdlTiDC",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Skill +3",
+  "system": {
+    "cost": 5000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> -<br><p>Lasts for 3 hours, 1d10>3 or -1 in skill</p>",
+    "source": "ES+",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

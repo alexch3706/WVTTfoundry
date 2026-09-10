@@ -1,0 +1,25 @@
+{
+  "_id": "lXb8ehax6uXIrgcy",
+  "_key": "!items!lXb8ehax6uXIrgcy",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Militech A-20 ACAV",
+  "system": {
+    "cost": 730000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 200<br><b>Acc/Dec:</b> 20/10<br><b>Crew:</b> 3<br><b>Range:</b> 650<br><b>Passengers:</b> 0<br><b>Cargo:</b> 3 tons int, 10<br><b>Maneuver:</b> +0<br><b>SDP:</b> 100 (5)<br><b>SP:</b> 50<br><b>Mass:</b> (2) 10 tons",
+    "source": "MM",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "UKAnXfdLPniQ5EZz",
+  "_key": "!items!UKAnXfdLPniQ5EZz",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Standard Cyberarm",
+  "system": {
+    "cost": 3000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 2d6<br><p>20/30 SDP, 4 option spaces, 1d6 punch</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

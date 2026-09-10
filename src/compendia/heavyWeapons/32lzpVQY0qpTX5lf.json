@@ -1,0 +1,98 @@
+{
+  "_id": "32lzpVQY0qpTX5lf",
+  "_key": "!items!32lzpVQY0qpTX5lf",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "SOF",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "5d6+3 (6.5mm)(B6)",
+        "sourceName": "Fabrica M-2012HB SAW",
+        "sourceValues": {
+          "accuracy": "+2",
+          "ammoType": "B6",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "N",
+          "cost": 1600,
+          "damage": "5d6+3",
+          "flavor": "",
+          "notes": "",
+          "range": "450m",
+          "reliability": "VR",
+          "rof": "30",
+          "shots": "100",
+          "source": "SOF",
+          "weaponType": "Heavy",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Fabrica M-2012HB SAW",
+  "system": {
+    "accuracy": 2,
+    "ammoType": "6.5mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "HeavyWeapons",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Poor",
+    "bodyMinimum": 6,
+    "concealability": "ConcealNoHide",
+    "cost": 1600,
+    "damage": "5d6+3",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 450,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 30,
+    "shots": 100,
+    "shotsLeft": 100,
+    "source": "SOF",
+    "weaponType": "Heavy",
+    "weight": null
+  },
+  "type": "weapon"
+}

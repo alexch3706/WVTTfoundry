@@ -1,0 +1,102 @@
+{
+  "_id": "XyIDU1jb2nNvLDam",
+  "_key": "!items!XyIDU1jb2nNvLDam",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "WGF",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "4d10",
+        "sourceName": "Hvy Gauss Assault Rifle",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": null,
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "N",
+          "cost": 1500,
+          "damage": "4d10",
+          "flavor": "",
+          "notes": "",
+          "range": "500m",
+          "reliability": "ST",
+          "rof": "1/3/30",
+          "shots": "120",
+          "source": "WGF",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Hvy Gauss Assault Rifle",
+  "system": {
+    "accuracy": 0,
+    "ammoType": null,
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "concealability": "ConcealNoHide",
+    "cost": 1500,
+    "damage": "4d10",
+    "fireModes": [
+      "SemiAuto",
+      "ThreeRoundBurst",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 500,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 30,
+    "shots": 120,
+    "shotsLeft": 120,
+    "source": "WGF",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

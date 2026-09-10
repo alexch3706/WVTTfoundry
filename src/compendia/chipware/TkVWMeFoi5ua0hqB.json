@@ -1,0 +1,36 @@
+{
+  "_id": "TkVWMeFoi5ua0hqB",
+  "_key": "!items!TkVWMeFoi5ua0hqB",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "name": "Death Trance",
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "abbrev": "",
+    "cost": 1000,
+    "cyberwareSubtype": "OPTION",
+    "cyberwareType": "CHIPWARE",
+    "equipped": true,
+    "flags": {},
+    "flavor": "1-3 minutes to enter. Medtech 25+ to detect life",
+    "humanityCost": "0",
+    "notes": "",
+    "slots": 0,
+    "source": "Chromebook 1 pg.75",
+    "spaces": 1,
+    "surgCode": "N",
+    "weight": 0
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "MnaA0goUdxLx7knB",
+  "_key": "!items!MnaA0goUdxLx7knB",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Socket Wrench",
+  "system": {
+    "cost": 50,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> .5<br><p>Adjustable powered socket wrench finger</p>",
+    "source": "I1.1",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

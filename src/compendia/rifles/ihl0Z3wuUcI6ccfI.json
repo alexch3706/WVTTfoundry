@@ -1,0 +1,102 @@
+{
+  "_id": "ihl0Z3wuUcI6ccfI",
+  "_key": "!items!ihl0Z3wuUcI6ccfI",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "WGF",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "3d10",
+        "sourceName": "Gauss Rifle",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": null,
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "N",
+          "cost": 950,
+          "damage": "3d10",
+          "flavor": "",
+          "notes": "",
+          "range": "500m",
+          "reliability": "ST",
+          "rof": "1/3/50",
+          "shots": "50",
+          "source": "WGF",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Gauss Rifle",
+  "system": {
+    "accuracy": 1,
+    "ammoType": null,
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "concealability": "ConcealNoHide",
+    "cost": 950,
+    "damage": "3d10",
+    "fireModes": [
+      "SemiAuto",
+      "ThreeRoundBurst",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 500,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 50,
+    "shots": 50,
+    "shotsLeft": 50,
+    "source": "WGF",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

@@ -1,0 +1,93 @@
+{
+  "_id": "ZKm6jdFmgquIdwqQ",
+  "_key": "!items!ZKm6jdFmgquIdwqQ",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "cyberware",
+        "provenance": {
+          "pdfPage": 84,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "CP20, 69"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Torso Plate",
+        "sourceValues": {
+          "cost": 2000,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 3d6<br><p>Torso protection. SP 25. -3 REF</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Torso Plate",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 2000,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 25
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 3,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 3d6<br><p>Torso protection. SP 25. -3 REF</p>",
+    "source": "CP20, 69",
+    "weight": null
+  },
+  "type": "cyberware"
+}

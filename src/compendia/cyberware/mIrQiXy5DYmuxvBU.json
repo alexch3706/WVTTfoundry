@@ -1,0 +1,25 @@
+{
+  "_id": "mIrQiXy5DYmuxvBU",
+  "_key": "!items!mIrQiXy5DYmuxvBU",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Sabre Serum RNA Mod",
+  "system": {
+    "cost": 0,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> Special<br><p>+2 MA, +3 BOD, +2 REF, +1 Heal, 60 day wait</p>",
+    "source": "I1.2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,103 @@
+{
+  "_id": "Zy8JWgSjIwA0kYbY",
+  "_key": "!items!Zy8JWgSjIwA0kYbY",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Accuracy is missing or has multiple configurations; select and verify one."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "SOF2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+4 (9mm L)(B3)",
+        "sourceName": "H&K HK77UK",
+        "sourceValues": {
+          "accuracy": "+0/1",
+          "ammoType": "B3",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "J/L",
+          "cost": 750,
+          "damage": "2d6+4",
+          "flavor": "",
+          "notes": "",
+          "range": "250m",
+          "reliability": "VR",
+          "rof": "3/30",
+          "shots": "30",
+          "source": "SOF2",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "H&K HK77UK",
+  "system": {
+    "accuracy": null,
+    "ammoType": "9mm L",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Accuracy is missing or has multiple configurations; select and verify one."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "bodyMinimum": 3,
+    "concealability": "J/L",
+    "cost": 750,
+    "damage": "2d6+4",
+    "fireModes": [
+      "SemiAuto",
+      "ThreeRoundBurst",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 250,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 30,
+    "shots": 30,
+    "shotsLeft": 30,
+    "source": "SOF2",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

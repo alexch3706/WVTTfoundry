@@ -1,0 +1,102 @@
+{
+  "_id": "3DNXTgRaSupdcyhk",
+  "_key": "!items!3DNXTgRaSupdcyhk",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CP20",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 49,
+            "section": "3.3",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "5d6 (5.56 C)",
+        "sourceName": "SHT -1 - - 4d6 (12 ga) 2 1 VR 50m - - Bushmaster",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "5.56 C",
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "L",
+          "cost": 1000,
+          "damage": "5d6",
+          "flavor": "",
+          "notes": "",
+          "range": "200m",
+          "reliability": "ST",
+          "rof": "20",
+          "shots": "30",
+          "source": "CP20",
+          "weaponType": "SMG",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Bushmaster",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "5.56 C",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Submachinegun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Rare",
+    "concealability": "ConcealLongcoat",
+    "cost": 1000,
+    "damage": "5d6",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 200,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 20,
+    "shots": 30,
+    "shotsLeft": 30,
+    "source": "CP20",
+    "weaponType": "SMG",
+    "weight": null
+  },
+  "type": "weapon"
+}

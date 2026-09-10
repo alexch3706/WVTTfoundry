@@ -1,0 +1,25 @@
+{
+  "_id": "ExRoMkSwCD6HceY0",
+  "_key": "!items!ExRoMkSwCD6HceY0",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Ignore Pain",
+  "system": {
+    "cost": 1800,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> -<br><p>+4 to Stun Saves for 12 hours, -2 tactile sense</p>",
+    "source": "ES+",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

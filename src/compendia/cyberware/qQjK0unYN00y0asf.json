@@ -1,0 +1,25 @@
+{
+  "_id": "qQjK0unYN00y0asf",
+  "_key": "!items!qQjK0unYN00y0asf",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Extension Hand",
+  "system": {
+    "cost": 350,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2<br><p>Hand extends up to 1m</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

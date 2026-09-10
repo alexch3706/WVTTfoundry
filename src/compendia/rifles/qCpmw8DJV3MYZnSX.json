@@ -1,0 +1,100 @@
+{
+  "_id": "qCpmw8DJV3MYZnSX",
+  "_key": "!items!qCpmw8DJV3MYZnSX",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Magazine capacity is missing or has alternatives; select the installed magazine."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "NEO",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+1 (9mm C)(B2)",
+        "sourceName": "Calico 9mm Rifle",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "B2",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "L/N",
+          "cost": 650,
+          "damage": "2d6+1",
+          "flavor": "",
+          "notes": "",
+          "range": "400m",
+          "reliability": "VR",
+          "rof": "2",
+          "shots": "50/100",
+          "source": "NEO",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Calico 9mm Rifle",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "9mm C",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Magazine capacity is missing or has alternatives; select the installed magazine."
+      ],
+      "status": "manual"
+    },
+    "availability": "Common",
+    "bodyMinimum": 2,
+    "concealability": "L/N",
+    "cost": 650,
+    "damage": "2d6+1",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 400,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 2,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "NEO",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

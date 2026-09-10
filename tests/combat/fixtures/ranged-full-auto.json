@@ -1859,49 +1859,50 @@
           }
         }
       },
-      "rolls": [
-        {
-          "id": "attack",
-          "total": 10,
-          "die": {
-            "faces": 10,
-            "natural": 5
+      "rolls": [],
+      "expected": {
+        "targets": [
+          {
+            "hits": [],
+            "manualResolution": {
+              "required": true
+            }
           }
-        }
-      ],
-      "legacyExpected": {
-        "manualResolution": {
-          "required": true
-        },
+        ],
         "ammo": {
-          "before": 0,
-          "delta": 0,
-          "after": 0
+          "delta": 0
+        },
+        "plannedUpdates": {
+          "itemUpdates": [],
+          "chatStatus": "manual"
+        },
+        "manualResolution": {
+          "required": true,
+          "reason": "missing-rule-data",
+          "blockedUpdateCategories": [
+            "attacker-ammo",
+            "target-damage",
+            "target-armor",
+            "target-saves"
+          ]
+        },
+        "chat": {
+          "status": "manual"
         },
         "warnings": [
           {
             "code": "insufficient-ammo",
-            "severity": "warning",
-            "message": "Weapon has insufficient ammo; resolve ammo manually."
+            "severity": "warning"
           }
         ]
       },
-      "expected": {
-        "manualResolution": {
-          "required": true
-        },
-        "warnings": [
-          {
-            "code": "insufficient-ammo"
-          }
-        ],
-        "ammo": {
-          "before": 0,
-          "delta": 0,
-          "after": 0
-        }
-      },
-      "ruleReference": "CP2020 p.100: Full Auto requires ammo; Audit 6.4: Insufficient ammo warning"
+      "ruleReference": "Item-data preflight: incomplete ammunition, reliability or damage data requires manual resolution before any roll or update.",
+      "expectedPlan": {
+        "actorUpdates": [],
+        "itemUpdates": [],
+        "embeddedItemUpdates": [],
+        "chatStatus": "manual"
+      }
     },
     {
       "name": "full-auto-multi-target-jam-abort",

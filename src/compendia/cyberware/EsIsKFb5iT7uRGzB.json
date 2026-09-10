@@ -1,0 +1,25 @@
+{
+  "_id": "EsIsKFb5iT7uRGzB",
+  "_key": "!items!EsIsKFb5iT7uRGzB",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Kick Ass",
+  "system": {
+    "cost": 2000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> 1d6/2<br><p>COOL +2 (11), EMP -2 (1), enhances aggression.</p>",
+    "source": "WGF",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

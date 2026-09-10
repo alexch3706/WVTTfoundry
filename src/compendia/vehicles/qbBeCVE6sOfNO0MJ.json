@@ -1,0 +1,25 @@
+{
+  "_id": "qbBeCVE6sOfNO0MJ",
+  "_key": "!items!qbBeCVE6sOfNO0MJ",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Toyo-Chevrolet '17 Chevy",
+  "system": {
+    "cost": 10000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 90<br><b>Acc/Dec:</b> 15/40<br><b>Crew:</b> 1<br><b>Range:</b> 300<br><b>Passengers:</b> 3<br><b>Cargo:</b> 150kg<br><b>Maneuver:</b> +0<br><b>SDP:</b> 50 (2)<br><b>SP:</b> 10<br><b>Mass:</b> (0) 2 tons",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

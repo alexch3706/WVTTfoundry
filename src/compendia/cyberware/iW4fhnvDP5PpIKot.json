@@ -1,0 +1,25 @@
+{
+  "_id": "iW4fhnvDP5PpIKot",
+  "_key": "!items!iW4fhnvDP5PpIKot",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Endurance",
+  "system": {
+    "cost": 1200,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> -<br><p>Ignore fatigue 12 hrs, x2 food, 1d3-1d6 damage</p>",
+    "source": "ES+",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

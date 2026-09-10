@@ -8,11 +8,18 @@ Upgrading an existing world is irreversible without a backup. First normalize a 
 
 The `2.0.0` migration covers world Actors/Items, unlinked-token Actor data, and world-owned compendia (including locked packs and Adventure contents). It fails without stamping completion if a persistence operation is rejected, a pack cannot be confirmed relocked, or Foundry reports an uninitialized/invalid World or embedded document. Existing compendium IDs and paths remain unchanged.
 
+Weapon and armor compendia now distinguish checked mechanical data from records
+that require manual resolution. The item sheet explains missing fields and
+unsupported rules. Use the [catalog update guide](docs/catalog-data-quality.md)
+to review existing world items, preserve custom changes and inspect the remaining
+content-review queue. V14 compatibility alone does not certify a catalog record's
+gameplay rules.
+
 ---
 
 ## What's Here
 
-Everything you need to run Cyberpunk 2020 combat faithfully to the core rules:
+Character sheets, compendia and automation for the supported Cyberpunk 2020 rules:
 
 ### Characters & Sheets
 

@@ -1,0 +1,123 @@
+{
+  "_id": "aCsc3yYB2eZ1A4tm",
+  "_key": "!items!aCsc3yYB2eZ1A4tm",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Head protection has 60% coverage and requires a separate coverage check."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "provenance": {
+          "pdfPage": 84,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 2, 7"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Subdermal Skull Armor",
+        "sourceValues": {
+          "cost": 1400,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 14
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            }
+          },
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 2d6<br><p>14 SP, Diff 10 to spot, -1 ATTR, 40% unprotected</p>",
+          "source": "Chr2",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Subdermal Skull Armor",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Head protection has 60% coverage and requires a separate coverage check."
+      ],
+      "status": "manual"
+    },
+    "cost": 1400,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 14
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 2d6<br><p>14 SP, Diff 10 to spot, -1 ATTR, 40% unprotected</p>",
+    "source": "Chr 2, 7",
+    "weight": null
+  },
+  "type": "cyberware"
+}

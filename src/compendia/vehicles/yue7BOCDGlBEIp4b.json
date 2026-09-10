@@ -1,0 +1,25 @@
+{
+  "_id": "yue7BOCDGlBEIp4b",
+  "_key": "!items!yue7BOCDGlBEIp4b",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "AV-6 Combat Aerodyne",
+  "system": {
+    "cost": 850000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 495<br><b>Acc/Dec:</b> 50/50<br><b>Crew:</b> 2<br><b>Range:</b> 1200<br><b>Passengers:</b> 10<br><b>Cargo:</b> or 1300kg int,  1<br><b>Maneuver:</b> +1<br><b>SDP:</b> 100 (5)<br><b>SP:</b> 40<br><b>Mass:</b> (2) 4 tons",
+    "source": "MM",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

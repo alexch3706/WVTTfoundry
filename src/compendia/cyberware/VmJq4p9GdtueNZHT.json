@@ -1,0 +1,25 @@
+{
+  "_id": "VmJq4p9GdtueNZHT",
+  "_key": "!items!VmJq4p9GdtueNZHT",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Different Covering",
+  "system": {
+    "cost": 400,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1d6<br><p>Same as Synth-skins, same chance of cancer</p>",
+    "source": "KCJ",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

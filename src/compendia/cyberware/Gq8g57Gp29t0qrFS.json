@@ -1,0 +1,92 @@
+{
+  "_id": "Gq8g57Gp29t0qrFS",
+  "_key": "!items!Gq8g57Gp29t0qrFS",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Increased SP upgrades an existing full-body conversion, up to SP40. Select the purchased increment and recipient; it is not an independent SP40 armor layer."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Increased SP",
+        "sourceValues": {
+          "cost": 20005,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 0<br><p>Max 40 SP, 10-50lbs weight increase</p>",
+          "source": "Chr2",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Increased SP",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Increased SP upgrades an existing full-body conversion, up to SP40. Select the purchased increment and recipient; it is not an independent SP40 armor layer."
+      ],
+      "status": "manual"
+    },
+    "cost": 20005,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 0<br><p>Max 40 SP, 10-50lbs weight increase</p>",
+    "source": "Chr2",
+    "weight": null
+  },
+  "type": "cyberware"
+}

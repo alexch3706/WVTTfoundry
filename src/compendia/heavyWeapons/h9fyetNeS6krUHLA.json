@@ -1,0 +1,106 @@
+{
+  "_id": "h9fyetNeS6krUHLA",
+  "_key": "!items!h9fyetNeS6krUHLA",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Damage is not a supported dice formula; resolve the weapon effect manually.",
+            "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+            "The original damage notation contains additional or damaged rules; verify it before automation."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "CP20",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "(30-40mm)(B6)",
+        "sourceName": "Commercial 40mm GL",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "B6",
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "L",
+          "cost": 150,
+          "damage": "0",
+          "flavor": "",
+          "notes": "",
+          "range": "225m",
+          "reliability": "ST",
+          "rof": "1",
+          "shots": "1",
+          "source": "CP20",
+          "weaponType": "Heavy",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Commercial 40mm GL",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "30-40mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "HeavyWeapons",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Damage is not a supported dice formula; resolve the weapon effect manually.",
+        "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+        "The original damage notation contains additional or damaged rules; verify it before automation."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "bodyMinimum": 6,
+    "concealability": "ConcealLongcoat",
+    "cost": 150,
+    "damage": null,
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 225,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 1,
+    "shots": 1,
+    "shotsLeft": 1,
+    "source": "CP20",
+    "weaponType": "Heavy",
+    "weight": null
+  },
+  "type": "weapon"
+}

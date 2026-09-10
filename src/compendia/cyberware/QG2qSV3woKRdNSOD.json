@@ -1,0 +1,25 @@
+{
+  "_id": "QG2qSV3woKRdNSOD",
+  "_key": "!items!QG2qSV3woKRdNSOD",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "KatNip",
+  "system": {
+    "cost": 4,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> ½d6<br><p>Feline MA+ Slit-eyes, pointed ears, tail, synthskin, scratchers 3400</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

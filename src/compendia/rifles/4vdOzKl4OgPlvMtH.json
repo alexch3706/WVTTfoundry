@@ -1,0 +1,99 @@
+{
+  "_id": "4vdOzKl4OgPlvMtH",
+  "_key": "!items!4vdOzKl4OgPlvMtH",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "SF",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "3d6+3 (7.7mm)(B4)",
+        "sourceName": "H&K HK77SD3",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "B4",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "L",
+          "cost": 880,
+          "damage": "3d6+3",
+          "flavor": "",
+          "notes": "",
+          "range": "250m",
+          "reliability": "VR",
+          "rof": "3/30",
+          "shots": "154",
+          "source": "SF",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "H&K HK77SD3",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "7.7mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Poor",
+    "bodyMinimum": 4,
+    "concealability": "ConcealLongcoat",
+    "cost": 880,
+    "damage": "3d6+3",
+    "fireModes": [
+      "SemiAuto",
+      "ThreeRoundBurst",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 250,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 30,
+    "shots": 154,
+    "shotsLeft": 154,
+    "source": "SF",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

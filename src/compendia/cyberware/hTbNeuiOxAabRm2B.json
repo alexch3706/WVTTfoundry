@@ -1,0 +1,25 @@
+{
+  "_id": "hTbNeuiOxAabRm2B",
+  "_key": "!items!hTbNeuiOxAabRm2B",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Cyberoptic Eyepatch",
+  "system": {
+    "cost": 330,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 2d6/3<br><p>2 options. Diff. Awareness to spot what it is</p>",
+    "source": "P3",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

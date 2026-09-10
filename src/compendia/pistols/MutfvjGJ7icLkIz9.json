@@ -1,0 +1,99 @@
+{
+  "_id": "MutfvjGJ7icLkIz9",
+  "_key": "!items!MutfvjGJ7icLkIz9",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "SOF2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "4d6 (.44 Mag)",
+        "sourceName": "S&W Handcannon",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": ".44 Mag",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "J/L",
+          "cost": 850,
+          "damage": "4d6",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "UR",
+          "rof": "2",
+          "shots": "6",
+          "source": "SOF2",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "S&W Handcannon",
+  "system": {
+    "accuracy": 0,
+    "ammoType": ".44 Mag",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "J/L",
+    "cost": 850,
+    "damage": "4d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Unreliable",
+    "rof": 2,
+    "shots": 6,
+    "shotsLeft": 6,
+    "source": "SOF2",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

@@ -1,0 +1,113 @@
+{
+  "_id": "1HEsqKiBjyOgGlLf",
+  "_key": "!items!1HEsqKiBjyOgGlLf",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CB3",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 62,
+            "section": "4.1",
+            "source": "reference-v5"
+          },
+          {
+            "pdfPage": 50,
+            "section": "3.3–3.12",
+            "source": "reference-v5"
+          },
+          {
+            "book": "Corporation Report 3",
+            "pages": "30–31",
+            "source": "cyberpunk-wiki",
+            "url": "https://cyberpunk.fandom.com/wiki/Mustang_Arms_%22Raider%22_Riot_Shotgun"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "4d6 (12ga)(B3)",
+        "sourceName": "Mustang Arms \"Raider\"",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "B3",
+          "attackType": "Autoshotgun",
+          "availability": "C",
+          "concealability": "L/N",
+          "cost": 400,
+          "damage": "4d6",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "ST",
+          "rof": "2",
+          "shots": "5/9",
+          "source": "CB3",
+          "weaponType": "Shotgun",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Mustang Arms \"Raider\"",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "12ga buckshot",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Shotgun",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "bodyMinimum": 3,
+    "concealability": "ConcealNoHide",
+    "configuration": "Standard fixed stock and five-round tube; no magazine extension",
+    "cost": 400,
+    "damage": "4d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "4d6",
+      "far": "2d6",
+      "medium": "3d6",
+      "pointBlank": "4d6"
+    },
+    "reliability": "Standard",
+    "rof": 2,
+    "shots": 5,
+    "shotsLeft": 5,
+    "source": "CB3",
+    "weaponType": "Shotgun",
+    "weight": null
+  },
+  "type": "weapon"
+}

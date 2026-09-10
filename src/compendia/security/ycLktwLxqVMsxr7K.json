@@ -1,0 +1,31 @@
+{
+  "_id": "ycLktwLxqVMsxr7K",
+  "_key": "!items!ycLktwLxqVMsxr7K",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Code Decryptor",
+  "ownership": {
+    "VTdezBIy0FQgKDge": 3,
+    "default": 0
+  },
+  "system": {
+    "cost": "500",
+    "equipped": true,
+    "flavor": "Section:Security p.70 - +5 on Check against CardLock",
+    "name": "Common",
+    "notes": "",
+    "source": "Cyberpunk2020",
+    "weight": "0"
+  },
+  "type": "misc"
+}

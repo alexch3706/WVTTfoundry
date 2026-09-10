@@ -1,0 +1,25 @@
+{
+  "_id": "Nqv8pWR9oE81dDH9",
+  "_key": "!items!Nqv8pWR9oE81dDH9",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Stylization",
+  "system": {
+    "cost": 0,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 0<br><p>Customization, possible bonuses to some skills</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,99 @@
+{
+  "_id": "fK6NTUrjjtYtbcEt",
+  "_key": "!items!fK6NTUrjjtYtbcEt",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Reliability is missing or has a conditional rule; verify the source."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "SOF",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+1 (9mm)",
+        "sourceName": "Fashion Gun 9",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "9mm",
+          "attackType": "Auto",
+          "availability": "E",
+          "concealability": "P",
+          "cost": 3540,
+          "damage": "2d6+1",
+          "flavor": "",
+          "notes": "",
+          "range": "25m",
+          "reliability": "UR*",
+          "rof": "2",
+          "shots": "7",
+          "source": "SOF",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Fashion Gun 9",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "9mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Reliability is missing or has a conditional rule; verify the source."
+      ],
+      "status": "manual"
+    },
+    "availability": "Excellent",
+    "concealability": "ConcealPocket",
+    "cost": 3540,
+    "damage": "2d6+1",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 25,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": null,
+    "rof": 2,
+    "shots": 7,
+    "shotsLeft": 7,
+    "source": "SOF",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

@@ -1,0 +1,101 @@
+{
+  "_id": "p5UgONCNp4VO4gkT",
+  "_key": "!items!p5UgONCNp4VO4gkT",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CP20",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 51,
+            "section": "3.5",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "5d6+1 (30-06 C)(B3)",
+        "sourceName": "RIF +1 - - 5d6 (5.56) 20 20 VR 400m - - HVY +1 - - (25mm) 10 2 VR 150m - - Winchester M70",
+        "sourceValues": {
+          "accuracy": "+3",
+          "ammoType": "B3",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "N",
+          "cost": 250,
+          "damage": "5d6+1",
+          "flavor": "",
+          "notes": "",
+          "range": "500m",
+          "reliability": "VR",
+          "rof": "1",
+          "shots": "5",
+          "source": "CP20",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Winchester M70",
+  "system": {
+    "accuracy": 3,
+    "ammoType": "30-06 C",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "bodyMinimum": 3,
+    "concealability": "ConcealNoHide",
+    "cost": 250,
+    "damage": "5d6+1",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 500,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 1,
+    "shots": 5,
+    "shotsLeft": 5,
+    "source": "CP20",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

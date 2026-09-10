@@ -1,0 +1,36 @@
+{
+  "_id": "pE7Sjyo83QriSCxz",
+  "_key": "!items!pE7Sjyo83QriSCxz",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "name": "Weaponmasters Martial Art Chip",
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "abbrev": "",
+    "cost": 270,
+    "cyberwareSubtype": "OPTION",
+    "cyberwareType": "CHIPWARE",
+    "equipped": true,
+    "flags": {},
+    "flavor": "ArasakaTe; and Thamoc available (max +3); cost per level",
+    "humanityCost": "0",
+    "notes": "",
+    "slots": 0,
+    "source": "Chromebook 3 pg.38",
+    "spaces": 1,
+    "surgCode": "N",
+    "weight": 0
+  },
+  "type": "cyberware"
+}

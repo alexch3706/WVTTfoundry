@@ -1,0 +1,101 @@
+{
+  "_id": "IOWhzJj5GdFxoItr",
+  "_key": "!items!IOWhzJj5GdFxoItr",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "The original damage notation contains additional or damaged rules; verify it before automation.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "CP20",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6#",
+        "sourceName": "Kendachi Monoknife",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": null,
+          "attackType": "Melee",
+          "availability": "P",
+          "concealability": "P",
+          "cost": 200,
+          "damage": "2d6",
+          "flavor": "",
+          "notes": "",
+          "range": "1m",
+          "reliability": "VR",
+          "rof": "-",
+          "shots": "-",
+          "source": "CP20",
+          "weaponType": "Melee",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Kendachi Monoknife",
+  "system": {
+    "accuracy": 1,
+    "ammoType": null,
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Melee",
+    "attackType": "Mono",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "The original damage notation contains additional or damaged rules; verify it before automation.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealPocket",
+    "cost": 200,
+    "damage": "2d6",
+    "fireModes": [],
+    "flavor": "",
+    "notes": "",
+    "range": 1,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": null,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "CP20",
+    "weaponType": "Melee",
+    "weight": null
+  },
+  "type": "weapon"
+}

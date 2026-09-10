@@ -1,0 +1,107 @@
+{
+  "_id": "2cVessrlAWppzNbI",
+  "_key": "!items!2cVessrlAWppzNbI",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Special attack effects require referee resolution.",
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Damage is not a supported dice formula; resolve the weapon effect manually.",
+            "The original damage notation contains additional or damaged rules; verify it before automation.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "pdfPage": 55,
+            "section": "3.9",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "Stun -2",
+        "sourceName": "Militech Taser",
+        "sourceValues": {
+          "accuracy": "-1",
+          "ammoType": null,
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "J",
+          "cost": 60,
+          "damage": "-2",
+          "flavor": "",
+          "notes": "",
+          "range": "10m",
+          "reliability": "ST",
+          "rof": "1",
+          "shots": "10",
+          "source": "CP20",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Militech Taser",
+  "system": {
+    "accuracy": -1,
+    "ammoType": null,
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Handgun",
+    "attackType": "Taser",
+    "automation": {
+      "reasons": [
+        "Special attack effects require referee resolution.",
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Damage is not a supported dice formula; resolve the weapon effect manually.",
+        "The original damage notation contains additional or damaged rules; verify it before automation.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Common",
+    "concealability": "ConcealJacket",
+    "cost": 60,
+    "damage": null,
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 10,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 1,
+    "shots": 10,
+    "shotsLeft": 10,
+    "source": "CP20",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

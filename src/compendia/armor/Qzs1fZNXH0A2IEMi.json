@@ -1,0 +1,119 @@
+{
+  "_id": "Qzs1fZNXH0A2IEMi",
+  "_key": "!items!Qzs1fZNXH0A2IEMi",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 82,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Neo, 56"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Armored Motorcycle Jacket",
+        "sourceValues": {
+          "cost": 300,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 12
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 12
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 12
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            }
+          },
+          "flavor": "",
+          "notes": "<p>300 Neo, 56</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Armored Motorcycle Jacket",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 300,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 12
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 4
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 4
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>300 Neo, 56</p>",
+    "source": "Neo, 56",
+    "weight": null
+  },
+  "type": "armor"
+}

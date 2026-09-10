@@ -1,0 +1,103 @@
+{
+  "_id": "fFlRQ8QFYmN6gNQl",
+  "_key": "!items!fFlRQ8QFYmN6gNQl",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Damage is not a supported dice formula; resolve the weapon effect manually.",
+            "The original damage notation contains additional or damaged rules; verify it before automation.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "Chr2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "3d6# - - VR",
+        "sourceName": "Monowire",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": null,
+          "attackType": "Melee",
+          "availability": "R",
+          "concealability": "P",
+          "cost": 0,
+          "damage": "3d6 - -",
+          "flavor": "",
+          "notes": "",
+          "range": null,
+          "reliability": null,
+          "rof": "60/m",
+          "shots": "1m",
+          "source": "Chr2",
+          "weaponType": "Melee",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Monowire",
+  "system": {
+    "accuracy": 0,
+    "ammoType": null,
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Melee",
+    "attackType": "Melee",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Damage is not a supported dice formula; resolve the weapon effect manually.",
+        "The original damage notation contains additional or damaged rules; verify it before automation.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "concealability": "ConcealPocket",
+    "cost": 0,
+    "damage": null,
+    "fireModes": [],
+    "flavor": "",
+    "notes": "",
+    "range": null,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": null,
+    "rof": null,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "Chr2",
+    "weaponType": "Melee",
+    "weight": null
+  },
+  "type": "weapon"
+}

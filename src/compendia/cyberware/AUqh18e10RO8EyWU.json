@@ -1,0 +1,97 @@
+{
+  "_id": "AUqh18e10RO8EyWU",
+  "_key": "!items!AUqh18e10RO8EyWU",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "SP12 and head coverage are explicit, but the REF penalty and interaction with existing skull armor need verification."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "provenance": {
+          "pdfPage": null,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Original item description"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Ceramic Jaw & Skull",
+        "sourceValues": {
+          "cost": 1500,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 1d6+1<br><p>12 SP head armor, 1 option space</p>",
+          "source": "KCJ",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Ceramic Jaw & Skull",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "SP12 and head coverage are explicit, but the REF penalty and interaction with existing skull armor need verification."
+      ],
+      "status": "manual"
+    },
+    "cost": 1500,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 12
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 1d6+1<br><p>12 SP head armor, 1 option space</p>",
+    "source": "Original item description",
+    "weight": null
+  },
+  "type": "cyberware"
+}

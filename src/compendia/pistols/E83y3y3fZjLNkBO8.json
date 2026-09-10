@@ -1,0 +1,95 @@
+{
+  "_id": "E83y3y3fZjLNkBO8",
+  "_key": "!items!E83y3y3fZjLNkBO8",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CB1",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+3 (10mm)",
+        "sourceName": "Sternmeyer P-41",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "10mm",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "J",
+          "cost": 425,
+          "damage": "2d6+3",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "VR",
+          "rof": "2",
+          "shots": "12",
+          "source": "CB1",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Sternmeyer P-41",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "10mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "concealability": "ConcealJacket",
+    "cost": 425,
+    "damage": "2d6+3",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 2,
+    "shots": 12,
+    "shotsLeft": 12,
+    "source": "CB1",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

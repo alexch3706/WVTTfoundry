@@ -2,6 +2,7 @@ import { sortSkills, SortOrders } from "./actor/skill-sort.js";
 import { getDefaultSkills, tryLocalize } from "./utils.js";
 import { isPrimaryActiveGm } from "./foundry-compat.js";
 import { getLegacySkillTranslations } from "./legacy-skill-translations.js";
+import { WORLD_DATA_SCHEMA_VERSION } from "./data-versions.js";
 
 const updateFuncs = {
     "Actor": migrateActor,
@@ -89,9 +90,9 @@ async function runWorldMigration() {
         }
         assertNoPendingPackRelocks();
         assertNoInvalidMigrationDocuments();
-        await game.settings.set(game.system.id, "systemMigrationVersion", game.system.version);
+        await game.settings.set(game.system.id, "systemMigrationVersion", WORLD_DATA_SCHEMA_VERSION);
         const persistedVersion = game.settings.get(game.system.id, "systemMigrationVersion");
-        if(persistedVersion !== game.system.version) {
+        if(persistedVersion !== WORLD_DATA_SCHEMA_VERSION) {
             throw new Error("the migration completion marker was rejected");
         }
         ui.notifications.info(`Cyberpunk2020 System Migration to version ${game.system.version} completed!`, {permanent: true});

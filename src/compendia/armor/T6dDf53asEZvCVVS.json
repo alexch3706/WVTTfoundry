@@ -1,0 +1,124 @@
+{
+  "_id": "T6dDf53asEZvCVVS",
+  "_key": "!items!T6dDf53asEZvCVVS",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Select the arm wearing the Battleglove before enabling automatic protection."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 83,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "PAC, 149"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "SPM-2 Battleglove+",
+        "sourceValues": {
+          "cost": 970,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 15
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 15
+            }
+          },
+          "flavor": "",
+          "notes": "<p>970 PAC, 149 2d6/3d6 damage</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "SPM-2 Battleglove+",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Select the arm wearing the Battleglove before enabling automatic protection."
+      ],
+      "status": "manual"
+    },
+    "cost": 970,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>970 PAC, 149 2d6/3d6 damage</p>",
+    "source": "PAC, 149",
+    "specialStoppingPower": 15,
+    "weight": null
+  },
+  "type": "armor"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "cIuGWL7be4DBpTt7",
+  "_key": "!items!cIuGWL7be4DBpTt7",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Bell Sandpiper",
+  "system": {
+    "cost": 12380,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 120<br><b>Acc/Dec:</b> 18/60<br><b>Crew:</b> 1<br><b>Range:</b> 400<br><b>Passengers:</b> 0<br><b>Cargo:</b> None<br><b>Maneuver:</b> +3<br><b>SDP:</b> 36 (2)<br><b>SP:</b> 0<br><b>Mass:</b> 144kg",
+    "source": "SOF2",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

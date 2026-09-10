@@ -1,0 +1,25 @@
+{
+  "_id": "Z4u5rqmyipIT83if",
+  "_key": "!items!Z4u5rqmyipIT83if",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "LupaForm Minor Package",
+  "system": {
+    "cost": 3,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M+<br><b>Humanity Loss:</b> ½d6<br><p>Pointed ears, dog-nose & eyes, fangs, synthskin 1900</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

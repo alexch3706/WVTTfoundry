@@ -1,0 +1,25 @@
+{
+  "_id": "pFVbRQJwgrHrY8k8",
+  "_key": "!items!pFVbRQJwgrHrY8k8",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Facedown Chip",
+  "system": {
+    "cost": 150,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> -<br><p>+1 bonus on Facedown rolls</p>",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

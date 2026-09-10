@@ -1,0 +1,36 @@
+{
+  "_id": "nlcEKTJaPzg61ix2",
+  "_key": "!items!nlcEKTJaPzg61ix2",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "name": "Poser Impersonation Chip",
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "abbrev": "",
+    "cost": 1000,
+    "cyberwareSubtype": "OPTION",
+    "cyberwareType": "CHIPWARE",
+    "equipped": true,
+    "flags": {},
+    "flavor": "Specific Know [subject] +2; Perform +1; Cost range 900-1100eb",
+    "humanityCost": "0",
+    "notes": "",
+    "slots": 0,
+    "source": "Chromebook 1 pg.73",
+    "spaces": 1,
+    "surgCode": "N",
+    "weight": 0
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,103 @@
+{
+  "_id": "p5FokfzzLO2FWhmx",
+  "_key": "!items!p5FokfzzLO2FWhmx",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CP20",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 50,
+            "section": "3.4",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "5d6 (5.45)(B5)",
+        "sourceName": "HVY -1 - - (25mm) 4 2 ST 150m - - AKR-20 Medium Assault",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "B5",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "N",
+          "cost": 500,
+          "damage": "5d6",
+          "flavor": "",
+          "notes": "",
+          "range": "400m",
+          "reliability": "ST",
+          "rof": "1/30",
+          "shots": "30",
+          "source": "CP20",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "AKR-20 Medium Assault",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "5.45",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "bodyMinimum": 5,
+    "concealability": "ConcealNoHide",
+    "cost": 500,
+    "damage": "5d6",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 400,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 30,
+    "shots": 30,
+    "shotsLeft": 30,
+    "source": "CP20",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

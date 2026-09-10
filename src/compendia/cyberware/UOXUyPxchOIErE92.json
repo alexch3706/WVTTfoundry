@@ -1,0 +1,25 @@
+{
+  "_id": "UOXUyPxchOIErE92",
+  "_key": "!items!UOXUyPxchOIErE92",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Muscle Enhancement",
+  "system": {
+    "cost": 1000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1d6/3<br><p>+1 to BT, but not for BTM</p>",
+    "source": "DS",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

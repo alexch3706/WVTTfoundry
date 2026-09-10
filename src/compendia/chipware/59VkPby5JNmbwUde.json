@@ -1,0 +1,36 @@
+{
+  "_id": "59VkPby5JNmbwUde",
+  "_key": "!items!59VkPby5JNmbwUde",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "name": "Cookie Cutter",
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "abbrev": "",
+    "cost": 300,
+    "cyberwareSubtype": "OPTION",
+    "cyberwareType": "CHIPWARE",
+    "equipped": true,
+    "flags": {},
+    "flavor": "Smartgun required. Stops trigger on targets with badges (15eb)",
+    "humanityCost": "0",
+    "notes": "",
+    "slots": 0,
+    "source": "?? pg.22",
+    "spaces": 1,
+    "surgCode": "N",
+    "weight": 0
+  },
+  "type": "cyberware"
+}

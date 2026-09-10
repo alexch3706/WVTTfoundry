@@ -1,0 +1,25 @@
+{
+  "_id": "aCKZpL5aYJZgohz5",
+  "_key": "!items!aCKZpL5aYJZgohz5",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Biomechanical Frame Beta",
+  "system": {
+    "cost": 24000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 3d6<br><p>Built into the body, BOD 14, BTM -6</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

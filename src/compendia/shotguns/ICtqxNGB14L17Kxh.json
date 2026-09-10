@@ -1,0 +1,113 @@
+{
+  "_id": "ICtqxNGB14L17Kxh",
+  "_key": "!items!ICtqxNGB14L17Kxh",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "SOF2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 62,
+            "section": "4.1",
+            "source": "reference-v5"
+          },
+          {
+            "pdfPage": 58,
+            "section": "3.3–3.12",
+            "source": "reference-v5"
+          },
+          {
+            "book": "Solo of Fortune 2",
+            "pages": "67",
+            "source": "cyberpunk-wiki",
+            "url": "https://cyberpunk.fandom.com/wiki/Tsunami_Arms_Helix_%282020%29"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "5d6 (10ga)(B18)",
+        "sourceName": "Tsunami Arms Helix",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "B18",
+          "attackType": "Autoshotgun",
+          "availability": "P",
+          "concealability": "N",
+          "cost": 3000,
+          "damage": "5d6",
+          "flavor": "",
+          "notes": "",
+          "range": "60m",
+          "reliability": "VR",
+          "rof": "43",
+          "shots": "60",
+          "source": "SOF2",
+          "weaponType": "Shotgun",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Tsunami Arms Helix",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "10ga buckshot",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Autoshotgun",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Poor",
+    "bodyMinimum": 18,
+    "concealability": "ConcealNoHide",
+    "cost": 3000,
+    "damage": "5d6",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 60,
+    "rangeDamages": {
+      "close": "5d6",
+      "far": "3d6",
+      "medium": "4d6",
+      "pointBlank": "5d6"
+    },
+    "reliability": "VeryReliable",
+    "rof": 43,
+    "shots": 60,
+    "shotsLeft": 60,
+    "source": "SOF2",
+    "weaponType": "Shotgun",
+    "weight": 15
+  },
+  "type": "weapon"
+}

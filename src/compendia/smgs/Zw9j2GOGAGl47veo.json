@@ -1,0 +1,97 @@
+{
+  "_id": "Zw9j2GOGAGl47veo",
+  "_key": "!items!Zw9j2GOGAGl47veo",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CP20",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+1 (9mm C)",
+        "sourceName": "UZI",
+        "sourceValues": {
+          "accuracy": "+2",
+          "ammoType": "9mm C",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "J",
+          "cost": 250,
+          "damage": "2d6+1",
+          "flavor": "",
+          "notes": "",
+          "range": "150m",
+          "reliability": "VR",
+          "rof": "20",
+          "shots": "30",
+          "source": "CP20",
+          "weaponType": "SMG",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "UZI",
+  "system": {
+    "accuracy": 2,
+    "ammoType": "9mm C",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Submachinegun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "concealability": "ConcealJacket",
+    "cost": 250,
+    "damage": "2d6+1",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 150,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 20,
+    "shots": 30,
+    "shotsLeft": 30,
+    "source": "CP20",
+    "weaponType": "SMG",
+    "weight": null
+  },
+  "type": "weapon"
+}

@@ -1,0 +1,123 @@
+{
+  "_id": "IpjpMHrftuGwPxxg",
+  "_key": "!items!IpjpMHrftuGwPxxg",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Custom garment; confirm whether optional leg coverage is present."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 82,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "NC, 130"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Kevleather Action Jacket*",
+        "sourceValues": {
+          "cost": 0,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 16
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 16
+            }
+          },
+          "flavor": "",
+          "notes": "<p>Varies NC, 130 custom made</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Kevleather Action Jacket*",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Custom garment; confirm whether optional leg coverage is present."
+      ],
+      "status": "manual"
+    },
+    "cost": 0,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 16
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": true,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>Varies NC, 130 custom made</p>",
+    "source": "NC, 130",
+    "weight": null
+  },
+  "type": "armor"
+}

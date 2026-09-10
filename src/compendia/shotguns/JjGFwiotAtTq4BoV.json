@@ -1,0 +1,113 @@
+{
+  "_id": "JjGFwiotAtTq4BoV",
+  "_key": "!items!JjGFwiotAtTq4BoV",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "King Buck ROF 2/4 describes a multi-barrel mode that requires source confirmation.",
+            "Rate of fire needs a mode choice or special timing rule."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "Chr2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 50,
+            "section": "3.3–3.12",
+            "source": "reference-v5"
+          },
+          {
+            "book": "Blackhand’s Street Weapons 2020",
+            "pages": "Shotguns table",
+            "source": "cyberpunk-wiki",
+            "url": "https://cyberpunk.fandom.com/wiki/Cyberpunk_2020_Weapons"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "6d6 (10ga)(B8)",
+        "sourceName": "Luigi Franchi \"King Buck\"",
+        "sourceValues": {
+          "accuracy": "-1",
+          "ammoType": "B8",
+          "attackType": "Autoshotgun",
+          "availability": "P",
+          "concealability": "N",
+          "cost": 800,
+          "damage": "6d6",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "VR",
+          "rof": "2/4",
+          "shots": "4",
+          "source": "Chr2",
+          "weaponType": "Shotgun",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Luigi Franchi \"King Buck\"",
+  "system": {
+    "accuracy": -1,
+    "ammoType": "10ga magnum buckshot",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Shotgun",
+    "automation": {
+      "reasons": [
+        "King Buck ROF 2/4 describes a multi-barrel mode that requires source confirmation.",
+        "Rate of fire needs a mode choice or special timing rule."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "bodyMinimum": 8,
+    "concealability": "ConcealNoHide",
+    "cost": 800,
+    "damage": "6d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "6d6",
+      "far": "4d6",
+      "medium": "5d6",
+      "pointBlank": "6d6"
+    },
+    "reliability": "VeryReliable",
+    "rof": null,
+    "shots": 4,
+    "shotsLeft": 4,
+    "source": "Chr2",
+    "weaponType": "Shotgun",
+    "weight": null
+  },
+  "type": "weapon"
+}

@@ -1,0 +1,101 @@
+{
+  "_id": "ylMh5vgH1hhbUsEE",
+  "_key": "!items!ylMh5vgH1hhbUsEE",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "The original damage notation contains additional or damaged rules; verify it before automation."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "SF",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "3d6~ (200m)",
+        "sourceName": "Arasaka Stingray II",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "200m",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "N",
+          "cost": 750,
+          "damage": "3d6",
+          "flavor": "",
+          "notes": "",
+          "range": "100m",
+          "reliability": "VR",
+          "rof": "2",
+          "shots": "9",
+          "source": "SF",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Arasaka Stingray II",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "200m",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "The original damage notation contains additional or damaged rules; verify it before automation."
+      ],
+      "status": "manual"
+    },
+    "availability": "Common",
+    "concealability": "ConcealNoHide",
+    "cost": 750,
+    "damage": "3d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 100,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 2,
+    "shots": 9,
+    "shotsLeft": 9,
+    "source": "SF",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

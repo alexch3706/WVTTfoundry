@@ -1,0 +1,25 @@
+{
+  "_id": "sywyOL4xi000fY0W",
+  "_key": "!items!sywyOL4xi000fY0W",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Kundalini Roadworks GevHog",
+  "system": {
+    "cost": 16100,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 90<br><b>Acc/Dec:</b> 15/10<br><b>Crew:</b> 1<br><b>Range:</b> 405<br><b>Passengers:</b> 3<br><b>Cargo:</b> 216kg, 1.6<br><b>Maneuver:</b> -2<br><b>SDP:</b> 13 (1)<br><b>SP:</b> 0<br><b>Mass:</b> 650kg",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

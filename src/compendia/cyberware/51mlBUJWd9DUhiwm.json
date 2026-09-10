@@ -1,0 +1,102 @@
+{
+  "_id": "51mlBUJWd9DUhiwm",
+  "_key": "!items!51mlBUJWd9DUhiwm",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Full-body conversion requires verified per-location disable/destroy SDP thresholds and integrated physical stats. The source shorthand 20/30/40 is not three body-part values."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "provenance": {
+          "pdfPage": 109,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "urls": [
+            "https://cyberpunk.fandom.com/wiki/Militech_Eclipse_(2020)",
+            "https://cyberpunk.fandom.com/wiki/Dynalar_Brimstone_(2020)",
+            "https://cyberpunk.fandom.com/wiki/NovelTech_Samson_(2020)"
+          ]
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Gemini (Humanoid)",
+        "sourceValues": {
+          "cost": 55000,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> CRx2<br><b>Humanity Loss:</b> 16d6+2<br><p>REF 10, MA 10, BOD 12, SP 25, SDP 20/30/40</p>",
+          "source": "Chr2",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Gemini (Humanoid)",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Full-body conversion requires verified per-location disable/destroy SDP thresholds and integrated physical stats. The source shorthand 20/30/40 is not three body-part values."
+      ],
+      "status": "manual"
+    },
+    "cost": 55000,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "isFBC": false,
+    "notes": "<b>Surgery Code:</b> CRx2<br><b>Humanity Loss:</b> 16d6+2<br><p>REF 10, MA 10, BOD 12, SP 25, SDP 20/30/40</p>",
+    "source": "Chr2",
+    "weight": null
+  },
+  "type": "cyberware"
+}

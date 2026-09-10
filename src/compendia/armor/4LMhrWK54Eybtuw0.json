@@ -1,0 +1,123 @@
+{
+  "_id": "4LMhrWK54Eybtuw0",
+  "_key": "!items!4LMhrWK54Eybtuw0",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Head protection has 25% coverage and requires a separate coverage check."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 84,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 3, 33"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Cyberfacial Remount Jigsaw",
+        "sourceValues": {
+          "cost": 250,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 12
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            }
+          },
+          "flavor": "",
+          "notes": "<p>250 Chr 3, 33 ATTR -1</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Cyberfacial Remount Jigsaw",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Head protection has 25% coverage and requires a separate coverage check."
+      ],
+      "status": "manual"
+    },
+    "cost": 250,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 12
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>250 Chr 3, 33 ATTR -1</p>",
+    "source": "Chr 3, 33",
+    "weight": null
+  },
+  "type": "armor"
+}

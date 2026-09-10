@@ -1,0 +1,119 @@
+{
+  "_id": "7nrx7ubNF7T2hwsV",
+  "_key": "!items!7nrx7ubNF7T2hwsV",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 82,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 4, 60"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Takanaka Arachni-Silk Suit*",
+        "sourceValues": {
+          "cost": 500,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 6
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 6
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 6
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 6
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 6
+            }
+          },
+          "flavor": "",
+          "notes": "<p>500 Chr 4, 60 +2  W&S</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Takanaka Arachni-Silk Suit*",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 500,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 6
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 6
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 6
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 6
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 6
+      }
+    },
+    "edgedHalfSP": true,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>500 Chr 4, 60 +2  W&S</p>",
+    "source": "Chr 4, 60",
+    "weight": null
+  },
+  "type": "armor"
+}

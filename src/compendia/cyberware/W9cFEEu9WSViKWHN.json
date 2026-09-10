@@ -1,0 +1,25 @@
+{
+  "_id": "W9cFEEu9WSViKWHN",
+  "_key": "!items!W9cFEEu9WSViKWHN",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Poison Gland",
+  "system": {
+    "cost": 1200,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 3d6<br><p>Holds 8 doses, produces new dose every hour</p>",
+    "source": "WGF",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

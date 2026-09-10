@@ -1,0 +1,123 @@
+{
+  "_id": "K34mCxFyOUlW4NDw",
+  "_key": "!items!K34mCxFyOUlW4NDw",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "RPA defeats armor-piercing ammunition; confirm the ammunition interaction manually."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 83,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "CB3, 63"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Militech M78 RPA Hvy.Vest",
+        "sourceValues": {
+          "cost": 300,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 18
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            }
+          },
+          "flavor": "",
+          "notes": "<p>300 CB3, 63</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Militech M78 RPA Hvy.Vest",
+  "system": {
+    "apDefeating": true,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "RPA defeats armor-piercing ammunition; confirm the ammunition interaction manually."
+      ],
+      "status": "manual"
+    },
+    "cost": 300,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 2,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>300 CB3, 63</p>",
+    "source": "CB3, 63",
+    "weight": null
+  },
+  "type": "armor"
+}

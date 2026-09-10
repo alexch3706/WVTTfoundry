@@ -1,0 +1,18 @@
+<form class="cyberpunk catalog-migration">
+    <p>{{CPLocal "CatalogMigrationHint"}}</p>
+    <button type="button" data-action="preview" {{#if busy}}disabled{{/if}}>{{CPLocal "CatalogMigrationPreview"}}</button>
+    {{#if preview}}
+    <p>{{preview.updates}} items to update · {{preview.conflicts}} with preserved custom fields · {{preview.unlinked}} without a catalog link</p>
+    <button type="button" data-action="apply" {{#unless canApply}}disabled{{/unless}}>{{CPLocal "CatalogMigrationApply"}}</button>
+    {{#each rows as |row|}}
+    <details>
+        <summary>{{row.name}} — {{row.status}} ({{row.changes.length}} changes, {{row.conflicts.length}} conflicts)</summary>
+        <p>{{row.uuid}}</p>
+        <ul>
+            {{#each row.changes as |change|}}<li>{{change.field}}: {{change.before}} → {{change.after}}</li>{{/each}}
+            {{#each row.conflicts as |conflict|}}<li>Preserved {{conflict.field}}: {{conflict.current}} (catalog: {{conflict.catalog}})</li>{{/each}}
+        </ul>
+    </details>
+    {{/each}}
+    {{/if}}
+</form>

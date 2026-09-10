@@ -1,0 +1,25 @@
+{
+  "_id": "0pgzCfql8OAaWvY3",
+  "_key": "!items!0pgzCfql8OAaWvY3",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Decentralized Heart",
+  "system": {
+    "cost": 1300,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 1d6+4<br><p>+2 to Death Saves for Torso wounds</p>",
+    "source": "Chr1",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

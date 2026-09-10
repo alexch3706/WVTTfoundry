@@ -27,24 +27,28 @@ export function getCyberwareArmorStatus(item) {
 
 export function getArmorItemStatus(item) {
   const system = item?.system || item || {};
-  return getCoverageArmorStatus(system.coverage || {}, item?.type === "armor" || !!system.coverage);
+  const worn = !system.armorRole || system.armorRole === "wornArmor";
+  return getCoverageArmorStatus(system.coverage || {}, worn && (item?.type === "armor" || !!system.coverage));
 }
 
 function getCoverageArmorStatus(coverage = {}, isArmorCandidate = false, options = {}) {
-  let baseStoppingPower = 0;
-  let ablation = 0;
-
-  for(const segment of Object.values(coverage)) {
-    baseStoppingPower += normalizeStoppingPower(segment?.stoppingPower ?? segment?.sp);
-    ablation += normalizeAblation(segment?.ablation);
-  }
+  // Body locations are alternative hit targets, not additive armor layers.
+  const locations = Object.entries(coverage).map(([location, segment]) => {
+    const baseStoppingPower = normalizeStoppingPower(segment?.stoppingPower ?? segment?.sp);
+    const ablation = normalizeAblation(segment?.ablation);
+    return { location, baseStoppingPower, ablation, currentStoppingPower: Math.max(0, baseStoppingPower - ablation) };
+  }).filter(segment => segment.baseStoppingPower > 0);
+  const baseStoppingPower = Math.max(0, ...locations.map(segment => segment.baseStoppingPower));
+  const currentStoppingPower = Math.max(0, ...locations.map(segment => segment.currentStoppingPower));
+  const ablation = Math.max(0, ...locations.map(segment => segment.ablation));
 
   return {
     isArmor: isArmorCandidate && (!options.requireStoppingPower || baseStoppingPower > 0),
     baseStoppingPower,
     ablation,
-    currentStoppingPower: Math.max(0, baseStoppingPower - ablation),
-    repairable: ablation > 0
+    currentStoppingPower,
+    repairable: isArmorCandidate && locations.some(segment => segment.ablation > 0),
+    locations
   };
 }
 

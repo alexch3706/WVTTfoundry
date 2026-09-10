@@ -1,0 +1,25 @@
+{
+  "_id": "yYLaV12q8oi2inK4",
+  "_key": "!items!yYLaV12q8oi2inK4",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Anti-Trauma",
+  "system": {
+    "cost": 4000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> -<br><p>+2 to Death Saves for 12 hours</p>",
+    "source": "ES+",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

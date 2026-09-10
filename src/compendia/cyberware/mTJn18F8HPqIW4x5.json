@@ -1,0 +1,98 @@
+{
+  "_id": "mTJn18F8HPqIW4x5",
+  "_key": "!items!mTJn18F8HPqIW4x5",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Select the armored cyberlimb before enabling automatic protection."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "provenance": {
+          "pdfPage": 84,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "CP20, 68"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Limb Armor",
+        "sourceValues": {
+          "cost": 300,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1<br><p>Armors cyberlimb to SP 20</p>",
+          "source": "Chr3",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Limb Armor",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Select the armored cyberlimb before enabling automatic protection."
+      ],
+      "status": "manual"
+    },
+    "cost": 300,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1<br><p>Armors cyberlimb to SP 20</p>",
+    "source": "CP20, 68",
+    "specialStoppingPower": 20,
+    "weight": null
+  },
+  "type": "cyberware"
+}

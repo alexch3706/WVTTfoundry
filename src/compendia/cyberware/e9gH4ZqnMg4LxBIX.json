@@ -1,0 +1,25 @@
+{
+  "_id": "e9gH4ZqnMg4LxBIX",
+  "_key": "!items!e9gH4ZqnMg4LxBIX",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Biomechanical Cyberarm",
+  "system": {
+    "cost": 6000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 2<br><p>20% EMP, 1d6 punch, 8 flesh + 8 SDP, 1 option</p>",
+    "source": "WGF",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

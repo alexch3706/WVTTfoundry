@@ -1,0 +1,25 @@
+{
+  "_id": "qqHFtPAmQbIzrc18",
+  "_key": "!items!qqHFtPAmQbIzrc18",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Goodyear ETB Blimp",
+  "system": {
+    "cost": 900000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 70<br><b>Acc/Dec:</b> 5/30<br><b>Crew:</b> 5<br><b>Range:</b> 1500<br><b>Passengers:</b> 1<br><b>Cargo:</b> 2.5 tons<br><b>Maneuver:</b> +0<br><b>SDP:</b> 200 (10)<br><b>SP:</b> 20<br><b>Mass:</b> (1) 10 tons",
+    "source": "UK",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

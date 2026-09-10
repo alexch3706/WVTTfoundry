@@ -1,0 +1,25 @@
+{
+  "_id": "8VjoDMEsorA29Abe",
+  "_key": "!items!8VjoDMEsorA29Abe",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Mac-Deux \"Monster\"",
+  "system": {
+    "cost": 240000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 100<br><b>Acc/Dec:</b> 10/30<br><b>Crew:</b> 1<br><b>Range:</b> 800<br><b>Passengers:</b> 4<br><b>Cargo:</b> 36,000kg<br><b>Maneuver:</b> +0<br><b>SDP:</b> 180 (9)<br><b>SP:</b> 20<br><b>Mass:</b> (1) 10 tons",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

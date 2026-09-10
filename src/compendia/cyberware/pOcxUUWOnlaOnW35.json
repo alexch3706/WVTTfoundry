@@ -1,0 +1,25 @@
+{
+  "_id": "pOcxUUWOnlaOnW35",
+  "_key": "!items!pOcxUUWOnlaOnW35",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Singer Tentacles",
+  "system": {
+    "cost": 3000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 3d6<br><p>Bio-Toxin 1 (Death/4d6 damage), -1 MA in water</p>",
+    "source": "SA",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

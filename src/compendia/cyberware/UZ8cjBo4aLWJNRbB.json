@@ -1,0 +1,25 @@
+{
+  "_id": "UZ8cjBo4aLWJNRbB",
+  "_key": "!items!UZ8cjBo4aLWJNRbB",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Enhanced Hearing",
+  "system": {
+    "cost": 2,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> each<br><p>2 max: Amplified Hearing, or Enhanced Range 1200</p>",
+    "source": "DS",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

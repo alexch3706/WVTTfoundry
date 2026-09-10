@@ -1,0 +1,25 @@
+{
+  "_id": "1ElfaQFA8rfwFflx",
+  "_key": "!items!1ElfaQFA8rfwFflx",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Elf",
+  "system": {
+    "cost": 1000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 1d6/2<br><p>Pointed ears, thin face, upturned eyebrows</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

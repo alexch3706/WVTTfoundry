@@ -1,0 +1,25 @@
+{
+  "_id": "r7MmZSWeaELlfISk",
+  "_key": "!items!r7MmZSWeaELlfISk",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Cadence Industries Wanderer",
+  "system": {
+    "cost": 50000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 80<br><b>Acc/Dec:</b> 15/40<br><b>Crew:</b> 1<br><b>Range:</b> 500<br><b>Passengers:</b> 4<br><b>Cargo:</b> 650kg<br><b>Maneuver:</b> -3<br><b>SDP:</b> 50 (2)<br><b>SP:</b> 20<br><b>Mass:</b> (1) 2000kg",
+    "source": "Chr3",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

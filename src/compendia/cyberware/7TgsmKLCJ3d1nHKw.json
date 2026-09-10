@@ -1,0 +1,25 @@
+{
+  "_id": "7TgsmKLCJ3d1nHKw",
+  "_key": "!items!7TgsmKLCJ3d1nHKw",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Advanced Biomonitor",
+  "system": {
+    "cost": 200,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> (1d6/2)-1<br><p>Incl udes ability broadcast information over 2km</p>",
+    "source": "CB3",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

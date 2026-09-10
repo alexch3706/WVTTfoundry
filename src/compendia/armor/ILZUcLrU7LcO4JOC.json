@@ -1,0 +1,119 @@
+{
+  "_id": "ILZUcLrU7LcO4JOC",
+  "_key": "!items!ILZUcLrU7LcO4JOC",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 83,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "SOF2, 22"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Pit Viper",
+        "sourceValues": {
+          "cost": 26000,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 30
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 30
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 30
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 30
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 30
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 30
+            }
+          },
+          "flavor": "",
+          "notes": "<p>26,000 SOF2, 22 radio, HUD, 1 hr air</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Pit Viper",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 26000,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 30
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 30
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 30
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 30
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 30
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 30
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>26,000 SOF2, 22 radio, HUD, 1 hr air</p>",
+    "source": "SOF2, 22",
+    "weight": null
+  },
+  "type": "armor"
+}

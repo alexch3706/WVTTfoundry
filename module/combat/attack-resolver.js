@@ -4,6 +4,8 @@ import { resolveArmor } from "./armor-resolver.js";
 import { getKeyTechniqueBonus, getRequiresPrerequisite } from "./martial-arts-data.js";
 import { buildFullAutoAttackEvidence, buildFullAutoTargetAction } from "./ranged-automatic-fire.js";
 import { buildMultiHitLocationAction } from "./ranged-hit-location.js";
+import { normalizeReliability, findCombatSkill } from "../item/item-contract.js";
+import { preflightCombatItemData } from "./item-preflight.js";
 
 const RANGED_MODIFIERS = Object.freeze([
   { code: "aimRounds", label: "Aiming", term: "@modifier.aimRounds", value: options => Number(options.aimRounds || 0), include: value => value !== 0 },
@@ -114,7 +116,7 @@ export function resolveJamOutcome(isFumble, fireMode, reliability, weaponName = 
     return { isJam: false };
   }
 
-  const rel = String(reliability || "").toLowerCase();
+  const rel = String(normalizeReliability(reliability) || "").toLowerCase();
   if (rel === "veryreliable") {
     return { isJam: false };
   }
@@ -154,6 +156,8 @@ export function resolveJamOutcome(isFumble, fireMode, reliability, weaponName = 
 }
 
 export async function resolveSingleShotRangedAttack(context, options = {}, roller = undefined) {
+  const itemDataIssue = preflightCombatItemData(context);
+  if (itemDataIssue) return itemDataIssue;
   const action = clonePlainData(context.action || {});
   action.targetArea = action.targetArea || action.options?.targetArea;
   const rawRange = normalizeRange(action.range);
@@ -162,7 +166,7 @@ export async function resolveSingleShotRangedAttack(context, options = {}, rolle
   if (baseRange === ranges.auto && context.targets?.length > 0) {
     const firstTargetDist = context.targets[0]?.distance?.value;
     if (firstTargetDist !== undefined && Number.isFinite(Number(firstTargetDist))) {
-      const weaponRange = Number(context.weapon?.snapshot?.system?.range || context.weapon?.system?.range || 50);
+      const weaponRange = Number(context.weapon?.snapshot?.range);
       baseRange = getRangeBracketForDistance(Number(firstTargetDist), weaponRange);
     } else {
       baseRange = ranges.close;
@@ -233,7 +237,7 @@ export async function resolveSingleShotRangedAttack(context, options = {}, rolle
 
       const targetAction = buildFullAutoTargetAction(action, idx, roundsFiredPerTarget);
       if (rawRange === ranges.auto && target?.distance?.value !== undefined && Number.isFinite(Number(target.distance.value))) {
-        const weaponRange = Number(context.weapon?.snapshot?.system?.range || context.weapon?.system?.range || 50);
+        const weaponRange = Number(context.weapon?.snapshot?.range);
         targetAction.range = getRangeBracketForDistance(Number(target.distance.value), weaponRange);
         targetAction.targetNumber = rangeDCs[targetAction.range] || targetAction.targetNumber;
       }
@@ -343,7 +347,7 @@ export async function resolveSingleShotRangedAttack(context, options = {}, rolle
     for (const target of (context.targets || [])) {
       let targetSpecificNumber = targetNumber;
       if (rawRange === ranges.auto && target?.distance?.value !== undefined && Number.isFinite(Number(target.distance.value))) {
-        const weaponRange = Number(context.weapon?.snapshot?.system?.range || context.weapon?.system?.range || 50);
+        const weaponRange = Number(context.weapon?.snapshot?.range);
         const bracket = getRangeBracketForDistance(Number(target.distance.value), weaponRange);
         targetSpecificNumber = rangeDCs[bracket] || targetNumber;
       }
@@ -407,6 +411,8 @@ export async function resolveSingleShotRangedAttack(context, options = {}, rolle
 }
 
 export async function resolveAutoshotgunFullAutoAttack(context, options = {}, roller = undefined) {
+  const itemDataIssue = preflightCombatItemData(context);
+  if (itemDataIssue) return itemDataIssue;
   const action = clonePlainData(context.action || {});
   const patterns = Array.isArray(action.autoshotgunPatterns) ? action.autoshotgunPatterns : [];
   const shellCount = patterns.length;
@@ -725,6 +731,8 @@ function targetOutcomeKey(target = {}) {
  * @returns {Object} CombatOutcome with opposed rolls per target.
  */
 export async function resolveMeleeAction(context, options = {}, roller = undefined) {
+  const itemDataIssue = preflightCombatItemData(context);
+  if (itemDataIssue) return itemDataIssue;
   const action = clonePlainData(context.action || {});
   const targets = await Promise.all((context.targets || []).map(async target =>
     await resolveMeleeTargetOutcome(target, context, options, roller)
@@ -949,7 +957,7 @@ async function resolveMeleeHitDamage(hitLocationResult, context, target, options
   // Raw damage = weapon die + strengthDamageBonus(attacker BT)
   const attackerBT = context.attacker?.snapshot?.stats?.bt?.total || 0;
   const strengthBonus = strengthDamageBonus(attackerBT);
-  const damageRequest = { id: "damage", formula: weapon.damage || "1d6" };
+  const damageRequest = { id: "damage", formula: weapon.damage };
   const damageRoll = await roll(roller, damageRequest);
   const rawDamage = Math.max(1, damageRoll.total + strengthBonus);
 
@@ -957,7 +965,8 @@ async function resolveMeleeHitDamage(hitLocationResult, context, target, options
   const weaponAP = !!weapon.ap;
   const manualActionCover = context.action?.cover || context.action?.options?.cover;
   const armor = resolveArmor(weaponAP, targetSnapshot, hitLocationResult.location, {
-    cover: manualActionCover
+    cover: manualActionCover,
+    meleeDamageType: context.action?.type === "martial" ? "blunt" : weapon.meleeDamageType
   });
   const effectiveStoppingPower = armor.effectiveStoppingPower;
   const coverMitigation = Math.min(rawDamage, armor.cover?.effectiveStoppingPower || 0);
@@ -1146,13 +1155,7 @@ function meleeManualTarget(target, manualResolution, targetWarnings) {
  * Get a skill's numeric value from a snapshot skills object, matching case-insensitively.
  */
 function getSkillValueCaseInsensitive(skills = {}, skillName) {
-  const lowerName = String(skillName || "").toLowerCase();
-  for (const [key, value] of Object.entries(skills)) {
-    if (key.toLowerCase() === lowerName) {
-      return getSkillValue(value);
-    }
-  }
-  return 0;
+  return getSkillValue(findCombatSkill(skills, skillName));
 }
 
 export function resolveBodyTypeDamage(penetratingDamage, bodyType, penetrated = false) {
@@ -1351,7 +1354,7 @@ function ammoWarning(code, message) {
 async function resolveRangedDamageRoll(action, weapon, roller, target = null) {
   const attackType = normalizeAttackType(weapon?.snapshot?.attackType);
   const isShotgun = SHOTGUN_ATTACK_TYPES.includes(attackType);
-  let formula = String(weapon?.snapshot?.damage || "1d6").trim() || "1d6";
+  let formula = String(weapon?.snapshot?.damage ?? "").trim();
   let shotgunEvidence = undefined;
   let manualResolution = undefined;
 
@@ -1443,7 +1446,7 @@ function resolveShotgunDamageContext(weapon, target) {
     return { manualResolution: shotgunManualResolution("Shotgun spread distance must be normalized to meters before resolution.") };
   }
 
-  const weaponRange = Number(weapon?.snapshot?.range) || 50;
+  const weaponRange = Number(weapon?.snapshot?.range);
   const distanceValue = Number(measuredDistance.value);
   const attackType = normalizeAttackType(weapon?.snapshot?.attackType);
   if(attackType === "autoshotgun" && distanceValue > getMaxRangeBracketDistance(weaponRange, ranges.long)) {
@@ -2116,7 +2119,7 @@ function missingHitLocationResult() {
 
 function buildAttackRollRequest(context, modifierEvidence) {
   const attackSkill = context.weapon?.snapshot?.attackSkill;
-  const attackSkillValue = attackSkill ? Number(getSkillValue(context.attacker?.snapshot?.skills?.[attackSkill])) || 0 : 0;
+  const attackSkillValue = attackSkill ? Number(getSkillValue(findCombatSkill(context.attacker?.snapshot?.skills, attackSkill))) || 0 : 0;
   const skillTerm = attackSkill ? `@attackSkillBonus` : undefined;
   const terms = [
     "1d10x10",
@@ -2295,6 +2298,8 @@ export async function resolveSuppressiveFireDamageOutcome(context = {}, options 
   };
   const weapon = clonePlainData(context.weapon || {});
   const target = clonePlainData(context.target || context.targets?.[0] || {});
+  const itemDataIssue = preflightCombatItemData({ ...context, action, weapon, targets: [target] }, { damageOnly: true });
+  if (itemDataIssue) return itemDataIssue;
   const attackRoll = {
     id: "suppressive_save",
     formula: "failed suppressive fire save",

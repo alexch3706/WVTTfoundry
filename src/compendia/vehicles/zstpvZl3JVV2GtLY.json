@@ -1,0 +1,25 @@
+{
+  "_id": "zstpvZl3JVV2GtLY",
+  "_key": "!items!zstpvZl3JVV2GtLY",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Ford-Mazda Luxus 16",
+  "system": {
+    "cost": 65000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 90<br><b>Acc/Dec:</b> 15/40<br><b>Crew:</b> 1<br><b>Range:</b> 300<br><b>Passengers:</b> 5<br><b>Cargo:</b> 960kg<br><b>Maneuver:</b> -2<br><b>SDP:</b> 72 (4)<br><b>SP:</b> 20<br><b>Mass:</b> (1) 2.88 tons",
+    "source": "PB",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

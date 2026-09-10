@@ -1,0 +1,95 @@
+{
+  "_id": "JgI79MMzv4yyTAd8",
+  "_key": "!items!JgI79MMzv4yyTAd8",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CP13",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+1 (9mm C)",
+        "sourceName": "Beretta M92F",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "9mm C",
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "J",
+          "cost": 100,
+          "damage": "2d6+1",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "ST",
+          "rof": "2",
+          "shots": "7",
+          "source": "CP13",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Beretta M92F",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "9mm C",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Rare",
+    "concealability": "ConcealJacket",
+    "cost": 100,
+    "damage": "2d6+1",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 2,
+    "shots": 7,
+    "shotsLeft": 7,
+    "source": "CP13",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "lFqMo7CKeg1X3hvl",
+  "_key": "!items!lFqMo7CKeg1X3hvl",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "GMI Hovertruck",
+  "system": {
+    "cost": 220000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 100<br><b>Acc/Dec:</b> 15/10<br><b>Crew:</b> 2<br><b>Range:</b> 400<br><b>Passengers:</b> 12<br><b>Cargo:</b> or 5 tons int, 12<br><b>Maneuver:</b> -2<br><b>SDP:</b> 100 (5)<br><b>SP:</b> 20<br><b>Mass:</b> (1) 10 tons",
+    "source": "MM",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

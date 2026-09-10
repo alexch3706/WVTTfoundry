@@ -1,0 +1,25 @@
+{
+  "_id": "hvkqVTpMuvy04SfV",
+  "_key": "!items!hvkqVTpMuvy04SfV",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Toyo Chevrolet Corpora Sports",
+  "system": {
+    "cost": 46000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 80<br><b>Acc/Dec:</b> 20/60<br><b>Crew:</b> 1<br><b>Range:</b> 200<br><b>Passengers:</b> 3<br><b>Cargo:</b> 800kg, 2<br><b>Maneuver:</b> +0<br><b>SDP:</b> 60 (3)<br><b>SP:</b> 20<br><b>Mass:</b> (1) 2400kg",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

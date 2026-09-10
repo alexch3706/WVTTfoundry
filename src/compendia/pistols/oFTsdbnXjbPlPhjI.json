@@ -1,0 +1,95 @@
+{
+  "_id": "oFTsdbnXjbPlPhjI",
+  "_key": "!items!oFTsdbnXjbPlPhjI",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "ET",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+3 (10mm)",
+        "sourceName": "LeRoi Maxi-10",
+        "sourceValues": {
+          "accuracy": "-1",
+          "ammoType": "10mm",
+          "attackType": "Auto",
+          "availability": "E",
+          "concealability": "J",
+          "cost": 150,
+          "damage": "2d6+3",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "UR",
+          "rof": "2",
+          "shots": "10",
+          "source": "ET",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "LeRoi Maxi-10",
+  "system": {
+    "accuracy": -1,
+    "ammoType": "10mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Excellent",
+    "concealability": "ConcealJacket",
+    "cost": 150,
+    "damage": "2d6+3",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Unreliable",
+    "rof": 2,
+    "shots": 10,
+    "shotsLeft": 10,
+    "source": "ET",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

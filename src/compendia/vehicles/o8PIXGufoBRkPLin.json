@@ -1,0 +1,25 @@
+{
+  "_id": "o8PIXGufoBRkPLin",
+  "_key": "!items!o8PIXGufoBRkPLin",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Nissan Metrocar",
+  "system": {
+    "cost": 6000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 50<br><b>Acc/Dec:</b> 3/10<br><b>Crew:</b> 1<br><b>Range:</b> 200<br><b>Passengers:</b> 1<br><b>Cargo:</b> 90kg<br><b>Maneuver:</b> +0<br><b>SDP:</b> 25 (1)<br><b>SP:</b> 10<br><b>Mass:</b> (0) 1 ton",
+    "source": "ER",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

@@ -716,7 +716,7 @@ async function replacePackDirectories(definitions, builtPacks, initialFingerprin
  * Transform and round-trip every declared pack. With write=false, this is a
  * complete dry run and the repository remains byte-for-byte unchanged.
  */
-export async function migrateDeclaredPacks({ write = false } = {}) {
+export async function migrateDeclaredPacks({ write = false, documentsByPack } = {}) {
   return withTemporaryWorkspace(async workspace => {
     const definitions = await readPackDefinitions();
     const initialFingerprints = new Map();
@@ -730,12 +730,24 @@ export async function migrateDeclaredPacks({ write = false } = {}) {
     const builtPacks = new Map();
 
     for (const result of extracted.results) {
+      const replacements = documentsByPack?.get(result.definition.name);
+      if(documentsByPack && !replacements) {
+        throw new Error(`Missing canonical sources for ${result.definition.name}`);
+      }
+      if(replacements) {
+        const identity = documents => documents.map(document => [document._id, document.type ?? null])
+          .sort((left, right) => left[0].localeCompare(right[0]));
+        if(!isDeepStrictEqual(identity(replacements), identity(result.documents))) {
+          throw new Error(`${result.definition.name}: canonical sources changed stable document IDs or types`);
+        }
+      }
       const modernDocuments = [];
-      for (const source of result.documents) {
+      for (const source of replacements || result.documents) {
         const { document, counters } = modernizeDocument(source, result.definition);
         modernDocuments.push(document);
         addCounters(transformationTotals, counters);
       }
+      modernDocuments.sort((left, right) => left._id.localeCompare(right._id));
 
       const sources = path.join(workspace, "modern-sources", result.definition.relativePath);
       const built = path.join(workspace, "built-packs", result.definition.relativePath);

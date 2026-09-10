@@ -1,0 +1,25 @@
+{
+  "_id": "44tsqXQCcF2BmdjO",
+  "_key": "!items!44tsqXQCcF2BmdjO",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Spikes",
+  "system": {
+    "cost": 400,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1d6+1<br><p>Covers limb with spikes, +1d6 HTH damage</p>",
+    "source": "KCJ",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

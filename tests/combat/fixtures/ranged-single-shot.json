@@ -2205,37 +2205,35 @@
           }
         }
       },
-      "rolls": [
-        {
-          "id": "attack",
-          "total": 12,
-          "die": {
-            "faces": 10,
-            "natural": 3,
-            "results": [
-              3
-            ],
-            "exploded": false
-          }
-        }
-      ],
+      "rolls": [],
       "expected": {
+        "targets": [
+          {
+            "hits": [],
+            "manualResolution": {
+              "required": true
+            }
+          }
+        ],
         "ammo": {
-          "before": 0,
-          "delta": 0,
-          "after": 0,
-          "source": "weapon.snapshot.shotsLeft"
+          "delta": 0
         },
         "plannedUpdates": {
           "itemUpdates": [],
-          "chatStatus": "preview"
+          "chatStatus": "manual"
         },
         "manualResolution": {
           "required": true,
           "reason": "missing-rule-data",
           "blockedUpdateCategories": [
-            "attacker-ammo"
+            "attacker-ammo",
+            "target-damage",
+            "target-armor",
+            "target-saves"
           ]
+        },
+        "chat": {
+          "status": "manual"
         },
         "warnings": [
           {
@@ -2245,10 +2243,12 @@
         ]
       },
       "expectedPlan": {
+        "actorUpdates": [],
         "itemUpdates": [],
-        "warnings": []
+        "embeddedItemUpdates": [],
+        "chatStatus": "manual"
       },
-      "ruleReference": "Audit 6.4: Awaited update discipline — insufficient ammo blocks automated update"
+      "ruleReference": "Audit 6.4: Awaited update discipline — insufficient ammo blocks automated update; Item-data preflight blocks incomplete/unsupported state before any roll or update."
     },
     {
       "name": "structured outcome warns when ammo state is missing",
@@ -2264,50 +2264,50 @@
           }
         }
       },
-      "rolls": [
-        {
-          "id": "attack",
-          "total": 12,
-          "die": {
-            "faces": 10,
-            "natural": 3,
-            "results": [
-              3
-            ],
-            "exploded": false
-          }
-        }
-      ],
+      "rolls": [],
       "expected": {
+        "targets": [
+          {
+            "hits": [],
+            "manualResolution": {
+              "required": true
+            }
+          }
+        ],
         "ammo": {
-          "before": null,
-          "delta": 0,
-          "after": null,
-          "source": "weapon.snapshot.shotsLeft"
+          "delta": 0
         },
         "plannedUpdates": {
           "itemUpdates": [],
-          "chatStatus": "preview"
+          "chatStatus": "manual"
         },
         "manualResolution": {
           "required": true,
           "reason": "missing-rule-data",
           "blockedUpdateCategories": [
-            "attacker-ammo"
+            "attacker-ammo",
+            "target-damage",
+            "target-armor",
+            "target-saves"
           ]
+        },
+        "chat": {
+          "status": "manual"
         },
         "warnings": [
           {
-            "code": "missing-ammo-state",
+            "code": "item-data-invalid-weapon-ammo",
             "severity": "warning"
           }
         ]
       },
       "expectedPlan": {
+        "actorUpdates": [],
         "itemUpdates": [],
-        "warnings": []
+        "embeddedItemUpdates": [],
+        "chatStatus": "manual"
       },
-      "ruleReference": "Audit 6.4: Missing ammo state blocks ammo updates"
+      "ruleReference": "Audit 6.4: Missing ammo state blocks ammo updates; Item-data preflight blocks incomplete/unsupported state before any roll or update."
     },
     {
       "name": "structured outcome warns when ammo state is fractional",
@@ -2323,50 +2323,50 @@
           }
         }
       },
-      "rolls": [
-        {
-          "id": "attack",
-          "total": 12,
-          "die": {
-            "faces": 10,
-            "natural": 3,
-            "results": [
-              3
-            ],
-            "exploded": false
-          }
-        }
-      ],
+      "rolls": [],
       "expected": {
+        "targets": [
+          {
+            "hits": [],
+            "manualResolution": {
+              "required": true
+            }
+          }
+        ],
         "ammo": {
-          "before": 0.5,
-          "delta": 0,
-          "after": 0.5,
-          "source": "weapon.snapshot.shotsLeft"
+          "delta": 0
         },
         "plannedUpdates": {
           "itemUpdates": [],
-          "chatStatus": "preview"
+          "chatStatus": "manual"
         },
         "manualResolution": {
           "required": true,
           "reason": "missing-rule-data",
           "blockedUpdateCategories": [
-            "attacker-ammo"
+            "attacker-ammo",
+            "target-damage",
+            "target-armor",
+            "target-saves"
           ]
+        },
+        "chat": {
+          "status": "manual"
         },
         "warnings": [
           {
-            "code": "missing-ammo-state",
+            "code": "item-data-invalid-weapon-ammo",
             "severity": "warning"
           }
         ]
       },
       "expectedPlan": {
+        "actorUpdates": [],
         "itemUpdates": [],
-        "warnings": []
+        "embeddedItemUpdates": [],
+        "chatStatus": "manual"
       },
-      "ruleReference": "Audit 6.4: Fractional ammo state is invalid"
+      "ruleReference": "Audit 6.4: Fractional ammo state is invalid; Item-data preflight blocks incomplete/unsupported state before any roll or update."
     },
     {
       "name": "structured outcome warns when ammo update target is missing",
@@ -2925,8 +2925,8 @@
       }
     },
     {
-      "name": "structured PointBlank unsupported damage formula rolls normally",
-      "ruleReference": "CP2020 p.99: PointBlank maximum damage; unsupported damage formulas must fall back to ordinary rolled damage with warning",
+      "name": "structured PointBlank unsupported damage formula requires manual resolution",
+      "ruleReference": "CP2020 p.99: PointBlank maximum damage; unsupported damage formulas must fall back to ordinary rolled damage with warning; Item-data preflight blocks incomplete/unsupported state before any roll or update.",
       "context": {
         "action": {
           "fireMode": "SemiAuto",
@@ -2963,69 +2963,48 @@
           }
         ]
       },
-      "rolls": [
-        {
-          "id": "attack",
-          "total": 12,
-          "die": {
-            "faces": 10,
-            "natural": 3
-          }
-        },
-        {
-          "id": "location",
-          "total": 4,
-          "die": {
-            "faces": 10,
-            "natural": 4
-          }
-        },
-        {
-          "id": "damage",
-          "formula": "3d6x2",
-          "total": 11,
-          "die": {
-            "faces": 6,
-            "natural": 11
-          }
-        }
-      ],
+      "rolls": [],
       "expected": {
         "targets": [
           {
-            "attack": {
-              "targetNumber": 10,
-              "hit": true
-            },
-            "hits": [
-              {
-                "rawDamage": 11,
-                "penetratingDamage": 11,
-                "finalDamage": 9,
-                "damageRoll": {
-                  "formula": "3d6x2",
-                  "total": 11
-                },
-                "warnings": [
-                  {
-                    "code": "point-blank-max-damage-unsupported-formula"
-                  }
-                ]
-              }
-            ]
+            "hits": [],
+            "manualResolution": {
+              "required": true
+            }
+          }
+        ],
+        "ammo": {
+          "delta": 0
+        },
+        "plannedUpdates": {
+          "itemUpdates": [],
+          "chatStatus": "manual"
+        },
+        "manualResolution": {
+          "required": true,
+          "reason": "missing-rule-data",
+          "blockedUpdateCategories": [
+            "attacker-ammo",
+            "target-damage",
+            "target-armor",
+            "target-saves"
+          ]
+        },
+        "chat": {
+          "status": "manual"
+        },
+        "warnings": [
+          {
+            "code": "item-data-invalid-weapon-damage",
+            "severity": "warning"
           }
         ]
       },
       "expectedPlan": {
-        "actorUpdates": [
-          {
-            "actorUuid": "Actor.target",
-            "update": {
-              "system.damage": 9
-            }
-          }
-        ],
-        "warnings": []
+        "actorUpdates": [],
+        "itemUpdates": [],
+        "embeddedItemUpdates": [],
+        "chatStatus": "manual"
       }
     },
     {

@@ -1,0 +1,25 @@
+{
+  "_id": "af8flQv0ONCtGDG8",
+  "_key": "!items!af8flQv0ONCtGDG8",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Dehavilland Twin Otter",
+  "system": {
+    "cost": 150000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 190<br><b>Acc/Dec:</b> 15/20<br><b>Crew:</b> 2<br><b>Range:</b> 450<br><b>Passengers:</b> 6<br><b>Cargo:</b> 2000 kg<br><b>Maneuver:</b> +0<br><b>SDP:</b> 80 (4)<br><b>SP:</b> 40<br><b>Mass:</b> (2) 8 tons",
+    "source": "NWP",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

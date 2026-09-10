@@ -1,0 +1,25 @@
+{
+  "_id": "6dhw4UAu5GupdIkX",
+  "_key": "!items!6dhw4UAu5GupdIkX",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Scorpion Fast Attack Vehicle",
+  "system": {
+    "cost": 12000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 100<br><b>Acc/Dec:</b> 15/40<br><b>Crew:</b> 3<br><b>Range:</b> 400<br><b>Passengers:</b> 0<br><b>Cargo:</b> 400kg<br><b>Maneuver:</b> +1<br><b>SDP:</b> 30 (1)<br><b>SP:</b> 0<br><b>Mass:</b> 800kg",
+    "source": "Neo",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

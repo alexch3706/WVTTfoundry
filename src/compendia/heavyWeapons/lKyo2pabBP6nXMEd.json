@@ -1,0 +1,103 @@
+{
+  "_id": "lKyo2pabBP6nXMEd",
+  "_key": "!items!lKyo2pabBP6nXMEd",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Accuracy is missing or has multiple configurations; select and verify one.",
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Heavy-weapon ammunition and damage against personnel need source confirmation."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "Chr2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "9d10 (30mm)",
+        "sourceName": "Militech Anti-Matter Rifle",
+        "sourceValues": {
+          "accuracy": "0/+1",
+          "ammoType": "30mm",
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "N",
+          "cost": 6000,
+          "damage": "9d10",
+          "flavor": "",
+          "notes": "",
+          "range": "1600m",
+          "reliability": "ST",
+          "rof": "1",
+          "shots": "5",
+          "source": "Chr2",
+          "weaponType": "Heavy",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Militech Anti-Matter Rifle",
+  "system": {
+    "accuracy": null,
+    "ammoType": "30mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "HeavyWeapons",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Accuracy is missing or has multiple configurations; select and verify one.",
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Heavy-weapon ammunition and damage against personnel need source confirmation."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "concealability": "ConcealNoHide",
+    "cost": 6000,
+    "damage": "9d10",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 1600,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 1,
+    "shots": 5,
+    "shotsLeft": 5,
+    "source": "Chr2",
+    "weaponType": "Heavy",
+    "weight": null
+  },
+  "type": "weapon"
+}

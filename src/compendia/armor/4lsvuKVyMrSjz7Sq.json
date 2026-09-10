@@ -1,0 +1,119 @@
+{
+  "_id": "4lsvuKVyMrSjz7Sq",
+  "_key": "!items!4lsvuKVyMrSjz7Sq",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 82,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 1, 64"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Eji Armored Cloak*",
+        "sourceValues": {
+          "cost": 500,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 14
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 14
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 14
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 14
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 14
+            }
+          },
+          "flavor": "",
+          "notes": "<p>500 Chr 1, 64</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Eji Armored Cloak*",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 500,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 14
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 14
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 14
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 14
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 14
+      }
+    },
+    "edgedHalfSP": true,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>500 Chr 1, 64</p>",
+    "source": "Chr 1, 64",
+    "weight": null
+  },
+  "type": "armor"
+}

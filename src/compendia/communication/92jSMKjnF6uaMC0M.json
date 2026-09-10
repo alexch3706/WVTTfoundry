@@ -1,0 +1,31 @@
+{
+  "_id": "92jSMKjnF6uaMC0M",
+  "_key": "!items!92jSMKjnF6uaMC0M",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Cellular Phone",
+  "ownership": {
+    "VTdezBIy0FQgKDge": 3,
+    "default": 0
+  },
+  "system": {
+    "cost": "400",
+    "equipped": true,
+    "flavor": "Section: Communications p.70 - Needsa PhoneService Contract",
+    "name": "Common",
+    "notes": "",
+    "source": "Cyberpunk2020",
+    "weight": "0"
+  },
+  "type": "misc"
+}

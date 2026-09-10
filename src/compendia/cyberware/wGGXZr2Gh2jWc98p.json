@@ -1,0 +1,25 @@
+{
+  "_id": "wGGXZr2Gh2jWc98p",
+  "_key": "!items!wGGXZr2Gh2jWc98p",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "ShareChecker™  Link",
+  "system": {
+    "cost": 0,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> using<br><p>Share</p>",
+    "source": "T",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

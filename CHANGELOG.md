@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.0] - 2026-09-08
 
+### Catalog quality (2026-09-10)
+- Added canonical JSON sources, reviewed weapon/armor corrections, retained import provenance and a deterministic semantic-audit/build workflow for all declared packs.
+- Restored typed range, skills, magazines, fire modes, reliability, shotgun damage profiles, armor coverage/material/EV and supported protective cyberware. Unsupported or ambiguous records carry explicit manual reasons.
+- Blocked invalid combat data before any roll or state change; corrected automatic range lookup, localized skill lookup, catalog autoshotgun single shots and edged-weapon armor interactions.
+- Added per-location armor status/editors, explicit unknown AP/weight values and review status controls.
+- Added a GM catalog migration preview that preserves customized definitions, ammunition, ablation, equipped state and cyberware state, including stale-preview and persistence checks.
+- Added tests that send actual catalog items through the resolver, enforce source/pack equality and preserve every existing document ID and type.
+
 ### Breaking
 - Raised the supported Foundry core generation to V14 only and verified the package metadata against V14 Stable 7 (`14.365`).
 - Replaced the removed `MeasuredTemplate` combat workflow with V14 Regions for shotgun areas and persistent suppressive-fire zones.

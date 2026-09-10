@@ -1,0 +1,105 @@
+{
+  "_id": "MmKNAcpG09mTUAo7",
+  "_key": "!items!MmKNAcpG09mTUAo7",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+            "The original damage notation contains additional or damaged rules; verify it before automation."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "SW",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "9d10@ (30 DPU)",
+        "sourceName": "Militech 7-Barrel Gatling",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "30 DPU",
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "N",
+          "cost": 10000,
+          "damage": "9d10",
+          "flavor": "",
+          "notes": "",
+          "range": "2000m",
+          "reliability": "VR",
+          "rof": "100",
+          "shots": "1000",
+          "source": "SW",
+          "weaponType": "Heavy",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Militech 7-Barrel Gatling",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "30 DPU",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "HeavyWeapons",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+        "The original damage notation contains additional or damaged rules; verify it before automation."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "concealability": "ConcealNoHide",
+    "cost": 10000,
+    "damage": "9d10",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 2000,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 100,
+    "shots": 1000,
+    "shotsLeft": 1000,
+    "source": "SW",
+    "weaponType": "Heavy",
+    "weight": null
+  },
+  "type": "weapon"
+}

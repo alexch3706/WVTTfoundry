@@ -1,0 +1,25 @@
+{
+  "_id": "ANIkIU9ON4w2i7q0",
+  "_key": "!items!ANIkIU9ON4w2i7q0",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Undetectable",
+  "system": {
+    "cost": 500,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 0<br><p>Mimics normal bone structure, can pass Scanway</p>",
+    "source": "KCJ",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,118 @@
+{
+  "_id": "tq6022X1imdw7RJo",
+  "_key": "!items!tq6022X1imdw7RJo",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Imported entry is a table fragment, service or ambiguous item identity; verify before using as equipment."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Anti-Armor",
+        "sourceValues": {
+          "cost": 0,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 0
+            }
+          },
+          "flavor": "",
+          "notes": "<b>Category:</b> Ammunition Types<br><p>Double the needle's natural armor piercing qualities. Armor's SP is 1/4 against this attack. 4x cost. Uncommon. Polson: Rounds which carry a drug or poi­ son on the surface or in an internal reservoir. Advanced versions have needles made of water soluble crystals of the toxin or drug. These dissolve on contact with blood. 2x cost plus toxin cost per dose. Uncommon. Exploding: Made of solid explosive or metal with an explosive core. These can be rigged for explosion on impact or on contact with moisture. Impact rounds explode on contact with armor or flesh for 4D6 damage. Moisture rounds are armed by firing and explode on contact with water. They do nor­ mal load damage to armor, exploding only if they penetrate and enter flesh. Once fired, moisture rounds can be triggered by any water source, including sweat, rain, etc. Don't touch undetonated rounds imbedded in armor or surfaces and don't fire these rounds in a rain storm. 5x cost. Uncommon.</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Anti-Armor",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "protectedObject",
+    "automation": {
+      "reasons": [
+        "Imported entry is a table fragment, service or ambiguous item identity; verify before using as equipment."
+      ],
+      "status": "manual"
+    },
+    "cost": 0,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": false,
+    "flavor": "",
+    "notes": "<b>Category:</b> Ammunition Types<br><p>Double the needle's natural armor piercing qualities. Armor's SP is 1/4 against this attack. 4x cost. Uncommon. Polson: Rounds which carry a drug or poi­ son on the surface or in an internal reservoir. Advanced versions have needles made of water soluble crystals of the toxin or drug. These dissolve on contact with blood. 2x cost plus toxin cost per dose. Uncommon. Exploding: Made of solid explosive or metal with an explosive core. These can be rigged for explosion on impact or on contact with moisture. Impact rounds explode on contact with armor or flesh for 4D6 damage. Moisture rounds are armed by firing and explode on contact with water. They do nor­ mal load damage to armor, exploding only if they penetrate and enter flesh. Once fired, moisture rounds can be triggered by any water source, including sweat, rain, etc. Don't touch undetonated rounds imbedded in armor or surfaces and don't fire these rounds in a rain storm. 5x cost. Uncommon.</p>",
+    "source": "CP20",
+    "weight": null
+  },
+  "type": "armor"
+}

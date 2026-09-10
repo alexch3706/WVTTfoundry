@@ -1,0 +1,25 @@
+{
+  "_id": "Xsbp6FypvACKYkET",
+  "_key": "!items!Xsbp6FypvACKYkET",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Dodgeball",
+  "system": {
+    "cost": 440,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1<br><p>+1 to Hand to Hand skill after 30 secs</p>",
+    "source": "Chr1",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

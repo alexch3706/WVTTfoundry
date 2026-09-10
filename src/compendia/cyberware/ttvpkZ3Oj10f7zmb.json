@@ -1,0 +1,25 @@
+{
+  "_id": "ttvpkZ3Oj10f7zmb",
+  "_key": "!items!ttvpkZ3Oj10f7zmb",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Bug Detector",
+  "system": {
+    "cost": 150,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1<br><p>Detects bugs up to 3m. 60% effective</p>",
+    "source": "Chr3",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

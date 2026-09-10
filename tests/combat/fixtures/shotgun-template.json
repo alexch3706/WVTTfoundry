@@ -24,6 +24,9 @@
       "itemUuid": "Item.combatshotgun",
       "snapshot": {
         "damage": "4d6",
+        "accuracy": 0,
+        "shotsLeft": 10,
+        "rof": 2,
         "attackType": "Shotgun",
         "attackSkill": "Rifle",
         "range": 50,
@@ -296,7 +299,7 @@
         "manualResolution": {
           "required": true,
           "reason": "missing-rule-data",
-          "message": "Missing finite measured distance for shotgun spread.\\nWeapon ammo state is unavailable; resolve ammo manually."
+          "message": "Missing finite measured distance for shotgun spread."
         },
         "targets": [
           {
@@ -375,7 +378,7 @@
     },
     {
       "name": "Shotgun missing bracket damage returns manual resolution",
-      "ruleReference": "FNFF Shotgun Pattern (pg.113) - requires trusted drop-off data",
+      "ruleReference": "Item-data preflight: incomplete ammunition, reliability or damage data requires manual resolution before any roll or update.",
       "context": {
         "weapon": {
           "snapshot": {
@@ -392,50 +395,100 @@
             "id": "target-missing-medium-damage",
             "name": "Missing Medium Damage Target",
             "actorUuid": "Actor.missingmedium",
-            "distance": { "value": 15, "units": "m", "source": "template" },
+            "distance": {
+              "value": 15,
+              "units": "m",
+              "source": "template"
+            },
             "tactical": {
               "template": {
                 "templateUuid": "Scene.test.MeasuredTemplate.shotgun",
                 "templateId": "shotgun",
                 "type": "cone",
-                "origin": { "x": 0, "y": 0 },
+                "origin": {
+                  "x": 0,
+                  "y": 0
+                },
                 "targetDistance": 15,
                 "inclusion": "intersected"
               }
             },
-            "snapshot": { 
-              "stats": { "body": { "total": 5 } },
+            "snapshot": {
+              "stats": {
+                "body": {
+                  "total": 5
+                }
+              },
               "hitLocations": {
-                "Head": { "stoppingPower": 0 },
-                "Torso": { "stoppingPower": 0 },
-                "rArm": { "stoppingPower": 0 },
-                "lArm": { "stoppingPower": 0 },
-                "rLeg": { "stoppingPower": 0 },
-                "lLeg": { "stoppingPower": 0 }
+                "Head": {
+                  "stoppingPower": 0
+                },
+                "Torso": {
+                  "stoppingPower": 0
+                },
+                "rArm": {
+                  "stoppingPower": 0
+                },
+                "lArm": {
+                  "stoppingPower": 0
+                },
+                "rLeg": {
+                  "stoppingPower": 0
+                },
+                "lLeg": {
+                  "stoppingPower": 0
+                }
               }
             }
           }
         ]
       },
-      "rolls": [
-        { "id": "attack", "formula": "1d10", "total": 20, "die": { "result": 10 } },
-        { "id": "location", "formula": "1d10", "total": 2, "die": { "result": 2 } }
-      ],
+      "rolls": [],
       "expected": {
+        "targets": [
+          {
+            "hits": [],
+            "manualResolution": {
+              "required": true
+            }
+          }
+        ],
+        "ammo": {
+          "delta": 0
+        },
+        "plannedUpdates": {
+          "itemUpdates": [],
+          "chatStatus": "manual"
+        },
         "manualResolution": {
           "required": true,
           "reason": "missing-rule-data",
-          "message": "Missing shotgun damage formula for medium range.\\nWeapon ammo state is unavailable; resolve ammo manually."
+          "blockedUpdateCategories": [
+            "attacker-ammo",
+            "target-damage",
+            "target-armor",
+            "target-saves"
+          ]
         },
-        "targets": [
+        "chat": {
+          "status": "manual"
+        },
+        "warnings": [
           {
-            "manualResolution": {
-              "required": true,
-              "reason": "missing-rule-data",
-              "message": "Missing shotgun damage formula for medium range."
-            }
+            "code": "item-data-invalid-shotgun-damage",
+            "severity": "warning"
+          },
+          {
+            "code": "item-data-invalid-shotgun-damage",
+            "severity": "warning"
           }
         ]
+      },
+      "expectedPlan": {
+        "actorUpdates": [],
+        "itemUpdates": [],
+        "embeddedItemUpdates": [],
+        "chatStatus": "manual"
       }
     }
   ]

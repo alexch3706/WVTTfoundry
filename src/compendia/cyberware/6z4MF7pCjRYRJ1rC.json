@@ -1,0 +1,25 @@
+{
+  "_id": "6z4MF7pCjRYRJ1rC",
+  "_key": "!items!6z4MF7pCjRYRJ1rC",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Cybervocal \"BoxAlter\"",
+  "system": {
+    "cost": 400,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 1d6+2<br><p>1 option, 1 voice</p>",
+    "source": "I1.3",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

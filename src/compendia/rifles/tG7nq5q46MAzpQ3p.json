@@ -1,0 +1,99 @@
+{
+  "_id": "tG7nq5q46MAzpQ3p",
+  "_key": "!items!tG7nq5q46MAzpQ3p",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "M-99 EVAW rocket/AP effects require confirmation of ammunition-specific rules."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "pdfPage": 51,
+            "section": "3.5",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "6d6AP (12mm R)",
+        "sourceName": "M-99 EVAW",
+        "sourceValues": {
+          "accuracy": "+5",
+          "ammoType": "12mm R",
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "N",
+          "cost": 5000,
+          "damage": "6d6",
+          "flavor": "",
+          "notes": "",
+          "range": "400m",
+          "reliability": "ST",
+          "rof": "2",
+          "shots": "30",
+          "source": "HoB",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "M-99 EVAW",
+  "system": {
+    "accuracy": 5,
+    "ammoType": "12mm rocket",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": true,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "M-99 EVAW rocket/AP effects require confirmation of ammunition-specific rules."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "concealability": "ConcealNoHide",
+    "cost": 5000,
+    "damage": "6d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 400,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 2,
+    "shots": 30,
+    "shotsLeft": 30,
+    "source": "HoB",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

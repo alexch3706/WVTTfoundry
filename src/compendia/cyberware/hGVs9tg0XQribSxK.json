@@ -1,0 +1,25 @@
+{
+  "_id": "hGVs9tg0XQribSxK",
+  "_key": "!items!hGVs9tg0XQribSxK",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Feintware",
+  "system": {
+    "cost": 1000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 2d6<br><p>Slows life signs for 1-6 hrs, 20+ Medtech to tell</p>",
+    "source": "RM",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

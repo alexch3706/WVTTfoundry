@@ -1,0 +1,25 @@
+{
+  "_id": "Uibq9h6WsDVVhGsO",
+  "_key": "!items!Uibq9h6WsDVVhGsO",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Stronger Behaviour Chip",
+  "system": {
+    "cost": 2000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> 1d6/2<br><p>Lock subject into actions for specific stimuli</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

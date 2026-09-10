@@ -1,0 +1,92 @@
+{
+  "_id": "UPWKEfAJLzfLu15X",
+  "_key": "!items!UPWKEfAJLzfLu15X",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Tentacles reduce the host cyberlimb's SP by 10. Select the recipient and apply the modifier to that limb's existing armor."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Tentacles",
+        "sourceValues": {
+          "cost": 600,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2d6<br><p>Splits into 4 tentacles, +5 to grapples, -10 SP</p>",
+          "source": "KCJ",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Tentacles",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Tentacles reduce the host cyberlimb's SP by 10. Select the recipient and apply the modifier to that limb's existing armor."
+      ],
+      "status": "manual"
+    },
+    "cost": 600,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2d6<br><p>Splits into 4 tentacles, +5 to grapples, -10 SP</p>",
+    "source": "KCJ",
+    "weight": null
+  },
+  "type": "cyberware"
+}

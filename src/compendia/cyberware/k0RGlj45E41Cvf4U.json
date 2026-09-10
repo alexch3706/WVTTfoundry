@@ -1,0 +1,25 @@
+{
+  "_id": "k0RGlj45E41Cvf4U",
+  "_key": "!items!k0RGlj45E41Cvf4U",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Diet-Mite",
+  "system": {
+    "cost": 1000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1d6/2<br><p>Screens what you eat passing on what's needed</p>",
+    "source": "LU",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

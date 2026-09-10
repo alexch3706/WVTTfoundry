@@ -1,0 +1,92 @@
+{
+  "_id": "sgWRIEjrLfF7yGRG",
+  "_key": "!items!sgWRIEjrLfF7yGRG",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Inflate reduces the host cyberlimb's SP by 10. Select the recipient and operating state before resolving its protection."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Inflate",
+        "sourceValues": {
+          "cost": 300,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1d6<br><p>Gives apparent BOD 12, -10 SP, +2 Intimidation</p>",
+          "source": "KCJ",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Inflate",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Inflate reduces the host cyberlimb's SP by 10. Select the recipient and operating state before resolving its protection."
+      ],
+      "status": "manual"
+    },
+    "cost": 300,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1d6<br><p>Gives apparent BOD 12, -10 SP, +2 Intimidation</p>",
+    "source": "KCJ",
+    "weight": null
+  },
+  "type": "cyberware"
+}

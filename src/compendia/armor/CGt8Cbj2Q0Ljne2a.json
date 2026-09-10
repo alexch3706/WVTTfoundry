@@ -1,0 +1,124 @@
+{
+  "_id": "CGt8Cbj2Q0Ljne2a",
+  "_key": "!items!CGt8Cbj2Q0Ljne2a",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "SP20 applies to fire only, not ballistic protection."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 82,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 1, 11"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Fireproof Clothing",
+        "sourceValues": {
+          "cost": 65,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 20
+            }
+          },
+          "flavor": "",
+          "notes": "<p>65- 250* Chr 1, 11</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Fireproof Clothing",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "SP20 applies to fire only, not ballistic protection."
+      ],
+      "status": "manual"
+    },
+    "cost": 65,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>65- 250* Chr 1, 11</p>",
+    "source": "Chr 1, 11",
+    "specialStoppingPower": 20,
+    "weight": null
+  },
+  "type": "armor"
+}

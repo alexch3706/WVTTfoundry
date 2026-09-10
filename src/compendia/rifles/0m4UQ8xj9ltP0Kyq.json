@@ -1,0 +1,99 @@
+{
+  "_id": "0m4UQ8xj9ltP0Kyq",
+  "_key": "!items!0m4UQ8xj9ltP0Kyq",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "SOF",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "1d6 (5mm/.22)(B1)",
+        "sourceName": "Militech Ninja",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "B1",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "L",
+          "cost": 650,
+          "damage": "1d6",
+          "flavor": "",
+          "notes": "",
+          "range": "250m",
+          "reliability": "VR",
+          "rof": "3/30",
+          "shots": "30",
+          "source": "SOF",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Militech Ninja",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "5mm/.22",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "bodyMinimum": 1,
+    "concealability": "ConcealLongcoat",
+    "cost": 650,
+    "damage": "1d6",
+    "fireModes": [
+      "SemiAuto",
+      "ThreeRoundBurst",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 250,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 30,
+    "shots": 30,
+    "shotsLeft": 30,
+    "source": "SOF",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

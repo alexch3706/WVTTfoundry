@@ -1,0 +1,25 @@
+{
+  "_id": "n9CCZwVD9MJdz79N",
+  "_key": "!items!n9CCZwVD9MJdz79N",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "SovWear Cyberleg",
+  "system": {
+    "cost": 1500,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 2d6<br><p>30/40 SDP, 6d6 kick, 2 spaces, UR</p>",
+    "source": "SOF",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "J2CfwaWVEJxu0yJ6",
+  "_key": "!items!J2CfwaWVEJxu0yJ6",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Mexican Metals Llama",
+  "system": {
+    "cost": 33000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 100<br><b>Acc/Dec:</b> 50/50<br><b>Crew:</b> 1<br><b>Range:</b> 800<br><b>Passengers:</b> 1<br><b>Cargo:</b> 173kg, 6<br><b>Maneuver:</b> +0<br><b>SDP:</b> 15 (1)<br><b>SP:</b> 1<br><b>Mass:</b> (0) 520kg",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

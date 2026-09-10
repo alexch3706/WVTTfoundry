@@ -84,6 +84,10 @@ export function classifyConformance(source) {
 
   if (cleaned === "" || cleaned === "undefined") return "unknown";
 
+  // Compendium sources retain book codes so their citations remain auditable.
+  if(/^cp20(?=$|[\s,.:])/i.test(cleaned)) return "corebook";
+  if(/^(?:chr\s*[1-4]|sof\s*[12]?|bh|mm|ds|ne|nt|ps|p&s|hottb|hotb|pacrim|pr|lu|es|ws|sw|dm|sf|ld|rbb)(?=$|[\s,.:])/i.test(cleaned)) return "extended";
+
   for (const prefix of corebookPrefixes) {
     if (cleaned.startsWith(prefix)) return "corebook";
   }

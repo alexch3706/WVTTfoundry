@@ -1,0 +1,103 @@
+{
+  "_id": "ZTIO9TSm6lUohgZZ",
+  "_key": "!items!ZTIO9TSm6lUohgZZ",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "Chr2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "4d6 (micromissile)",
+        "sourceName": "MISSILE / ROCKET WEAPONS Urban Missile Launcher",
+        "sourceValues": {
+          "accuracy": "+2",
+          "ammoType": "micromissile",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "L",
+          "cost": 900,
+          "damage": "4d6",
+          "flavor": "",
+          "notes": "",
+          "range": "200m",
+          "reliability": "ST",
+          "rof": "2",
+          "shots": "12",
+          "source": "Chr2",
+          "weaponType": "Heavy",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "MISSILE / ROCKET WEAPONS Urban Missile Launcher",
+  "system": {
+    "accuracy": 2,
+    "ammoType": "micromissile",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "HeavyWeapons",
+    "attackType": "Missile",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealLongcoat",
+    "cost": 900,
+    "damage": "4d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 200,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 2,
+    "shots": 12,
+    "shotsLeft": 12,
+    "source": "Chr2",
+    "weaponType": "Heavy",
+    "weight": null
+  },
+  "type": "weapon"
+}

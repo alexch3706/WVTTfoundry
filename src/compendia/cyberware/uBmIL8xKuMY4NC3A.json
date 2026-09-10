@@ -1,0 +1,25 @@
+{
+  "_id": "uBmIL8xKuMY4NC3A",
+  "_key": "!items!uBmIL8xKuMY4NC3A",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Behind The Ear Cory Implant",
+  "system": {
+    "cost": 1000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 2d6<br><p>As above, but hidden behind ear</p>",
+    "source": "WGF",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

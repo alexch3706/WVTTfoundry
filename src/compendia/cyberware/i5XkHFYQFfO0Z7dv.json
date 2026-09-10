@@ -1,0 +1,25 @@
+{
+  "_id": "i5XkHFYQFfO0Z7dv",
+  "_key": "!items!i5XkHFYQFfO0Z7dv",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "PowerJaw",
+  "system": {
+    "cost": 100,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> +1-2<br><p>Myomer jaw muscles, +2 to bite damage</p>",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,31 @@
+{
+  "_id": "KUfUIWFQNe2lzcHk",
+  "_key": "!items!KUfUIWFQNe2lzcHk",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Cyberlimbed Deck",
+  "ownership": {
+    "VTdezBIy0FQgKDge": 3,
+    "default": 0
+  },
+  "system": {
+    "cost": "3000",
+    "equipped": true,
+    "flavor": "Section: Cyberware p.90 - Built Ins - Basic Deck - Comes with Humanity Loss 1 and needs a Cyberlimb",
+    "name": "Common",
+    "notes": "",
+    "source": "Cyberpunk2020",
+    "weight": "0"
+  },
+  "type": "misc"
+}

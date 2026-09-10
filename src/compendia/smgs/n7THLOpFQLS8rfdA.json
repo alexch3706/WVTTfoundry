@@ -1,0 +1,97 @@
+{
+  "_id": "n7THLOpFQLS8rfdA",
+  "_key": "!items!n7THLOpFQLS8rfdA",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "I2.1",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+3 (10mm)",
+        "sourceName": "Medusa 2000",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "10mm",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "N",
+          "cost": 2500,
+          "damage": "2d6+3",
+          "flavor": "",
+          "notes": "",
+          "range": "200m",
+          "reliability": "VR",
+          "rof": "20",
+          "shots": "40",
+          "source": "I2.1",
+          "weaponType": "SMG",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Medusa 2000",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "10mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Submachinegun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealNoHide",
+    "cost": 2500,
+    "damage": "2d6+3",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 200,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 20,
+    "shots": 40,
+    "shotsLeft": 40,
+    "source": "I2.1",
+    "weaponType": "SMG",
+    "weight": null
+  },
+  "type": "weapon"
+}

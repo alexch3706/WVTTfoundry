@@ -172,10 +172,10 @@
 			"templates": ["common"],
 			"weaponType": "Pistol",
 			"accuracy": 0,
-			"concealability": "P",
-			"availability": "common",
+			"concealability": "ConcealPocket",
+			"availability": "Common",
 			"ammoType": "9mm",
-			"damage": "2d6+1",
+			"damage": "",
 			"rangeDamages": {
 				"pointBlank": "",
 				"close": "",
@@ -183,13 +183,15 @@
 				"far": ""
 			},
 			"ap": false,
-			"shotsLeft": 12,
-			"shots": 12,
-			"rof": 2,
-			"reliability": "ST",
-			"range": 50,
+			"shotsLeft": 0,
+			"shots": 0,
+			"rof": 0,
+			"reliability": "Standard",
+			"range": 0,
 			"attackType": "",
-			"attackSkill": "ref",
+			"attackSkill": "",
+			"meleeDamageType": "",
+			"automation": { "status": "custom", "reasons": [] },
 			"aoe": {
 				"type": "",
 				"value": 0,
@@ -198,36 +200,49 @@
 		},
 		"armor": {
 			"templates": ["common"],
+			"armorRole": "wornArmor",
+			"edgedHalfSP": false,
+			"automation": { "status": "custom", "reasons": [] },
 			"coverage": {
 				"Head": {
 					"stoppingPower": 0,
-					"ablation": 0
+					"ablation": 0,
+					"layer": ""
 				},
 				"Torso": {
 					"stoppingPower": 0,
-					"ablation": 0
+					"ablation": 0,
+					"layer": ""
 				},
 				"lArm": {
 					"stoppingPower": 0,
-					"ablation": 0
+					"ablation": 0,
+					"layer": ""
 				},
 				"rArm": {
 					"stoppingPower": 0,
-					"ablation": 0
+					"ablation": 0,
+					"layer": ""
 				},
 				"lLeg": {
 					"stoppingPower": 0,
-					"ablation": 0
+					"ablation": 0,
+					"layer": ""
 				},
 				"rLeg": {
 					"stoppingPower": 0,
-					"ablation": 0
+					"ablation": 0,
+					"layer": ""
 				}
 			},
 			"encumbrance": 0
 		},
 		"cyberware": {
 			"templates": ["common"],
+			"armorRole": "wornArmor",
+			"automation": { "status": "custom", "reasons": [] },
+			"encumbrance": 0,
+			"edgedHalfSP": false,
 			"surgCode": "N",
 			"humanityCost": "1d6",
 			"cyberwareType": "",

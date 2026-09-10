@@ -1,0 +1,98 @@
+{
+  "_id": "HiRnCljRMveUwbwC",
+  "_key": "!items!HiRnCljRMveUwbwC",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "PB",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "6d6+2 (7.62)(B7)",
+        "sourceName": "Czar AK-47",
+        "sourceValues": {
+          "accuracy": "-1",
+          "ammoType": "B7",
+          "attackType": "Auto",
+          "availability": "E",
+          "concealability": "N",
+          "cost": 350,
+          "damage": "6d6+2",
+          "flavor": "",
+          "notes": "",
+          "range": "450m",
+          "reliability": "ST",
+          "rof": "20",
+          "shots": "30",
+          "source": "PB",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Czar AK-47",
+  "system": {
+    "accuracy": -1,
+    "ammoType": "7.62",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Excellent",
+    "bodyMinimum": 7,
+    "concealability": "ConcealNoHide",
+    "cost": 350,
+    "damage": "6d6+2",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 450,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 20,
+    "shots": 30,
+    "shotsLeft": 30,
+    "source": "PB",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

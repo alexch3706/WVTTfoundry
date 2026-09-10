@@ -1,0 +1,105 @@
+{
+  "_id": "JnTrVIfqpFG87cMi",
+  "_key": "!items!JnTrVIfqpFG87cMi",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Spitfire doubletap variant is listed as 12mm in the reference but .44 Reaper AP in Rough Guide to the UK; select and verify ammunition."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "UK",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "book": "Rough Guide to the UK",
+            "pages": "34",
+            "source": "cyberpunk-wiki",
+            "url": "https://cyberpunk.fandom.com/wiki/Royal_Enfield_Ordnance_Spitfire_12mm_Battle_Pistol"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "4d6+1 (12mm)",
+        "sourceName": "Enfield Spitfire doubletap",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "12mm",
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "J",
+          "cost": 700,
+          "damage": "4d6+1",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "VR",
+          "rof": "2",
+          "shots": "12",
+          "source": "UK",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Enfield Spitfire doubletap",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "12mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Spitfire doubletap variant is listed as 12mm in the reference but .44 Reaper AP in Rough Guide to the UK; select and verify ammunition."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "concealability": "ConcealJacket",
+    "cost": 700,
+    "damage": "4d6+1",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 2,
+    "shots": 12,
+    "shotsLeft": 12,
+    "source": "UK",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

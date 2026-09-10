@@ -1,0 +1,92 @@
+{
+  "_id": "IxC5h4SdFThNnpXa",
+  "_key": "!items!IxC5h4SdFThNnpXa",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Protective cyberware needs a verified location, SP profile, material and applicable REF penalty or special-effect rule."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Cyberjaw",
+        "sourceValues": {
+          "cost": 3000,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> 3d6+2<br><p>T-Rex MA SP 6 metal jaw. 3d6* bite damage</p>",
+          "source": "P2",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Cyberjaw",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Protective cyberware needs a verified location, SP profile, material and applicable REF penalty or special-effect rule."
+      ],
+      "status": "manual"
+    },
+    "cost": 3000,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> 3d6+2<br><p>T-Rex MA SP 6 metal jaw. 3d6* bite damage</p>",
+    "source": "P2",
+    "weight": null
+  },
+  "type": "cyberware"
+}

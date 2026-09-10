@@ -1,0 +1,25 @@
+{
+  "_id": "KUq4snqYZqFUmdrj",
+  "_key": "!items!KUq4snqYZqFUmdrj",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Rodent",
+  "system": {
+    "cost": 1,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M+<br><b>Humanity Loss:</b> ½d6<br><p>Enlarged ears and eyes, button nose, synthskin 1400</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

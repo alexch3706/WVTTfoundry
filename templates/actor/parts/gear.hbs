@@ -23,6 +23,10 @@
     </div>
 </div>
 
+{{#if system.carryWeightUnknown}}
+<p class="hint" role="status">{{CPLocal "CatalogUnknownWeights"}}: {{system.carryWeightUnknown}}</p>
+{{/if}}
+
 {{#if (equals gearTabItems.length 0)}}
     <div class="inactive">{{CPLocal "DragItemsPrompt"}}</div>
 {{/if}}

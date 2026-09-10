@@ -1,0 +1,25 @@
+{
+  "_id": "LL2iCCr2NOSMFKeW",
+  "_key": "!items!LL2iCCr2NOSMFKeW",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Verbal Eyes (Cust. image)",
+  "system": {
+    "cost": 1200,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 5<br><p>4 spaces, Times 2 +</p>",
+    "source": "Chr3",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,92 @@
+{
+  "_id": "28Nqz841hox1KiFJ",
+  "_key": "!items!28Nqz841hox1KiFJ",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "The Franz Kafka Bughouse package includes an exoskeleton. Verify its armor profile and stat changes, avoiding duplicate protection from separate component items."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Franz Kafka Bughouse",
+        "sourceValues": {
+          "cost": 35500,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> CR+<br><b>Humanity Loss:</b> 15d6<br><p>as above, + mandibles, exoskeleton, scratchers</p>",
+          "source": "Chr2",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Franz Kafka Bughouse",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "The Franz Kafka Bughouse package includes an exoskeleton. Verify its armor profile and stat changes, avoiding duplicate protection from separate component items."
+      ],
+      "status": "manual"
+    },
+    "cost": 35500,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR+<br><b>Humanity Loss:</b> 15d6<br><p>as above, + mandibles, exoskeleton, scratchers</p>",
+    "source": "Chr2",
+    "weight": null
+  },
+  "type": "cyberware"
+}

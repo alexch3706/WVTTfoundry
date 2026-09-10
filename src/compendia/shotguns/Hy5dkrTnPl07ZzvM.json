@@ -1,0 +1,120 @@
+{
+  "_id": "Hy5dkrTnPl07ZzvM",
+  "_key": "!items!Hy5dkrTnPl07ZzvM",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Crusher needs its own distance bands: WA -1 and 3d6 to 12m; WA -3 and 1d6+2 to 25m.",
+            "Accuracy is missing or has multiple configurations; select and verify one.",
+            "Shotgun damage is missing a verified point-blank, close, medium or far profile."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "Chr1",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 62,
+            "section": "4.1",
+            "source": "reference-v5"
+          },
+          {
+            "pdfPage": 49,
+            "section": "3.3–3.12",
+            "source": "reference-v5"
+          },
+          {
+            "book": "Chromebook 1",
+            "pages": "42",
+            "source": "cyberpunk-wiki",
+            "url": "https://cyberpunk.fandom.com/wiki/Militech_Crusher_%282020%29"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "3d6 (20ga)(B9) 6 2",
+        "sourceName": "Militech Crusher SSG",
+        "sourceValues": {
+          "accuracy": "-1/-3",
+          "ammoType": null,
+          "attackType": "Autoshotgun",
+          "availability": "C",
+          "concealability": "J",
+          "cost": 450,
+          "damage": "3d6  6 2",
+          "flavor": "",
+          "notes": "",
+          "range": null,
+          "reliability": null,
+          "rof": "12/25m",
+          "shots": "ST",
+          "source": "Chr1",
+          "weaponType": "Shotgun",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Militech Crusher SSG",
+  "system": {
+    "accuracy": null,
+    "ammoType": "20ga buckshot",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Shotgun",
+    "automation": {
+      "reasons": [
+        "Crusher needs its own distance bands: WA -1 and 3d6 to 12m; WA -3 and 1d6+2 to 25m.",
+        "Accuracy is missing or has multiple configurations; select and verify one.",
+        "Shotgun damage is missing a verified point-blank, close, medium or far profile."
+      ],
+      "status": "manual"
+    },
+    "availability": "Common",
+    "bodyMinimum": 9,
+    "concealability": "ConcealJacket",
+    "cost": 450,
+    "damage": "3d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 25,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": "3d6"
+    },
+    "reliability": "Standard",
+    "rof": 2,
+    "shots": 6,
+    "shotsLeft": 6,
+    "source": "Chr1",
+    "weaponType": "Shotgun",
+    "weight": null
+  },
+  "type": "weapon"
+}

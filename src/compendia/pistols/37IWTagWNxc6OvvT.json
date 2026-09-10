@@ -1,0 +1,107 @@
+{
+  "_id": "37IWTagWNxc6OvvT",
+  "_key": "!items!37IWTagWNxc6OvvT",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Special attack effects require referee resolution.",
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Damage is not a supported dice formula; resolve the weapon effect manually.",
+            "The original damage notation contains additional or damaged rules; verify it before automation.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "pdfPage": 55,
+            "section": "3.9",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "Drugs (Needle)",
+        "sourceName": "Avante Needlegun",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "Needle",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "P",
+          "cost": 200,
+          "damage": "D",
+          "flavor": "",
+          "notes": "",
+          "range": "40m",
+          "reliability": "ST",
+          "rof": "2",
+          "shots": "15",
+          "source": "CP20",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Avante Needlegun",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "Needle",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Handgun",
+    "attackType": "Dart",
+    "automation": {
+      "reasons": [
+        "Special attack effects require referee resolution.",
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Damage is not a supported dice formula; resolve the weapon effect manually.",
+        "The original damage notation contains additional or damaged rules; verify it before automation.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealPocket",
+    "cost": 200,
+    "damage": null,
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 40,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 2,
+    "shots": 15,
+    "shotsLeft": 15,
+    "source": "CP20",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "go2PsVhpmZuzIZGN",
+  "_key": "!items!go2PsVhpmZuzIZGN",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "EEC Airjeep",
+  "system": {
+    "cost": 25000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 150<br><b>Acc/Dec:</b> 50/50<br><b>Crew:</b> 1<br><b>Range:</b> 525<br><b>Passengers:</b> 5<br><b>Cargo:</b> 650kg int, 2<br><b>Maneuver:</b> +0<br><b>SDP:</b> 50 (2)<br><b>SP:</b> 15<br><b>Mass:</b> (1) 2 tons",
+    "source": "MM",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "q0DDSJ0rZuzk66tq",
+  "_key": "!items!q0DDSJ0rZuzk66tq",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Wearman",
+  "system": {
+    "cost": 100,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> .5<br><p>Stereo music system</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

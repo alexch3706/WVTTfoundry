@@ -1,0 +1,36 @@
+{
+  "_id": "1IN4C0hFwxKxhceP",
+  "_key": "!items!1IN4C0hFwxKxhceP",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "name": "Xarghis Khan",
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "abbrev": "",
+    "cost": 4000,
+    "cyberwareSubtype": "OPTION",
+    "cyberwareType": "CHIPWARE",
+    "equipped": true,
+    "flags": {},
+    "flavor": "EMP 1; COOL 10; user wants to torture and kill",
+    "humanityCost": "1d6/2",
+    "notes": "",
+    "slots": 0,
+    "source": "When Gravity Fails pg.53",
+    "spaces": 1,
+    "surgCode": "N",
+    "weight": 0
+  },
+  "type": "cyberware"
+}

@@ -165,8 +165,8 @@ function createScriptedRoller(rolls = []) {
     return rollMetadata;
   }
 
-  roller.assertComplete = () => {
-    assert.equal(nextRollIndex, rolls.length, "all scripted rolls should be consumed");
+  roller.assertComplete = (label = "") => {
+    assert.equal(nextRollIndex, rolls.length, `${label}: all scripted rolls should be consumed`);
   };
 
   return roller;
@@ -245,7 +245,7 @@ async function assertSingleShotCases(fixture) {
       };
     }
     const outcome = await resolveCombatAction(context, { structured: true }, roller);
-    roller.assertComplete();
+    roller.assertComplete(`${fixture.name}: ${singleShotCase.name}`);
     const plan = planCombatUpdates(outcome);
     assertObjectIncludes(outcome, singleShotCase.expected, `${fixture.name} ${singleShotCase.name} outcome`);
     if(singleShotCase.expectedPlan) {
@@ -1281,6 +1281,9 @@ async function assertTacticalTargetNormalization() {
         accuracy: 0,
         attackSkill: "Shotgun",
         attackType: "shotgun",
+        range: 50,
+        rof: 2,
+        rangeDamages: { pointBlank: "4d6", close: "4d6", medium: "3d6", far: "2d6" },
         shotsLeft: 2
       }
     },
@@ -2554,6 +2557,7 @@ async function assertZonedCyberwareArmorHitPlanning() {
         shotsLeft: 10,
         rof: 2,
         reliability: "standard",
+        accuracy: 0,
         attackType: "Auto",
         attackSkill: "handgun"
       }
@@ -2660,6 +2664,7 @@ async function assertZonedCyberwareArmorHitPlanning() {
         shotsLeft: 3,
         rof: 2,
         reliability: "standard",
+        accuracy: 0,
         attackType: "Auto",
         attackSkill: "handgun"
       }
@@ -2753,6 +2758,8 @@ async function assertCombatResolverRouting() {
         attackSkill: "rifle",
         shotsLeft: 10,
         rof: 10,
+        damage: "1d6",
+        accuracy: 0,
         attackType: "Auto"
       }
     },
@@ -2780,6 +2787,8 @@ async function assertCombatResolverRouting() {
         attackSkill: "rifle",
         shotsLeft: 10,
         rof: 10,
+        damage: "1d6",
+        accuracy: 0,
         attackType: "Auto"
       }
     },
@@ -2809,6 +2818,8 @@ async function assertCombatResolverRouting() {
         attackSkill: "rifle",
         shotsLeft: 1,
         rof: 10,
+        damage: "1d6",
+        accuracy: 0,
         attackType: "Auto"
       }
     }
@@ -2860,6 +2871,8 @@ async function assertCombatResolverRouting() {
         attackSkill: "rifle",
         shotsLeft: 10,
         rof: 10,
+        damage: "1d6",
+        accuracy: 0,
         attackType: "Auto"
       }
     },
@@ -2960,6 +2973,8 @@ async function assertCombatResolverRouting() {
         attackSkill: "rifle",
         shotsLeft: 10,
         rof: 0,
+        damage: "1d6",
+        accuracy: 0,
         attackType: "Auto"
       }
     }
@@ -2975,6 +2990,8 @@ async function assertCombatResolverRouting() {
         attackSkill: "rifle",
         shotsLeft: 0,
         rof: 10,
+        damage: "1d6",
+        accuracy: 0,
         attackType: "Auto"
       }
     }
@@ -2997,6 +3014,8 @@ async function assertCombatResolverRouting() {
         attackSkill: "rifle",
         shotsLeft: 0,
         rof: 10,
+        damage: "1d6",
+        accuracy: 0,
         attackType: "Auto"
       }
     }

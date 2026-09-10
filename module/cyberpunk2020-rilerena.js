@@ -10,6 +10,8 @@ import { registerSystemSettings, applyVisualEffectSettings } from "./settings.js
 import { registerCombatTurnDeathSaveHook } from "./combat/death-save-turn.js";
 import { registerSuppressiveFireHooks } from "./combat/suppressive-fire-tracker.js";
 import { registerSaveChatListeners } from "./combat/save-chat-listeners.js";
+import { previewCatalogMigration, applyCatalogMigration, registerCatalogMigrationMenu } from "./item/catalog-migration.js";
+import { WORLD_DATA_SCHEMA_VERSION } from "./data-versions.js";
 
 Hooks.once('init', async function () {
 
@@ -20,7 +22,9 @@ Hooks.once('init', async function () {
             CyberpunkItem,
         },
         // A manual migrateworld.
-        migrateWorld: migrations.migrateWorld
+        migrateWorld: migrations.migrateWorld,
+        previewCatalogMigration,
+        applyCatalogMigration
     };
 
     // Define custom Document classes
@@ -35,6 +39,7 @@ Hooks.once('init', async function () {
 
     // Register System Settings
     registerSystemSettings();
+    registerCatalogMigrationMenu();
 
     registerHandlebarsHelpers();
     registerCombatTurnDeathSaveHook();
@@ -60,7 +65,7 @@ Hooks.once("ready", async function() {
     // We do need to try migrating if we haven't run before - as it stands, previous worlds didn't use this setting, or by default had it set to current version
 
     // The version migrations need to begin - if you make a change from 0.1 to 0.2, this should be 0.2
-    const NEEDS_MIGRATION_VERSION = "2.0.0";
+    const NEEDS_MIGRATION_VERSION = WORLD_DATA_SCHEMA_VERSION;
     console.log("CYBERPUNK: Last migrated in version: " + lastMigrateVersion);
     const needsMigration = foundry.utils.isNewerVersion(NEEDS_MIGRATION_VERSION, lastMigrateVersion);
     if ( !needsMigration ) return;

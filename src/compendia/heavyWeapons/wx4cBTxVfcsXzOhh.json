@@ -1,0 +1,103 @@
+{
+  "_id": "wx4cBTxVfcsXzOhh",
+  "_key": "!items!wx4cBTxVfcsXzOhh",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Heavy-weapon ammunition and damage against personnel need source confirmation."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "MM",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "8d10 (20-25mm)",
+        "sourceName": "20-25mm Autocannon",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "20-25mm",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "N",
+          "cost": 3000,
+          "damage": "8d10",
+          "flavor": "",
+          "notes": "",
+          "range": "500m",
+          "reliability": "VR",
+          "rof": "10",
+          "shots": "100",
+          "source": "MM",
+          "weaponType": "Heavy",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "20-25mm Autocannon",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "20-25mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "HeavyWeapons",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Heavy-weapon ammunition and damage against personnel need source confirmation."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealNoHide",
+    "cost": 3000,
+    "damage": "8d10",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 500,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 10,
+    "shots": 100,
+    "shotsLeft": 100,
+    "source": "MM",
+    "weaponType": "Heavy",
+    "weight": null
+  },
+  "type": "weapon"
+}

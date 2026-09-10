@@ -1,0 +1,25 @@
+{
+  "_id": "6vzrQneu8PxzA4qV",
+  "_key": "!items!6vzrQneu8PxzA4qV",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Humanisaurus Rex",
+  "system": {
+    "cost": 16000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> 9d6<br><p>Dragon MA+ Short muzzle, fangs, tail, scales</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

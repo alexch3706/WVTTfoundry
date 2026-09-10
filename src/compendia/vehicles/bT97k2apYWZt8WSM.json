@@ -1,0 +1,25 @@
+{
+  "_id": "bT97k2apYWZt8WSM",
+  "_key": "!items!bT97k2apYWZt8WSM",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Imperial Metro Agriculture Nomad",
+  "system": {
+    "cost": 51000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 75<br><b>Acc/Dec:</b> 15/40<br><b>Crew:</b> 1<br><b>Range:</b> 300<br><b>Passengers:</b> 2<br><b>Cargo:</b> 1056kg, 11<br><b>Maneuver:</b> -3<br><b>SDP:</b> 80 (4)<br><b>SP:</b> 20<br><b>Mass:</b> (1) 3200kg",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

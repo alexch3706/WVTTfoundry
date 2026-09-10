@@ -1,0 +1,31 @@
+{
+  "_id": "idp2HvxT9sUCBVcP",
+  "_key": "!items!idp2HvxT9sUCBVcP",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Selling – Other Organs – Poor Condition",
+  "ownership": {
+    "VTdezBIy0FQgKDge": 3,
+    "default": 0
+  },
+  "system": {
+    "cost": "100",
+    "equipped": true,
+    "flavor": "Section: Trauma Team p.120 Price Range 100-150",
+    "name": "Common",
+    "notes": "",
+    "source": "Cyberpunk2020",
+    "weight": "0"
+  },
+  "type": "misc"
+}

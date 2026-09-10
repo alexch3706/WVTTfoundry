@@ -1,0 +1,124 @@
+{
+  "_id": "b437d6ppQ4OBgvBT",
+  "_key": "!items!b437d6ppQ4OBgvBT",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Choose torso armor or leg pads; the source row contains two different items."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 82,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 1, 59"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Uniware Torso Armor/Legpads (SP 10)",
+        "sourceValues": {
+          "cost": 60,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 10
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 10
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 10
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 10
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 10
+            }
+          },
+          "flavor": "",
+          "notes": "",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Uniware Torso Armor/Legpads (SP 10)",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Choose torso armor or leg pads; the source row contains two different items."
+      ],
+      "status": "manual"
+    },
+    "cost": 60,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": true,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "",
+    "source": "Chr 1, 59",
+    "specialStoppingPower": 10,
+    "weight": null
+  },
+  "type": "armor"
+}

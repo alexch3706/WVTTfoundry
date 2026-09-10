@@ -1,0 +1,25 @@
+{
+  "_id": "saOJZHgSLQnelsAK",
+  "_key": "!items!saOJZHgSLQnelsAK",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Lockpick",
+  "system": {
+    "cost": 50,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> .5<br><p>Pick for mechanical locks</p>",
+    "source": "Chr1",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

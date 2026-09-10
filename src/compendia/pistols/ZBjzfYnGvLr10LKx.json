@@ -1,0 +1,103 @@
+{
+  "_id": "ZBjzfYnGvLr10LKx",
+  "_key": "!items!ZBjzfYnGvLr10LKx",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Damage is not a supported dice formula; resolve the weapon effect manually.",
+            "The original damage notation contains additional or damaged rules; verify it before automation."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "Chr1",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "1d6+1* (4mm)",
+        "sourceName": "Malorian Hvy Flechette",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "4mm",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "J",
+          "cost": 595,
+          "damage": "1d6+1*",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "ST",
+          "rof": "2",
+          "shots": "25",
+          "source": "Chr1",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Malorian Hvy Flechette",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "4mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Damage is not a supported dice formula; resolve the weapon effect manually.",
+        "The original damage notation contains additional or damaged rules; verify it before automation."
+      ],
+      "status": "manual"
+    },
+    "availability": "Common",
+    "concealability": "ConcealJacket",
+    "cost": 595,
+    "damage": null,
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 2,
+    "shots": 25,
+    "shotsLeft": 25,
+    "source": "Chr1",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

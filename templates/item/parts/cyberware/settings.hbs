@@ -6,7 +6,7 @@
         
         <label for="system.humanityCost">{{CPLocal "HumanityCostRoll"}}</label>
         <span class="flex-pad"></span>
-        <input class="textsize" name="system.humanityCost" S
+        <input class="textsize" name="system.humanityCost"
             type="text" value="{{system.humanityCost}}"/>
         <div class="humanity-cost-roll field-image action" style="background-image: url('../../../icons/svg/d10-grey.svg')"></div>
     </div>
@@ -40,6 +40,17 @@
     </div>
     {{> (template "fields/number") label="SDP" edit="system.sdp"}}
     
+    <details class="cyberware-protection-editor">
+        <summary>{{CPLocal "CyberwareProtection"}}</summary>
+        {{> (template "fields/number") label="SPFull" edit="system.stoppingPower"}}
+        {{> (template "fields/number") label="Ablate" edit="system.ablation"}}
+        {{#unless hasStructuredCoverage}}
+        <button type="button" class="enable-cyberware-coverage">{{CPLocal "ConfigureCyberwareCoverage"}}</button>
+        {{/unless}}
+        <fieldset class="cyberware-coverage-fields" {{#unless hasStructuredCoverage}}disabled{{/unless}}>
+            {{> (template "item/parts/armor/settings")}}
+        </fieldset>
+    </details>
     <hr>
     {{> (template "fields/boolean") label="Is Full Body Conversion" edit="system.isFBC"}}
     {{#if system.isFBC}}

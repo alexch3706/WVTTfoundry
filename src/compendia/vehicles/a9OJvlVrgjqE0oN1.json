@@ -1,0 +1,25 @@
+{
+  "_id": "a9OJvlVrgjqE0oN1",
+  "_key": "!items!a9OJvlVrgjqE0oN1",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Mi-50",
+  "system": {
+    "cost": 650000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 225<br><b>Acc/Dec:</b> 50/50<br><b>Crew:</b> 1<br><b>Range:</b> 800<br><b>Passengers:</b> 6<br><b>Cargo:</b> 1450kg int, 20<br><b>Maneuver:</b> +0<br><b>SDP:</b> 110 (5)<br><b>SP:</b> 45<br><b>Mass:</b> (2) 4,400kg",
+    "source": "MM",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

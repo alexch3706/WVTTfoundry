@@ -1,0 +1,96 @@
+{
+  "_id": "dTeL94zz5XeX2VMl",
+  "_key": "!items!dTeL94zz5XeX2VMl",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "UK",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "6d6+2 (7.62 C)(B4)",
+        "sourceName": "WA 2001 Sniper Rifle",
+        "sourceValues": {
+          "accuracy": "+3",
+          "ammoType": "B4",
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "N",
+          "cost": 900,
+          "damage": "6d6+2",
+          "flavor": "",
+          "notes": "",
+          "range": "1000m",
+          "reliability": "VR",
+          "rof": "1",
+          "shots": "10",
+          "source": "UK",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "WA 2001 Sniper Rifle",
+  "system": {
+    "accuracy": 3,
+    "ammoType": "7.62 C",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Rare",
+    "bodyMinimum": 4,
+    "concealability": "ConcealNoHide",
+    "cost": 900,
+    "damage": "6d6+2",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 1000,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 1,
+    "shots": 10,
+    "shotsLeft": 10,
+    "source": "UK",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

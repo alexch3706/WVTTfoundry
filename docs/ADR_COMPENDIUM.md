@@ -1,27 +1,39 @@
-# Architecture Decision Records (ADR): Cyberpunk 2020 Canonical Compendium
+# Compendium architecture decisions
 
-This document records the architectural decisions made during the parsing and creation of the new canonical VTT compendium for the Cyberpunk 2020 Foundry VTT system (`cyberpunk2020-rilerena`).
+Updated 2026-09-10. These decisions supersede the original private PDF importer.
+That importer used name hashes, retained composite ROF in a numeric field and
+discarded some mechanical annotations. Its output was not lossless.
 
-## ADR 1: Idempotency & Deterministic IDs
-**Context:** Foundry VTT requires a 16-character alphanumeric `_id` for each item. Generating random IDs on every build breaks existing world links and macros.
-**Decision:** We use a deterministic hash (SHA-256) of the item's canonical name, taking the first 16 valid base62 characters. 
-**Consequences:** Re-running the compendium builder script will seamlessly update items in place without breaking references. If an item name changes, its ID will change.
+1. **Stable identity.** Existing pack IDs, paths and document `_id` values are
+   fixed in `src/compendia/manifest.json`. Renaming never regenerates an ID.
 
-## ADR 2: Weapon Firing Modes & Composite ROF
-**Context:** Cyberpunk 2020 rules for firing modes (Single, 3-Round Burst, Full Auto) are derived from the Rate of Fire (ROF) and Weapon Type. Later sourcebooks introduced composite ROF (e.g., `1/3/30`). The `cyberpunk2020-rilerena` system does not support discrete boolean toggles for firing modes.
-**Decision:** We extract the exact ROF string from the Reference Book tables (including composite formats like `1/3/30`) and map it directly to `data.rof`. We do not attempt to construct a custom `firingModes` array. Any narrative overrides (e.g., "Weapon cannot fire burst") will be pushed to the `notes` field.
-**Consequences:** Players and Game Masters must interpret the ROF string according to standard FNFF rules, but the data fidelity is 100% accurate to the sourcebooks.
+2. **Reviewable build inputs.** Canonical JSON is checked in. Original imported
+   fields are retained in catalog flags. Reviewed overrides and pure normalizers
+   generate the runtime fields; LevelDB packs are verified build artifacts.
 
-## ADR 3: Source Code Tracking
-**Context:** We want to track which rulebook an item originates from (e.g., `CP20` for Core Rulebook, `Chr1` for Chromebook 1).
-**Decision:** The source abbreviation is extracted and placed into `data.source`. For items from the Gear and Ammo tables where the Reference Book omitted a source column, the source defaults to `CP20`.
-**Consequences:** Users can accurately filter weapons, cyberware, and vehicles by sourcebook.
+3. **Explicit mechanics.** Numeric range, capacity and ROF are distinct from
+   original table notation. `fireModes` controls available modes. Damage bands,
+   skill IDs, AP, armor material, EV and coverage are validated by the same pure
+   contract used by runtime preflight. Unsupported variations retain their source
+   evidence and require manual resolution.
 
-## ADR 4: Rich Data Preservation via Notes
-**Context:** Our raw parsing extracted detailed parameters not natively supported by the VTT schema (e.g., Surgery Code and Humanity Loss for Cyberware, ACC/DEC and Passengers for Vehicles).
-**Decision:** Any field from the canonical JSON that does not map 1:1 to the VTT item schema is formatted as HTML text and appended to the item's `data.notes` or `data.flavor`.
-**Consequences:** Zero data loss during VTT migration. All mechanical stats are accessible in the UI.
+4. **Definitions versus state.** Offline normalization may initialize new
+   compendium ammunition from verified capacity. Updating an owned Item never
+   resets ammunition, equipped state, armor damage, humanity loss or limb state.
+   Three-way merging preserves customized definitions and reports conflicts.
 
-## ADR 5: Subdirectory Mapping
-**Context:** The private compendium source pipeline originally used messy, manually created folders (`pistols`, `smgs`, `assault-rifles`, etc.).
-**Decision:** The private builder routes items into unified directories before producing the checked-in Foundry `packs/` artifacts. The source pipeline and raw JSON inputs are not part of the public repository.
+5. **Honest unknowns.** Missing mechanics do not receive plausible default
+   damage, range or ammunition. Manual records list the unresolved rules.
+   Placeholder weights become unknown rather than being presented as measurements.
+
+6. **Provenance.** Source codes, reference pages and secondary-source links are
+   tracked with corrections. Sourcebook PDFs and extracted prose stay outside
+   Git and releases. Secondary-source contradictions remain review items.
+
+7. **Storage and semantics are separate checks.** V14 envelope/LevelDB tests
+   remain mandatory. Catalog tests additionally validate every ready record,
+   block unsafe manual records, preserve identities, check idempotence and compare
+   the checked-in JSON with every compiled pack document.
+
+See [catalog-data-quality.md](catalog-data-quality.md) for the editing workflow,
+world update procedure and current limitations.

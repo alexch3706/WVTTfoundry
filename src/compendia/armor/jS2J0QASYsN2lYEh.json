@@ -1,0 +1,119 @@
+{
+  "_id": "jS2J0QASYsN2lYEh",
+  "_key": "!items!jS2J0QASYsN2lYEh",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 82,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "P&S, 39"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Police Issue Patrol Armor",
+        "sourceValues": {
+          "cost": 900,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 20
+            }
+          },
+          "flavor": "",
+          "notes": "<p>900 P&S, 39</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Police Issue Patrol Armor",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 900,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 20
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 15
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 18
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 15
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "soft",
+        "stoppingPower": 18
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 2,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>900 P&S, 39</p>",
+    "source": "P&S, 39",
+    "weight": null
+  },
+  "type": "armor"
+}

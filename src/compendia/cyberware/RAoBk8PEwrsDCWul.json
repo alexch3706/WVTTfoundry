@@ -1,0 +1,25 @@
+{
+  "_id": "RAoBk8PEwrsDCWul",
+  "_key": "!items!RAoBk8PEwrsDCWul",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "CyberMaw & Tongue Hand",
+  "system": {
+    "cost": 3700,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 6d6<br><p>as above, needs cyberarm, as HW Cybersnake</p>",
+    "source": "I2.2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

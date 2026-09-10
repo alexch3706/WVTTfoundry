@@ -1,0 +1,25 @@
+{
+  "_id": "G2ZHlA2I5cYbJZxd",
+  "_key": "!items!G2ZHlA2I5cYbJZxd",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Micro-torpedo Launcher",
+  "system": {
+    "cost": 900,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2d6<br><p>Underwater version of mini-missiles, 4d6 damage</p>",
+    "source": "SA",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

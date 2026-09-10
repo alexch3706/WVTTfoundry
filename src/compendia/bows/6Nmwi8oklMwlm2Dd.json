@@ -1,0 +1,99 @@
+{
+  "_id": "6Nmwi8oklMwlm2Dd",
+  "_key": "!items!6Nmwi8oklMwlm2Dd",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "SOF2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "6d6 (60/30kg)",
+        "sourceName": "Eagletech \"Tigercat\"",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "60/30kg",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "N",
+          "cost": 500,
+          "damage": "6d6",
+          "flavor": "",
+          "notes": "",
+          "range": "150m",
+          "reliability": "VR",
+          "rof": "1",
+          "shots": "12",
+          "source": "SOF2",
+          "weaponType": "Exotic",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Eagletech \"Tigercat\"",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "60/30kg",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Archery",
+    "attackType": "Archer",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealNoHide",
+    "cost": 500,
+    "damage": "6d6",
+    "fireModes": [],
+    "flavor": "",
+    "notes": "",
+    "range": 150,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 1,
+    "shots": 12,
+    "shotsLeft": 12,
+    "source": "SOF2",
+    "weaponType": "Exotic",
+    "weight": null
+  },
+  "type": "weapon"
+}

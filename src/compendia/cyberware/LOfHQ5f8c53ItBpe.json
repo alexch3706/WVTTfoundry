@@ -1,0 +1,25 @@
+{
+  "_id": "LOfHQ5f8c53ItBpe",
+  "_key": "!items!LOfHQ5f8c53ItBpe",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Digital Camera",
+  "system": {
+    "cost": 300,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> .5<br><p>Shoots up to 20 images (2 spaces)</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

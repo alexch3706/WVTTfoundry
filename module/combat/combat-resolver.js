@@ -4,6 +4,7 @@ import { isCorebookFidelityEnabled } from "./settings-helpers.js";
 import { classifyAttackTypeSupport } from "./conformance-helpers.js";
 import { COMBAT_WARNING_SEVERITY, MANUAL_RESOLUTION_REASON, COMBAT_CHAT_STATUS } from "./combat-outcome.js";
 import { buildAttackDieEntryRoller } from "./attack-die-entry.js";
+import { preflightCombatItemData } from "./item-preflight.js";
 
 /**
  * Top-level combat resolver shell.
@@ -66,6 +67,8 @@ export async function resolveCombatAction(context, options = {}, roller = undefi
     : baseRoller;
 
   if(options.structured === true) {
+    const itemDataIssue = preflightCombatItemData(context);
+    if (itemDataIssue) return itemDataIssue;
     if(canResolveAutoshotgunFullAutoContext(context, resolvedRoller)) {
       return await resolveAutoshotgunFullAutoAttack(context, options, resolvedRoller);
     }
@@ -74,7 +77,11 @@ export async function resolveCombatAction(context, options = {}, roller = undefi
     if (isCorebookFidelityEnabled(context) && context?.action?.type === "ranged") {
       const rawAttackType = context?.weapon?.snapshot?.attackType;
       const support = classifyAttackTypeSupport(rawAttackType);
-      if (support === "manual" || support === "partial" || support === "unknown") {
+      const verifiedAutoshotgunShell = String(rawAttackType).toLowerCase() === "autoshotgun"
+        && context.weapon.snapshot.automation?.status === "ready"
+        && context.weapon.snapshot.fireModes?.includes("SemiAuto")
+        && String(context.action.fireMode).toLowerCase() === "semiauto";
+      if (support === "manual" || (support === "partial" && !verifiedAutoshotgunShell) || support === "unknown") {
         return buildManualExoticOutcome(context, support);
       }
     }
@@ -187,7 +194,7 @@ function validateSupportedRangedContext(context, roller) {
   }
 
   if(fireMode === "semiauto" && targets.length !== 1) {
-    const isShotgun = String(context.weapon?.snapshot?.attackType || "").toLowerCase().trim() === "shotgun";
+    const isShotgun = ["shotgun", "autoshotgun"].includes(String(context.weapon?.snapshot?.attackType || "").toLowerCase().trim());
     if (!isShotgun) {
       return buildManualRangedOutcome(context, "Semi-auto attacks require exactly one target; resolve multiple targets as separate attacks.", ["target-selection", "target-damage", "target-armor", "target-saves"]);
     }
@@ -226,7 +233,7 @@ function isEmptyShotgunZoneOnlyAttack(context) {
   if(String(context?.action?.fireMode || "").toLowerCase() !== "semiauto") {
     return false;
   }
-  if(String(context?.weapon?.snapshot?.attackType || "").toLowerCase().trim() !== "shotgun") {
+  if(!["shotgun", "autoshotgun"].includes(String(context?.weapon?.snapshot?.attackType || "").toLowerCase().trim())) {
     return false;
   }
 

@@ -1,0 +1,25 @@
+{
+  "_id": "IszjQsuyh2CyFojt",
+  "_key": "!items!IszjQsuyh2CyFojt",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Flare",
+  "system": {
+    "cost": 200,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2<br><p>150m altitude, 25m diameter (15eb)</p>",
+    "source": "Chr3",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

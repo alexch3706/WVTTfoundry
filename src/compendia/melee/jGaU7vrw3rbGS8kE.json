@@ -1,0 +1,103 @@
+{
+  "_id": "jGaU7vrw3rbGS8kE",
+  "_key": "!items!jGaU7vrw3rbGS8kE",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Damage is not a supported dice formula; resolve the weapon effect manually.",
+            "The original damage notation contains additional or damaged rules; verify it before automation.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "ET",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+1 -",
+        "sourceName": "Flexible Rubber Baton",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": null,
+          "attackType": "Melee",
+          "availability": "C",
+          "concealability": "J",
+          "cost": 15,
+          "damage": "2d6+1 -",
+          "flavor": "",
+          "notes": "",
+          "range": "1m",
+          "reliability": null,
+          "rof": "-",
+          "shots": "-",
+          "source": "ET",
+          "weaponType": "Melee",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Flexible Rubber Baton",
+  "system": {
+    "accuracy": 0,
+    "ammoType": null,
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Melee",
+    "attackType": "Melee",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Damage is not a supported dice formula; resolve the weapon effect manually.",
+        "The original damage notation contains additional or damaged rules; verify it before automation.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Common",
+    "concealability": "ConcealJacket",
+    "cost": 15,
+    "damage": null,
+    "fireModes": [],
+    "flavor": "",
+    "notes": "",
+    "range": 1,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": null,
+    "rof": null,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "ET",
+    "weaponType": "Melee",
+    "weight": null
+  },
+  "type": "weapon"
+}

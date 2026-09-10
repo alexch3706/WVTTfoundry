@@ -1,0 +1,25 @@
+{
+  "_id": "H2beU03vxtj1x2Yq",
+  "_key": "!items!H2beU03vxtj1x2Yq",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Akira Cyberbike",
+  "system": {
+    "cost": 8750,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 130<br><b>Acc/Dec:</b> 18/30<br><b>Crew:</b> 1<br><b>Range:</b> 400<br><b>Passengers:</b> 0<br><b>Cargo:</b> 16kg<br><b>Maneuver:</b> +2<br><b>SDP:</b> 25 (1)<br><b>SP:</b> 0<br><b>Mass:</b> 50kg",
+    "source": "CGen",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

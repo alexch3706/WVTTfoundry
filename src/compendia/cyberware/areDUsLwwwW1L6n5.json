@@ -1,0 +1,25 @@
+{
+  "_id": "areDUsLwwwW1L6n5",
+  "_key": "!items!areDUsLwwwW1L6n5",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Rebreather/Enhanced Lungs",
+  "system": {
+    "cost": 700,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 1d6+1<br><p>Can hold breath for 15 mins</p>",
+    "source": "Chr1",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

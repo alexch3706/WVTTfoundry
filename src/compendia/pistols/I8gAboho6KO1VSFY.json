@@ -1,0 +1,95 @@
+{
+  "_id": "I8gAboho6KO1VSFY",
+  "_key": "!items!I8gAboho6KO1VSFY",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CP13",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+1 (9mm C)",
+        "sourceName": "Glock 17",
+        "sourceValues": {
+          "accuracy": "+2",
+          "ammoType": "9mm C",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "J",
+          "cost": 150,
+          "damage": "2d6+1",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "VR",
+          "rof": "2",
+          "shots": "17",
+          "source": "CP13",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Glock 17",
+  "system": {
+    "accuracy": 2,
+    "ammoType": "9mm C",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "concealability": "ConcealJacket",
+    "cost": 150,
+    "damage": "2d6+1",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 2,
+    "shots": 17,
+    "shotsLeft": 17,
+    "source": "CP13",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

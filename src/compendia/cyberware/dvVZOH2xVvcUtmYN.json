@@ -1,0 +1,25 @@
+{
+  "_id": "dvVZOH2xVvcUtmYN",
+  "_key": "!items!dvVZOH2xVvcUtmYN",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Quick Change Mounts",
+  "system": {
+    "cost": 200,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2<br><p>Rifles (2), Hvy.Weapons (3) can be mounted</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

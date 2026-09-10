@@ -1,0 +1,114 @@
+{
+  "_id": "Xq351oM6S4kA1Mpj",
+  "_key": "!items!Xq351oM6S4kA1Mpj",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Weapon accuracy depends on fire mode: WA 0 for closed-bolt single shots; WA -1 for open-bolt burst or automatic fire. Resolve this mode-dependent accuracy manually."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "CP20",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 49,
+            "section": "3.3",
+            "source": "reference-v5"
+          },
+          {
+            "book": "Blackhand's Street Weapons 2020",
+            "note": "WA 0 applies only to closed-bolt single shots, not to the three-round-burst or automatic modes.",
+            "pages": "20",
+            "source": "cyberpunk-wiki",
+            "url": "https://cyberpunk.fandom.com/wiki/Sternmeyer_SMG-21_%282020%29"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "3d6 (11mm)",
+        "sourceName": "Sternmeyer SMG 21",
+        "sourceValues": {
+          "accuracy": "-1/0",
+          "ammoType": "11mm",
+          "attackType": "Auto",
+          "availability": "E",
+          "concealability": "L",
+          "cost": 500,
+          "damage": "3d6",
+          "flavor": "",
+          "notes": "",
+          "range": "200m",
+          "reliability": "VR",
+          "rof": "3/15",
+          "shots": "30",
+          "source": "CP20",
+          "weaponType": "SMG",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Sternmeyer SMG 21",
+  "system": {
+    "accuracy": null,
+    "ammoType": "11mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Submachinegun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Weapon accuracy depends on fire mode: WA 0 for closed-bolt single shots; WA -1 for open-bolt burst or automatic fire. Resolve this mode-dependent accuracy manually."
+      ],
+      "status": "manual"
+    },
+    "availability": "Excellent",
+    "concealability": "ConcealLongcoat",
+    "cost": 500,
+    "damage": "3d6",
+    "fireModes": [
+      "SemiAuto",
+      "ThreeRoundBurst",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 200,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 15,
+    "shots": 30,
+    "shotsLeft": 30,
+    "source": "CP20",
+    "weaponType": "SMG",
+    "weight": null
+  },
+  "type": "weapon"
+}

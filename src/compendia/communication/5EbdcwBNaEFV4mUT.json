@@ -1,0 +1,31 @@
+{
+  "_id": "5EbdcwBNaEFV4mUT",
+  "_key": "!items!5EbdcwBNaEFV4mUT",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Advanced Communication Suitcase with short-wave radio",
+  "ownership": {
+    "VTdezBIy0FQgKDge": 3,
+    "default": 0
+  },
+  "system": {
+    "cost": 8800,
+    "equipped": true,
+    "flavor": "Section: Electronics. ETC. p.4",
+    "name": "Common",
+    "notes": "",
+    "source": "Chromebook I",
+    "weight": 0
+  },
+  "type": "misc"
+}

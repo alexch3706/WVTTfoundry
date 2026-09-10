@@ -1,0 +1,25 @@
+{
+  "_id": "He7ib31DMgWRXBxh",
+  "_key": "!items!He7ib31DMgWRXBxh",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Speeding Bullet Legs",
+  "system": {
+    "cost": 4500,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CRx2<br><b>Humanity Loss:</b> 4d6<br><p>MA 16, leap 10m, 1 option space left per leg</p>",
+    "source": "SOF",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

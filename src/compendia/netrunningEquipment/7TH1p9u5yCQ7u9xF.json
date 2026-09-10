@@ -1,0 +1,31 @@
+{
+  "_id": "7TH1p9u5yCQ7u9xF",
+  "_key": "!items!7TH1p9u5yCQ7u9xF",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Keyboard",
+  "ownership": {
+    "VTdezBIy0FQgKDge": 3,
+    "default": 0
+  },
+  "system": {
+    "cost": "100",
+    "equipped": true,
+    "flavor": "Section: DataSystems .p.70",
+    "name": "Common",
+    "notes": "",
+    "source": "Cyberpunk2020",
+    "weight": "0"
+  },
+  "type": "misc"
+}

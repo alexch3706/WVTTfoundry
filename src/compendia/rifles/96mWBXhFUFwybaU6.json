@@ -1,0 +1,103 @@
+{
+  "_id": "96mWBXhFUFwybaU6",
+  "_key": "!items!96mWBXhFUFwybaU6",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Special attack effects require referee resolution.",
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "pdfPage": 55,
+            "section": "3.9",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "3d6",
+        "sourceName": "2 Shot Capacitor Laser",
+        "sourceValues": {
+          "accuracy": "+3",
+          "ammoType": null,
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "N",
+          "cost": 800,
+          "damage": "3d6",
+          "flavor": "",
+          "notes": "",
+          "range": "10m",
+          "reliability": "ST",
+          "rof": "1",
+          "shots": "2",
+          "source": "CP20",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "2 Shot Capacitor Laser",
+  "system": {
+    "accuracy": 3,
+    "ammoType": null,
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Rifle",
+    "attackType": "Laser",
+    "automation": {
+      "reasons": [
+        "Special attack effects require referee resolution.",
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "concealability": "ConcealNoHide",
+    "cost": 800,
+    "damage": "3d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 10,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 1,
+    "shots": 2,
+    "shotsLeft": 2,
+    "source": "CP20",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

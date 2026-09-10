@@ -1,0 +1,25 @@
+{
+  "_id": "d5KiyAmMMfofK1Nw",
+  "_key": "!items!d5KiyAmMMfofK1Nw",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Dainamax Grapplefist",
+  "system": {
+    "cost": 1050,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2d6<br><p>50m cable, 2 spaces, 2d6+2 crush</p>",
+    "source": "PAC",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

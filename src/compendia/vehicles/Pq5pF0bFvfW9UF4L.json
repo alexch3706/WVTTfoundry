@@ -1,0 +1,25 @@
+{
+  "_id": "Pq5pF0bFvfW9UF4L",
+  "_key": "!items!Pq5pF0bFvfW9UF4L",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Samson Marine Tech \"Hunter\"",
+  "system": {
+    "cost": 100000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 50<br><b>Acc/Dec:</b> 11/21<br><b>Crew:</b> 3<br><b>Range:</b> 4000<br><b>Passengers:</b> 15<br><b>Cargo:</b> 250m 3<br><b>Maneuver:</b> +0<br><b>SDP:</b> 500 (25)<br><b>SP:</b> 0<br><b>Mass:</b> 500 tons",
+    "source": "P3",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

@@ -1,0 +1,99 @@
+{
+  "_id": "gwxNSd0EyzEg8mgW",
+  "_key": "!items!gwxNSd0EyzEg8mgW",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CP20",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 57,
+            "section": "3.11",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "3d6 -",
+        "sourceName": "Nunchaku",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": null,
+          "attackType": "Melee",
+          "availability": "C",
+          "concealability": "L",
+          "cost": 15,
+          "damage": "3d6 -",
+          "flavor": "",
+          "notes": "",
+          "range": "1m",
+          "reliability": null,
+          "rof": "-",
+          "shots": "-",
+          "source": "CP20",
+          "weaponType": "Melee",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Nunchaku",
+  "system": {
+    "accuracy": 0,
+    "ammoType": null,
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Melee",
+    "attackType": "Melee",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "concealability": "ConcealLongcoat",
+    "cost": 15,
+    "damage": "3d6",
+    "fireModes": [],
+    "flavor": "",
+    "meleeDamageType": "blunt",
+    "notes": "",
+    "range": 1,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": null,
+    "rof": null,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "CP20",
+    "weaponType": "Melee",
+    "weight": null
+  },
+  "type": "weapon"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "QVDE3ZyY2Fjt1P3q",
+  "_key": "!items!QVDE3ZyY2Fjt1P3q",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Artificial Shoulder Mount",
+  "system": {
+    "cost": 1500,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 2d6<br><p>Mount up to 2 extra arms. 25 SDP</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

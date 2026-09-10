@@ -1,0 +1,92 @@
+{
+  "_id": "emCenhO2a28jOFN5",
+  "_key": "!items!emCenhO2a28jOFN5",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Protective cyberware needs a verified location, SP profile, material and applicable REF penalty or special-effect rule."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Reactive Body Plating",
+        "sourceValues": {
+          "cost": 6000,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 1d6<br><p>Detects laser & smart sights, REF>10 dodge</p>",
+          "source": "SOF2",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Reactive Body Plating",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Protective cyberware needs a verified location, SP profile, material and applicable REF penalty or special-effect rule."
+      ],
+      "status": "manual"
+    },
+    "cost": 6000,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 1d6<br><p>Detects laser & smart sights, REF>10 dodge</p>",
+    "source": "SOF2",
+    "weight": null
+  },
+  "type": "cyberware"
+}

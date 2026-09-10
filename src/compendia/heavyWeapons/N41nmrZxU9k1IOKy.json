@@ -1,0 +1,103 @@
+{
+  "_id": "N41nmrZxU9k1IOKy",
+  "_key": "!items!N41nmrZxU9k1IOKy",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "Chr3",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "4d10 (2)",
+        "sourceName": "Antipersonnel Mine",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "2",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "J",
+          "cost": 350,
+          "damage": "4d10",
+          "flavor": "",
+          "notes": "",
+          "range": "7m",
+          "reliability": "VR",
+          "rof": "1",
+          "shots": "1",
+          "source": "Chr3",
+          "weaponType": "Heavy",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Antipersonnel Mine",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "2",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "HeavyWeapons",
+    "attackType": "Landmine",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealJacket",
+    "cost": 350,
+    "damage": "4d10",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 7,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 1,
+    "shots": 1,
+    "shotsLeft": 1,
+    "source": "Chr3",
+    "weaponType": "Heavy",
+    "weight": null
+  },
+  "type": "weapon"
+}

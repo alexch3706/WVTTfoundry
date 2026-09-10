@@ -1,0 +1,8557 @@
+{
+  "packs": {
+    "armor": [
+      {
+        "id": "03evZYhjODdRBRN1",
+        "type": "armor"
+      },
+      {
+        "id": "0pTypQnlqry9VAAH",
+        "type": "armor"
+      },
+      {
+        "id": "148EBIv81c9ghLRF",
+        "type": "armor"
+      },
+      {
+        "id": "1VmQGBxD7Xn1JCAi",
+        "type": "armor"
+      },
+      {
+        "id": "3c2Ok0ApJtBPEIto",
+        "type": "armor"
+      },
+      {
+        "id": "3Gpf3YgGTy83JIEQ",
+        "type": "armor"
+      },
+      {
+        "id": "3MgMwqFFP25RzlrR",
+        "type": "armor"
+      },
+      {
+        "id": "3wWsH9soKxQ9AaPM",
+        "type": "armor"
+      },
+      {
+        "id": "44pgKORGiztlJQbw",
+        "type": "armor"
+      },
+      {
+        "id": "47Bhl7bzTvHYVhbW",
+        "type": "armor"
+      },
+      {
+        "id": "4datZJN23YxrcbTZ",
+        "type": "armor"
+      },
+      {
+        "id": "4I6Kkb4lZscJ9O1t",
+        "type": "armor"
+      },
+      {
+        "id": "4LMhrWK54Eybtuw0",
+        "type": "armor"
+      },
+      {
+        "id": "4lsvuKVyMrSjz7Sq",
+        "type": "armor"
+      },
+      {
+        "id": "4p9Mx3LigqSo7HLm",
+        "type": "armor"
+      },
+      {
+        "id": "54eFLetJfV776HVW",
+        "type": "armor"
+      },
+      {
+        "id": "6B5mg4rTPHwka3vE",
+        "type": "armor"
+      },
+      {
+        "id": "7NGruHlpBLqUPMDI",
+        "type": "armor"
+      },
+      {
+        "id": "7nrx7ubNF7T2hwsV",
+        "type": "armor"
+      },
+      {
+        "id": "7q3F8Me706540oM7",
+        "type": "armor"
+      },
+      {
+        "id": "87DVABjeqEvz17tD",
+        "type": "armor"
+      },
+      {
+        "id": "8dhVAmMRX9Vh3JQL",
+        "type": "armor"
+      },
+      {
+        "id": "8fqEeB1ZjlAcaZ60",
+        "type": "armor"
+      },
+      {
+        "id": "8j4TF1uAKWieAUab",
+        "type": "armor"
+      },
+      {
+        "id": "8ki1TWtMJQam6o0a",
+        "type": "armor"
+      },
+      {
+        "id": "8xZCrq16oAfTMHfo",
+        "type": "armor"
+      },
+      {
+        "id": "9g9WI3yZlHhCWoHR",
+        "type": "armor"
+      },
+      {
+        "id": "9L0RxzMXLnM6mdEg",
+        "type": "armor"
+      },
+      {
+        "id": "9n1XghwYMJM7cfUy",
+        "type": "armor"
+      },
+      {
+        "id": "A4u5IEZtuto9yKHd",
+        "type": "armor"
+      },
+      {
+        "id": "a7SYzvLC9YgHZx9b",
+        "type": "armor"
+      },
+      {
+        "id": "A7Z0sJgn3sU6M06x",
+        "type": "armor"
+      },
+      {
+        "id": "Abal1Bq4Xctq8v0u",
+        "type": "armor"
+      },
+      {
+        "id": "aiCSardfwYs4lIxn",
+        "type": "armor"
+      },
+      {
+        "id": "ArrINJo35HTMMTRi",
+        "type": "armor"
+      },
+      {
+        "id": "B2Eg24yn2ngRq2sd",
+        "type": "armor"
+      },
+      {
+        "id": "B3wgGjmJpBbUOqNy",
+        "type": "armor"
+      },
+      {
+        "id": "b437d6ppQ4OBgvBT",
+        "type": "armor"
+      },
+      {
+        "id": "b5TMGG4sPym3wZnV",
+        "type": "armor"
+      },
+      {
+        "id": "BcwCpoSVRAqYdAXG",
+        "type": "armor"
+      },
+      {
+        "id": "BeuBmS5WTUJd85dq",
+        "type": "armor"
+      },
+      {
+        "id": "bkvVvfxkoK6WDWhW",
+        "type": "armor"
+      },
+      {
+        "id": "BldjSZTQlU5fYcbw",
+        "type": "armor"
+      },
+      {
+        "id": "BmbOyU4hU0CGdP4S",
+        "type": "armor"
+      },
+      {
+        "id": "ccWs4aEKjiJjSx6p",
+        "type": "armor"
+      },
+      {
+        "id": "CGt8Cbj2Q0Ljne2a",
+        "type": "armor"
+      },
+      {
+        "id": "CpXA9Nyf6nDMSU7k",
+        "type": "armor"
+      },
+      {
+        "id": "cutli7X2I4LKbOoE",
+        "type": "armor"
+      },
+      {
+        "id": "CxTFKh9duUfbuUAR",
+        "type": "armor"
+      },
+      {
+        "id": "CZLC0KYfmLdVSQfa",
+        "type": "armor"
+      },
+      {
+        "id": "d9eqOD0OHtZ7CNC1",
+        "type": "armor"
+      },
+      {
+        "id": "DC81rTt4vOnC7V8C",
+        "type": "armor"
+      },
+      {
+        "id": "DoZzRh3nd3GPh01Y",
+        "type": "armor"
+      },
+      {
+        "id": "dTTUg2BoQhcwOaWp",
+        "type": "armor"
+      },
+      {
+        "id": "DV8r1HsCqzKcAAJ8",
+        "type": "armor"
+      },
+      {
+        "id": "Ea3yubUtPHl195zp",
+        "type": "armor"
+      },
+      {
+        "id": "efMAXNOZ0rqPgVGx",
+        "type": "armor"
+      },
+      {
+        "id": "EqPdVyalQGSq90if",
+        "type": "armor"
+      },
+      {
+        "id": "esAr9HfEU8eH6KMO",
+        "type": "armor"
+      },
+      {
+        "id": "EVbHiDXjPQdqM5a9",
+        "type": "armor"
+      },
+      {
+        "id": "F1AK7GrXvd6t2tTM",
+        "type": "armor"
+      },
+      {
+        "id": "f1Ao0ERZO7QXr7Et",
+        "type": "armor"
+      },
+      {
+        "id": "FQfoDhrJnyffzCLg",
+        "type": "armor"
+      },
+      {
+        "id": "g5r3xWQXtcXWkHf0",
+        "type": "armor"
+      },
+      {
+        "id": "gChIE5Nxv4wYmjEO",
+        "type": "armor"
+      },
+      {
+        "id": "GiIpcli9DGz0bY27",
+        "type": "armor"
+      },
+      {
+        "id": "GlboaI7ahQsbEhhm",
+        "type": "armor"
+      },
+      {
+        "id": "gRpRCPku34TGCaA8",
+        "type": "armor"
+      },
+      {
+        "id": "GxSnHi8CBI2lj1ax",
+        "type": "armor"
+      },
+      {
+        "id": "gzVEjGvLNf4jDq2i",
+        "type": "armor"
+      },
+      {
+        "id": "GZXayuJbzYkOxqcW",
+        "type": "armor"
+      },
+      {
+        "id": "H6nHwZWCrTWa8be5",
+        "type": "armor"
+      },
+      {
+        "id": "HBl2naGFBctawUmJ",
+        "type": "armor"
+      },
+      {
+        "id": "HevCcCfr4TRnZcea",
+        "type": "armor"
+      },
+      {
+        "id": "hgCoMAiWtKOAvmae",
+        "type": "armor"
+      },
+      {
+        "id": "hIPCI5SQBV53sHFM",
+        "type": "armor"
+      },
+      {
+        "id": "HKLTsRI4C3yQTlTA",
+        "type": "armor"
+      },
+      {
+        "id": "HmBFnVSlawBAYGkT",
+        "type": "armor"
+      },
+      {
+        "id": "HRmOG8DdJShELlw6",
+        "type": "armor"
+      },
+      {
+        "id": "htQ3KtUm3iG5HtsD",
+        "type": "armor"
+      },
+      {
+        "id": "HuGqI5Cd6uiAt6p0",
+        "type": "armor"
+      },
+      {
+        "id": "HVwI1mSCs7WpUhjn",
+        "type": "armor"
+      },
+      {
+        "id": "I9tVCteNEV5S8WrS",
+        "type": "armor"
+      },
+      {
+        "id": "iDn1gNNCM7dmkpnS",
+        "type": "armor"
+      },
+      {
+        "id": "iJ6aTuDgrCHTgzPt",
+        "type": "armor"
+      },
+      {
+        "id": "ILZUcLrU7LcO4JOC",
+        "type": "armor"
+      },
+      {
+        "id": "IpjpMHrftuGwPxxg",
+        "type": "armor"
+      },
+      {
+        "id": "iq7IoYxKu2T3TvYT",
+        "type": "armor"
+      },
+      {
+        "id": "Ite0cKei5ddAX8lN",
+        "type": "armor"
+      },
+      {
+        "id": "Iuiov0MedLpzr0Py",
+        "type": "armor"
+      },
+      {
+        "id": "IyAIqkxfAXIcBF6w",
+        "type": "armor"
+      },
+      {
+        "id": "IydVoJBHRY8wovbb",
+        "type": "armor"
+      },
+      {
+        "id": "izSDeEsWNlVhiT1W",
+        "type": "armor"
+      },
+      {
+        "id": "J4DpmMsKohnC4Slh",
+        "type": "armor"
+      },
+      {
+        "id": "J8vJw33Z4YYC7K9H",
+        "type": "armor"
+      },
+      {
+        "id": "JB2DbK6cFsBzp8wA",
+        "type": "armor"
+      },
+      {
+        "id": "JRaZulFDNEBtwDMJ",
+        "type": "armor"
+      },
+      {
+        "id": "jS2J0QASYsN2lYEh",
+        "type": "armor"
+      },
+      {
+        "id": "JVtLd5X35EaczhvX",
+        "type": "armor"
+      },
+      {
+        "id": "jvY5sVOU356dBYDS",
+        "type": "armor"
+      },
+      {
+        "id": "jwzy1NIm2IH5fAed",
+        "type": "armor"
+      },
+      {
+        "id": "K34mCxFyOUlW4NDw",
+        "type": "armor"
+      },
+      {
+        "id": "k9x3XssAVnK8hYbg",
+        "type": "armor"
+      },
+      {
+        "id": "kFHwsUi43PjOLY4N",
+        "type": "armor"
+      },
+      {
+        "id": "KhLKycrAAH6iMB21",
+        "type": "armor"
+      },
+      {
+        "id": "kNXEv7eOAGlfO1br",
+        "type": "armor"
+      },
+      {
+        "id": "LCudWdGKRZW8YVvh",
+        "type": "armor"
+      },
+      {
+        "id": "lEE9EeHuK5eYLEjK",
+        "type": "armor"
+      },
+      {
+        "id": "LY12AFFB8zULIOwT",
+        "type": "armor"
+      },
+      {
+        "id": "m1nfA0uXglpQpTlc",
+        "type": "armor"
+      },
+      {
+        "id": "may0b1Uj93CSDK6o",
+        "type": "armor"
+      },
+      {
+        "id": "mL3iSj46nwwWilVj",
+        "type": "armor"
+      },
+      {
+        "id": "mmjmVfwVGXMQjp0V",
+        "type": "armor"
+      },
+      {
+        "id": "N21PBySCZHG9tEPm",
+        "type": "armor"
+      },
+      {
+        "id": "n3vD47LO9mk0c2fX",
+        "type": "armor"
+      },
+      {
+        "id": "n658AXXH9kiubqZ4",
+        "type": "armor"
+      },
+      {
+        "id": "nBZekhlfDrFYyDJ8",
+        "type": "armor"
+      },
+      {
+        "id": "nkISYY87gbBTH8jm",
+        "type": "armor"
+      },
+      {
+        "id": "nMPY6nyBf6QlLpV3",
+        "type": "armor"
+      },
+      {
+        "id": "NnTJMu5AzTlCGmyf",
+        "type": "armor"
+      },
+      {
+        "id": "nruBGX4VkqqWcKli",
+        "type": "armor"
+      },
+      {
+        "id": "nsQzusvq2Qyvi3V1",
+        "type": "armor"
+      },
+      {
+        "id": "o31ujzCIeYA6wSmR",
+        "type": "armor"
+      },
+      {
+        "id": "o3HcIPtVRMmkdkDM",
+        "type": "armor"
+      },
+      {
+        "id": "o9CXOVMchbHv82g7",
+        "type": "armor"
+      },
+      {
+        "id": "oJgwM1PEuxps9EXj",
+        "type": "armor"
+      },
+      {
+        "id": "olNmH3JJErNfmqUn",
+        "type": "armor"
+      },
+      {
+        "id": "olom4qncr2vo9CpM",
+        "type": "armor"
+      },
+      {
+        "id": "oUDhqd4pt9ymn1B3",
+        "type": "armor"
+      },
+      {
+        "id": "oXBgUMZvUnM6hJTp",
+        "type": "armor"
+      },
+      {
+        "id": "p413jPAHP93ELfQB",
+        "type": "armor"
+      },
+      {
+        "id": "pHn5Z8RbPjQ45A3M",
+        "type": "armor"
+      },
+      {
+        "id": "pUFP7lmF6b1ZQ97P",
+        "type": "armor"
+      },
+      {
+        "id": "pzz8telwvrNQamos",
+        "type": "armor"
+      },
+      {
+        "id": "Q6TMnQ7iU4JyiRF6",
+        "type": "armor"
+      },
+      {
+        "id": "qAxiEIoYvbMSxThj",
+        "type": "armor"
+      },
+      {
+        "id": "qBDc6S6ZRpsq8mTD",
+        "type": "armor"
+      },
+      {
+        "id": "QDyCEcMJRmLEo7LO",
+        "type": "armor"
+      },
+      {
+        "id": "QHI84PWWeL9s7SdU",
+        "type": "armor"
+      },
+      {
+        "id": "QiPJNDxxl5aVQlV6",
+        "type": "armor"
+      },
+      {
+        "id": "qQzzfqUG1Wvhngd9",
+        "type": "armor"
+      },
+      {
+        "id": "qVisFb3ecWsPQMni",
+        "type": "armor"
+      },
+      {
+        "id": "Qzs1fZNXH0A2IEMi",
+        "type": "armor"
+      },
+      {
+        "id": "r7fNeKfIcBYEhUgu",
+        "type": "armor"
+      },
+      {
+        "id": "rbFUYIVfYGy0AaoH",
+        "type": "armor"
+      },
+      {
+        "id": "RiuS0y7FRPtSzDgR",
+        "type": "armor"
+      },
+      {
+        "id": "RkcCfskYWaZCI5Z2",
+        "type": "armor"
+      },
+      {
+        "id": "rnoPHLL92EUg2Rf2",
+        "type": "armor"
+      },
+      {
+        "id": "s9sZ5rHlOrDBokAX",
+        "type": "armor"
+      },
+      {
+        "id": "ScFnUM2aqB2QkYaO",
+        "type": "armor"
+      },
+      {
+        "id": "SD3futn9h8sGEsO5",
+        "type": "armor"
+      },
+      {
+        "id": "sgjLUrZjQhDaD3rS",
+        "type": "armor"
+      },
+      {
+        "id": "sN2ONomu5vca5yec",
+        "type": "armor"
+      },
+      {
+        "id": "T5iiRchpJ48Gtj7c",
+        "type": "armor"
+      },
+      {
+        "id": "T6dDf53asEZvCVVS",
+        "type": "armor"
+      },
+      {
+        "id": "tbKj1qo7m4oLFExR",
+        "type": "armor"
+      },
+      {
+        "id": "tf7b0t8o43QzM5aF",
+        "type": "armor"
+      },
+      {
+        "id": "tq6022X1imdw7RJo",
+        "type": "armor"
+      },
+      {
+        "id": "TUY5ag5Mtlxs66H3",
+        "type": "armor"
+      },
+      {
+        "id": "TwyFzfpOLtkMnGNr",
+        "type": "armor"
+      },
+      {
+        "id": "TxdAq1ecj55WUOmN",
+        "type": "armor"
+      },
+      {
+        "id": "tzUV4phmSOBdL8Tr",
+        "type": "armor"
+      },
+      {
+        "id": "u2DOKU94nYy5CS90",
+        "type": "armor"
+      },
+      {
+        "id": "uciKmnpGHrVfKgp5",
+        "type": "armor"
+      },
+      {
+        "id": "UfZMVckXgORH8AdZ",
+        "type": "armor"
+      },
+      {
+        "id": "UKWB7xnS5sjQfH5r",
+        "type": "armor"
+      },
+      {
+        "id": "uni28R0Eo9Igqsge",
+        "type": "armor"
+      },
+      {
+        "id": "Uw5l40mA3MjThZaU",
+        "type": "armor"
+      },
+      {
+        "id": "V2xegklvnuvIpSpr",
+        "type": "armor"
+      },
+      {
+        "id": "VbhLQH83MLRWjIai",
+        "type": "armor"
+      },
+      {
+        "id": "VCnIKzNF5kWnl6e9",
+        "type": "armor"
+      },
+      {
+        "id": "VfhAleHrW1NVIwBw",
+        "type": "armor"
+      },
+      {
+        "id": "vGGyXCzk6AQZ0JLP",
+        "type": "armor"
+      },
+      {
+        "id": "vgtTtrIGKhEiecvO",
+        "type": "armor"
+      },
+      {
+        "id": "VoYDHJoyRYErL0Wd",
+        "type": "armor"
+      },
+      {
+        "id": "w8JOO56sfnQDirDl",
+        "type": "armor"
+      },
+      {
+        "id": "WaDwRtRYoa87ap2v",
+        "type": "armor"
+      },
+      {
+        "id": "WgXr3pSVUqvZy80v",
+        "type": "armor"
+      },
+      {
+        "id": "wKk8qOLj5zxlxjGZ",
+        "type": "armor"
+      },
+      {
+        "id": "wMF4dINw09nGmpKb",
+        "type": "armor"
+      },
+      {
+        "id": "wmNxDKbNGS6KGz3k",
+        "type": "armor"
+      },
+      {
+        "id": "WNCRL14HSqBNhw56",
+        "type": "armor"
+      },
+      {
+        "id": "wvi6YUUByykwNupv",
+        "type": "armor"
+      },
+      {
+        "id": "wy2TtRB9S9vr6ZuH",
+        "type": "armor"
+      },
+      {
+        "id": "XCIfarpxvWJzINU7",
+        "type": "armor"
+      },
+      {
+        "id": "xI137XpSEv2FjNEi",
+        "type": "armor"
+      },
+      {
+        "id": "xoCuizUhuVMZ8R6c",
+        "type": "armor"
+      },
+      {
+        "id": "xOg39YZI2AMIO0yG",
+        "type": "armor"
+      },
+      {
+        "id": "Y3oizqkEVGAWRVQC",
+        "type": "armor"
+      },
+      {
+        "id": "ygHe34CwPzWAjAxK",
+        "type": "armor"
+      },
+      {
+        "id": "YjWCduNvjw1XOdIy",
+        "type": "armor"
+      },
+      {
+        "id": "YMzRYjihYG8aOHoj",
+        "type": "armor"
+      },
+      {
+        "id": "yTre4UgKMCtqS02m",
+        "type": "armor"
+      },
+      {
+        "id": "YUpJxinx3IgSgYKm",
+        "type": "armor"
+      },
+      {
+        "id": "Z1QGGUOHvDgqwXRD",
+        "type": "armor"
+      },
+      {
+        "id": "ZDWqQmiAvJaVoc3R",
+        "type": "armor"
+      },
+      {
+        "id": "ZHsb7rNrSNxPlHYl",
+        "type": "armor"
+      },
+      {
+        "id": "ZUNNe0qVvKMP21sR",
+        "type": "armor"
+      },
+      {
+        "id": "zUvEtdtaNmisuA0J",
+        "type": "armor"
+      }
+    ],
+    "bows": [
+      {
+        "id": "6Nmwi8oklMwlm2Dd",
+        "type": "weapon"
+      },
+      {
+        "id": "d7I1GpJWflyD10y3",
+        "type": "weapon"
+      },
+      {
+        "id": "jhHExHvQmvnP31Y0",
+        "type": "weapon"
+      },
+      {
+        "id": "JvDWjn4JpZSiI8G9",
+        "type": "weapon"
+      },
+      {
+        "id": "lVnWM2Z1yFoeVcPS",
+        "type": "weapon"
+      },
+      {
+        "id": "oJj1Z6EXeMTPFZ0y",
+        "type": "weapon"
+      },
+      {
+        "id": "QYCPPOYkw62xnxkF",
+        "type": "weapon"
+      }
+    ],
+    "chipware": [
+      {
+        "id": "04f9y9E6to414ddF",
+        "type": "cyberware"
+      },
+      {
+        "id": "04mZBtm1ZoZKAk4Q",
+        "type": "cyberware"
+      },
+      {
+        "id": "08NsG7mzu99Gosht",
+        "type": "cyberware"
+      },
+      {
+        "id": "0TGsbXMPpMxTnvUG",
+        "type": "cyberware"
+      },
+      {
+        "id": "11oOsstFH5OjoMbb",
+        "type": "cyberware"
+      },
+      {
+        "id": "1IN4C0hFwxKxhceP",
+        "type": "cyberware"
+      },
+      {
+        "id": "1MjwGbjcNcDsNJPO",
+        "type": "cyberware"
+      },
+      {
+        "id": "1nDz96V6JWajDAfE",
+        "type": "cyberware"
+      },
+      {
+        "id": "1q7syffoITLrlktx",
+        "type": "cyberware"
+      },
+      {
+        "id": "1S8kFZ6zk8ZZ87q1",
+        "type": "cyberware"
+      },
+      {
+        "id": "28vaLwVeTK7gD945",
+        "type": "cyberware"
+      },
+      {
+        "id": "2bnxWIbIoIUpfxdW",
+        "type": "cyberware"
+      },
+      {
+        "id": "2HhCdu1AdPPfhGdi",
+        "type": "cyberware"
+      },
+      {
+        "id": "2IjmEO0HuaAucdrD",
+        "type": "cyberware"
+      },
+      {
+        "id": "3909X6fLFh6zcymP",
+        "type": "cyberware"
+      },
+      {
+        "id": "3MWJJlgAsDhQydgW",
+        "type": "cyberware"
+      },
+      {
+        "id": "4MbfsFcv8JXfBoec",
+        "type": "cyberware"
+      },
+      {
+        "id": "4qSIFjtBFdwS8lPc",
+        "type": "cyberware"
+      },
+      {
+        "id": "543wJatL9cDGM6UZ",
+        "type": "cyberware"
+      },
+      {
+        "id": "59VkPby5JNmbwUde",
+        "type": "cyberware"
+      },
+      {
+        "id": "5imfTTANeGJONVyG",
+        "type": "cyberware"
+      },
+      {
+        "id": "6bZsfhjE1aHSxM1E",
+        "type": "cyberware"
+      },
+      {
+        "id": "6yV2w1eWvIu8StFX",
+        "type": "cyberware"
+      },
+      {
+        "id": "75JxoJ47ZoonzDG7",
+        "type": "cyberware"
+      },
+      {
+        "id": "7BHztq9lg46GiPAS",
+        "type": "cyberware"
+      },
+      {
+        "id": "7DNUQwZr4dINDP2v",
+        "type": "cyberware"
+      },
+      {
+        "id": "7rKRjvRZ6P8Y7XHH",
+        "type": "cyberware"
+      },
+      {
+        "id": "7rVk6bSW1U1xyUyO",
+        "type": "cyberware"
+      },
+      {
+        "id": "7YQvzDODRlFxDzTX",
+        "type": "cyberware"
+      },
+      {
+        "id": "8ltW833G96Heafm5",
+        "type": "cyberware"
+      },
+      {
+        "id": "8VfUKNDIl4oxti1d",
+        "type": "cyberware"
+      },
+      {
+        "id": "8x8kvwaKQBH80aWN",
+        "type": "cyberware"
+      },
+      {
+        "id": "8xfdtt50bLdIgPdP",
+        "type": "cyberware"
+      },
+      {
+        "id": "96AiY8Bs8kVRKwu5",
+        "type": "cyberware"
+      },
+      {
+        "id": "97j6CRk76dkkQHtD",
+        "type": "cyberware"
+      },
+      {
+        "id": "9Qf9iM2NY0TANdb5",
+        "type": "cyberware"
+      },
+      {
+        "id": "9z9nbQdifNCgKShX",
+        "type": "cyberware"
+      },
+      {
+        "id": "A9tL7TistSvDVeAU",
+        "type": "cyberware"
+      },
+      {
+        "id": "aCsSoUsNjfugy8V4",
+        "type": "cyberware"
+      },
+      {
+        "id": "aE9XfP5An5EEpe4u",
+        "type": "cyberware"
+      },
+      {
+        "id": "AMoslS3YUfUfwfSR",
+        "type": "cyberware"
+      },
+      {
+        "id": "AQYcEwM4NHsc9mV6",
+        "type": "cyberware"
+      },
+      {
+        "id": "B2fFnTwuquQmDSU3",
+        "type": "cyberware"
+      },
+      {
+        "id": "beiqVO0elgvICIh2",
+        "type": "cyberware"
+      },
+      {
+        "id": "BNU3JrAsS5LiuJXQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "bPRWXBelCDtV3cbI",
+        "type": "cyberware"
+      },
+      {
+        "id": "buGNkZsI5fhA45mF",
+        "type": "cyberware"
+      },
+      {
+        "id": "bzQ9s0aGwgMxnlef",
+        "type": "cyberware"
+      },
+      {
+        "id": "C6xQu1gsmPdf6nqt",
+        "type": "cyberware"
+      },
+      {
+        "id": "cET1LoMXvFnF400H",
+        "type": "cyberware"
+      },
+      {
+        "id": "cMW6MyPST9RB7XWm",
+        "type": "cyberware"
+      },
+      {
+        "id": "cyHbWELjmwTqptYC",
+        "type": "cyberware"
+      },
+      {
+        "id": "cymnbtMCXgyc5BdF",
+        "type": "cyberware"
+      },
+      {
+        "id": "D3EsKseppZ9xtge7",
+        "type": "cyberware"
+      },
+      {
+        "id": "d5RaFJtpwxs5kNKe",
+        "type": "cyberware"
+      },
+      {
+        "id": "d8nB983dAcrUNOYM",
+        "type": "cyberware"
+      },
+      {
+        "id": "DKzCdMUxcJizZwxb",
+        "type": "cyberware"
+      },
+      {
+        "id": "dtd5ZfGvrS7EFwo8",
+        "type": "cyberware"
+      },
+      {
+        "id": "DvPm2nUb7y7cfqc0",
+        "type": "cyberware"
+      },
+      {
+        "id": "DWrUl21qDYfBZ0NB",
+        "type": "cyberware"
+      },
+      {
+        "id": "EpMKKktKWnPCgmSH",
+        "type": "cyberware"
+      },
+      {
+        "id": "eyHbyUaFtiPW0skz",
+        "type": "cyberware"
+      },
+      {
+        "id": "Ez9tcEFRZtWZODPo",
+        "type": "cyberware"
+      },
+      {
+        "id": "EztVGMwoLSkTb2Od",
+        "type": "cyberware"
+      },
+      {
+        "id": "f51Bvujs7xytvpCK",
+        "type": "cyberware"
+      },
+      {
+        "id": "F65uyr5jXizpicXd",
+        "type": "cyberware"
+      },
+      {
+        "id": "f7nrv0UWbQjKDRtS",
+        "type": "cyberware"
+      },
+      {
+        "id": "fcjnHMw1O3aytcft",
+        "type": "cyberware"
+      },
+      {
+        "id": "fDwUTqVyQixbPuOo",
+        "type": "cyberware"
+      },
+      {
+        "id": "FjMBzufkEQuWoTX7",
+        "type": "cyberware"
+      },
+      {
+        "id": "fLJ5RELX4S2o5THH",
+        "type": "cyberware"
+      },
+      {
+        "id": "fZ2w4T4ZwmaLFitK",
+        "type": "cyberware"
+      },
+      {
+        "id": "GdGjGPto5xdu5ZyM",
+        "type": "cyberware"
+      },
+      {
+        "id": "GhKhDRjcboScOomh",
+        "type": "cyberware"
+      },
+      {
+        "id": "gnNinqLIAL9B7972",
+        "type": "cyberware"
+      },
+      {
+        "id": "GOAJDVDej8n3UskJ",
+        "type": "cyberware"
+      },
+      {
+        "id": "GqE0PooZABdnD7it",
+        "type": "cyberware"
+      },
+      {
+        "id": "gvEe7WwahbfyFssu",
+        "type": "cyberware"
+      },
+      {
+        "id": "HAjp5CxYMmoVYONb",
+        "type": "cyberware"
+      },
+      {
+        "id": "hFhjzQwqix8FneDt",
+        "type": "cyberware"
+      },
+      {
+        "id": "hj1Rx7atN3OX8DDg",
+        "type": "cyberware"
+      },
+      {
+        "id": "Hl5M5AHy75HuHnJb",
+        "type": "cyberware"
+      },
+      {
+        "id": "hMQScFfxyIRTaexV",
+        "type": "cyberware"
+      },
+      {
+        "id": "hRc0LtFlkKGTnQtE",
+        "type": "cyberware"
+      },
+      {
+        "id": "HztBcVU5oYGgA7JL",
+        "type": "cyberware"
+      },
+      {
+        "id": "Ich1HtvgUsMcRjoR",
+        "type": "cyberware"
+      },
+      {
+        "id": "in6aAOSWwCBKrrGv",
+        "type": "cyberware"
+      },
+      {
+        "id": "IRlaZOCaRVhaoGM6",
+        "type": "cyberware"
+      },
+      {
+        "id": "j03uTrLYV2Fx1UAx",
+        "type": "cyberware"
+      },
+      {
+        "id": "j78aEhFqgP4jNnJU",
+        "type": "cyberware"
+      },
+      {
+        "id": "JAhyxF7nEDvfNbBa",
+        "type": "cyberware"
+      },
+      {
+        "id": "JeJf6jn1vhTdLdTR",
+        "type": "cyberware"
+      },
+      {
+        "id": "jfni1W3EdWJNprcs",
+        "type": "cyberware"
+      },
+      {
+        "id": "JJ6YQ4iQRA60SKZG",
+        "type": "cyberware"
+      },
+      {
+        "id": "JP4eNnUjtWxfCwzV",
+        "type": "cyberware"
+      },
+      {
+        "id": "JPAUruNKKSncYaAD",
+        "type": "cyberware"
+      },
+      {
+        "id": "JPwP8TlJ9PtIL8xC",
+        "type": "cyberware"
+      },
+      {
+        "id": "Jq24KfQUsoZIPbTN",
+        "type": "cyberware"
+      },
+      {
+        "id": "K76MBeIprUbdkApJ",
+        "type": "cyberware"
+      },
+      {
+        "id": "k9ZUE7rkMZitLFsd",
+        "type": "cyberware"
+      },
+      {
+        "id": "KRGdfciWZEZE2jmU",
+        "type": "cyberware"
+      },
+      {
+        "id": "KVVdfjBAOz1LxbUS",
+        "type": "cyberware"
+      },
+      {
+        "id": "Kyck2kVWcfmSKH6C",
+        "type": "cyberware"
+      },
+      {
+        "id": "l5hqBAn717uTvthz",
+        "type": "cyberware"
+      },
+      {
+        "id": "LoQMh9sQxN3n9pdP",
+        "type": "cyberware"
+      },
+      {
+        "id": "MDMYeGbs5yOZgk5y",
+        "type": "cyberware"
+      },
+      {
+        "id": "MKEZEZeQhPNiBx1h",
+        "type": "cyberware"
+      },
+      {
+        "id": "MlfvxTv1jtwIg3uE",
+        "type": "cyberware"
+      },
+      {
+        "id": "MNAuRHZ4Ek99ITaT",
+        "type": "cyberware"
+      },
+      {
+        "id": "mQOr9SD3ilY3RYTQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "Mt8bMM0SUeyqbcfn",
+        "type": "cyberware"
+      },
+      {
+        "id": "mxtduAYGndn7udit",
+        "type": "cyberware"
+      },
+      {
+        "id": "NjxSgaXQ2wW1SepE",
+        "type": "cyberware"
+      },
+      {
+        "id": "nlcEKTJaPzg61ix2",
+        "type": "cyberware"
+      },
+      {
+        "id": "nLwCwsq4N8i6tocv",
+        "type": "cyberware"
+      },
+      {
+        "id": "NOiuvPr4hd5CSS77",
+        "type": "cyberware"
+      },
+      {
+        "id": "nWRqlWwZItWeNAYU",
+        "type": "cyberware"
+      },
+      {
+        "id": "NwzGpmn0ufbSiVCH",
+        "type": "cyberware"
+      },
+      {
+        "id": "nx300l3Uz5OyVUQP",
+        "type": "cyberware"
+      },
+      {
+        "id": "ofP20S27ekUKYKGQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "OKa9ElNDoZvPaO3L",
+        "type": "cyberware"
+      },
+      {
+        "id": "OSs2lashDuMhcnIS",
+        "type": "cyberware"
+      },
+      {
+        "id": "OsUSBIQ2Gtqoa0LE",
+        "type": "cyberware"
+      },
+      {
+        "id": "OUT7YcSMYymdtb4Z",
+        "type": "cyberware"
+      },
+      {
+        "id": "oUvScJKfWVXPqJAG",
+        "type": "cyberware"
+      },
+      {
+        "id": "owP1ri8McPPxXQmG",
+        "type": "cyberware"
+      },
+      {
+        "id": "P2zyoz7oIM0TMJXp",
+        "type": "cyberware"
+      },
+      {
+        "id": "P5TVyny9KchfQPQl",
+        "type": "cyberware"
+      },
+      {
+        "id": "pE7Sjyo83QriSCxz",
+        "type": "cyberware"
+      },
+      {
+        "id": "pkrZFYaTCxeNj9NL",
+        "type": "cyberware"
+      },
+      {
+        "id": "pOV7iPenH9xGkbeW",
+        "type": "cyberware"
+      },
+      {
+        "id": "pSFk1mpxERoo1gXg",
+        "type": "cyberware"
+      },
+      {
+        "id": "PXTvhtn8iuzV0tnA",
+        "type": "cyberware"
+      },
+      {
+        "id": "Q8yBmcb09Gl34E0Y",
+        "type": "cyberware"
+      },
+      {
+        "id": "qgUa7CXZmUEQ1eil",
+        "type": "cyberware"
+      },
+      {
+        "id": "qIHkbts0KtD5xdip",
+        "type": "cyberware"
+      },
+      {
+        "id": "QmESbWEKUqqIK2I8",
+        "type": "cyberware"
+      },
+      {
+        "id": "QrqCljF4Gg1zLIJN",
+        "type": "cyberware"
+      },
+      {
+        "id": "qwDvRvYNtvEzXl2y",
+        "type": "cyberware"
+      },
+      {
+        "id": "QxepwsfhFiKay5MW",
+        "type": "cyberware"
+      },
+      {
+        "id": "QXxJ8oK8iXllUXJU",
+        "type": "cyberware"
+      },
+      {
+        "id": "qy9UxRsLOxTlA1W9",
+        "type": "cyberware"
+      },
+      {
+        "id": "r4porgeMUX6vPpcd",
+        "type": "cyberware"
+      },
+      {
+        "id": "rBF0RoncqlRsC5lu",
+        "type": "cyberware"
+      },
+      {
+        "id": "rGiu9TBJAmowrXIm",
+        "type": "cyberware"
+      },
+      {
+        "id": "Rl4zAbrdV0fLGXPD",
+        "type": "cyberware"
+      },
+      {
+        "id": "RtAac7mwILFQtapk",
+        "type": "cyberware"
+      },
+      {
+        "id": "sdDogXmknwAwDaNX",
+        "type": "cyberware"
+      },
+      {
+        "id": "smOe9Wr7uYWM0r3j",
+        "type": "cyberware"
+      },
+      {
+        "id": "smzuWhogCkyrgy7m",
+        "type": "cyberware"
+      },
+      {
+        "id": "snV8rxDh5INooRhR",
+        "type": "cyberware"
+      },
+      {
+        "id": "SP9PHsRgxAv4d8Pr",
+        "type": "cyberware"
+      },
+      {
+        "id": "srTzIYgG3QappzqG",
+        "type": "cyberware"
+      },
+      {
+        "id": "STOjTIO7OJ5NwIdG",
+        "type": "cyberware"
+      },
+      {
+        "id": "T6yIwiVAstBL59rb",
+        "type": "cyberware"
+      },
+      {
+        "id": "T8tO43A0379z4Zxt",
+        "type": "cyberware"
+      },
+      {
+        "id": "tFeDl2q4tdwgMJZq",
+        "type": "cyberware"
+      },
+      {
+        "id": "TG1IgHF1GiHeCrwQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "tIR71vNCRcSK5N6T",
+        "type": "cyberware"
+      },
+      {
+        "id": "TkVWMeFoi5ua0hqB",
+        "type": "cyberware"
+      },
+      {
+        "id": "Tm0GonAWdGeu7LG9",
+        "type": "cyberware"
+      },
+      {
+        "id": "to0WkEHlWs1yQbIc",
+        "type": "cyberware"
+      },
+      {
+        "id": "TqSIM5HzFF2Fji9c",
+        "type": "cyberware"
+      },
+      {
+        "id": "ttIZ9nFmFM3vOaRg",
+        "type": "cyberware"
+      },
+      {
+        "id": "U0Jnv3FxKT4SXZFe",
+        "type": "cyberware"
+      },
+      {
+        "id": "uHgS4p9vE2EPA0sz",
+        "type": "cyberware"
+      },
+      {
+        "id": "ukGv4YvsrATqJ602",
+        "type": "cyberware"
+      },
+      {
+        "id": "UM7u1eCbnP2aaXTv",
+        "type": "cyberware"
+      },
+      {
+        "id": "uRJ5sy31ciL5PSfN",
+        "type": "cyberware"
+      },
+      {
+        "id": "UU0RXPX0vYvXP3GG",
+        "type": "cyberware"
+      },
+      {
+        "id": "uuptxd4A6KAnSoQ2",
+        "type": "cyberware"
+      },
+      {
+        "id": "uuT2bkpUBGsiXRkE",
+        "type": "cyberware"
+      },
+      {
+        "id": "Uz6qQ5TwnSrZw7zR",
+        "type": "cyberware"
+      },
+      {
+        "id": "VdsRYda0dPd7B38f",
+        "type": "cyberware"
+      },
+      {
+        "id": "vu2Ufc1OS2GkXpp2",
+        "type": "cyberware"
+      },
+      {
+        "id": "VuY4pGrVj9edXaW4",
+        "type": "cyberware"
+      },
+      {
+        "id": "W2fm5uCkOIywnmSc",
+        "type": "cyberware"
+      },
+      {
+        "id": "wgXTuoEfSci95NoQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "WjEhKzxpGXNVcz4K",
+        "type": "cyberware"
+      },
+      {
+        "id": "WNTPDZAVkb81zrij",
+        "type": "cyberware"
+      },
+      {
+        "id": "WQpZ0USywZdngQ1p",
+        "type": "cyberware"
+      },
+      {
+        "id": "WvckOJGOL87yJlAh",
+        "type": "cyberware"
+      },
+      {
+        "id": "wXsXDTBKCDq5GDKJ",
+        "type": "cyberware"
+      },
+      {
+        "id": "X7oO516RBp69YX8j",
+        "type": "cyberware"
+      },
+      {
+        "id": "xbARQqVNEO4Y2qlE",
+        "type": "cyberware"
+      },
+      {
+        "id": "XbEHkryDuKytNhKx",
+        "type": "cyberware"
+      },
+      {
+        "id": "XeQkxPcziTnu7fX7",
+        "type": "cyberware"
+      },
+      {
+        "id": "XI7RVyJWdk34Y0pT",
+        "type": "cyberware"
+      },
+      {
+        "id": "XIBc5Fs1jJb7Fl5i",
+        "type": "cyberware"
+      },
+      {
+        "id": "XybOKqgppvkreutU",
+        "type": "cyberware"
+      },
+      {
+        "id": "Y7gNAs2WLIMIphLd",
+        "type": "cyberware"
+      },
+      {
+        "id": "YjEqCcTtoXWE6CXT",
+        "type": "cyberware"
+      },
+      {
+        "id": "YLpALpDR02VdI5ql",
+        "type": "cyberware"
+      },
+      {
+        "id": "YNXdpshce8XKfNKV",
+        "type": "cyberware"
+      },
+      {
+        "id": "YRLd7jkgAUOcf3OM",
+        "type": "cyberware"
+      },
+      {
+        "id": "Z1hf1Ml5dzahfzjj",
+        "type": "cyberware"
+      },
+      {
+        "id": "z6hj1ba2UQ6mQKeT",
+        "type": "cyberware"
+      },
+      {
+        "id": "ZaNGhwYGCydMnnfE",
+        "type": "cyberware"
+      },
+      {
+        "id": "ZhQbiQr1xZljBo8f",
+        "type": "cyberware"
+      },
+      {
+        "id": "Zl9i4QPHcgr44ZaE",
+        "type": "cyberware"
+      },
+      {
+        "id": "ZLEYvE36lkX831Fh",
+        "type": "cyberware"
+      },
+      {
+        "id": "Zo7i3k7Aq1rOgaNv",
+        "type": "cyberware"
+      },
+      {
+        "id": "zq1C8KgnXdQWTNjt",
+        "type": "cyberware"
+      }
+    ],
+    "communication": [
+      {
+        "id": "0WSZHAIfZpUgXJJy",
+        "type": "misc"
+      },
+      {
+        "id": "5EbdcwBNaEFV4mUT",
+        "type": "misc"
+      },
+      {
+        "id": "92jSMKjnF6uaMC0M",
+        "type": "misc"
+      },
+      {
+        "id": "FjTG2S2Ekskr2afV",
+        "type": "misc"
+      },
+      {
+        "id": "gRzryhqXlQhMnLZV",
+        "type": "misc"
+      },
+      {
+        "id": "mPiYAjVaS40NlVad",
+        "type": "misc"
+      },
+      {
+        "id": "pE0SFVSRKDXqBRT9",
+        "type": "misc"
+      },
+      {
+        "id": "PNpvUuo5pb17PlwO",
+        "type": "misc"
+      },
+      {
+        "id": "q8dHQsSRm0nSXOBo",
+        "type": "misc"
+      },
+      {
+        "id": "ZGSyhPbxpn9QEIZv",
+        "type": "misc"
+      }
+    ],
+    "cyberware": [
+      {
+        "id": "00NnV27ZlLIYhyVx",
+        "type": "cyberware"
+      },
+      {
+        "id": "028jLQUeY6GObhIO",
+        "type": "cyberware"
+      },
+      {
+        "id": "0b0x4vlAfJdLl9zg",
+        "type": "cyberware"
+      },
+      {
+        "id": "0EcbjPAWmqedtKEI",
+        "type": "cyberware"
+      },
+      {
+        "id": "0Fg2ji69DLQVMLck",
+        "type": "cyberware"
+      },
+      {
+        "id": "0FLhgJZSruUlkBsU",
+        "type": "cyberware"
+      },
+      {
+        "id": "0fZmSRI7hKEX631n",
+        "type": "cyberware"
+      },
+      {
+        "id": "0h6DaeELFtrbPMzS",
+        "type": "cyberware"
+      },
+      {
+        "id": "0IxvGAE8JlfmlR2J",
+        "type": "cyberware"
+      },
+      {
+        "id": "0lPwzCnt8UIgKQcf",
+        "type": "cyberware"
+      },
+      {
+        "id": "0pgzCfql8OAaWvY3",
+        "type": "cyberware"
+      },
+      {
+        "id": "0q7qRzJcqEdlTiDC",
+        "type": "cyberware"
+      },
+      {
+        "id": "0qH1Eglak0qli8iW",
+        "type": "cyberware"
+      },
+      {
+        "id": "0QKjYI58cVUsxQSP",
+        "type": "cyberware"
+      },
+      {
+        "id": "0UemuCydKntY2Ch9",
+        "type": "cyberware"
+      },
+      {
+        "id": "0uYVMxGx0bDeBlKB",
+        "type": "cyberware"
+      },
+      {
+        "id": "0XWFRgDm1K5T9iCn",
+        "type": "cyberware"
+      },
+      {
+        "id": "14pr0AAyJx7DLVfl",
+        "type": "cyberware"
+      },
+      {
+        "id": "1elaYMEtvj9Jk6Cx",
+        "type": "cyberware"
+      },
+      {
+        "id": "1ElfaQFA8rfwFflx",
+        "type": "cyberware"
+      },
+      {
+        "id": "1gbIu72luB2pvepm",
+        "type": "cyberware"
+      },
+      {
+        "id": "1oDp6o6k0JqkR7TP",
+        "type": "cyberware"
+      },
+      {
+        "id": "2242D6j1A25TOKBb",
+        "type": "cyberware"
+      },
+      {
+        "id": "28Nqz841hox1KiFJ",
+        "type": "cyberware"
+      },
+      {
+        "id": "2g3BgDLl6zQW1tTy",
+        "type": "cyberware"
+      },
+      {
+        "id": "2lvQFOaIFlgtJ5J3",
+        "type": "cyberware"
+      },
+      {
+        "id": "2sbOmamr7IEBDHby",
+        "type": "cyberware"
+      },
+      {
+        "id": "2sJHwquByMuQmFS2",
+        "type": "cyberware"
+      },
+      {
+        "id": "2vIrocwovrxivlZ6",
+        "type": "cyberware"
+      },
+      {
+        "id": "2WMp06dramFTMf7P",
+        "type": "cyberware"
+      },
+      {
+        "id": "36FJTb9FazJE0ror",
+        "type": "cyberware"
+      },
+      {
+        "id": "3heHfpVeX5R6eUcK",
+        "type": "cyberware"
+      },
+      {
+        "id": "3iVi8ACkcfI8rt0q",
+        "type": "cyberware"
+      },
+      {
+        "id": "3jJH6G4xqc5pV5Rx",
+        "type": "cyberware"
+      },
+      {
+        "id": "3NUFXCYWDO38h49M",
+        "type": "cyberware"
+      },
+      {
+        "id": "3RH3J3P3UX430rxQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "441COFBJSTg8ATlm",
+        "type": "cyberware"
+      },
+      {
+        "id": "44tsqXQCcF2BmdjO",
+        "type": "cyberware"
+      },
+      {
+        "id": "4AWB5CrKppJd9FVd",
+        "type": "cyberware"
+      },
+      {
+        "id": "4bNLW0T3A6tuEHzT",
+        "type": "cyberware"
+      },
+      {
+        "id": "4F79NutXNwbIFPKH",
+        "type": "cyberware"
+      },
+      {
+        "id": "4HtA4HgRQpsSHvxd",
+        "type": "cyberware"
+      },
+      {
+        "id": "4IujIt1argidjiG5",
+        "type": "cyberware"
+      },
+      {
+        "id": "4jxU8PscRILeUvvU",
+        "type": "cyberware"
+      },
+      {
+        "id": "4LscuK23fI7lAaWD",
+        "type": "cyberware"
+      },
+      {
+        "id": "4PjYDdK40iXVPctE",
+        "type": "cyberware"
+      },
+      {
+        "id": "4RzpXhOhvQd13Ibt",
+        "type": "cyberware"
+      },
+      {
+        "id": "4TyQdt8me2HxUobC",
+        "type": "cyberware"
+      },
+      {
+        "id": "4YFfzn0JF1NC5RdV",
+        "type": "cyberware"
+      },
+      {
+        "id": "4yuhVfEPSyHLNNds",
+        "type": "cyberware"
+      },
+      {
+        "id": "4Z31I3cIOVFTvrYq",
+        "type": "cyberware"
+      },
+      {
+        "id": "51mlBUJWd9DUhiwm",
+        "type": "cyberware"
+      },
+      {
+        "id": "5686eiC6NbPMwcGy",
+        "type": "cyberware"
+      },
+      {
+        "id": "56MvLVG2S5nk3fR5",
+        "type": "cyberware"
+      },
+      {
+        "id": "5aF6eT2sflreR5ZT",
+        "type": "cyberware"
+      },
+      {
+        "id": "5c1p8FgucxvmBXW0",
+        "type": "cyberware"
+      },
+      {
+        "id": "5CnCpFP4LQHBZ9K3",
+        "type": "cyberware"
+      },
+      {
+        "id": "5e6IxBdOEI03q6XI",
+        "type": "cyberware"
+      },
+      {
+        "id": "5FW6g5baRodbaz4S",
+        "type": "cyberware"
+      },
+      {
+        "id": "5IDc4JXHSe8xvw0s",
+        "type": "cyberware"
+      },
+      {
+        "id": "5T2QwaBVK7aesTJl",
+        "type": "cyberware"
+      },
+      {
+        "id": "5TrrJqndIEEaEBIB",
+        "type": "cyberware"
+      },
+      {
+        "id": "5Y8GeRf4yeK1lHdN",
+        "type": "cyberware"
+      },
+      {
+        "id": "60o0T4zE1tiDiZmN",
+        "type": "cyberware"
+      },
+      {
+        "id": "61AuN3khHEXQ60IB",
+        "type": "cyberware"
+      },
+      {
+        "id": "65eaNz7SD2DGGlcR",
+        "type": "cyberware"
+      },
+      {
+        "id": "65ZksUKPkg0wmOCx",
+        "type": "cyberware"
+      },
+      {
+        "id": "68MFUerHNRhZ1pAK",
+        "type": "cyberware"
+      },
+      {
+        "id": "6eAvwT6zCEZueYkS",
+        "type": "cyberware"
+      },
+      {
+        "id": "6gNWZb4Va5E9m96W",
+        "type": "cyberware"
+      },
+      {
+        "id": "6hPSOeB9HW6s1193",
+        "type": "cyberware"
+      },
+      {
+        "id": "6KWqEV9xaQ249Pos",
+        "type": "cyberware"
+      },
+      {
+        "id": "6LxTDXaGHnFAy4jQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "6NoqypTBXvJ7Wkuj",
+        "type": "cyberware"
+      },
+      {
+        "id": "6SCWOcMuPO55LkMv",
+        "type": "cyberware"
+      },
+      {
+        "id": "6uGhwZXJQ2ivQoHG",
+        "type": "cyberware"
+      },
+      {
+        "id": "6vzrQneu8PxzA4qV",
+        "type": "cyberware"
+      },
+      {
+        "id": "6z4MF7pCjRYRJ1rC",
+        "type": "cyberware"
+      },
+      {
+        "id": "6zj3pF0JmFTpiuF6",
+        "type": "cyberware"
+      },
+      {
+        "id": "71OZZiXJZSyqU23E",
+        "type": "cyberware"
+      },
+      {
+        "id": "73HyPhqqM86LW232",
+        "type": "cyberware"
+      },
+      {
+        "id": "78TUltcYkQTSEFjG",
+        "type": "cyberware"
+      },
+      {
+        "id": "7aLfjLfrM5UJ6Wsl",
+        "type": "cyberware"
+      },
+      {
+        "id": "7C2Nq80PO334faSC",
+        "type": "cyberware"
+      },
+      {
+        "id": "7DNmSJ0C6rhGDRup",
+        "type": "cyberware"
+      },
+      {
+        "id": "7dPH1BHrPBAFQXBd",
+        "type": "cyberware"
+      },
+      {
+        "id": "7gP5RNUsS44Uu30c",
+        "type": "cyberware"
+      },
+      {
+        "id": "7IevqerDKz6Vp4Ft",
+        "type": "cyberware"
+      },
+      {
+        "id": "7koKPguAf3qzx1Lk",
+        "type": "cyberware"
+      },
+      {
+        "id": "7QKXfb654oXGZvcW",
+        "type": "cyberware"
+      },
+      {
+        "id": "7TgsmKLCJ3d1nHKw",
+        "type": "cyberware"
+      },
+      {
+        "id": "7TpIngG7lvAdyPmI",
+        "type": "cyberware"
+      },
+      {
+        "id": "7xR5SI1bLrt1ii7E",
+        "type": "cyberware"
+      },
+      {
+        "id": "83anr4aZ9X8JwYR2",
+        "type": "cyberware"
+      },
+      {
+        "id": "88FzuaU1L6ufTuhz",
+        "type": "cyberware"
+      },
+      {
+        "id": "89NhqRqriRHPrW8M",
+        "type": "cyberware"
+      },
+      {
+        "id": "8AuvNzoCDjIz33b4",
+        "type": "cyberware"
+      },
+      {
+        "id": "8EtnJzBBwXeDR5Zl",
+        "type": "cyberware"
+      },
+      {
+        "id": "8HSvv2IMMuANr9z1",
+        "type": "cyberware"
+      },
+      {
+        "id": "8JXzZ9iH1YfOcpwv",
+        "type": "cyberware"
+      },
+      {
+        "id": "8lGrE7Lg6VHn7udV",
+        "type": "cyberware"
+      },
+      {
+        "id": "8NTmZmcJNbLTDhJD",
+        "type": "cyberware"
+      },
+      {
+        "id": "8wN6aoJ7qup3JsNS",
+        "type": "cyberware"
+      },
+      {
+        "id": "9as4vkoTpbFgmTLJ",
+        "type": "cyberware"
+      },
+      {
+        "id": "9DvklzBjEThYxg4Y",
+        "type": "cyberware"
+      },
+      {
+        "id": "9JiukzLeUqC2lNUZ",
+        "type": "cyberware"
+      },
+      {
+        "id": "9M2RTibWgNR8Ck74",
+        "type": "cyberware"
+      },
+      {
+        "id": "9mBLdBHEXMkNlC71",
+        "type": "cyberware"
+      },
+      {
+        "id": "9MdjLe1y5MOBUkKh",
+        "type": "cyberware"
+      },
+      {
+        "id": "A0t4jM2nanNvQ27T",
+        "type": "cyberware"
+      },
+      {
+        "id": "A8OpIbTvoD0EX938",
+        "type": "cyberware"
+      },
+      {
+        "id": "a9WydUOfCKvag3hv",
+        "type": "cyberware"
+      },
+      {
+        "id": "abU0oNSnH1ctQkRm",
+        "type": "cyberware"
+      },
+      {
+        "id": "aCJEjYagYGFP6OSH",
+        "type": "cyberware"
+      },
+      {
+        "id": "aCKZpL5aYJZgohz5",
+        "type": "cyberware"
+      },
+      {
+        "id": "aCsc3yYB2eZ1A4tm",
+        "type": "cyberware"
+      },
+      {
+        "id": "aDqlI1kCi7yf0cLF",
+        "type": "cyberware"
+      },
+      {
+        "id": "adZmvuwQiji296g5",
+        "type": "cyberware"
+      },
+      {
+        "id": "AeWKUr3mGNxaROQI",
+        "type": "cyberware"
+      },
+      {
+        "id": "AhLlWnG5aZwvp3lG",
+        "type": "cyberware"
+      },
+      {
+        "id": "aHvXqa6oSq7kPHQU",
+        "type": "cyberware"
+      },
+      {
+        "id": "AIURvO3ZRE4Zv8R1",
+        "type": "cyberware"
+      },
+      {
+        "id": "aJnqPeewTboHmOMF",
+        "type": "cyberware"
+      },
+      {
+        "id": "ALwDNsuqDccRtlNi",
+        "type": "cyberware"
+      },
+      {
+        "id": "ANIkIU9ON4w2i7q0",
+        "type": "cyberware"
+      },
+      {
+        "id": "AOeiiHSjr4ZBjcks",
+        "type": "cyberware"
+      },
+      {
+        "id": "aqK4bBiwRBDh3BNH",
+        "type": "cyberware"
+      },
+      {
+        "id": "areDUsLwwwW1L6n5",
+        "type": "cyberware"
+      },
+      {
+        "id": "ARSP8tObRKeBrZ5c",
+        "type": "cyberware"
+      },
+      {
+        "id": "AsmcUBRh6qXUR0oJ",
+        "type": "cyberware"
+      },
+      {
+        "id": "AUqh18e10RO8EyWU",
+        "type": "cyberware"
+      },
+      {
+        "id": "aXI6fX3MAvTYHv6U",
+        "type": "cyberware"
+      },
+      {
+        "id": "axIWhCSjeR3wtReB",
+        "type": "cyberware"
+      },
+      {
+        "id": "B35H8qieHRXkJZ1i",
+        "type": "cyberware"
+      },
+      {
+        "id": "B7nGp3xHCOtlmnR2",
+        "type": "cyberware"
+      },
+      {
+        "id": "b9ZkTku9dhpY9HFj",
+        "type": "cyberware"
+      },
+      {
+        "id": "bc2ljBHUl5N0ZlvT",
+        "type": "cyberware"
+      },
+      {
+        "id": "bc9svumid1bXS8az",
+        "type": "cyberware"
+      },
+      {
+        "id": "Bd64BtP2nOWDUtYq",
+        "type": "cyberware"
+      },
+      {
+        "id": "bDCHWBYPJAfc7rDw",
+        "type": "cyberware"
+      },
+      {
+        "id": "BDsK386eyhbcG2Xf",
+        "type": "cyberware"
+      },
+      {
+        "id": "BOmFN6gYTRjmwezX",
+        "type": "cyberware"
+      },
+      {
+        "id": "bqGNr9DXXtRFluTP",
+        "type": "cyberware"
+      },
+      {
+        "id": "bRBMKlJUxF657ckg",
+        "type": "cyberware"
+      },
+      {
+        "id": "BU5EfHUGioAmMAr1",
+        "type": "cyberware"
+      },
+      {
+        "id": "bzxykW4Jtx8HNSRa",
+        "type": "cyberware"
+      },
+      {
+        "id": "c4PH5CkkhjkWZPPi",
+        "type": "cyberware"
+      },
+      {
+        "id": "c5znPzyrjDNqQRvE",
+        "type": "cyberware"
+      },
+      {
+        "id": "c9jKRQlEeCqJAbqE",
+        "type": "cyberware"
+      },
+      {
+        "id": "CA2CpDuUagvuTzcC",
+        "type": "cyberware"
+      },
+      {
+        "id": "cBpeoHCmWPK6Y8yp",
+        "type": "cyberware"
+      },
+      {
+        "id": "CFLGu3NuRc1kDfqc",
+        "type": "cyberware"
+      },
+      {
+        "id": "cgfPEeMGWuj81rYE",
+        "type": "cyberware"
+      },
+      {
+        "id": "cGLFGnSfGPJ7hfE2",
+        "type": "cyberware"
+      },
+      {
+        "id": "cGY1akpdB0W4c81O",
+        "type": "cyberware"
+      },
+      {
+        "id": "ciiJ7ijPhwErbqP5",
+        "type": "cyberware"
+      },
+      {
+        "id": "cIS9q2ariOFjkI8e",
+        "type": "cyberware"
+      },
+      {
+        "id": "CjOCM9pADk6Jo9kr",
+        "type": "cyberware"
+      },
+      {
+        "id": "CKP6XGxJU58iDzwQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "CksDoic4Pmzx9vQ6",
+        "type": "cyberware"
+      },
+      {
+        "id": "ClAtgO9qBYAjm0bO",
+        "type": "cyberware"
+      },
+      {
+        "id": "cRo8EVuNXZTNpcS4",
+        "type": "cyberware"
+      },
+      {
+        "id": "CSyN0axC0RjiFeCt",
+        "type": "cyberware"
+      },
+      {
+        "id": "CT4IIcGFWDBeoJex",
+        "type": "cyberware"
+      },
+      {
+        "id": "cTwTv4zU64B7hKle",
+        "type": "cyberware"
+      },
+      {
+        "id": "cXKCpayKG4y7cWKv",
+        "type": "cyberware"
+      },
+      {
+        "id": "cxy93LtErPi9eg69",
+        "type": "cyberware"
+      },
+      {
+        "id": "cY18lg22duhHeKu1",
+        "type": "cyberware"
+      },
+      {
+        "id": "cywWYjzAHaQukP3E",
+        "type": "cyberware"
+      },
+      {
+        "id": "czC0Vo7jbG8FWIFS",
+        "type": "cyberware"
+      },
+      {
+        "id": "D1C38AgrlgfBSZn7",
+        "type": "cyberware"
+      },
+      {
+        "id": "d33co2hrNofIEG6a",
+        "type": "cyberware"
+      },
+      {
+        "id": "D46XqvzZEwHBybM6",
+        "type": "cyberware"
+      },
+      {
+        "id": "d5KiyAmMMfofK1Nw",
+        "type": "cyberware"
+      },
+      {
+        "id": "d6Gmy4wCHaN2JIbx",
+        "type": "cyberware"
+      },
+      {
+        "id": "Dd8bljzdaV3B0AWz",
+        "type": "cyberware"
+      },
+      {
+        "id": "ddmBVcj5DD0ZIkfP",
+        "type": "cyberware"
+      },
+      {
+        "id": "deM5HBOxsXWzr7cU",
+        "type": "cyberware"
+      },
+      {
+        "id": "dFdYZkbi6WPi072M",
+        "type": "cyberware"
+      },
+      {
+        "id": "dfjKCLJd2OpjKVgy",
+        "type": "cyberware"
+      },
+      {
+        "id": "dFqkZyA7a6VIbN3G",
+        "type": "cyberware"
+      },
+      {
+        "id": "dh9ILSsxMse7FCqn",
+        "type": "cyberware"
+      },
+      {
+        "id": "DHpA9g829FPvttIx",
+        "type": "cyberware"
+      },
+      {
+        "id": "DlHRUkteTHc02yyW",
+        "type": "cyberware"
+      },
+      {
+        "id": "dLJeHhLYBTvv3fWm",
+        "type": "cyberware"
+      },
+      {
+        "id": "DP2UuKK0X2e4zjH2",
+        "type": "cyberware"
+      },
+      {
+        "id": "Dp5SKV5MJeBVxpCv",
+        "type": "cyberware"
+      },
+      {
+        "id": "DPhOqczKqhmhaZvT",
+        "type": "cyberware"
+      },
+      {
+        "id": "DTiH8ex76TXywNVo",
+        "type": "cyberware"
+      },
+      {
+        "id": "dvVZOH2xVvcUtmYN",
+        "type": "cyberware"
+      },
+      {
+        "id": "DxegpvgR4BOi7K7B",
+        "type": "cyberware"
+      },
+      {
+        "id": "E05PjYqaldH1MCPK",
+        "type": "cyberware"
+      },
+      {
+        "id": "e1mlaD0BiFeZYrBe",
+        "type": "cyberware"
+      },
+      {
+        "id": "E2cYFcDzek5qAJHX",
+        "type": "cyberware"
+      },
+      {
+        "id": "E2LBAHXMkp8P5iaH",
+        "type": "cyberware"
+      },
+      {
+        "id": "e9gH4ZqnMg4LxBIX",
+        "type": "cyberware"
+      },
+      {
+        "id": "eAtpBOQKLQlTKcLw",
+        "type": "cyberware"
+      },
+      {
+        "id": "EbcF7LBaSgejBWdQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "EElFA3VaLreNFjQr",
+        "type": "cyberware"
+      },
+      {
+        "id": "Egh0uU8hLFvU7fzR",
+        "type": "cyberware"
+      },
+      {
+        "id": "EgXxjz0xuydjuTlJ",
+        "type": "cyberware"
+      },
+      {
+        "id": "eI4EK9VJOT4PBeGc",
+        "type": "cyberware"
+      },
+      {
+        "id": "elXfPKtig8hzntSa",
+        "type": "cyberware"
+      },
+      {
+        "id": "em24PqTHImCLTOKi",
+        "type": "cyberware"
+      },
+      {
+        "id": "emCenhO2a28jOFN5",
+        "type": "cyberware"
+      },
+      {
+        "id": "epUWraUaejFdCZvV",
+        "type": "cyberware"
+      },
+      {
+        "id": "eRwuVoruccRpqpWY",
+        "type": "cyberware"
+      },
+      {
+        "id": "Esb1gkFcgpTChumy",
+        "type": "cyberware"
+      },
+      {
+        "id": "EsIsKFb5iT7uRGzB",
+        "type": "cyberware"
+      },
+      {
+        "id": "EtjQjBraBUfZznEu",
+        "type": "cyberware"
+      },
+      {
+        "id": "ExRoMkSwCD6HceY0",
+        "type": "cyberware"
+      },
+      {
+        "id": "EzfXpSMcq8qk7kNB",
+        "type": "cyberware"
+      },
+      {
+        "id": "EZUWchXQg1MqSc9u",
+        "type": "cyberware"
+      },
+      {
+        "id": "F4iPITQIp9uw1VJF",
+        "type": "cyberware"
+      },
+      {
+        "id": "F4uskOzeez8NkVXQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "F50hjeFHg5fCaIss",
+        "type": "cyberware"
+      },
+      {
+        "id": "fA5FoA6ZmiRozTJR",
+        "type": "cyberware"
+      },
+      {
+        "id": "faSaH45k1Yicyw38",
+        "type": "cyberware"
+      },
+      {
+        "id": "FBJmCXYDdWWqud9R",
+        "type": "cyberware"
+      },
+      {
+        "id": "fEcitsIlI9YPIQZf",
+        "type": "cyberware"
+      },
+      {
+        "id": "fgX98dQTW4uifQ8X",
+        "type": "cyberware"
+      },
+      {
+        "id": "fHZGpGDrJ9GA8WRe",
+        "type": "cyberware"
+      },
+      {
+        "id": "Ficvwe8xLm0npwUl",
+        "type": "cyberware"
+      },
+      {
+        "id": "FiGS9ulkEbBb46Tv",
+        "type": "cyberware"
+      },
+      {
+        "id": "FJ6eLKkYHJ9cyVup",
+        "type": "cyberware"
+      },
+      {
+        "id": "FjqL4JIIZ8eh366p",
+        "type": "cyberware"
+      },
+      {
+        "id": "FjsAN1W3ilNdvOYy",
+        "type": "cyberware"
+      },
+      {
+        "id": "Fk9Hkl3b9toEgBz9",
+        "type": "cyberware"
+      },
+      {
+        "id": "Fl9MMuqKtlJRgfXr",
+        "type": "cyberware"
+      },
+      {
+        "id": "FSUbTDzsd2t34FB0",
+        "type": "cyberware"
+      },
+      {
+        "id": "fUrWPjdGu5RyWVsh",
+        "type": "cyberware"
+      },
+      {
+        "id": "fVyIisWkBjzWG4yP",
+        "type": "cyberware"
+      },
+      {
+        "id": "fwSSKa31VX9tlZoW",
+        "type": "cyberware"
+      },
+      {
+        "id": "FwStV3HOkkLz9F4J",
+        "type": "cyberware"
+      },
+      {
+        "id": "FXQFjXduOagpnXYa",
+        "type": "cyberware"
+      },
+      {
+        "id": "FZSYxHDLIkNjQi8p",
+        "type": "cyberware"
+      },
+      {
+        "id": "G2ZHlA2I5cYbJZxd",
+        "type": "cyberware"
+      },
+      {
+        "id": "G5qcnppNZ9hWeJHg",
+        "type": "cyberware"
+      },
+      {
+        "id": "G8nyKdx4QLlu64Yf",
+        "type": "cyberware"
+      },
+      {
+        "id": "G9poDxliA8KLLeLy",
+        "type": "cyberware"
+      },
+      {
+        "id": "gA3H4S7ym3uo2Ugn",
+        "type": "cyberware"
+      },
+      {
+        "id": "GaseHhuTEYyunFVg",
+        "type": "cyberware"
+      },
+      {
+        "id": "gIOLK8dNJbyvTrLD",
+        "type": "cyberware"
+      },
+      {
+        "id": "gK7rSRLuGCbuTwsY",
+        "type": "cyberware"
+      },
+      {
+        "id": "GL4r34yZWYN4QNHA",
+        "type": "cyberware"
+      },
+      {
+        "id": "glCecAkHorPO7Oj2",
+        "type": "cyberware"
+      },
+      {
+        "id": "gMh1TkiWuuSZ0PAs",
+        "type": "cyberware"
+      },
+      {
+        "id": "GPrUSJLiGG6gP3XH",
+        "type": "cyberware"
+      },
+      {
+        "id": "Gq8g57Gp29t0qrFS",
+        "type": "cyberware"
+      },
+      {
+        "id": "GQbvA3p3KtUYGlPY",
+        "type": "cyberware"
+      },
+      {
+        "id": "gs9JrB2Aw68hDOoY",
+        "type": "cyberware"
+      },
+      {
+        "id": "gtUE11dgZzgzV4gc",
+        "type": "cyberware"
+      },
+      {
+        "id": "Gu3y56Q4NCOL98nc",
+        "type": "cyberware"
+      },
+      {
+        "id": "h1jQ195q56qKrkDH",
+        "type": "cyberware"
+      },
+      {
+        "id": "H2kCwg2bjukCXoJu",
+        "type": "cyberware"
+      },
+      {
+        "id": "h6hYFMbSxZ8mpC6P",
+        "type": "cyberware"
+      },
+      {
+        "id": "H8AOwhXD0AV9XT9m",
+        "type": "cyberware"
+      },
+      {
+        "id": "h9jVPRxoHaDlt8SO",
+        "type": "cyberware"
+      },
+      {
+        "id": "HBDZAwS8bQ3uk7QF",
+        "type": "cyberware"
+      },
+      {
+        "id": "hDMBnFI0fCCFRpBR",
+        "type": "cyberware"
+      },
+      {
+        "id": "HDWKLX84aTJKNFmz",
+        "type": "cyberware"
+      },
+      {
+        "id": "He7ib31DMgWRXBxh",
+        "type": "cyberware"
+      },
+      {
+        "id": "hEkBkLfbKjITxv7B",
+        "type": "cyberware"
+      },
+      {
+        "id": "HgSBU2EhnxeKFtmR",
+        "type": "cyberware"
+      },
+      {
+        "id": "hGVs9tg0XQribSxK",
+        "type": "cyberware"
+      },
+      {
+        "id": "hGybSNCdZAw4gc7z",
+        "type": "cyberware"
+      },
+      {
+        "id": "HhHskpuJf5utuda8",
+        "type": "cyberware"
+      },
+      {
+        "id": "hn3jQDrDDLxmfb0b",
+        "type": "cyberware"
+      },
+      {
+        "id": "HpgrTreVJH3cqilx",
+        "type": "cyberware"
+      },
+      {
+        "id": "hQTFPpn6wfeg0hN2",
+        "type": "cyberware"
+      },
+      {
+        "id": "hTbNeuiOxAabRm2B",
+        "type": "cyberware"
+      },
+      {
+        "id": "HU7dBuZBMIUXIUFx",
+        "type": "cyberware"
+      },
+      {
+        "id": "hva4cyoTxTiGbnh4",
+        "type": "cyberware"
+      },
+      {
+        "id": "hXPoSo1maZ0W3aA2",
+        "type": "cyberware"
+      },
+      {
+        "id": "hYz4MrfT2fUVjIE0",
+        "type": "cyberware"
+      },
+      {
+        "id": "i1AgzNMm76aA1dmC",
+        "type": "cyberware"
+      },
+      {
+        "id": "i5XkHFYQFfO0Z7dv",
+        "type": "cyberware"
+      },
+      {
+        "id": "I9nFsTBhNQN2GSgU",
+        "type": "cyberware"
+      },
+      {
+        "id": "ICsP7Cn2xJVIxRCA",
+        "type": "cyberware"
+      },
+      {
+        "id": "iFuQ1OcwllDA6RPf",
+        "type": "cyberware"
+      },
+      {
+        "id": "iNylWpkdojGzkxLy",
+        "type": "cyberware"
+      },
+      {
+        "id": "InZENec653Dp0QEX",
+        "type": "cyberware"
+      },
+      {
+        "id": "IPracTUD26huNpIn",
+        "type": "cyberware"
+      },
+      {
+        "id": "IqJ5TyEqrC36Vg5A",
+        "type": "cyberware"
+      },
+      {
+        "id": "irYKZDkyy5u4Tfea",
+        "type": "cyberware"
+      },
+      {
+        "id": "IszjQsuyh2CyFojt",
+        "type": "cyberware"
+      },
+      {
+        "id": "iUkxqyLE91IIB9H3",
+        "type": "cyberware"
+      },
+      {
+        "id": "iW4fhnvDP5PpIKot",
+        "type": "cyberware"
+      },
+      {
+        "id": "Iwa2cnED8V7ougQT",
+        "type": "cyberware"
+      },
+      {
+        "id": "IxC5h4SdFThNnpXa",
+        "type": "cyberware"
+      },
+      {
+        "id": "IXwvqzu09IiyACEU",
+        "type": "cyberware"
+      },
+      {
+        "id": "izDtqfGzlDiLmRcE",
+        "type": "cyberware"
+      },
+      {
+        "id": "J18iJtfyBoohddh7",
+        "type": "cyberware"
+      },
+      {
+        "id": "j47V77x4orVYvLrQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "Ja50YUeRH1ybYWPh",
+        "type": "cyberware"
+      },
+      {
+        "id": "jAglWRtRG489hPuv",
+        "type": "cyberware"
+      },
+      {
+        "id": "jdC7g86y4bu5dr6F",
+        "type": "cyberware"
+      },
+      {
+        "id": "JDcijQg6BlJUXexh",
+        "type": "cyberware"
+      },
+      {
+        "id": "JeGdfinEBw0eexDS",
+        "type": "cyberware"
+      },
+      {
+        "id": "jeKHxh0QDjGIGy7R",
+        "type": "cyberware"
+      },
+      {
+        "id": "JHBz0VftWxZu5V7f",
+        "type": "cyberware"
+      },
+      {
+        "id": "JIbuD961ywoYybGc",
+        "type": "cyberware"
+      },
+      {
+        "id": "jkMogWTVvOCyLx3k",
+        "type": "cyberware"
+      },
+      {
+        "id": "JMV6k03EQ4mAVHI8",
+        "type": "cyberware"
+      },
+      {
+        "id": "jVdIoum2J3n6Onlm",
+        "type": "cyberware"
+      },
+      {
+        "id": "JVsYumsP1e5MM2eq",
+        "type": "cyberware"
+      },
+      {
+        "id": "JWNbtZUfB1p5k5lE",
+        "type": "cyberware"
+      },
+      {
+        "id": "jybxFdbThwyYZC04",
+        "type": "cyberware"
+      },
+      {
+        "id": "JZlxABUqQkLn9BqY",
+        "type": "cyberware"
+      },
+      {
+        "id": "k0RGlj45E41Cvf4U",
+        "type": "cyberware"
+      },
+      {
+        "id": "K1k8g5SRnzZ4SuHB",
+        "type": "cyberware"
+      },
+      {
+        "id": "KbELMMEEQq5Qg7zx",
+        "type": "cyberware"
+      },
+      {
+        "id": "KbF8WzxvDNtw1j6I",
+        "type": "cyberware"
+      },
+      {
+        "id": "KCZVjoQTMnMPFuBM",
+        "type": "cyberware"
+      },
+      {
+        "id": "kKDJmans2w1Vf3IV",
+        "type": "cyberware"
+      },
+      {
+        "id": "klBO0ySrzFLb8ri0",
+        "type": "cyberware"
+      },
+      {
+        "id": "Kmdnj0ag83B1LB3h",
+        "type": "cyberware"
+      },
+      {
+        "id": "kMscD9bA78kuByW9",
+        "type": "cyberware"
+      },
+      {
+        "id": "kPfAVxTI97cgm063",
+        "type": "cyberware"
+      },
+      {
+        "id": "KrrIPMLEmkZ3q65l",
+        "type": "cyberware"
+      },
+      {
+        "id": "KtCrYhB3DEEm0jF3",
+        "type": "cyberware"
+      },
+      {
+        "id": "KUq4snqYZqFUmdrj",
+        "type": "cyberware"
+      },
+      {
+        "id": "KUr8uVDixoUAmQfr",
+        "type": "cyberware"
+      },
+      {
+        "id": "KUrqRUszYWfmVHYL",
+        "type": "cyberware"
+      },
+      {
+        "id": "KvpdlY3NJBiodJyy",
+        "type": "cyberware"
+      },
+      {
+        "id": "KXOynOTg9AVWpqmg",
+        "type": "cyberware"
+      },
+      {
+        "id": "kYSXfPJRadxiUve7",
+        "type": "cyberware"
+      },
+      {
+        "id": "l1JJe8GJ6I2ktpGh",
+        "type": "cyberware"
+      },
+      {
+        "id": "l6a0DhJqOxr7xsIq",
+        "type": "cyberware"
+      },
+      {
+        "id": "l7tgUqnbHVPpXXSF",
+        "type": "cyberware"
+      },
+      {
+        "id": "l9HqpDYmhEXDFzdD",
+        "type": "cyberware"
+      },
+      {
+        "id": "lAqJw4taL7QOp3ma",
+        "type": "cyberware"
+      },
+      {
+        "id": "LbWZuKzclt0BTzwG",
+        "type": "cyberware"
+      },
+      {
+        "id": "LGpcuTW2YvYJ7DiY",
+        "type": "cyberware"
+      },
+      {
+        "id": "LH8kVgUccucN6tih",
+        "type": "cyberware"
+      },
+      {
+        "id": "LIirhJlkdTliilOV",
+        "type": "cyberware"
+      },
+      {
+        "id": "LJg8I5rBfXqjt6Q9",
+        "type": "cyberware"
+      },
+      {
+        "id": "lJHcDMhqoBZrbRpM",
+        "type": "cyberware"
+      },
+      {
+        "id": "LJOSGfECEv56PeZD",
+        "type": "cyberware"
+      },
+      {
+        "id": "lkXz9O5U1ck9MkmQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "LL2iCCr2NOSMFKeW",
+        "type": "cyberware"
+      },
+      {
+        "id": "LLMIYeGkSfbvc1mF",
+        "type": "cyberware"
+      },
+      {
+        "id": "lNZ1tWWngFT9A6tg",
+        "type": "cyberware"
+      },
+      {
+        "id": "LOfHQ5f8c53ItBpe",
+        "type": "cyberware"
+      },
+      {
+        "id": "LsOhVCIuePtCHDep",
+        "type": "cyberware"
+      },
+      {
+        "id": "LVjN350ZWrhxcmDR",
+        "type": "cyberware"
+      },
+      {
+        "id": "LxFJzrnJjpVwmi9n",
+        "type": "cyberware"
+      },
+      {
+        "id": "LXh7AJ2YSuswFjHc",
+        "type": "cyberware"
+      },
+      {
+        "id": "LxwrTJdHlnvsoFaH",
+        "type": "cyberware"
+      },
+      {
+        "id": "LYP2KRcu9UJGBbgq",
+        "type": "cyberware"
+      },
+      {
+        "id": "LZ5QiBtbbr40f4Vm",
+        "type": "cyberware"
+      },
+      {
+        "id": "m1jzVeNr5rKYP7LS",
+        "type": "cyberware"
+      },
+      {
+        "id": "M38ltdYpFt0Kzr9s",
+        "type": "cyberware"
+      },
+      {
+        "id": "M6nIuKxfWolVmFj7",
+        "type": "cyberware"
+      },
+      {
+        "id": "MaGqa9U6FkYC314M",
+        "type": "cyberware"
+      },
+      {
+        "id": "MHmfDDNL5eAgrlMT",
+        "type": "cyberware"
+      },
+      {
+        "id": "mIrQiXy5DYmuxvBU",
+        "type": "cyberware"
+      },
+      {
+        "id": "MjdjoNTspAZhWTJD",
+        "type": "cyberware"
+      },
+      {
+        "id": "MJr8DNCqu5Dx9FcL",
+        "type": "cyberware"
+      },
+      {
+        "id": "mMxhfbKPGVYsxriH",
+        "type": "cyberware"
+      },
+      {
+        "id": "mn6VB95fjoxi3qgj",
+        "type": "cyberware"
+      },
+      {
+        "id": "MnaA0goUdxLx7knB",
+        "type": "cyberware"
+      },
+      {
+        "id": "MnDQu6USQXzcVkYF",
+        "type": "cyberware"
+      },
+      {
+        "id": "MpOY1NBk9eYnGyNJ",
+        "type": "cyberware"
+      },
+      {
+        "id": "MQG0gO0ZtyhhxXOG",
+        "type": "cyberware"
+      },
+      {
+        "id": "mrleLUhTDidTia9K",
+        "type": "cyberware"
+      },
+      {
+        "id": "mSWr4NmqeXGAX0Za",
+        "type": "cyberware"
+      },
+      {
+        "id": "mTJn18F8HPqIW4x5",
+        "type": "cyberware"
+      },
+      {
+        "id": "MVHDd9DnaJ12KbLi",
+        "type": "cyberware"
+      },
+      {
+        "id": "MwUB1qdIb1Sbd9tT",
+        "type": "cyberware"
+      },
+      {
+        "id": "MX4nXyFZdOPPFcGa",
+        "type": "cyberware"
+      },
+      {
+        "id": "mXvI9297ihaJizLV",
+        "type": "cyberware"
+      },
+      {
+        "id": "mXzUj2aiMQHaYWdV",
+        "type": "cyberware"
+      },
+      {
+        "id": "MZFUWfGXdRkLfjTO",
+        "type": "cyberware"
+      },
+      {
+        "id": "MZoTVVtoksZqPOYq",
+        "type": "cyberware"
+      },
+      {
+        "id": "N3FLd76QgzhCC0BP",
+        "type": "cyberware"
+      },
+      {
+        "id": "N7H6Mkqb1BzC0Lkg",
+        "type": "cyberware"
+      },
+      {
+        "id": "N8a6bdbs536lBRRU",
+        "type": "cyberware"
+      },
+      {
+        "id": "n9CCZwVD9MJdz79N",
+        "type": "cyberware"
+      },
+      {
+        "id": "Nd0FeBPJaIJbSahn",
+        "type": "cyberware"
+      },
+      {
+        "id": "nDSch6yfL0KGQFuv",
+        "type": "cyberware"
+      },
+      {
+        "id": "nENV8xvukIxnAKK9",
+        "type": "cyberware"
+      },
+      {
+        "id": "nEyut9daeFNt1teI",
+        "type": "cyberware"
+      },
+      {
+        "id": "NfRS2MEgZvDcl5ve",
+        "type": "cyberware"
+      },
+      {
+        "id": "niXzmwNkxwMd4eH8",
+        "type": "cyberware"
+      },
+      {
+        "id": "NJvzvZpeWsUfacIT",
+        "type": "cyberware"
+      },
+      {
+        "id": "nLmGZdnqORDYqerv",
+        "type": "cyberware"
+      },
+      {
+        "id": "NNwGzQjJjNuO2Jam",
+        "type": "cyberware"
+      },
+      {
+        "id": "Nqv8pWR9oE81dDH9",
+        "type": "cyberware"
+      },
+      {
+        "id": "NsbjtwZyoHiYBDV4",
+        "type": "cyberware"
+      },
+      {
+        "id": "ntBi50DzmcnUeoNC",
+        "type": "cyberware"
+      },
+      {
+        "id": "NTHPwlqU6MkWifzZ",
+        "type": "cyberware"
+      },
+      {
+        "id": "nUg5viFGAYW3zHWf",
+        "type": "cyberware"
+      },
+      {
+        "id": "nW7jF5nO5UvVbU9P",
+        "type": "cyberware"
+      },
+      {
+        "id": "NXN280LSYL3JLOQl",
+        "type": "cyberware"
+      },
+      {
+        "id": "NZCDZlqXOiY21BSz",
+        "type": "cyberware"
+      },
+      {
+        "id": "NZl7mXe5H2l4RpZF",
+        "type": "cyberware"
+      },
+      {
+        "id": "O02xddkaUJOQSqzv",
+        "type": "cyberware"
+      },
+      {
+        "id": "o0croGArnkg7UeMK",
+        "type": "cyberware"
+      },
+      {
+        "id": "o3GQsk0wv1m3ciFG",
+        "type": "cyberware"
+      },
+      {
+        "id": "O67RnjiOWMPdVV0q",
+        "type": "cyberware"
+      },
+      {
+        "id": "OabKgbn5B4JyAAhu",
+        "type": "cyberware"
+      },
+      {
+        "id": "OF2gHQeXdqJSNeGL",
+        "type": "cyberware"
+      },
+      {
+        "id": "OFVI9OpBW46qFpfg",
+        "type": "cyberware"
+      },
+      {
+        "id": "ohr13km4HP1tsHys",
+        "type": "cyberware"
+      },
+      {
+        "id": "OkH5LxOuZX55zDBI",
+        "type": "cyberware"
+      },
+      {
+        "id": "omioMsyDpOtqvrwe",
+        "type": "cyberware"
+      },
+      {
+        "id": "OmuSR1ZFcbYsUFSG",
+        "type": "cyberware"
+      },
+      {
+        "id": "opbAn30ShLdkJpBS",
+        "type": "cyberware"
+      },
+      {
+        "id": "OQWPlkUzX3qB9C0S",
+        "type": "cyberware"
+      },
+      {
+        "id": "oTYgcY50ec60waJW",
+        "type": "cyberware"
+      },
+      {
+        "id": "oUL9HVb9CWKM4HO3",
+        "type": "cyberware"
+      },
+      {
+        "id": "ovwiYO05tb7jwWbu",
+        "type": "cyberware"
+      },
+      {
+        "id": "p0ajuvdzSMCo7n86",
+        "type": "cyberware"
+      },
+      {
+        "id": "P13hU6eE683RTtpW",
+        "type": "cyberware"
+      },
+      {
+        "id": "P6L0eTWXIlQ2Q27d",
+        "type": "cyberware"
+      },
+      {
+        "id": "PatZQ6SMWd2aIhUN",
+        "type": "cyberware"
+      },
+      {
+        "id": "PD4jOfDsdDjF1ZvD",
+        "type": "cyberware"
+      },
+      {
+        "id": "PFK36DkDMYHSNWIr",
+        "type": "cyberware"
+      },
+      {
+        "id": "pFVbRQJwgrHrY8k8",
+        "type": "cyberware"
+      },
+      {
+        "id": "PImDQh2XRvx8nlnL",
+        "type": "cyberware"
+      },
+      {
+        "id": "pOcxUUWOnlaOnW35",
+        "type": "cyberware"
+      },
+      {
+        "id": "PRcRWDFjQUmkjeiQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "psG2iFKEl4sxYp8m",
+        "type": "cyberware"
+      },
+      {
+        "id": "PSIAhCmH2oE50mw4",
+        "type": "cyberware"
+      },
+      {
+        "id": "PTaTvR0Mxcm7yoHy",
+        "type": "cyberware"
+      },
+      {
+        "id": "PXBR0NLO27s4GWS7",
+        "type": "cyberware"
+      },
+      {
+        "id": "PXyUqvAucU2CCDYU",
+        "type": "cyberware"
+      },
+      {
+        "id": "PyuBkywsxX52wahR",
+        "type": "cyberware"
+      },
+      {
+        "id": "PZ7o6UDycuXM4RIQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "q0DDSJ0rZuzk66tq",
+        "type": "cyberware"
+      },
+      {
+        "id": "q0VD2ov6zSKgBR1F",
+        "type": "cyberware"
+      },
+      {
+        "id": "Q83fNWf5Vq5TrWwh",
+        "type": "cyberware"
+      },
+      {
+        "id": "Q8pz95Rloqwkze7N",
+        "type": "cyberware"
+      },
+      {
+        "id": "QAUbUriw1IPv76AY",
+        "type": "cyberware"
+      },
+      {
+        "id": "QCyFIPhWrOxGkRcS",
+        "type": "cyberware"
+      },
+      {
+        "id": "QdazH4nwix5Bspgv",
+        "type": "cyberware"
+      },
+      {
+        "id": "qfNS9oIHVAgxeHfH",
+        "type": "cyberware"
+      },
+      {
+        "id": "QG2qSV3woKRdNSOD",
+        "type": "cyberware"
+      },
+      {
+        "id": "QGqLhG5jWfVguFWu",
+        "type": "cyberware"
+      },
+      {
+        "id": "qgVuaCzdITB9Xao8",
+        "type": "cyberware"
+      },
+      {
+        "id": "qhEY0TWRN2K27hGu",
+        "type": "cyberware"
+      },
+      {
+        "id": "qlNR412mJNG70Geq",
+        "type": "cyberware"
+      },
+      {
+        "id": "qQjK0unYN00y0asf",
+        "type": "cyberware"
+      },
+      {
+        "id": "qqWnfUvAXhihKHZr",
+        "type": "cyberware"
+      },
+      {
+        "id": "QsyarHXPA7Lr3boj",
+        "type": "cyberware"
+      },
+      {
+        "id": "QT9wrkoqqnZTpSCM",
+        "type": "cyberware"
+      },
+      {
+        "id": "qUMacexE4i2cxcZV",
+        "type": "cyberware"
+      },
+      {
+        "id": "QVDE3ZyY2Fjt1P3q",
+        "type": "cyberware"
+      },
+      {
+        "id": "QVVVEseOXKQUWKTu",
+        "type": "cyberware"
+      },
+      {
+        "id": "QXfpyVIi53qp070Y",
+        "type": "cyberware"
+      },
+      {
+        "id": "r14T2Ho4hvxw1kq3",
+        "type": "cyberware"
+      },
+      {
+        "id": "R1bVAKidMfCwanfV",
+        "type": "cyberware"
+      },
+      {
+        "id": "r6nhepuWs2FmLxU5",
+        "type": "cyberware"
+      },
+      {
+        "id": "R7NBASY5goo1jHBY",
+        "type": "cyberware"
+      },
+      {
+        "id": "R7y7JctWciX9dAR0",
+        "type": "cyberware"
+      },
+      {
+        "id": "r7ZxBgLlW698K2Dr",
+        "type": "cyberware"
+      },
+      {
+        "id": "R9znlofWXo0mKNVT",
+        "type": "cyberware"
+      },
+      {
+        "id": "RAoBk8PEwrsDCWul",
+        "type": "cyberware"
+      },
+      {
+        "id": "RAqumUNxoSbeJalR",
+        "type": "cyberware"
+      },
+      {
+        "id": "rb8xsXtOt1pEfwrI",
+        "type": "cyberware"
+      },
+      {
+        "id": "rbzneMCdPGDcQapQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "rCPzdj6xHda2nohZ",
+        "type": "cyberware"
+      },
+      {
+        "id": "RCZRHI2RQZ3tkCM9",
+        "type": "cyberware"
+      },
+      {
+        "id": "Rd6mYPC5jHTdAApv",
+        "type": "cyberware"
+      },
+      {
+        "id": "RFEv3oqEZ0iA291s",
+        "type": "cyberware"
+      },
+      {
+        "id": "RfX6lkMZWoWLuFGh",
+        "type": "cyberware"
+      },
+      {
+        "id": "rH7XbHvy0894osT6",
+        "type": "cyberware"
+      },
+      {
+        "id": "rhBRwSHACvjQDtiX",
+        "type": "cyberware"
+      },
+      {
+        "id": "RHOdeEq60SXPxyw0",
+        "type": "cyberware"
+      },
+      {
+        "id": "rMoOifVJyUGbbA1e",
+        "type": "cyberware"
+      },
+      {
+        "id": "RMUh8kYykGQSRAxC",
+        "type": "cyberware"
+      },
+      {
+        "id": "ROgB3sL5zk66KCkw",
+        "type": "cyberware"
+      },
+      {
+        "id": "ron1ii3V3c0M50Fl",
+        "type": "cyberware"
+      },
+      {
+        "id": "RRTcw5ozukKzg4LI",
+        "type": "cyberware"
+      },
+      {
+        "id": "rrwtFQgRjYogVVoL",
+        "type": "cyberware"
+      },
+      {
+        "id": "Rswu78mVbf4iVjla",
+        "type": "cyberware"
+      },
+      {
+        "id": "RswzTnslJiJRUIUg",
+        "type": "cyberware"
+      },
+      {
+        "id": "RTgP4AdNNcda7CeD",
+        "type": "cyberware"
+      },
+      {
+        "id": "rWKtR99z5SB6dkbl",
+        "type": "cyberware"
+      },
+      {
+        "id": "RXHrX5rXAHve3Aae",
+        "type": "cyberware"
+      },
+      {
+        "id": "RxpOeijgQDPnbZNt",
+        "type": "cyberware"
+      },
+      {
+        "id": "RXPyrkDBmzZkNcJb",
+        "type": "cyberware"
+      },
+      {
+        "id": "RyoBupUkhdnZA2PG",
+        "type": "cyberware"
+      },
+      {
+        "id": "S1aaPj7HwU1YF6U8",
+        "type": "cyberware"
+      },
+      {
+        "id": "s3CZXtjVFaYtLJgF",
+        "type": "cyberware"
+      },
+      {
+        "id": "S4OCB9gua6kQxYhr",
+        "type": "cyberware"
+      },
+      {
+        "id": "S5ph5mz4uefvBltP",
+        "type": "cyberware"
+      },
+      {
+        "id": "s60VIQKHqZFGejEQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "S62x9wVi5fTE43hD",
+        "type": "cyberware"
+      },
+      {
+        "id": "s7DVjlNRIpN13QlS",
+        "type": "cyberware"
+      },
+      {
+        "id": "saOJZHgSLQnelsAK",
+        "type": "cyberware"
+      },
+      {
+        "id": "SapjWdzsdf2ph4RU",
+        "type": "cyberware"
+      },
+      {
+        "id": "ScZkit94zEHahOxO",
+        "type": "cyberware"
+      },
+      {
+        "id": "sD9NffpfNXCsgKPi",
+        "type": "cyberware"
+      },
+      {
+        "id": "SePZzEyqgCnmTqQU",
+        "type": "cyberware"
+      },
+      {
+        "id": "SF9GKs7bVcyWeXDp",
+        "type": "cyberware"
+      },
+      {
+        "id": "sgWRIEjrLfF7yGRG",
+        "type": "cyberware"
+      },
+      {
+        "id": "Sj2KRsS0YCGwCRG6",
+        "type": "cyberware"
+      },
+      {
+        "id": "sj8zTmVVoYyFQNkc",
+        "type": "cyberware"
+      },
+      {
+        "id": "sjPjCxbcUS30gvx4",
+        "type": "cyberware"
+      },
+      {
+        "id": "skZZr2OG0f6VBfFb",
+        "type": "cyberware"
+      },
+      {
+        "id": "sn65773vaKF52Wn3",
+        "type": "cyberware"
+      },
+      {
+        "id": "SnMboyCkee8wC4T5",
+        "type": "cyberware"
+      },
+      {
+        "id": "sp5zOnObn0RMd1Mc",
+        "type": "cyberware"
+      },
+      {
+        "id": "sQ9WZIqevN5o9v8y",
+        "type": "cyberware"
+      },
+      {
+        "id": "sQQzqWwwHiqsYlpZ",
+        "type": "cyberware"
+      },
+      {
+        "id": "Sr39WDlQAm8zmfGy",
+        "type": "cyberware"
+      },
+      {
+        "id": "SsKqUfA5SeGPLyHd",
+        "type": "cyberware"
+      },
+      {
+        "id": "sSUgUVgeKbe1Rb4i",
+        "type": "cyberware"
+      },
+      {
+        "id": "suPbtfd4CgTIxL99",
+        "type": "cyberware"
+      },
+      {
+        "id": "SVBcL4gwvbAfK2MU",
+        "type": "cyberware"
+      },
+      {
+        "id": "sWqiXAcjr6jBoyNm",
+        "type": "cyberware"
+      },
+      {
+        "id": "sYJZn3Ro7aFRoHIk",
+        "type": "cyberware"
+      },
+      {
+        "id": "syn3rdFyo7rQF2mI",
+        "type": "cyberware"
+      },
+      {
+        "id": "SytpGxV6gptAE9CK",
+        "type": "cyberware"
+      },
+      {
+        "id": "sZutl2y3KfDBAjCM",
+        "type": "cyberware"
+      },
+      {
+        "id": "T0sYlwUc34uScwOT",
+        "type": "cyberware"
+      },
+      {
+        "id": "t4GQ4TfYoe01MpYk",
+        "type": "cyberware"
+      },
+      {
+        "id": "T6uJ96qal9clBzbQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "T8L4RhVT6PzKZ9jz",
+        "type": "cyberware"
+      },
+      {
+        "id": "Tc5NOtYCXG5c8MvV",
+        "type": "cyberware"
+      },
+      {
+        "id": "tFb1c3RV5ru8I1TH",
+        "type": "cyberware"
+      },
+      {
+        "id": "tfx9iY8uWNjLDHfZ",
+        "type": "cyberware"
+      },
+      {
+        "id": "TgBgx45XIn2GwwkG",
+        "type": "cyberware"
+      },
+      {
+        "id": "tGiFyoVevQx88gpn",
+        "type": "cyberware"
+      },
+      {
+        "id": "tHWUo9zAUSmiUp0P",
+        "type": "cyberware"
+      },
+      {
+        "id": "tJbIGN0sRIXRhfrU",
+        "type": "cyberware"
+      },
+      {
+        "id": "TjPEHuubiN04BfjJ",
+        "type": "cyberware"
+      },
+      {
+        "id": "Tk9yzbmefTfauKYq",
+        "type": "cyberware"
+      },
+      {
+        "id": "tKVd0l9pBuq4hWmi",
+        "type": "cyberware"
+      },
+      {
+        "id": "tNdW5gchY1JQ8OXQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "Tr8jag2DaJl3Y9xo",
+        "type": "cyberware"
+      },
+      {
+        "id": "trDfBR6YNjPPgBC3",
+        "type": "cyberware"
+      },
+      {
+        "id": "trLsTQH4zbe87QgO",
+        "type": "cyberware"
+      },
+      {
+        "id": "tRUlRvf4b77tHfLa",
+        "type": "cyberware"
+      },
+      {
+        "id": "ttvpkZ3Oj10f7zmb",
+        "type": "cyberware"
+      },
+      {
+        "id": "Tvzecb5I2LpMfGUZ",
+        "type": "cyberware"
+      },
+      {
+        "id": "TwPm6kUOg80lLQZ0",
+        "type": "cyberware"
+      },
+      {
+        "id": "TxwvsvcCDrjaXh3m",
+        "type": "cyberware"
+      },
+      {
+        "id": "tZDzdLA4E00T7zre",
+        "type": "cyberware"
+      },
+      {
+        "id": "U0OxR5NlZf9KxU5l",
+        "type": "cyberware"
+      },
+      {
+        "id": "u0zBU6MlrZ0Lcr0e",
+        "type": "cyberware"
+      },
+      {
+        "id": "U185lnMkKBETCvZs",
+        "type": "cyberware"
+      },
+      {
+        "id": "u5kERRNa78cAJymr",
+        "type": "cyberware"
+      },
+      {
+        "id": "uaB9FLJoUpHLGtLZ",
+        "type": "cyberware"
+      },
+      {
+        "id": "uBmIL8xKuMY4NC3A",
+        "type": "cyberware"
+      },
+      {
+        "id": "udhrqai52CORT8W3",
+        "type": "cyberware"
+      },
+      {
+        "id": "UeuBdkzD2x8Nktrf",
+        "type": "cyberware"
+      },
+      {
+        "id": "UfP44oKyRztivU3u",
+        "type": "cyberware"
+      },
+      {
+        "id": "uHAkcMaad4wM0PbG",
+        "type": "cyberware"
+      },
+      {
+        "id": "Uibq9h6WsDVVhGsO",
+        "type": "cyberware"
+      },
+      {
+        "id": "ujPqVrP8FUWHO0Ln",
+        "type": "cyberware"
+      },
+      {
+        "id": "UjYlctLTSB1R8RIx",
+        "type": "cyberware"
+      },
+      {
+        "id": "UKAnXfdLPniQ5EZz",
+        "type": "cyberware"
+      },
+      {
+        "id": "uKavqSA7r4Ueutdd",
+        "type": "cyberware"
+      },
+      {
+        "id": "ukCBN5ehPl2FWFMH",
+        "type": "cyberware"
+      },
+      {
+        "id": "UkNwkqmC2fO0nc8j",
+        "type": "cyberware"
+      },
+      {
+        "id": "ULrPmRlljcWT7hO7",
+        "type": "cyberware"
+      },
+      {
+        "id": "UOXUyPxchOIErE92",
+        "type": "cyberware"
+      },
+      {
+        "id": "uP4M64RrkzCba18q",
+        "type": "cyberware"
+      },
+      {
+        "id": "Upn1OGFnZoCQVPZ9",
+        "type": "cyberware"
+      },
+      {
+        "id": "UPWKEfAJLzfLu15X",
+        "type": "cyberware"
+      },
+      {
+        "id": "uy5FTBM5Id807PLh",
+        "type": "cyberware"
+      },
+      {
+        "id": "uYyzDwI8BDxOxpTU",
+        "type": "cyberware"
+      },
+      {
+        "id": "UZ8cjBo4aLWJNRbB",
+        "type": "cyberware"
+      },
+      {
+        "id": "v2CoqLI4LlY5TYkZ",
+        "type": "cyberware"
+      },
+      {
+        "id": "vajIur7MDCGHh5rD",
+        "type": "cyberware"
+      },
+      {
+        "id": "VDjZPTHWYXKEg3wf",
+        "type": "cyberware"
+      },
+      {
+        "id": "VDSex8vMVf9os314",
+        "type": "cyberware"
+      },
+      {
+        "id": "vfDnlMcZh1gXxC0a",
+        "type": "cyberware"
+      },
+      {
+        "id": "vfgIxQER6awAvodX",
+        "type": "cyberware"
+      },
+      {
+        "id": "vgw64FbLv4FAIyDA",
+        "type": "cyberware"
+      },
+      {
+        "id": "vhpGGuJMMZJxqPCT",
+        "type": "cyberware"
+      },
+      {
+        "id": "VkAWoK9INqdhpJGf",
+        "type": "cyberware"
+      },
+      {
+        "id": "vL147CRJboEycvOF",
+        "type": "cyberware"
+      },
+      {
+        "id": "VmJq4p9GdtueNZHT",
+        "type": "cyberware"
+      },
+      {
+        "id": "VMpmYVyakRkjBHMm",
+        "type": "cyberware"
+      },
+      {
+        "id": "vMQFbpacs4j363Un",
+        "type": "cyberware"
+      },
+      {
+        "id": "VNEICO4yEQONH30v",
+        "type": "cyberware"
+      },
+      {
+        "id": "vnPSvYeMB2Kl1DlP",
+        "type": "cyberware"
+      },
+      {
+        "id": "VSnkjnLqXqzcBbwD",
+        "type": "cyberware"
+      },
+      {
+        "id": "VZgIxpnEQSrGKX3l",
+        "type": "cyberware"
+      },
+      {
+        "id": "VzJTyc3K90VebExr",
+        "type": "cyberware"
+      },
+      {
+        "id": "W9cFEEu9WSViKWHN",
+        "type": "cyberware"
+      },
+      {
+        "id": "w9xNgPv8LK6yZN5C",
+        "type": "cyberware"
+      },
+      {
+        "id": "wCt6n6aB3vuDvCQ5",
+        "type": "cyberware"
+      },
+      {
+        "id": "wGGXZr2Gh2jWc98p",
+        "type": "cyberware"
+      },
+      {
+        "id": "wH2d9Tf4wbMJakYa",
+        "type": "cyberware"
+      },
+      {
+        "id": "WhK07ypIXvXyd1C5",
+        "type": "cyberware"
+      },
+      {
+        "id": "wIYtm2ZUCddDO0Qj",
+        "type": "cyberware"
+      },
+      {
+        "id": "wj68VFLsW8TPmGvT",
+        "type": "cyberware"
+      },
+      {
+        "id": "WKknq4vqAECuqHfR",
+        "type": "cyberware"
+      },
+      {
+        "id": "WmJB50TF2J1xOS2O",
+        "type": "cyberware"
+      },
+      {
+        "id": "wQVRs4QSWPEDpdGl",
+        "type": "cyberware"
+      },
+      {
+        "id": "wUX3vkQbMTS620Mu",
+        "type": "cyberware"
+      },
+      {
+        "id": "WYRYC8kOjYy4lJaO",
+        "type": "cyberware"
+      },
+      {
+        "id": "WZd7nwesfiapmnq3",
+        "type": "cyberware"
+      },
+      {
+        "id": "x22V4qAktQ9TKb9V",
+        "type": "cyberware"
+      },
+      {
+        "id": "x8bsH0AXB3u1UZDe",
+        "type": "cyberware"
+      },
+      {
+        "id": "XCWrdMCXGUB7GHKB",
+        "type": "cyberware"
+      },
+      {
+        "id": "XeoZgjnIteb1sv3P",
+        "type": "cyberware"
+      },
+      {
+        "id": "xeozvf08m2MwkQNk",
+        "type": "cyberware"
+      },
+      {
+        "id": "XfFmv49TJuL5NZGt",
+        "type": "cyberware"
+      },
+      {
+        "id": "xHDoOrIuccj3pWyG",
+        "type": "cyberware"
+      },
+      {
+        "id": "xhYmuTfejQMEUfUP",
+        "type": "cyberware"
+      },
+      {
+        "id": "xlqWM6ULXTTdyMfA",
+        "type": "cyberware"
+      },
+      {
+        "id": "XmRaTzQQKNn66MjO",
+        "type": "cyberware"
+      },
+      {
+        "id": "XPtPACPlZaNAQ6kz",
+        "type": "cyberware"
+      },
+      {
+        "id": "xrywMxPFyKgfpmaY",
+        "type": "cyberware"
+      },
+      {
+        "id": "xS2mzYGH7TpwtrLV",
+        "type": "cyberware"
+      },
+      {
+        "id": "Xsbp6FypvACKYkET",
+        "type": "cyberware"
+      },
+      {
+        "id": "XWhIVHgxjWjuFPBw",
+        "type": "cyberware"
+      },
+      {
+        "id": "xWrOn5zODp9cfUFB",
+        "type": "cyberware"
+      },
+      {
+        "id": "XY3YGCng7lbMw4Tm",
+        "type": "cyberware"
+      },
+      {
+        "id": "XZjr9zPKw66A1lOV",
+        "type": "cyberware"
+      },
+      {
+        "id": "xzS2cRj47lUGLBnO",
+        "type": "cyberware"
+      },
+      {
+        "id": "y16qZYvFUvGesLww",
+        "type": "cyberware"
+      },
+      {
+        "id": "y2DZQ5xNl2xlsQRy",
+        "type": "cyberware"
+      },
+      {
+        "id": "Y2qWVjUIoQtse4LN",
+        "type": "cyberware"
+      },
+      {
+        "id": "yBT5LxF8QiBSCDhs",
+        "type": "cyberware"
+      },
+      {
+        "id": "yEWwgn5UtOC4ncVx",
+        "type": "cyberware"
+      },
+      {
+        "id": "Yh1RyTXmbNh4VQ54",
+        "type": "cyberware"
+      },
+      {
+        "id": "YH3S6pU127coSIUZ",
+        "type": "cyberware"
+      },
+      {
+        "id": "YHusg6XWolgRKuih",
+        "type": "cyberware"
+      },
+      {
+        "id": "yiQfqtOBm4EsrEkq",
+        "type": "cyberware"
+      },
+      {
+        "id": "ylyg5dt1NBWNvvaQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "ynU3ShYiEi4hqdri",
+        "type": "cyberware"
+      },
+      {
+        "id": "yOpNHejV3iH0BCU5",
+        "type": "cyberware"
+      },
+      {
+        "id": "Yq7UCb5KDj8pycXM",
+        "type": "cyberware"
+      },
+      {
+        "id": "yUBKado0nbIBFGyf",
+        "type": "cyberware"
+      },
+      {
+        "id": "YXBVEK0yZsxvV5ZD",
+        "type": "cyberware"
+      },
+      {
+        "id": "yYLaV12q8oi2inK4",
+        "type": "cyberware"
+      },
+      {
+        "id": "yZcjWy7jgOlijoOZ",
+        "type": "cyberware"
+      },
+      {
+        "id": "Z0nLeEuweYIwdty7",
+        "type": "cyberware"
+      },
+      {
+        "id": "z1GmhDNW9AnVDKun",
+        "type": "cyberware"
+      },
+      {
+        "id": "z3f7KpOzb2M74lAd",
+        "type": "cyberware"
+      },
+      {
+        "id": "Z4ez6AtQYWfYqMjO",
+        "type": "cyberware"
+      },
+      {
+        "id": "Z4u5rqmyipIT83if",
+        "type": "cyberware"
+      },
+      {
+        "id": "Z8PuV34PYrUOFK1v",
+        "type": "cyberware"
+      },
+      {
+        "id": "zAzNWE3cwXxT3aEo",
+        "type": "cyberware"
+      },
+      {
+        "id": "ze89yRgegbiNSocR",
+        "type": "cyberware"
+      },
+      {
+        "id": "Zefkenew1gbSMBvD",
+        "type": "cyberware"
+      },
+      {
+        "id": "ZiYI7Cs0kib7wBr9",
+        "type": "cyberware"
+      },
+      {
+        "id": "ZKm6jdFmgquIdwqQ",
+        "type": "cyberware"
+      },
+      {
+        "id": "zMOjOfblCNm4EIz2",
+        "type": "cyberware"
+      },
+      {
+        "id": "zNK519V9pXRUjVUe",
+        "type": "cyberware"
+      },
+      {
+        "id": "zNqtOIXtNiFqce6o",
+        "type": "cyberware"
+      },
+      {
+        "id": "ZQ0HSBQ0ZItArV7j",
+        "type": "cyberware"
+      },
+      {
+        "id": "zs2Y6NlhYo3UhOGr",
+        "type": "cyberware"
+      },
+      {
+        "id": "ZTlJEvqassqBUOuh",
+        "type": "cyberware"
+      },
+      {
+        "id": "ZV42K83Ti4vEuFwT",
+        "type": "cyberware"
+      },
+      {
+        "id": "zwMiIarek58tuXwS",
+        "type": "cyberware"
+      },
+      {
+        "id": "ZX8Ibdn0d0zKYcTN",
+        "type": "cyberware"
+      },
+      {
+        "id": "Zx8j31kPWU3o9FMH",
+        "type": "cyberware"
+      },
+      {
+        "id": "Zxsa6GzBTO0T322K",
+        "type": "cyberware"
+      },
+      {
+        "id": "Zy4b8gykuLmgspSW",
+        "type": "cyberware"
+      },
+      {
+        "id": "zyNPj8ZKWS57xPv7",
+        "type": "cyberware"
+      }
+    ],
+    "default-skills": [
+      {
+        "id": "07VLrqRBJMQH1z1z",
+        "type": "skill"
+      },
+      {
+        "id": "0STIaPbLnIJ3mYln",
+        "type": "skill"
+      },
+      {
+        "id": "1wk36QfemxoUrv8w",
+        "type": "skill"
+      },
+      {
+        "id": "2E3HjGR4mpZ9JvSb",
+        "type": "skill"
+      },
+      {
+        "id": "2PPqkzLtIHq4M4CX",
+        "type": "skill"
+      },
+      {
+        "id": "2s2SKbYKsvtki3TO",
+        "type": "skill"
+      },
+      {
+        "id": "2XH4RXV6eJsxoald",
+        "type": "skill"
+      },
+      {
+        "id": "35jlHqImFeL7raFt",
+        "type": "skill"
+      },
+      {
+        "id": "3XW0cvJwEaj7w33x",
+        "type": "skill"
+      },
+      {
+        "id": "4DcaO3UAAv2wJE50",
+        "type": "skill"
+      },
+      {
+        "id": "4w7nTNd7RhdcbOu4",
+        "type": "skill"
+      },
+      {
+        "id": "4ylTN4krm7fhMYJv",
+        "type": "skill"
+      },
+      {
+        "id": "4zY4Vu27ewxGP9Bf",
+        "type": "skill"
+      },
+      {
+        "id": "6MnKnewhYaiaWjUK",
+        "type": "skill"
+      },
+      {
+        "id": "7j6LqZw4yDurBO1c",
+        "type": "skill"
+      },
+      {
+        "id": "8B6NrDBYH64DlIUz",
+        "type": "skill"
+      },
+      {
+        "id": "8gHJI17zyBiBuwp5",
+        "type": "skill"
+      },
+      {
+        "id": "8yMPXl1XrGc5DWrh",
+        "type": "skill"
+      },
+      {
+        "id": "aHJuJ7WvkUOmCyVo",
+        "type": "skill"
+      },
+      {
+        "id": "aMpWKwdKl1m4k9Py",
+        "type": "skill"
+      },
+      {
+        "id": "ankn6gB6NS5MbGfj",
+        "type": "skill"
+      },
+      {
+        "id": "BfsJtNHg1rAIgAev",
+        "type": "skill"
+      },
+      {
+        "id": "bpUt85R2vBMGy9Rx",
+        "type": "skill"
+      },
+      {
+        "id": "bwhkDu4H6STAvNVA",
+        "type": "skill"
+      },
+      {
+        "id": "CEdR7X6uk8OsUW8M",
+        "type": "skill"
+      },
+      {
+        "id": "cEkurqZkCBf5tcfw",
+        "type": "skill"
+      },
+      {
+        "id": "dyNSfYL70wvvvFKr",
+        "type": "skill"
+      },
+      {
+        "id": "E8XJt0vAzvlOspLU",
+        "type": "skill"
+      },
+      {
+        "id": "F0rJbDVwYHsdajJd",
+        "type": "skill"
+      },
+      {
+        "id": "F5QisKOGQp77I964",
+        "type": "skill"
+      },
+      {
+        "id": "f9JsVi0JgYzpitgf",
+        "type": "skill"
+      },
+      {
+        "id": "fE28aqLFDyHmDgYU",
+        "type": "skill"
+      },
+      {
+        "id": "ffkUpbGCBuGFr75q",
+        "type": "skill"
+      },
+      {
+        "id": "Ft49pPt6Fu3rpQJq",
+        "type": "skill"
+      },
+      {
+        "id": "fuNxSa7eVME1k9C3",
+        "type": "skill"
+      },
+      {
+        "id": "Fzmxyqm5SJhnkhFR",
+        "type": "skill"
+      },
+      {
+        "id": "G1ZOnTj4dXFQUYFg",
+        "type": "skill"
+      },
+      {
+        "id": "g75H0sMFUSaRIXfe",
+        "type": "skill"
+      },
+      {
+        "id": "GKEJdLRhg1TUeWbm",
+        "type": "skill"
+      },
+      {
+        "id": "GqEJ5WAwvYSJ6U0j",
+        "type": "skill"
+      },
+      {
+        "id": "gqlDxwD8yGDBGxFt",
+        "type": "skill"
+      },
+      {
+        "id": "gULme1P5CR8rXXIh",
+        "type": "skill"
+      },
+      {
+        "id": "Gy7bs7ngnqLTSvnN",
+        "type": "skill"
+      },
+      {
+        "id": "GZtVOGgtxv8CCuuz",
+        "type": "skill"
+      },
+      {
+        "id": "hJsbE1MGbFpY4lyi",
+        "type": "skill"
+      },
+      {
+        "id": "HOA3XTsjqpVxWZza",
+        "type": "skill"
+      },
+      {
+        "id": "HQ4kR8fP3Itquse6",
+        "type": "skill"
+      },
+      {
+        "id": "i8qoUwZ5jI9KAZeK",
+        "type": "skill"
+      },
+      {
+        "id": "IU0oTzMUQdKFEhBS",
+        "type": "skill"
+      },
+      {
+        "id": "IWAr3E5vpS8qFzZS",
+        "type": "skill"
+      },
+      {
+        "id": "jBfPdSDGwvIEq66p",
+        "type": "skill"
+      },
+      {
+        "id": "JCPoKgTMWUbOhJXI",
+        "type": "skill"
+      },
+      {
+        "id": "jgvFY5BWVsanP0md",
+        "type": "skill"
+      },
+      {
+        "id": "JtA82aiEfaiKgkt4",
+        "type": "skill"
+      },
+      {
+        "id": "KAD6GBbuPl3lwFJt",
+        "type": "skill"
+      },
+      {
+        "id": "KceQaX1FLMvIwXig",
+        "type": "skill"
+      },
+      {
+        "id": "lEo2rOVOOSIl3np3",
+        "type": "skill"
+      },
+      {
+        "id": "lmLab0Y2Ao3oTyP1",
+        "type": "skill"
+      },
+      {
+        "id": "my9IJnLduVckYLwg",
+        "type": "skill"
+      },
+      {
+        "id": "NppBZfDGn1X1K0r9",
+        "type": "skill"
+      },
+      {
+        "id": "Ntu1h5bXoRl9O8M9",
+        "type": "skill"
+      },
+      {
+        "id": "NUtXBg1TOq49mgnj",
+        "type": "skill"
+      },
+      {
+        "id": "nxLMtbuRZPYcnasG",
+        "type": "skill"
+      },
+      {
+        "id": "oeXfrhKtdtuxn5dx",
+        "type": "skill"
+      },
+      {
+        "id": "OQQiLYJCPeqtyPJ1",
+        "type": "skill"
+      },
+      {
+        "id": "Pg1Pb6bQCGSgI2xc",
+        "type": "skill"
+      },
+      {
+        "id": "Q5Nq1XC0IFHU9Az8",
+        "type": "skill"
+      },
+      {
+        "id": "Q9aGl9B0gfcUykCh",
+        "type": "skill"
+      },
+      {
+        "id": "qMP523mVqJxhg3D6",
+        "type": "skill"
+      },
+      {
+        "id": "R4dTcTyZSnF7Gph2",
+        "type": "skill"
+      },
+      {
+        "id": "rE9y0VP69MW03CqA",
+        "type": "skill"
+      },
+      {
+        "id": "rx5UxqZNiEgTspKk",
+        "type": "skill"
+      },
+      {
+        "id": "S42KM8v8jicHpZ7P",
+        "type": "skill"
+      },
+      {
+        "id": "SeJfW93RvzORatnw",
+        "type": "skill"
+      },
+      {
+        "id": "SeOltIy7UECT9wZq",
+        "type": "skill"
+      },
+      {
+        "id": "svx86NhUYhqVlLNw",
+        "type": "skill"
+      },
+      {
+        "id": "TFWtoRtYFaqD0dvl",
+        "type": "skill"
+      },
+      {
+        "id": "TH0eD2RtuS82FnlV",
+        "type": "skill"
+      },
+      {
+        "id": "U7lhKboDQnnytPIe",
+        "type": "skill"
+      },
+      {
+        "id": "Uqm8bRDpVh3sSdZt",
+        "type": "skill"
+      },
+      {
+        "id": "V67rpMxivHDlXVaP",
+        "type": "skill"
+      },
+      {
+        "id": "vdzNPfVX5f6tuSdv",
+        "type": "skill"
+      },
+      {
+        "id": "vHt5AnwETpWCVXZu",
+        "type": "skill"
+      },
+      {
+        "id": "VP45FA534hCM3PdM",
+        "type": "skill"
+      },
+      {
+        "id": "Vp6Yg5T618CrvzgK",
+        "type": "skill"
+      },
+      {
+        "id": "VYOhfX3Ksq19fKov",
+        "type": "skill"
+      },
+      {
+        "id": "WotYfaW9pqhl7S6N",
+        "type": "skill"
+      },
+      {
+        "id": "x5mxWMFyRWHg5lEV",
+        "type": "skill"
+      },
+      {
+        "id": "YN2g1fSSqYVPJej0",
+        "type": "skill"
+      },
+      {
+        "id": "ZCnRa590mHEV6UBX",
+        "type": "skill"
+      }
+    ],
+    "electronics": [
+      {
+        "id": "3ekG2DVAfaAnqRrg",
+        "type": "misc"
+      },
+      {
+        "id": "Bz3z1oSo8qttT5Mq",
+        "type": "misc"
+      },
+      {
+        "id": "dv9yBKB5QsdJWFI1",
+        "type": "misc"
+      },
+      {
+        "id": "ers71dQVQ1pLrngE",
+        "type": "misc"
+      },
+      {
+        "id": "fGKoyGlF4fJglZ4R",
+        "type": "misc"
+      },
+      {
+        "id": "Fn99l5O1RzigOUG8",
+        "type": "misc"
+      },
+      {
+        "id": "Gii7XMfJl24sEjAa",
+        "type": "misc"
+      },
+      {
+        "id": "hrPW09LEij9zAiw4",
+        "type": "misc"
+      },
+      {
+        "id": "I0RBLMwywSdr9X3s",
+        "type": "misc"
+      },
+      {
+        "id": "J2dwpBak0Plsot4D",
+        "type": "misc"
+      },
+      {
+        "id": "l8cCXR1pK4cigTap",
+        "type": "misc"
+      },
+      {
+        "id": "lQAl8YneV0GfSxH3",
+        "type": "misc"
+      },
+      {
+        "id": "MZDn3ZENnySJ4oh1",
+        "type": "misc"
+      },
+      {
+        "id": "Ve6IyGZrhRodBRcu",
+        "type": "misc"
+      },
+      {
+        "id": "Vz8avZpgQLzNG22n",
+        "type": "misc"
+      },
+      {
+        "id": "Xio3gBvNHJYxUmTy",
+        "type": "misc"
+      },
+      {
+        "id": "XxeivdSUEo2Gg1nF",
+        "type": "misc"
+      }
+    ],
+    "entertainment": [
+      {
+        "id": "3OOrU0Zn56iEqdzz",
+        "type": "misc"
+      },
+      {
+        "id": "CIfYClLCSqbVP8NS",
+        "type": "misc"
+      },
+      {
+        "id": "DgTpyi5f1SKQvwYK",
+        "type": "misc"
+      },
+      {
+        "id": "kIbyqcEcACZ0Zc5F",
+        "type": "misc"
+      },
+      {
+        "id": "maRza6CWul4zPhZ3",
+        "type": "misc"
+      },
+      {
+        "id": "MBYZu95xVW6D3F5f",
+        "type": "misc"
+      },
+      {
+        "id": "mp68xRz3dKBgTquL",
+        "type": "misc"
+      },
+      {
+        "id": "nKIxNQvM4Fd9PEE4",
+        "type": "misc"
+      },
+      {
+        "id": "qt54XtbJAkerpqpZ",
+        "type": "misc"
+      },
+      {
+        "id": "TruRJYwnqeqhrGvO",
+        "type": "misc"
+      },
+      {
+        "id": "UqbrBV82RKQ2wHoR",
+        "type": "misc"
+      },
+      {
+        "id": "Yiuq9r9UuWu9t1YY",
+        "type": "misc"
+      }
+    ],
+    "exotics": [
+      {
+        "id": "1degw1PlYAeikFsJ",
+        "type": "weapon"
+      },
+      {
+        "id": "98KnAgEPW82SHpH9",
+        "type": "weapon"
+      },
+      {
+        "id": "A0h0cB8nxSJNIf82",
+        "type": "weapon"
+      },
+      {
+        "id": "gyzL14nBrs9i4Kdf",
+        "type": "weapon"
+      },
+      {
+        "id": "h9OAqLlQmwPi3Cr5",
+        "type": "weapon"
+      },
+      {
+        "id": "Lm0YJi9hArXd5Xxg",
+        "type": "weapon"
+      },
+      {
+        "id": "mf720WUwACNdMPNi",
+        "type": "weapon"
+      },
+      {
+        "id": "nbhVN4M2BmoUYRuu",
+        "type": "weapon"
+      },
+      {
+        "id": "QKJ5YO1vdrUF7o3g",
+        "type": "weapon"
+      },
+      {
+        "id": "qxj1O33Dt9Z5JoQ6",
+        "type": "weapon"
+      },
+      {
+        "id": "S6Oe0mQCfWHJuHTQ",
+        "type": "weapon"
+      },
+      {
+        "id": "vX8zBTqrLt2G5QoN",
+        "type": "weapon"
+      },
+      {
+        "id": "W5Lflf92mXGQx8JH",
+        "type": "weapon"
+      },
+      {
+        "id": "wg4nmACywniqPV8y",
+        "type": "weapon"
+      },
+      {
+        "id": "yjSJ83MZZ20p5SYq",
+        "type": "weapon"
+      },
+      {
+        "id": "YJSl1hQmjzG272Vr",
+        "type": "weapon"
+      },
+      {
+        "id": "YYDKjMXTvPqKB9ub",
+        "type": "weapon"
+      },
+      {
+        "id": "Z1VXkc6GW6dYMlLb",
+        "type": "weapon"
+      },
+      {
+        "id": "ZhVvsAn7p2mi3OFd",
+        "type": "weapon"
+      }
+    ],
+    "fashion": [
+      {
+        "id": "5jOEpWBi3a4HoWF9",
+        "type": "misc"
+      },
+      {
+        "id": "AE6duBwbqu4IeiIm",
+        "type": "misc"
+      },
+      {
+        "id": "aH967dnuf6qDwgAz",
+        "type": "misc"
+      },
+      {
+        "id": "aIcediZHNhIwOnDg",
+        "type": "misc"
+      },
+      {
+        "id": "ASva0exlmfsF85bE",
+        "type": "misc"
+      },
+      {
+        "id": "BaucUWn5RJZe1GOO",
+        "type": "misc"
+      },
+      {
+        "id": "BBSMHkuXN05ydkAT",
+        "type": "misc"
+      },
+      {
+        "id": "BUxrJxITI4JeNt8O",
+        "type": "misc"
+      },
+      {
+        "id": "C4A18H4u4KJ6euDM",
+        "type": "misc"
+      },
+      {
+        "id": "cOYIjrVCa5tDyuv8",
+        "type": "misc"
+      },
+      {
+        "id": "E4NbCM9YGRKUNSjx",
+        "type": "misc"
+      },
+      {
+        "id": "gesyKbbfhHOPK54C",
+        "type": "misc"
+      },
+      {
+        "id": "h2CalWWivL3P1It6",
+        "type": "misc"
+      },
+      {
+        "id": "i9mKAZg8GbluWpGh",
+        "type": "misc"
+      },
+      {
+        "id": "Ic3YH0MBfUFLj4LM",
+        "type": "misc"
+      },
+      {
+        "id": "LCk9VcJ4sxSA0ljT",
+        "type": "misc"
+      },
+      {
+        "id": "lo0xSaJQNCBDljIy",
+        "type": "misc"
+      },
+      {
+        "id": "MGWx0B4Uzj7POkxs",
+        "type": "misc"
+      },
+      {
+        "id": "nsY2q1Ch4MEPutud",
+        "type": "misc"
+      },
+      {
+        "id": "O7lWdLYzdYnPw4wd",
+        "type": "misc"
+      },
+      {
+        "id": "pTQMHXYjyPEWjBdZ",
+        "type": "misc"
+      },
+      {
+        "id": "S3nkLf79yoi23tte",
+        "type": "misc"
+      },
+      {
+        "id": "tiqq9w9sCKkzZHPj",
+        "type": "misc"
+      },
+      {
+        "id": "TxMKJkKnpHGZfaHr",
+        "type": "misc"
+      },
+      {
+        "id": "uyOuEZeb7w6gZIiP",
+        "type": "misc"
+      },
+      {
+        "id": "VyAONOHIt0sL4CVx",
+        "type": "misc"
+      },
+      {
+        "id": "whLecjmbynpALvmr",
+        "type": "misc"
+      },
+      {
+        "id": "Wsue7RiV0uJZoOTQ",
+        "type": "misc"
+      },
+      {
+        "id": "wY3EAmmckUxvUDTN",
+        "type": "misc"
+      },
+      {
+        "id": "x7wQV1AY02819lu3",
+        "type": "misc"
+      },
+      {
+        "id": "XIRFqhw4ohHvfWZK",
+        "type": "misc"
+      },
+      {
+        "id": "Yzq7bTqvUt12QjJ7",
+        "type": "misc"
+      }
+    ],
+    "furnishing": [
+      {
+        "id": "2qvu55mKqzqPDPqs",
+        "type": "misc"
+      },
+      {
+        "id": "35W9oU6Zbj8ifiwB",
+        "type": "misc"
+      },
+      {
+        "id": "6AGeyTjr7e0iKaLd",
+        "type": "misc"
+      },
+      {
+        "id": "8P0I9vZM4twutjYN",
+        "type": "misc"
+      },
+      {
+        "id": "aJ5X9Ycs5EvxcEhW",
+        "type": "misc"
+      },
+      {
+        "id": "bKVZujkDWEMHaTp2",
+        "type": "misc"
+      },
+      {
+        "id": "nlf3SoNWrlRZLwEM",
+        "type": "misc"
+      },
+      {
+        "id": "QjHlYCEbZJOCKHqC",
+        "type": "misc"
+      },
+      {
+        "id": "vQKbsgzEqF0Ex66P",
+        "type": "misc"
+      },
+      {
+        "id": "zLFvD7QWOwMguYnV",
+        "type": "misc"
+      }
+    ],
+    "heavyWeapons": [
+      {
+        "id": "0ByQz2fF0RikjlXM",
+        "type": "weapon"
+      },
+      {
+        "id": "0kfgr1GfNaPO4Ccz",
+        "type": "weapon"
+      },
+      {
+        "id": "0vWsYuRbnuTwQGyz",
+        "type": "weapon"
+      },
+      {
+        "id": "17dlNdsEa13fKmKb",
+        "type": "weapon"
+      },
+      {
+        "id": "1Vz35BOr6yVYeQ2v",
+        "type": "weapon"
+      },
+      {
+        "id": "25fF1rDkVyntZQNx",
+        "type": "weapon"
+      },
+      {
+        "id": "2G2ELyyqU1YXvYPS",
+        "type": "weapon"
+      },
+      {
+        "id": "2RSYEwIuuktcqd7d",
+        "type": "weapon"
+      },
+      {
+        "id": "32lzpVQY0qpTX5lf",
+        "type": "weapon"
+      },
+      {
+        "id": "3Fw9vCsFr309hjUZ",
+        "type": "weapon"
+      },
+      {
+        "id": "3uTrkoT3F5P5DoM8",
+        "type": "weapon"
+      },
+      {
+        "id": "4d6ACwAxoHAyF4aB",
+        "type": "weapon"
+      },
+      {
+        "id": "4okmkfaxxHEquQZM",
+        "type": "weapon"
+      },
+      {
+        "id": "4VFI4430qrHtWfxW",
+        "type": "weapon"
+      },
+      {
+        "id": "554O1lIUSWw09e99",
+        "type": "weapon"
+      },
+      {
+        "id": "56bx6ahZnPXGUy2J",
+        "type": "weapon"
+      },
+      {
+        "id": "5dPc8YfmcGRMpZ1G",
+        "type": "weapon"
+      },
+      {
+        "id": "5NHlN9ysasK4EINE",
+        "type": "weapon"
+      },
+      {
+        "id": "6dSASjlFaWYY4mOr",
+        "type": "weapon"
+      },
+      {
+        "id": "6eFJ2M94PNiLtj84",
+        "type": "weapon"
+      },
+      {
+        "id": "6F2imJd01O9c4zrP",
+        "type": "weapon"
+      },
+      {
+        "id": "6GLGe15J4NrjHuZz",
+        "type": "weapon"
+      },
+      {
+        "id": "6PawQ5TrGal95J7D",
+        "type": "weapon"
+      },
+      {
+        "id": "6TqZ0FWbSLAWWMVk",
+        "type": "weapon"
+      },
+      {
+        "id": "6zceKmpIQnYs2nks",
+        "type": "weapon"
+      },
+      {
+        "id": "7cffeTVwqKNyBAyu",
+        "type": "weapon"
+      },
+      {
+        "id": "7eMVzTnu9kVQLo6i",
+        "type": "weapon"
+      },
+      {
+        "id": "7sZZ4sJNs0Odx9el",
+        "type": "weapon"
+      },
+      {
+        "id": "81C7F0rgS4Fvq320",
+        "type": "weapon"
+      },
+      {
+        "id": "85uL32raFnJEFUBf",
+        "type": "weapon"
+      },
+      {
+        "id": "867H8YoeHQWKure5",
+        "type": "weapon"
+      },
+      {
+        "id": "88eDqWQVcoYR7iei",
+        "type": "weapon"
+      },
+      {
+        "id": "8cBVoG1nHa170Zu9",
+        "type": "weapon"
+      },
+      {
+        "id": "8yzy9m7Sg1SNiSZY",
+        "type": "weapon"
+      },
+      {
+        "id": "9aniNrh9At67g3Va",
+        "type": "weapon"
+      },
+      {
+        "id": "9kWNDugGCXJyNkwZ",
+        "type": "weapon"
+      },
+      {
+        "id": "9ov6hIym7CtqE1SK",
+        "type": "weapon"
+      },
+      {
+        "id": "A77Dh2zB8aL3Ra1u",
+        "type": "weapon"
+      },
+      {
+        "id": "Abe2Q8J5qVGqYOeL",
+        "type": "weapon"
+      },
+      {
+        "id": "AelKrTZx9usy109n",
+        "type": "weapon"
+      },
+      {
+        "id": "Af1Nh7Qu7ouBcaJr",
+        "type": "weapon"
+      },
+      {
+        "id": "ANMS7LRJbQ3Gy4Rf",
+        "type": "weapon"
+      },
+      {
+        "id": "anOwNmmT4CZ9i2iF",
+        "type": "weapon"
+      },
+      {
+        "id": "AWhH25OtOpBTYdiO",
+        "type": "weapon"
+      },
+      {
+        "id": "axWP70nt7EYN2RJ7",
+        "type": "weapon"
+      },
+      {
+        "id": "Ay9mzqBQ0fFxEHjr",
+        "type": "weapon"
+      },
+      {
+        "id": "BBYA23PhTw0SckZw",
+        "type": "weapon"
+      },
+      {
+        "id": "bhdLlIQGaciEY61D",
+        "type": "weapon"
+      },
+      {
+        "id": "BIJ4e0BXQIoiWZ9a",
+        "type": "weapon"
+      },
+      {
+        "id": "Bl2VP6loCxscqbOK",
+        "type": "weapon"
+      },
+      {
+        "id": "BWBSVP2Eh4nrCENM",
+        "type": "weapon"
+      },
+      {
+        "id": "BY3uqiHDwnByVktx",
+        "type": "weapon"
+      },
+      {
+        "id": "c0XmvyA15wB36OpZ",
+        "type": "weapon"
+      },
+      {
+        "id": "ccAjav9YbpOyscxs",
+        "type": "weapon"
+      },
+      {
+        "id": "cioQOSFHSPERZDzE",
+        "type": "weapon"
+      },
+      {
+        "id": "cquWmExHwdHvZmyY",
+        "type": "weapon"
+      },
+      {
+        "id": "csdkgE3lUw7iJeq8",
+        "type": "weapon"
+      },
+      {
+        "id": "CsnDcxBH7odD8Vwk",
+        "type": "weapon"
+      },
+      {
+        "id": "cu3V65z0kpV30C5S",
+        "type": "weapon"
+      },
+      {
+        "id": "CzCAFMfIU9fReojI",
+        "type": "weapon"
+      },
+      {
+        "id": "d09OOOQA0bvu5aOA",
+        "type": "weapon"
+      },
+      {
+        "id": "D5dl4F4Lvenj3YGH",
+        "type": "weapon"
+      },
+      {
+        "id": "DjthWdkXTd9tUf79",
+        "type": "weapon"
+      },
+      {
+        "id": "dlA7oVFYqxM725IH",
+        "type": "weapon"
+      },
+      {
+        "id": "DRQtc15bomwfxajR",
+        "type": "weapon"
+      },
+      {
+        "id": "dtPEkVJTpRQu8B62",
+        "type": "weapon"
+      },
+      {
+        "id": "El8dLnD4okVJGjC9",
+        "type": "weapon"
+      },
+      {
+        "id": "euf9Qf2ryq73tvC0",
+        "type": "weapon"
+      },
+      {
+        "id": "EWPJjcGF9oas4Gl7",
+        "type": "weapon"
+      },
+      {
+        "id": "ffr8Hw98L1fxafGo",
+        "type": "weapon"
+      },
+      {
+        "id": "fh3RnzhSMFSNoPaf",
+        "type": "weapon"
+      },
+      {
+        "id": "fK8iIT9MC4W6URyo",
+        "type": "weapon"
+      },
+      {
+        "id": "FLehYIzkPOtDSBnb",
+        "type": "weapon"
+      },
+      {
+        "id": "FtaVTDPYQo0XCfre",
+        "type": "weapon"
+      },
+      {
+        "id": "G7Cahm8g6M7tkBIM",
+        "type": "weapon"
+      },
+      {
+        "id": "G9BsV62VGiHvSOSb",
+        "type": "weapon"
+      },
+      {
+        "id": "GG61s0VWLRNLbMBR",
+        "type": "weapon"
+      },
+      {
+        "id": "gIwTECDcaCcT7gQB",
+        "type": "weapon"
+      },
+      {
+        "id": "gKitfVDTJYM8SK9O",
+        "type": "weapon"
+      },
+      {
+        "id": "GRHpkccxVkIgcMAz",
+        "type": "weapon"
+      },
+      {
+        "id": "GxMtXbTFEmie3pZc",
+        "type": "weapon"
+      },
+      {
+        "id": "gz6u8Ar7IRWo5uWL",
+        "type": "weapon"
+      },
+      {
+        "id": "H6dhToLIWwCFYa3u",
+        "type": "weapon"
+      },
+      {
+        "id": "h9fyetNeS6krUHLA",
+        "type": "weapon"
+      },
+      {
+        "id": "hDvA8BzSkUeFIVmc",
+        "type": "weapon"
+      },
+      {
+        "id": "Hf1CuJsPg9RFdgd0",
+        "type": "weapon"
+      },
+      {
+        "id": "HKjaQYTfMyqn1Zry",
+        "type": "weapon"
+      },
+      {
+        "id": "i6r6su40ljBInPDC",
+        "type": "weapon"
+      },
+      {
+        "id": "IcuIFi7Gye2vT9Zm",
+        "type": "weapon"
+      },
+      {
+        "id": "Il8VQITciNhP8V6V",
+        "type": "weapon"
+      },
+      {
+        "id": "iVQK3d0NQ4DgilKH",
+        "type": "weapon"
+      },
+      {
+        "id": "iwDXCgma0Dm3dMFh",
+        "type": "weapon"
+      },
+      {
+        "id": "IxBkRd4GoUIFxYHT",
+        "type": "weapon"
+      },
+      {
+        "id": "ja6qC9Rghk0REHQq",
+        "type": "weapon"
+      },
+      {
+        "id": "JaZ4adRrkaWpTyGx",
+        "type": "weapon"
+      },
+      {
+        "id": "JCDSVoSva2dCdzJ1",
+        "type": "weapon"
+      },
+      {
+        "id": "Je54jpD6w10dkMie",
+        "type": "weapon"
+      },
+      {
+        "id": "JegLX6Ie6ieIbEGz",
+        "type": "weapon"
+      },
+      {
+        "id": "jLsHk9Lk4dHIH648",
+        "type": "weapon"
+      },
+      {
+        "id": "JnNg7yb65V8tp60Q",
+        "type": "weapon"
+      },
+      {
+        "id": "JnTbtfrcWws4vAkb",
+        "type": "weapon"
+      },
+      {
+        "id": "jPI5JGdb6A28ERrP",
+        "type": "weapon"
+      },
+      {
+        "id": "jS7IcsYefGmIAgTs",
+        "type": "weapon"
+      },
+      {
+        "id": "jtzxzkUI5kxypr2n",
+        "type": "weapon"
+      },
+      {
+        "id": "KlFgaloe48kNeg6t",
+        "type": "weapon"
+      },
+      {
+        "id": "KmT6RFQjvV7L1d8x",
+        "type": "weapon"
+      },
+      {
+        "id": "KTOK0TN48gD52CE7",
+        "type": "weapon"
+      },
+      {
+        "id": "kXUXXYyCd0IT6ZYd",
+        "type": "weapon"
+      },
+      {
+        "id": "l8pn4i5tz9F2LrYi",
+        "type": "weapon"
+      },
+      {
+        "id": "lbV2yTCiQv1TWhha",
+        "type": "weapon"
+      },
+      {
+        "id": "lD4EE1dRDgp5q8XL",
+        "type": "weapon"
+      },
+      {
+        "id": "lF0XVKG185XN0pN7",
+        "type": "weapon"
+      },
+      {
+        "id": "lKyo2pabBP6nXMEd",
+        "type": "weapon"
+      },
+      {
+        "id": "lL47D9O0a2QUbUGZ",
+        "type": "weapon"
+      },
+      {
+        "id": "lLZ8Q5SHdGUBcYZD",
+        "type": "weapon"
+      },
+      {
+        "id": "LMKgPY89TbgyBRnn",
+        "type": "weapon"
+      },
+      {
+        "id": "lnWL8yIWLOws5jIl",
+        "type": "weapon"
+      },
+      {
+        "id": "lrF4K7nZexr4WDTm",
+        "type": "weapon"
+      },
+      {
+        "id": "LT611970l7gvzpQB",
+        "type": "weapon"
+      },
+      {
+        "id": "LvTaEPeuI8jwW0mH",
+        "type": "weapon"
+      },
+      {
+        "id": "LwXhr3PPo0HX2WEX",
+        "type": "weapon"
+      },
+      {
+        "id": "mdAwcckTbIsrKDom",
+        "type": "weapon"
+      },
+      {
+        "id": "mHEWZ1FcwgK5T1ye",
+        "type": "weapon"
+      },
+      {
+        "id": "MmKNAcpG09mTUAo7",
+        "type": "weapon"
+      },
+      {
+        "id": "mWjNuCcxpb0Nmf5V",
+        "type": "weapon"
+      },
+      {
+        "id": "mySGpoAHoQ1Bf2nO",
+        "type": "weapon"
+      },
+      {
+        "id": "N30YXTPwxXr2vOfe",
+        "type": "weapon"
+      },
+      {
+        "id": "N41nmrZxU9k1IOKy",
+        "type": "weapon"
+      },
+      {
+        "id": "NCfak9ectPyRTTde",
+        "type": "weapon"
+      },
+      {
+        "id": "nfLb3eNdKlqFxczs",
+        "type": "weapon"
+      },
+      {
+        "id": "nKXtoPCVy3vYwWZ6",
+        "type": "weapon"
+      },
+      {
+        "id": "nLFRm6FRQp8Ch6DJ",
+        "type": "weapon"
+      },
+      {
+        "id": "NlUBPumxwwkI8ITO",
+        "type": "weapon"
+      },
+      {
+        "id": "NQxC45tinta1VqYZ",
+        "type": "weapon"
+      },
+      {
+        "id": "nRlcpT8CFxuFOaW2",
+        "type": "weapon"
+      },
+      {
+        "id": "NTzfQiTAvaHmmw9s",
+        "type": "weapon"
+      },
+      {
+        "id": "nwOqK6kRur5ffS4o",
+        "type": "weapon"
+      },
+      {
+        "id": "NzKunIUx2WHjpnHI",
+        "type": "weapon"
+      },
+      {
+        "id": "o1T5GVFydsCgd8P2",
+        "type": "weapon"
+      },
+      {
+        "id": "O54Y5cUtwDwL1Ucu",
+        "type": "weapon"
+      },
+      {
+        "id": "OkH8a8Hk97UmlKz3",
+        "type": "weapon"
+      },
+      {
+        "id": "oNQA4qIT43F9TPw3",
+        "type": "weapon"
+      },
+      {
+        "id": "OnswT9mdfgQF3in8",
+        "type": "weapon"
+      },
+      {
+        "id": "oUgkz1KZztXIJYEb",
+        "type": "weapon"
+      },
+      {
+        "id": "oWdmUIr80FU7rivW",
+        "type": "weapon"
+      },
+      {
+        "id": "oX1uwg981FTheiBw",
+        "type": "weapon"
+      },
+      {
+        "id": "oyckdZxAhM3rSxKm",
+        "type": "weapon"
+      },
+      {
+        "id": "p7wRmkDIaWLjaQfB",
+        "type": "weapon"
+      },
+      {
+        "id": "pAV9tJMDCKC854wC",
+        "type": "weapon"
+      },
+      {
+        "id": "PkEsWYVd5VPMgLTE",
+        "type": "weapon"
+      },
+      {
+        "id": "pmrZEZ2DBxsen0vw",
+        "type": "weapon"
+      },
+      {
+        "id": "q3yC0GyODIIyrnnB",
+        "type": "weapon"
+      },
+      {
+        "id": "qLfN0bKFTB2w7Ikt",
+        "type": "weapon"
+      },
+      {
+        "id": "qLTOLmos5wVH1OMd",
+        "type": "weapon"
+      },
+      {
+        "id": "qYQgtLBTFdBKZuuW",
+        "type": "weapon"
+      },
+      {
+        "id": "rCZIkJMPj9wzLviR",
+        "type": "weapon"
+      },
+      {
+        "id": "Rf4F5uvxFAOClF6V",
+        "type": "weapon"
+      },
+      {
+        "id": "RGTV8sZySvwFW5CA",
+        "type": "weapon"
+      },
+      {
+        "id": "RH7dibI7ssD6pR0A",
+        "type": "weapon"
+      },
+      {
+        "id": "rhi06t88tpTTU5m7",
+        "type": "weapon"
+      },
+      {
+        "id": "rJffqLdHGbYLvzUd",
+        "type": "weapon"
+      },
+      {
+        "id": "RLndTKVgbLaeaaqx",
+        "type": "weapon"
+      },
+      {
+        "id": "rNRd5j0pPnqorQvG",
+        "type": "weapon"
+      },
+      {
+        "id": "RPK9MjQHipqtYdEj",
+        "type": "weapon"
+      },
+      {
+        "id": "RqsMo0mxrwjhpvE9",
+        "type": "weapon"
+      },
+      {
+        "id": "s7lgDdBEwcIenF5f",
+        "type": "weapon"
+      },
+      {
+        "id": "SZCy4VvNHGYXiJsQ",
+        "type": "weapon"
+      },
+      {
+        "id": "TK0AbDiSoHOZCSq8",
+        "type": "weapon"
+      },
+      {
+        "id": "tK7uC8AxwJ2CQc8t",
+        "type": "weapon"
+      },
+      {
+        "id": "TMKQ2rbWzciEJCH2",
+        "type": "weapon"
+      },
+      {
+        "id": "tNj9VW0y3RetrTvu",
+        "type": "weapon"
+      },
+      {
+        "id": "Ts9Ir4S3Z4NPAlAW",
+        "type": "weapon"
+      },
+      {
+        "id": "TVPtlOe79uRY5JRV",
+        "type": "weapon"
+      },
+      {
+        "id": "tZ8RN7VQ6nsG4WK9",
+        "type": "weapon"
+      },
+      {
+        "id": "U1fKlzJAFrihNeev",
+        "type": "weapon"
+      },
+      {
+        "id": "U8aZANXJcaXqQwAl",
+        "type": "weapon"
+      },
+      {
+        "id": "UAfoKLsUirFxelfX",
+        "type": "weapon"
+      },
+      {
+        "id": "URnj1O9pNh81ubxt",
+        "type": "weapon"
+      },
+      {
+        "id": "UWOjPqs72rQlqX2C",
+        "type": "weapon"
+      },
+      {
+        "id": "Uy7naY4r3txgprn8",
+        "type": "weapon"
+      },
+      {
+        "id": "UySCq4wQfRshFEX6",
+        "type": "weapon"
+      },
+      {
+        "id": "V1C0Jl29rvsvWMMx",
+        "type": "weapon"
+      },
+      {
+        "id": "v8OddjEW7Rh97TFx",
+        "type": "weapon"
+      },
+      {
+        "id": "V8WygrrKMWqk9N3L",
+        "type": "weapon"
+      },
+      {
+        "id": "VbCQ1t2dEJL9p2oH",
+        "type": "weapon"
+      },
+      {
+        "id": "veZop0RjcnidVFYw",
+        "type": "weapon"
+      },
+      {
+        "id": "VHhWeRrwTPdB9wM1",
+        "type": "weapon"
+      },
+      {
+        "id": "vJ8ouhpcSu0fg6c8",
+        "type": "weapon"
+      },
+      {
+        "id": "vq6cGDEvlo42PCX8",
+        "type": "weapon"
+      },
+      {
+        "id": "vQPMGhNXoGbfG8om",
+        "type": "weapon"
+      },
+      {
+        "id": "VrGeXhVNpVStTFqV",
+        "type": "weapon"
+      },
+      {
+        "id": "vYWgnymCX4M3A8VR",
+        "type": "weapon"
+      },
+      {
+        "id": "w6OCDwP1lJ0XYnYT",
+        "type": "weapon"
+      },
+      {
+        "id": "W7P8teRHbmtRAOei",
+        "type": "weapon"
+      },
+      {
+        "id": "wgNhTqQha1O7UCBB",
+        "type": "weapon"
+      },
+      {
+        "id": "wGqFeCxD2nvHagIr",
+        "type": "weapon"
+      },
+      {
+        "id": "WNL5o1wzKxx6Rt1m",
+        "type": "weapon"
+      },
+      {
+        "id": "wo0fkS1hGWPwsNiD",
+        "type": "weapon"
+      },
+      {
+        "id": "wx4cBTxVfcsXzOhh",
+        "type": "weapon"
+      },
+      {
+        "id": "X1gcySzSGBeMmuZA",
+        "type": "weapon"
+      },
+      {
+        "id": "X77Q3ZfEavQsbBFx",
+        "type": "weapon"
+      },
+      {
+        "id": "xEvousq2gwJ8jkXl",
+        "type": "weapon"
+      },
+      {
+        "id": "XfMCkxtfcI90COiH",
+        "type": "weapon"
+      },
+      {
+        "id": "xXigrCzA36D058GC",
+        "type": "weapon"
+      },
+      {
+        "id": "Xzpp8WLG8NkrE4X8",
+        "type": "weapon"
+      },
+      {
+        "id": "ya8Qijhbe3kQk7om",
+        "type": "weapon"
+      },
+      {
+        "id": "yh60WsmbPZ2muKh5",
+        "type": "weapon"
+      },
+      {
+        "id": "YUmdaACat7nff4rk",
+        "type": "weapon"
+      },
+      {
+        "id": "Z1GL43aZfTrFvsHC",
+        "type": "weapon"
+      },
+      {
+        "id": "Zj9avmrzzbhhHKoM",
+        "type": "weapon"
+      },
+      {
+        "id": "ZqT4xrl6d8d63qCO",
+        "type": "weapon"
+      },
+      {
+        "id": "zrpOYy2OZGFsareA",
+        "type": "weapon"
+      },
+      {
+        "id": "ZTIO9TSm6lUohgZZ",
+        "type": "weapon"
+      },
+      {
+        "id": "ZZJ8v4tfNka9XYa0",
+        "type": "weapon"
+      }
+    ],
+    "medical": [
+      {
+        "id": "7vn1t7tHTeymNS3D",
+        "type": "misc"
+      },
+      {
+        "id": "bdF2OHTHdRpVijgU",
+        "type": "misc"
+      },
+      {
+        "id": "BiAqHo6dz6gxuX9I",
+        "type": "misc"
+      },
+      {
+        "id": "fA02aOWaC6JRuWg8",
+        "type": "misc"
+      },
+      {
+        "id": "fTe1XWR1z4lsaGzs",
+        "type": "misc"
+      },
+      {
+        "id": "HJNzyQuRoyCdn6Qf",
+        "type": "misc"
+      },
+      {
+        "id": "I2c4U3FtntrJCIEl",
+        "type": "misc"
+      },
+      {
+        "id": "ng1CiVk4JtWHIxZB",
+        "type": "misc"
+      },
+      {
+        "id": "oTl9WjtAxnwI2wly",
+        "type": "misc"
+      },
+      {
+        "id": "W5JtUcVzmkXUJZj2",
+        "type": "misc"
+      }
+    ],
+    "melee": [
+      {
+        "id": "1vdhwkSQfyfaeubr",
+        "type": "weapon"
+      },
+      {
+        "id": "3LqElDzkgt7gnFb7",
+        "type": "weapon"
+      },
+      {
+        "id": "4Y4JFtx6vll2kZqJ",
+        "type": "weapon"
+      },
+      {
+        "id": "5B41qd7bGbFRFFBB",
+        "type": "weapon"
+      },
+      {
+        "id": "71tWAPsLY73wj7iK",
+        "type": "weapon"
+      },
+      {
+        "id": "78bPrmPEx9W0Jfgq",
+        "type": "weapon"
+      },
+      {
+        "id": "7zcLc9lLdeBjHfkY",
+        "type": "weapon"
+      },
+      {
+        "id": "9cgvIqUEgO86zINP",
+        "type": "weapon"
+      },
+      {
+        "id": "B2A2Sct9ms2uGIc5",
+        "type": "weapon"
+      },
+      {
+        "id": "bl6c19AYE7UzZSgr",
+        "type": "weapon"
+      },
+      {
+        "id": "ciPRLbBpUsxDIIWX",
+        "type": "weapon"
+      },
+      {
+        "id": "cuASidYVKZlcDLvK",
+        "type": "weapon"
+      },
+      {
+        "id": "DDTJhOXXHUOOZ2fx",
+        "type": "weapon"
+      },
+      {
+        "id": "DKmZH7xJmVhvulIh",
+        "type": "weapon"
+      },
+      {
+        "id": "DxMn9Z0052i1p18L",
+        "type": "weapon"
+      },
+      {
+        "id": "eBw4ys7RICeHUHR3",
+        "type": "weapon"
+      },
+      {
+        "id": "EvbL3U0QTxkQMoRd",
+        "type": "weapon"
+      },
+      {
+        "id": "fFfaYpFLypq5zcOO",
+        "type": "weapon"
+      },
+      {
+        "id": "fFlRQ8QFYmN6gNQl",
+        "type": "weapon"
+      },
+      {
+        "id": "Gk5CUY6eSdCKJnbn",
+        "type": "weapon"
+      },
+      {
+        "id": "gmzYswUsSGJz2nIO",
+        "type": "weapon"
+      },
+      {
+        "id": "gn842bwDKsM86cj7",
+        "type": "weapon"
+      },
+      {
+        "id": "gRFEFKNQT4WE4UFo",
+        "type": "weapon"
+      },
+      {
+        "id": "GuX6xQrgIml20izi",
+        "type": "weapon"
+      },
+      {
+        "id": "gwxNSd0EyzEg8mgW",
+        "type": "weapon"
+      },
+      {
+        "id": "gywldBqLL5xNmBkL",
+        "type": "weapon"
+      },
+      {
+        "id": "hHoYMsCY2ENBPW50",
+        "type": "weapon"
+      },
+      {
+        "id": "Hlf73WyxaYTDve8y",
+        "type": "weapon"
+      },
+      {
+        "id": "IOWhzJj5GdFxoItr",
+        "type": "weapon"
+      },
+      {
+        "id": "ISSGJD6E1ihVqgtV",
+        "type": "weapon"
+      },
+      {
+        "id": "jGaU7vrw3rbGS8kE",
+        "type": "weapon"
+      },
+      {
+        "id": "jJSZcPaDKoKUAODI",
+        "type": "weapon"
+      },
+      {
+        "id": "juVkZ6WLQScvVtYo",
+        "type": "weapon"
+      },
+      {
+        "id": "JvQ7zMwtL4kkLcBD",
+        "type": "weapon"
+      },
+      {
+        "id": "K6BYwpZ6tIfBaN8d",
+        "type": "weapon"
+      },
+      {
+        "id": "KcJQDcj5OhOLXM61",
+        "type": "weapon"
+      },
+      {
+        "id": "KZXbZHHWYgzPIeEu",
+        "type": "weapon"
+      },
+      {
+        "id": "M03oB5bkU1vLV14i",
+        "type": "weapon"
+      },
+      {
+        "id": "MzheNvibrzNOUCit",
+        "type": "weapon"
+      },
+      {
+        "id": "nBKe5FSLVwLc90V8",
+        "type": "weapon"
+      },
+      {
+        "id": "occS6ziTmJFs6l6I",
+        "type": "weapon"
+      },
+      {
+        "id": "p85TNMcOFwVvWL2G",
+        "type": "weapon"
+      },
+      {
+        "id": "pxX1eRAvwc7s7Fvl",
+        "type": "weapon"
+      },
+      {
+        "id": "qHDawfJ4odwq0msn",
+        "type": "weapon"
+      },
+      {
+        "id": "qNAotAhSUqrApbe2",
+        "type": "weapon"
+      },
+      {
+        "id": "R1TbrT8uSWPMbOf5",
+        "type": "weapon"
+      },
+      {
+        "id": "Sort32nT5m7cK6aD",
+        "type": "weapon"
+      },
+      {
+        "id": "Sryvk8rJA1uRF6pe",
+        "type": "weapon"
+      },
+      {
+        "id": "T1EZHHzQmorZJ0OV",
+        "type": "weapon"
+      },
+      {
+        "id": "T26v9BtiJSi5ztId",
+        "type": "weapon"
+      },
+      {
+        "id": "T9EcBhq8s47DLXGw",
+        "type": "weapon"
+      },
+      {
+        "id": "U9b2WmNdvvylrxjq",
+        "type": "weapon"
+      },
+      {
+        "id": "ul9SUFwGCrrm5xLQ",
+        "type": "weapon"
+      },
+      {
+        "id": "UoIMwoUEFTM1Fxj5",
+        "type": "weapon"
+      },
+      {
+        "id": "V3KQ4prgpxLiEi0r",
+        "type": "weapon"
+      },
+      {
+        "id": "vdOrogBcfmKOTFBH",
+        "type": "weapon"
+      },
+      {
+        "id": "vSnBTXbMx5GhbZTf",
+        "type": "weapon"
+      },
+      {
+        "id": "VWwgw7yKONI6e5RR",
+        "type": "weapon"
+      },
+      {
+        "id": "vZaOJOmISDvfylEx",
+        "type": "weapon"
+      },
+      {
+        "id": "WMNMfmRgtCGY66YP",
+        "type": "weapon"
+      },
+      {
+        "id": "XdUfuMwggrojFQfd",
+        "type": "weapon"
+      },
+      {
+        "id": "xi2KjvFR0LztsR2b",
+        "type": "weapon"
+      },
+      {
+        "id": "YB5pTQkSSdbh8jac",
+        "type": "weapon"
+      },
+      {
+        "id": "ZmWTqN94lFWAIhcZ",
+        "type": "weapon"
+      }
+    ],
+    "netrunningEquipment": [
+      {
+        "id": "7TH1p9u5yCQ7u9xF",
+        "type": "misc"
+      },
+      {
+        "id": "a4Z9Ms3cVv5ZD2BZ",
+        "type": "misc"
+      },
+      {
+        "id": "CpNnuYSqAAk9H91S",
+        "type": "misc"
+      },
+      {
+        "id": "et4tYmvRtzfodVR2",
+        "type": "misc"
+      },
+      {
+        "id": "HUJQJcMw98KRF44R",
+        "type": "misc"
+      },
+      {
+        "id": "KUfUIWFQNe2lzcHk",
+        "type": "misc"
+      },
+      {
+        "id": "phUkN2rJsfUjDmap",
+        "type": "misc"
+      },
+      {
+        "id": "PRdoIjZjG5SMfD34",
+        "type": "misc"
+      },
+      {
+        "id": "Rk2TI2LpKVzR7JEE",
+        "type": "misc"
+      },
+      {
+        "id": "SonedrHBuaWvTedg",
+        "type": "misc"
+      },
+      {
+        "id": "SVHoDGUFU3Ns8I4q",
+        "type": "misc"
+      },
+      {
+        "id": "uvCzoIqA3CtV1T4i",
+        "type": "misc"
+      },
+      {
+        "id": "WGUZO1PBwu8k1KKB",
+        "type": "misc"
+      },
+      {
+        "id": "xA1iNdn4PASWzh3U",
+        "type": "misc"
+      },
+      {
+        "id": "zA1AJioB4fOSCOVY",
+        "type": "misc"
+      }
+    ],
+    "pistols": [
+      {
+        "id": "0fzrC84PzMzrfJPx",
+        "type": "weapon"
+      },
+      {
+        "id": "0GGI51gGf2zH2kmU",
+        "type": "weapon"
+      },
+      {
+        "id": "0PI6ik3YIAOpQjo4",
+        "type": "weapon"
+      },
+      {
+        "id": "2cVessrlAWppzNbI",
+        "type": "weapon"
+      },
+      {
+        "id": "2EUaqXQZMI4y29XN",
+        "type": "weapon"
+      },
+      {
+        "id": "37IWTagWNxc6OvvT",
+        "type": "weapon"
+      },
+      {
+        "id": "5G8WLZ0IIhwXupzd",
+        "type": "weapon"
+      },
+      {
+        "id": "5mXKHuwz2U2r3coV",
+        "type": "weapon"
+      },
+      {
+        "id": "77fUuiskTVWHa7ej",
+        "type": "weapon"
+      },
+      {
+        "id": "7IedbTVKe5n1GwSo",
+        "type": "weapon"
+      },
+      {
+        "id": "7klIRXRGFgSUyYC6",
+        "type": "weapon"
+      },
+      {
+        "id": "8n7d1XTM6m8uHVSK",
+        "type": "weapon"
+      },
+      {
+        "id": "8wTe7djfIZIOvpKx",
+        "type": "weapon"
+      },
+      {
+        "id": "9K2fS4PwCkbPRe66",
+        "type": "weapon"
+      },
+      {
+        "id": "9PFMT9mVL9NclfiH",
+        "type": "weapon"
+      },
+      {
+        "id": "9y798D7NXXdMKqVg",
+        "type": "weapon"
+      },
+      {
+        "id": "a7CGxYBJBdnBGbSh",
+        "type": "weapon"
+      },
+      {
+        "id": "bdiPuCfc7QrenKHE",
+        "type": "weapon"
+      },
+      {
+        "id": "bOEHQrnnNoiUJNwG",
+        "type": "weapon"
+      },
+      {
+        "id": "bwb6QT4wePEdaAbp",
+        "type": "weapon"
+      },
+      {
+        "id": "C9Qkg2SfD0m04CkA",
+        "type": "weapon"
+      },
+      {
+        "id": "cDwMKNJLOhnxZXFk",
+        "type": "weapon"
+      },
+      {
+        "id": "CkOX1TD0F04W6e3x",
+        "type": "weapon"
+      },
+      {
+        "id": "CLuFg4eQ23RuoXwP",
+        "type": "weapon"
+      },
+      {
+        "id": "CMX7bvvCqP46AEXd",
+        "type": "weapon"
+      },
+      {
+        "id": "CVOtjHZhPC4oVQqI",
+        "type": "weapon"
+      },
+      {
+        "id": "CWAED1CF03leMLE2",
+        "type": "weapon"
+      },
+      {
+        "id": "d1a7dUhWCjRElige",
+        "type": "weapon"
+      },
+      {
+        "id": "DnIMACYcu6bWPlGG",
+        "type": "weapon"
+      },
+      {
+        "id": "e3iDXT6G0FhWMOLq",
+        "type": "weapon"
+      },
+      {
+        "id": "E83y3y3fZjLNkBO8",
+        "type": "weapon"
+      },
+      {
+        "id": "ESH2EgsmrFWzAO9W",
+        "type": "weapon"
+      },
+      {
+        "id": "evpsBHe5oIuRrr5V",
+        "type": "weapon"
+      },
+      {
+        "id": "f6jL6wQMixMbKDYA",
+        "type": "weapon"
+      },
+      {
+        "id": "fJbZnxMM32e0gnNJ",
+        "type": "weapon"
+      },
+      {
+        "id": "fK6NTUrjjtYtbcEt",
+        "type": "weapon"
+      },
+      {
+        "id": "FOHK3feBlZUyUrwV",
+        "type": "weapon"
+      },
+      {
+        "id": "FsQnU1bWOLOKkOw8",
+        "type": "weapon"
+      },
+      {
+        "id": "G4N9cWkR8LgZ30J5",
+        "type": "weapon"
+      },
+      {
+        "id": "g7sCDQMTOBlIg20J",
+        "type": "weapon"
+      },
+      {
+        "id": "GH7RiCX2o8Qa0XXj",
+        "type": "weapon"
+      },
+      {
+        "id": "hcN1QU6QQbsB7xBG",
+        "type": "weapon"
+      },
+      {
+        "id": "hIM3ZMxFtlOkVwTb",
+        "type": "weapon"
+      },
+      {
+        "id": "Hj4hfu0TByaPdOwd",
+        "type": "weapon"
+      },
+      {
+        "id": "hjdMCHJ3plETFfYG",
+        "type": "weapon"
+      },
+      {
+        "id": "hL8X6TXu1gQROLgn",
+        "type": "weapon"
+      },
+      {
+        "id": "HrnjHoCUVJ3tR95t",
+        "type": "weapon"
+      },
+      {
+        "id": "HV7arDJn0A2ws1mU",
+        "type": "weapon"
+      },
+      {
+        "id": "i3k4HtnB9CSPNsCs",
+        "type": "weapon"
+      },
+      {
+        "id": "I8gAboho6KO1VSFY",
+        "type": "weapon"
+      },
+      {
+        "id": "iCB90BY4YI4Zb5Tb",
+        "type": "weapon"
+      },
+      {
+        "id": "IFZPLbkNCFzrwJKG",
+        "type": "weapon"
+      },
+      {
+        "id": "igQZzFaKrq15tc5H",
+        "type": "weapon"
+      },
+      {
+        "id": "iIkwmpMEY4GK7snX",
+        "type": "weapon"
+      },
+      {
+        "id": "InalzUjbHD84tTlp",
+        "type": "weapon"
+      },
+      {
+        "id": "IOqP2TNWXD1lx1Af",
+        "type": "weapon"
+      },
+      {
+        "id": "IV39kIxyjTRsLg8a",
+        "type": "weapon"
+      },
+      {
+        "id": "IyyiND5uP36bIcAS",
+        "type": "weapon"
+      },
+      {
+        "id": "J9gylFltPn0nisy6",
+        "type": "weapon"
+      },
+      {
+        "id": "JgI79MMzv4yyTAd8",
+        "type": "weapon"
+      },
+      {
+        "id": "JnTrVIfqpFG87cMi",
+        "type": "weapon"
+      },
+      {
+        "id": "jqYE0rPnkcij6PoP",
+        "type": "weapon"
+      },
+      {
+        "id": "k3Z10lvnTR0jTFLO",
+        "type": "weapon"
+      },
+      {
+        "id": "K4gQfZnt4C1Vl80q",
+        "type": "weapon"
+      },
+      {
+        "id": "kBRE6OBgRfgqDNYU",
+        "type": "weapon"
+      },
+      {
+        "id": "KByIb9m6iz0wydpg",
+        "type": "weapon"
+      },
+      {
+        "id": "KdZlWb7OQAZQ3lCi",
+        "type": "weapon"
+      },
+      {
+        "id": "KoFjYTj4M7si1KTR",
+        "type": "weapon"
+      },
+      {
+        "id": "LfM7VzpUCsz6kLsc",
+        "type": "weapon"
+      },
+      {
+        "id": "Lh2sJOg0Zahq6sjU",
+        "type": "weapon"
+      },
+      {
+        "id": "lMsiByjZuQysduBL",
+        "type": "weapon"
+      },
+      {
+        "id": "lTLJYi4QpGZ4QllG",
+        "type": "weapon"
+      },
+      {
+        "id": "luEW9meyTzqADBVh",
+        "type": "weapon"
+      },
+      {
+        "id": "M2F4WJjSZuwOgpNY",
+        "type": "weapon"
+      },
+      {
+        "id": "MFXYTignpMc320Uc",
+        "type": "weapon"
+      },
+      {
+        "id": "mG4fLXvze0kGjP7w",
+        "type": "weapon"
+      },
+      {
+        "id": "MmTGh2ZY2aMWm5ij",
+        "type": "weapon"
+      },
+      {
+        "id": "MUfZKYosu4s2790W",
+        "type": "weapon"
+      },
+      {
+        "id": "MutfvjGJ7icLkIz9",
+        "type": "weapon"
+      },
+      {
+        "id": "N8qoJq9MObjZp94k",
+        "type": "weapon"
+      },
+      {
+        "id": "nC7oYgoiYYiE0xvZ",
+        "type": "weapon"
+      },
+      {
+        "id": "nDXZ2iTc3WO8vqNB",
+        "type": "weapon"
+      },
+      {
+        "id": "NnzIKaexBME9a17I",
+        "type": "weapon"
+      },
+      {
+        "id": "NsUjzsUeTF6xI7tn",
+        "type": "weapon"
+      },
+      {
+        "id": "OfNSdikaTa6RgBlx",
+        "type": "weapon"
+      },
+      {
+        "id": "oFTsdbnXjbPlPhjI",
+        "type": "weapon"
+      },
+      {
+        "id": "ouoQL7Of09DsNaLS",
+        "type": "weapon"
+      },
+      {
+        "id": "P3k92VGT0R6gcGyJ",
+        "type": "weapon"
+      },
+      {
+        "id": "PEvycr41jLa1HouI",
+        "type": "weapon"
+      },
+      {
+        "id": "pFEV4QQIg4qll6qF",
+        "type": "weapon"
+      },
+      {
+        "id": "PjKObIGJIxJWIysp",
+        "type": "weapon"
+      },
+      {
+        "id": "PQ5avXOpQa5Uw1FQ",
+        "type": "weapon"
+      },
+      {
+        "id": "Q4j298DudoIMHYxx",
+        "type": "weapon"
+      },
+      {
+        "id": "QBo3krJ7SmsCsW0C",
+        "type": "weapon"
+      },
+      {
+        "id": "qEJ32j1bECvvNrgQ",
+        "type": "weapon"
+      },
+      {
+        "id": "qMAZ3dJTvzUXHj6B",
+        "type": "weapon"
+      },
+      {
+        "id": "qqFsAKvvpeHkngiB",
+        "type": "weapon"
+      },
+      {
+        "id": "qsQJPsY3ZLofvTN4",
+        "type": "weapon"
+      },
+      {
+        "id": "QweI5ZaCkwoSkxBM",
+        "type": "weapon"
+      },
+      {
+        "id": "RLtLDqHMmiwClkzs",
+        "type": "weapon"
+      },
+      {
+        "id": "rrLCxitVRy5h86Q7",
+        "type": "weapon"
+      },
+      {
+        "id": "saQDvgxfcJ0QAVap",
+        "type": "weapon"
+      },
+      {
+        "id": "sEiFImyYIif0LaD1",
+        "type": "weapon"
+      },
+      {
+        "id": "shA3SsTYRx5vt8fv",
+        "type": "weapon"
+      },
+      {
+        "id": "Sn17cSUPAPGZdebP",
+        "type": "weapon"
+      },
+      {
+        "id": "soJJv4hGn5Dbdw4x",
+        "type": "weapon"
+      },
+      {
+        "id": "sVDpg8Ge6SFwHDH5",
+        "type": "weapon"
+      },
+      {
+        "id": "SYtklykWcU1XA9dt",
+        "type": "weapon"
+      },
+      {
+        "id": "T7UIyFoRLxvfg0gp",
+        "type": "weapon"
+      },
+      {
+        "id": "tjs1iz4nCJxw78kg",
+        "type": "weapon"
+      },
+      {
+        "id": "tu5x2qFkd0yj0fRP",
+        "type": "weapon"
+      },
+      {
+        "id": "TviXLgMLDD6YRxOm",
+        "type": "weapon"
+      },
+      {
+        "id": "uaX49q4ctZJqXHVO",
+        "type": "weapon"
+      },
+      {
+        "id": "ueGsCvYRn2vwuuwh",
+        "type": "weapon"
+      },
+      {
+        "id": "UfEYcjGjnlpadL0R",
+        "type": "weapon"
+      },
+      {
+        "id": "uLvi9NsZaF2AVk5L",
+        "type": "weapon"
+      },
+      {
+        "id": "uohXd770Ctq7q3FH",
+        "type": "weapon"
+      },
+      {
+        "id": "UrO7HflqNH7dmLpy",
+        "type": "weapon"
+      },
+      {
+        "id": "v66xzUgAxpwHj8mi",
+        "type": "weapon"
+      },
+      {
+        "id": "Vel7f89kZPyAk5sm",
+        "type": "weapon"
+      },
+      {
+        "id": "vStLIq8cARIOeLuo",
+        "type": "weapon"
+      },
+      {
+        "id": "wn3P1fXU79nZFfCI",
+        "type": "weapon"
+      },
+      {
+        "id": "wSF5nP8PH63MSijn",
+        "type": "weapon"
+      },
+      {
+        "id": "wzkccw1EgJMxeyko",
+        "type": "weapon"
+      },
+      {
+        "id": "xBhuPUPbc2MYBiWp",
+        "type": "weapon"
+      },
+      {
+        "id": "xDBCzNnUAvANpgpa",
+        "type": "weapon"
+      },
+      {
+        "id": "XLsY0rq0BRRFdHgs",
+        "type": "weapon"
+      },
+      {
+        "id": "yBRFlC2ibANjdR4n",
+        "type": "weapon"
+      },
+      {
+        "id": "yEqB4jgcshtkZNM9",
+        "type": "weapon"
+      },
+      {
+        "id": "Yiu3sh6Ou2ByiROr",
+        "type": "weapon"
+      },
+      {
+        "id": "Yo3u41Xizq1adPBn",
+        "type": "weapon"
+      },
+      {
+        "id": "Z597tbqU9ucHAysd",
+        "type": "weapon"
+      },
+      {
+        "id": "Z63YAgcZ1a0WmxFM",
+        "type": "weapon"
+      },
+      {
+        "id": "zaUveeRUYYnc853Q",
+        "type": "weapon"
+      },
+      {
+        "id": "ZBjzfYnGvLr10LKx",
+        "type": "weapon"
+      },
+      {
+        "id": "zcL5D0q5E2B3tYSw",
+        "type": "weapon"
+      },
+      {
+        "id": "ZeN6z0tYKkrjAblq",
+        "type": "weapon"
+      },
+      {
+        "id": "zJ5UiVVNNqOddELp",
+        "type": "weapon"
+      },
+      {
+        "id": "zkPXOzmQwPVypsHF",
+        "type": "weapon"
+      },
+      {
+        "id": "zPJI4X18xzDt9QtL",
+        "type": "weapon"
+      },
+      {
+        "id": "zrvhvXOAdISaF9js",
+        "type": "weapon"
+      }
+    ],
+    "rentalandservices": [
+      {
+        "id": "1MUFsLYenBNcW0VV",
+        "type": "misc"
+      },
+      {
+        "id": "1wSczzdjOpEZHUG4",
+        "type": "misc"
+      },
+      {
+        "id": "2O2PlXxgAJTYbHcr",
+        "type": "misc"
+      },
+      {
+        "id": "3DKBHvIJRMQ7nz7O",
+        "type": "misc"
+      },
+      {
+        "id": "3xXDt7msEp0rodwB",
+        "type": "misc"
+      },
+      {
+        "id": "7ynv1iRjCVS6tKqT",
+        "type": "misc"
+      },
+      {
+        "id": "8kMNCMooW7gID3Ki",
+        "type": "misc"
+      },
+      {
+        "id": "97xCt0Z74g613nHN",
+        "type": "misc"
+      },
+      {
+        "id": "a1PfGEaWAmwhvKIg",
+        "type": "misc"
+      },
+      {
+        "id": "asfDWfOJkdyTckyw",
+        "type": "misc"
+      },
+      {
+        "id": "ayf8BevRGNfVDW43",
+        "type": "misc"
+      },
+      {
+        "id": "BUCT1O4inYF7AtU5",
+        "type": "misc"
+      },
+      {
+        "id": "c2NLex4kqxhj5c88",
+        "type": "misc"
+      },
+      {
+        "id": "fe2JHml3p3rOS9M3",
+        "type": "misc"
+      },
+      {
+        "id": "g1HLhgxSH0kjlv19",
+        "type": "misc"
+      },
+      {
+        "id": "HDJMDrJwwyd7W4HF",
+        "type": "misc"
+      },
+      {
+        "id": "JiAMrymDUuqzXH2G",
+        "type": "misc"
+      },
+      {
+        "id": "kby6H8nselTicIdq",
+        "type": "misc"
+      },
+      {
+        "id": "KdUSPc9jKlxZBYTz",
+        "type": "misc"
+      },
+      {
+        "id": "kzxa75xkXUJtfvnJ",
+        "type": "misc"
+      },
+      {
+        "id": "L9oN4cVPnGTf58fc",
+        "type": "misc"
+      },
+      {
+        "id": "LdrNwR79wlxSid09",
+        "type": "misc"
+      },
+      {
+        "id": "LJ2N1CRa9q5UJjor",
+        "type": "misc"
+      },
+      {
+        "id": "MV0opo466kDttaku",
+        "type": "misc"
+      },
+      {
+        "id": "nEYfvmgrG2BneL9F",
+        "type": "misc"
+      },
+      {
+        "id": "nnzTwmtbnwsuT5LH",
+        "type": "misc"
+      },
+      {
+        "id": "Odj2rS5kKKejVWVr",
+        "type": "misc"
+      },
+      {
+        "id": "oN5HJZeZ4Ef4MMTY",
+        "type": "misc"
+      },
+      {
+        "id": "ox0PovQuEYpxgXnj",
+        "type": "misc"
+      },
+      {
+        "id": "qyyD4zTJnXrmsIqF",
+        "type": "misc"
+      },
+      {
+        "id": "RfWVJIgFgoGgZzeo",
+        "type": "misc"
+      },
+      {
+        "id": "RjIQ1XyKF8rjAF6R",
+        "type": "misc"
+      },
+      {
+        "id": "sJhbh46gnrrx9NL0",
+        "type": "misc"
+      },
+      {
+        "id": "TcE1Dce0LumTnmMt",
+        "type": "misc"
+      },
+      {
+        "id": "UMgA64Ze5RUNqVkC",
+        "type": "misc"
+      },
+      {
+        "id": "utDVxkOftG5ei4iA",
+        "type": "misc"
+      },
+      {
+        "id": "UTQE3c98erdd4Z4z",
+        "type": "misc"
+      },
+      {
+        "id": "ww5M1GUNlFxGQ4Ki",
+        "type": "misc"
+      },
+      {
+        "id": "YEsC8bdEgXNZsvYc",
+        "type": "misc"
+      },
+      {
+        "id": "z2f2TvELHm3t1YCs",
+        "type": "misc"
+      }
+    ],
+    "rifles": [
+      {
+        "id": "0m4UQ8xj9ltP0Kyq",
+        "type": "weapon"
+      },
+      {
+        "id": "1PHEvKQwJSAZomFi",
+        "type": "weapon"
+      },
+      {
+        "id": "3pSLeZxYCxzKXiec",
+        "type": "weapon"
+      },
+      {
+        "id": "3V0G1OOcloCwDUaf",
+        "type": "weapon"
+      },
+      {
+        "id": "4vdOzKl4OgPlvMtH",
+        "type": "weapon"
+      },
+      {
+        "id": "5tRLfqo0vFML1s7m",
+        "type": "weapon"
+      },
+      {
+        "id": "61eNF9y6JTupCiop",
+        "type": "weapon"
+      },
+      {
+        "id": "6Jzuam96nzFC4bpI",
+        "type": "weapon"
+      },
+      {
+        "id": "7gZ6YQLFKhrhALEL",
+        "type": "weapon"
+      },
+      {
+        "id": "7ZqbBFxGmso5Y7Jy",
+        "type": "weapon"
+      },
+      {
+        "id": "96eb2BPjXY701D9b",
+        "type": "weapon"
+      },
+      {
+        "id": "96mWBXhFUFwybaU6",
+        "type": "weapon"
+      },
+      {
+        "id": "9XtGPn7AvDezh98I",
+        "type": "weapon"
+      },
+      {
+        "id": "AAKIPWVEdQA8K4bj",
+        "type": "weapon"
+      },
+      {
+        "id": "bgJD6ThEVUWewoNl",
+        "type": "weapon"
+      },
+      {
+        "id": "BPvi2lsMuBL51B5K",
+        "type": "weapon"
+      },
+      {
+        "id": "bw0xdrxVwcNyP3u7",
+        "type": "weapon"
+      },
+      {
+        "id": "cPuZS8w2notOD7x4",
+        "type": "weapon"
+      },
+      {
+        "id": "CVYgzDJ7V5I99XXb",
+        "type": "weapon"
+      },
+      {
+        "id": "D3Iw4QZbXfqmYnay",
+        "type": "weapon"
+      },
+      {
+        "id": "d80vpkktUxohUS0v",
+        "type": "weapon"
+      },
+      {
+        "id": "dMxzZBhVIMPmHOVe",
+        "type": "weapon"
+      },
+      {
+        "id": "dTeL94zz5XeX2VMl",
+        "type": "weapon"
+      },
+      {
+        "id": "egYk3gTXiOUy61cV",
+        "type": "weapon"
+      },
+      {
+        "id": "fcOfZQZ8OUwQkKxg",
+        "type": "weapon"
+      },
+      {
+        "id": "G1iGCBep7mrOMspI",
+        "type": "weapon"
+      },
+      {
+        "id": "GKYLSsSbpIhyXlVQ",
+        "type": "weapon"
+      },
+      {
+        "id": "GZlsLBRhmYvAiE9B",
+        "type": "weapon"
+      },
+      {
+        "id": "H4TZI1Fcjr0WiX4Y",
+        "type": "weapon"
+      },
+      {
+        "id": "hcdOFwakE52b6nyk",
+        "type": "weapon"
+      },
+      {
+        "id": "hh5EFFrN6tuzr5YO",
+        "type": "weapon"
+      },
+      {
+        "id": "HiRnCljRMveUwbwC",
+        "type": "weapon"
+      },
+      {
+        "id": "HoUoxEVgDMXwxI7q",
+        "type": "weapon"
+      },
+      {
+        "id": "IBqSV1QJjNDK7UDb",
+        "type": "weapon"
+      },
+      {
+        "id": "ihl0Z3wuUcI6ccfI",
+        "type": "weapon"
+      },
+      {
+        "id": "IODKFtBbFlYFXquu",
+        "type": "weapon"
+      },
+      {
+        "id": "J7fkqq0liF8EUhb9",
+        "type": "weapon"
+      },
+      {
+        "id": "JFqYuqhRSTGWx0SZ",
+        "type": "weapon"
+      },
+      {
+        "id": "ksCCfrl9h6bbxwXG",
+        "type": "weapon"
+      },
+      {
+        "id": "KTaSEIDTHS0xocdL",
+        "type": "weapon"
+      },
+      {
+        "id": "KXiXbf0AwSeZ16j1",
+        "type": "weapon"
+      },
+      {
+        "id": "LyQS3kzX2IjofLwV",
+        "type": "weapon"
+      },
+      {
+        "id": "lyuEGGTV50byYUVQ",
+        "type": "weapon"
+      },
+      {
+        "id": "M6pEaPlcAQHCPi00",
+        "type": "weapon"
+      },
+      {
+        "id": "niJQdlTFOp49uswd",
+        "type": "weapon"
+      },
+      {
+        "id": "oFNlaYLadtV3lFNY",
+        "type": "weapon"
+      },
+      {
+        "id": "Ovn91Tmpycgh7iWI",
+        "type": "weapon"
+      },
+      {
+        "id": "owRJzSKQOssRpNDf",
+        "type": "weapon"
+      },
+      {
+        "id": "oxebhWzJjLC9t2Hf",
+        "type": "weapon"
+      },
+      {
+        "id": "p5FokfzzLO2FWhmx",
+        "type": "weapon"
+      },
+      {
+        "id": "p5UgONCNp4VO4gkT",
+        "type": "weapon"
+      },
+      {
+        "id": "pmV4XjeVoKJuRFnb",
+        "type": "weapon"
+      },
+      {
+        "id": "pYUzRCSOcWDa0O62",
+        "type": "weapon"
+      },
+      {
+        "id": "q95uG8vegEoSBqIV",
+        "type": "weapon"
+      },
+      {
+        "id": "qCpmw8DJV3MYZnSX",
+        "type": "weapon"
+      },
+      {
+        "id": "QCvl9BeU0M3xIADT",
+        "type": "weapon"
+      },
+      {
+        "id": "ruRVB08MKaQJhYgs",
+        "type": "weapon"
+      },
+      {
+        "id": "srNOjbOVl5OuVY0L",
+        "type": "weapon"
+      },
+      {
+        "id": "sTILTHTwBigG7nXL",
+        "type": "weapon"
+      },
+      {
+        "id": "tcZGp6e9rdvXpXZV",
+        "type": "weapon"
+      },
+      {
+        "id": "TfclKhKKFYzXUxpj",
+        "type": "weapon"
+      },
+      {
+        "id": "tG7nq5q46MAzpQ3p",
+        "type": "weapon"
+      },
+      {
+        "id": "TyP3B6pzCYSDQ3Gb",
+        "type": "weapon"
+      },
+      {
+        "id": "Tz7qDx4niFQyT6ic",
+        "type": "weapon"
+      },
+      {
+        "id": "uFSzlpoo8pBhXpoX",
+        "type": "weapon"
+      },
+      {
+        "id": "UlG2dMmhsxnLN5Ym",
+        "type": "weapon"
+      },
+      {
+        "id": "umnUlLMqjVzbuzGf",
+        "type": "weapon"
+      },
+      {
+        "id": "UnkYMLrCpUwpr608",
+        "type": "weapon"
+      },
+      {
+        "id": "UWGVRzPGHKf5zmKE",
+        "type": "weapon"
+      },
+      {
+        "id": "va5I3ONjZ24CwMRg",
+        "type": "weapon"
+      },
+      {
+        "id": "vcdnfjNMIjBo52vE",
+        "type": "weapon"
+      },
+      {
+        "id": "VvZDsAOBQTJyx1ow",
+        "type": "weapon"
+      },
+      {
+        "id": "w4lxIMz7o16xzhPr",
+        "type": "weapon"
+      },
+      {
+        "id": "wTDhDfQjHHCrTXlv",
+        "type": "weapon"
+      },
+      {
+        "id": "X6BmVz1mimTVFE6v",
+        "type": "weapon"
+      },
+      {
+        "id": "xuMT8q19VlFrclxq",
+        "type": "weapon"
+      },
+      {
+        "id": "XyIDU1jb2nNvLDam",
+        "type": "weapon"
+      },
+      {
+        "id": "xZ2pDmJbwfL2yC7S",
+        "type": "weapon"
+      },
+      {
+        "id": "Y4nClMmLPSE6BOTf",
+        "type": "weapon"
+      },
+      {
+        "id": "Y95ssNdKa3RSF5Af",
+        "type": "weapon"
+      },
+      {
+        "id": "YClOe3bOtrO5nsrQ",
+        "type": "weapon"
+      },
+      {
+        "id": "ylMh5vgH1hhbUsEE",
+        "type": "weapon"
+      },
+      {
+        "id": "Zy8JWgSjIwA0kYbY",
+        "type": "weapon"
+      }
+    ],
+    "role-skills": [
+      {
+        "id": "4Vs8BkzHsnymmTZI",
+        "type": "skill"
+      },
+      {
+        "id": "BjBZ8zc7wh52MSwK",
+        "type": "skill"
+      },
+      {
+        "id": "cFbpX0cI7tul6k9q",
+        "type": "skill"
+      },
+      {
+        "id": "f1OKKB0bc1RaGdrM",
+        "type": "skill"
+      },
+      {
+        "id": "o45JzpqLjjMLL7m1",
+        "type": "skill"
+      },
+      {
+        "id": "Qmjux0msvvUVtcXL",
+        "type": "skill"
+      },
+      {
+        "id": "rCQBUb65uJo0Zng5",
+        "type": "skill"
+      },
+      {
+        "id": "sqHlfxm32pNENNFZ",
+        "type": "skill"
+      },
+      {
+        "id": "WF501rqiNPl4QPAv",
+        "type": "skill"
+      },
+      {
+        "id": "Yafgebvct45ZRpxQ",
+        "type": "skill"
+      }
+    ],
+    "roll-tables": [
+      {
+        "id": "ATaYtvCkuCwrAd9p",
+        "type": null
+      }
+    ],
+    "security": [
+      {
+        "id": "1nUpVE7GEC5f5U7d",
+        "type": "misc"
+      },
+      {
+        "id": "5bsWx8GcFPV0dKl1",
+        "type": "misc"
+      },
+      {
+        "id": "6MetXsqmUbqnqicM",
+        "type": "misc"
+      },
+      {
+        "id": "aGLkz8sxf6mox657",
+        "type": "misc"
+      },
+      {
+        "id": "B8cwRLTgNH0JKDbQ",
+        "type": "misc"
+      },
+      {
+        "id": "elHoetdX5JUgxCFX",
+        "type": "misc"
+      },
+      {
+        "id": "gdaNiKBjP5twkUlA",
+        "type": "misc"
+      },
+      {
+        "id": "iMvWYUhWME7N885O",
+        "type": "misc"
+      },
+      {
+        "id": "K1Bz0UxSoimwfeo4",
+        "type": "misc"
+      },
+      {
+        "id": "mBHnXfoBaOOFBfHs",
+        "type": "misc"
+      },
+      {
+        "id": "NQGeD3NjMWevb8sb",
+        "type": "misc"
+      },
+      {
+        "id": "oVGBBUXDnAph5s72",
+        "type": "misc"
+      },
+      {
+        "id": "PRv6kH68kgxdZFTw",
+        "type": "misc"
+      },
+      {
+        "id": "Q7WKq8FA8wXLMIGG",
+        "type": "misc"
+      },
+      {
+        "id": "RXu2Mg4Tu6gXQGdy",
+        "type": "misc"
+      },
+      {
+        "id": "STgYR5T0ahs3UiCq",
+        "type": "misc"
+      },
+      {
+        "id": "TBUg8FIkTAwFiYx1",
+        "type": "misc"
+      },
+      {
+        "id": "tS5zTejaXhJQQd4D",
+        "type": "misc"
+      },
+      {
+        "id": "tsyOOBZXU1HPWmY1",
+        "type": "misc"
+      },
+      {
+        "id": "TudU70AKY8FSPziF",
+        "type": "misc"
+      },
+      {
+        "id": "x5tqFKcauUqxkqWr",
+        "type": "misc"
+      },
+      {
+        "id": "ycLktwLxqVMsxr7K",
+        "type": "misc"
+      },
+      {
+        "id": "YgfVnb6Im4QjM61v",
+        "type": "misc"
+      },
+      {
+        "id": "yO5sgUByAApOQPyy",
+        "type": "misc"
+      },
+      {
+        "id": "z7lYhvCnByZxY7dg",
+        "type": "misc"
+      },
+      {
+        "id": "zzHdxI9ugvT1W6wd",
+        "type": "misc"
+      }
+    ],
+    "sellthedead": [
+      {
+        "id": "0qSkqcAHjeTsr7zK",
+        "type": "misc"
+      },
+      {
+        "id": "2bPVLlMthr8PzCYW",
+        "type": "misc"
+      },
+      {
+        "id": "3kN0g8BBcwxLOQtm",
+        "type": "misc"
+      },
+      {
+        "id": "91esj9TSYtvANsZc",
+        "type": "misc"
+      },
+      {
+        "id": "AHCKKMUsG50yfWTt",
+        "type": "misc"
+      },
+      {
+        "id": "CDofFjF3dZYmzSKV",
+        "type": "misc"
+      },
+      {
+        "id": "dqOpvvOp1oHnayp9",
+        "type": "misc"
+      },
+      {
+        "id": "dwOCAsq3Uk9XdKwf",
+        "type": "misc"
+      },
+      {
+        "id": "fNjpNBe7rLHTWbJs",
+        "type": "misc"
+      },
+      {
+        "id": "glXNjtiAfE7uhOqW",
+        "type": "misc"
+      },
+      {
+        "id": "idp2HvxT9sUCBVcP",
+        "type": "misc"
+      },
+      {
+        "id": "idT1kS1GRMuUZ7ZN",
+        "type": "misc"
+      },
+      {
+        "id": "iPM1aKbiM8DMgd3G",
+        "type": "misc"
+      },
+      {
+        "id": "jUWG2PVqr6MIEhbe",
+        "type": "misc"
+      },
+      {
+        "id": "kUkqvGV7ZJOJSTur",
+        "type": "misc"
+      },
+      {
+        "id": "l0UyLYxAt5jwixbz",
+        "type": "misc"
+      },
+      {
+        "id": "lraYzhWSWC2o0cve",
+        "type": "misc"
+      },
+      {
+        "id": "M8REgdWEP9HoTKp8",
+        "type": "misc"
+      },
+      {
+        "id": "MhOPCIp7ha8LUqeF",
+        "type": "misc"
+      },
+      {
+        "id": "nlKnsgB95jyCQX5O",
+        "type": "misc"
+      },
+      {
+        "id": "PAv8bfrwP8rqqCnf",
+        "type": "misc"
+      },
+      {
+        "id": "pkv4XicKOj7iu6U6",
+        "type": "misc"
+      },
+      {
+        "id": "qcn6AomMrTbLPtC0",
+        "type": "misc"
+      },
+      {
+        "id": "RWW61BqMjbd3HjaQ",
+        "type": "misc"
+      },
+      {
+        "id": "sOQtZBJ8QfEyKGGM",
+        "type": "misc"
+      },
+      {
+        "id": "tSDD6VUUdHDJlQIu",
+        "type": "misc"
+      },
+      {
+        "id": "zE1BiCrfoZw4B9ml",
+        "type": "misc"
+      }
+    ],
+    "shotguns": [
+      {
+        "id": "0uSrC5mtUviHBhnQ",
+        "type": "weapon"
+      },
+      {
+        "id": "1HEsqKiBjyOgGlLf",
+        "type": "weapon"
+      },
+      {
+        "id": "2efKJMSfbPqKupEO",
+        "type": "weapon"
+      },
+      {
+        "id": "3TCKFbzl8q3SrrIR",
+        "type": "weapon"
+      },
+      {
+        "id": "4M7MzP9UZtKFWj8n",
+        "type": "weapon"
+      },
+      {
+        "id": "6MDbFgQJkAM80gEP",
+        "type": "weapon"
+      },
+      {
+        "id": "7ZoV5gzUR846EqaY",
+        "type": "weapon"
+      },
+      {
+        "id": "AppQOtF2RVd93zXj",
+        "type": "weapon"
+      },
+      {
+        "id": "auekU0Rg7IWkwpdY",
+        "type": "weapon"
+      },
+      {
+        "id": "DU2zSs6A7Dqgju46",
+        "type": "weapon"
+      },
+      {
+        "id": "f356f0EDvN57aNP7",
+        "type": "weapon"
+      },
+      {
+        "id": "H4oybrOacL6ETLDC",
+        "type": "weapon"
+      },
+      {
+        "id": "hqE0yG5k1nLAYHeb",
+        "type": "weapon"
+      },
+      {
+        "id": "Hy5dkrTnPl07ZzvM",
+        "type": "weapon"
+      },
+      {
+        "id": "ICtqxNGB14L17Kxh",
+        "type": "weapon"
+      },
+      {
+        "id": "iHLw1n15ygUkhbvb",
+        "type": "weapon"
+      },
+      {
+        "id": "iKePNuORETiolVaE",
+        "type": "weapon"
+      },
+      {
+        "id": "JjGFwiotAtTq4BoV",
+        "type": "weapon"
+      },
+      {
+        "id": "JQKKE3WVu84RcY8x",
+        "type": "weapon"
+      },
+      {
+        "id": "nJyHRdOY7YXiEZT6",
+        "type": "weapon"
+      },
+      {
+        "id": "tXSEAge5nHqDEpVE",
+        "type": "weapon"
+      },
+      {
+        "id": "UKE8i5PqthqBPG7F",
+        "type": "weapon"
+      },
+      {
+        "id": "VjY0sw9clEEETZUG",
+        "type": "weapon"
+      },
+      {
+        "id": "WMF5ySEGoMqFG4UB",
+        "type": "weapon"
+      },
+      {
+        "id": "XXnnbdigJwkOW89Y",
+        "type": "weapon"
+      },
+      {
+        "id": "yGI0MaMJgWsevJx1",
+        "type": "weapon"
+      },
+      {
+        "id": "zUP8MG5s6lTMSkSR",
+        "type": "weapon"
+      }
+    ],
+    "smgs": [
+      {
+        "id": "0vXyDAhPJhM5g7gD",
+        "type": "weapon"
+      },
+      {
+        "id": "1Pm1CBXsQxHF2CT0",
+        "type": "weapon"
+      },
+      {
+        "id": "2RINzvi9Q9h8HYqv",
+        "type": "weapon"
+      },
+      {
+        "id": "2WbYOokXNA2M3V6s",
+        "type": "weapon"
+      },
+      {
+        "id": "3DNXTgRaSupdcyhk",
+        "type": "weapon"
+      },
+      {
+        "id": "3pcnucxDQMWNz2kw",
+        "type": "weapon"
+      },
+      {
+        "id": "41QWNoqaB4VTgSou",
+        "type": "weapon"
+      },
+      {
+        "id": "45nQLq4Dm6evgRaQ",
+        "type": "weapon"
+      },
+      {
+        "id": "5yzjC1Jf2S9ROEB4",
+        "type": "weapon"
+      },
+      {
+        "id": "bNdSQV0ppoEKvMq3",
+        "type": "weapon"
+      },
+      {
+        "id": "c8n7BkZN8YoITKeH",
+        "type": "weapon"
+      },
+      {
+        "id": "CtqVhm0kxAeWHjIu",
+        "type": "weapon"
+      },
+      {
+        "id": "ecMfR7kOZFN7eDDb",
+        "type": "weapon"
+      },
+      {
+        "id": "F7Q9oedrdUv0jw2w",
+        "type": "weapon"
+      },
+      {
+        "id": "fV8UlWDHostjdnb5",
+        "type": "weapon"
+      },
+      {
+        "id": "gCOaq0gebgXAlYlf",
+        "type": "weapon"
+      },
+      {
+        "id": "ikbje3hTAKtXWupE",
+        "type": "weapon"
+      },
+      {
+        "id": "InYEpH4H57rmCHit",
+        "type": "weapon"
+      },
+      {
+        "id": "iR6uM6Yvn5oY9l9c",
+        "type": "weapon"
+      },
+      {
+        "id": "J2hFtDxnSZxj1wuK",
+        "type": "weapon"
+      },
+      {
+        "id": "jk0XEDAqGEmMvf9w",
+        "type": "weapon"
+      },
+      {
+        "id": "K7zuPQCHSI5tFdOi",
+        "type": "weapon"
+      },
+      {
+        "id": "KFtGKVMv1Qb3qjyX",
+        "type": "weapon"
+      },
+      {
+        "id": "KItfRwbfUGZEj0R5",
+        "type": "weapon"
+      },
+      {
+        "id": "kshlB06Ce3W2MZGS",
+        "type": "weapon"
+      },
+      {
+        "id": "KYlF7lLByY1pS4k6",
+        "type": "weapon"
+      },
+      {
+        "id": "L2ncSZrJd9LUpzU5",
+        "type": "weapon"
+      },
+      {
+        "id": "lbwgQXIKfLiaoI1j",
+        "type": "weapon"
+      },
+      {
+        "id": "mwk8JEzR2eu2Yfe4",
+        "type": "weapon"
+      },
+      {
+        "id": "mZ8Z3OjfZaMpRy6s",
+        "type": "weapon"
+      },
+      {
+        "id": "n4WgFUYuNUUSfjoZ",
+        "type": "weapon"
+      },
+      {
+        "id": "n7THLOpFQLS8rfdA",
+        "type": "weapon"
+      },
+      {
+        "id": "nYhdWz97mtivyV0Y",
+        "type": "weapon"
+      },
+      {
+        "id": "OyI5IdTHFGX9SYIk",
+        "type": "weapon"
+      },
+      {
+        "id": "Rm6QKVk9OpPSIib8",
+        "type": "weapon"
+      },
+      {
+        "id": "sXye25BdgFR4UdX5",
+        "type": "weapon"
+      },
+      {
+        "id": "TrOk4hfpGmiE0ZM0",
+        "type": "weapon"
+      },
+      {
+        "id": "uWcaWftWlmikvzai",
+        "type": "weapon"
+      },
+      {
+        "id": "VCX6Jpk02U0v6FgN",
+        "type": "weapon"
+      },
+      {
+        "id": "vjOFbV45Hy6z9z5Q",
+        "type": "weapon"
+      },
+      {
+        "id": "wcN92Jh1lyDBGcat",
+        "type": "weapon"
+      },
+      {
+        "id": "Xq351oM6S4kA1Mpj",
+        "type": "weapon"
+      },
+      {
+        "id": "Z2cexvkQ0EpIJJvX",
+        "type": "weapon"
+      },
+      {
+        "id": "Zh6VBnpYIdHKj6ot",
+        "type": "weapon"
+      },
+      {
+        "id": "Zjlj1vLvO1MTStFc",
+        "type": "weapon"
+      },
+      {
+        "id": "ZQk2dlbT5I2xBvcR",
+        "type": "weapon"
+      },
+      {
+        "id": "Zuch8ALyYSNucyIu",
+        "type": "weapon"
+      },
+      {
+        "id": "Zw9j2GOGAGl47veo",
+        "type": "weapon"
+      }
+    ],
+    "surveillance": [
+      {
+        "id": "79Nyt0GU3pYGu7BF",
+        "type": "misc"
+      },
+      {
+        "id": "cok1ozJSd3VniVAt",
+        "type": "misc"
+      },
+      {
+        "id": "IJ7KWobRjtYx3ynW",
+        "type": "misc"
+      },
+      {
+        "id": "j8D1o1qngrZDsmaB",
+        "type": "misc"
+      },
+      {
+        "id": "zQPwbPjEohEp7THS",
+        "type": "misc"
+      }
+    ],
+    "tools": [
+      {
+        "id": "EMLGbP6Mcbm85RCj",
+        "type": "misc"
+      },
+      {
+        "id": "fhklQKGZIITtFlab",
+        "type": "misc"
+      },
+      {
+        "id": "gkjBAKUHKs4pd9uE",
+        "type": "misc"
+      },
+      {
+        "id": "i4c51LRLELCgapTl",
+        "type": "misc"
+      },
+      {
+        "id": "iQcJpq8LofSYbPJO",
+        "type": "misc"
+      },
+      {
+        "id": "KjN5Qr3r8vPjiD9i",
+        "type": "misc"
+      },
+      {
+        "id": "kmVPWxtgsihbH7bs",
+        "type": "misc"
+      },
+      {
+        "id": "LRy3GrRtMME1asRE",
+        "type": "misc"
+      },
+      {
+        "id": "mIH2I6fOI5iwj7wa",
+        "type": "misc"
+      },
+      {
+        "id": "OLlP8EaVlXIqzCVE",
+        "type": "misc"
+      },
+      {
+        "id": "SnYzo0owZ8ZW33CC",
+        "type": "misc"
+      },
+      {
+        "id": "TmHvvXxrJul9SdF7",
+        "type": "misc"
+      },
+      {
+        "id": "yqmogdOnO4BpGlHl",
+        "type": "misc"
+      }
+    ],
+    "vehicles": [
+      {
+        "id": "0CZ0WPhrmOWWnexI",
+        "type": "vehicle"
+      },
+      {
+        "id": "1K0VI6yaPS7q5ng4",
+        "type": "vehicle"
+      },
+      {
+        "id": "1lEMUlyGkOfuUAtH",
+        "type": "vehicle"
+      },
+      {
+        "id": "2dxfHE6YEiwh8JFj",
+        "type": "vehicle"
+      },
+      {
+        "id": "2GOd3eGMT7OQTChf",
+        "type": "vehicle"
+      },
+      {
+        "id": "2uBXPMxoQ5bU3r17",
+        "type": "vehicle"
+      },
+      {
+        "id": "3nEywU6PWgDTZNe9",
+        "type": "vehicle"
+      },
+      {
+        "id": "4c6fUJwoQJfJtbwr",
+        "type": "vehicle"
+      },
+      {
+        "id": "4QiJr2D93oCKrAaS",
+        "type": "vehicle"
+      },
+      {
+        "id": "4QJbp6mBomedeyoP",
+        "type": "vehicle"
+      },
+      {
+        "id": "5JFsmgpoGnfWG5aO",
+        "type": "vehicle"
+      },
+      {
+        "id": "6dhw4UAu5GupdIkX",
+        "type": "vehicle"
+      },
+      {
+        "id": "7E10ciBXJSY8plpN",
+        "type": "vehicle"
+      },
+      {
+        "id": "7K77Fu1JprgGAEL3",
+        "type": "vehicle"
+      },
+      {
+        "id": "7ovUqkGo3R1uZxvR",
+        "type": "vehicle"
+      },
+      {
+        "id": "8VjoDMEsorA29Abe",
+        "type": "vehicle"
+      },
+      {
+        "id": "90fLDvEax57rdWnF",
+        "type": "vehicle"
+      },
+      {
+        "id": "9B6bQqHq0I3MLX5b",
+        "type": "vehicle"
+      },
+      {
+        "id": "9kTFhsNKeY1SpNjQ",
+        "type": "vehicle"
+      },
+      {
+        "id": "9nkP8HYvgTKuCCpF",
+        "type": "vehicle"
+      },
+      {
+        "id": "a9OJvlVrgjqE0oN1",
+        "type": "vehicle"
+      },
+      {
+        "id": "aeoOLtmxFN9NzOkx",
+        "type": "vehicle"
+      },
+      {
+        "id": "af8flQv0ONCtGDG8",
+        "type": "vehicle"
+      },
+      {
+        "id": "Aks7oj8hYACt57DV",
+        "type": "vehicle"
+      },
+      {
+        "id": "AvS1tfLZ4T0HU1dl",
+        "type": "vehicle"
+      },
+      {
+        "id": "aWdPUkLVCrViGKFL",
+        "type": "vehicle"
+      },
+      {
+        "id": "AWVhD4nI3UEPWqEN",
+        "type": "vehicle"
+      },
+      {
+        "id": "Ax5N2yLflX3w3nBE",
+        "type": "vehicle"
+      },
+      {
+        "id": "AXpRRrgMkUjH90I6",
+        "type": "vehicle"
+      },
+      {
+        "id": "B7ynWJJ6byQ7umve",
+        "type": "vehicle"
+      },
+      {
+        "id": "bGtnBCpkNjvzjOXQ",
+        "type": "vehicle"
+      },
+      {
+        "id": "bmiuhze8qqbBGJYW",
+        "type": "vehicle"
+      },
+      {
+        "id": "bT97k2apYWZt8WSM",
+        "type": "vehicle"
+      },
+      {
+        "id": "bWhN3owq3ci5Bfxn",
+        "type": "vehicle"
+      },
+      {
+        "id": "cG1oOTkPFDuFtdgJ",
+        "type": "vehicle"
+      },
+      {
+        "id": "cIuGWL7be4DBpTt7",
+        "type": "vehicle"
+      },
+      {
+        "id": "CkNHH4S7iDJFLP3F",
+        "type": "vehicle"
+      },
+      {
+        "id": "ClgkQBQwsujexL8E",
+        "type": "vehicle"
+      },
+      {
+        "id": "Crmnxg6WCyHDbGH5",
+        "type": "vehicle"
+      },
+      {
+        "id": "d9o9NTB0eFrQjaXn",
+        "type": "vehicle"
+      },
+      {
+        "id": "dRmQCLNl5behYljH",
+        "type": "vehicle"
+      },
+      {
+        "id": "e5VpZmjTqDzlMQmX",
+        "type": "vehicle"
+      },
+      {
+        "id": "EEkx0j4adJtJByQ6",
+        "type": "vehicle"
+      },
+      {
+        "id": "FcCNx9h8YINrDNae",
+        "type": "vehicle"
+      },
+      {
+        "id": "FJN9GFovFCGxQfIZ",
+        "type": "vehicle"
+      },
+      {
+        "id": "fJWi0mtCfPBytJJp",
+        "type": "vehicle"
+      },
+      {
+        "id": "FT7q5kC7cHAUNel1",
+        "type": "vehicle"
+      },
+      {
+        "id": "fTeTgHarovryukYB",
+        "type": "vehicle"
+      },
+      {
+        "id": "g58RYLJFQUTRmgHh",
+        "type": "vehicle"
+      },
+      {
+        "id": "g693Ds4fX2wSJygH",
+        "type": "vehicle"
+      },
+      {
+        "id": "GjlvXKtRAU87px0z",
+        "type": "vehicle"
+      },
+      {
+        "id": "go2PsVhpmZuzIZGN",
+        "type": "vehicle"
+      },
+      {
+        "id": "gv6qOJNVonVJqL9g",
+        "type": "vehicle"
+      },
+      {
+        "id": "H1Bz5F4rLvUpwf6h",
+        "type": "vehicle"
+      },
+      {
+        "id": "H2beU03vxtj1x2Yq",
+        "type": "vehicle"
+      },
+      {
+        "id": "H9KmltOQJChtKap2",
+        "type": "vehicle"
+      },
+      {
+        "id": "hBZ3TBnaXY4ERU4i",
+        "type": "vehicle"
+      },
+      {
+        "id": "hvkqVTpMuvy04SfV",
+        "type": "vehicle"
+      },
+      {
+        "id": "HXFwGLhGMdn52IUm",
+        "type": "vehicle"
+      },
+      {
+        "id": "iCRF7oDqg3qpbobW",
+        "type": "vehicle"
+      },
+      {
+        "id": "ifOipUELItHWh8Zu",
+        "type": "vehicle"
+      },
+      {
+        "id": "iHDQKrifQPL3iafN",
+        "type": "vehicle"
+      },
+      {
+        "id": "iIF2Q3Zlel9obAJR",
+        "type": "vehicle"
+      },
+      {
+        "id": "iP3dMIdV05LmxH9o",
+        "type": "vehicle"
+      },
+      {
+        "id": "IQiTuTZLoCBPDsfQ",
+        "type": "vehicle"
+      },
+      {
+        "id": "J2CfwaWVEJxu0yJ6",
+        "type": "vehicle"
+      },
+      {
+        "id": "j4p1zXfGzoNx0mWt",
+        "type": "vehicle"
+      },
+      {
+        "id": "jgDyrYecjZZ1ebUA",
+        "type": "vehicle"
+      },
+      {
+        "id": "jjvsoju0Ky6ERbWC",
+        "type": "vehicle"
+      },
+      {
+        "id": "jxAdAmLeBKiIxHj9",
+        "type": "vehicle"
+      },
+      {
+        "id": "kRhz98aoqSucRJjD",
+        "type": "vehicle"
+      },
+      {
+        "id": "KrYZHp1jlYTO0hld",
+        "type": "vehicle"
+      },
+      {
+        "id": "kXqST7LbUStoecFQ",
+        "type": "vehicle"
+      },
+      {
+        "id": "Le4fHUnMt9CB0LVg",
+        "type": "vehicle"
+      },
+      {
+        "id": "lFqMo7CKeg1X3hvl",
+        "type": "vehicle"
+      },
+      {
+        "id": "lkRixXbC52ZIWLZ8",
+        "type": "vehicle"
+      },
+      {
+        "id": "lXb8ehax6uXIrgcy",
+        "type": "vehicle"
+      },
+      {
+        "id": "mCtlTKAkhf8kOTJB",
+        "type": "vehicle"
+      },
+      {
+        "id": "MlptZiuvqd6A2Bt6",
+        "type": "vehicle"
+      },
+      {
+        "id": "n87EPL0OY82i1Swm",
+        "type": "vehicle"
+      },
+      {
+        "id": "NCQMna8lmjqhtzqy",
+        "type": "vehicle"
+      },
+      {
+        "id": "nhjx6oHO0krHQO0C",
+        "type": "vehicle"
+      },
+      {
+        "id": "NllBnQgYbjbqNNAS",
+        "type": "vehicle"
+      },
+      {
+        "id": "O0ZCm8PJNcDnMh41",
+        "type": "vehicle"
+      },
+      {
+        "id": "o8PIXGufoBRkPLin",
+        "type": "vehicle"
+      },
+      {
+        "id": "OaDigWroRjGCs0NL",
+        "type": "vehicle"
+      },
+      {
+        "id": "ocH137Hp5Ht2LVio",
+        "type": "vehicle"
+      },
+      {
+        "id": "OGRLJBXswI1CFtBc",
+        "type": "vehicle"
+      },
+      {
+        "id": "p3H3TTTHy323VTxB",
+        "type": "vehicle"
+      },
+      {
+        "id": "p4GpQCRsu1Z0oyTP",
+        "type": "vehicle"
+      },
+      {
+        "id": "pBIwjXBe8qTaQKKp",
+        "type": "vehicle"
+      },
+      {
+        "id": "Pq5pF0bFvfW9UF4L",
+        "type": "vehicle"
+      },
+      {
+        "id": "pSbkHME6WeWzgcd5",
+        "type": "vehicle"
+      },
+      {
+        "id": "q09qoj2MRKts5Bem",
+        "type": "vehicle"
+      },
+      {
+        "id": "q8tPKGWjeYMhl2t1",
+        "type": "vehicle"
+      },
+      {
+        "id": "qbBeCVE6sOfNO0MJ",
+        "type": "vehicle"
+      },
+      {
+        "id": "qkVVX1ZWG4qAhGkD",
+        "type": "vehicle"
+      },
+      {
+        "id": "qLHg1DQ1MvGzPOZT",
+        "type": "vehicle"
+      },
+      {
+        "id": "qqHFtPAmQbIzrc18",
+        "type": "vehicle"
+      },
+      {
+        "id": "QVouF0Ci4ztL2RBC",
+        "type": "vehicle"
+      },
+      {
+        "id": "r7MmZSWeaELlfISk",
+        "type": "vehicle"
+      },
+      {
+        "id": "rG85yaGUCFPpDMfO",
+        "type": "vehicle"
+      },
+      {
+        "id": "RGJ32lTV9EMj5Koc",
+        "type": "vehicle"
+      },
+      {
+        "id": "rMJV86vOsOFmnWod",
+        "type": "vehicle"
+      },
+      {
+        "id": "rxPV6TAZtx2mVKsX",
+        "type": "vehicle"
+      },
+      {
+        "id": "ry1m3N5xqhd0zvlD",
+        "type": "vehicle"
+      },
+      {
+        "id": "s0ByoEo0TIaPHLxg",
+        "type": "vehicle"
+      },
+      {
+        "id": "S1XBGzmpUEk1xyYz",
+        "type": "vehicle"
+      },
+      {
+        "id": "Sb6Vu2qrlhzqx8sf",
+        "type": "vehicle"
+      },
+      {
+        "id": "smnIU0XqSmSDkMue",
+        "type": "vehicle"
+      },
+      {
+        "id": "SN3ThqB1VJvKMHaA",
+        "type": "vehicle"
+      },
+      {
+        "id": "sywyOL4xi000fY0W",
+        "type": "vehicle"
+      },
+      {
+        "id": "tES5dHQsssOd1Uda",
+        "type": "vehicle"
+      },
+      {
+        "id": "TqozTbYaN3JFVA1b",
+        "type": "vehicle"
+      },
+      {
+        "id": "Ts0GFQnxDCFeVF7w",
+        "type": "vehicle"
+      },
+      {
+        "id": "UwikeaLY3TEWzvzZ",
+        "type": "vehicle"
+      },
+      {
+        "id": "wB80hQdqzTwvGcno",
+        "type": "vehicle"
+      },
+      {
+        "id": "WQxlQbrWB8jQZhHt",
+        "type": "vehicle"
+      },
+      {
+        "id": "X2z4A8BHjVw3f9zk",
+        "type": "vehicle"
+      },
+      {
+        "id": "x6RZCy8a3W2fqioS",
+        "type": "vehicle"
+      },
+      {
+        "id": "XC0BmwCzcu0n2y3p",
+        "type": "vehicle"
+      },
+      {
+        "id": "xfZUXZt7vIl6z9rc",
+        "type": "vehicle"
+      },
+      {
+        "id": "xj2UYYBYYeRZ8lmh",
+        "type": "vehicle"
+      },
+      {
+        "id": "xnhPSvwp99hfsP9L",
+        "type": "vehicle"
+      },
+      {
+        "id": "xowR6D14fcr0YrR5",
+        "type": "vehicle"
+      },
+      {
+        "id": "Xp8PeiFYZOWxAr1t",
+        "type": "vehicle"
+      },
+      {
+        "id": "xpuubITc4cBOeUBY",
+        "type": "vehicle"
+      },
+      {
+        "id": "xr7P4LfScrhyPyqG",
+        "type": "vehicle"
+      },
+      {
+        "id": "XYVQFA7b15navbE3",
+        "type": "vehicle"
+      },
+      {
+        "id": "y0WbPUetba3DfHFw",
+        "type": "vehicle"
+      },
+      {
+        "id": "yEXU4k5d5e1H5Fr2",
+        "type": "vehicle"
+      },
+      {
+        "id": "yqnetzFXDlsqhP6M",
+        "type": "vehicle"
+      },
+      {
+        "id": "YRPq78wJcWVYWyV6",
+        "type": "vehicle"
+      },
+      {
+        "id": "yue7BOCDGlBEIp4b",
+        "type": "vehicle"
+      },
+      {
+        "id": "z70tPVSr1qLOWm6h",
+        "type": "vehicle"
+      },
+      {
+        "id": "zlcSeMxHVNvVY9Ua",
+        "type": "vehicle"
+      },
+      {
+        "id": "ZlGvAgzHVFrrAzOJ",
+        "type": "vehicle"
+      },
+      {
+        "id": "zstpvZl3JVV2GtLY",
+        "type": "vehicle"
+      },
+      {
+        "id": "zUNEqIF3OPTMGkzz",
+        "type": "vehicle"
+      }
+    ],
+    "weapons_other": [
+      {
+        "id": "Csfk9Lv79cn9rsre",
+        "type": "weapon"
+      },
+      {
+        "id": "JuZ6nsJQAPccWxGn",
+        "type": "weapon"
+      },
+      {
+        "id": "v2vHMarSNi9uHDyN",
+        "type": "weapon"
+      },
+      {
+        "id": "ziCKfwACrj0oqdxb",
+        "type": "weapon"
+      }
+    ]
+  },
+  "version": 1
+}

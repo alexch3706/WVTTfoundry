@@ -1,0 +1,25 @@
+{
+  "_id": "cgfPEeMGWuj81rYE",
+  "_key": "!items!cgfPEeMGWuj81rYE",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Audio/Video Tape Recorder",
+  "system": {
+    "cost": 300,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 2<br><p>2hrs storage from video, audio links</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

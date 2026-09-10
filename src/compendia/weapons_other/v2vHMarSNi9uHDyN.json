@@ -1,0 +1,95 @@
+{
+  "_id": "v2vHMarSNi9uHDyN",
+  "_key": "!items!v2vHMarSNi9uHDyN",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "UK",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+3 (10mm)",
+        "sourceName": "Colt Enforcement 10 P +1 J C 2d6+3 (10mm) 14 2 VR 50m 550+ CB 3 FN Browning \"3-Spot\"",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "10mm",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "J",
+          "cost": 425,
+          "damage": "2d6+3",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "ST",
+          "rof": "3",
+          "shots": "24",
+          "source": "UK",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Colt Enforcement 10 P +1 J C 2d6+3 (10mm) 14 2 VR 50m 550+ CB 3 FN Browning \"3-Spot\"",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "10mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "concealability": "ConcealJacket",
+    "cost": 425,
+    "damage": "2d6+3",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 3,
+    "shots": 24,
+    "shotsLeft": 24,
+    "source": "UK",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

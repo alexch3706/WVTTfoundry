@@ -1,0 +1,112 @@
+{
+  "_id": "Y4nClMmLPSE6BOTf",
+  "_key": "!items!Y4nClMmLPSE6BOTf",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "CP20",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "note": "Select the first paired WA/concealability configuration (-1 / N); retain both original alternatives in provenance.",
+            "pdfPage": 50,
+            "section": "3.4",
+            "source": "reference-v5"
+          },
+          {
+            "book": "Cyberpunk 2020",
+            "pages": "61, 63, 65",
+            "source": "cyberpunk-wiki",
+            "url": "https://cyberpunk.fandom.com/wiki/FN-RAL_Heavy_Assault_Rifle"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "6d6+2 (7.62)(B7)",
+        "sourceName": "FN-RAL Heavy Assault",
+        "sourceValues": {
+          "accuracy": "-1/-2",
+          "ammoType": "B7",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "N/L",
+          "cost": 600,
+          "damage": "6d6+2",
+          "flavor": "",
+          "notes": "",
+          "range": "400m",
+          "reliability": "VR",
+          "rof": "3/30",
+          "shots": "30",
+          "source": "CP20",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "FN-RAL Heavy Assault",
+  "system": {
+    "accuracy": -1,
+    "ammoType": "7.62",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "bodyMinimum": 7,
+    "concealability": "ConcealNoHide",
+    "configuration": "Base table configuration: WA -1 and concealability N. The alternative WA -2 / L configuration must be selected together.",
+    "cost": 600,
+    "damage": "6d6+2",
+    "fireModes": [
+      "SemiAuto",
+      "ThreeRoundBurst",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 400,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 30,
+    "shots": 30,
+    "shotsLeft": 30,
+    "source": "CP20",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

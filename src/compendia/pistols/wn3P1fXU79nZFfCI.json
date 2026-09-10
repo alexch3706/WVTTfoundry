@@ -1,0 +1,95 @@
+{
+  "_id": "wn3P1fXU79nZFfCI",
+  "_key": "!items!wn3P1fXU79nZFfCI",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "MM",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "6d6 (14mm)",
+        "sourceName": "14mm Pistol",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "14mm",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "L",
+          "cost": 2260,
+          "damage": "6d6",
+          "flavor": "",
+          "notes": "",
+          "range": "75m",
+          "reliability": "ST",
+          "rof": "2",
+          "shots": "20",
+          "source": "MM",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "14mm Pistol",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "14mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealLongcoat",
+    "cost": 2260,
+    "damage": "6d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 75,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 2,
+    "shots": 20,
+    "shotsLeft": 20,
+    "source": "MM",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

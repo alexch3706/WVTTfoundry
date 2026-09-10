@@ -1,0 +1,105 @@
+{
+  "_id": "k3Z10lvnTR0jTFLO",
+  "_key": "!items!k3Z10lvnTR0jTFLO",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Reference lists the unusual damage die 5d5; verify the original Punk 21 entry before rolling."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "P2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 48,
+            "section": "3.2",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "5d5 (5.56) (B10)",
+        "sourceName": "Rhinemettal 1540se",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "B10",
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "J",
+          "cost": 2300,
+          "damage": "5d5",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "VR",
+          "rof": "2",
+          "shots": "8",
+          "source": "P2",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Rhinemettal 1540se",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "5.56",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Reference lists the unusual damage die 5d5; verify the original Punk 21 entry before rolling."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "bodyMinimum": 10,
+    "concealability": "ConcealJacket",
+    "cost": 2300,
+    "damage": "5d5",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 2,
+    "shots": 8,
+    "shotsLeft": 8,
+    "source": "P2",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

@@ -45,6 +45,13 @@ export function runConformanceHelpersTests() {
   });
 
   // ── Extended: supplements ──
+  test('recognizes catalog book codes without confusing unfamiliar sources', () => {
+    assert.equal(classifyConformance("CP20"), "corebook");
+    assert.equal(classifyConformance("CP20, 66"), "corebook");
+    for(const source of ["Chr1", "Chr 2, 30", "SOF2", "P&S", "MM"]) assert.equal(classifyConformance(source), "extended");
+    assert.equal(classifyConformance("CP2099 homebrew"), "unknown");
+  });
+
   test('classifies "Chromebook 1 pg.31" as extended', () => {
     assert.equal(classifyConformance("Chromebook 1 pg.31"), "extended");
   });

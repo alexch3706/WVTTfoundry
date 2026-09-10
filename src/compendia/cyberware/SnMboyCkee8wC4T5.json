@@ -1,0 +1,25 @@
+{
+  "_id": "SnMboyCkee8wC4T5",
+  "_key": "!items!SnMboyCkee8wC4T5",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Biomechanical Cyberleg",
+  "system": {
+    "cost": 4000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 2<br><p>20% EMP, 2d6 kick, 8 flesh + 12 SDP, 1 option</p>",
+    "source": "WGF",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -38,6 +38,23 @@
 
         {{!-- Attributes Tab --}}
         <div class="tab" data-group="primary" data-tab="settings">
+            {{#if hasAutomation}}
+            <details class="catalog-status" {{#if catalogIssues.length}}open{{/if}}>
+                <summary>{{CPLocal "CatalogDataStatus"}}</summary>
+                {{#if catalogIssues.length}}
+                <ul role="status">
+                    {{#each catalogIssues as |issue|}}<li>{{issue.message}}</li>{{/each}}
+                </ul>
+                {{/if}}
+                <label for="catalog-status-{{item.id}}">{{CPLocal "CatalogResolution"}}</label>
+                <select id="catalog-status-{{item.id}}" name="system.automation.status">
+                    <option value="custom" {{#if (equals system.automation.status "custom")}}selected{{/if}}>{{CPLocal "CatalogCustom"}}</option>
+                    <option value="ready" {{#if (equals system.automation.status "ready")}}selected{{/if}}>{{CPLocal "CatalogReady"}}</option>
+                    <option value="manual" {{#if (equals system.automation.status "manual")}}selected{{/if}}>{{CPLocal "CatalogManual"}}</option>
+                </select>
+                <p class="hint">{{CPLocal "CatalogReviewHint"}}</p>
+            </details>
+            {{/if}}
             
             {{#unless (equals item.type "misc")}}
             {{> (varTemplate "item/parts/[VAR]/settings.hbs" item.type)}}

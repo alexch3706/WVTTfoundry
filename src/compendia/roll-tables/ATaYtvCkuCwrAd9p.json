@@ -1,0 +1,117 @@
+{
+  "_id": "ATaYtvCkuCwrAd9p",
+  "_key": "!tables!ATaYtvCkuCwrAd9p",
+  "_stats": {
+    "compendiumSource": "RollTable.3lIU4etwc84HJmkA",
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "description": "",
+  "displayRoll": false,
+  "flags": {},
+  "formula": "1d10",
+  "img": "icons/svg/d20-grey.svg",
+  "name": "Default Hit Locations",
+  "ownership": {
+    "default": 0,
+    "zh6bBlh6Yr7jaxT9": 3
+  },
+  "replacement": true,
+  "results": [
+    {
+      "_id": "c5Y41xyoy4FwfntK",
+      "_key": "!tables.results!ATaYtvCkuCwrAd9p.c5Y41xyoy4FwfntK",
+      "description": "Head",
+      "drawn": false,
+      "flags": {},
+      "img": "icons/svg/mystery-man-black.svg",
+      "name": "",
+      "range": [
+        1,
+        1
+      ],
+      "type": "text",
+      "weight": 1
+    },
+    {
+      "_id": "AcscmaSHqaieAyom",
+      "_key": "!tables.results!ATaYtvCkuCwrAd9p.AcscmaSHqaieAyom",
+      "description": "Torso",
+      "drawn": false,
+      "flags": {},
+      "img": "icons/svg/statue.svg",
+      "name": "",
+      "range": [
+        2,
+        4
+      ],
+      "type": "text",
+      "weight": 1
+    },
+    {
+      "_id": "HFfVhU8Kfw9552Ii",
+      "_key": "!tables.results!ATaYtvCkuCwrAd9p.HFfVhU8Kfw9552Ii",
+      "description": "RightArm",
+      "drawn": false,
+      "flags": {},
+      "img": "icons/svg/d20-black.svg",
+      "name": "",
+      "range": [
+        5,
+        5
+      ],
+      "type": "text",
+      "weight": 1
+    },
+    {
+      "_id": "hpd86YumXtjLbZn2",
+      "_key": "!tables.results!ATaYtvCkuCwrAd9p.hpd86YumXtjLbZn2",
+      "description": "LeftArm",
+      "drawn": false,
+      "flags": {},
+      "img": "icons/svg/d20-black.svg",
+      "name": "",
+      "range": [
+        6,
+        6
+      ],
+      "type": "text",
+      "weight": 1
+    },
+    {
+      "_id": "rOw92OVJpC40jGQg",
+      "_key": "!tables.results!ATaYtvCkuCwrAd9p.rOw92OVJpC40jGQg",
+      "description": "RightLeg",
+      "drawn": false,
+      "flags": {},
+      "img": "icons/svg/d20-black.svg",
+      "name": "",
+      "range": [
+        7,
+        8
+      ],
+      "type": "text",
+      "weight": 1
+    },
+    {
+      "_id": "xJubE1y8fETLm7JD",
+      "_key": "!tables.results!ATaYtvCkuCwrAd9p.xJubE1y8fETLm7JD",
+      "description": "LeftLeg",
+      "drawn": false,
+      "flags": {},
+      "img": "icons/svg/d20-black.svg",
+      "name": "",
+      "range": [
+        9,
+        10
+      ],
+      "type": "text",
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "_id": "WjEhKzxpGXNVcz4K",
+  "_key": "!items!WjEhKzxpGXNVcz4K",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "name": "Kick Ass",
+  "ownership": {
+    "default": 0
+  },
+  "system": {
+    "abbrev": "",
+    "cost": 2000,
+    "cyberwareSubtype": "OPTION",
+    "cyberwareType": "CHIPWARE",
+    "equipped": true,
+    "flags": {},
+    "flavor": "COOL +2 (11); EMP -2 (1); enhances aggression.",
+    "humanityCost": "1d6/2",
+    "notes": "",
+    "slots": 0,
+    "source": "When Gravity Fails pg.53",
+    "spaces": 1,
+    "surgCode": "N",
+    "weight": 0
+  },
+  "type": "cyberware"
+}

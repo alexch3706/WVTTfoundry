@@ -1,0 +1,113 @@
+{
+  "_id": "0vWsYuRbnuTwQGyz",
+  "_key": "!items!0vWsYuRbnuTwQGyz",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Magazine capacity is missing or has alternatives; select the installed magazine.",
+            "Damage is not a supported dice formula; resolve the weapon effect manually.",
+            "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+            "Range is missing or has special distance bands; verify the source.",
+            "Rate of fire needs a mode choice or special timing rule.",
+            "Reliability is missing or has a conditional rule; verify the source.",
+            "The original damage notation contains additional or damaged rules; verify it before automation.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "Chr1",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "1d6+3 (3m) 1 1",
+        "sourceName": "GPz-78 Mini-Grenade",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": null,
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "P",
+          "cost": 40,
+          "damage": "1d6+3  1 1",
+          "flavor": "",
+          "notes": "",
+          "range": null,
+          "reliability": null,
+          "rof": "Throw",
+          "shots": "VR",
+          "source": "Chr1",
+          "weaponType": "Heavy",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "GPz-78 Mini-Grenade",
+  "system": {
+    "accuracy": 0,
+    "ammoType": null,
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "HeavyWeapons",
+    "attackType": "Grenade",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Magazine capacity is missing or has alternatives; select the installed magazine.",
+        "Damage is not a supported dice formula; resolve the weapon effect manually.",
+        "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+        "Range is missing or has special distance bands; verify the source.",
+        "Rate of fire needs a mode choice or special timing rule.",
+        "Reliability is missing or has a conditional rule; verify the source.",
+        "The original damage notation contains additional or damaged rules; verify it before automation.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealPocket",
+    "cost": 40,
+    "damage": null,
+    "fireModes": [],
+    "flavor": "",
+    "notes": "",
+    "range": null,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": null,
+    "rof": null,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "Chr1",
+    "weaponType": "Heavy",
+    "weight": null
+  },
+  "type": "weapon"
+}

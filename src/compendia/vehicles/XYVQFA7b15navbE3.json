@@ -1,0 +1,25 @@
+{
+  "_id": "XYVQFA7b15navbE3",
+  "_key": "!items!XYVQFA7b15navbE3",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Peterbilt 2000",
+  "system": {
+    "cost": 110000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 100<br><b>Acc/Dec:</b> 10/30<br><b>Crew:</b> 1<br><b>Range:</b> 960<br><b>Passengers:</b> 1<br><b>Cargo:</b> 36 ton trailer<br><b>Maneuver:</b> -4<br><b>SDP:</b> 100 (5)<br><b>SP:</b> 20<br><b>Mass:</b> (1) 6.7 tons",
+    "source": "MM",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

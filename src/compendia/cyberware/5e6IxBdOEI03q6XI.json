@@ -1,0 +1,25 @@
+{
+  "_id": "5e6IxBdOEI03q6XI",
+  "_key": "!items!5e6IxBdOEI03q6XI",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "GPS Module",
+  "system": {
+    "cost": 450,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1<br><p>Determine position to 17cm. Needs T 2 or T2+</p>",
+    "source": "SF",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

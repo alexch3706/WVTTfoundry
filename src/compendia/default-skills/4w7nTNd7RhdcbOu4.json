@@ -1,0 +1,35 @@
+{
+  "_id": "4w7nTNd7RhdcbOu4",
+  "_key": "!items!4w7nTNd7RhdcbOu4",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "folder": null,
+  "img": "icons/svg/item-bag.svg",
+  "name": "Perform",
+  "ownership": {
+    "5FFDbHSYUZjDW27U": 3,
+    "default": 0
+  },
+  "sort": 0,
+  "system": {
+    "chipLevel": 0,
+    "diffMod": 1,
+    "flavor": "",
+    "ip": 0,
+    "isChipped": false,
+    "isRoleSkill": false,
+    "level": 0,
+    "notes": "",
+    "stat": "emp"
+  },
+  "type": "skill"
+}

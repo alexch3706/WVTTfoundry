@@ -1,0 +1,98 @@
+{
+  "_id": "6PawQ5TrGal95J7D",
+  "_key": "!items!6PawQ5TrGal95J7D",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "MM",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "6d10 (12.7)(B18)",
+        "sourceName": "12.7mm/50. Gatling",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "B18",
+          "attackType": "Auto",
+          "availability": "R",
+          "concealability": "N",
+          "cost": 6000,
+          "damage": "6d10",
+          "flavor": "",
+          "notes": "",
+          "range": "500m",
+          "reliability": "ST",
+          "rof": "100",
+          "shots": "1000",
+          "source": "MM",
+          "weaponType": "Heavy",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "12.7mm/50. Gatling",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "12.7",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "HeavyWeapons",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Rare",
+    "bodyMinimum": 18,
+    "concealability": "ConcealNoHide",
+    "cost": 6000,
+    "damage": "6d10",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 500,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 100,
+    "shots": 1000,
+    "shotsLeft": 1000,
+    "source": "MM",
+    "weaponType": "Heavy",
+    "weight": null
+  },
+  "type": "weapon"
+}

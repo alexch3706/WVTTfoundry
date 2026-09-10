@@ -1,0 +1,25 @@
+{
+  "_id": "fJWi0mtCfPBytJJp",
+  "_key": "!items!fJWi0mtCfPBytJJp",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Bensen Cascade",
+  "system": {
+    "cost": 58000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 260<br><b>Acc/Dec:</b> 15/20<br><b>Crew:</b> 1<br><b>Range:</b> 300<br><b>Passengers:</b> 3<br><b>Cargo:</b> 300kg<br><b>Maneuver:</b> -2<br><b>SDP:</b> 40 (2)<br><b>SP:</b> 12<br><b>Mass:</b> (1) 3 tons",
+    "source": "Chr1",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

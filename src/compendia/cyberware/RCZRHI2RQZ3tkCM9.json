@@ -1,0 +1,25 @@
+{
+  "_id": "RCZRHI2RQZ3tkCM9",
+  "_key": "!items!RCZRHI2RQZ3tkCM9",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Sound Editing",
+  "system": {
+    "cost": 150,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> .5<br><p>+2 Awareness to overhear specific conversation</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

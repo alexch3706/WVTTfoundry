@@ -1,0 +1,25 @@
+{
+  "_id": "9nkP8HYvgTKuCCpF",
+  "_key": "!items!9nkP8HYvgTKuCCpF",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "The Swan",
+  "system": {
+    "cost": 200000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 200<br><b>Acc/Dec:</b> 50/50<br><b>Crew:</b> 1<br><b>Range:</b> 600<br><b>Passengers:</b> 2<br><b>Cargo:</b> 100kg<br><b>Maneuver:</b> -1<br><b>SDP:</b> 65 (3)<br><b>SP:</b> 20<br><b>Mass:</b> (1) 2.6 tons",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

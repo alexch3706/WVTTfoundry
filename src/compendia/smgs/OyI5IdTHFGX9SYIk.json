@@ -1,0 +1,105 @@
+{
+  "_id": "OyI5IdTHFGX9SYIk",
+  "_key": "!items!OyI5IdTHFGX9SYIk",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "The imported name contains table fragments and needs source correction.",
+            "The original damage notation contains additional or damaged rules; verify it before automation.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "SF",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+1~ (500m)",
+        "sourceName": "UNDERWATER WEAPONS Soundwand EX +0 P P Special 1 VR 20ft 600 SA Hypo Speargun EX +0 N P 1d6~ +gas 1 1 VR 40m 200 SA Militech UAW Speargun",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "500m",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "L",
+          "cost": 1500,
+          "damage": "2d6+1",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "VR",
+          "rof": "3",
+          "shots": "10",
+          "source": "SF",
+          "weaponType": "SMG",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "UNDERWATER WEAPONS Soundwand EX +0 P P Special 1 VR 20ft 600 SA Hypo Speargun EX +0 N P 1d6~ +gas 1 1 VR 40m 200 SA Militech UAW Speargun",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "500m",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Submachinegun",
+    "attackType": "Gas",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "The imported name contains table fragments and needs source correction.",
+        "The original damage notation contains additional or damaged rules; verify it before automation.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealLongcoat",
+    "cost": 1500,
+    "damage": "2d6+1",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 3,
+    "shots": 10,
+    "shotsLeft": 10,
+    "source": "SF",
+    "weaponType": "SMG",
+    "weight": null
+  },
+  "type": "weapon"
+}

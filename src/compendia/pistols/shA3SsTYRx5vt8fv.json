@@ -1,0 +1,96 @@
+{
+  "_id": "shA3SsTYRx5vt8fv",
+  "_key": "!items!shA3SsTYRx5vt8fv",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "SOF2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "6d6 (14mm)(B12)",
+        "sourceName": "MO Big Government",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "B12",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "J",
+          "cost": 2000,
+          "damage": "6d6",
+          "flavor": "",
+          "notes": "",
+          "range": "60m",
+          "reliability": "VR",
+          "rof": "2",
+          "shots": "13",
+          "source": "SOF2",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "MO Big Government",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "14mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Poor",
+    "bodyMinimum": 12,
+    "concealability": "ConcealJacket",
+    "cost": 2000,
+    "damage": "6d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 60,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 2,
+    "shots": 13,
+    "shotsLeft": 13,
+    "source": "SOF2",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

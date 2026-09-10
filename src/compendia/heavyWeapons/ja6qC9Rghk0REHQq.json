@@ -1,0 +1,103 @@
+{
+  "_id": "ja6qC9Rghk0REHQq",
+  "_key": "!items!ja6qC9Rghk0REHQq",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+            "The original damage notation contains additional or damaged rules; verify it before automation."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "MM",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "6d10@ (37DPU)",
+        "sourceName": "LATG 37mm",
+        "sourceValues": {
+          "accuracy": "+3",
+          "ammoType": "37DPU",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "N",
+          "cost": 10000,
+          "damage": "6d10",
+          "flavor": "",
+          "notes": "<p>A modernized/accuratized version of the venerable 37mm anti-tank gun of WW2, now shooting depleted uranium slugs. Used as a sort of monster sniper rifle. 20-25mm AutoCannon: Comes in a couple generic models, of which Colt's BC25d is the most common. 27-30mm AutoCannon: Arasaka 's WCH27 \"Standard\" is the best of the various weapons at this level. Modern versions of the 1980's-90's ASP-30 are also common. Once again, weight is the primary drawback. EMG-83 Improved railgun: Suffering from the same problems as the more portable 4mm rifle, this more robust gauss cannon offers twice the shots and rate of fire. This cannon is famous for being able to open man-sized holes in concrete walls with a single, shocking blast. 75mm Recoilless Cannon: A magazine-fed support and anti-vehicle weapon of simple con­ struction. When fired, anything in a Bm long x 2m wide area to the rear sustains 6D6 backblast da mage. Only fully sealed armor protects against this. Can be loaded with HE (8D10/Pen. 4, Burst 5ml. or white phosphorous (5D6 for 3 turns/Pen. 3, Burst 20m) shells as well. ROCKET§ ANO Ml!i!ilLE!i The following weapons are true heavy arms normally found in combat zones utilizing AFV or helicopters. These weapons are all at the NAME WA DAMAGE IFAR -2 8D10(4) IFAR 3-POD -2 8D10(4) IFAR 6-POD -2 8D10(4) MINI-AOC 6 -2 6D10(3) MINI-AOC 15C -2 6D10(3) LAW-Ill -2 4D10AP(4*) extreme end of destructive capability and are only appropriate for true, large-scale military operations. Private use and even ownership of such devices should be considered illegal in the extreme, perhaps even requiring trea­ son hearings upon discovery. All of the weapons require the targeting capabilities of at least a HUD-using Reality Interface. These weapons can be given an armored housing for 10% of cost. IFAR: One of the most venerable of designs, the 2.75\" Folding-Fin Aerial Rocket has been in com­ bat use since the Korean Conflict. With a reduc­ tion in size and weight, the current 'Improved' model of this rocket is intended for medium-hard targets. This particular model is a single shot tube, either mounted on the arm of the Trooper (external arm), or on a flip-up back mount (exter­ nal torso). T mopers, from the abbreviation, call these \"lffers.\" IFAR/3-Pod and 6-Pod: The latter pod is nor­ mally the smallest in use on helicopter gun­ ships. Naturally, for Troopers, this is a huge piece of equipment capable of levelling urban structures seven ways! The 3-Pod was devel­ oped specifically for ACPA. Any number of rockets can be salvoed from a pod (or set of pods) in one turn. 2-handed carry or external torso mounts only. Mini-Roe 6 and 15C: The Mini-Roe is like the IFAR, but constructed on a smaller scale (50mm) for bombardment of light targets and anti-per­ sonnel use. This weapon does not entail quite RDCKET!i & Ml!i!ilLE!i #SHOTS ROF RANGE SPACE 1 1 500M 2 the governmental control and protection as the larger items in this inventory. The 15 shot pod is 2-handed carry or external torso mounts only; the 6 shot pod can also be externally leg-mounted. Law-Ill: The third model of the LAW disposable anti-tank system, this 70mm system is designed to punch through armor and get to the soft parts inside. This is but one example of a more com­ mon item on the PA battlefield (mainly because of its very low price). 1-handed carry, or external arm, leg or torso mount. Light Anti-Tank Guided Missiles: A much bigger weapon than the LAW, these are capa­ ble of stopping most AFV's on the battlefield. If this weapon ends up in private hands it is because somebody needs to stand trial for permitting terrorists in their supply depot. They are wire-guided, semi-active control weapons (see Missile rules in Vehicle Combat section) and can be bought single-shot or reloadable (2500eb; extra missiles 1500eb, 10kg). Common models are the Milan-C and Texas Arms' TOW-Lite. 2-handed or external torso mounts only. Spectre: This is an extremely accurate fire-and­ forget (i.e., active-type) heavy ATGM (23kg/mis­ sile) which depends on excellent televisual guid­ ance to attain its target.(see Missile rules in the Vehicle Combat section). 2-handed mount only. Scorpi on 16: The classic standby man-portable SAM can be adapted for powered armor use. Extra missiles can purchased at normal price. 2- COST WEIGHT SP SOP NOTES 200EB 10KG [20] 30 6M BURST 3 SPECIAL 500M 3 2100EB 40KG [20] 45 6M BURST 6 SPECIAL 500M 4 4200EB 81KG [20] 105 6M BURST 6 SPECIAL 500M 2 1800EB 69KG [20] 45 3M BURST 15 SPECIAL 500M 3 4500EB 171KG [20] 112 3M BURST 1 1 200M 1 300EB 3KG [20] 10 2M BURST LIGHT ATGM +2 12D10AP(12*) 1 1 1000M 2 3000EB 25KG [20] 20 4M BURST SPECTRE ATGM SPCL 18D10 AP(18*) 1 1 3000M NA 10,000EB 86KG [20] 25 4M BURST SCORPION 16 SAM -1 7D10(4) 1 1 2000M 2 1000EB 15KG [20] 20 6M BURST RED KNIGHT SAM SPCL 10D10(5) 1 1 4500M NA 4600EB 23KG [20] 15 10M BST Notes: The damage # in parentheses() is the Vehicle Penetration rating for the weapon. Weapons with an* by their Pen. are HEAT/shaped-charge weapons. Armor is x1/2 vs these weapons, but any damage that penetrates is not halved. Further effects are noted in the Vehicle Combat section. SP in brackets[#]. represents the optional protection for external mounts/carried weapons. Ranges for rockets (IFAR, Mini-Roe) are Direct-fire only, for Indirect Fire, triple range. 76 MAXIMUM METAL</p>",
+          "range": "800m",
+          "reliability": "VR",
+          "rof": "1",
+          "shots": "10",
+          "source": "MM",
+          "weaponType": "Heavy",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "LATG 37mm",
+  "system": {
+    "accuracy": 3,
+    "ammoType": "37DPU",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "HeavyWeapons",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Heavy-weapon ammunition and damage against personnel need source confirmation.",
+        "The original damage notation contains additional or damaged rules; verify it before automation."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealNoHide",
+    "cost": 10000,
+    "damage": "6d10",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "<p>A modernized/accuratized version of the venerable 37mm anti-tank gun of WW2, now shooting depleted uranium slugs. Used as a sort of monster sniper rifle. 20-25mm AutoCannon: Comes in a couple generic models, of which Colt's BC25d is the most common. 27-30mm AutoCannon: Arasaka 's WCH27 \"Standard\" is the best of the various weapons at this level. Modern versions of the 1980's-90's ASP-30 are also common. Once again, weight is the primary drawback. EMG-83 Improved railgun: Suffering from the same problems as the more portable 4mm rifle, this more robust gauss cannon offers twice the shots and rate of fire. This cannon is famous for being able to open man-sized holes in concrete walls with a single, shocking blast. 75mm Recoilless Cannon: A magazine-fed support and anti-vehicle weapon of simple con­ struction. When fired, anything in a Bm long x 2m wide area to the rear sustains 6D6 backblast da mage. Only fully sealed armor protects against this. Can be loaded with HE (8D10/Pen. 4, Burst 5ml. or white phosphorous (5D6 for 3 turns/Pen. 3, Burst 20m) shells as well. ROCKET§ ANO Ml!i!ilLE!i The following weapons are true heavy arms normally found in combat zones utilizing AFV or helicopters. These weapons are all at the NAME WA DAMAGE IFAR -2 8D10(4) IFAR 3-POD -2 8D10(4) IFAR 6-POD -2 8D10(4) MINI-AOC 6 -2 6D10(3) MINI-AOC 15C -2 6D10(3) LAW-Ill -2 4D10AP(4*) extreme end of destructive capability and are only appropriate for true, large-scale military operations. Private use and even ownership of such devices should be considered illegal in the extreme, perhaps even requiring trea­ son hearings upon discovery. All of the weapons require the targeting capabilities of at least a HUD-using Reality Interface. These weapons can be given an armored housing for 10% of cost. IFAR: One of the most venerable of designs, the 2.75\" Folding-Fin Aerial Rocket has been in com­ bat use since the Korean Conflict. With a reduc­ tion in size and weight, the current 'Improved' model of this rocket is intended for medium-hard targets. This particular model is a single shot tube, either mounted on the arm of the Trooper (external arm), or on a flip-up back mount (exter­ nal torso). T mopers, from the abbreviation, call these \"lffers.\" IFAR/3-Pod and 6-Pod: The latter pod is nor­ mally the smallest in use on helicopter gun­ ships. Naturally, for Troopers, this is a huge piece of equipment capable of levelling urban structures seven ways! The 3-Pod was devel­ oped specifically for ACPA. Any number of rockets can be salvoed from a pod (or set of pods) in one turn. 2-handed carry or external torso mounts only. Mini-Roe 6 and 15C: The Mini-Roe is like the IFAR, but constructed on a smaller scale (50mm) for bombardment of light targets and anti-per­ sonnel use. This weapon does not entail quite RDCKET!i & Ml!i!ilLE!i #SHOTS ROF RANGE SPACE 1 1 500M 2 the governmental control and protection as the larger items in this inventory. The 15 shot pod is 2-handed carry or external torso mounts only; the 6 shot pod can also be externally leg-mounted. Law-Ill: The third model of the LAW disposable anti-tank system, this 70mm system is designed to punch through armor and get to the soft parts inside. This is but one example of a more com­ mon item on the PA battlefield (mainly because of its very low price). 1-handed carry, or external arm, leg or torso mount. Light Anti-Tank Guided Missiles: A much bigger weapon than the LAW, these are capa­ ble of stopping most AFV's on the battlefield. If this weapon ends up in private hands it is because somebody needs to stand trial for permitting terrorists in their supply depot. They are wire-guided, semi-active control weapons (see Missile rules in Vehicle Combat section) and can be bought single-shot or reloadable (2500eb; extra missiles 1500eb, 10kg). Common models are the Milan-C and Texas Arms' TOW-Lite. 2-handed or external torso mounts only. Spectre: This is an extremely accurate fire-and­ forget (i.e., active-type) heavy ATGM (23kg/mis­ sile) which depends on excellent televisual guid­ ance to attain its target.(see Missile rules in the Vehicle Combat section). 2-handed mount only. Scorpi on 16: The classic standby man-portable SAM can be adapted for powered armor use. Extra missiles can purchased at normal price. 2- COST WEIGHT SP SOP NOTES 200EB 10KG [20] 30 6M BURST 3 SPECIAL 500M 3 2100EB 40KG [20] 45 6M BURST 6 SPECIAL 500M 4 4200EB 81KG [20] 105 6M BURST 6 SPECIAL 500M 2 1800EB 69KG [20] 45 3M BURST 15 SPECIAL 500M 3 4500EB 171KG [20] 112 3M BURST 1 1 200M 1 300EB 3KG [20] 10 2M BURST LIGHT ATGM +2 12D10AP(12*) 1 1 1000M 2 3000EB 25KG [20] 20 4M BURST SPECTRE ATGM SPCL 18D10 AP(18*) 1 1 3000M NA 10,000EB 86KG [20] 25 4M BURST SCORPION 16 SAM -1 7D10(4) 1 1 2000M 2 1000EB 15KG [20] 20 6M BURST RED KNIGHT SAM SPCL 10D10(5) 1 1 4500M NA 4600EB 23KG [20] 15 10M BST Notes: The damage # in parentheses() is the Vehicle Penetration rating for the weapon. Weapons with an* by their Pen. are HEAT/shaped-charge weapons. Armor is x1/2 vs these weapons, but any damage that penetrates is not halved. Further effects are noted in the Vehicle Combat section. SP in brackets[#]. represents the optional protection for external mounts/carried weapons. Ranges for rockets (IFAR, Mini-Roe) are Direct-fire only, for Indirect Fire, triple range. 76 MAXIMUM METAL</p>",
+    "range": 800,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 1,
+    "shots": 10,
+    "shotsLeft": 10,
+    "source": "MM",
+    "weaponType": "Heavy",
+    "weight": null
+  },
+  "type": "weapon"
+}

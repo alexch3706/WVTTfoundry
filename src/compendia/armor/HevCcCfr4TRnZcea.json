@@ -1,0 +1,118 @@
+{
+  "_id": "HevCcCfr4TRnZcea",
+  "_key": "!items!HevCcCfr4TRnZcea",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Verify armor coverage, SP variant, material and encumbrance against the source before automatic resolution."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Space LM Sneak Suit* 0",
+        "sourceValues": {
+          "cost": 2500,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 8
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 8
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 8
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 8
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 8
+            }
+          },
+          "flavor": "",
+          "notes": "<p>2,500 Chr 2, 28 40 min air</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Space LM Sneak Suit* 0",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Verify armor coverage, SP variant, material and encumbrance against the source before automatic resolution."
+      ],
+      "status": "manual"
+    },
+    "cost": 2500,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 8
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 8
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 8
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 8
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 8
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>2,500 Chr 2, 28 40 min air</p>",
+    "source": "CP20",
+    "weight": null
+  },
+  "type": "armor"
+}

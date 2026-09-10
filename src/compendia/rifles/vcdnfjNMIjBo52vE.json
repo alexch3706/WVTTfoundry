@@ -1,0 +1,101 @@
+{
+  "_id": "vcdnfjNMIjBo52vE",
+  "_key": "!items!vcdnfjNMIjBo52vE",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "The original damage notation contains additional or damaged rules; verify it before automation."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "P&S",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "7d6API (18mm G)",
+        "sourceName": "Remington Gyro-Rifle",
+        "sourceValues": {
+          "accuracy": "+2",
+          "ammoType": "18mm G",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "N",
+          "cost": 1000,
+          "damage": "7d6",
+          "flavor": "",
+          "notes": "",
+          "range": "600m",
+          "reliability": "ST",
+          "rof": "1",
+          "shots": "6",
+          "source": "P&S",
+          "weaponType": "Rifle",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Remington Gyro-Rifle",
+  "system": {
+    "accuracy": 2,
+    "ammoType": "18mm G",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Rifle",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "The original damage notation contains additional or damaged rules; verify it before automation."
+      ],
+      "status": "manual"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealNoHide",
+    "cost": 1000,
+    "damage": "7d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 600,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 1,
+    "shots": 6,
+    "shotsLeft": 6,
+    "source": "P&S",
+    "weaponType": "Rifle",
+    "weight": null
+  },
+  "type": "weapon"
+}

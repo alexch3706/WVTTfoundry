@@ -1,0 +1,106 @@
+{
+  "_id": "HrnjHoCUVJ3tR95t",
+  "_key": "!items!HrnjHoCUVJ3tR95t",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "SOF2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 58,
+            "section": "3.12",
+            "source": "reference-v5"
+          },
+          {
+            "pdfPage": 62,
+            "section": "4.1",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "5d6 (10ga)(B15)",
+        "sourceName": "10-Gauge Pistol",
+        "sourceValues": {
+          "accuracy": "-2",
+          "ammoType": "B15",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "L",
+          "cost": 1200,
+          "damage": "5d6",
+          "flavor": "",
+          "notes": "",
+          "range": "30m",
+          "reliability": "ST",
+          "rof": "2",
+          "shots": "9",
+          "source": "SOF2",
+          "weaponType": "Pistol",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "10-Gauge Pistol",
+  "system": {
+    "accuracy": -2,
+    "ammoType": "10ga buckshot",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Handgun",
+    "attackType": "Shotgun",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Poor",
+    "bodyMinimum": 15,
+    "concealability": "ConcealLongcoat",
+    "cost": 1200,
+    "damage": "5d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 30,
+    "rangeDamages": {
+      "close": "5d6",
+      "far": "3d6",
+      "medium": "4d6",
+      "pointBlank": "5d6"
+    },
+    "reliability": "Standard",
+    "rof": 2,
+    "shots": 9,
+    "shotsLeft": 9,
+    "source": "SOF2",
+    "weaponType": "Pistol",
+    "weight": null
+  },
+  "type": "weapon"
+}

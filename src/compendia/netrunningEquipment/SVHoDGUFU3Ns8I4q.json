@@ -1,0 +1,31 @@
+{
+  "_id": "SVHoDGUFU3Ns8I4q",
+  "_key": "!items!SVHoDGUFU3Ns8I4q",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "BodyWeight Life/Support",
+  "ownership": {
+    "VTdezBIy0FQgKDge": 3,
+    "default": 0
+  },
+  "system": {
+    "cost": "500",
+    "equipped": true,
+    "flavor": "Section: Electronics. ETC. p.6 – Includes Biomonitor. Food-Drip and Catheter – 72h running",
+    "name": "Common",
+    "notes": "",
+    "source": "Chromebook I",
+    "weight": "2"
+  },
+  "type": "misc"
+}

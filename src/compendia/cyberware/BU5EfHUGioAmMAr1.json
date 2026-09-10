@@ -1,0 +1,25 @@
+{
+  "_id": "BU5EfHUGioAmMAr1",
+  "_key": "!items!BU5EfHUGioAmMAr1",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Animal Legs",
+  "system": {
+    "cost": 400,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 2d6<br><p>Transforms legs, +3 MA, 14m leaps, or 1d6 claw</p>",
+    "source": "KCJ",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

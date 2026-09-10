@@ -1,0 +1,119 @@
+{
+  "_id": "nkISYY87gbBTH8jm",
+  "_key": "!items!nkISYY87gbBTH8jm",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 84,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 2, 102"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Exoskeleton",
+        "sourceValues": {
+          "cost": 20000,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 18
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 18
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 18
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 18
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 18
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 18
+            }
+          },
+          "flavor": "",
+          "notes": "<p>20,000 Chr 2, 102 10% Cancer</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Exoskeleton",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 20000,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 2,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>20,000 Chr 2, 102 10% Cancer</p>",
+    "source": "Chr 2, 102",
+    "weight": null
+  },
+  "type": "armor"
+}

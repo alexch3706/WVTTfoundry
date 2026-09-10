@@ -1,0 +1,92 @@
+{
+  "_id": "JHBz0VftWxZu5V7f",
+  "_key": "!items!JHBz0VftWxZu5V7f",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "The Sharkman package includes Skinweave. Verify its included SP profile and avoid duplicating protection if the component is imported separately."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Sharkman",
+        "sourceValues": {
+          "cost": 17700,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> MA+<br><b>Humanity Loss:</b> 12d6<br><p>Gills, sonar, skinweave & change, muzzle, etc</p>",
+          "source": "Chr2",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Sharkman",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "The Sharkman package includes Skinweave. Verify its included SP profile and avoid duplicating protection if the component is imported separately."
+      ],
+      "status": "manual"
+    },
+    "cost": 17700,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA+<br><b>Humanity Loss:</b> 12d6<br><p>Gills, sonar, skinweave & change, muzzle, etc</p>",
+    "source": "Chr2",
+    "weight": null
+  },
+  "type": "cyberware"
+}

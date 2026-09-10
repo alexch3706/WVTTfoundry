@@ -1,0 +1,99 @@
+{
+  "_id": "VWwgw7yKONI6e5RR",
+  "_key": "!items!VWwgw7yKONI6e5RR",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Armor interaction is unverified; do not assume ordinary or AP damage.",
+            "Weapon-specific effects require referee resolution."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "Chr1",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "4d6 (Sx1/4, Hx1/2)",
+        "sourceName": "Kendachi Powersword",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": "Sx1/4, Hx1/2",
+          "attackType": "Melee",
+          "availability": "R",
+          "concealability": "L",
+          "cost": 860,
+          "damage": "4d6",
+          "flavor": "",
+          "notes": "",
+          "range": "1m",
+          "reliability": "ST",
+          "rof": "-",
+          "shots": "-",
+          "source": "Chr1",
+          "weaponType": "Melee",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Kendachi Powersword",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "Sx1/4, Hx1/2",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": null,
+    "attackSkill": "Melee",
+    "attackType": "Melee",
+    "automation": {
+      "reasons": [
+        "Armor interaction is unverified; do not assume ordinary or AP damage.",
+        "Weapon-specific effects require referee resolution."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "concealability": "ConcealLongcoat",
+    "cost": 860,
+    "damage": "4d6",
+    "fireModes": [],
+    "flavor": "",
+    "notes": "",
+    "range": 1,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": null,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "Chr1",
+    "weaponType": "Melee",
+    "weight": null
+  },
+  "type": "weapon"
+}

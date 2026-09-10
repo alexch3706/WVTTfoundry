@@ -1,0 +1,99 @@
+{
+  "_id": "qNAotAhSUqrApbe2",
+  "_key": "!items!qNAotAhSUqrApbe2",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "NEO",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 57,
+            "section": "3.11",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "1d6+3* - -",
+        "sourceName": "Utility Sword/Machete",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": null,
+          "attackType": "Melee",
+          "availability": "C",
+          "concealability": "L",
+          "cost": 60,
+          "damage": "1d6+3* - -",
+          "flavor": "",
+          "notes": "",
+          "range": null,
+          "reliability": null,
+          "rof": "0.5m",
+          "shots": "VR",
+          "source": "NEO",
+          "weaponType": "Melee",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Utility Sword/Machete",
+  "system": {
+    "accuracy": 0,
+    "ammoType": null,
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Melee",
+    "attackType": "Melee",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "concealability": "ConcealLongcoat",
+    "cost": 60,
+    "damage": "1d6+3",
+    "fireModes": [],
+    "flavor": "",
+    "meleeDamageType": "edged",
+    "notes": "",
+    "range": null,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": null,
+    "rof": null,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "NEO",
+    "weaponType": "Melee",
+    "weight": null
+  },
+  "type": "weapon"
+}

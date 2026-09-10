@@ -1,0 +1,25 @@
+{
+  "_id": "LbWZuKzclt0BTzwG",
+  "_key": "!items!LbWZuKzclt0BTzwG",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Dakai/Cyphire New Throat",
+  "system": {
+    "cost": 850,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 2d6<br><p>Hold 3 implants/options at 1/4 Eb, 0 HC, 15 SDP</p>",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

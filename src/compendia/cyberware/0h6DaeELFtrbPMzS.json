@@ -1,0 +1,97 @@
+{
+  "_id": "0h6DaeELFtrbPMzS",
+  "_key": "!items!0h6DaeELFtrbPMzS",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Head protection has 30% coverage and requires a separate coverage check."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "provenance": {
+          "pdfPage": 84,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 1, 31"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "OptiShield",
+        "sourceValues": {
+          "cost": 300,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 1d6+2<br><p>Anti-Dazzle, SP8, 2 spaces for optic options</p>",
+          "source": "Chr1",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "OptiShield",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Head protection has 30% coverage and requires a separate coverage check."
+      ],
+      "status": "manual"
+    },
+    "cost": 300,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 8
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 1d6+2<br><p>Anti-Dazzle, SP8, 2 spaces for optic options</p>",
+    "source": "Chr 1, 31",
+    "weight": null
+  },
+  "type": "cyberware"
+}

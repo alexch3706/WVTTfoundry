@@ -1,0 +1,25 @@
+{
+  "_id": "VkAWoK9INqdhpJGf",
+  "_key": "!items!VkAWoK9INqdhpJGf",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Eelskin",
+  "system": {
+    "cost": 14000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 1d6<br><p>1d6 to 2d6+3 Damage</p>",
+    "source": "Chr3",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

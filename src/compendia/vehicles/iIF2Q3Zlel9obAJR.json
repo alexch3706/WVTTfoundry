@@ -1,0 +1,25 @@
+{
+  "_id": "iIF2Q3Zlel9obAJR",
+  "_key": "!items!iIF2Q3Zlel9obAJR",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Ultralight",
+  "system": {
+    "cost": 2500,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 50<br><b>Acc/Dec:</b> 5/5<br><b>Crew:</b> 1<br><b>Range:</b> 200<br><b>Passengers:</b> 0<br><b>Cargo:</b> 10kg<br><b>Maneuver:</b> -2<br><b>SDP:</b> 10 (0)<br><b>SP:</b> 0<br><b>Mass:</b> 50kg",
+    "source": "Neo",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

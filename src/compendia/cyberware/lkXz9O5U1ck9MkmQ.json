@@ -1,0 +1,25 @@
+{
+  "_id": "lkXz9O5U1ck9MkmQ",
+  "_key": "!items!lkXz9O5U1ck9MkmQ",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Life Scan Body Monitor",
+  "system": {
+    "cost": 4000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 1d6<br><p>+1 COOL, +4 1st Aid, +1 to Death Saves</p>",
+    "source": "I1.4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

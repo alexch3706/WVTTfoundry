@@ -2,6 +2,13 @@
 
 Last updated: 2026-09-08
 
+Catalog update 2026-09-10: weapon/armor/protective cyberware machine fields are
+validated by `module/item/item-contract.js`. See
+[catalog-data-quality.md](catalog-data-quality.md) for `automation`, explicit
+`fireModes`, `meleeDamageType`, per-zone material, `armorRole`, `edgedHalfSP`,
+unknown weights and safe definition/state migration. Canonical JSON build inputs
+now live in `src/compendia`; their IDs and types are fixed by its manifest.
+
 ## Foundry System Template
 
 `template.json` defines schema-like defaults for Foundry system data. It is not JSON Schema and it is not a modern Foundry DataModel class.

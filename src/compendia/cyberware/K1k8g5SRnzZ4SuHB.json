@@ -1,0 +1,25 @@
+{
+  "_id": "K1k8g5SRnzZ4SuHB",
+  "_key": "!items!K1k8g5SRnzZ4SuHB",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Laser Mike",
+  "system": {
+    "cost": 400,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1d6+2<br><p>60m range, Human Perception -5</p>",
+    "source": "Chr2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

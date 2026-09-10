@@ -1,0 +1,107 @@
+{
+  "_id": "zUP8MG5s6lTMSkSR",
+  "_key": "!items!zUP8MG5s6lTMSkSR",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "CLAW requires weapon-specific 4ga range damage; reference ROF 1/4 conflicts with the wiki table 14.",
+            "Rate of fire needs a mode choice or special timing rule.",
+            "Shotgun damage is missing a verified point-blank, close, medium or far profile."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "SOF2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 58,
+            "section": "3.3–3.12",
+            "source": "reference-v5"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "8d6 (4ga)(B11)",
+        "sourceName": "United Arms CLAW",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "B11",
+          "attackType": "Autoshotgun",
+          "availability": "R",
+          "concealability": "N",
+          "cost": 1600,
+          "damage": "8d6",
+          "flavor": "",
+          "notes": "",
+          "range": "60m",
+          "reliability": "VR",
+          "rof": "1/4",
+          "shots": "28",
+          "source": "SOF2",
+          "weaponType": "Shotgun",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "United Arms CLAW",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "4ga buckshot",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Autoshotgun",
+    "automation": {
+      "reasons": [
+        "CLAW requires weapon-specific 4ga range damage; reference ROF 1/4 conflicts with the wiki table 14.",
+        "Rate of fire needs a mode choice or special timing rule.",
+        "Shotgun damage is missing a verified point-blank, close, medium or far profile."
+      ],
+      "status": "manual"
+    },
+    "availability": "Rare",
+    "bodyMinimum": 11,
+    "concealability": "ConcealNoHide",
+    "cost": 1600,
+    "damage": "8d6",
+    "fireModes": [],
+    "flavor": "",
+    "notes": "",
+    "range": 60,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": null,
+    "shots": 28,
+    "shotsLeft": 28,
+    "source": "SOF2",
+    "weaponType": "Shotgun",
+    "weight": null
+  },
+  "type": "weapon"
+}

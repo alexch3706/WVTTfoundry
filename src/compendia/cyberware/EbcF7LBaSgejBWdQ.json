@@ -1,0 +1,25 @@
+{
+  "_id": "EbcF7LBaSgejBWdQ",
+  "_key": "!items!EbcF7LBaSgejBWdQ",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Enhanced Sight",
+  "system": {
+    "cost": 2,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> each<br><p>2 max: IR, UV, LL, Tele, Image Enh, Color Shift 1200</p>",
+    "source": "DS",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

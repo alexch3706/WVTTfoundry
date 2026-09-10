@@ -33,11 +33,16 @@
                 <div class="field-image" style="background-image: url({{img}})" data-item-id="{{id}}"></div>
                 <label class="name">{{name}}</label>
                 <span class="flex-pad"></span>
-                <span>
-                    <label class="inactive">{{armorSummary system.coverage}}</label>
-                </span>
+                {{#unless system.equipped}}<span class="inactive">{{CPLocal "ArmorNotEquipped"}}</span>{{/unless}}
+                {{#if (equals system.automation.status "manual")}}
+                <span class="inactive" title="{{#each system.automation.reasons}}{{this}} {{/each}}">{{CPLocal "CatalogManual"}}</span>
+                {{/if}}
                 {{#if armorStatus.isArmor}}
-                <span title="{{CPLocal "ArmorStatus"}}" class="inactive">{{CPLocal "SPFull"}} {{armorStatus.currentStoppingPower}}/{{armorStatus.baseStoppingPower}}</span>
+                <span title="{{CPLocal "ArmorStatus"}}" class="inactive">
+                    {{#each armorStatus.locations as |segment|}}
+                    <span>{{shortCPLocal segment.location}} {{segment.currentStoppingPower}}/{{segment.baseStoppingPower}}{{#unless @last}} · {{/unless}}</span>
+                    {{/each}}
+                </span>
                 {{#if armorStatus.repairable}}
                     <button type="button" class="repair-armor" data-item-id="{{id}}" title="{{CPLocal "RepairArmor"}}">{{CPLocal "Repair"}}</button>
                 {{/if}}

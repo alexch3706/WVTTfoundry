@@ -1,0 +1,121 @@
+{
+  "_id": "TrOk4hfpGmiE0ZM0",
+  "_key": "!items!TrOk4hfpGmiE0ZM0",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Reliability conflict: Reference Book p49 lists ST; the Wiki cites core p66 for VR. Check the original core page before choosing a reliability rating."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "CP20",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "note": "Original table mixes a 30/50 capacity and ST reliability; retain these unmodified source values.",
+            "pdfPage": 49,
+            "section": "3.3",
+            "source": "reference-v5"
+          },
+          {
+            "book": "Cyberpunk 2020",
+            "note": "The model article cites core p66 and gives VR, conflicting with ST in the reference compilation. Core p66 itself is not available for primary-source verification; leave reliability unresolved.",
+            "pages": "66",
+            "source": "cyberpunk-wiki",
+            "url": "https://cyberpunk.fandom.com/wiki/Thompson_M1"
+          },
+          {
+            "book": "Cyberpunk 2020",
+            "note": "The Cyberpunk 2020 old-guns table lists M1 capacity 30 and reliability Very.",
+            "source": "cyberpunk-wiki",
+            "url": "https://cyberpunk.fandom.com/wiki/Cyberpunk_2020_Weapons"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+2 (.45 C)",
+        "sourceName": "Thompson M1",
+        "sourceValues": {
+          "accuracy": "+2",
+          "ammoType": ".45 C",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "N",
+          "cost": 250,
+          "damage": "2d6+2",
+          "flavor": "",
+          "notes": "",
+          "range": "200m",
+          "reliability": "ST",
+          "rof": "20",
+          "shots": "30/50",
+          "source": "CP20",
+          "weaponType": "SMG",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Thompson M1",
+  "system": {
+    "accuracy": 2,
+    "ammoType": ".45 C",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Submachinegun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Reliability conflict: Reference Book p49 lists ST; the Wiki cites core p66 for VR. Check the original core page before choosing a reliability rating."
+      ],
+      "status": "manual"
+    },
+    "availability": "Common",
+    "concealability": "ConcealNoHide",
+    "configuration": "Thompson M1: 30-round magazine. Reliability is disputed: Reference Book ST versus Wiki/core p66 citation VR. The M1928 drum-fed variant is a different weapon configuration.",
+    "cost": 250,
+    "damage": "2d6+2",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 200,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": null,
+    "rof": 20,
+    "shots": 30,
+    "shotsLeft": 30,
+    "source": "CP20",
+    "weaponType": "SMG",
+    "weight": null
+  },
+  "type": "weapon"
+}

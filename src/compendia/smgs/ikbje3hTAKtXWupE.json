@@ -1,0 +1,102 @@
+{
+  "_id": "ikbje3hTAKtXWupE",
+  "_key": "!items!ikbje3hTAKtXWupE",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "The imported name contains table fragments and needs source correction."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "CB3",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+3 (10mm)",
+        "sourceName": "HVY +0 - - (25mm/10ga) 1 1 ST 100m - - Mustang Arms ARS-5C",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "10mm",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "J",
+          "cost": 600,
+          "damage": "2d6+3",
+          "flavor": "",
+          "notes": "",
+          "range": "100m",
+          "reliability": "VR",
+          "rof": "3/40",
+          "shots": "40",
+          "source": "CB3",
+          "weaponType": "SMG",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "HVY +0 - - (25mm/10ga) 1 1 ST 100m - - Mustang Arms ARS-5C",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "10mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Submachinegun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "The imported name contains table fragments and needs source correction."
+      ],
+      "status": "manual"
+    },
+    "availability": "Common",
+    "concealability": "ConcealJacket",
+    "cost": 600,
+    "damage": "2d6+3",
+    "fireModes": [
+      "SemiAuto",
+      "ThreeRoundBurst",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 100,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 40,
+    "shots": 40,
+    "shotsLeft": 40,
+    "source": "CB3",
+    "weaponType": "SMG",
+    "weight": null
+  },
+  "type": "weapon"
+}

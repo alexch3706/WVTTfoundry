@@ -1,0 +1,25 @@
+{
+  "_id": "RXPyrkDBmzZkNcJb",
+  "_key": "!items!RXPyrkDBmzZkNcJb",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Biomechanical Arm",
+  "system": {
+    "cost": 0,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 1d6<br><p>10/15 SDP, 1d6 punch, 1d6 crush, 1/2 dam normal</p>",
+    "source": "I1.2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

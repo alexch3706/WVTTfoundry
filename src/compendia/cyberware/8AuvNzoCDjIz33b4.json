@@ -1,0 +1,25 @@
+{
+  "_id": "8AuvNzoCDjIz33b4",
+  "_key": "!items!8AuvNzoCDjIz33b4",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Tight Beam Radio Link",
+  "system": {
+    "cost": 200,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 1<br><p>Allows untappable radio com within line of sight</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

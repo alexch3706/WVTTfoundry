@@ -1,0 +1,25 @@
+{
+  "_id": "Crmnxg6WCyHDbGH5",
+  "_key": "!items!Crmnxg6WCyHDbGH5",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Brennan 'Ares' Combat Bike",
+  "system": {
+    "cost": 21000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 95<br><b>Acc/Dec:</b> 27/30<br><b>Crew:</b> 1<br><b>Range:</b> 130<br><b>Passengers:</b> 0<br><b>Cargo:</b> 45kg<br><b>Maneuver:</b> +2<br><b>SDP:</b> 37 (2)<br><b>SP:</b> 12<br><b>Mass:</b> (1) 148kg",
+    "source": "Chr3",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

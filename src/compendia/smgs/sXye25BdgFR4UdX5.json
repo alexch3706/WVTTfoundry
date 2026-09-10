@@ -1,0 +1,103 @@
+{
+  "_id": "sXye25BdgFR4UdX5",
+  "_key": "!items!sXye25BdgFR4UdX5",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Magazine capacity is missing or has alternatives; select the installed magazine.",
+            "Reliability is missing or has a conditional rule; verify the source."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "SOF2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "1d6+4 (.177)",
+        "sourceName": "Surnam Machine Pistol",
+        "sourceValues": {
+          "accuracy": "+0",
+          "ammoType": ".177",
+          "attackType": "Auto",
+          "availability": "C",
+          "concealability": "J/L",
+          "cost": 375,
+          "damage": "1d6+4",
+          "flavor": "",
+          "notes": "",
+          "range": "150m",
+          "reliability": "UR*",
+          "rof": "50",
+          "shots": "25/50",
+          "source": "SOF2",
+          "weaponType": "SMG",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Surnam Machine Pistol",
+  "system": {
+    "accuracy": 0,
+    "ammoType": ".177",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Submachinegun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Magazine capacity is missing or has alternatives; select the installed magazine.",
+        "Reliability is missing or has a conditional rule; verify the source."
+      ],
+      "status": "manual"
+    },
+    "availability": "Common",
+    "concealability": "J/L",
+    "cost": 375,
+    "damage": "1d6+4",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 150,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": null,
+    "rof": 50,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "SOF2",
+    "weaponType": "SMG",
+    "weight": null
+  },
+  "type": "weapon"
+}

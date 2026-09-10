@@ -1,4 +1,49 @@
-{{> (template "actor/parts/armor-display") hitLocations=system.coverage edit=true hitLocsName="coverage"}}
+{{#*inline "armorCoverageRow"}}
+<tr>
+    <th scope="row">{{CPLocal key}}</th>
+    <td><input type="number" min="0" step="1" name="system.coverage.{{key}}.stoppingPower" value="{{segment.stoppingPower}}" aria-label="{{CPLocal key}}: {{CPLocal 'SPFull'}}"></td>
+    <td><input type="number" min="0" step="1" name="system.coverage.{{key}}.ablation" value="{{segment.ablation}}" aria-label="{{CPLocal key}}: {{CPLocal 'Ablate'}}"></td>
+    <td>
+        <select name="system.coverage.{{key}}.layer" aria-label="{{CPLocal key}}: {{CPLocal 'ArmorLayer'}}">
+            <option value="" {{#unless segment.layer}}selected{{/unless}}>{{CPLocal "ArmorLayerUnknown"}}</option>
+            <option value="soft" {{#if (equals segment.layer "soft")}}selected{{/if}}>{{CPLocal "SoftArmor"}}</option>
+            <option value="hard" {{#if (equals segment.layer "hard")}}selected{{/if}}>{{CPLocal "HardArmor"}}</option>
+        </select>
+    </td>
+</tr>
+{{/inline}}
 <div class="field-list one-col">
+    <div class="field">
+        <label for="{{item.id}}-armor-role">{{CPLocal "ArmorRole"}}</label>
+        <select id="{{item.id}}-armor-role" name="system.armorRole">
+            <option value="wornArmor" {{#if (equals system.armorRole "wornArmor")}}selected{{/if}}>{{CPLocal "WornArmor"}}</option>
+            <option value="protectedObject" {{#if (equals system.armorRole "protectedObject")}}selected{{/if}}>{{CPLocal "ProtectedObject"}}</option>
+            <option value="shield" {{#if (equals system.armorRole "shield")}}selected{{/if}}>{{CPLocal "Shield"}}</option>
+            <option value="clothing" {{#if (equals system.armorRole "clothing")}}selected{{/if}}>{{CPLocal "Clothing"}}</option>
+        </select>
+    </div>
     {{> (template "fields/number") label="Encumbrance" edit="system.encumbrance"}}
+    {{#if (equals system.armorRole "protectedObject")}}
+    {{> (template "fields/number") label="ObjectStoppingPower" edit="system.objectStoppingPower"}}
+    {{/if}}
+    {{#if (equals system.armorRole "shield")}}
+    {{> (template "fields/number") label="ObjectStoppingPower" edit="system.objectStoppingPower"}}
+    {{/if}}
+    {{#if system.specialStoppingPower}}
+    {{> (template "fields/number") label="SpecialStoppingPower" edit="system.specialStoppingPower"}}
+    {{/if}}
+    {{> (template "fields/boolean") label="EdgedHalfSP" edit="system.edgedHalfSP"}}
+    {{> (template "fields/boolean") label="APDefeatingArmor" edit="system.apDefeating"}}
 </div>
+<p class="hint">{{CPLocal "ArmorCoverageEditorHint"}}</p>
+<table class="armor-coverage-editor">
+    <thead><tr><th scope="col">{{CPLocal "Location"}}</th><th scope="col">{{CPLocal "SPFull"}}</th><th scope="col">{{CPLocal "Ablate"}}</th><th scope="col">{{CPLocal "ArmorLayer"}}</th></tr></thead>
+    <tbody>
+        {{> armorCoverageRow key="Head" segment=system.coverage.Head}}
+        {{> armorCoverageRow key="Torso" segment=system.coverage.Torso}}
+        {{> armorCoverageRow key="lArm" segment=system.coverage.lArm}}
+        {{> armorCoverageRow key="rArm" segment=system.coverage.rArm}}
+        {{> armorCoverageRow key="lLeg" segment=system.coverage.lLeg}}
+        {{> armorCoverageRow key="rLeg" segment=system.coverage.rLeg}}
+    </tbody>
+</table>

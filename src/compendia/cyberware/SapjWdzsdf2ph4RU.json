@@ -1,0 +1,98 @@
+{
+  "_id": "SapjWdzsdf2ph4RU",
+  "_key": "!items!SapjWdzsdf2ph4RU",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "SP6 soft armor is explicit; confirm body coverage and any REF penalty before enabling automatic protection."
+          ],
+          "status": "manual"
+        },
+        "packName": "cyberware",
+        "provenance": {
+          "pdfPage": null,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "ES+; Reference Book cyberware bioenhancement table"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Toughened Skin",
+        "sourceValues": {
+          "cost": 8300,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 0<br><p>SP6 Soft Armor, can't be told from normal skin</p>",
+          "source": "ES+",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Toughened Skin",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "SP6 soft armor is explicit; confirm body coverage and any REF penalty before enabling automatic protection."
+      ],
+      "status": "manual"
+    },
+    "cost": 8300,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": null,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> 0<br><p>SP6 Soft Armor, can't be told from normal skin</p>",
+    "source": "ES+; Reference Book cyberware bioenhancement table",
+    "specialStoppingPower": 6,
+    "weight": null
+  },
+  "type": "cyberware"
+}

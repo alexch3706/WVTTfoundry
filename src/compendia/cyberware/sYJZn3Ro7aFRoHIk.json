@@ -1,0 +1,25 @@
+{
+  "_id": "sYJZn3Ro7aFRoHIk",
+  "_key": "!items!sYJZn3Ro7aFRoHIk",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Alterable Prints",
+  "system": {
+    "cost": 550,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 1<br><p>Programmable Nanotech altered prints (20 secs)</p>",
+    "source": "WS",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

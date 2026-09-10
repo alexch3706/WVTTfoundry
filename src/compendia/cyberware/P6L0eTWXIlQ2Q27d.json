@@ -1,0 +1,25 @@
+{
+  "_id": "P6L0eTWXIlQ2Q27d",
+  "_key": "!items!P6L0eTWXIlQ2Q27d",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Techhair",
+  "system": {
+    "cost": 1200,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 2<br><p>Color/light emitting artificial hair</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

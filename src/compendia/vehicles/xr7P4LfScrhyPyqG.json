@@ -1,0 +1,25 @@
+{
+  "_id": "xr7P4LfScrhyPyqG",
+  "_key": "!items!xr7P4LfScrhyPyqG",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "BMW Burowagen HSR",
+  "system": {
+    "cost": 90000,
+    "flavor": "",
+    "notes": "<b>Top Speed:</b> 110<br><b>Acc/Dec:</b> 15/50<br><b>Crew:</b> 1<br><b>Range:</b> 200<br><b>Passengers:</b> 5<br><b>Cargo:</b> 9600kg<br><b>Maneuver:</b> +3<br><b>SDP:</b> 75 (4)<br><b>SP:</b> 12<br><b>Mass:</b> (1) 2.9 tons",
+    "source": "Chr3",
+    "weight": 1
+  },
+  "type": "vehicle"
+}

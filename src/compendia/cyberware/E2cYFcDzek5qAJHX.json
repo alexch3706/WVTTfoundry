@@ -1,0 +1,25 @@
+{
+  "_id": "E2cYFcDzek5qAJHX",
+  "_key": "!items!E2cYFcDzek5qAJHX",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Soviet Cyberleg",
+  "system": {
+    "cost": 875,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 2-3d6<br><p>SDP 30/40, 3d10 kick, 5% failure, 2 spaces</p>",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

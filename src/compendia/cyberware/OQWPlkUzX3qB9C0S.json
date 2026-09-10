@@ -1,0 +1,25 @@
+{
+  "_id": "OQWPlkUzX3qB9C0S",
+  "_key": "!items!OQWPlkUzX3qB9C0S",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "CyberMaw Drool/Vomit Hand",
+  "system": {
+    "cost": 1600,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N/MA<br><b>Humanity Loss:</b> 4d6<br><p>as above, with 10 shot Power Squirt</p>",
+    "source": "I2.2",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

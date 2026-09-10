@@ -1,0 +1,124 @@
+{
+  "_id": "oUDhqd4pt9ymn1B3",
+  "_key": "!items!oUDhqd4pt9ymn1B3",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Select the armored cyberlimb before enabling automatic protection."
+          ],
+          "status": "manual"
+        },
+        "packName": "armor",
+        "provenance": {
+          "pdfPage": 84,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "CP20, 68"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "Cyberlimb Armor",
+        "sourceValues": {
+          "cost": 200,
+          "coverage": {
+            "Head": {
+              "ablation": 0,
+              "stoppingPower": 0
+            },
+            "Torso": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "lArm": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "lLeg": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "rArm": {
+              "ablation": 0,
+              "stoppingPower": 20
+            },
+            "rLeg": {
+              "ablation": 0,
+              "stoppingPower": 20
+            }
+          },
+          "flavor": "",
+          "notes": "<p>200 CP20, 68</p>",
+          "source": "CP20",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Cyberlimb Armor",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [
+        "Select the armored cyberlimb before enabling automatic protection."
+      ],
+      "status": "manual"
+    },
+    "cost": 200,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "",
+        "stoppingPower": 0
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 0,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<p>200 CP20, 68</p>",
+    "source": "CP20, 68",
+    "specialStoppingPower": 20,
+    "weight": null
+  },
+  "type": "armor"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "JWNbtZUfB1p5k5lE",
+  "_key": "!items!JWNbtZUfB1p5k5lE",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "\"Kaloric\" Secondary Gut",
+  "system": {
+    "cost": 750,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 1d6/2<br><p>Stores 2 days worth of food</p>",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

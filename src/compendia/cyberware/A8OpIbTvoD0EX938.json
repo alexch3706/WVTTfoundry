@@ -1,0 +1,25 @@
+{
+  "_id": "A8OpIbTvoD0EX938",
+  "_key": "!items!A8OpIbTvoD0EX938",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Feel Good Endorphin Trigger",
+  "system": {
+    "cost": 500,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> M<br><b>Humanity Loss:</b> 1d6<br><p>1d10 if hurt, 8-10=+3 Stun/Death; 1=intoxicated</p>",
+    "source": "SW",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,93 @@
+{
+  "_id": "fVyIisWkBjzWG4yP",
+  "_key": "!items!fVyIisWkBjzWG4yP",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "packName": "cyberware",
+        "provenance": {
+          "pdfPage": 84,
+          "reference": "Cyberpunk 2020 Reference Book",
+          "source": "Chr 2, 102"
+        },
+        "reviewNotes": [
+          "Weight is unknown unless explicitly verified in the reference."
+        ],
+        "sourceName": "ExoSkeleton",
+        "sourceValues": {
+          "cost": 20000,
+          "flavor": "",
+          "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 4d6<br><p>SP 18, MA & REF-2. 10% chance of cancer</p>",
+          "source": "Chr2",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "ExoSkeleton",
+  "system": {
+    "apDefeating": false,
+    "armorRole": "wornArmor",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "cost": 20000,
+    "coverage": {
+      "Head": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      },
+      "Torso": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      },
+      "lArm": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      },
+      "lLeg": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      },
+      "rArm": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      },
+      "rLeg": {
+        "ablation": 0,
+        "layer": "hard",
+        "stoppingPower": 18
+      }
+    },
+    "edgedHalfSP": false,
+    "encumbrance": 2,
+    "equipped": true,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> 4d6<br><p>SP 18, MA & REF-2. 10% chance of cancer</p>",
+    "source": "Chr 2, 102",
+    "weight": null
+  },
+  "type": "cyberware"
+}

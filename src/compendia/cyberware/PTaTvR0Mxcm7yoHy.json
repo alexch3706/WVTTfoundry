@@ -1,0 +1,25 @@
+{
+  "_id": "PTaTvR0Mxcm7yoHy",
+  "_key": "!items!PTaTvR0Mxcm7yoHy",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Quickclot Hemofibrinic Node",
+  "system": {
+    "cost": 3000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> 1d6<br><p>Wound states treated as one less, 10% stroke</p>",
+    "source": "Chr4",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

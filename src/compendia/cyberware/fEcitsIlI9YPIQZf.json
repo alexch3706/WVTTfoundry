@@ -1,0 +1,25 @@
+{
+  "_id": "fEcitsIlI9YPIQZf",
+  "_key": "!items!fEcitsIlI9YPIQZf",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Leg",
+  "system": {
+    "cost": 1200,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> CR<br><b>Humanity Loss:</b> -<br><p>Roll 1d10: 1-3 part unavailable, 4-5 minor problem</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

@@ -1,0 +1,25 @@
+{
+  "_id": "hEkBkLfbKjITxv7B",
+  "_key": "!items!hEkBkLfbKjITxv7B",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Permanent",
+  "system": {
+    "cost": 162,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> MA<br><b>Humanity Loss:</b> /+1<br><p>Increase N Max +4 2700/+1</p>",
+    "source": "ES+",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

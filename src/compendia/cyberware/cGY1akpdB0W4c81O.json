@@ -1,0 +1,25 @@
+{
+  "_id": "cGY1akpdB0W4c81O",
+  "_key": "!items!cGY1akpdB0W4c81O",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "James Bond",
+  "system": {
+    "cost": 1000,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> -<br><b>Humanity Loss:</b> 1d6/2<br><p>COOL +1 (max 11), user is a top British agent</p>",
+    "source": "WGF",
+    "weight": 1
+  },
+  "type": "cyberware"
+}

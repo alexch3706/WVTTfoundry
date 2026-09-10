@@ -1,0 +1,113 @@
+{
+  "_id": "tXSEAge5nHqDEpVE",
+  "_key": "!items!tXSEAge5nHqDEpVE",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "Chr1",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          },
+          {
+            "pdfPage": 62,
+            "section": "4.1",
+            "source": "reference-v5"
+          },
+          {
+            "pdfPage": 50,
+            "section": "3.3–3.12",
+            "source": "reference-v5"
+          },
+          {
+            "book": "Chromebook 1",
+            "pages": "48",
+            "source": "cyberpunk-wiki",
+            "url": "https://cyberpunk.fandom.com/wiki/Militech_Military/Police_Shotgun"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "4d6 (12ga)(B3)",
+        "sourceName": "Militech Military/Police",
+        "sourceValues": {
+          "accuracy": "0/-1",
+          "ammoType": "B3",
+          "attackType": "Autoshotgun",
+          "availability": "C",
+          "concealability": "N/L",
+          "cost": 300,
+          "damage": "4d6",
+          "flavor": "",
+          "notes": "",
+          "range": "50m",
+          "reliability": "ST",
+          "rof": "2",
+          "shots": "8",
+          "source": "Chr1",
+          "weaponType": "Shotgun",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Militech Military/Police",
+  "system": {
+    "accuracy": 0,
+    "ammoType": "12ga buckshot",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Rifle",
+    "attackType": "Shotgun",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Common",
+    "bodyMinimum": 3,
+    "concealability": "ConcealNoHide",
+    "configuration": "12ga; stock extended",
+    "cost": 300,
+    "damage": "4d6",
+    "fireModes": [
+      "SemiAuto"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 50,
+    "rangeDamages": {
+      "close": "4d6",
+      "far": "2d6",
+      "medium": "3d6",
+      "pointBlank": "4d6"
+    },
+    "reliability": "Standard",
+    "rof": 2,
+    "shots": 8,
+    "shotsLeft": 8,
+    "source": "Chr1",
+    "weaponType": "Shotgun",
+    "weight": null
+  },
+  "type": "weapon"
+}

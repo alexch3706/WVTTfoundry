@@ -7,6 +7,7 @@ import { classifyAttackTypeSupport } from "../combat/conformance-helpers.js";
 import { isCorebookFidelityEnabled } from "../combat/settings-helpers.js";
 import { previewAndApplyCombatOutcome, previewAndConfirmCombatOutcome } from "../combat/combat-commit.js";
 import { buildActorCombatSnapshot, buildWeaponCombatSnapshot, clonePlainData, compactPlainObject } from "../combat/combat-snapshot.js";
+import { validateWeaponContract, WEAPON_FIRE_MODES } from "./item-contract.js";
 
 /**
  * Extend the basic Item with some very simple modifications.
@@ -37,6 +38,21 @@ export class CyberpunkItem extends Item {
     
   }
 
+  getCombatDataIssues(options = {}) {
+    if(this.type !== "weapon") return [];
+    return validateWeaponContract(this.system, {
+      actionType: this.isRanged() ? "ranged" : (this.system.attackType === meleeAttackTypes.martial ? "martial" : "melee"),
+      ...options
+    }).issues;
+  }
+
+  warnInvalidCombatData(options = {}) {
+    const issues = this.getCombatDataIssues(options);
+    if(!issues.length) return false;
+    globalThis.ui?.notifications?.warn?.(`${this.name}: ${issues.map(issue => issue.message).join(" ")}`);
+    return true;
+  }
+
   _prepareArmorData(system) {
     // If new owner and armor covers this many areas or more, delete armor coverage areas the owner does not have
     const COVERAGE_CLEANSE_THRESHOLD = 20;
@@ -51,7 +67,7 @@ export class CyberpunkItem extends Item {
     }
 
     let nowOwned = !system.lastOwnerId && this.actor;
-    let changedHands = system.lastOwnerId !== undefined && system.lastOwnerId != this.actor.id;
+    let changedHands = system.lastOwnerId !== undefined && system.lastOwnerId != this.actor?.id;
     if(!skipReform && (nowOwned || changedHands)) {
       system.lastOwnerId = this.actor.id;
       let ownerLocs = this.actor.system.hitLocations;
@@ -338,6 +354,9 @@ export class CyberpunkItem extends Item {
   }
 
   __legacyWeaponRoll(attackMods, targetTokens) {
+    if(this.warnInvalidCombatData(attackMods)) {
+      return { manualResolution: true, warning: "Item data requires manual review." };
+    }
     let system = this.system;
     let isRanged = this.isRanged();
 
@@ -400,6 +419,9 @@ export class CyberpunkItem extends Item {
     if(this.type !== "weapon") {
       console.error(`${this.name} is not a weapon, and therefore has no fire modes`)
       return [];
+    }
+    if(Array.isArray(this.system.fireModes)) {
+      return this.system.fireModes.filter(mode => WEAPON_FIRE_MODES.includes(mode));
     }
     if(this.system.attackType === rangedAttackTypes.auto
       || this.system.attackType === rangedAttackTypes.autoshotgun) {

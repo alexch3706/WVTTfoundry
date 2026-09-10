@@ -1,0 +1,97 @@
+{
+  "_id": "554O1lIUSWw09e99",
+  "_key": "!items!554O1lIUSWw09e99",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [],
+          "status": "ready"
+        },
+        "evidence": [
+          {
+            "book": "MM",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "5d6 (5.56)",
+        "sourceName": "5.56mm Minigun",
+        "sourceValues": {
+          "accuracy": "+1",
+          "ammoType": "5.56",
+          "attackType": "Auto",
+          "availability": "P",
+          "concealability": "N",
+          "cost": 2000,
+          "damage": "5d6",
+          "flavor": "",
+          "notes": "",
+          "range": "450m",
+          "reliability": "ST",
+          "rof": "100",
+          "shots": "1000",
+          "source": "MM",
+          "weaponType": "Heavy",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "5.56mm Minigun",
+  "system": {
+    "accuracy": 1,
+    "ammoType": "5.56",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "HeavyWeapons",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [],
+      "status": "ready"
+    },
+    "availability": "Poor",
+    "concealability": "ConcealNoHide",
+    "cost": 2000,
+    "damage": "5d6",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 450,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "Standard",
+    "rof": 100,
+    "shots": 1000,
+    "shotsLeft": 1000,
+    "source": "MM",
+    "weaponType": "Heavy",
+    "weight": null
+  },
+  "type": "weapon"
+}

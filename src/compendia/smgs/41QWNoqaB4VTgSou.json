@@ -1,0 +1,101 @@
+{
+  "_id": "41QWNoqaB4VTgSou",
+  "_key": "!items!41QWNoqaB4VTgSou",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {
+    "cyberpunk2020-rilerena": {
+      "catalog": {
+        "automationValues": {
+          "reasons": [
+            "Magazine capacity is missing or has alternatives; select the installed magazine."
+          ],
+          "status": "manual"
+        },
+        "evidence": [
+          {
+            "book": "SOF2",
+            "commit": "723cc084",
+            "source": "legacy-compendium"
+          }
+        ],
+        "historicalCommit": "723cc084",
+        "historicalDamage": "2d6+3 (10mm)",
+        "sourceName": "IMI \"Gamdaii\"",
+        "sourceValues": {
+          "accuracy": "+2",
+          "ammoType": "10mm",
+          "attackType": "Auto",
+          "availability": "E",
+          "concealability": "N",
+          "cost": 950,
+          "damage": "2d6+3",
+          "flavor": "",
+          "notes": "",
+          "range": "200m",
+          "reliability": "VR",
+          "rof": "25",
+          "shots": "35x2",
+          "source": "SOF2",
+          "weaponType": "SMG",
+          "weight": 1
+        },
+        "version": 1
+      }
+    }
+  },
+  "img": "icons/svg/mystery-man.svg",
+  "name": "IMI \"Gamdaii\"",
+  "system": {
+    "accuracy": 2,
+    "ammoType": "10mm",
+    "aoe": {
+      "type": "",
+      "value": 0,
+      "width": 0
+    },
+    "ap": false,
+    "attackSkill": "Submachinegun",
+    "attackType": "Auto",
+    "automation": {
+      "reasons": [
+        "Magazine capacity is missing or has alternatives; select the installed magazine."
+      ],
+      "status": "manual"
+    },
+    "availability": "Excellent",
+    "concealability": "ConcealNoHide",
+    "cost": 950,
+    "damage": "2d6+3",
+    "fireModes": [
+      "SemiAuto",
+      "FullAuto",
+      "Suppressive"
+    ],
+    "flavor": "",
+    "notes": "",
+    "range": 200,
+    "rangeDamages": {
+      "close": "",
+      "far": "",
+      "medium": "",
+      "pointBlank": ""
+    },
+    "reliability": "VeryReliable",
+    "rof": 25,
+    "shots": null,
+    "shotsLeft": null,
+    "source": "SOF2",
+    "weaponType": "SMG",
+    "weight": null
+  },
+  "type": "weapon"
+}

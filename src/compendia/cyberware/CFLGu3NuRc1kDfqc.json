@@ -1,0 +1,25 @@
+{
+  "_id": "CFLGu3NuRc1kDfqc",
+  "_key": "!items!CFLGu3NuRc1kDfqc",
+  "_stats": {
+    "exportSource": {
+      "coreVersion": "0.7.9",
+      "systemId": "cyberpunk2020-rilerena",
+      "systemVersion": "0.2.6",
+      "uuid": null,
+      "worldId": "cyberpunk_2020"
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "img": "icons/svg/mystery-man.svg",
+  "name": "Micro-recorder Link",
+  "system": {
+    "cost": 100,
+    "flavor": "",
+    "notes": "<b>Surgery Code:</b> N<br><b>Humanity Loss:</b> .5<br><p>Transmits to recorder in body or via plugs</p>",
+    "source": "CP20",
+    "weight": 1
+  },
+  "type": "cyberware"
+}
