@@ -20,10 +20,10 @@ export function runWoundHintTests() {
     const hints = buildWoundStateHints(["Light", "Serious", "Critical", "Mortal 0"], 10);
 
     assert.deepEqual(hints, [
-      { label: "Light", stunPenalty: 0, stunThreshold: 10, hint: "Stun Save: roll under BODY 10" },
-      { label: "Serious", stunPenalty: 1, stunThreshold: 9, hint: "Stun Save: roll under BODY 10 - 1 = 9" },
-      { label: "Critical", stunPenalty: 2, stunThreshold: 8, hint: "Stun Save: roll under BODY 10 - 2 = 8" },
-      { label: "Mortal 0", stunPenalty: 3, stunThreshold: 7, hint: "Stun Save: roll under BODY 10 - 3 = 7" }
+      { label: "Light", stunPenalty: 0, stunThreshold: 10, hint: "Stun Save: d10 ≤ BODY 10" },
+      { label: "Serious", stunPenalty: 1, stunThreshold: 9, hint: "Stun Save: d10 ≤ 9 (BODY 10 - 1)" },
+      { label: "Critical", stunPenalty: 2, stunThreshold: 8, hint: "Stun Save: d10 ≤ 8 (BODY 10 - 2)" },
+      { label: "Mortal 0", stunPenalty: 3, stunThreshold: 7, hint: "Stun Save: d10 ≤ 7 (BODY 10 - 3)" }
     ]);
   });
 

@@ -25,6 +25,7 @@ export const preloadHandlebarsTemplates = async function() {
 
         // Roll templates
         "systems/cyberpunk2020-rilerena/templates/chat/default-roll.hbs",
+        "systems/cyberpunk2020-rilerena/templates/chat/save-roll.hbs",
         "systems/cyberpunk2020-rilerena/templates/chat/weapon-roll.hbs",
         "systems/cyberpunk2020-rilerena/templates/chat/multi-hit.hbs",
         "systems/cyberpunk2020-rilerena/templates/chat/combat-outcome.hbs",

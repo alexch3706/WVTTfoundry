@@ -1,0 +1,16 @@
+.cyberpunk.weapon-modifiers {
+    .attack-summary h2 { margin: 0 0 $spacing-sm; }
+    .attack-target-summary { margin: $spacing-sm 0 $spacing-md; overflow-wrap: anywhere; }
+    > .field-list + .field-list { margin-top: $spacing-sm; }
+    .attack-advanced {
+        margin: $spacing-md 0;
+        padding: $spacing-sm;
+        border: 1px solid $border-primary;
+        summary { cursor: pointer; padding: $spacing-sm; font-weight: bold; }
+        &[open] summary { margin-bottom: $spacing-sm; }
+    }
+    .attack-manual-die { margin-top: $spacing-md; }
+    .notes { font-size: 0.9em; margin: $spacing-sm 0; }
+    [hidden] { display: none; }
+    &[aria-busy="true"] > button[type="submit"] { cursor: progress; }
+}

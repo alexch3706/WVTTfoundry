@@ -5,8 +5,8 @@ export function buildWoundStateHints(labels, bodyType) {
     const stunPenalty = woundLevel <= 1 ? 0 : woundLevel - 1;
     const stunThreshold = Math.max(1, body - stunPenalty);
     const hint = stunPenalty > 0
-      ? `Stun Save: roll under BODY ${body} - ${stunPenalty} = ${stunThreshold}`
-      : `Stun Save: roll under BODY ${body}`;
+      ? `Stun Save: d10 ≤ ${stunThreshold} (BODY ${body} - ${stunPenalty})`
+      : `Stun Save: d10 ≤ BODY ${body}`;
     return {
       label,
       stunPenalty,

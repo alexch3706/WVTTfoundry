@@ -1,4 +1,8 @@
 import { isPrimaryActiveGm, resolveFoundryUuid } from "../foundry-compat.js";
+import { isSaveRollSuccessful, resolveSaveThreshold } from "./save-resolver.js";
+
+// Preserve existing imports while keeping roll-under semantics in the pure resolver.
+export { isSaveRollSuccessful, resolveSaveThreshold } from "./save-resolver.js";
 
 const ACTIVE_SAVE_ROLLS = new Set();
 const COMPLETED_SAVE_ROLLS = new Set();
@@ -181,17 +185,6 @@ async function autoRollSaves(actor, saves) {
     }
   }
   return { manualRequired };
-}
-
-export function resolveSaveThreshold(save = {}) {
-  const value = Number(save.threshold ?? save.targetNumber);
-  return Number.isFinite(value) ? value : undefined;
-}
-
-export function isSaveRollSuccessful(rollTotal, save = {}) {
-  const threshold = resolveSaveThreshold(save);
-  const total = Number(rollTotal);
-  return threshold !== undefined && Number.isFinite(total) && total <= threshold;
 }
 
 export function buildSaveResolutionKey(targetData = {}, targetIndex = 0) {

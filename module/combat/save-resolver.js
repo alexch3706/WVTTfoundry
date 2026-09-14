@@ -147,6 +147,31 @@ export function getDeathSaveState(actorOrSystem = {}) {
   };
 }
 
+/** Current Stun threshold, using the same wound penalties as damage prompts. */
+export function getStunSaveState(actorOrSystem = {}) {
+  const { damage, woundState, bodyType } = getDeathSaveState(actorOrSystem);
+  const penalty = stunPenaltyForWoundState(woundState.level);
+  return {
+    damage,
+    woundState,
+    bodyType,
+    penalty,
+    threshold: bodyType !== undefined ? Math.max(1, bodyType - penalty) : undefined
+  };
+}
+
+export function resolveSaveThreshold(save = {}) {
+  const value = Number(save.threshold ?? save.targetNumber);
+  return Number.isFinite(value) ? value : undefined;
+}
+
+/** Saves are roll-under-or-equal, unlike ordinary attack and skill checks. */
+export function isSaveRollSuccessful(rollTotal, save = {}) {
+  const threshold = resolveSaveThreshold(save);
+  const total = Number(rollTotal);
+  return threshold !== undefined && Number.isFinite(total) && total <= threshold;
+}
+
 function emptyResult() {
   return {
     saves: [],

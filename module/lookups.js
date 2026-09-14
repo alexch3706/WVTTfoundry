@@ -189,10 +189,10 @@ export function defaultHitLocations() {
 
 import { filterSupportedFireModes } from "./combat/settings-helpers.js";
 
-export function rangedModifiers(weapon, targetTokens=[]) {
+export function rangedModifiers(weapon, targetTokens=[], context={}) {
     let range = weapon.system.range || 50;
     let rawFireModes = weapon.__getFireModes() || [];
-    let fireModes = filterSupportedFireModes(rawFireModes);
+    let fireModes = filterSupportedFireModes(rawFireModes, context);
 
     let defaultRange = "RangeClose";
     let rangeChoices = [

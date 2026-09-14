@@ -39,8 +39,8 @@ export function filterSupportedFireModes(rawFireModes = [], context = {}) {
 
   return rawFireModes.filter(mode => {
     const lower = String(mode).toLowerCase();
-    // Suppressive fire: resolver exists but UI doesn't collect zone inputs
-    if (lower === "suppressive") return false;
+    // Only expose this mode when its caller can collect/place the corridor.
+    if (lower === "suppressive") return context.suppressiveTemplateAvailable === true;
     return true;
   });
 }

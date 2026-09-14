@@ -4,6 +4,8 @@ import { btmFromBT } from "../lookups.js";
 import { properCase, localize, getDefaultSkills } from "../utils.js"
 import { resolveArmor } from "../combat/armor-resolver.js";
 import { applyDerivedStatOverrides } from "./derived-stats.js";
+import { getDeathSaveState, getStunSaveState } from "../combat/save-resolver.js";
+import { rollManualStunDeath } from "../combat/manual-save-roll.js";
 
 const COMBAT_SENSE_LOCALIZATION_KEY = "SkillCombatSense";
 const AWARENESS_NOTICE_LOCALIZATION_KEY = "SkillAwarenessNotice";
@@ -284,14 +286,11 @@ export class CyberpunkActor extends Actor {
 
 
   stunThreshold() {
-    const body = this.system.stats.bt.total;
-    // +1 as Light has no penalty, but is 1 from woundState()
-    return body - this.woundState() + 1; 
+    return getStunSaveState(this).threshold;
   }
 
   deathThreshold() {
-    // The first wound state to penalise is Mortal 1 instead of Serious.
-    return this.stunThreshold() + 3;
+    return getDeathSaveState(this).threshold;
   }
 
   // TODO: Again, will not work if skill names localized
@@ -411,20 +410,6 @@ export class CyberpunkActor extends Actor {
   }
 
   rollStunDeath() {
-    if (this.system.isFBC) {
-      ui.notifications.info(game.i18n.localize("Full Body Conversions do not make Stun or Death saves."));
-      return;
-    }
-    let rolls = new Multiroll(localize("StunDeathSave"), localize("UnderThresholdMessage"));
-    rolls.addRoll(new Roll("1d10"), {
-      name: localize("Save")
-    });
-    rolls.addRoll(new Roll(`${this.stunThreshold()}`), {
-      name: "Stun Threshold"
-    });
-    rolls.addRoll(new Roll(`${this.deathThreshold()}`), {
-      name: "Death Threshold"
-    });
-    rolls.defaultExecute();
+    return rollManualStunDeath(this);
   }
 }

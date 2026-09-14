@@ -1,0 +1,21 @@
+<div class="cyberpunk cyberpunk-card save-roll-card">
+    <header>
+        <h2>{{title}}</h2>
+        <p class="flavor">{{instruction}}</p>
+    </header>
+    <p class="save-die-result"><span class="formula-text">{{roll.formula}}</span> = <strong>{{roll.total}}</strong></p>
+    {{#each saves}}
+    <section class="save-result section-divider" data-save-type="{{type}}">
+        <header class="flexrow">
+            <strong>{{name}}</strong>
+            <span class="{{resultClass}}">{{label}}</span>
+        </header>
+        {{#if required}}
+        <p>{{../roll.total}} {{#if passed}}≤{{else}}&gt;{{/if}} {{threshold}} <span class="formula-text">({{formula}})</span></p>
+        {{else}}
+        <p class="formula-text">{{notRequiredReason}}</p>
+        {{/if}}
+    </section>
+    {{/each}}
+    <p class="formula-text section-divider">{{rollOnly}}</p>
+</div>

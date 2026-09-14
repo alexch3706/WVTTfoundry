@@ -2,13 +2,11 @@ import { fireModes, martialOptions, meleeAttackTypes, meleeBonkOptions, rangedMo
 import { localize, localizeParam } from "../utils.js"
 import { ModifiersDialog } from "../dialog/modifiers.js"
 import { SortOrders } from "./skill-sort.js";
-import { normalizeSelectedTargets } from "../combat/target-normalizer.js";
+import { buildInitialAttackTargets, executeAttackFromForm, supportsAreaTargeting } from "../combat/attack-workflow.js";
 import { getAttackDieEntryMode, isCorebookFidelityEnabled } from "../combat/settings-helpers.js";
-import { promptAttackDieEntry } from "../combat/attack-die-entry.js";
 import { buildWoundStateHints } from "./wound-hints.js";
 import { buildArmorRepairUpdate, getArmorItemStatus, getCyberwareArmorStatus } from "../combat/armor-maintenance.js";
 import { resolveActorSheetLayout } from "./actor-sheet-layout.js";
-import { measureTokenDistance } from "../foundry-compat.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -318,210 +316,33 @@ export class CyberpunkActorSheet extends ActorSheet {
 
     html.find('.fire-weapon').click(async ev => {
       ev.stopPropagation();
-      let item = getEventItem(this, ev);
-      if(!item || item.type !== "weapon") return;
-      // Validate before drawing templates or spending rounds on persistent zones.
-      if(item.warnInvalidCombatData?.()) return;
-      let isRanged = item.isRanged();
-
-      let onConfirm = undefined;
+      const item = getEventItem(this, ev);
+      if(!item || item.type !== "weapon" || item.warnInvalidCombatData?.()) return;
       const selectedTargets = Array.from(game.users.current.targets.values());
-      let targetTokens = normalizeSelectedTargets(selectedTargets);
-      
-      let resolverOptions = structuredResolverOptions(item);
-      let suppressiveFireOptions = null;
-      let shotgunTemplateTargeting = null;
-      let targetsToRaycast = selectedTargets;
-      let normalizeTacticalTargetsFn = null;
-
       const attackerToken = this.actor.token || findControlledTokenForActor(this.actor);
+      const resolverOptions = structuredResolverOptions(item);
+      const targetTokens = buildInitialAttackTargets(attackerToken, selectedTargets);
+      const modifierGroups = item.isRanged()
+        ? rangedModifiers(item, targetTokens, { suppressiveTemplateAvailable: resolverOptions !== null })
+        : item.system.attackType === meleeAttackTypes.martial
+          ? martialOptions(this.actor)
+          : meleeBonkOptions();
 
-      // If structured combat is active and weapon is ranged, prompt for raycast GM covers first
-      if (resolverOptions && isRanged) {
-        try {
-          const { detectAndPromptTacticalRaycasts } = await import("../combat/tactical-raycast.js");
-          const { normalizeTacticalTargets } = await import("../combat/target-normalizer.js");
-          normalizeTacticalTargetsFn = normalizeTacticalTargets;
-
-          const isLegacyShotgun = String(item.system?.weaponType || "").trim() === "Shotgun"
-            || String(item.system?.attackType || "").trim().toLowerCase() === "shotgun";
-          const isAutoshotgun = String(item.system?.attackType || "").toLowerCase().trim() === "autoshotgun";
-          const hasAoE = !!item.system?.aoe?.type;
-
-          if ((hasAoE || isLegacyShotgun) && !isAutoshotgun) {
-            const { AOE_TEMPLATE_CHOICE, promptUseAoETemplate, drawAoETemplateAndGetTargets, buildAoETemplateTargetingOptions } = await import("../combat/template-placement.js");
-            const templateChoice = await promptUseAoETemplate(item);
-            if(templateChoice === AOE_TEMPLATE_CHOICE.canceled) {
-              return;
-            }
-            if (templateChoice === AOE_TEMPLATE_CHOICE.template) {
-              const shotgunTemplateResult = await drawAoETemplateAndGetTargets(item, attackerToken);
-              if(shotgunTemplateResult?.canceled) {
-                return;
-              }
-              const affectedTargets = Array.isArray(shotgunTemplateResult)
-                ? shotgunTemplateResult
-                : shotgunTemplateResult?.affectedTargets || [];
-              shotgunTemplateTargeting = buildAoETemplateTargetingOptions({
-                selectedTargets,
-                affectedTargets,
-                hazardZone: shotgunTemplateResult?.hazardZone
-              });
-              targetsToRaycast = shotgunTemplateTargeting.raycastTargets;
-            }
-          } else if (!isAutoshotgun) {
-            const fireModes = typeof item.__getFireModes === "function" ? item.__getFireModes() : [];
-            const isAutoWeapon = fireModes.includes("Suppressive");
-
-            if (isAutoWeapon) {
-              const shotsLeft = Number(item.system?.shotsLeft) || 0;
-              if (shotsLeft > 0) {
-                const { SUPPRESSIVE_TEMPLATE_CHOICE, promptUseSuppressiveFireTemplate, placePersistentSuppressiveFireTemplate } = await import("../combat/template-placement.js");
-                const suppressiveChoice = await promptUseSuppressiveFireTemplate(item, Math.min(shotsLeft, item.system?.rof || 999));
-                if(suppressiveChoice?.choice === SUPPRESSIVE_TEMPLATE_CHOICE.canceled) {
-                  return;
-                }
-                if (suppressiveChoice?.choice === SUPPRESSIVE_TEMPLATE_CHOICE.template) {
-                  suppressiveFireOptions = suppressiveChoice;
-                  const { getMaxRangeBracketDistance } = await import("../lookups.js");
-                  const maxDistance = getMaxRangeBracketDistance(item.system?.range || 50, 'RangeClose');
-                  const isPlaced = await placePersistentSuppressiveFireTemplate(attackerToken, item, suppressiveFireOptions.roundsFired, suppressiveFireOptions.zoneWidth, maxDistance);
-                  if (isPlaced) {
-                    await item.update({ "system.shotsLeft": shotsLeft - suppressiveFireOptions.roundsFired });
-                    return; // Exit, because it's a persistent hazard now, no immediate attack roll needed
-                  }
-                  return;
-                }
-              }
-            }
-          }
-
-          targetTokens = await detectAndPromptTacticalRaycasts(attackerToken, targetsToRaycast);
-          targetTokens = normalizeTacticalTargetsFn({
-            targets: targetTokens,
-            ...(shotgunTemplateTargeting?.template ? { template: shotgunTemplateTargeting.template } : {})
-          });
-        } catch (e) {
-          console.warn("Tactical raycast failure:", e);
-          targetTokens = normalizeTacticalTargetsFn
-            ? normalizeTacticalTargetsFn({
-                targets: targetsToRaycast.map(target => markRaycastFailureManual(target)),
-                ...(shotgunTemplateTargeting?.template ? { template: shotgunTemplateTargeting.template } : {})
-              })
-            : targetTokens.map(target => markRaycastFailureManual(target));
-        }
-      }
-      
-      if (attackerToken) {
-        // Distance calculation for all targets
-        targetTokens.forEach((tt, idx) => {
-          if (tt.distance?.source === "template") {
-            return;
-          }
-          const rawTarget = selectedTargets.find(t => t.id === tt.id || t.document?.uuid === tt.tokenUuid) || selectedTargets[idx];
-          if (rawTarget) {
-            const dist = measureTokenDistance(attackerToken, rawTarget);
-            if(dist === undefined) return;
-            tt.distance = { value: dist, units: globalThis.canvas.grid.units || "m", source: "standard-grid" };
-          }
-        });
-      }
-
-      let modifierGroups = undefined;
-      if(isRanged) {
-        modifierGroups = rangedModifiers(item, targetTokens);
-        if (suppressiveFireOptions) {
-          const fireModeMod = modifierGroups?.[0]?.find(m => m.localKey === "FireMode");
-          if (fireModeMod && fireModeMod.choices?.includes("Suppressive")) {
-             fireModeMod.defaultValue = "Suppressive";
-          }
-        }
-      }
-      else if (item.system.attackType === meleeAttackTypes.martial){
-        modifierGroups = martialOptions(this.actor);
-      }
-      else {
-        modifierGroups = meleeBonkOptions();
-      }
-
-      let dialog = new ModifiersDialog(this.actor, {
+      new ModifiersDialog(this.actor, {
         weapon: item,
-        targetTokens: targetTokens,
-        modifierGroups: modifierGroups,
-        onConfirm: async (fireOptions) => {
-          if(item.warnInvalidCombatData?.(fireOptions)) return;
-          if (suppressiveFireOptions && fireOptions.fireMode === "Suppressive") {
-            fireOptions.roundsFired = suppressiveFireOptions.roundsFired;
-            fireOptions.fireZoneWidth = suppressiveFireOptions.zoneWidth;
-          }
-          const isAutoshotgunFullAuto = String(item.system?.attackType || "").toLowerCase().trim() === "autoshotgun"
-            && String(fireOptions.fireMode || "").toLowerCase() === "fullauto";
-          if (isAutoshotgunFullAuto) {
-            if (!attackerToken) {
-              ui.notifications?.warn("Attacker token is required to place autoshotgun patterns.");
-              return;
-            }
-            const shotsLeft = Number(item.system?.shotsLeft) || 0;
-            const rof = Number(item.system?.rof) || 0;
-            const maxShells = Math.min(shotsLeft, rof);
-            const { promptAutoshotgunShellCount, drawAutoshotgunPatternsAndGetTargets } = await import("../combat/template-placement.js");
-            const shellCount = await promptAutoshotgunShellCount(item, maxShells);
-            if (!shellCount) {
-              return;
-            }
-            const autoshotgunPlacement = await drawAutoshotgunPatternsAndGetTargets(item, attackerToken, shellCount);
-            if(autoshotgunPlacement.canceled) {
-              return;
-            }
-            fireOptions.autoshotgunPatterns = autoshotgunPlacement.patterns;
-          }
-          if (shotgunTemplateTargeting?.hazardZone) {
-            fireOptions.hazardZone = shotgunTemplateTargeting.hazardZone;
-          }
-          let attackDieOptions = {};
-          if (resolverOptions && getAttackDieEntryMode({ options: resolverOptions }) === "prompt") {
-            attackDieOptions = await promptAttackDieEntry();
-            if (attackDieOptions.canceled) return;
-          }
-          return item.__weaponRoll(fireOptions, targetTokens, { structured: !!resolverOptions, ...resolverOptions, ...attackDieOptions });
-        }
-      });
-      dialog.render(true);
+        targetTokens,
+        modifierGroups,
+        templateTargetingAvailable: supportsAreaTargeting(item, resolverOptions !== null),
+        manualAttackDieEnabled: resolverOptions !== null && getAttackDieEntryMode({ options: resolverOptions }) === "prompt",
+        onConfirm: fireOptions => executeAttackFromForm({
+          weapon: item, attackerToken, selectedTargets, resolverOptions, fireOptions
+        })
+      }).render(true);
     });
 
     function findControlledTokenForActor(actor) {
       return globalThis.canvas?.tokens?.controlled?.find(token => token?.actor?.uuid === actor?.uuid);
     }
 
-    function markRaycastFailureManual(target) {
-      return {
-        document: target?.document,
-        actor: target?.actor,
-        actorUuid: target?.actorUuid || target?.actor?.uuid,
-        tokenUuid: target?.tokenUuid || target?.document?.uuid,
-        id: target?.id,
-        uuid: target?.uuid,
-        name: target?.name,
-        center: target?.center,
-        bounds: target?.bounds,
-        snapshot: target?.snapshot,
-        ...target,
-        manualResolution: {
-          ...(target.manualResolution || {}),
-          required: true,
-          reason: target.manualResolution?.reason || "pending-user-decision",
-          message: target.manualResolution?.message || "Tactical raycast failed; resolve cover/barrier interaction manually.",
-          blockedUpdateCategories: [...new Set([...(target.manualResolution?.blockedUpdateCategories || []), "target-damage", "target-armor", "target-saves"])]
-        },
-        warnings: [
-          ...(target.warnings || []),
-          {
-            code: "manual-tactical-raycast",
-            severity: "warning",
-            message: "Tactical raycast failed; resolve cover/barrier interaction manually."
-          }
-        ]
-      };
-    }
   }
 }

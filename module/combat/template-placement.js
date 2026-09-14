@@ -447,7 +447,7 @@ function tokenIdentity(token) {
   return token?.id || token?.document?.id || token?._id || token?.document?._id;
 }
 
-export async function promptUseSuppressiveFireTemplate(weapon, maxRounds) {
+export async function promptUseSuppressiveFireTemplate(weapon, maxRounds, { templateOnly = false } = {}) {
   const boundedMaxRounds = Math.max(1, Math.floor(Number(maxRounds) || 1));
   return new Promise((resolve) => {
     let content = `
@@ -480,10 +480,10 @@ export async function promptUseSuppressiveFireTemplate(weapon, maxRounds) {
             resolve({ choice: SUPPRESSIVE_TEMPLATE_CHOICE.template, roundsFired, zoneWidth });
           }
         },
-        normal: {
+        ...(!templateOnly ? { normal: {
           label: "Normal Attack",
           callback: () => resolve({ choice: SUPPRESSIVE_TEMPLATE_CHOICE.normal })
-        },
+        }} : {}),
         cancel: {
           label: "Cancel Attack",
           callback: () => resolve({ choice: SUPPRESSIVE_TEMPLATE_CHOICE.canceled })
@@ -495,7 +495,9 @@ export async function promptUseSuppressiveFireTemplate(weapon, maxRounds) {
   });
 }
 
-export async function placePersistentSuppressiveFireTemplate(attackerToken, weaponItem, bulletsFired, zoneWidth, maxDistance) {
+const ACTIVE_SUPPRESSIVE_TRANSACTIONS = new WeakSet();
+
+export async function placePersistentSuppressiveFireTemplate(attackerToken, weaponItem, bulletsFired, zoneWidth, maxDistance, { consumeAmmo = false } = {}) {
   const failPlacement = (error, message = "Suppressive-fire zone placement failed. Attack canceled; please try again.") => {
     if(error) console.error("Suppressive-fire Region placement failed:", error);
     globalThis.ui?.notifications?.warn(message);
@@ -509,6 +511,25 @@ export async function placePersistentSuppressiveFireTemplate(attackerToken, weap
   const origin = getTokenCenter(attackerToken);
   if(!origin) {
     return failPlacement(undefined, "Attacker token origin not found. Attack canceled.");
+  }
+
+  const scene = globalThis.canvas.scene;
+  const beforeAmmo = Number(weaponItem?.system?.shotsLeft);
+  const rounds = Number(bulletsFired);
+  const validAmmo = () => Number.isInteger(rounds) && rounds > 0
+    && Number.isInteger(beforeAmmo) && beforeAmmo >= rounds
+    && Number.isInteger(Number(weaponItem?.system?.rof)) && Number(weaponItem.system.rof) >= rounds;
+  if(consumeAmmo) {
+    if(!validAmmo() || typeof weaponItem?.update !== "function") {
+      return failPlacement(undefined, "Suppressive-fire ammunition is unavailable or insufficient. Review the attack again.");
+    }
+    if(ACTIVE_SUPPRESSIVE_TRANSACTIONS.has(weaponItem)) {
+      return failPlacement(undefined, "A suppressive-fire attack with this weapon is already in progress.");
+    }
+    if(typeof scene?.createEmbeddedDocuments !== "function" || typeof scene?.regions?.get !== "function") {
+      return failPlacement(undefined, "The Scene cannot safely create and verify a suppressive-fire zone. Attack canceled.");
+    }
+    ACTIVE_SUPPRESSIVE_TRANSACTIONS.add(weaponItem);
   }
 
   try {
@@ -533,11 +554,124 @@ export async function placePersistentSuppressiveFireTemplate(attackerToken, weap
       userId: globalThis.game?.user?.id
     });
     const placed = await placeCombatRegion(regionData, {
-      create: true,
+      // Transactional callers draw a transient preview first. Persisting an
+      // armed Region before charging ammo would leave an uncharged hazard if
+      // the user changed the weapon during placement or the write failed.
+      create: !consumeAmmo,
       anchorOrigin: origin
     });
-    return Boolean(placed);
+    if(!consumeAmmo || !placed) return Boolean(placed);
+    if(globalThis.canvas.scene !== scene || Number(weaponItem.system.shotsLeft) !== beforeAmmo || !validAmmo()) {
+      return failPlacement(undefined, "Scene or ammunition changed during placement. Nothing was spent; review the attack again.");
+    }
+    return await commitSuppressivePlacement({ scene, placed, regionData, weaponItem, beforeAmmo, rounds, failPlacement });
   } catch(error) {
+    if(error?.nonRetryable) {
+      globalThis.ui?.notifications?.error?.(error.message);
+      throw error;
+    }
     return failPlacement(error);
+  } finally {
+    if(consumeAmmo) ACTIVE_SUPPRESSIVE_TRANSACTIONS.delete(weaponItem);
   }
+}
+
+async function commitSuppressivePlacement({ scene, placed, regionData, weaponItem, beforeAmmo, rounds, failPlacement }) {
+  const scope = globalThis.game?.system?.id || "cyberpunk2020";
+  const preview = getRegionDocument(placed);
+  if(typeof preview?.toObject !== "function") {
+    return failPlacement(undefined, "The suppressive-fire preview could not be read. Nothing was spent.");
+  }
+  const stagedData = preview.toObject();
+  const suppression = regionData.flags[scope].suppressiveFire;
+  delete stagedData._id;
+  stagedData.flags ??= {};
+  stagedData.flags[scope] ??= {};
+  delete stagedData.flags[scope].suppressiveFire;
+  stagedData.flags[scope].suppressiveFirePending = true;
+
+  let region;
+  try {
+    [region] = await scene.createEmbeddedDocuments("Region", [stagedData]);
+  } catch(error) {
+    // A failed acknowledgement can arrive after persistence. Without a
+    // returned document we cannot prove which Region to remove: do not retry.
+    throw suppressiveTransactionError("Region creation could not be confirmed. Check the Scene for a pending suppressive-fire zone before trying again. No ammunition update was requested.", error);
+  }
+  if(!region?.id || scene.regions.get(region.id) !== region) {
+    throw suppressiveTransactionError("The created suppressive-fire Region could not be verified. Ask the GM to check pending zones before trying again. No ammunition update was requested.");
+  }
+  if(Number(weaponItem.system.shotsLeft) !== beforeAmmo) {
+    await removeSuppressiveRegion(scene, region);
+    return failPlacement(undefined, "Ammunition changed while creating the zone. The pending zone was removed; no ammunition was spent.");
+  }
+
+  const afterAmmo = beforeAmmo - rounds;
+  let chargeError;
+  try {
+    await weaponItem.update({ "system.shotsLeft": afterAmmo });
+  } catch(error) {
+    chargeError = error;
+  }
+  const observedAmmo = Number(weaponItem.system.shotsLeft);
+  if(observedAmmo !== afterAmmo) {
+    await removeSuppressiveRegion(scene, region);
+    if(observedAmmo !== beforeAmmo) {
+      throw suppressiveTransactionError("The pending suppressive-fire zone was removed, but the ammunition update has an uncertain result. Ask the GM to reconcile ammunition before trying again.", chargeError);
+    }
+    return failPlacement(chargeError, "Ammunition could not be spent. The pending zone was removed; the attack was canceled.");
+  }
+
+  let activationError;
+  try {
+    await region.update({
+      [`flags.${scope}.suppressiveFire`]: suppression,
+      [`flags.${scope}.-=suppressiveFirePending`]: null
+    });
+  } catch(error) {
+    activationError = error;
+  }
+  const liveRegion = scene.regions.get(region.id);
+  if(liveRegion?.flags?.[scope]?.suppressiveFire) {
+    // Both writes may have persisted despite a rejected acknowledgement.
+    // Treat the verified zone + debit as success, never charge a second time.
+    if(chargeError || activationError) {
+      globalThis.ui?.notifications?.warn?.("Suppressive fire was placed and ammunition spent, although a write reported an error. Do not repeat this attack.");
+    }
+    return true;
+  }
+
+  await removeSuppressiveRegion(scene, region);
+  if(Number(weaponItem.system.shotsLeft) !== afterAmmo) {
+    throw suppressiveTransactionError("The failed suppressive-fire zone was removed, but ammunition changed before the refund. No ammunition was overwritten; ask the GM to reconcile it before trying again.", activationError);
+  }
+  let refundError;
+  try {
+    await weaponItem.update({ "system.shotsLeft": beforeAmmo });
+  } catch(error) {
+    refundError = error;
+  }
+  if(Number(weaponItem.system.shotsLeft) !== beforeAmmo) {
+    throw suppressiveTransactionError("The failed suppressive-fire zone was removed, but its ammunition refund could not be confirmed. Ask the GM to reconcile ammunition before trying again.", refundError || activationError);
+  }
+  return failPlacement(activationError, "The suppressive-fire zone could not be activated. The pending zone was removed and ammunition restored.");
+}
+
+async function removeSuppressiveRegion(scene, region) {
+  if(!scene.regions.get(region.id)) return;
+  let deletionError;
+  try {
+    await region.delete();
+  } catch(error) {
+    deletionError = error;
+  }
+  if(scene.regions.get(region.id)) {
+    throw suppressiveTransactionError(`Suppressive-fire rollback failed for ${region.uuid || region.id}. Ask the GM to remove this pending zone and check ammunition; do not repeat the attack.`, deletionError);
+  }
+}
+
+function suppressiveTransactionError(message, cause) {
+  const error = new Error(message, cause ? { cause } : undefined);
+  error.nonRetryable = true;
+  return error;
 }

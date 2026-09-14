@@ -31,7 +31,9 @@ jobs:
         run: npx --yes handlebars@4.7.8 $(find templates -type f -name '*.hbs' -print | sort) -f /tmp/cyberpunk2020-templates.js
 
       - name: Run combat and UI contract suite
-        run: node tests/run-combat-fixtures.mjs
+        run: |
+          node tests/run-combat-fixtures.mjs
+          node --test tests/attack-*.test.mjs tests/saves-manual.test.mjs tests/suppressive-placement-transaction.test.mjs
 
       - name: Validate catalog semantics and safe world migration
         run: |

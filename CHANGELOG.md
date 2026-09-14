@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.0] - 2026-09-08
 
+### Save feedback and attack UX (2026-09-14)
+- Replaced manual Stun/Death's reversed critical/fumble colors with separate explicit roll-under results, sharing thresholds and comparison logic with automated saves. Equality succeeds; the informational roll does not change actor conditions.
+- Reduced the attack form to primary controls and collapsed situational modifiers, with weapon/target summary, optional physical d10 entry and session-only memory of the last valid fire mode.
+- Moved area targeting into the form and limited follow-up placement/configuration to the selected attack mode. Normal shots no longer prompt for suppressive fire; cancellation and invalid input preserve the form without rolling again.
+- Preserved combat preview/confirmation and added regression coverage for manual save feedback, form retry/duplicate submission, target/range handling and cancellable placement.
+- Made suppressive corridor creation and ammunition spending a guarded operation: pending zones remain inactive until charged, recoverable failures roll back, and uncertain outcomes block automatic retry.
+
 ### Catalog quality (2026-09-10)
 - Added canonical JSON sources, reviewed weapon/armor corrections, retained import provenance and a deterministic semantic-audit/build workflow for all declared packs.
 - Restored typed range, skills, magazines, fire modes, reliability, shotgun damage profiles, armor coverage/material/EV and supported protective cyberware. Unsupported or ambiguous records carry explicit manual reasons.
