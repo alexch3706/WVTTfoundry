@@ -2,7 +2,7 @@
   "id": "cyberpunk2020-rilerena",
   "title": "Cyberpunk 2020 (Rilerena fork)",
   "description": "R. Talsorian Games' Cyberpunk 2020 System",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "compatibility": {
     "minimum": "14.365",
     "verified": "14.365",
@@ -255,6 +255,6 @@
   "primaryTokenAttribute": null,
   "secondaryTokenAttribute": null,
   "url": "https://github.com/alexch3706/cyberpunk2020foundry",
-  "manifest": "https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.0/system.json",
-  "download": "https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.0/cyberpunk2020-rilerena-v2.0.0.zip"
+  "manifest": "https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.1/system.json",
+  "download": "https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.1/cyberpunk2020-rilerena-v2.0.1.zip"
 }

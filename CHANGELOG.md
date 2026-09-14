@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2026-09-14
+
+### Fixed
+- Imported the actual skill sorter used when a character/NPC has missing or stale cached skill IDs; sheet preparation no longer throws `sortSkills is not defined`.
+- Keep TokenDocument render context atomic in the legacy ActorSheet workflow, avoiding read-only `_id` writes when opening a token sheet repeatedly or retrying after a failed render.
+- Added executable sheet-preparation and repeated-render regression tests to CI and release checks. This patch does not rerun the world-data migration.
+
 ## [2.0.0] - 2026-09-08
 
 ### Test-release packaging (2026-09-14)

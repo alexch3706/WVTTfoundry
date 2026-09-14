@@ -2,12 +2,12 @@
 
 > *R. Talsorian Games' [Cyberpunk 2020](https://talsorianstore.com/products/cyberpunk-2020) for FoundryVTT. Time to get chromed, and frag some slags.*
 
-A FoundryVTT game system package (version **2.0.0**) targeting **Foundry VTT 14 Stable 7 (build 365)** — not a standalone app. Loaded by Foundry through `system.json`, runs as ES modules in the Foundry client, renders Handlebars sheets, and ships with full item compendia.
+A FoundryVTT game system package (version **2.0.1**) targeting **Foundry VTT 14 Stable 7 (build 365)** — not a standalone app. Loaded by Foundry through `system.json`, runs as ES modules in the Foundry client, renders Handlebars sheets, and ships with full item compendia.
 
 Upgrading an existing world is irreversible without a backup. First normalize a disposable copy on the latest stable V13, take a fresh backup of that copy, and then follow the [V14 upgrade guide](./docs/v14-upgrade-guide.md) before opening it in V14.
 
 The V14 test-release installation manifest is
-[system.json for v2.0.0](https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.0/system.json).
+[system.json for v2.0.1](https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.1/system.json).
 It installs a fixed release archive and does not follow the V13 `main` channel.
 The GitHub prerelease label means that live-world validation is still required.
 

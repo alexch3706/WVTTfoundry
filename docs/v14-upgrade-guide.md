@@ -1,6 +1,6 @@
 # Upgrading a Cyberpunk 2020 World to Foundry V14
 
-This guide covers the `2.0.0` system line on Foundry VTT 14 Stable 7 (`14.365`). The system keeps the same ID, `cyberpunk2020-rilerena`, so an existing world can use it during the core migration.
+This guide covers the `2.0.x` system line on Foundry VTT 14 Stable 7 (`14.365`). The system keeps the same ID, `cyberpunk2020-rilerena`, so an existing world can use it during the core migration.
 
 Do not perform the first V14 launch on the only copy of a campaign. Foundry's core world-data migration is not designed to be downgraded in place.
 
@@ -8,13 +8,19 @@ Do not perform the first V14 launch on the only copy of a campaign. Foundry's co
 
 For the V14 rehearsal, use this version-specific manifest in the system installer:
 
-<https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.0/system.json>
+<https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.1/system.json>
 
 The manifest and ZIP are assets of the same GitHub prerelease. Its update URL is
 pinned to that release, so a test installation cannot accidentally follow the
 older V13 manifest on `main`. Future test versions or the stable V14 channel must
 be selected explicitly. GitHub marks this release as a prerelease, but the
-Foundry package version remains numeric `2.0.0` for its package-version schema.
+Foundry package version remains numeric `2.0.1` for its package-version schema.
+
+Version `2.0.1` fixes sheet startup when the skill cache is missing/stale and
+repeated token-sheet rendering after an error. Since `2.0.0` used a pinned
+manifest, select the new `2.0.1` installation URL explicitly, then reload the
+browser so it loads the new client modules. No additional world-data migration
+is introduced by this patch; the schema migration version stays `2.0.0`.
 
 The release workflow permits this pinned test channel only at the current
 `feature/v14-compat` tip; it does not merge that branch or change GitHub Latest.

@@ -34,6 +34,7 @@ jobs:
         run: |
           node tests/run-combat-fixtures.mjs
           node --test tests/attack-*.test.mjs tests/saves-manual.test.mjs tests/suppressive-placement-transaction.test.mjs
+          node --test tests/actor-sheet-*.test.mjs
 
       - name: Validate catalog semantics and safe world migration
         run: |

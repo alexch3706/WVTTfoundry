@@ -1,12 +1,13 @@
 import { fireModes, martialOptions, meleeAttackTypes, meleeBonkOptions, rangedModifiers, weaponTypes } from "../lookups.js"
 import { localize, localizeParam } from "../utils.js"
 import { ModifiersDialog } from "../dialog/modifiers.js"
-import { SortOrders } from "./skill-sort.js";
+import { SortOrders, sortSkills } from "./skill-sort.js";
 import { buildInitialAttackTargets, executeAttackFromForm, supportsAreaTargeting } from "../combat/attack-workflow.js";
 import { getAttackDieEntryMode, isCorebookFidelityEnabled } from "../combat/settings-helpers.js";
 import { buildWoundStateHints } from "./wound-hints.js";
 import { buildArmorRepairUpdate, getArmorItemStatus, getCyberwareArmorStatus } from "../combat/armor-maintenance.js";
 import { resolveActorSheetLayout } from "./actor-sheet-layout.js";
+import { prepareActorSheetRenderOptions } from "./actor-sheet-render.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -31,7 +32,7 @@ export class CyberpunkActorSheet extends ActorSheet {
 
   /** @override */
   async _render(force=false, options={}) {
-    await super._render(force, options);
+    await super._render(force, prepareActorSheetRenderOptions(this, force, options));
     this._applyActorSheetLayout();
   }
 
