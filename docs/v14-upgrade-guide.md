@@ -4,6 +4,22 @@ This guide covers the `2.0.0` system line on Foundry VTT 14 Stable 7 (`14.365`).
 
 Do not perform the first V14 launch on the only copy of a campaign. Foundry's core world-data migration is not designed to be downgraded in place.
 
+## Test-release installation link
+
+For the V14 rehearsal, use this version-specific manifest in the system installer:
+
+<https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.0/system.json>
+
+The manifest and ZIP are assets of the same GitHub prerelease. Its update URL is
+pinned to that release, so a test installation cannot accidentally follow the
+older V13 manifest on `main`. Future test versions or the stable V14 channel must
+be selected explicitly. GitHub marks this release as a prerelease, but the
+Foundry package version remains numeric `2.0.0` for its package-version schema.
+
+The release workflow permits this pinned test channel only at the current
+`feature/v14-compat` tip; it does not merge that branch or change GitHub Latest.
+Stable releases retain the `main` ancestry and manifest-equality checks.
+
 ## Before the upgrade
 
 1. Stop the world and make a complete, restorable backup of its world-data directory. On Forge, also use the provider's backup/export facility.

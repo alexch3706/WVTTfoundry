@@ -6,6 +6,11 @@ A FoundryVTT game system package (version **2.0.0**) targeting **Foundry VTT 14 
 
 Upgrading an existing world is irreversible without a backup. First normalize a disposable copy on the latest stable V13, take a fresh backup of that copy, and then follow the [V14 upgrade guide](./docs/v14-upgrade-guide.md) before opening it in V14.
 
+The V14 test-release installation manifest is
+[system.json for v2.0.0](https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.0/system.json).
+It installs a fixed release archive and does not follow the V13 `main` channel.
+The GitHub prerelease label means that live-world validation is still required.
+
 The `2.0.0` migration covers world Actors/Items, unlinked-token Actor data, and world-owned compendia (including locked packs and Adventure contents). It fails without stamping completion if a persistence operation is rejected, a pack cannot be confirmed relocked, or Foundry reports an uninitialized/invalid World or embedded document. Existing compendium IDs and paths remain unchanged.
 
 Weapon and armor compendia now distinguish checked mechanical data from records

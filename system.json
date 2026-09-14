@@ -255,6 +255,6 @@
   "primaryTokenAttribute": null,
   "secondaryTokenAttribute": null,
   "url": "https://github.com/alexch3706/cyberpunk2020foundry",
-  "manifest": "https://raw.githubusercontent.com/alexch3706/cyberpunk2020foundry/main/system.json",
+  "manifest": "https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.0/system.json",
   "download": "https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.0/cyberpunk2020-rilerena-v2.0.0.zip"
 }

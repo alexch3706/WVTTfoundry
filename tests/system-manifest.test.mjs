@@ -43,6 +43,10 @@ export async function runSystemManifestTests() {
   }
 
   const expectedAsset = `${SYSTEM_ID}-v${manifest.version}.zip`;
+  assert.ok([
+    "https://raw.githubusercontent.com/alexch3706/cyberpunk2020foundry/main/system.json",
+    `https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v${manifest.version}/system.json`
+  ].includes(manifest.manifest), "update channel must be stable main or this version's pinned test release");
   assert.ok(
     String(manifest.download || "").endsWith(`/v${manifest.version}/${expectedAsset}`),
     "download must point at the immutable release asset for this manifest version"

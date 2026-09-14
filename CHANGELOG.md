@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.0.0] - 2026-09-08
 
+### Test-release packaging (2026-09-14)
+- Publish the V14 feature-branch build as an explicitly marked prerelease with a root-level installable ZIP, checksum and version-pinned manifest. Keep the V13 main/update channel unchanged.
+
 ### Save feedback and attack UX (2026-09-14)
 - Replaced manual Stun/Death's reversed critical/fumble colors with separate explicit roll-under results, sharing thresholds and comparison logic with automated saves. Equality succeeds; the informational roll does not change actor conditions.
 - Reduced the attack form to primary controls and collapsed situational modifiers, with weapon/target summary, optional physical d10 entry and session-only memory of the last valid fire mode.
