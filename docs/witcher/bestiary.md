@@ -2,23 +2,24 @@
 
 Source: supplied Core Rulebook v1.35. References below use **printed** pages;
 the audit also records PDF pages. This is a complete collection of source
-records. Creature automation remains under development. No live Foundry run
+records. Ordinary attacks are included in this alpha; active creature abilities
+are deferred by the owner. No live Foundry run
 has been performed.
 
 ## Contents: 36 Actors, 253 embedded Items
 
-| Pages | Actors |
-| --- | --- |
-| 270–275 | Bandit, Mage, Scoia’tael Archer |
-| 276–281 | Drowner, Ghoul, Grave Hag |
-| 282–285 | Wraith, Noonwraith |
-| 286–289 | Wolf, Warg, Werewolf |
-| 290–293 | Siren, Griffin |
-| 294–297 | Endrega Worker, Warrior, Drone, Queen; Arachas |
-| 298–303 | Golem, Fiend, Nekker, Nekker Chieftain |
-| 304–309 | Rock Troll, Wyvern, Katakan |
-| 310–313 | Cat, Dog, Bird, Serpent, Horse, War Horse, Ox, Mule |
-| 318, 321–322 | Woolabag, “Crucible” Kowal, Lord Nowak |
+| Pages        | Actors                                              |
+| ------------ | --------------------------------------------------- |
+| 270–275      | Bandit, Mage, Scoia’tael Archer                     |
+| 276–281      | Drowner, Ghoul, Grave Hag                           |
+| 282–285      | Wraith, Noonwraith                                  |
+| 286–289      | Wolf, Warg, Werewolf                                |
+| 290–293      | Siren, Griffin                                      |
+| 294–297      | Endrega Worker, Warrior, Drone, Queen; Arachas      |
+| 298–303      | Golem, Fiend, Nekker, Nekker Chieftain              |
+| 304–309      | Rock Troll, Wyvern, Katakan                         |
+| 310–313      | Cat, Dog, Bird, Serpent, Horse, War Horse, Ox, Mule |
+| 318, 321–322 | Woolabag, “Crucible” Kowal, Lord Nowak              |
 
 The pack is GM-visible by default. Actors contain printed stats, attacks,
 abilities, vulnerabilities and loot. Their prototype tokens are unlinked.
@@ -36,12 +37,18 @@ a GM choice.
   immunities, fire weakness, regeneration/Fury and incorporeality affect combat.
 - Arachas Back has SP 10 and Rock Troll Stomach SP 5. Aimed weak-spot attacks
   remove natural DR and wear the separate weak-spot armor value.
-- Tongue, Webbing, Charge, Thrown Boulder, Spit Venom and Dust Devil use attack
-  entries. Shift is an additional defense; Crushing Force prevents parries and
-  doubles wear. A bladed parry can sever the Grave Hag's tongue.
-- Dedicated actions cover camouflage, invisibility, flight/swimming state,
-  sonic screech, drone quills, hypnosis and group ambush rolls. Commands,
-  telepathy and illusion descriptions are posted with their applicable action.
+- Crushing Force prevents parries and increases weapon/armor wear. A bladed
+  parry can sever the Grave Hag's tongue.
+- Core does not print natural weapon Reliability. Maximum REL 0 explicitly
+  means unspecified: attacks/parries are usable, but a block or fumble that
+  damages the weapon requires a GM-specified current/max REL (Journal p.12).
+  Configured natural weapons wear and become unusable at REL 0. Regeneration
+  restores 1 REL per day of rest.
+
+Earlier experimental handlers for active creature abilities remain in source;
+those controls are not presented as completed features in this release. Their
+source descriptions stay on the sheet. Additional weapon-shaped ability entries
+retain their data; ordinary printed attacks are the current acceptance target.
 
 ## Remaining automation
 

@@ -7,10 +7,12 @@ import {
   HUMANOID_LOCATIONS,
   MONSTER_LOCATIONS,
 } from './config.js';
-import { armorAt, stackArmor, validateLocations, RuleError } from './rules.js';
-import { actorSnapshot } from './documents.js';
+import { armorAt, stackArmor, validateLocations, strikeProfile, shieldStrike } from './rules.js';
+import { actorSnapshot, itemSnapshot } from './documents.js';
 import { attack } from './combat.js';
-import { skillRoll, save, input, prompt, escapeHTML as e, errorNotice, serial } from './runtime.js';
+import { skillRoll, input, prompt, escapeHTML as e, errorNotice, serial, turnIdentity } from './runtime.js';
+import { setInventory, handsUsed } from './inventory.js';
+import { runCommand } from './authority.js';
 import { prepareActorSheetRenderOptions } from '../actor/actor-sheet-render.js';
 import { turnAction, treat, craft, useItem, enhance, repair } from './activities.js';
 import { controlMount, fall } from './transport.js';
@@ -25,6 +27,139 @@ const options = (values) => Object.fromEntries(values.map((v) => [v, v]));
 const title = (v) => v.replace(/([A-Z])/g, ' $1').replace(/^./, (c) => c.toUpperCase());
 const pathInput = (path, label, value, config = {}) => input(path, label, { value, ...config });
 
+function combatBudget(actor) {
+  const combat = game.combat,
+    active = !!combat?.started,
+    s = actor.system,
+    roundKey = active ? `${combat.id}:${combat.round}` : '',
+    current = active && s.combat.key === turnIdentity(),
+    currentRound = active && s.combat.roundKey === roundKey,
+    actions = current ? s.combat.actions : 0,
+    extra = current ? s.combat.extra : 0,
+    defenses = currentRound ? s.combat.defenses : 0;
+  return {
+    active,
+    ownTurn: active && combat.combatant?.actor?.uuid === actor.uuid,
+    normalRemaining: Math.max(0, 1 - actions),
+    extraRemaining: Math.max(0, 1 - extra),
+    actions,
+    extra,
+    extraCost: s.traits.infiniteStamina ? 0 : 3,
+    defenses,
+    remaining: current ? s.combat.remaining : 0,
+    nextDefenseCost:
+      !defenses || s.conditions.includes('activelyDodging') || s.traits.infiniteStamina ? 0 : 1,
+  };
+}
+
+function inventoryRow(item, actor) {
+  const s = item.system,
+    natural = !!s.properties.natural,
+    weapon = ['weapon', 'shield'].includes(item.type) && !s.isAmmo,
+    minor = !!actor && actor.type !== 'character' && !actor.system.majorNpc,
+    normalOnly = minor || ['crossbow', 'bomb', 'trap', 'naturalRanged'].includes(s.category),
+    isReady = natural
+      ? !s.jammed && (s.maxReliability <= 0 || s.reliability > 0)
+      : s.equipped && s.carried && s.quantity >= 1 && s.reliability > 0 && !s.jammed,
+    styles = weapon ? (normalOnly ? ['normal'] : ['fast', 'strong']) : [],
+    gripChoices = [
+      { value: 0, label: `Printed (${s.hands})` },
+      { value: 1, label: '1 hand' },
+    ];
+  if (item.type !== 'shield') gripChoices.push({ value: 2, label: '2 hands' });
+  return {
+    id: item.id,
+    name: item.name,
+    img: item.img,
+    type: item.type,
+    system: s,
+    totalWeight: Number((s.weight * s.quantity).toFixed(2)),
+    isWeapon: weapon,
+    isNatural: natural,
+    reliabilityUnspecified: natural && s.maxReliability <= 0,
+    showReliability: !natural || s.maxReliability > 0,
+    isCrossbow: s.category === 'crossbow',
+    isReady,
+    attackDisabled: isReady ? '' : 'disabled',
+    reloadDisabled: s.loaded ? 'disabled' : '',
+    canEquip: !natural && ['weapon', 'shield', 'armor', 'gear'].includes(item.type),
+    canRepair: !natural && ['weapon', 'shield', 'armor'].includes(item.type),
+    showGrip: weapon && !natural && s.equipped,
+    grip: handsUsed(item),
+    gripChoices: gripChoices.map((choice) => ({
+      ...choice,
+      selectedAttribute: Number(s.handsUsed) === choice.value ? 'selected' : '',
+    })),
+    damageLabel:
+      item.type === 'shield' && actor
+        ? shieldStrike(itemSnapshot(item), actor.system.derived.stats.body).damage
+        : s.damage,
+    attackBase: actor && weapon ? actor.skillBase(s.skill, { stat: s.stat }).total + s.accuracy : null,
+    attackStyles: styles.map((style) => {
+      const profile = strikeProfile(itemSnapshot(item), {
+        style,
+        npc: minor,
+        underwater: actor?.system.environment.underwater,
+      });
+      return {
+        itemId: item.id,
+        disabledAttribute: isReady ? '' : 'disabled',
+        style,
+        label:
+          style === 'normal'
+            ? minor
+              ? `Attack · ROF ${profile.attacks}`
+              : 'Attack'
+            : `${title(style)} · ${profile.attacks} strike${profile.attacks > 1 ? 's' : ''}`,
+        hint:
+          style === 'strong'
+            ? '−3 attack; double damage'
+            : style === 'fast'
+              ? 'Normal damage per strike'
+              : 'Normal attack',
+      };
+    }),
+    isDiagram: item.type === 'diagram',
+    isUsable:
+      ['alchemical', 'enhancement', 'gear'].includes(item.type) ||
+      (item.type === 'component' && s.ability.key === 'crushEssence'),
+    useLabel:
+      s.ability.key === 'crushEssence'
+        ? 'Process'
+        : s.category === 'mutagen'
+          ? 'Prepare mutagen'
+          : item.type === 'enhancement'
+            ? 'Apply'
+            : 'Use',
+  };
+}
+
+async function changeInventory(actor, item, patch) {
+  const drawing =
+      ['weapon', 'shield'].includes(item.type) &&
+      !item.system.properties.natural &&
+      patch.equipped &&
+      !item.system.equipped,
+    budget = combatBudget(actor);
+  let action = {};
+  if (drawing && budget.active && (budget.actions > 0 || budget.remaining > 0)) {
+    action = await prompt(
+      `Draw ${item.name}`,
+      '<p>Drawing a weapon uses an action.</p>' +
+        input('extra', `Use the extra action (${actor.system.traits.infiniteStamina ? 0 : 3} STA)`, {
+          type: 'checkbox',
+          checked: budget.actions > 0,
+        }) +
+        (budget.remaining > 0
+          ? input('forfeit', `Forfeit ${budget.remaining} remaining strike(s)`, { type: 'checkbox' })
+          : ''),
+      { button: 'Draw weapon' }
+    );
+    if (!action) return;
+  }
+  return setInventory(actor, item, patch, action);
+}
+
 export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
@@ -33,6 +168,7 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
       width: 1000,
       height: 850,
       tabs: [{ navSelector: '.sheet-tabs', contentSelector: '.sheet-body', initial: 'combat' }],
+      dragDrop: [{ dragSelector: '.inventory-table .item', dropSelector: null }],
     });
   }
   async _render(force = false, options = {}) {
@@ -46,6 +182,7 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
     data.system = s;
     data.isMonster = actor.type === 'monster';
     data.isNpc = actor.type !== 'character';
+    data.combatBudget = combatBudget(actor);
     data.skillMaximum = actor.type === 'character' ? 10 : 100;
     data.statRows = STATS.map((key) => ({
       key,
@@ -59,21 +196,13 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
       stat: stat.toUpperCase(),
       difficult: difficult === 2,
       rank: s.skills[key],
+      maximum: data.skillMaximum,
       base: actor.skillBase(key).total,
     }));
     data.inventory = actor.items
       .filter((i) => !['wound', 'ability'].includes(i.type))
-      .map((item) => ({
-        id: item.id,
-        name: item.name,
-        img: item.img,
-        type: item.type,
-        system: item.system,
-        totalWeight: Number((item.system.weight * item.system.quantity).toFixed(2)),
-        isWeapon: item.type === 'weapon' && !item.system.isAmmo,
-        isDiagram: item.type === 'diagram',
-        isUsable: ['alchemical', 'enhancement', 'gear', 'mount'].includes(item.type),
-      }));
+      .map((item) => inventoryRow(item, actor));
+    data.weapons = data.inventory.filter((item) => item.isWeapon);
     data.creatureAbilities = actor.items
       .filter((i) => i.type === 'ability')
       .map((i) => ({
@@ -149,18 +278,7 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
         type: 'checkbox',
         checked: s.meteoriteVulnerable,
       }) +
-      pathInput('system.ignoredEV', 'Ignored armor EV', s.ignoredEV) +
-      pathInput('system.mountUuid', 'Mount / vehicle', s.mountUuid, {
-        options: {
-          '': 'On foot',
-          ...Object.fromEntries(
-            [
-              ...game.actors.filter((a) => a.isOwner && a.uuid !== actor.uuid),
-              ...actor.items.filter((i) => i.type === 'mount'),
-            ].map((doc) => [doc.uuid, doc.name])
-          ),
-        },
-      });
+      pathInput('system.ignoredEV', 'Ignored armor EV', s.ignoredEV);
     if (actor.type === 'monster')
       data.setup += pathInput('system.category', 'Monster category', s.category, {
         options: optionsMap([
@@ -224,19 +342,23 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
       el.addEventListener('change', (event) => {
         event.stopPropagation();
         const item = this.actor.items.get(el.dataset.itemId);
-        const value =
-          el.type === 'checkbox' ? el.checked : el.type === 'number' ? Number(el.value) : el.value;
-        if (item?.isOwner) item.update({ ['system.' + el.dataset.itemField]: value }).catch(errorNotice);
+        const value = el.type === 'checkbox' ? el.checked : Number(el.value);
+        if (!item?.isOwner) return;
+        el.disabled = true;
+        changeInventory(this.actor, item, { [el.dataset.itemField]: value })
+          .catch(errorNotice)
+          .finally(() => this.render(false));
       })
     );
   }
-  async _action({ witcher: action, key, itemId }) {
+  async _action({ witcher: action, key, itemId, style }) {
     const actor = this.actor,
       item = actor.items.get(itemId);
     if (action === 'skill')
       return serial(actor.uuid, () => skillRoll(actor, key, { title: SKILLS[key]?.[0] ?? key }));
     if (action === 'improve') return serial(actor.uuid, () => actor.improveSkill(key));
-    if (action === 'attack') return attack(actor, item);
+    if (action === 'attack') return attack(actor, item, { style });
+    if (action === 'equip') return changeInventory(actor, item, { equipped: !item.system.equipped });
     if (action === 'unarmed') return attack(actor, null, { action: key });
     if (action === 'item') return item?.sheet.render(true);
     if (action === 'delete') {
@@ -249,17 +371,13 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
       return Item.create({ name: 'New ' + key, type: key }, { parent: actor, renderSheet: true });
     if (action === 'turn') return turnAction(actor, key, item);
     if (action === 'save') {
+      if (key !== 'death') return runCommand('combatSave', { actorUuid: actor.uuid, kind: key, luck: 0 });
       const values = await prompt(
-        `${key} save`,
-        input('modifier', 'Modifier', { value: 0 }) +
-          (key === 'death'
-            ? input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value })
-            : '')
+        'Death save',
+        input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value })
       );
       if (values)
-        return serial(actor.uuid, () =>
-          save(actor, key, { modifier: Number(values.modifier), luck: Number(values.luck ?? 0) })
-        );
+        return runCommand('combatSave', { actorUuid: actor.uuid, kind: key, luck: Number(values.luck) });
     }
     if (action === 'treat') return treat(actor, item);
     if (action === 'craft') return craft(actor, item);
@@ -391,6 +509,8 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
     const data = await super.getData(options);
     const item = this.item,
       s = item.system;
+    data.inventoryItem = inventoryRow(item, item.actor);
+    data.owned = !!item.actor;
     const num = (key, label = title(key)) =>
       pathInput('system.' + key, label, foundry.utils.getProperty(s, key));
     const str = (key, label = title(key), choices) =>
@@ -400,15 +520,16 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
       });
     const checkbox = (key, label = title(key)) =>
       input('system.' + key, label, { type: 'checkbox', checked: foundry.utils.getProperty(s, key) });
-    data.common =
-      num('quantity') +
-      num('weight', 'Weight per unit (kg)') +
-      num('cost', 'Price per unit (crowns)') +
-      checkbox('carried') +
-      checkbox('equipped') +
-      str('category') +
-      str('availability') +
-      str('concealment');
+    data.common = s.properties.natural
+      ? str('category')
+      : num('quantity') +
+        num('weight', 'Weight per unit (kg)') +
+        num('cost', 'Price per unit (crowns)') +
+        checkbox('carried') +
+        (data.inventoryItem.canEquip ? checkbox('equipped') : '') +
+        str('category') +
+        str('availability') +
+        str('concealment');
     const fields = [];
     if (item.type === 'weapon')
       fields.push(
@@ -417,24 +538,32 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
         str('damage', 'Damage formula'),
         str('damageTypes', 'Damage types (comma-separated)'),
         num('accuracy'),
-        num('reliability'),
-        num('maxReliability'),
-        num('hands'),
         num('range', 'Range (m)'),
         num('rangeBodyMultiplier', 'Range × BODY (0 = fixed range)'),
         num('rof', 'NPC rate of fire'),
-        num('enhancements', 'Enhancement slots'),
-        checkbox('loaded'),
-        checkbox('jammed'),
-        str('ammoId', 'Ammunition', {
-          '': 'None',
-          ...Object.fromEntries(
-            (item.actor?.items.filter((i) => i.system.isAmmo) ?? []).map((i) => [
-              i.id,
-              `${i.name} (${i.system.quantity})`,
-            ])
-          ),
-        })
+        ...(!s.properties.natural
+          ? [
+              num('reliability'),
+              num('maxReliability'),
+              num('hands'),
+              num('enhancements', 'Enhancement slots'),
+            ]
+          : []),
+        ...(s.category === 'crossbow' ? [checkbox('loaded')] : []),
+        ...(!s.properties.natural ? [checkbox('jammed')] : []),
+        ...(['bow', 'crossbow'].includes(s.category)
+          ? [
+              str('ammoId', 'Ammunition', {
+                '': 'None',
+                ...Object.fromEntries(
+                  (item.actor?.items.filter((i) => i.system.isAmmo) ?? []).map((i) => [
+                    i.id,
+                    `${i.name} (${i.system.quantity})`,
+                  ])
+                ),
+              }),
+            ]
+          : [])
       );
     if (item.type === 'shield')
       fields.push(
@@ -442,7 +571,25 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
         num('maxReliability'),
         num('hands'),
         num('ev'),
+        str('armorClass', 'Shield size', optionsMap(['light', 'medium', 'heavy'])),
+        num('enhancements', 'Enhancement slots'),
         str('skill', 'Defense skill', Object.fromEntries(Object.entries(SKILLS).map(([k, v]) => [k, v[0]])))
+      );
+    if (item.type === 'weapon' && s.properties.natural)
+      fields.push(
+        num('reliability', 'Current REL'),
+        num('maxReliability', 'Maximum REL (0 = not specified)'),
+        checkbox('jammed')
+      );
+    if (['weapon', 'shield'].includes(item.type) && !s.properties.natural)
+      fields.push(
+        str('handsUsed', 'Grip', {
+          0: 'Printed grip',
+          1: 'One hand',
+          ...(item.type === 'weapon' ? { 2: 'Two hands' } : {}),
+        }),
+        str('school', 'Witcher school'),
+        checkbox('witcherWeapon', 'Witcher weapon')
       );
     if (item.type === 'armor' || item.type === 'enhancement')
       fields.push(
@@ -479,6 +626,7 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
         num('duration', 'Duration (rounds)'),
         checkbox('consumable')
       );
+    if (s.category === 'mutagen') fields.push(num('craftDC', 'Preparation Alchemy DC'));
     if (item.type === 'diagram')
       fields.push(
         str('skill', 'Crafting skill', { crafting: 'Crafting', alchemy: 'Alchemy' }),
@@ -519,8 +667,50 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
             .filter((l) => s.coverage.includes(l.id))
             .map((l) => ({ id: l.id, label: l.label, value: s.sp[l.id] ?? s.stoppingPower }))
         : [];
-    data.materials = item.type === 'diagram' ? s.materials : [];
+    data.materials = s.materials;
+    data.bonuses = Object.entries(s.bonuses).map(([key, value]) => ({
+      label:
+        { hp: 'Health', sta: 'Stamina', meleeBonus: 'Melee damage', vigor: 'Vigor' }[key] ??
+        (STATS.includes(key) ? key.toUpperCase() : title(key)),
+      value: value > 0 ? `+${value}` : String(value),
+    }));
     return data;
+  }
+  activateListeners(html) {
+    super.activateListeners(html);
+    const root = html[0] ?? html;
+    root.querySelectorAll('[data-witcher]').forEach((button) =>
+      button.addEventListener('click', async (event) => {
+        event.preventDefault();
+        const item = this.item,
+          actor = item.actor;
+        if (!actor?.isOwner) return;
+        button.disabled = true;
+        try {
+          switch (button.dataset.witcher) {
+            case 'equip':
+              await changeInventory(actor, item, { equipped: !item.system.equipped });
+              break;
+            case 'attack':
+              await attack(actor, item, { style: button.dataset.style });
+              break;
+            case 'use':
+              await (item.type === 'enhancement' ? enhance(actor, item) : useItem(actor, item));
+              break;
+            case 'craft':
+              await craft(actor, item);
+              break;
+            case 'repair':
+              await repair(actor, item);
+              break;
+          }
+        } catch (error) {
+          errorNotice(error);
+        } finally {
+          this.render(false);
+        }
+      })
+    );
   }
   async _updateObject(event, formData) {
     const data = foundry.utils.expandObject(formData);
@@ -530,6 +720,25 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
           .split(',')
           .map((s) => s.trim())
           .filter(Boolean);
+    if (this.item.actor && data.system) {
+      const patch = {};
+      for (const key of ['quantity', 'carried', 'equipped', 'handsUsed']) {
+        if (!Object.hasOwn(data.system, key)) continue;
+        const value = ['quantity', 'handsUsed'].includes(key) ? Number(data.system[key]) : data.system[key];
+        if (value !== this.item.system[key]) patch[key] = value;
+        delete data.system[key];
+      }
+      if (Object.keys(patch).length) {
+        try {
+          await changeInventory(this.item.actor, this.item, patch);
+        } catch (error) {
+          errorNotice(error);
+          this.render(false);
+          return;
+        }
+        this.render(false);
+      }
+    }
     return this.item.update(data);
   }
 }

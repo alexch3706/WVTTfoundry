@@ -22,6 +22,8 @@ import {
 } from './runtime.js';
 import { isPrimaryActiveGm, resolveFoundryUuid } from '../foundry-compat.js';
 import { deployMount } from './transport.js';
+import { registerCommand, authorizedActor, runCommand } from './authority.js';
+import { validateReload, validateWeaponGrip } from './inventory.js';
 
 const now = () => game.time.worldTime;
 const has = (actor, key) => actor.system.conditions.includes(key);
@@ -38,72 +40,119 @@ const positiveProps = (props) =>
     Object.entries(props).filter(([, value]) => value !== false && value !== 0 && value !== '')
   );
 
-export async function turnAction(actor, key, item) {
+export async function turnAction(actor, key, item, options = {}) {
   owner(actor);
-  return serial(actor.uuid, async () => {
-    if (key === 'tick') {
-      if (!game.user.isGM) throw new RuleError('The active GM processes recurring effects.');
-      return tickActor(actor, `manual:${foundry.utils.randomID()}`);
+  if (key === 'endCondition') {
+    const choices = Object.fromEntries(
+      actor.system.conditions.map((condition) => [condition, CONDITIONS[condition]])
+    );
+    const values = await prompt(
+      'End a condition',
+      input('condition', 'Condition', { options: choices }) +
+        input('extra', 'Extra action: 3 STA, −3', { type: 'checkbox' })
+    );
+    if (!values) return;
+    options = { ...options, condition: values.condition, extra: values.extra };
+  }
+  return runCommand(
+    'turnAction',
+    { actorUuid: actor.uuid, key, itemId: item?.id, options },
+    {
+      label: `${actor.name}: ${key}`,
     }
-    if (key === 'stand') {
-      await actor.setCondition('prone', false);
-      await chat(actor, 'Stand up', '<p>Movement spent standing; your action remains available (p.163).</p>');
-      return;
-    }
-    if (key === 'endCondition') return endCondition(actor);
-    const plan = actionPlan(actor, {
-      full: ['recover', 'aim', 'activeDodge', 'run'].includes(key),
-      recovery: key === 'recover',
-    });
-    const changes = { ...plan.changes };
-    let text = '';
-    if (key === 'recover') {
-      const recovered = actor.system.derived.rec + (active(actor, 'Tawny Owl') ? 2 : 0);
-      changes['system.sta.value'] = Math.min(actor.system.sta.max, actor.system.sta.value + recovered);
-      if (has(actor, 'unconscious'))
-        changes['system.unconsciousRecovery'] = actor.system.unconsciousRecovery + recovered;
-      text = `Recover ${recovered} STA.`;
-    } else if (key === 'aim') {
-      changes['system.combat.aim'] = Math.min(3, actor.system.combat.aim + 1);
-      text = `Ranged aiming bonus: +${changes['system.combat.aim']}.`;
-    } else if (key === 'unjam') {
-      if (!item?.system.jammed) throw new RuleError('This weapon is not jammed or stuck.');
-      await commitActor(actor, changes, [{ _id: item.id, 'system.jammed': false }]);
-      await chat(actor, 'Weapon freed', `<p>${e(item.name)} is usable again.</p>`);
-      return;
-    } else if (key === 'activeDodge') {
-      changes['system.conditions'] = [...new Set([...actor.system.conditions, 'activelyDodging'])];
-      text = 'Melee attackers take −2; additional defenses cost no STA until your next turn.';
-    } else if (key === 'run')
-      text = `Run up to ${Math.ceil(actor.system.derived.run / 2) * 2} m on a 2 m grid.`;
-    else if (key === 'reload') {
-      if (item?.system.category !== 'crossbow') throw new RuleError('Select a crossbow to reload.');
-      if (item.system.loaded) throw new RuleError('The crossbow is already loaded.');
-      await commitActor(actor, changes, [{ _id: item.id, 'system.loaded': true }]);
-      await chat(actor, 'Reload', `<p>${e(item.name)} is loaded.</p>`);
-      return;
-    } else throw new RuleError('Unknown turn action.');
-    await commitActor(actor, changes);
-    await chat(actor, key, `<p>${e(text)}</p>`);
-    if (key === 'recover' && has(actor, 'stunned')) await save(actor, 'stun');
-  });
+  );
 }
 
-async function endCondition(actor) {
-  const choices = Object.fromEntries(actor.system.conditions.map((k) => [k, CONDITIONS[k]]));
-  const values = await prompt('End a condition', input('condition', 'Condition', { options: choices }));
-  if (!values) return;
-  const key = values.condition,
-    plan = actionPlan(actor, {
-      full: ['fire', 'blinded', 'stunned', 'unconscious'].includes(key),
-      recovery: ['stunned', 'unconscious'].includes(key),
-    });
+async function performTurnAction(actor, key, item, options, user) {
+  if (key === 'tick') {
+    if (!user.isGM) throw new RuleError('The active GM processes recurring effects.');
+    return tickActor(actor, `manual:${foundry.utils.randomID()}`);
+  }
+  if (key === 'stand') {
+    if (game.combat?.started && game.combat.combatant?.actor?.uuid !== actor.uuid)
+      throw new RuleError('Advance the combat tracker to this actor’s turn first.');
+    if (
+      actor.system.conditions.some((condition) =>
+        ['dead', 'stunned', 'unconscious', 'pinned'].includes(condition)
+      )
+    )
+      throw new RuleError('This condition prevents standing.');
+    if (!has(actor, 'prone')) throw new RuleError('This actor is already standing.');
+    return commitActor(
+      actor,
+      { 'system.conditions': actor.system.conditions.filter((condition) => condition !== 'prone') },
+      [],
+      () => chat(actor, 'Stand up', '<p>Movement spent standing; your action remains available (p.163).</p>')
+    );
+  }
+  if (key === 'endCondition') return endCondition(actor, options.condition, options);
+  const plan = actionPlan(actor, {
+    full: ['recover', 'aim', 'activeDodge', 'run', 'unjam'].includes(key),
+    recovery: key === 'recover',
+    extra: !!options.extra,
+    forfeit: !!options.forfeit,
+  });
+  const changes = { ...plan.changes };
+  let text = '';
+  if (key === 'recover') {
+    const recovered = Math.max(
+      0,
+      Math.min(
+        actor.system.sta.max - actor.system.sta.value,
+        actor.system.derived.rec + (active(actor, 'Tawny Owl') ? 2 : 0)
+      )
+    );
+    changes['system.sta.value'] = Math.min(actor.system.sta.max, actor.system.sta.value + recovered);
+    if (has(actor, 'unconscious'))
+      changes['system.unconsciousRecovery'] = actor.system.unconsciousRecovery + recovered;
+    text = `Recover ${recovered} STA.`;
+  } else if (key === 'aim') {
+    changes['system.combat.aim'] = Math.min(3, actor.system.combat.aim + 1);
+    text = `Ranged aiming bonus: +${changes['system.combat.aim']}.`;
+  } else if (key === 'unjam') {
+    if (!item?.system.jammed) throw new RuleError('This weapon is not jammed or stuck.');
+    validateWeaponGrip(actor.system, item, [...actor.items]);
+    return commitActor(actor, changes, [{ _id: item.id, 'system.jammed': false }], () =>
+      chat(actor, 'Weapon freed', `<p>${e(item.name)} is usable again.</p>`)
+    );
+  } else if (key === 'activeDodge') {
+    changes['system.conditions'] = [...new Set([...actor.system.conditions, 'activelyDodging'])];
+    text = 'Melee attackers take −2; additional defenses cost no STA until your next turn.';
+  } else if (key === 'run')
+    text = `Run up to ${Math.ceil(actor.system.derived.run / 2) * 2} m on a 2 m grid.`;
+  else if (key === 'reload') {
+    if (!item) throw new RuleError('Select a crossbow to reload.');
+    validateReload(actor.system, item, [...actor.items]);
+    return commitActor(actor, changes, [{ _id: item.id, 'system.loaded': true }], () =>
+      chat(actor, 'Reload', `<p>${e(item.name)} is loaded; ${plan.cost ?? 0} STA.</p>`)
+    );
+  } else throw new RuleError('Unknown turn action.');
+  const message = await commitActor(actor, changes, [], () => chat(actor, key, `<p>${e(text)}</p>`));
+  if (key === 'recover' && has(actor, 'stunned')) await save(actor, 'stun');
+  return message;
+}
+
+async function endCondition(actor, key, options = {}) {
+  if (!has(actor, key)) throw new RuleError('This actor no longer has the chosen condition.');
+  const plan = actionPlan(actor, {
+    full: ['fire', 'blinded', 'stunned', 'unconscious'].includes(key),
+    recovery: ['stunned', 'unconscious'].includes(key),
+    extra: !!options.extra,
+    forfeit: !!options.forfeit,
+  });
   if (['stunned', 'unconscious'].includes(key)) {
     await commitActor(actor, plan.changes);
     return save(actor, 'stun');
   }
   const specs = {
-    poison: ['endurance', active(actor, 'Black Venom') ? 16 : active(actor, 'Toxicity') ? 18 : 15],
+    poison: [
+      'endurance',
+      active(actor, 'Black Venom')
+        ? 16
+        : active(actor, 'Toxicity') || active(actor, 'Mutagen Poison')
+          ? 18
+          : 15,
+    ],
     bleeding: ['firstAid', 15],
     frozen: ['physique', 16],
     hallucinating: ['deduction', 15],
@@ -113,16 +162,19 @@ async function endCondition(actor) {
   const result = specs[key]
     ? await check(actor.skillBase(specs[key][0], { modifier: plan.modifier }).total)
     : null;
-  await commitActor(actor, plan.changes);
-  if (!result || beats(result.total, specs[key][1])) await actor.setCondition(key, false);
-  await chat(
-    actor,
-    'End ' + CONDITIONS[key],
-    result
-      ? checkHTML(result) +
-          `<p>DC ${specs[key][1]}. ${beats(result.total, specs[key][1]) ? 'Condition ended.' : 'Condition continues.'}</p>`
-      : '<p>Full round spent clearing the effect.</p>',
-    { rolls: result?.rolls ?? [] }
+  const changes = { ...plan.changes };
+  if (!result || beats(result.total, specs[key][1]))
+    changes['system.conditions'] = actor.system.conditions.filter((condition) => condition !== key);
+  return commitActor(actor, changes, [], () =>
+    chat(
+      actor,
+      'End ' + CONDITIONS[key],
+      result
+        ? checkHTML(result) +
+            `<p>DC ${specs[key][1]}. ${beats(result.total, specs[key][1]) ? 'Condition ended.' : 'Condition continues.'}</p>`
+        : '<p>Full round spent clearing the effect.</p>',
+      { rolls: result?.rolls ?? [] }
+    )
   );
 }
 
@@ -349,10 +401,18 @@ export async function repair(actor, item) {
     (i) => i.type === 'diagram' && materialKey(i.system.productName) === materialKey(item.name)
   );
   if (!diagram) {
-    const pack = game.packs.get(`${SYSTEM_ID}.diagrams`);
-    const index = await pack.getIndex({ fields: ['system.productName'] });
-    const entry = index.find((i) => materialKey(i.system.productName) === materialKey(item.name));
-    if (entry) diagram = await pack.getDocument(entry._id);
+    for (const packName of ['diagrams', 'supplement-tools', 'supplement-journal']) {
+      const pack = game.packs.get(`${SYSTEM_ID}.${packName}`);
+      if (!pack) continue;
+      const index = await pack.getIndex({ fields: ['type', 'system.productName'] });
+      const entry = index.find(
+        (i) => i.type === 'diagram' && materialKey(i.system.productName) === materialKey(item.name)
+      );
+      if (entry) {
+        diagram = await pack.getDocument(entry._id);
+        break;
+      }
+    }
   }
   if (!diagram) throw new RuleError('No matching repair recipe was found.');
   return serial(actor.uuid, () => craftAttempt(actor, diagram, { repairItem: item }));
@@ -430,6 +490,10 @@ export async function enhance(actor, enhancement) {
 export async function useItem(actor, item) {
   owner(actor);
   if (!item || item.system.quantity < 1) throw new RuleError('No item remains to use.');
+  if (item.system.carried === false) throw new RuleError('Carry the item before using it.');
+  if (item.type === 'component' && item.system.ability.key === 'crushEssence')
+    return crushEssence(actor, item);
+  if (item.system.category === 'mutagen') return useMutagen(actor, targetFor(actor), item);
   if (item.type === 'mount') return deployMount(actor, item);
   const throwing = {
     'Acid Solution': { damage: '2d6', properties: { contactAblation: true, area: 2, cone: true } },
@@ -489,6 +553,136 @@ const MUTAGENS = {
   'Golem Mutagen': { vigor: 2 },
   'Siren Mutagen': { vigor: 1 },
 };
+
+export function mutagenModifiers(item) {
+  const s = item.system ?? item;
+  const supplied = Object.fromEntries(
+    Object.entries(s.bonuses ?? {}).filter(([, value]) => Number.isFinite(Number(value)))
+  );
+  const modifiers = Object.keys(supplied).length ? supplied : MUTAGENS[item.name];
+  if (!modifiers || !Object.keys(modifiers).length)
+    throw new RuleError('This mutagen has no mechanical bonus recorded.');
+  return Object.fromEntries(Object.entries(modifiers).map(([key, value]) => [key, Number(value)]));
+}
+
+async function useMutagen(actor, target, item) {
+  owner(target);
+  const values = await prompt(
+    'Prepare mutagen',
+    `<p>${e(item.name)} → ${e(target.name)}.</p><p>Processing and consuming a mutagen takes one hour (p.251). The two permanent mutagen slots cannot be cleared.</p>` +
+      `<p>${e(item.system.effectText)}</p>`,
+    { button: 'One hour completed: prepare and consume' }
+  );
+  if (!values) return;
+  return runCommand(
+    'mutagen',
+    { actorUuid: actor.uuid, targetUuid: target.uuid, itemId: item.id },
+    {
+      label: `${actor.name}: prepare ${item.name}`,
+    }
+  );
+}
+
+async function performMutagen(actor, target, item) {
+  if (game.combat?.started)
+    throw new RuleError('Mutagen preparation takes one hour; finish combat before processing it.');
+  if (
+    item?.type !== 'alchemical' ||
+    item.system.category !== 'mutagen' ||
+    item.system.quantity < 1 ||
+    !item.system.carried
+  )
+    throw new RuleError('Choose a carried mutagen with at least one unit.');
+  const effects = foundry.utils.deepClone(target.system.effects),
+    conditions = new Set(target.system.conditions);
+  const rolls = [];
+  let detail;
+  if (target.system.race !== 'witcher') {
+    conditions.add('poison');
+    effects.push(effect('Mutagen Poison', 0, { dc: 18 }));
+    detail = 'Non-witcher poisoned; Endurance or First Aid DC 18 ends this poison. No mutation bonus gained.';
+  } else {
+    if (effects.filter((entry) => entry.mutagen).length >= 2)
+      throw new RuleError('A witcher already has two permanent mutagens; they cannot be removed (p.251).');
+    const modifiers = mutagenModifiers(item);
+    const result = await check(actor.skillBase('alchemy').total);
+    rolls.push(...result.rolls);
+    const success = beats(result.total, item.system.craftDC);
+    // A repeated source occupies another slot: never replace a previous permanent mutation.
+    if (success)
+      effects.push(effect(item.name, 0, { mutagen: true, modifiers, minorMutation: item.system.notes }));
+    detail = `${checkHTML(result)}<p>Alchemy DC ${item.system.craftDC}: ${success ? 'Permanent mutation applied.' : 'Preparation failed.'}</p>`;
+  }
+  const changes = { 'system.effects': effects, 'system.conditions': [...conditions] };
+  const before = {
+    'system.effects': foundry.utils.deepClone(target.system.effects),
+    'system.conditions': [...target.system.conditions],
+  };
+  if (target.uuid === actor.uuid)
+    await commitActor(actor, changes, [{ _id: item.id, 'system.quantity': item.system.quantity - 1 }]);
+  else {
+    await target.update(changes);
+    try {
+      await commitActor(actor, {}, [{ _id: item.id, 'system.quantity': item.system.quantity - 1 }]);
+    } catch (error) {
+      await target.update(before);
+      throw error;
+    }
+  }
+  return chat(actor, `${item.name} → ${target.name}`, `<p>${e(item.system.effectText)}</p>${detail}`, {
+    rolls,
+  });
+}
+
+export async function crushEssence(actor, item) {
+  owner(actor);
+  const values = await prompt(
+    'Crush Crystallized Essence',
+    '<p>Spend 15 minutes and pass Crafting DC 10 to turn one unit of Crystallized Essence into two units of Infused Dust (Journal p.142).</p>',
+    { button: '15 minutes completed: process' }
+  );
+  if (!values) return;
+  return runCommand(
+    'crushEssence',
+    { actorUuid: actor.uuid, itemId: item.id },
+    { label: `${actor.name}: crush essence` }
+  );
+}
+
+async function performCrushEssence(actor, item) {
+  if (game.combat?.started)
+    throw new RuleError('Crushing essence takes 15 minutes; finish combat before processing it.');
+  const s = item?.system;
+  if (item?.type !== 'component' || s.ability.key !== 'crushEssence' || s.quantity < 1 || !s.carried)
+    throw new RuleError('Choose one carried unit of Crystallized Essence.');
+  const product = await resolveFoundryUuid(s.productUuid);
+  if (!product || product.type !== 'component')
+    throw new RuleError('The Infused Dust compendium entry is unavailable.');
+  const result = await check(actor.skillBase('crafting').total);
+  const success = beats(result.total, s.craftDC);
+  if (success) {
+    const data = product.toObject();
+    delete data._id;
+    data.system.quantity = s.productQuantity;
+    const created = await actor.createEmbeddedDocuments('Item', [data]);
+    try {
+      await commitActor(actor, {}, [{ _id: item.id, 'system.quantity': s.quantity - 1 }]);
+    } catch (error) {
+      await actor.deleteEmbeddedDocuments(
+        'Item',
+        created.map((entry) => entry.id)
+      );
+      throw error;
+    }
+  }
+  return chat(
+    actor,
+    'Crush Crystallized Essence',
+    checkHTML(result) +
+      `<p>Crafting DC ${s.craftDC}: ${success ? `One essence consumed; ${s.productQuantity} Infused Dust created.` : 'Failed; no material converted.'}</p>`,
+    { rolls: result.rolls }
+  );
+}
 async function applyItem(actor, target, item) {
   owner(actor);
   owner(target);
@@ -565,7 +759,10 @@ async function applyItem(actor, target, item) {
       if (!prepared) return;
       const r = await check(actor.skillBase('alchemy').total);
       rolls.push(...r.rolls);
-      if (beats(r.total, s.craftDC)) addEffect(name, 0, { mutagen: true, modifiers: MUTAGENS[name] ?? {} });
+      if (beats(r.total, s.craftDC))
+        effects.push(
+          effect(name, 0, { mutagen: true, modifiers: mutagenModifiers(item), minorMutation: s.notes })
+        );
       else detail = 'Alchemy preparation failed.';
     }
   } else if (s.category === 'oil') {
@@ -780,11 +977,26 @@ export async function expireEffects(actor) {
   });
 }
 export function registerActivities() {
+  registerCommand('mutagen', async ({ actorUuid, targetUuid, itemId }, { user }) => {
+    const actor = await authorizedActor(actorUuid, user),
+      target = await authorizedActor(targetUuid, user);
+    return performMutagen(actor, target, actor.items.get(itemId));
+  });
+  registerCommand('crushEssence', async ({ actorUuid, itemId }, { user }) => {
+    const actor = await authorizedActor(actorUuid, user);
+    return performCrushEssence(actor, actor.items.get(itemId));
+  });
+  registerCommand('turnAction', async ({ actorUuid, key, itemId, options = {} }, { user }) => {
+    const actor = await authorizedActor(actorUuid, user);
+    const item = itemId ? actor.items.get(itemId) : undefined;
+    if (itemId && !item) throw new RuleError('The item is no longer in this inventory.');
+    return performTurnAction(actor, key, item, options, user);
+  });
   Hooks.on('updateCombat', (combat, changes) => {
     if (!isPrimaryActiveGm() || !('turn' in changes || 'round' in changes) || !combat.started) return;
     const actor = combat.combatant?.actor;
     if (!actor) return;
-    serial(actor.uuid, async () => {
+    serial('witcher-authority', async () => {
       const conditions = actor.system.conditions.filter((c) => !['staggered', 'activelyDodging'].includes(c));
       await actor.update({
         'system.conditions': conditions,
@@ -798,7 +1010,8 @@ export function registerActivities() {
     const actors = new Map(game.actors.map((a) => [a.uuid, a]));
     for (const token of canvas.tokens?.placeables ?? [])
       if (token.actor) actors.set(token.actor.uuid, token.actor);
-    for (const actor of actors.values()) serial(actor.uuid, () => expireEffects(actor)).catch(errorNotice);
+    for (const actor of actors.values())
+      serial('witcher-authority', () => expireEffects(actor)).catch(errorNotice);
   });
   Hooks.on('renderChatMessageHTML', (message, html) =>
     html.querySelector('[data-witcher-use]')?.addEventListener('click', () =>

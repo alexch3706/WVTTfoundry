@@ -67,39 +67,75 @@
           data-witcher='turn'
           data-key='stand'
         >Stand up</button></div>
-      <p>Actions:
-        {{system.combat.actions}}
-        normal ·
-        {{system.combat.extra}}
-        extra ·
-        {{system.combat.defenses}}
-        defenses ·
-        {{system.combat.remaining}}
-        strikes remaining. Aim: +{{system.combat.aim}}.</p>
-      <div class='combat-columns'><section><h2>Weapons</h2>{{#each inventory}}{{#if isWeapon}}<div
-                class='weapon-card'
-              ><button type='button' data-witcher='attack' data-item-id='{{id}}'>{{name}}</button><span
-                >{{system.damage}} · REL {{system.reliability}} / {{system.maxReliability}}</span><button
-                  type='button'
-                  class='icon-button'
-                  data-witcher='item'
-                  data-item-id='{{id}}'
-                  title='Edit weapon'
-                >⚙</button><button
-                  type='button'
-                  data-witcher='turn'
-                  data-key='reload'
-                  data-item-id='{{id}}'
-                >Reload</button><button
-                  type='button'
-                  data-witcher='turn'
-                  data-key='unjam'
-                  data-item-id='{{id}}'
-                >Free / unjam</button></div>{{/if}}{{/each}}
-          <div class='action-bar'><button type='button' data-witcher='control'>Mount control</button><button
-              type='button'
-              data-witcher='fall'
-            >Falling damage</button></div>
+      <div class='combat-budget'>
+        {{#if combatBudget.active}}
+          <strong>{{#if combatBudget.ownTurn}}This turn{{else}}Next turn{{/if}}</strong>
+          <span>{{combatBudget.normalRemaining}} normal action available</span>
+          <span>{{combatBudget.extraRemaining}}
+            extra action available ·
+            {{combatBudget.extraCost}}
+            STA / −3</span>
+          <span>{{combatBudget.remaining}} strikes remaining</span>
+          <span>{{combatBudget.defenses}}
+            defenses this round · next:
+            {{combatBudget.nextDefenseCost}}
+            STA</span>
+        {{else}}<strong>Outside combat</strong><span>Start the combat tracker to track actions and defenses.</span>{{/if}}
+        <span>Aim: +{{system.combat.aim}}</span>
+      </div>
+      <div class='combat-columns'><section><h2>Weapons & attacks</h2>
+          {{#each weapons}}
+            <section class='weapon-card'>
+              <header><button type='button' data-witcher='item' data-item-id='{{id}}'>{{name}}</button>
+                {{#if isNatural}}<span>Natural attack</span>{{else}}<span>{{#if
+                      system.equipped
+                    }}Equipped{{else}}Stowed{{/if}}</span>{{/if}}</header>
+              <p class='weapon-profile'>{{damageLabel}}
+                · Attack base
+                {{attackBase}}
+                {{#if showReliability}} · REL {{system.reliability}} / {{system.maxReliability}}{{/if}}
+                {{#if isCrossbow}}
+                  ·
+                  {{system.range}}
+                  m ·
+                  {{#if system.loaded}}Loaded{{else}}Unloaded{{/if}}{{/if}}
+              </p>
+              {{#if reliabilityUnspecified}}<p class='source-note'>REL is not specified in Core. Open this
+                  attack to set the GM's REL value before blocking.</p>{{/if}}
+              {{#if system.effectText}}<p class='item-effect'>{{system.effectText}}</p>{{/if}}
+              <div class='weapon-actions'>
+                {{#if canEquip}}<button type='button' data-witcher='equip' data-item-id='{{id}}'>{{#if
+                      system.equipped
+                    }}Stow{{else}}Equip{{/if}}</button>{{/if}}
+                {{#each attackStyles}}<button
+                    type='button'
+                    data-witcher='attack'
+                    data-item-id='{{itemId}}'
+                    data-style='{{style}}'
+                    title='{{hint}}'
+                    {{disabledAttribute}}
+                  >{{label}}</button>{{/each}}
+                {{#if isCrossbow}}<button
+                    type='button'
+                    data-witcher='turn'
+                    data-key='reload'
+                    data-item-id='{{id}}'
+                    {{reloadDisabled}}
+                  >Reload</button>{{/if}}
+                {{#if system.jammed}}<button
+                    type='button'
+                    data-witcher='turn'
+                    data-key='unjam'
+                    data-item-id='{{id}}'
+                  >Free / unjam</button>{{/if}}
+              </div>
+              {{#if showGrip}}<label class='grip-control'>Grip
+                  <select data-item-id='{{id}}' data-item-field='handsUsed'>{{#each gripChoices}}<option
+                        value='{{value}}'
+                        {{selectedAttribute}}
+                      >{{label}}</option>{{/each}}</select></label>{{/if}}
+            </section>
+          {{else}}<p class='empty-note'>Drag a weapon or creature from a compendium into the game to begin.</p>{{/each}}
           <h2>Saving throws</h2><div class='action-bar'><button
               type='button'
               data-witcher='save'
@@ -156,10 +192,11 @@
         <dt>Intelligence</dt><dd>{{system.bestiary.intelligence}}</dd>
         <dt>Organization</dt><dd>{{system.bestiary.organization}}</dd></dl>
       <h2>Abilities & vulnerabilities</h2>
+      <p class='empty-note'>Creature abilities are outside the current combat scope. Their rules remain
+        available here.</p>
       {{#each creatureAbilities}}<section class='creature-ability'><h3>{{name}}</h3><p>{{text}}</p><p>{{mode}}
             · p.{{page}}</p>
-          <button type='button' data-witcher='ability' data-item-id='{{id}}'>{{#if usable}}Use / toggle{{else}}Open
-              rule{{/if}}</button></section>{{/each}}
+          <button type='button' data-witcher='item' data-item-id='{{id}}'>Open rule</button></section>{{/each}}
       <h2>Loot</h2>
       {{#each system.bestiary.loot}}<p>{{name}}
           ·
@@ -176,7 +213,7 @@
                   name='system.skills.{{key}}'
                   value='{{rank}}'
                   min='0'
-                  max='{{../skillMaximum}}'
+                  max='{{maximum}}'
                 /></td><td>{{base}}</td><td><button type='button' data-witcher='improve' data-key='{{key}}'>+1
                   with IP</button></td></tr>{{/each}}</tbody></table><h2>Profession & custom skills</h2>{{#each
         system.customSkills
@@ -186,40 +223,58 @@
             +
             {{rank}}</button></p>{{/each}}<button type='button' data-witcher='customSkill'>Add skill</button></div>
     <div class='tab' data-group='primary' data-tab='inventory'>
-      <p>Drag items from the compendiums onto this sheet. Equipped armor and held weapons affect combat;
-        carried items contribute to weight.</p>
+      <p>Drag items from a compendium onto this sheet. Equip a weapon, then select a fast or strong attack.
+        Drawing a weapon uses an action in combat. Carried items contribute to weight.</p>
       <div class='action-bar'><button type='button' data-witcher='newItem' data-key='weapon'>New weapon</button><button
           type='button'
           data-witcher='newItem'
           data-key='armor'
         >New armor</button><button type='button' data-witcher='newItem' data-key='gear'>New equipment</button></div>
-      <table class='inventory-table'><thead><tr><th>Item</th><th>Qty</th><th>Carried</th><th>Equipped</th><th
+      <table class='inventory-table'><thead><tr><th>Item</th><th>Qty</th><th>Carried</th><th>Equipped / grip</th><th
             >kg</th><th>Actions</th></tr></thead><tbody>{{#each inventory}}<tr
               class='item'
               data-item-id='{{id}}'
               draggable='true'
             ><td><button type='button' data-witcher='item' data-item-id='{{id}}'>{{name}}</button><small
-                >{{type}}</small></td><td><input
-                  type='number'
-                  min='0'
-                  data-item-id='{{id}}'
-                  data-item-field='quantity'
-                  value='{{system.quantity}}'
-                /></td><td><input
-                  type='checkbox'
-                  data-item-id='{{id}}'
-                  data-item-field='carried'
-                  {{checked system.carried}}
-                /></td><td><input
-                  type='checkbox'
-                  data-item-id='{{id}}'
-                  data-item-field='equipped'
-                  {{checked system.equipped}}
-                /></td><td>{{totalWeight}}</td><td class='item-actions'>{{#if isWeapon}}<button
-                    type='button'
-                    data-witcher='attack'
+                >{{type}}{{#if system.school}} · {{system.school}} school{{/if}}</small>
+                {{#if system.source}}<small>{{system.source}} · p.{{system.page}}</small>{{/if}}
+                {{#if system.priceText}}<small>{{system.priceText}}</small>{{/if}}
+                {{#if system.effectText}}<details class='inventory-effect'><summary>Effect</summary><p
+                    >{{system.effectText}}</p></details>{{/if}}</td><td>{{#if isNatural}}—{{else}}<input
+                    type='number'
+                    min='0'
                     data-item-id='{{id}}'
-                  >Attack</button>{{/if}}{{#if isDiagram}}<button
+                    data-item-field='quantity'
+                    value='{{system.quantity}}'
+                  />{{/if}}</td><td>{{#if isNatural}}—{{else}}<input
+                    type='checkbox'
+                    data-item-id='{{id}}'
+                    data-item-field='carried'
+                    {{checked system.carried}}
+                  />{{/if}}</td><td>{{#if canEquip}}<input
+                    type='checkbox'
+                    data-item-id='{{id}}'
+                    data-item-field='equipped'
+                    {{checked system.equipped}}
+                  />{{else if isNatural}}Natural{{else}}—{{/if}}
+                {{#if showGrip}}<select
+                    data-item-id='{{id}}'
+                    data-item-field='handsUsed'
+                    aria-label='Grip for {{name}}'
+                  >{{#each gripChoices}}<option
+                        value='{{value}}'
+                        {{selectedAttribute}}
+                      >{{label}}</option>{{/each}}</select>{{/if}}
+              </td><td>{{totalWeight}}</td><td class='item-actions'>{{#if isWeapon}}{{#each
+                    attackStyles
+                  }}<button
+                      type='button'
+                      data-witcher='attack'
+                      data-item-id='{{itemId}}'
+                      data-style='{{style}}'
+                      title='{{hint}}'
+                      {{disabledAttribute}}
+                    >{{label}}</button>{{/each}}{{/if}}{{#if isDiagram}}<button
                     type='button'
                     data-witcher='craft'
                     data-item-id='{{id}}'
@@ -227,11 +282,11 @@
                     type='button'
                     data-witcher='use'
                     data-item-id='{{id}}'
-                  >Use</button>{{/if}}<button
-                  type='button'
-                  data-witcher='repair'
-                  data-item-id='{{id}}'
-                >Repair</button><button
+                  >{{useLabel}}</button>{{/if}}{{#if canRepair}}<button
+                    type='button'
+                    data-witcher='repair'
+                    data-item-id='{{id}}'
+                  >Repair</button>{{/if}}<button
                   type='button'
                   data-witcher='delete'
                   data-item-id='{{id}}'
@@ -259,6 +314,9 @@
         bludgeoning, elemental, fire, poison, bleeding.</p><div class='field-grid'>{{{damageTraits}}}</div><h2
       >Environment</h2><div class='field-grid'>{{{environment}}}</div><h2>Derived statistic overrides</h2><div
         class='field-grid'
-      >{{{overrides}}}</div></div>
+      >{{{overrides}}}</div>
+      <details><summary>Deferred combat options</summary><p>Mounted combat and advanced creature actions are
+          not part of the current combat release.</p></details>
+    </div>
   </section>
 </form>

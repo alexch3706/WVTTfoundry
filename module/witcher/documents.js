@@ -104,6 +104,12 @@ export class WitcherActorData extends foundry.abstract.TypeDataModel {
         extra: num(),
         defenses: num(),
         remaining: num(),
+        full: bool(),
+        strikeIndex: num(),
+        attackAction: str(),
+        npcWeaponId: str(),
+        npcStrikes: num(),
+        reactions: new f.ArrayField(new f.ObjectField()),
         weaponId: str(),
         style: str(),
         extraPenalty: num(),
@@ -173,6 +179,8 @@ export class WitcherItemData extends foundry.abstract.TypeDataModel {
       effectText: str(),
       priceText: str(),
       relic: bool(),
+      school: str(),
+      witcherWeapon: bool(),
       bonuses: new f.TypedObjectField(num()),
       forageDC: num(),
       forageLocation: str(),
@@ -200,6 +208,7 @@ export class WitcherItemData extends foundry.abstract.TypeDataModel {
       reliability: num(10, { min: 0 }),
       maxReliability: num(10, { min: 0 }),
       hands: num(1, { integer: true, min: 0, max: 2 }),
+      handsUsed: num(0, { integer: true, min: 0, max: 2 }),
       range: num(),
       rangeBodyMultiplier: num(),
       rof: num(1, { integer: true, min: 1 }),
@@ -500,6 +509,16 @@ export class WitcherActor extends Actor {
       const remaining = Math.max(0, w.system.wound.daysRemaining - days);
       if (remaining === 0) healed.push(w.id);
       else updates.push({ _id: w.id, 'system.wound.daysRemaining': remaining });
+    }
+    if (this.system.traits.regeneration > 0) {
+      for (const item of this.items.filter(
+        (i) => i.type === 'weapon' && i.system.properties.natural && i.system.maxReliability > 0
+      )) {
+        updates.push({
+          _id: item.id,
+          'system.reliability': Math.min(item.system.maxReliability, item.system.reliability + days),
+        });
+      }
     }
     if (updates.length) await this.updateEmbeddedDocuments('Item', updates);
     if (healed.length) await this.deleteEmbeddedDocuments('Item', healed);

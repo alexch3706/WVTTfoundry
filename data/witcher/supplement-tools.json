@@ -1,0 +1,3303 @@
+[
+  {
+    "_id": "1d51fdf60bbc1ddd",
+    "name": "Ursine Steel Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "bear",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 0,
+      "damage": "6d6+2",
+      "hands": 1,
+      "reliability": 15,
+      "maxReliability": 15,
+      "range": 0,
+      "effectText": "Armor Piercing Meteorite Ablating",
+      "properties": {
+        "armorPiercing": true,
+        "meteorite": true,
+        "ablating": true
+      },
+      "concealment": "N/A",
+      "enhancements": 2,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 3,
+      "description": "<p>Armor Piercing Meteorite Ablating</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 3,
+          "table": 0,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "935b0a1b518985bb",
+    "name": "Ursine Silver Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "bear",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 0,
+      "damage": "3d6+2",
+      "hands": 1,
+      "reliability": 10,
+      "maxReliability": 10,
+      "range": 0,
+      "effectText": "Silver (3d6) Ablating",
+      "properties": {
+        "ablating": true,
+        "silver": true,
+        "silverDamage": "3d6"
+      },
+      "concealment": "N/A",
+      "enhancements": 2,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 3,
+      "description": "<p>Silver (3d6) Ablating</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 3,
+          "table": 0,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "0d9c2283b643a708",
+    "name": "Ursine Crossbow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "bear",
+      "category": "crossbow",
+      "skill": "crossbow",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 1,
+      "damage": "4d6+2",
+      "hands": 1,
+      "reliability": 5,
+      "maxReliability": 5,
+      "range": 50,
+      "effectText": "Slow Reload",
+      "properties": {
+        "slowReload": true
+      },
+      "concealment": "L",
+      "enhancements": 1,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 3,
+      "description": "<p>Slow Reload</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 3,
+          "table": 0,
+          "row": 3
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "081ee3d901f1912b",
+    "name": "Ursine Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 24,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "bear",
+      "armorClass": "heavy",
+      "stoppingPower": 20,
+      "sp": {
+        "torso": 20,
+        "rightArm": 20,
+        "leftArm": 20,
+        "rightLeg": 20,
+        "leftLeg": 20
+      },
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "enhancements": 2,
+      "effectText": "Critical Decimation: Whenever you cause a Critical Wound using one of your Witcher weapons you treat that critical injury as one tier higher (for example, a Simple Critical becomes a Complex one)",
+      "ev": 3,
+      "ability": {
+        "key": "criticalDecimation",
+        "mode": "equipment"
+      },
+      "source": "A Witcher’s Tools",
+      "page": 3,
+      "description": "<p>Critical Decimation: Whenever you cause a Critical Wound using one of your Witcher weapons you treat that critical injury as one tier higher (for example, a Simple Critical becomes a Complex one)</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 3,
+          "table": 1,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "24e26098308865d2",
+    "name": "Feline Steel Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "cat",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 2,
+      "damage": "4d6+2",
+      "hands": 1,
+      "reliability": 15,
+      "maxReliability": 15,
+      "range": 0,
+      "effectText": "Armor Piercing Meteorite Bleed (30%)",
+      "properties": {
+        "armorPiercing": true,
+        "meteorite": true,
+        "bleeding": 30
+      },
+      "concealment": "N/A",
+      "enhancements": 2,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 3,
+      "description": "<p>Armor Piercing Meteorite Bleed (30%)</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 3,
+          "table": 2,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "8c2d6e632d637177",
+    "name": "Feline Silver Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "cat",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 2,
+      "damage": "1d6+2",
+      "hands": 1,
+      "reliability": 10,
+      "maxReliability": 10,
+      "range": 0,
+      "effectText": "Silver (3d6) Bleed (30%)",
+      "properties": {
+        "bleeding": 30,
+        "silver": true,
+        "silverDamage": "3d6"
+      },
+      "concealment": "N/A",
+      "enhancements": 2,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 3,
+      "description": "<p>Silver (3d6) Bleed (30%)</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 3,
+          "table": 2,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "b58416f92ba4af00",
+    "name": "Feline Crossbow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "cat",
+      "category": "crossbow",
+      "skill": "crossbow",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 1,
+      "damage": "2d6+2",
+      "hands": 1,
+      "reliability": 5,
+      "maxReliability": 5,
+      "range": 50,
+      "effectText": "Slow Reload Balanced",
+      "properties": {
+        "balanced": true,
+        "slowReload": true
+      },
+      "concealment": "L",
+      "enhancements": 1,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 3,
+      "description": "<p>Slow Reload Balanced</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 3,
+          "table": 2,
+          "row": 3
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "bc7248faaba087be",
+    "name": "Feline Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "cat",
+      "armorClass": "light",
+      "stoppingPower": 6,
+      "sp": {
+        "torso": 6,
+        "rightArm": 6,
+        "leftArm": 6,
+        "rightLeg": 6,
+        "leftLeg": 6
+      },
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "enhancements": 2,
+      "effectText": "Critical Flurry: Whenever you cause a Critical Wound using one of your Witcher weapons you can immediately attempt a Disarm or Trip check at no additional penalty and without spending any extra Stamina.",
+      "ev": 0,
+      "ability": {
+        "key": "criticalFlurry",
+        "mode": "equipment"
+      },
+      "source": "A Witcher’s Tools",
+      "page": 3,
+      "description": "<p>Critical Flurry: Whenever you cause a Critical Wound using one of your Witcher weapons you can immediately attempt a Disarm or Trip check at no additional penalty and without spending any extra Stamina.</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 3,
+          "table": 3,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "2ff00dd5f2d20d58",
+    "name": "Griffin Steel Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "griffin",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 1,
+      "damage": "5d6+2",
+      "hands": 1,
+      "reliability": 15,
+      "maxReliability": 15,
+      "range": 0,
+      "effectText": "Armor Piercing Meteorite Focus (1)",
+      "properties": {
+        "armorPiercing": true,
+        "meteorite": true,
+        "focus": 1
+      },
+      "concealment": "N/A",
+      "enhancements": 2,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 3,
+      "description": "<p>Armor Piercing Meteorite Focus (1)</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 3,
+          "table": 4,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "666a93c037b61a44",
+    "name": "Griffin Silver Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "griffin",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 1,
+      "damage": "2d6+2",
+      "hands": 1,
+      "reliability": 10,
+      "maxReliability": 10,
+      "range": 0,
+      "effectText": "Silver (3d6) Focus (1)",
+      "properties": {
+        "silver": true,
+        "silverDamage": "3d6",
+        "focus": 1
+      },
+      "concealment": "N/A",
+      "enhancements": 2,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 3,
+      "description": "<p>Silver (3d6) Focus (1)</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 3,
+          "table": 4,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "3049197307e0d535",
+    "name": "Griffin Crossbow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "griffin",
+      "category": "crossbow",
+      "skill": "crossbow",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 1,
+      "damage": "2d6+2",
+      "hands": 1,
+      "reliability": 5,
+      "maxReliability": 5,
+      "range": 50,
+      "effectText": "Slow Reload Improved Armor Piercing",
+      "properties": {
+        "armorPiercing": true,
+        "improvedArmorPiercing": true,
+        "slowReload": true
+      },
+      "concealment": "L",
+      "enhancements": 1,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 3,
+      "description": "<p>Slow Reload Improved Armor Piercing</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 3,
+          "table": 4,
+          "row": 3
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "2a2bf889a0d0c36b",
+    "name": "Griffin Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 18,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "griffin",
+      "armorClass": "medium",
+      "stoppingPower": 16,
+      "sp": {
+        "torso": 16,
+        "rightArm": 16,
+        "leftArm": 16,
+        "rightLeg": 16,
+        "leftLeg": 16
+      },
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "enhancements": 2,
+      "effectText": "Critical Spellcasting: Whenever you cause a Critical Wound using one of your Witcher weapons you can immediately attempt a Spell Casting check to cast a Sign at no additional penalty and without spending any Stamina besides the Stamina required to cast the sign.",
+      "ev": 1,
+      "ability": {
+        "key": "criticalSpellcasting",
+        "mode": "equipment"
+      },
+      "source": "A Witcher’s Tools",
+      "page": 4,
+      "description": "<p>Critical Spellcasting: Whenever you cause a Critical Wound using one of your Witcher weapons you can immediately attempt a Spell Casting check to cast a Sign at no additional penalty and without spending any Stamina besides the Stamina required to cast the sign.</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 4,
+          "table": 0,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "97c671604e219b75",
+    "name": "Manticore Steel Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "manticore",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 1,
+      "damage": "5d6+2",
+      "hands": 1,
+      "reliability": 15,
+      "maxReliability": 15,
+      "range": 0,
+      "effectText": "Armor Piercing Meteorite Balanced",
+      "properties": {
+        "armorPiercing": true,
+        "meteorite": true,
+        "balanced": true
+      },
+      "concealment": "N/A",
+      "enhancements": 2,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 4,
+      "description": "<p>Armor Piercing Meteorite Balanced</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 4,
+          "table": 1,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "1f5fcb2bbc84829b",
+    "name": "Manticore Silver Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "manticore",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 1,
+      "damage": "2d6+2",
+      "hands": 1,
+      "reliability": 10,
+      "maxReliability": 10,
+      "range": 0,
+      "effectText": "Silver (3d6) Balanced",
+      "properties": {
+        "balanced": true,
+        "silver": true,
+        "silverDamage": "3d6"
+      },
+      "concealment": "N/A",
+      "enhancements": 2,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 4,
+      "description": "<p>Silver (3d6) Balanced</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 4,
+          "table": 1,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "162f1fe2dac5f7df",
+    "name": "Manticore Shield",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "manticore",
+      "category": "shield",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 0,
+      "damage": "@shieldDamage",
+      "hands": 1,
+      "reliability": 20,
+      "maxReliability": 20,
+      "range": 0,
+      "effectText": "AE 1 Meteorite Silver (3d6)",
+      "properties": {
+        "meteorite": true,
+        "silver": true,
+        "silverDamage": "3d6"
+      },
+      "concealment": "N/A",
+      "enhancements": 1,
+      "witcherWeapon": true,
+      "armorClass": "medium",
+      "ev": 0,
+      "notes": "Damage uses the Core Rulebook p.164 medium shield attack: lethal Punch damage two BODY-table levels higher. Silver damage is added only against a silver-vulnerable target.",
+      "source": "A Witcher’s Tools",
+      "page": 4,
+      "description": "<p>AE 1 Meteorite Silver (3d6)</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 4,
+          "table": 1,
+          "row": 3
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "5079e0cacc3bedeb",
+    "name": "Manticore Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 10,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "manticore",
+      "armorClass": "medium",
+      "stoppingPower": 12,
+      "sp": {
+        "torso": 12,
+        "rightArm": 12,
+        "leftArm": 12,
+        "rightLeg": 12,
+        "leftLeg": 12
+      },
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "enhancements": 2,
+      "effectText": "Critical Block: Whenever you roll more than 4 points higher than an attacker when making a Block or Parry attempt with your Manticore shield you can immediately attempt a Shield Strike which knocks the attacker back 4m and knocks them prone at no additional penalty and without spending any extra Stamina.",
+      "ev": 1,
+      "ability": {
+        "key": "criticalBlock",
+        "mode": "equipment"
+      },
+      "source": "A Witcher’s Tools",
+      "page": 4,
+      "description": "<p>Critical Block: Whenever you roll more than 4 points higher than an attacker when making a Block or Parry attempt with your Manticore shield you can immediately attempt a Shield Strike which knocks the attacker back 4m and knocks them prone at no additional penalty and without spending any extra Stamina.</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 4,
+          "table": 2,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "0d46352bbc2736e4",
+    "name": "Serpentine Steel Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "viper",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 2,
+      "damage": "4d6+2",
+      "hands": 1,
+      "reliability": 15,
+      "maxReliability": 15,
+      "range": 0,
+      "effectText": "Armor Piercing Meteorite Poison (30%)",
+      "properties": {
+        "armorPiercing": true,
+        "meteorite": true,
+        "poison": 30
+      },
+      "concealment": "N/A",
+      "enhancements": 2,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 4,
+      "description": "<p>Armor Piercing Meteorite Poison (30%)</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 4,
+          "table": 3,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "bc8192a372817786",
+    "name": "Serpentine Silver Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "viper",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 2,
+      "damage": "1d6+2",
+      "hands": 1,
+      "reliability": 10,
+      "maxReliability": 10,
+      "range": 0,
+      "effectText": "Silver (3d6) Poison (30%)",
+      "properties": {
+        "poison": 30,
+        "silver": true,
+        "silverDamage": "3d6"
+      },
+      "concealment": "N/A",
+      "enhancements": 2,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 4,
+      "description": "<p>Silver (3d6) Poison (30%)</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 4,
+          "table": 3,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "f8d8d1559f1493ba",
+    "name": "Viper’s Fang",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "viper",
+      "category": "smallBlade",
+      "skill": "smallBlades",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 1,
+      "damage": "2d6+2",
+      "hands": 1,
+      "reliability": 10,
+      "maxReliability": 10,
+      "range": 0,
+      "effectText": "Parrying",
+      "properties": {
+        "parrying": true
+      },
+      "concealment": "S",
+      "enhancements": 1,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 4,
+      "description": "<p>Parrying</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 4,
+          "table": 3,
+          "row": 3
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "4c21918be7a4dddd",
+    "name": "Serpentine Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "viper",
+      "armorClass": "light",
+      "stoppingPower": 8,
+      "sp": {
+        "torso": 8,
+        "rightArm": 8,
+        "leftArm": 8,
+        "rightLeg": 8,
+        "leftLeg": 8
+      },
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "enhancements": 2,
+      "effectText": "Critical Riposte: Whenever you roll more than 4 points higher than an attacker when making a Parry attempt with one of your Witcher weapons you can immediately attempt a single Strike with a held weapon at no additional penalty and without spending any extra Stamina.",
+      "ev": 0,
+      "ability": {
+        "key": "criticalRiposte",
+        "mode": "equipment"
+      },
+      "source": "A Witcher’s Tools",
+      "page": 4,
+      "description": "<p>Critical Riposte: Whenever you roll more than 4 points higher than an attacker when making a Parry attempt with one of your Witcher weapons you can immediately attempt a single Strike with a held weapon at no additional penalty and without spending any extra Stamina.</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 4,
+          "table": 4,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "d3003238aebd661b",
+    "name": "Wolven Steel Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "wolf",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 1,
+      "damage": "5d6+2",
+      "hands": 1,
+      "reliability": 15,
+      "maxReliability": 15,
+      "range": 0,
+      "effectText": "Improved Armor Piercing Meteorite",
+      "properties": {
+        "armorPiercing": true,
+        "improvedArmorPiercing": true,
+        "meteorite": true
+      },
+      "concealment": "N/A",
+      "enhancements": 3,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 5,
+      "description": "<p>Improved Armor Piercing Meteorite</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 5,
+          "table": 0,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "a5aa670dd4c18343",
+    "name": "Wolven Silver Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "wolf",
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "slashing"
+      ],
+      "accuracy": 1,
+      "damage": "2d6+2",
+      "hands": 1,
+      "reliability": 10,
+      "maxReliability": 10,
+      "range": 0,
+      "effectText": "Silver (3d6) Armor Piercing",
+      "properties": {
+        "armorPiercing": true,
+        "silver": true,
+        "silverDamage": "3d6"
+      },
+      "concealment": "N/A",
+      "enhancements": 3,
+      "witcherWeapon": true,
+      "source": "A Witcher’s Tools",
+      "page": 5,
+      "description": "<p>Silver (3d6) Armor Piercing</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 5,
+          "table": 0,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "ddf61ec7c6d3b26d",
+    "name": "Wolven Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 14,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "wolf",
+      "armorClass": "medium",
+      "stoppingPower": 14,
+      "sp": {
+        "torso": 14,
+        "rightArm": 14,
+        "leftArm": 14,
+        "rightLeg": 14,
+        "leftLeg": 14
+      },
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "enhancements": 2,
+      "effectText": "Critical Momentum: Whenever you cause a Critical Wound using one of your Witcher weapons you can immediately attempt a single Strike with a held weapon at no additional penalty and without spending any extra Stamina.",
+      "ev": 1,
+      "ability": {
+        "key": "criticalMomentum",
+        "mode": "equipment"
+      },
+      "source": "A Witcher’s Tools",
+      "page": 5,
+      "description": "<p>Critical Momentum: Whenever you cause a Critical Wound using one of your Witcher weapons you can immediately attempt a single Strike with a held weapon at no additional penalty and without spending any extra Stamina.</p>",
+      "priceText": "No market price is provided in the source."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 5,
+          "table": 1,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": true
+      }
+    }
+  },
+  {
+    "_id": "ced696583a5ba6d5",
+    "name": "Ursine Steel Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "bear",
+      "skill": "crafting",
+      "craftDC": 18,
+      "craftTime": "9 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 656,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Meteorite",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c"
+        },
+        {
+          "name": "Steel",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Thread",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.41368eb3e1c0fcf9"
+        },
+        {
+          "name": "Grave Hag Tongue",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.5dd01cfb3b706dad"
+        },
+        {
+          "name": "Werewolf Saliva",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.d6745615cb0324c1"
+        },
+        {
+          "name": "Dog Tallow",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.fbb64a85883deefb"
+        }
+      ],
+      "productName": "Ursine Steel Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Meteorite (x2), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Grave Hag Tongue (x1), Werewolf Saliva (x1), Dog Tallow (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 5,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.1d51fdf60bbc1ddd"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 5,
+          "table": 2,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "ee2170d778674749",
+    "name": "Ursine Silver Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "bear",
+      "skill": "crafting",
+      "craftDC": 19,
+      "craftTime": "10 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 597,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Silver",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.9664169803f37aea"
+        },
+        {
+          "name": "Steel",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Cockatrice Stomach",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.14091aed3ca766e8"
+        },
+        {
+          "name": "Mistletoe",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.37cd90eae59c4a8c"
+        }
+      ],
+      "productName": "Ursine Silver Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Silver (x4), Steel (x1), Sharpening Grit (x2), Etching Acid (x1), Ester Grease (x1), Cockatrice Stomach (x1), Mistletoe (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 5,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.935b0a1b518985bb"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 5,
+          "table": 2,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "6687cd3202d6d3d5",
+    "name": "Ursine Crossbow Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "bear",
+      "skill": "crafting",
+      "craftDC": 17,
+      "craftTime": "8 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 347,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Siren Vocal Chords",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.bb6df9380604b690"
+        },
+        {
+          "name": "Wax",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.0fbb63b840e554c8"
+        },
+        {
+          "name": "Resin",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.667b6343a4d087d3"
+        },
+        {
+          "name": "Dark Steel",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.1568a33e56ac9aaa"
+        },
+        {
+          "name": "Hardened Leather",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.dab08d4e2480e46e"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Ogre Wax",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.20a45e4f2ab5191b"
+        },
+        {
+          "name": "Dark Iron",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.7d20fa52687518c0"
+        },
+        {
+          "name": "Beast Bones",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.26a0bbe2b463e5fa"
+        }
+      ],
+      "productName": "Ursine Crossbow",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Siren Vocal Chords (x1), Wax (x2), Resin (x2), Dark Steel (x1), Hardened Leather (x1), Ester Grease (x2), Ogre Wax (x2), Dark Iron (x1), Beast Bones (x2)",
+      "source": "A Witcher’s Tools",
+      "page": 5,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.0d9c2283b643a708"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 5,
+          "table": 2,
+          "row": 3
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "cef984698a3ee3a6",
+    "name": "Ursine Armor Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "bear",
+      "skill": "crafting",
+      "craftDC": 22,
+      "craftTime": "25 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 1813,
+      "materials": [
+        {
+          "name": "Hardened Leather",
+          "quantity": 7,
+          "uuid": "Compendium.witcher-rilerena.components.Item.dab08d4e2480e46e"
+        },
+        {
+          "name": "Dark Steel",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.1568a33e56ac9aaa"
+        },
+        {
+          "name": "Double Woven Linen",
+          "quantity": 6,
+          "uuid": "Compendium.witcher-rilerena.components.Item.7713e1e2548468b3"
+        },
+        {
+          "name": "Beast Bone",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.26a0bbe2b463e5fa"
+        },
+        {
+          "name": "Dark Steel",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.1568a33e56ac9aaa"
+        },
+        {
+          "name": "Meteorite",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c"
+        },
+        {
+          "name": "Thread",
+          "quantity": 8,
+          "uuid": "Compendium.witcher-rilerena.components.Item.41368eb3e1c0fcf9"
+        },
+        {
+          "name": "Bear Hide",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.3fd3021aca9dec32"
+        },
+        {
+          "name": "Rottfiend Blood",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.181a54aba88bf7fa"
+        },
+        {
+          "name": "Silver",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.9664169803f37aea"
+        },
+        {
+          "name": "Leather",
+          "quantity": 6,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Vampire Saliva",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c5563dc2e39f855a"
+        },
+        {
+          "name": "Silk",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.56073d601f915793"
+        },
+        {
+          "name": "Troll Liver",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.324277891d410821"
+        },
+        {
+          "name": "Ogre Wax",
+          "quantity": 6,
+          "uuid": "Compendium.witcher-rilerena.components.Item.20a45e4f2ab5191b"
+        }
+      ],
+      "productName": "Ursine Armor",
+      "productQuantity": 1,
+      "notes": "Hardened Leather (x7), Dark Steel (x2), Double Woven Linen (x6), Beast Bone (x4), Dark Steel (x2), Meteorite (x2), Thread (x8), Bear Hide (x1), Rottfiend Blood (x1), Silver (x2), Leather (x6), Vampire Saliva (x2), Silk (x2), Troll Liver (x1), Ogre Wax (x6)",
+      "source": "A Witcher’s Tools",
+      "page": 5,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.081ee3d901f1912b"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 5,
+          "table": 2,
+          "row": 4
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "d1eedec9b54e10cf",
+    "name": "Feline Steel Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "cat",
+      "skill": "crafting",
+      "craftDC": 18,
+      "craftTime": "9 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 656,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Meteorite",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c"
+        },
+        {
+          "name": "Steel",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Thread",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.41368eb3e1c0fcf9"
+        },
+        {
+          "name": "Wyvern Eyes",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.20d6e3f6eb574b56"
+        }
+      ],
+      "productName": "Feline Steel Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Meteorite (x2), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Wyvern Eyes (x2)",
+      "source": "A Witcher’s Tools",
+      "page": 6,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.24e26098308865d2"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 6,
+          "table": 0,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "c4d564f46f6a97b5",
+    "name": "Feline Silver Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "cat",
+      "skill": "crafting",
+      "craftDC": 19,
+      "craftTime": "10 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 597,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Silver",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.9664169803f37aea"
+        },
+        {
+          "name": "Steel",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Ruby Dust",
+          "quantity": 1,
+          "uuid": ""
+        }
+      ],
+      "productName": "Feline Silver Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Silver (x4), Steel (x1), Sharpening Grit (x2), Etching Acid (x1), Ester Grease (x1), Ruby Dust (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 6,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.8c2d6e632d637177"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 6,
+          "table": 0,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "ad9e9eaa0c42f2cf",
+    "name": "Feline Crossbow Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "cat",
+      "skill": "crafting",
+      "craftDC": 17,
+      "craftTime": "8 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 346,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Knocker Hair",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.abb9f1eaaf44c776"
+        },
+        {
+          "name": "Wax",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.0fbb63b840e554c8"
+        },
+        {
+          "name": "Resin",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.667b6343a4d087d3"
+        },
+        {
+          "name": "Dark Steel",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.1568a33e56ac9aaa"
+        },
+        {
+          "name": "Hardened Leather",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.dab08d4e2480e46e"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Ogre Wax",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.20a45e4f2ab5191b"
+        },
+        {
+          "name": "Dark Iron",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.7d20fa52687518c0"
+        },
+        {
+          "name": "Beast Bones",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.26a0bbe2b463e5fa"
+        }
+      ],
+      "productName": "Feline Crossbow",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Knocker Hair (x2), Wax (x2), Resin (x2), Dark Steel (x1), Hardened Leather (x1), Ester Grease (x2), Ogre Wax (x2), Dark Iron (x1), Beast Bones (x2)",
+      "source": "A Witcher’s Tools",
+      "page": 6,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.b58416f92ba4af00"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 6,
+          "table": 0,
+          "row": 3
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "5a8f182ae926440d",
+    "name": "Feline Armor Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "cat",
+      "skill": "crafting",
+      "craftDC": 18,
+      "craftTime": "18 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 713,
+      "materials": [
+        {
+          "name": "Linen",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.fc95a0edf7664732"
+        },
+        {
+          "name": "Hardened Leather",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.dab08d4e2480e46e"
+        },
+        {
+          "name": "Dark Steel",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.1568a33e56ac9aaa"
+        },
+        {
+          "name": "Hardened Timber",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Ghoul Marrow",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.724a68cd3f394df1"
+        },
+        {
+          "name": "Dark Iron",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.7d20fa52687518c0"
+        },
+        {
+          "name": "Leather",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Arachas Eye",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.b2146c0177e055a6"
+        },
+        {
+          "name": "Silk",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.56073d601f915793"
+        },
+        {
+          "name": "Drowner Brain",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.65d0acd854f62a97"
+        },
+        {
+          "name": "Thread",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.41368eb3e1c0fcf9"
+        }
+      ],
+      "productName": "Feline Armor",
+      "productQuantity": 1,
+      "notes": "Linen (x2), Hardened Leather (x3), Dark Steel (x1), Hardened Timber (x1), Ghoul Marrow (x1), Dark Iron (x1), Leather (x3), Arachas Eye (x1), Silk (x1), Drowner Brain (x1), Thread (x4)",
+      "source": "A Witcher’s Tools",
+      "page": 6,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.bc7248faaba087be"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 6,
+          "table": 0,
+          "row": 4
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "3ec6a7e9740c5083",
+    "name": "Griffin Steel Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "griffin",
+      "skill": "crafting",
+      "craftDC": 18,
+      "craftTime": "9 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 656,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Meteorite",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c"
+        },
+        {
+          "name": "Steel",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Thread",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.41368eb3e1c0fcf9"
+        },
+        {
+          "name": "Griffin Egg",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.ba2ce9fb2f8141c7"
+        }
+      ],
+      "productName": "Griffin Steel Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Meteorite (x2), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Griffin Egg (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 6,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.2ff00dd5f2d20d58"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 6,
+          "table": 1,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "9a880b4befe49db3",
+    "name": "Griffin Silver Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "griffin",
+      "skill": "crafting",
+      "craftDC": 19,
+      "craftTime": "10 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 597,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Silver",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.9664169803f37aea"
+        },
+        {
+          "name": "Steel",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Fifth Essence",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e13821c5ce96c17f"
+        },
+        {
+          "name": "Feathers",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.19ac2c21a420c176"
+        }
+      ],
+      "productName": "Griffin Silver Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Silver (x4), Steel (x1), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x2), Fifth Essence (x1), Feathers (x2),",
+      "source": "A Witcher’s Tools",
+      "page": 6,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.666a93c037b61a44"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 6,
+          "table": 1,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "5970444043ffdf4d",
+    "name": "Griffin Crossbow Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "griffin",
+      "skill": "crafting",
+      "craftDC": 17,
+      "craftTime": "8 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 342,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Archespore Tendrils",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.4d43338fc7aae268"
+        },
+        {
+          "name": "Wax",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.0fbb63b840e554c8"
+        },
+        {
+          "name": "Resin",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.667b6343a4d087d3"
+        },
+        {
+          "name": "Dark Steel",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.1568a33e56ac9aaa"
+        },
+        {
+          "name": "Hardened Leather",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.dab08d4e2480e46e"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Ogre Wax",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.20a45e4f2ab5191b"
+        },
+        {
+          "name": "Dark Iron",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.7d20fa52687518c0"
+        }
+      ],
+      "productName": "Griffin Crossbow",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Archespore Tendrils (x2), Wax (x2), Resin (x2), Dark Steel (x1), Hardened Leather (x1), Ester Grease (x2), Ogre Wax (x1), Dark Iron (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 6,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.3049197307e0d535"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 6,
+          "table": 1,
+          "row": 3
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "ec9f7959c58ccdfc",
+    "name": "Griffin Armor Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "griffin",
+      "skill": "crafting",
+      "craftDC": 20,
+      "craftTime": "24 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 1571,
+      "materials": [
+        {
+          "name": "Linen",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.fc95a0edf7664732"
+        },
+        {
+          "name": "Hardened Leather",
+          "quantity": 5,
+          "uuid": "Compendium.witcher-rilerena.components.Item.dab08d4e2480e46e"
+        },
+        {
+          "name": "Silver",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.9664169803f37aea"
+        },
+        {
+          "name": "Meteorite",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Wyvern Eye",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.20d6e3f6eb574b56"
+        },
+        {
+          "name": "Dark Steel",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.1568a33e56ac9aaa"
+        },
+        {
+          "name": "Thread",
+          "quantity": 5,
+          "uuid": "Compendium.witcher-rilerena.components.Item.41368eb3e1c0fcf9"
+        },
+        {
+          "name": "Light Essence",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.ad856a14fe8840d3"
+        },
+        {
+          "name": "Ghoul Marrow",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.724a68cd3f394df1"
+        },
+        {
+          "name": "Silk",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.56073d601f915793"
+        },
+        {
+          "name": "Rottfiend Blood",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.181a54aba88bf7fa"
+        }
+      ],
+      "productName": "Griffin Armor",
+      "productQuantity": 1,
+      "notes": "Linen (x3), Hardened Leather (x5), Silver (x1), Meteorite (x3), Leather (x4), Wyvern Eye (x2), Dark Steel (x4), Thread (x5), Light Essence (x1), Ghoul Marrow (x2), Silk (x2), Rottfiend Blood (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 6,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.2a2bf889a0d0c36b"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 6,
+          "table": 1,
+          "row": 4
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "e34c1083daa525ee",
+    "name": "Manticore Steel Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "manticore",
+      "skill": "crafting",
+      "craftDC": 18,
+      "craftTime": "9 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 656,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Meteorite",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c"
+        },
+        {
+          "name": "Steel",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Thread",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.41368eb3e1c0fcf9"
+        },
+        {
+          "name": "Dimeritium",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.401263515f571e6f"
+        },
+        {
+          "name": "Beast Bones",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.26a0bbe2b463e5fa"
+        }
+      ],
+      "productName": "Manticore Steel Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Meteorite (x1), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Dimeritium (x1), Beast Bones (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 7,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.97c671604e219b75"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 7,
+          "table": 0,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "25bc1f7e4c476674",
+    "name": "Manticore Silver Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "manticore",
+      "skill": "crafting",
+      "craftDC": 19,
+      "craftTime": "10 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 597,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Silver",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.9664169803f37aea"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Dimeritium",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.401263515f571e6f"
+        },
+        {
+          "name": "Calcium Equum",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.53d977936af12779"
+        }
+      ],
+      "productName": "Manticore Silver Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Silver (x3), Sharpening Grit (x1), Etching Acid (x1), Ester Grease (x1), Dimeritium (x1), Calcium Equum (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 7,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.1f5fcb2bbc84829b"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 7,
+          "table": 0,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "13f0a1a663840968",
+    "name": "Manticore Shield Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "manticore",
+      "skill": "crafting",
+      "craftDC": 20,
+      "craftTime": "8 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 652,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Hardened Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.dab08d4e2480e46e"
+        },
+        {
+          "name": "Meteorite",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c"
+        },
+        {
+          "name": "Silver",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.9664169803f37aea"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "River Clay",
+          "quantity": 6,
+          "uuid": "Compendium.witcher-rilerena.components.Item.fd49e51eda95d166"
+        }
+      ],
+      "productName": "Manticore Shield",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x4), Hardened Leather (x2), Meteorite (x3), Silver (x2), Ester Grease (x2), Etching Acid (x2), River Clay (x6)",
+      "source": "A Witcher’s Tools",
+      "page": 7,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.162f1fe2dac5f7df"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 7,
+          "table": 0,
+          "row": 3
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "94d43435f1902324",
+    "name": "Manticore Armor Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "manticore",
+      "skill": "crafting",
+      "craftDC": 20,
+      "craftTime": "22 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 1052,
+      "materials": [
+        {
+          "name": "Linen",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.fc95a0edf7664732"
+        },
+        {
+          "name": "Draconid Leather",
+          "quantity": 5,
+          "uuid": "Compendium.witcher-rilerena.components.Item.7bfdf100a44b221e"
+        },
+        {
+          "name": "Dimeritium",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.401263515f571e6f"
+        },
+        {
+          "name": "Hag Ear",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.7afcfc437927f36c"
+        },
+        {
+          "name": "Arachas Eyes",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.b2146c0177e055a6"
+        },
+        {
+          "name": "Nekker claw",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.cd0c148b74ad18e5"
+        },
+        {
+          "name": "Bullvore Blood",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.79c717f0bbb16507"
+        },
+        {
+          "name": "Meteorite",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c"
+        },
+        {
+          "name": "Knocker Hair",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.abb9f1eaaf44c776"
+        }
+      ],
+      "productName": "Manticore Armor",
+      "productQuantity": 1,
+      "notes": "Linen (x3), Draconid Leather (x5), Dimeritium (x2), Hag Ear (x1), Arachas Eyes (x1), Nekker claw (x1), Bullvore Blood (x1), Meteorite (x1), Knocker Hair (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 7,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.5079e0cacc3bedeb"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 7,
+          "table": 0,
+          "row": 4
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "f58be75cf3cdcb6e",
+    "name": "Serpentine Steel Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "viper",
+      "skill": "crafting",
+      "craftDC": 18,
+      "craftTime": "9 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 656,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Meteorite",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c"
+        },
+        {
+          "name": "Steel",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Thread",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.41368eb3e1c0fcf9"
+        },
+        {
+          "name": "Venom Extract",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.3a3ea9d386fe5c66"
+        },
+        {
+          "name": "Cortinarius",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.902c62bb41ddc2f0"
+        }
+      ],
+      "productName": "Serpentine Steel Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Meteorite (x2), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Venom Extract (x3), Cortinarius (x2)",
+      "source": "A Witcher’s Tools",
+      "page": 7,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.0d46352bbc2736e4"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 7,
+          "table": 1,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "e40d4709d76a2bda",
+    "name": "Serpentine Silver Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "viper",
+      "skill": "crafting",
+      "craftDC": 19,
+      "craftTime": "10 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 597,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Silver",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.9664169803f37aea"
+        },
+        {
+          "name": "Steel",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Emerald Dust",
+          "quantity": 2,
+          "uuid": ""
+        }
+      ],
+      "productName": "Serpentine Silver Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Silver (x4), Steel (x1), Sharpening Grit (x2), Etching Acid (x1), Ester Grease (x1), Emerald Dust (x2)",
+      "source": "A Witcher’s Tools",
+      "page": 7,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.bc8192a372817786"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 7,
+          "table": 1,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "9db707dc660820eb",
+    "name": "Viper’s Fang Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "viper",
+      "skill": "crafting",
+      "craftDC": 16,
+      "craftTime": "4 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 218,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Draconid Leather",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.7bfdf100a44b221e"
+        },
+        {
+          "name": "Dark Steel",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.1568a33e56ac9aaa"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Nekker Teeth",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.573a512dc6fa50fc"
+        }
+      ],
+      "productName": "Viper’s Fang",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x1), Draconid Leather (x1), Dark Steel (x1), Sharpening Grit (x1), Nekker Teeth (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 7,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.f8d8d1559f1493ba"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 7,
+          "table": 1,
+          "row": 3
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "5ccc01f7f41f86a2",
+    "name": "Serpentine Armor Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "viper",
+      "skill": "crafting",
+      "craftDC": 18,
+      "craftTime": "20 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 842,
+      "materials": [
+        {
+          "name": "Linen",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.fc95a0edf7664732"
+        },
+        {
+          "name": "Hardened Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.dab08d4e2480e46e"
+        },
+        {
+          "name": "Leather",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Thread",
+          "quantity": 6,
+          "uuid": "Compendium.witcher-rilerena.components.Item.41368eb3e1c0fcf9"
+        },
+        {
+          "name": "Draconid Leather",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.7bfdf100a44b221e"
+        },
+        {
+          "name": "Dark Steel",
+          "quantity": 5,
+          "uuid": "Compendium.witcher-rilerena.components.Item.1568a33e56ac9aaa"
+        },
+        {
+          "name": "Darkening Oil",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.42a95d62a1a9334d"
+        }
+      ],
+      "productName": "Serpentine Armor",
+      "productQuantity": 1,
+      "notes": "Linen (4), Hardened Leather (x2), Leather (x3), Thread (x6), Draconid Leather (x4), Dark Steel (x5), Darkening Oil (x2)",
+      "source": "A Witcher’s Tools",
+      "page": 7,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.4c21918be7a4dddd"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 7,
+          "table": 1,
+          "row": 4
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "79566f6ab852a086",
+    "name": "Wolven Steel Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "wolf",
+      "skill": "crafting",
+      "craftDC": 18,
+      "craftTime": "9 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 656,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Meteorite",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c"
+        },
+        {
+          "name": "Steel",
+          "quantity": 3,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Thread",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.41368eb3e1c0fcf9"
+        },
+        {
+          "name": "Bullvore Brain",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.636ef32e4723a2c5"
+        }
+      ],
+      "productName": "Wolven Steel Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Meteorite (x2), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Bullvore Brain (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 7,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.d3003238aebd661b"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 7,
+          "table": 2,
+          "row": 1
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "5b6bcc9bd2b5a421",
+    "name": "Wolven Silver Sword Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "wolf",
+      "skill": "crafting",
+      "craftDC": 19,
+      "craftTime": "10 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 597,
+      "materials": [
+        {
+          "name": "Hardened Timber",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.4adcb07dd0cdde0c"
+        },
+        {
+          "name": "Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Silver",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.9664169803f37aea"
+        },
+        {
+          "name": "Steel",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Sharpening Grit",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.f97c60ecf8b97b34"
+        },
+        {
+          "name": "Etching Acid",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e0edaa46517d0006"
+        },
+        {
+          "name": "Ester Grease",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.c78df72a18a2e0a0"
+        },
+        {
+          "name": "Fifth Essence",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.e13821c5ce96c17f"
+        },
+        {
+          "name": "Wolfsbane",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.01020314f04fa997"
+        }
+      ],
+      "productName": "Wolven Silver Sword",
+      "productQuantity": 1,
+      "notes": "Hardened Timber (x2), Leather (x2), Silver (x4), Steel (x1), Sharpening Grit (x2), Etching Acid (x1), Ester Grease (x1), Fifth Essence (x1), Wolfsbane (x2)",
+      "source": "A Witcher’s Tools",
+      "page": 7,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.a5aa670dd4c18343"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 7,
+          "table": 2,
+          "row": 2
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  },
+  {
+    "_id": "edccf1f2c9352126",
+    "name": "Wolven Armor Diagram",
+    "type": "diagram",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "school": "wolf",
+      "skill": "crafting",
+      "craftDC": 20,
+      "craftTime": "23 Hours",
+      "craftLevel": "master",
+      "availability": "R",
+      "investment": 1302,
+      "materials": [
+        {
+          "name": "Hardened Leather",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.dab08d4e2480e46e"
+        },
+        {
+          "name": "Meteorite",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c"
+        },
+        {
+          "name": "Steel",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+        },
+        {
+          "name": "Leather",
+          "quantity": 10,
+          "uuid": "Compendium.witcher-rilerena.components.Item.85baebfcb3f541f1"
+        },
+        {
+          "name": "Bullvore Eyes",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.71bdd6dcbc7d3dcb"
+        },
+        {
+          "name": "Thread",
+          "quantity": 5,
+          "uuid": "Compendium.witcher-rilerena.components.Item.41368eb3e1c0fcf9"
+        },
+        {
+          "name": "Essence of Wraith",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.01abaec9df61d632"
+        },
+        {
+          "name": "Ghoul Marrow",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.components.Item.724a68cd3f394df1"
+        },
+        {
+          "name": "Silk",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.56073d601f915793"
+        },
+        {
+          "name": "Bullvore Blood",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.79c717f0bbb16507"
+        }
+      ],
+      "productName": "Wolven Armor",
+      "productQuantity": 1,
+      "notes": "Hardened Leather (x2), Meteorite (x2), Steel (x2), Leather (x10), Bullvore Eyes (x2), Thread (x5), Essence of Wraith (x1), Ghoul Marrow (x1), Silk (x2), Bullvore Blood (x1)",
+      "source": "A Witcher’s Tools",
+      "page": 7,
+      "priceText": "No market price is provided in the source.",
+      "productUuid": "Compendium.witcher-rilerena.supplement-tools.Item.ddf61ec7c6d3b26d"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Tools",
+          "pdfPage": 7,
+          "table": 2,
+          "row": 3
+        },
+        "sourceOmissions": [
+          "marketPrice"
+        ],
+        "recognizableWitcherGear": false
+      }
+    }
+  }
+]

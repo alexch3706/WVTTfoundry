@@ -1,12 +1,19 @@
-# Packaging will be added after the remaining implementation gates pass.
-# Inherited Cyberpunk tags must not publish a mismatched Witcher archive.
-name: Release readiness
+name: Release Witcher system
+
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: witcher-release-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
-  validate:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -14,7 +21,41 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - name: Validate tag and release URLs
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+          RELEASE_REPOSITORY: ${{ github.repository }}
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import { validateReleaseManifest } from './tools/witcher/build-release.mjs';
+          validateReleaseManifest(
+            JSON.parse(fs.readFileSync('system.json')),
+            JSON.parse(fs.readFileSync('package.json')),
+            { tag: process.env.RELEASE_TAG, repository: process.env.RELEASE_REPOSITORY }
+          );
+          JS
       - run: npm ci
       - run: npm test
       - run: npm run build:packs
       - run: npm run validate
+      - name: Build and inspect installable archive
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+          RELEASE_REPOSITORY: ${{ github.repository }}
+        run: node tools/witcher/build-release.mjs --tag "$RELEASE_TAG" --repository "$RELEASE_REPOSITORY" --out dist/release
+      - name: Publish verified assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          cd dist/release
+          sha256sum --check SHA256SUMS
+          release_flags=(--verify-tag --title "$RELEASE_TAG" --notes-file ../../docs/witcher/release-notes.md)
+          if node -e 'process.exit(require("./release-report.json").prerelease ? 0 : 1)'; then
+            release_flags+=(--prerelease --latest=false)
+          else
+            release_flags+=(--latest)
+          fi
+          gh release create "$RELEASE_TAG" system.json witcher-rilerena.zip SHA256SUMS release-report.json "${release_flags[@]}"

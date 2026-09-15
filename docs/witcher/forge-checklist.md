@@ -1,25 +1,41 @@
 # Foundry V14 / The Forge acceptance
 
-For the eventual installable release. No live acceptance run is complete yet.
+Version: **0.1.0-alpha.1**. **Live run pending.**
 
-1. Install the manifest, create a new `witcher-rilerena` world and open PC, NPC,
-   monster and Item sheets. Check startup and the browser console.
-2. Open all nine packs: 673 Item records and 36 Actors. Follow recipe links.
-3. Import Bandit, Drowner, Arachas, Golem and Warg. Place two unlinked Drowners;
-   damage to one must not change the other or their world Actor.
-4. Check Creature abilities/loot, Golem's ∞ STA and Arachas's SP 10 Back.
-5. Join as GM and player. Attack, defend and apply damage; check ties, armor,
-   silver, wounds and permissions. Players must not damage unowned NPCs.
-6. Change armor after rolling damage: recalculate with the same dice before
-   application. Double-click Apply: no duplicate damage.
-7. Spend extra actions, repeated defenses, Luck and ammunition. Reload; reopen
-   sheets and refresh to verify persistence.
-8. Advance rounds with poison, burning Drowner, Werewolf regeneration and Golem.
-   Verify their distinct immunity, damage and resource behavior.
-9. Generate creature loot once; verify items/crowns and reject a second roll.
-   Already carried ammunition/armor must not be duplicated.
-10. Exercise critical treatment, crafting, repairs and rest. Record failed
-    interactions and console errors.
+1. Install the pinned release manifest and create a Witcher world in V14. Open
+   a character, NPC, monster and Item sheet; check the browser console.
+2. Open all **11 packs**: **809 catalog Items**, **36 Actors**. Import a Witcher
+   sword, armor, crossbow/ammunition and Tools school equipment. Open recipes.
+3. Drag a weapon onto a PC sheet; equip it; check hands, carried weight and EV.
+   Test a two-handed weapon in one hand (−3) and a shield occupying the other.
+   Drag an owned item from the inventory to another sheet.
+4. Put the PC and a Bandit in a combat. Target the correct token. Attack Fast;
+   choose Dodge/Block/Parry from chat; apply damage as GM. Finish the second
+   strike. An extra action costs 3 STA once and applies −3 to both fast strikes.
+   A strong attack is one strike at −3 with double damage before armor.
+5. Open a second-strike dialog, advance the turn, then submit: it must reject.
+   Open two defense dialogs for one attack: only one may roll/spend. Check first
+   free defense, subsequent 1 STA and round reset. Test unarmed Parry/Brawling.
+6. Select ammunition, reload a crossbow and fire. Quantity and loaded state must
+   persist after refresh. A hand crossbow also needs two hands to reload.
+7. Import Griffin: Claws twice OR Bite once per round; an extra action cannot
+   reset ROF. Import Drowner, Arachas, Rock Troll, Golem and Noonwraith. Verify
+   natural damage, weak SP, infinite STA, silver resistance and physical immunity.
+   Core supplies no natural weapon REL: configure it on the weapon sheet before
+   testing a claw block; then check REL wear and broken-weapon rejection.
+8. Place two unlinked Drowner tokens; damage to one must not change the other or
+   the world Actor. Place multiple linked tokens and check targeting/distance.
+9. Change armor before applying a damage card; review recalculation with existing
+   dice. Double-click Apply; damage/wear must apply once. Exercise critical wounds,
+   unconsciousness, death saves and round effects.
+10. Equip Tools armor and trigger its school reaction. Check once-only choices,
+    follow-up attack/defense, Manticore movement/prone, and visible Griffin deferral.
+11. As GM and player, test requests/permissions together. No player can act for
+    an unowned actor or apply GM damage. Disconnect/reconnect around a pending
+    request; inspect any reported persistence failure before manually retrying.
+12. Use a Journal mutagen and process Crystallized Essence with Crafting DC 10;
+    verify material consumption/output. Exercise a school diagram and repairs.
 
-Open rules in `implementation-status.md` and `bestiary.md` remain separate from
-regressions: successful installation does not certify unsupported rules.
+Report the release version, failing step, reproduction and console error. Tests
+of deferred magic, profession/creature active powers, mounted combat and area
+bombs are outside this acceptance pass.

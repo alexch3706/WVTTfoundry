@@ -1,0 +1,2423 @@
+{
+  "sources": [
+    {
+      "title": "A Witcher’s Tools",
+      "sha256": "b63a8166481a65c8f03f5c638e357c6e0c50ddf3713787bb27bc5a1516e74dbf",
+      "tablePdfPages": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "title": "A Witcher’s Journal",
+      "sha256": "64cf6005be481a528d9abd69254222e5f3741c2f276a7e04ec0087f35e143b2c",
+      "tablePdfPages": [
+        143,
+        144,
+        145
+      ]
+    }
+  ],
+  "counts": {
+    "supplement-tools": 46,
+    "supplement-journal": 90
+  },
+  "rows": [
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 3,
+      "table": 0,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "1d51fdf60bbc1ddd",
+      "name": "Ursine Steel Sword",
+      "cells": [
+        "Ursine Steel Sword",
+        "P/S",
+        "+0",
+        "6d6+2",
+        "1",
+        "15",
+        "Melee",
+        "Armor Piercing Meteorite Ablating",
+        "N/A",
+        "2",
+        "2.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 3,
+      "table": 0,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "935b0a1b518985bb",
+      "name": "Ursine Silver Sword",
+      "cells": [
+        "Ursine Silver Sword",
+        "P/S",
+        "+0",
+        "3d6+2",
+        "1",
+        "10",
+        "Melee",
+        "Silver (3d6) Ablating",
+        "N/A",
+        "2",
+        "1.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 3,
+      "table": 0,
+      "row": 3,
+      "pack": "supplement-tools",
+      "id": "0d9c2283b643a708",
+      "name": "Ursine Crossbow",
+      "cells": [
+        "Ursine Crossbow",
+        "P",
+        "+1",
+        "4d6+2",
+        "1",
+        "5",
+        "50m",
+        "Slow Reload",
+        "L",
+        "1",
+        "0.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 3,
+      "table": 1,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "081ee3d901f1912b",
+      "name": "Ursine Armor",
+      "cells": [
+        "Ursine Armor",
+        "Heavy",
+        "20",
+        "2",
+        "Critical Decimation: Whenever you cause a Critical Wound using one of your Witcher weapons you treat that critical injury as one tier higher (for example, a Simple Critical becomes a Complex one)",
+        "Torso, Arms, Legs",
+        "3",
+        "24"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 3,
+      "table": 2,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "24e26098308865d2",
+      "name": "Feline Steel Sword",
+      "cells": [
+        "Feline Steel Sword",
+        "P/S",
+        "+2",
+        "4d6+2",
+        "1",
+        "15",
+        "Melee",
+        "Armor Piercing Meteorite Bleed (30%)",
+        "N/A",
+        "2",
+        "2.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 3,
+      "table": 2,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "8c2d6e632d637177",
+      "name": "Feline Silver Sword",
+      "cells": [
+        "Feline Silver Sword",
+        "P/S",
+        "+2",
+        "1d6+2",
+        "1",
+        "10",
+        "Melee",
+        "Silver (3d6) Bleed (30%)",
+        "N/A",
+        "2",
+        "1.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 3,
+      "table": 2,
+      "row": 3,
+      "pack": "supplement-tools",
+      "id": "b58416f92ba4af00",
+      "name": "Feline Crossbow",
+      "cells": [
+        "Feline Crossbow",
+        "P",
+        "+1",
+        "2d6+2",
+        "1",
+        "5",
+        "50m",
+        "Slow Reload Balanced",
+        "L",
+        "1",
+        "0.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 3,
+      "table": 3,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "bc7248faaba087be",
+      "name": "Feline Armor",
+      "cells": [
+        "Feline Armor",
+        "Light",
+        "6",
+        "2",
+        "Critical Flurry: Whenever you cause a Critical Wound using one of your Witcher weapons you can immediately attempt a Disarm or Trip check at no additional penalty and without spending any extra Stamina.",
+        "Torso, Arms, Legs",
+        "0",
+        "3"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 3,
+      "table": 4,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "2ff00dd5f2d20d58",
+      "name": "Griffin Steel Sword",
+      "cells": [
+        "Griffin Steel Sword",
+        "P/S",
+        "+1",
+        "5d6+2",
+        "1",
+        "15",
+        "Melee",
+        "Armor Piercing Meteorite Focus (1)",
+        "N/A",
+        "2",
+        "2.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 3,
+      "table": 4,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "666a93c037b61a44",
+      "name": "Griffin Silver Sword",
+      "cells": [
+        "Griffin Silver Sword",
+        "P/S",
+        "+1",
+        "2d6+2",
+        "1",
+        "10",
+        "Melee",
+        "Silver (3d6) Focus (1)",
+        "N/A",
+        "2",
+        "1.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 3,
+      "table": 4,
+      "row": 3,
+      "pack": "supplement-tools",
+      "id": "3049197307e0d535",
+      "name": "Griffin Crossbow",
+      "cells": [
+        "Griffin Crossbow",
+        "P",
+        "+1",
+        "2d6+2",
+        "1",
+        "5",
+        "50m",
+        "Slow Reload Improved Armor Piercing",
+        "L",
+        "1",
+        "0.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 4,
+      "table": 0,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "2a2bf889a0d0c36b",
+      "name": "Griffin Armor",
+      "cells": [
+        "Griffin Armor",
+        "Medium",
+        "16",
+        "2",
+        "Critical Spellcasting: Whenever you cause a Critical Wound using one of your Witcher weapons you can immediately attempt a Spell Casting check to cast a Sign at no additional penalty and without spending any Stamina besides the Stamina required to cast the sign.",
+        "Torso, Arms, Legs",
+        "1",
+        "18"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 4,
+      "table": 1,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "97c671604e219b75",
+      "name": "Manticore Steel Sword",
+      "cells": [
+        "Manticore Steel Sword",
+        "P/S",
+        "+1",
+        "5d6+2",
+        "1",
+        "15",
+        "Melee",
+        "Armor Piercing Meteorite Balanced",
+        "N/A",
+        "2",
+        "2.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 4,
+      "table": 1,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "1f5fcb2bbc84829b",
+      "name": "Manticore Silver Sword",
+      "cells": [
+        "Manticore Silver Sword",
+        "P/S",
+        "+1",
+        "2d6+2",
+        "1",
+        "10",
+        "Melee",
+        "Silver (3d6) Balanced",
+        "N/A",
+        "2",
+        "1.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 4,
+      "table": 1,
+      "row": 3,
+      "pack": "supplement-tools",
+      "id": "162f1fe2dac5f7df",
+      "name": "Manticore Shield",
+      "cells": [
+        "Manticore Shield",
+        "B",
+        "+0",
+        "See Medium Shield Bash",
+        "1",
+        "20",
+        "Melee",
+        "AE 1 Meteorite Silver (3d6)",
+        "N/A",
+        "0",
+        "2"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 4,
+      "table": 2,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "5079e0cacc3bedeb",
+      "name": "Manticore Armor",
+      "cells": [
+        "Manticore Armor",
+        "Medium",
+        "12",
+        "2",
+        "Critical Block: Whenever you roll more than 4 points higher than an attacker when making a Block or Parry attempt with your Manticore shield you can immediately attempt a Shield Strike which knocks the attacker back 4m and knocks them prone at no additional penalty and without spending any extra Stamina.",
+        "Torso, Arms, Legs",
+        "1",
+        "10"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 4,
+      "table": 3,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "0d46352bbc2736e4",
+      "name": "Serpentine Steel Sword",
+      "cells": [
+        "Serpentine Steel Sword",
+        "P/S",
+        "+2",
+        "4d6+2",
+        "1",
+        "15",
+        "Melee",
+        "Armor Piercing Meteorite Poison (30%)",
+        "N/A",
+        "2",
+        "2.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 4,
+      "table": 3,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "bc8192a372817786",
+      "name": "Serpentine Silver Sword",
+      "cells": [
+        "Serpentine Silver Sword",
+        "P/S",
+        "+2",
+        "1d6+2",
+        "1",
+        "10",
+        "Melee",
+        "Silver (3d6) Poison (30%)",
+        "N/A",
+        "2",
+        "1.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 4,
+      "table": 3,
+      "row": 3,
+      "pack": "supplement-tools",
+      "id": "f8d8d1559f1493ba",
+      "name": "Viper’s Fang",
+      "cells": [
+        "Viper’s Fang",
+        "P/S",
+        "+1",
+        "2d6+2",
+        "1",
+        "10",
+        "Melee",
+        "Parrying",
+        "S",
+        "1",
+        "0.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 4,
+      "table": 4,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "4c21918be7a4dddd",
+      "name": "Serpentine Armor",
+      "cells": [
+        "Serpentine Armor",
+        "Light",
+        "8",
+        "2",
+        "Critical Riposte: Whenever you roll more than 4 points higher than an attacker when making a Parry attempt with one of your Witcher weapons you can immediately attempt a single Strike with a held weapon at no additional penalty and without spending any extra Stamina.",
+        "Torso, Arms, Legs",
+        "0",
+        "5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 5,
+      "table": 0,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "d3003238aebd661b",
+      "name": "Wolven Steel Sword",
+      "cells": [
+        "Wolven Steel Sword",
+        "P/S",
+        "+1",
+        "5d6+2",
+        "1",
+        "15",
+        "Melee",
+        "Improved Armor Piercing Meteorite",
+        "N/A",
+        "3",
+        "2.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 5,
+      "table": 0,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "a5aa670dd4c18343",
+      "name": "Wolven Silver Sword",
+      "cells": [
+        "Wolven Silver Sword",
+        "P/S",
+        "+1",
+        "2d6+2",
+        "1",
+        "10",
+        "Melee",
+        "Silver (3d6) Armor Piercing",
+        "N/A",
+        "3",
+        "1.5"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 5,
+      "table": 1,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "ddf61ec7c6d3b26d",
+      "name": "Wolven Armor",
+      "cells": [
+        "Wolven Armor",
+        "Medium",
+        "14",
+        "2",
+        "Critical Momentum: Whenever you cause a Critical Wound using one of your Witcher weapons you can immediately attempt a single Strike with a held weapon at no additional penalty and without spending any extra Stamina.",
+        "Torso, Arms, Legs",
+        "1",
+        "14"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 5,
+      "table": 2,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "ced696583a5ba6d5",
+      "name": "Ursine Steel Sword Diagram",
+      "cells": [
+        "Ursine Steel Sword",
+        "18",
+        "9 Hours",
+        "Hardened Timber (x2), Leather (x2), Meteorite (x2), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Grave Hag Tongue (x1), Werewolf Saliva (x1), Dog Tallow (x1)",
+        "656"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 5,
+      "table": 2,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "ee2170d778674749",
+      "name": "Ursine Silver Sword Diagram",
+      "cells": [
+        "Ursine Silver Sword",
+        "19",
+        "10 Hours",
+        "Hardened Timber (x2), Leather (x2), Silver (x4), Steel (x1), Sharpening Grit (x2), Etching Acid (x1), Ester Grease (x1), Cockatrice Stomach (x1), Mistletoe (x1)",
+        "597"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 5,
+      "table": 2,
+      "row": 3,
+      "pack": "supplement-tools",
+      "id": "6687cd3202d6d3d5",
+      "name": "Ursine Crossbow Diagram",
+      "cells": [
+        "Ursine Crossbow",
+        "17",
+        "8 Hours",
+        "Hardened Timber (x2), Siren Vocal Chords (x1), Wax (x2), Resin (x2), Dark Steel (x1), Hardened Leather (x1), Ester Grease (x2), Ogre Wax (x2), Dark Iron (x1), Beast Bones (x2)",
+        "347"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 5,
+      "table": 2,
+      "row": 4,
+      "pack": "supplement-tools",
+      "id": "cef984698a3ee3a6",
+      "name": "Ursine Armor Diagram",
+      "cells": [
+        "Ursine Armor",
+        "22",
+        "25 Hours",
+        "Hardened Leather (x7), Dark Steel (x2), Double Woven Linen (x6), Beast Bone (x4), Dark Steel (x2), Meteorite (x2), Thread (x8), Bear Hide (x1), Rottfiend Blood (x1), Silver (x2), Leather (x6), Vampire Saliva (x2), Silk (x2), Troll Liver (x1), Ogre Wax (x6)",
+        "1813"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 6,
+      "table": 0,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "d1eedec9b54e10cf",
+      "name": "Feline Steel Sword Diagram",
+      "cells": [
+        "Feline Steel Sword",
+        "18",
+        "9 Hours",
+        "Hardened Timber (x2), Leather (x2), Meteorite (x2), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Wyvern Eyes (x2)",
+        "656"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 6,
+      "table": 0,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "c4d564f46f6a97b5",
+      "name": "Feline Silver Sword Diagram",
+      "cells": [
+        "Feline Silver Sword",
+        "19",
+        "10 Hours",
+        "Hardened Timber (x2), Leather (x2), Silver (x4), Steel (x1), Sharpening Grit (x2), Etching Acid (x1), Ester Grease (x1), Ruby Dust (x1)",
+        "597"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 6,
+      "table": 0,
+      "row": 3,
+      "pack": "supplement-tools",
+      "id": "ad9e9eaa0c42f2cf",
+      "name": "Feline Crossbow Diagram",
+      "cells": [
+        "Feline Crossbow",
+        "17",
+        "8 Hours",
+        "Hardened Timber (x2), Knocker Hair (x2), Wax (x2), Resin (x2), Dark Steel (x1), Hardened Leather (x1), Ester Grease (x2), Ogre Wax (x2), Dark Iron (x1), Beast Bones (x2)",
+        "346"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 6,
+      "table": 0,
+      "row": 4,
+      "pack": "supplement-tools",
+      "id": "5a8f182ae926440d",
+      "name": "Feline Armor Diagram",
+      "cells": [
+        "Feline Armor",
+        "18",
+        "18 Hours",
+        "Linen (x2), Hardened Leather (x3), Dark Steel (x1), Hardened Timber (x1), Ghoul Marrow (x1), Dark Iron (x1), Leather (x3), Arachas Eye (x1), Silk (x1), Drowner Brain (x1), Thread (x4)",
+        "713"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 6,
+      "table": 1,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "3ec6a7e9740c5083",
+      "name": "Griffin Steel Sword Diagram",
+      "cells": [
+        "Griffin Steel Sword",
+        "18",
+        "9 Hours",
+        "Hardened Timber (x2), Leather (x2), Meteorite (x2), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Griffin Egg (x1)",
+        "656"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 6,
+      "table": 1,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "9a880b4befe49db3",
+      "name": "Griffin Silver Sword Diagram",
+      "cells": [
+        "Griffin Silver Sword",
+        "19",
+        "10 Hours",
+        "Hardened Timber (x2), Leather (x2), Silver (x4), Steel (x1), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x2), Fifth Essence (x1), Feathers (x2),",
+        "597"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 6,
+      "table": 1,
+      "row": 3,
+      "pack": "supplement-tools",
+      "id": "5970444043ffdf4d",
+      "name": "Griffin Crossbow Diagram",
+      "cells": [
+        "Griffin Crossbow",
+        "17",
+        "8 Hours",
+        "Hardened Timber (x2), Archespore Tendrils (x2), Wax (x2), Resin (x2), Dark Steel (x1), Hardened Leather (x1), Ester Grease (x2), Ogre Wax (x1), Dark Iron (x1)",
+        "342"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 6,
+      "table": 1,
+      "row": 4,
+      "pack": "supplement-tools",
+      "id": "ec9f7959c58ccdfc",
+      "name": "Griffin Armor Diagram",
+      "cells": [
+        "Griffin Armor",
+        "20",
+        "24 Hours",
+        "Linen (x3), Hardened Leather (x5), Silver (x1), Meteorite (x3), Leather (x4), Wyvern Eye (x2), Dark Steel (x4), Thread (x5), Light Essence (x1), Ghoul Marrow (x2), Silk (x2), Rottfiend Blood (x1)",
+        "1571"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 7,
+      "table": 0,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "e34c1083daa525ee",
+      "name": "Manticore Steel Sword Diagram",
+      "cells": [
+        "Manticore Steel Sword",
+        "18",
+        "9 Hours",
+        "Hardened Timber (x2), Leather (x2), Meteorite (x1), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Dimeritium (x1), Beast Bones (x1)",
+        "656"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 7,
+      "table": 0,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "25bc1f7e4c476674",
+      "name": "Manticore Silver Sword Diagram",
+      "cells": [
+        "Manticore Silver Sword",
+        "19",
+        "10 Hours",
+        "Hardened Timber (x2), Leather (x2), Silver (x3), Sharpening Grit (x1), Etching Acid (x1), Ester Grease (x1), Dimeritium (x1), Calcium Equum (x1)",
+        "597"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 7,
+      "table": 0,
+      "row": 3,
+      "pack": "supplement-tools",
+      "id": "13f0a1a663840968",
+      "name": "Manticore Shield Diagram",
+      "cells": [
+        "Manticore Shield",
+        "20",
+        "8 Hours",
+        "Hardened Timber (x4), Hardened Leather (x2), Meteorite (x3), Silver (x2), Ester Grease (x2), Etching Acid (x2), River Clay (x6)",
+        "652"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 7,
+      "table": 0,
+      "row": 4,
+      "pack": "supplement-tools",
+      "id": "94d43435f1902324",
+      "name": "Manticore Armor Diagram",
+      "cells": [
+        "Manticore Armor",
+        "20",
+        "22 Hours",
+        "Linen (x3), Draconid Leather (x5), Dimeritium (x2), Hag Ear (x1), Arachas Eyes (x1), Nekker claw (x1), Bullvore Blood (x1), Meteorite (x1), Knocker Hair (x1)",
+        "1052"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 7,
+      "table": 1,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "f58be75cf3cdcb6e",
+      "name": "Serpentine Steel Sword Diagram",
+      "cells": [
+        "Serpentine Steel Sword",
+        "18",
+        "9 Hours",
+        "Hardened Timber (x2), Leather (x2), Meteorite (x2), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Venom Extract (x3), Cortinarius (x2)",
+        "656"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 7,
+      "table": 1,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "e40d4709d76a2bda",
+      "name": "Serpentine Silver Sword Diagram",
+      "cells": [
+        "Serpentine Silver Sword",
+        "19",
+        "10 Hours",
+        "Hardened Timber (x2), Leather (x2), Silver (x4), Steel (x1), Sharpening Grit (x2), Etching Acid (x1), Ester Grease (x1), Emerald Dust (x2)",
+        "597"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 7,
+      "table": 1,
+      "row": 3,
+      "pack": "supplement-tools",
+      "id": "9db707dc660820eb",
+      "name": "Viper’s Fang Diagram",
+      "cells": [
+        "Viper’s Fang",
+        "16",
+        "4 Hours",
+        "Hardened Timber (x1), Draconid Leather (x1), Dark Steel (x1), Sharpening Grit (x1), Nekker Teeth (x1)",
+        "218"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 7,
+      "table": 1,
+      "row": 4,
+      "pack": "supplement-tools",
+      "id": "5ccc01f7f41f86a2",
+      "name": "Serpentine Armor Diagram",
+      "cells": [
+        "Serpentine Armor",
+        "18",
+        "20 Hours",
+        "Linen (4), Hardened Leather (x2), Leather (x3), Thread (x6), Draconid Leather (x4), Dark Steel (x5), Darkening Oil (x2)",
+        "842"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 7,
+      "table": 2,
+      "row": 1,
+      "pack": "supplement-tools",
+      "id": "79566f6ab852a086",
+      "name": "Wolven Steel Sword Diagram",
+      "cells": [
+        "Wolven Steel Sword",
+        "18",
+        "9 Hours",
+        "Hardened Timber (x2), Leather (x2), Meteorite (x2), Steel (x3), Sharpening Grit (x2), Etching Acid (x2), Ester Grease (x1), Thread (x1), Bullvore Brain (x1)",
+        "656"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 7,
+      "table": 2,
+      "row": 2,
+      "pack": "supplement-tools",
+      "id": "5b6bcc9bd2b5a421",
+      "name": "Wolven Silver Sword Diagram",
+      "cells": [
+        "Wolven Silver Sword",
+        "19",
+        "10 Hours",
+        "Hardened Timber (x2), Leather (x2), Silver (x4), Steel (x1), Sharpening Grit (x2), Etching Acid (x1), Ester Grease (x1), Fifth Essence (x1), Wolfsbane (x2)",
+        "597"
+      ]
+    },
+    {
+      "source": "A Witcher’s Tools",
+      "pdfPage": 7,
+      "table": 2,
+      "row": 3,
+      "pack": "supplement-tools",
+      "id": "edccf1f2c9352126",
+      "name": "Wolven Armor Diagram",
+      "cells": [
+        "Wolven Armor",
+        "20",
+        "23 Hours",
+        "Hardened Leather (x2), Meteorite (x2), Steel (x2), Leather (x10), Bullvore Eyes (x2), Thread (x5), Essence of Wraith (x1), Ghoul Marrow (x1), Silk (x2), Bullvore Blood (x1)",
+        "1302"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 0,
+      "row": 1,
+      "pack": "supplement-journal",
+      "id": "3fd3021aca9dec32",
+      "name": "Bear Hide",
+      "cells": [
+        "Bear Hide",
+        "Bears",
+        "6",
+        "30"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 0,
+      "row": 2,
+      "pack": "supplement-journal",
+      "id": "7a806a099406095e",
+      "name": "Boar Pelt",
+      "cells": [
+        "Boar Pelt",
+        "Boars",
+        "2",
+        "10"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 0,
+      "row": 3,
+      "pack": "supplement-journal",
+      "id": "15f0ca7142360e16",
+      "name": "Panther Hide",
+      "cells": [
+        "Panther Hide",
+        "Panthers",
+        "3",
+        "38"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 1,
+      "pack": "supplement-journal",
+      "id": "cf8b9cfad305511a",
+      "name": "Abomination Lymph",
+      "cells": [
+        "Abomination Lymph",
+        "Quebrith",
+        "",
+        "Bruxa, Garkains",
+        "0.1",
+        "152"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 2,
+      "pack": "supplement-journal",
+      "id": "6f3f13ed94bd730f",
+      "name": "Archespore Juice",
+      "cells": [
+        "Archespore Juice",
+        "Vitriol",
+        "",
+        "Archespores",
+        "0.1",
+        "38"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 3,
+      "pack": "supplement-journal",
+      "id": "4d43338fc7aae268",
+      "name": "Archespore Tendrils",
+      "cells": [
+        "Archespore Tendrils",
+        "Quebrith",
+        "",
+        "Archespores",
+        "0.5",
+        "44"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 4,
+      "pack": "supplement-journal",
+      "id": "614e3e0dab3362a9",
+      "name": "Barbegazi Fur",
+      "cells": [
+        "Barbegazi Fur",
+        "Hydragenum",
+        "",
+        "Barbegazi",
+        "0.1",
+        "21"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 5,
+      "pack": "supplement-journal",
+      "id": "a7b00b8039efe9c7",
+      "name": "Barghest Essence",
+      "cells": [
+        "Barghest Essence",
+        "Vermilion",
+        "",
+        "Barghest",
+        "0.1",
+        "36"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 6,
+      "pack": "supplement-journal",
+      "id": "fbd2cdd3952409cf",
+      "name": "Bear Fat",
+      "cells": [
+        "Bear Fat",
+        "Rebis",
+        "",
+        "Bears",
+        "0.5",
+        "90"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 7,
+      "pack": "supplement-journal",
+      "id": "eeeae7ba41bca67d",
+      "name": "Boar Tusks",
+      "cells": [
+        "Boar Tusks",
+        "Vitriol",
+        "",
+        "Boars",
+        "0.1",
+        "82"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 8,
+      "pack": "supplement-journal",
+      "id": "66c32cdfc964f93b",
+      "name": "Bohun Upas Poison",
+      "cells": [
+        "Bohun Upas Poison",
+        "Vermilion",
+        "",
+        "Manticores",
+        "0.1",
+        "200"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 9,
+      "pack": "supplement-journal",
+      "id": "e6a5b2c096f9c8b0",
+      "name": "Botchling Blood",
+      "cells": [
+        "Botchling Blood",
+        "Vitriol",
+        "",
+        "Botchlings",
+        "0.1",
+        "66"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 10,
+      "pack": "supplement-journal",
+      "id": "530e8944a345b0df",
+      "name": "Botchling Bones",
+      "cells": [
+        "Botchling Bones",
+        "Hydragenum",
+        "",
+        "Botchlings",
+        "0.1",
+        "55"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 11,
+      "pack": "supplement-journal",
+      "id": "e137d08db8d60491",
+      "name": "Botchling Brain",
+      "cells": [
+        "Botchling Brain",
+        "Caelum",
+        "",
+        "Botchlings",
+        "0.1",
+        "164"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 12,
+      "pack": "supplement-journal",
+      "id": "075a6868f7c45194",
+      "name": "Botchling Ear",
+      "cells": [
+        "Botchling Ear",
+        "Fulgur",
+        "",
+        "Botchlings",
+        "0.1",
+        "100"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 13,
+      "pack": "supplement-journal",
+      "id": "cc434a5902b676af",
+      "name": "Bruxa Blood",
+      "cells": [
+        "Bruxa Blood",
+        "Vitriol",
+        "",
+        "Bruxa",
+        "0.1",
+        "97"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 14,
+      "pack": "supplement-journal",
+      "id": "79c717f0bbb16507",
+      "name": "Bullvore Blood",
+      "cells": [
+        "Bullvore Blood",
+        "Rebis",
+        "",
+        "Bullvores",
+        "0.1",
+        "85"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 15,
+      "pack": "supplement-journal",
+      "id": "636ef32e4723a2c5",
+      "name": "Bullvore Brain",
+      "cells": [
+        "Bullvore Brain",
+        "Fulgur",
+        "",
+        "Bullvores",
+        "1",
+        "150"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 16,
+      "pack": "supplement-journal",
+      "id": "71bdd6dcbc7d3dcb",
+      "name": "Bullvore Eyes",
+      "cells": [
+        "Bullvore Eyes",
+        "Vitriol",
+        "",
+        "Bullvores",
+        "0.5",
+        "87"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 17,
+      "pack": "supplement-journal",
+      "id": "6eed05bed6fa7207",
+      "name": "Burdok Root",
+      "cells": [
+        "Burdok Root",
+        "Vermilion",
+        "",
+        "Fields & forests",
+        ".1",
+        "32"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 18,
+      "pack": "supplement-journal",
+      "id": "adc5a6b5b3521d79",
+      "name": "Cockatrice Carapace",
+      "cells": [
+        "Cockatrice Carapace",
+        "Hydragenum",
+        "",
+        "Cockatrice",
+        "2",
+        "75"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 19,
+      "pack": "supplement-journal",
+      "id": "14091aed3ca766e8",
+      "name": "Cockatrice Stomach",
+      "cells": [
+        "Cockatrice Stomach",
+        "Vermilion",
+        "",
+        "Cockatrice",
+        "1",
+        "92"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 20,
+      "pack": "supplement-journal",
+      "id": "a5eddeca6b3ccb94",
+      "name": "Cockatrice Tail Feathers",
+      "cells": [
+        "Cockatrice Tail Feathers",
+        "Aether",
+        "",
+        "Cockatrice",
+        "0.1",
+        "135"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 21,
+      "pack": "supplement-journal",
+      "id": "3427f8ee45fffaa5",
+      "name": "Crystallized Essence",
+      "cells": [
+        "Crystallized Essence",
+        "Hydragenum",
+        "",
+        "Hyms, Pesta, Vendigos, Leshen, Cyclopses",
+        "0.1",
+        "292"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 22,
+      "pack": "supplement-journal",
+      "id": "2fced9550e1f337e",
+      "name": "Cyclops' Bones",
+      "cells": [
+        "Cyclops' Bones",
+        "Aether",
+        "",
+        "Cyclopses",
+        "4",
+        "87"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 23,
+      "pack": "supplement-journal",
+      "id": "b275141d3ee27e55",
+      "name": "Cyclops' Brain",
+      "cells": [
+        "Cyclops' Brain",
+        "Rebis",
+        "",
+        "Cyclopses",
+        "2",
+        "136"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 24,
+      "pack": "supplement-journal",
+      "id": "45a0daefa82a7715",
+      "name": "Cyclops' Eye",
+      "cells": [
+        "Cyclops' Eye",
+        "Vermilion",
+        "",
+        "Cyclopses",
+        "1",
+        "159"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 25,
+      "pack": "supplement-journal",
+      "id": "e318b01818a63cff",
+      "name": "Cyclops' Tongue",
+      "cells": [
+        "Cyclops' Tongue",
+        "Fulgur",
+        "",
+        "Cyclopses",
+        "1",
+        "90"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 143,
+      "table": 1,
+      "row": 26,
+      "pack": "supplement-journal",
+      "id": "5616a2ccdc66d892",
+      "name": "Dragon Blood",
+      "cells": [
+        "Dragon Blood",
+        "Rebis",
+        "",
+        "True Dragons",
+        "1",
+        "250"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 1,
+      "pack": "supplement-journal",
+      "id": "bde7f844d9c24e8b",
+      "name": "Dragon Tail",
+      "cells": [
+        "Dragon Tail",
+        "Hydragenum",
+        "",
+        "True Dragons",
+        "4",
+        "310"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 2,
+      "pack": "supplement-journal",
+      "id": "e02871dc72760357",
+      "name": "Dragon Tears",
+      "cells": [
+        "Dragon Tears",
+        "Sol",
+        "",
+        "True Dragons",
+        ".1",
+        "276"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 3,
+      "pack": "supplement-journal",
+      "id": "b5f30d9e801ec9f3",
+      "name": "Dragon Teeth",
+      "cells": [
+        "Dragon Teeth",
+        "Fulgur",
+        "",
+        "True Dragons",
+        "1",
+        "192"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 4,
+      "pack": "supplement-journal",
+      "id": "38f2d9bae92b30f3",
+      "name": "Elemental Stone",
+      "cells": [
+        "Elemental Stone",
+        "Quebrith",
+        "",
+        "All Elementals",
+        "0.5",
+        "134"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 5,
+      "pack": "supplement-journal",
+      "id": "326aeacfa3a28044",
+      "name": "Essence of Fire",
+      "cells": [
+        "Essence of Fire",
+        "Sol",
+        "",
+        "Phoenixes, Fire Elementals",
+        "0.1",
+        "46"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 6,
+      "pack": "supplement-journal",
+      "id": "0650a09fe5bbc371",
+      "name": "Foglet Essence",
+      "cells": [
+        "Foglet Essence",
+        "Aether",
+        "",
+        "Foglets",
+        "0.1",
+        "43"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 7,
+      "pack": "supplement-journal",
+      "id": "c44aa576f8265459",
+      "name": "Foglet Teeth",
+      "cells": [
+        "Foglet Teeth",
+        "Rebis",
+        "",
+        "Foglets",
+        "0.1",
+        "40"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 8,
+      "pack": "supplement-journal",
+      "id": "03f231f184e0d9fd",
+      "name": "Frightener Claws",
+      "cells": [
+        "Frightener Claws",
+        "Fulgur",
+        "",
+        "Frighteners",
+        "5",
+        "205"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 9,
+      "pack": "supplement-journal",
+      "id": "d0eb2ab281dae7bb",
+      "name": "Frightener Eyes",
+      "cells": [
+        "Frightener Eyes",
+        "Sol",
+        "",
+        "Frighteners",
+        "0.1",
+        "192"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 10,
+      "pack": "supplement-journal",
+      "id": "3abab97ef7748899",
+      "name": "Garkain Saliva",
+      "cells": [
+        "Garkain Saliva",
+        "Quebrith",
+        "",
+        "Garkains",
+        "0.1",
+        "70"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 11,
+      "pack": "supplement-journal",
+      "id": "5d41b755123edd7b",
+      "name": "Giant Centipede Discharge",
+      "cells": [
+        "Giant Centipede Discharge",
+        "Caelum",
+        "",
+        "Giant Centipedes",
+        "0.1",
+        "40"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 12,
+      "pack": "supplement-journal",
+      "id": "e336c8b9b78f3404",
+      "name": "Giant Centipede Mandibles",
+      "cells": [
+        "Giant Centipede Mandibles",
+        "Vitriol",
+        "",
+        "Giant Centipedes",
+        "0.5",
+        "48"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 13,
+      "pack": "supplement-journal",
+      "id": "69ec3553a5a5f005",
+      "name": "Godling Eyes",
+      "cells": [
+        "Godling Eyes",
+        "Aether",
+        "",
+        "Godlings",
+        "0.1",
+        "55"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 14,
+      "pack": "supplement-journal",
+      "id": "75d4f71d913e8bb8",
+      "name": "Harpy Eggs",
+      "cells": [
+        "Harpy Eggs",
+        "Quebrith",
+        "",
+        "Harpy Nests",
+        "0.5",
+        "50"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 15,
+      "pack": "supplement-journal",
+      "id": "14365c5d89d3e94c",
+      "name": "Harpy Feathers",
+      "cells": [
+        "Harpy Feathers",
+        "Vermilion",
+        "",
+        "Harpies",
+        "0.1",
+        "28"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 16,
+      "pack": "supplement-journal",
+      "id": "1890af15c569dc2c",
+      "name": "Harpy Talons",
+      "cells": [
+        "Harpy Talons",
+        "Caelum",
+        "",
+        "Harpies",
+        "0.1",
+        "40"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 17,
+      "pack": "supplement-journal",
+      "id": "7c46cf5aa38f9209",
+      "name": "Higher Vampire Fangs",
+      "cells": [
+        "Higher Vampire Fangs",
+        "Fulgur",
+        "",
+        "Higher Vampires",
+        "0.1",
+        "250"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 18,
+      "pack": "supplement-journal",
+      "id": "abb9f1eaaf44c776",
+      "name": "Knocker Hair",
+      "cells": [
+        "Knocker Hair",
+        "Quebrith",
+        "",
+        "Knockers",
+        "0.1",
+        "33"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 19,
+      "pack": "supplement-journal",
+      "id": "7a5d2d59cdf8589c",
+      "name": "Knocker Teeth",
+      "cells": [
+        "Knocker Teeth",
+        "Vermilion",
+        "",
+        "Knockers",
+        "0.1",
+        "46"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 20,
+      "pack": "supplement-journal",
+      "id": "ec9f432c8f0d4582",
+      "name": "Knocker Toes",
+      "cells": [
+        "Knocker Toes",
+        "Rebis",
+        "",
+        "Knockers",
+        "0.1",
+        "62"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 21,
+      "pack": "supplement-journal",
+      "id": "df6318cbdcc57239",
+      "name": "Leshen Bone",
+      "cells": [
+        "Leshen Bone",
+        "Hydragenum",
+        "",
+        "Leshen",
+        "1",
+        "92"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 22,
+      "pack": "supplement-journal",
+      "id": "55e17d58123854e8",
+      "name": "Leshen Fiber",
+      "cells": [
+        "Leshen Fiber",
+        "Vermilion",
+        "",
+        "Leshen",
+        "0.1",
+        "106"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 23,
+      "pack": "supplement-journal",
+      "id": "51067f64b92878c4",
+      "name": "Leshen Resin",
+      "cells": [
+        "Leshen Resin",
+        "Vitriol",
+        "",
+        "Leshen",
+        "0.1",
+        "140"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 24,
+      "pack": "supplement-journal",
+      "id": "2c831e74c2a42f8a",
+      "name": "Manticore Fangs",
+      "cells": [
+        "Manticore Fangs",
+        "Vitriol",
+        "",
+        "Manticores",
+        "0.1",
+        "132"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 25,
+      "pack": "supplement-journal",
+      "id": "14811e9ad2b1d055",
+      "name": "Manticore Horn",
+      "cells": [
+        "Manticore Horn",
+        "Hydragenum",
+        "",
+        "Manticores",
+        "1",
+        "120"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 26,
+      "pack": "supplement-journal",
+      "id": "6877c18e9ca4182d",
+      "name": "Manticore Stomach",
+      "cells": [
+        "Manticore Stomach",
+        "Quebrith",
+        "",
+        "Manticores",
+        "2",
+        "189"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 27,
+      "pack": "supplement-journal",
+      "id": "b208fa81ab7e4a7e",
+      "name": "Manticore Wing Membranes",
+      "cells": [
+        "Manticore Wing Membranes",
+        "Sol",
+        "",
+        "Manticores",
+        "2",
+        "145"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 28,
+      "pack": "supplement-journal",
+      "id": "dc87df3dab9b7a75",
+      "name": "Naezan Salts",
+      "cells": [
+        "Naezan Salts",
+        "Aether",
+        "",
+        "Bruxa",
+        "0.1",
+        "146"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 29,
+      "pack": "supplement-journal",
+      "id": "b47beba851c99404",
+      "name": "Phoenix Ash",
+      "cells": [
+        "Phoenix Ash",
+        "Sol",
+        "",
+        "Phoenixes",
+        "0.1",
+        "94"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 30,
+      "pack": "supplement-journal",
+      "id": "21e7713cd3efacf6",
+      "name": "Phoenix Feathers",
+      "cells": [
+        "Phoenix Feathers",
+        "Fulgur",
+        "",
+        "Phoenixes",
+        "0.1",
+        "176"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 31,
+      "pack": "supplement-journal",
+      "id": "36bc310356bcb1a6",
+      "name": "Plumard Stomach",
+      "cells": [
+        "Plumard Stomach",
+        "Aether",
+        "",
+        "Plumards",
+        "0.1",
+        "30"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 32,
+      "pack": "supplement-journal",
+      "id": "181a54aba88bf7fa",
+      "name": "Rotfiend Blood",
+      "cells": [
+        "Rotfiend Blood",
+        "Rebis",
+        "",
+        "Rotfiends",
+        "0.1",
+        "30"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 33,
+      "pack": "supplement-journal",
+      "id": "ecb845cc68d23b11",
+      "name": "Rotfiend Liver",
+      "cells": [
+        "Rotfiend Liver",
+        "Caelum",
+        "",
+        "Rotfiends",
+        "0.5",
+        "42"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 34,
+      "pack": "supplement-journal",
+      "id": "586b353e87d5f9d6",
+      "name": "Shaelmaar Dust",
+      "cells": [
+        "Shaelmaar Dust",
+        "Rebis",
+        "",
+        "Shaelmaar",
+        "0.1",
+        "79"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 35,
+      "pack": "supplement-journal",
+      "id": "73859e2aef5dbffa",
+      "name": "Shaelmaar Hair",
+      "cells": [
+        "Shaelmaar Hair",
+        "Caelum",
+        "",
+        "Shaelmaar",
+        "0.1",
+        "100"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 36,
+      "pack": "supplement-journal",
+      "id": "8e623646fd555af8",
+      "name": "Slyzard Scales",
+      "cells": [
+        "Slyzard Scales",
+        "Fulgur",
+        "",
+        "Slyzards",
+        "3",
+        "82"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 37,
+      "pack": "supplement-journal",
+      "id": "dcb1a5fa24205407",
+      "name": "Slyzard Talons",
+      "cells": [
+        "Slyzard Talons",
+        "Caelum",
+        "",
+        "Slyzards",
+        "0.5",
+        "69"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 38,
+      "pack": "supplement-journal",
+      "id": "c31f2502eba1d238",
+      "name": "Slyzard Vocal Chords",
+      "cells": [
+        "Slyzard Vocal Chords",
+        "Vitriol",
+        "",
+        "Slyzards",
+        "0.1",
+        "99"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 39,
+      "pack": "supplement-journal",
+      "id": "6500ca13caed705d",
+      "name": "Succubus Heart",
+      "cells": [
+        "Succubus Heart",
+        "Vermilion",
+        "",
+        "Succubi",
+        "0.5",
+        "95"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 40,
+      "pack": "supplement-journal",
+      "id": "1bd61b6f73ef93ee",
+      "name": "Succubus Horn",
+      "cells": [
+        "Succubus Horn",
+        "Caelum",
+        "",
+        "Succubi",
+        "0.5",
+        "87"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 41,
+      "pack": "supplement-journal",
+      "id": "91655e3b7d4797bb",
+      "name": "Troll Tongue",
+      "cells": [
+        "Troll Tongue",
+        "Aether",
+        "",
+        "Trolls",
+        "0.1",
+        "66"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 42,
+      "pack": "supplement-journal",
+      "id": "ae03a306d3fe7ad4",
+      "name": "Wing Membrane",
+      "cells": [
+        "Wing Membrane",
+        "Rebis",
+        "",
+        "Garkains, Plumards",
+        "0.5",
+        "36"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 43,
+      "pack": "supplement-journal",
+      "id": "6dfc8c379c295677",
+      "name": "Vendigo Fur",
+      "cells": [
+        "Vendigo Fur",
+        "Fulgur",
+        "",
+        "Vendigo",
+        "0.1",
+        "76"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 144,
+      "table": 0,
+      "row": 44,
+      "pack": "supplement-journal",
+      "id": "e4ae65b3fb700372",
+      "name": "Vendigo Heart",
+      "cells": [
+        "Vendigo Heart",
+        "Aether",
+        "",
+        "Vendigo",
+        "1",
+        "167"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 2,
+      "pack": "supplement-journal",
+      "id": "56f362dbaf059eb6",
+      "name": "Botchling Mutagen",
+      "cells": [
+        "Botchling",
+        "+2 Melee Damage",
+        "18",
+        "Cleft palate & reddened sclera"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 3,
+      "pack": "supplement-journal",
+      "id": "cd0aa4cee8bb9e9b",
+      "name": "Cockatrice Mutagen",
+      "cells": [
+        "Cockatrice",
+        "+2 Melee Damage",
+        "18",
+        "Patches of green feathers"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 4,
+      "pack": "supplement-journal",
+      "id": "73e45237364df1c4",
+      "name": "Manticore Mutagen",
+      "cells": [
+        "Manticore",
+        "+1 REF",
+        "22",
+        "Small horns & feline features"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 5,
+      "pack": "supplement-journal",
+      "id": "0c62a60025e21ab6",
+      "name": "Phoenix Mutagen",
+      "cells": [
+        "Phoenix",
+        "+3 Melee Damage",
+        "20",
+        "Patches of grey feathers & an internal glow"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 6,
+      "pack": "supplement-journal",
+      "id": "28a2b8d0dc7f6546",
+      "name": "Vendigo Mutagen",
+      "cells": [
+        "Vendigo",
+        "+3 Melee Damage",
+        "20",
+        "Patchy fur & sickly grey skin"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 8,
+      "pack": "supplement-journal",
+      "id": "6be0bd9648c1bfe9",
+      "name": "Bear Mutagen",
+      "cells": [
+        "Bear",
+        "+10 HP",
+        "20",
+        "Prolific fur growth"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 9,
+      "pack": "supplement-journal",
+      "id": "64fff9bd7012147b",
+      "name": "Bullvore Mutagen",
+      "cells": [
+        "Bullvore",
+        "+10 HP",
+        "20",
+        "Hard growths all over the body"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 10,
+      "pack": "supplement-journal",
+      "id": "4e1b35d428004e62",
+      "name": "Frightener Mutagen",
+      "cells": [
+        "Frightener",
+        "+1 BODY",
+        "22",
+        "Multi-faceted eyes & patches of chitin"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 11,
+      "pack": "supplement-journal",
+      "id": "c8674094dcb78dbc",
+      "name": "Garkain Mutagen",
+      "cells": [
+        "Garkain",
+        "+10 HP",
+        "20",
+        "Fleshy growths on the head"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 12,
+      "pack": "supplement-journal",
+      "id": "14b3ed9cdbf1285b",
+      "name": "Shaelmaar Mutagen",
+      "cells": [
+        "Shaelmaar",
+        "+10 HP",
+        "20",
+        "Patches of thick rock textured skin"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 13,
+      "pack": "supplement-journal",
+      "id": "346a26bec84d2c65",
+      "name": "Succubus Mutagen",
+      "cells": [
+        "Succubus",
+        "+5 HP",
+        "18",
+        "Small horns and a tail"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 14,
+      "pack": "supplement-journal",
+      "id": "0767bdeff96afd93",
+      "name": "Troll Mutagen",
+      "cells": [
+        "Troll",
+        "+5 HP",
+        "18",
+        "Blue-ish skin leathery skin"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 16,
+      "pack": "supplement-journal",
+      "id": "e46b6dbcead3f917",
+      "name": "Bruxa Mutagen",
+      "cells": [
+        "Bruxa",
+        "+1 WILL",
+        "22",
+        "Semi-translucent skin & a hissing voice"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 17,
+      "pack": "supplement-journal",
+      "id": "b5aef9725a6bbf91",
+      "name": "Elemental Mutagen",
+      "cells": [
+        "Elemental",
+        "+3 Vigor Threshold",
+        "20",
+        "Earth: Rocky growths along your body Fire: Small spouts of fire from your mouth Ice: You are always cold to the touch"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 18,
+      "pack": "supplement-journal",
+      "id": "304c86a9bbf1ec80",
+      "name": "Foglet Mutagen",
+      "cells": [
+        "Foglet",
+        "+2 Vigor Threshold",
+        "18",
+        "A weak internal glow & gaunt features"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 19,
+      "pack": "supplement-journal",
+      "id": "6773868d0dedc48e",
+      "name": "Leshen Mutagen",
+      "cells": [
+        "Leshen",
+        "+1 WILL",
+        "22",
+        "Plants growth on the body"
+      ]
+    },
+    {
+      "source": "A Witcher’s Journal",
+      "pdfPage": 145,
+      "table": 0,
+      "row": 20,
+      "pack": "supplement-journal",
+      "id": "e4413a6a2fb12709",
+      "name": "Pesta Mutagen",
+      "cells": [
+        "Pesta",
+        "+2 Vigor Threshold",
+        "18",
+        "Sickly, pale skin & gaunt features"
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "diagram": "Ursine Armor Diagram",
+      "printed": "Beast Bone",
+      "canonical": "Beast Bones"
+    },
+    {
+      "diagram": "Ursine Armor Diagram",
+      "printed": "Rottfiend Blood",
+      "canonical": "Rotfiend Blood"
+    },
+    {
+      "diagram": "Feline Armor Diagram",
+      "printed": "Arachas Eye",
+      "canonical": "Arachas Eyes"
+    },
+    {
+      "diagram": "Griffin Armor Diagram",
+      "printed": "Wyvern Eye",
+      "canonical": "Wyvern Eyes"
+    },
+    {
+      "diagram": "Griffin Armor Diagram",
+      "printed": "Rottfiend Blood",
+      "canonical": "Rotfiend Blood"
+    },
+    {
+      "diagram": "Manticore Armor Diagram",
+      "printed": "Hag Ear",
+      "canonical": "Grave Hag Ear"
+    },
+    {
+      "diagram": "Manticore Armor Diagram",
+      "printed": "Nekker claw",
+      "canonical": "Nekker Claw"
+    }
+  ],
+  "unresolved": [
+    {
+      "diagram": "Feline Silver Sword Diagram",
+      "material": "Ruby Dust"
+    },
+    {
+      "diagram": "Serpentine Silver Sword Diagram",
+      "material": "Emerald Dust"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
 Independent Witcher implementation based on the owner's Cyberpunk V14 history
 and the supplied **Core Rulebook v1.35**. System ID: `witcher-rilerena`.
 
-**In development. Not yet a complete or live-verified game system.**
+**Installable alpha for the agreed ordinary-combat scope. Live Forge acceptance is pending.**
 No runtime code from another Witcher system is included. Two general Foundry
 compatibility helpers are retained from Cyberpunk.
 
@@ -12,13 +12,19 @@ compatibility helpers are retained from Cyberpunk.
 - Character, NPC and monster data models and sheets.
 - Attack, defense and GM damage workflow, location armor, wounds, saves,
   resources, crafting and equipment.
-- **673 equipment and recipe records** in eight Item compendia.
+- **809 equipment, component, mutagen and recipe records** in ten Item compendia: 673 core + 46 A Witcher’s Tools + 90 A Witcher’s Journal.
 - **36 creatures and NPCs** in **Core Bestiary & NPCs**, including printed
   variants, animals and three named adventure NPCs; **253 embedded records**.
 
 See [implementation status](docs/witcher/implementation-status.md) for remaining
 work and [bestiary coverage](docs/witcher/bestiary.md) for adaptations and limits.
-Signs and player magic are deferred. Mounted combat is not a current priority.
+Signs/magic, mounted combat and active creature/profession abilities are deferred.
+
+## Install on The Forge
+
+Use the [v0.1.0-alpha.1 manifest](https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.1/system.json) in **Install from Manifest**.
+See [installation instructions](docs/witcher/install.md) and [release assets](https://github.com/alexch3706/WVTTfoundry/releases/tag/v0.1.0-alpha.1).
+Create a new Witcher world; use a 2 m grid and an active GM for combat commands.
 
 ## Validation
 

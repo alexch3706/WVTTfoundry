@@ -1,5 +1,5 @@
 import { SYSTEM_ID } from './config.js';
-import { resolveCheck, RuleError, reserveAction } from './rules.js';
+import { resolveCheck, RuleError, reserveAction, attackSequence } from './rules.js';
 import { resolveFoundryUuid } from '../foundry-compat.js';
 
 export const escapeHTML = (value) =>
@@ -31,11 +31,18 @@ export function serial(key, operation) {
   return task;
 }
 
+function restoreField(source, key) {
+  const value = foundry.utils.getProperty(source, key);
+  if (value === undefined) {
+    const split = key.lastIndexOf('.');
+    return [key.slice(0, split + 1) + '-=' + key.slice(split + 1), null];
+  }
+  return [key, foundry.utils.deepClone(value)];
+}
+
 /** Await each persistence operation and restore the exact changed fields on failure. */
-export async function commitActor(actor, changes = {}, itemChanges = []) {
-  const before = Object.fromEntries(
-    Object.keys(changes).map((k) => [k, foundry.utils.deepClone(foundry.utils.getProperty(actor._source, k))])
-  );
+export async function commitActor(actor, changes = {}, itemChanges = [], after) {
+  const before = Object.fromEntries(Object.keys(changes).map((k) => restoreField(actor._source, k)));
   const beforeItems = itemChanges.map((change) => {
     const item = actor.items.get(change._id);
     if (!item) throw new RuleError('Equipment changed while this action was pending.');
@@ -44,7 +51,7 @@ export async function commitActor(actor, changes = {}, itemChanges = []) {
       ...Object.fromEntries(
         Object.keys(change)
           .filter((k) => k !== '_id')
-          .map((k) => [k, foundry.utils.deepClone(foundry.utils.getProperty(item._source, k))])
+          .map((k) => restoreField(item._source, k))
       ),
     };
   });
@@ -55,6 +62,7 @@ export async function commitActor(actor, changes = {}, itemChanges = []) {
       actorWritten = true;
     }
     if (itemChanges.length) await actor.updateEmbeddedDocuments('Item', itemChanges);
+    if (after) return await after();
   } catch (error) {
     const recovery = [];
     if (actorWritten) recovery.push(actor.update(before));
@@ -90,7 +98,15 @@ export function input(
 export function prompt(title, content, { button = 'Roll', width = 480 } = {}) {
   return new Promise((resolve) => {
     const DialogClass = globalThis.Dialog ?? foundry.appv1.api.Dialog;
-    new DialogClass(
+    class ValidatedDialog extends DialogClass {
+      async submit(button, event) {
+        const element = this.element?.[0] ?? this.element;
+        if (button === this.data.buttons.submit && element?.querySelector('form')?.reportValidity() === false)
+          return;
+        return super.submit(button, event);
+      }
+    }
+    new ValidatedDialog(
       {
         title,
         content: `<form class="witcher-dialog">${content}</form>`,
@@ -100,6 +116,7 @@ export function prompt(title, content, { button = 'Roll', width = 480 } = {}) {
             callback: (html) => {
               const element = html[0] ?? html;
               const form = element.querySelector('form');
+              if (!form.reportValidity()) return false;
               const values = Object.fromEntries(new FormData(form));
               for (const el of form.querySelectorAll('input[type=checkbox]')) values[el.name] = el.checked;
               resolve(values);
@@ -134,8 +151,9 @@ export async function check(base) {
     rolls,
   };
 }
-export async function chat(actor, title, content, { rolls = [], flags = {}, whisper } = {}) {
+export async function chat(actor, title, content, { rolls = [], flags = {}, whisper, id } = {}) {
   const data = {
+    ...(id ? { _id: id } : {}),
     speaker: ChatMessage.getSpeaker({ actor }),
     content: `<article class="witcher-chat"><h3>${escapeHTML(title)}</h3>${content}</article>`,
     rolls,
@@ -143,10 +161,14 @@ export async function chat(actor, title, content, { rolls = [], flags = {}, whis
   };
   if (whisper) data.whisper = whisper;
   else ChatMessage.applyRollMode(data, game.settings.get('core', 'rollMode'));
-  return ChatMessage.create(data);
+  return ChatMessage.create(data, { keepId: !!id });
 }
 export function checkHTML(result) {
   return `<p class="witcher-total">${result.total}</p><p>Base ${result.base}; d10: ${result.dice.join(', ')}${result.fumble ? '; fumble ' + result.fumble : ''}</p>`;
+}
+export function turnIdentity() {
+  const combat = game.combat;
+  return combat?.started ? `${combat.id}:${combat.round}:${combat.turn}` : '';
 }
 export function actionPlan(actor, options = {}) {
   owner(actor);
@@ -154,31 +176,49 @@ export function actionPlan(actor, options = {}) {
   if (conditions.includes('dead')) throw new RuleError('A dead actor cannot act.');
   if (!options.recovery && conditions.some((c) => ['stunned', 'unconscious', 'pinned'].includes(c)))
     throw new RuleError('Only recovery or escape is possible in this condition.');
-  const combat = game.combat;
-  if (!combat?.started) return { changes: {}, cost: 0, modifier: options.extra ? -3 : 0 };
-  if (!options.defense && combat.combatant?.actor?.uuid !== actor.uuid)
+  const combat = game.combat,
+    active = !!combat?.started;
+  if (options.expectedTurn !== undefined && options.expectedTurn !== turnIdentity())
+    throw new RuleError('The turn changed while this dialog was open. Choose your action again.');
+  if (options.reaction) return { changes: {}, cost: 0, modifier: 0 };
+  if (!options.defense && actor.system.combat.reactions?.some((r) => r.turn === turnIdentity()))
+    throw new RuleError('Resolve or decline the immediate school armor reaction in chat first.');
+  if (active && !options.defense && combat.combatant?.actor?.uuid !== actor.uuid)
     throw new RuleError('Advance the combat tracker to this actor’s turn first.');
-  const roundKey = `${combat.id}:${combat.round}`;
-  const turnKey = `${roundKey}:${combat.turn}`;
+  const roundKey = active ? `${combat.id}:${combat.round}` : '';
+  const turnKey = turnIdentity();
   const budget = foundry.utils.deepClone(actor.system.combat);
-  if (budget.roundKey !== roundKey) budget.defenses = 0;
-  if (!options.defense && budget.key !== turnKey) {
-    budget.actions = 0;
-    budget.extra = 0;
+  if (!active || budget.roundKey !== roundKey) {
+    budget.defenses = 0;
+    budget.npcWeaponId = '';
+    budget.npcStrikes = 0;
+  }
+  if (!active || (!options.defense && budget.key !== turnKey)) {
+    Object.assign(budget, {
+      actions: 0,
+      extra: 0,
+      remaining: 0,
+      full: false,
+      attackAction: '',
+      strikeIndex: 0,
+    });
+  }
+  if (!options.weapon && !options.defense && budget.remaining > 0) {
+    if (!options.forfeit) throw new RuleError('Finish or forfeit your remaining strikes first.');
     budget.remaining = 0;
   }
-  const result = reserveAction(budget, {
-    ...options,
-    activelyDodging: conditions.includes('activelyDodging'),
-  });
+  const result = options.weapon
+    ? attackSequence(budget, options.weapon, options)
+    : reserveAction(budget, { ...options, activelyDodging: conditions.includes('activelyDodging') });
+  result.budget = { ...budget, ...result.budget };
   if (actor.system.traits.infiniteStamina) result.cost = 0;
   if (result.cost > actor.system.sta.value) throw new RuleError('Not enough Stamina.');
   return {
     ...result,
     changes: {
+      ...Object.fromEntries(Object.entries(result.budget).map(([k, v]) => ['system.combat.' + k, v])),
       'system.combat.roundKey': roundKey,
       ...(!options.defense ? { 'system.combat.key': turnKey } : {}),
-      ...Object.fromEntries(Object.entries(result.budget).map(([k, v]) => ['system.combat.' + k, v])),
       'system.sta.value': actor.system.sta.value - result.cost,
     },
   };
@@ -204,8 +244,9 @@ export async function skillRoll(actor, key, { modifier = 0, stat, dialog = true,
   return result;
 }
 
-export async function save(actor, kind, { modifier = 0, luck = 0 } = {}) {
+export async function save(actor, kind, { modifier = 0, luck = 0, receipt } = {}) {
   owner(actor);
+  if (receipt && actor.system.combat.applied.includes(receipt)) return;
   if (!['stun', 'death', 'body'].includes(kind)) throw new RuleError('Unknown save.');
   if (luck && kind !== 'death') throw new RuleError('Luck can only modify a Death save.');
   if (!Number.isInteger(luck) || luck < 0 || luck > actor.system.luck.value)
@@ -235,12 +276,14 @@ export async function save(actor, kind, { modifier = 0, luck = 0 } = {}) {
     }
   }
   changes['system.conditions'] = [...conditions];
-  await actor.update(changes);
-  await chat(
-    actor,
-    `${kind} save`,
-    `<p>${roll.total} &lt; ${threshold}: <strong>${success ? 'Success' : 'Failure'}</strong></p>`,
-    { rolls: [roll] }
+  if (receipt) changes['system.combat.applied'] = [...actor.system.combat.applied, receipt];
+  await commitActor(actor, changes, [], () =>
+    chat(
+      actor,
+      `${kind} save`,
+      `<p>${roll.total} &lt; ${threshold}: <strong>${success ? 'Success' : 'Failure'}</strong></p>`,
+      { rolls: [roll] }
+    )
   );
   return success;
 }

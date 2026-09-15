@@ -1,0 +1,2825 @@
+[
+  {
+    "_id": "3fd3021aca9dec32",
+    "name": "Bear Hide",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 6,
+      "cost": 30,
+      "carried": true,
+      "equipped": false,
+      "category": "hide",
+      "forageLocation": "Bears",
+      "effectText": "Animal hides and pelts can replace cow hide when making leather (A Witcher’s Journal p.142).",
+      "source": "A Witcher’s Journal",
+      "page": 142,
+      "description": "<p>Animal hides and pelts can replace cow hide when making leather (A Witcher’s Journal p.142).</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 0,
+          "row": 1
+        },
+        "leatherSource": true
+      }
+    }
+  },
+  {
+    "_id": "7a806a099406095e",
+    "name": "Boar Pelt",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 10,
+      "carried": true,
+      "equipped": false,
+      "category": "hide",
+      "forageLocation": "Boars",
+      "effectText": "Animal hides and pelts can replace cow hide when making leather (A Witcher’s Journal p.142).",
+      "source": "A Witcher’s Journal",
+      "page": 142,
+      "description": "<p>Animal hides and pelts can replace cow hide when making leather (A Witcher’s Journal p.142).</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 0,
+          "row": 2
+        },
+        "leatherSource": true
+      }
+    }
+  },
+  {
+    "_id": "15f0ca7142360e16",
+    "name": "Panther Hide",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3,
+      "cost": 38,
+      "carried": true,
+      "equipped": false,
+      "category": "hide",
+      "forageLocation": "Panthers",
+      "effectText": "Animal hides and pelts can replace cow hide when making leather (A Witcher’s Journal p.142).",
+      "source": "A Witcher’s Journal",
+      "page": 142,
+      "description": "<p>Animal hides and pelts can replace cow hide when making leather (A Witcher’s Journal p.142).</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 0,
+          "row": 3
+        },
+        "leatherSource": true
+      }
+    }
+  },
+  {
+    "_id": "cf8b9cfad305511a",
+    "name": "Abomination Lymph",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 152,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Quebrith",
+      "substanceUnits": 1,
+      "forageLocation": "Bruxa, Garkains",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "6f3f13ed94bd730f",
+    "name": "Archespore Juice",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 38,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vitriol",
+      "substanceUnits": 1,
+      "forageLocation": "Archespores",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "4d43338fc7aae268",
+    "name": "Archespore Tendrils",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 44,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Quebrith",
+      "substanceUnits": 1,
+      "forageLocation": "Archespores",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "614e3e0dab3362a9",
+    "name": "Barbegazi Fur",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 21,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Hydragenum",
+      "substanceUnits": 1,
+      "forageLocation": "Barbegazi",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "a7b00b8039efe9c7",
+    "name": "Barghest Essence",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 36,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vermilion",
+      "substanceUnits": 1,
+      "forageLocation": "Barghest",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "fbd2cdd3952409cf",
+    "name": "Bear Fat",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 90,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Rebis",
+      "substanceUnits": 1,
+      "forageLocation": "Bears",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "eeeae7ba41bca67d",
+    "name": "Boar Tusks",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 82,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vitriol",
+      "substanceUnits": 1,
+      "forageLocation": "Boars",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "66c32cdfc964f93b",
+    "name": "Bohun Upas Poison",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 200,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vermilion",
+      "substanceUnits": 1,
+      "forageLocation": "Manticores",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "e6a5b2c096f9c8b0",
+    "name": "Botchling Blood",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 66,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vitriol",
+      "substanceUnits": 1,
+      "forageLocation": "Botchlings",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "530e8944a345b0df",
+    "name": "Botchling Bones",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 55,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Hydragenum",
+      "substanceUnits": 1,
+      "forageLocation": "Botchlings",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "e137d08db8d60491",
+    "name": "Botchling Brain",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 164,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Caelum",
+      "substanceUnits": 1,
+      "forageLocation": "Botchlings",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "075a6868f7c45194",
+    "name": "Botchling Ear",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 100,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Fulgur",
+      "substanceUnits": 1,
+      "forageLocation": "Botchlings",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "cc434a5902b676af",
+    "name": "Bruxa Blood",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 97,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vitriol",
+      "substanceUnits": 1,
+      "forageLocation": "Bruxa",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 13
+        }
+      }
+    }
+  },
+  {
+    "_id": "79c717f0bbb16507",
+    "name": "Bullvore Blood",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 85,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Rebis",
+      "substanceUnits": 1,
+      "forageLocation": "Bullvores",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 14
+        }
+      }
+    }
+  },
+  {
+    "_id": "636ef32e4723a2c5",
+    "name": "Bullvore Brain",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 150,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Fulgur",
+      "substanceUnits": 1,
+      "forageLocation": "Bullvores",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 15
+        }
+      }
+    }
+  },
+  {
+    "_id": "71bdd6dcbc7d3dcb",
+    "name": "Bullvore Eyes",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 87,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vitriol",
+      "substanceUnits": 1,
+      "forageLocation": "Bullvores",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 16
+        }
+      }
+    }
+  },
+  {
+    "_id": "6eed05bed6fa7207",
+    "name": "Burdok Root",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 32,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vermilion",
+      "substanceUnits": 1,
+      "forageLocation": "Fields & forests",
+      "source": "A Witcher’s Journal",
+      "page": 142,
+      "availability": "P",
+      "forageDC": 16,
+      "forageQuantity": "1d6",
+      "notes": "Foraging: fields and forests; Poor rarity; DC 16; success yields 1d6 units (p.142)."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 17
+        }
+      }
+    }
+  },
+  {
+    "_id": "adc5a6b5b3521d79",
+    "name": "Cockatrice Carapace",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 75,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Hydragenum",
+      "substanceUnits": 1,
+      "forageLocation": "Cockatrice",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 18
+        }
+      }
+    }
+  },
+  {
+    "_id": "14091aed3ca766e8",
+    "name": "Cockatrice Stomach",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 92,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vermilion",
+      "substanceUnits": 1,
+      "forageLocation": "Cockatrice",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 19
+        }
+      }
+    }
+  },
+  {
+    "_id": "a5eddeca6b3ccb94",
+    "name": "Cockatrice Tail Feathers",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 135,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Aether",
+      "substanceUnits": 1,
+      "forageLocation": "Cockatrice",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 20
+        }
+      }
+    }
+  },
+  {
+    "_id": "3427f8ee45fffaa5",
+    "name": "Crystallized Essence",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 292,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Hydragenum",
+      "substanceUnits": 1,
+      "forageLocation": "Hyms, Pesta, Vendigos, Leshen, Cyclopses",
+      "source": "A Witcher’s Journal",
+      "page": 142,
+      "ability": {
+        "key": "crushEssence",
+        "mode": "processing"
+      },
+      "skill": "crafting",
+      "craftDC": 10,
+      "craftTime": "15 Minutes",
+      "productName": "Infused Dust",
+      "productQuantity": 2,
+      "effectText": "Spend 15 minutes and pass a DC 10 Crafting check to destroy one unit of Crystallized Essence and create two units of Infused Dust.",
+      "materials": [
+        {
+          "name": "Crystallized Essence",
+          "quantity": 1,
+          "uuid": "Compendium.witcher-rilerena.supplement-journal.Item.3427f8ee45fffaa5"
+        }
+      ],
+      "description": "<p>Spend 15 minutes and pass a DC 10 Crafting check to destroy one unit of Crystallized Essence and create two units of Infused Dust.</p>",
+      "productUuid": "Compendium.witcher-rilerena.components.Item.3cffa287f08573b0"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 21
+        }
+      }
+    }
+  },
+  {
+    "_id": "2fced9550e1f337e",
+    "name": "Cyclops' Bones",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4,
+      "cost": 87,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Aether",
+      "substanceUnits": 1,
+      "forageLocation": "Cyclopses",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 22
+        }
+      }
+    }
+  },
+  {
+    "_id": "b275141d3ee27e55",
+    "name": "Cyclops' Brain",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 136,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Rebis",
+      "substanceUnits": 1,
+      "forageLocation": "Cyclopses",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 23
+        }
+      }
+    }
+  },
+  {
+    "_id": "45a0daefa82a7715",
+    "name": "Cyclops' Eye",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 159,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vermilion",
+      "substanceUnits": 1,
+      "forageLocation": "Cyclopses",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 24
+        }
+      }
+    }
+  },
+  {
+    "_id": "e318b01818a63cff",
+    "name": "Cyclops' Tongue",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 90,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Fulgur",
+      "substanceUnits": 1,
+      "forageLocation": "Cyclopses",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 25
+        }
+      }
+    }
+  },
+  {
+    "_id": "5616a2ccdc66d892",
+    "name": "Dragon Blood",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 250,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Rebis",
+      "substanceUnits": 1,
+      "forageLocation": "True Dragons",
+      "source": "A Witcher’s Journal",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 143,
+          "table": 1,
+          "row": 26
+        }
+      }
+    }
+  },
+  {
+    "_id": "bde7f844d9c24e8b",
+    "name": "Dragon Tail",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4,
+      "cost": 310,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Hydragenum",
+      "substanceUnits": 1,
+      "forageLocation": "True Dragons",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "e02871dc72760357",
+    "name": "Dragon Tears",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 276,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Sol",
+      "substanceUnits": 1,
+      "forageLocation": "True Dragons",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "b5f30d9e801ec9f3",
+    "name": "Dragon Teeth",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 192,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Fulgur",
+      "substanceUnits": 1,
+      "forageLocation": "True Dragons",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "38f2d9bae92b30f3",
+    "name": "Elemental Stone",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 134,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Quebrith",
+      "substanceUnits": 1,
+      "forageLocation": "All Elementals",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "326aeacfa3a28044",
+    "name": "Essence of Fire",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 46,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Sol",
+      "substanceUnits": 1,
+      "forageLocation": "Phoenixes, Fire Elementals",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "0650a09fe5bbc371",
+    "name": "Foglet Essence",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 43,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Aether",
+      "substanceUnits": 1,
+      "forageLocation": "Foglets",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "c44aa576f8265459",
+    "name": "Foglet Teeth",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 40,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Rebis",
+      "substanceUnits": 1,
+      "forageLocation": "Foglets",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "03f231f184e0d9fd",
+    "name": "Frightener Claws",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5,
+      "cost": 205,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Fulgur",
+      "substanceUnits": 1,
+      "forageLocation": "Frighteners",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "d0eb2ab281dae7bb",
+    "name": "Frightener Eyes",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 192,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Sol",
+      "substanceUnits": 1,
+      "forageLocation": "Frighteners",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "3abab97ef7748899",
+    "name": "Garkain Saliva",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 70,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Quebrith",
+      "substanceUnits": 1,
+      "forageLocation": "Garkains",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "5d41b755123edd7b",
+    "name": "Giant Centipede Discharge",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 40,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Caelum",
+      "substanceUnits": 1,
+      "forageLocation": "Giant Centipedes",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "e336c8b9b78f3404",
+    "name": "Giant Centipede Mandibles",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 48,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vitriol",
+      "substanceUnits": 1,
+      "forageLocation": "Giant Centipedes",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "69ec3553a5a5f005",
+    "name": "Godling Eyes",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 55,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Aether",
+      "substanceUnits": 1,
+      "forageLocation": "Godlings",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 13
+        }
+      }
+    }
+  },
+  {
+    "_id": "75d4f71d913e8bb8",
+    "name": "Harpy Eggs",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 50,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Quebrith",
+      "substanceUnits": 1,
+      "forageLocation": "Harpy Nests",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 14
+        }
+      }
+    }
+  },
+  {
+    "_id": "14365c5d89d3e94c",
+    "name": "Harpy Feathers",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 28,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vermilion",
+      "substanceUnits": 1,
+      "forageLocation": "Harpies",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 15
+        }
+      }
+    }
+  },
+  {
+    "_id": "1890af15c569dc2c",
+    "name": "Harpy Talons",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 40,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Caelum",
+      "substanceUnits": 1,
+      "forageLocation": "Harpies",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 16
+        }
+      }
+    }
+  },
+  {
+    "_id": "7c46cf5aa38f9209",
+    "name": "Higher Vampire Fangs",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 250,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Fulgur",
+      "substanceUnits": 1,
+      "forageLocation": "Higher Vampires",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 17
+        }
+      }
+    }
+  },
+  {
+    "_id": "abb9f1eaaf44c776",
+    "name": "Knocker Hair",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 33,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Quebrith",
+      "substanceUnits": 1,
+      "forageLocation": "Knockers",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 18
+        }
+      }
+    }
+  },
+  {
+    "_id": "7a5d2d59cdf8589c",
+    "name": "Knocker Teeth",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 46,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vermilion",
+      "substanceUnits": 1,
+      "forageLocation": "Knockers",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 19
+        }
+      }
+    }
+  },
+  {
+    "_id": "ec9f432c8f0d4582",
+    "name": "Knocker Toes",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 62,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Rebis",
+      "substanceUnits": 1,
+      "forageLocation": "Knockers",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 20
+        }
+      }
+    }
+  },
+  {
+    "_id": "df6318cbdcc57239",
+    "name": "Leshen Bone",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 92,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Hydragenum",
+      "substanceUnits": 1,
+      "forageLocation": "Leshen",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 21
+        }
+      }
+    }
+  },
+  {
+    "_id": "55e17d58123854e8",
+    "name": "Leshen Fiber",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 106,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vermilion",
+      "substanceUnits": 1,
+      "forageLocation": "Leshen",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 22
+        }
+      }
+    }
+  },
+  {
+    "_id": "51067f64b92878c4",
+    "name": "Leshen Resin",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 140,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vitriol",
+      "substanceUnits": 1,
+      "forageLocation": "Leshen",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 23
+        }
+      }
+    }
+  },
+  {
+    "_id": "2c831e74c2a42f8a",
+    "name": "Manticore Fangs",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 132,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vitriol",
+      "substanceUnits": 1,
+      "forageLocation": "Manticores",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 24
+        }
+      }
+    }
+  },
+  {
+    "_id": "14811e9ad2b1d055",
+    "name": "Manticore Horn",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 120,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Hydragenum",
+      "substanceUnits": 1,
+      "forageLocation": "Manticores",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 25
+        }
+      }
+    }
+  },
+  {
+    "_id": "6877c18e9ca4182d",
+    "name": "Manticore Stomach",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 189,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Quebrith",
+      "substanceUnits": 1,
+      "forageLocation": "Manticores",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 26
+        }
+      }
+    }
+  },
+  {
+    "_id": "b208fa81ab7e4a7e",
+    "name": "Manticore Wing Membranes",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 145,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Sol",
+      "substanceUnits": 1,
+      "forageLocation": "Manticores",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 27
+        }
+      }
+    }
+  },
+  {
+    "_id": "dc87df3dab9b7a75",
+    "name": "Naezan Salts",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 146,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Aether",
+      "substanceUnits": 1,
+      "forageLocation": "Bruxa",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 28
+        }
+      }
+    }
+  },
+  {
+    "_id": "b47beba851c99404",
+    "name": "Phoenix Ash",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 94,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Sol",
+      "substanceUnits": 1,
+      "forageLocation": "Phoenixes",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 29
+        }
+      }
+    }
+  },
+  {
+    "_id": "21e7713cd3efacf6",
+    "name": "Phoenix Feathers",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 176,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Fulgur",
+      "substanceUnits": 1,
+      "forageLocation": "Phoenixes",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 30
+        }
+      }
+    }
+  },
+  {
+    "_id": "36bc310356bcb1a6",
+    "name": "Plumard Stomach",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 30,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Aether",
+      "substanceUnits": 1,
+      "forageLocation": "Plumards",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 31
+        }
+      }
+    }
+  },
+  {
+    "_id": "181a54aba88bf7fa",
+    "name": "Rotfiend Blood",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 30,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Rebis",
+      "substanceUnits": 1,
+      "forageLocation": "Rotfiends",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 32
+        }
+      }
+    }
+  },
+  {
+    "_id": "ecb845cc68d23b11",
+    "name": "Rotfiend Liver",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 42,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Caelum",
+      "substanceUnits": 1,
+      "forageLocation": "Rotfiends",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 33
+        }
+      }
+    }
+  },
+  {
+    "_id": "586b353e87d5f9d6",
+    "name": "Shaelmaar Dust",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 79,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Rebis",
+      "substanceUnits": 1,
+      "forageLocation": "Shaelmaar",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 34
+        }
+      }
+    }
+  },
+  {
+    "_id": "73859e2aef5dbffa",
+    "name": "Shaelmaar Hair",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 100,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Caelum",
+      "substanceUnits": 1,
+      "forageLocation": "Shaelmaar",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 35
+        }
+      }
+    }
+  },
+  {
+    "_id": "8e623646fd555af8",
+    "name": "Slyzard Scales",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3,
+      "cost": 82,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Fulgur",
+      "substanceUnits": 1,
+      "forageLocation": "Slyzards",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 36
+        }
+      }
+    }
+  },
+  {
+    "_id": "dcb1a5fa24205407",
+    "name": "Slyzard Talons",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 69,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Caelum",
+      "substanceUnits": 1,
+      "forageLocation": "Slyzards",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 37
+        }
+      }
+    }
+  },
+  {
+    "_id": "c31f2502eba1d238",
+    "name": "Slyzard Vocal Chords",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 99,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vitriol",
+      "substanceUnits": 1,
+      "forageLocation": "Slyzards",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 38
+        }
+      }
+    }
+  },
+  {
+    "_id": "6500ca13caed705d",
+    "name": "Succubus Heart",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 95,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Vermilion",
+      "substanceUnits": 1,
+      "forageLocation": "Succubi",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 39
+        }
+      }
+    }
+  },
+  {
+    "_id": "1bd61b6f73ef93ee",
+    "name": "Succubus Horn",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 87,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Caelum",
+      "substanceUnits": 1,
+      "forageLocation": "Succubi",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 40
+        }
+      }
+    }
+  },
+  {
+    "_id": "91655e3b7d4797bb",
+    "name": "Troll Tongue",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 66,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Aether",
+      "substanceUnits": 1,
+      "forageLocation": "Trolls",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 41
+        }
+      }
+    }
+  },
+  {
+    "_id": "ae03a306d3fe7ad4",
+    "name": "Wing Membrane",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 36,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Rebis",
+      "substanceUnits": 1,
+      "forageLocation": "Garkains, Plumards",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 42
+        }
+      }
+    }
+  },
+  {
+    "_id": "6dfc8c379c295677",
+    "name": "Vendigo Fur",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 76,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Fulgur",
+      "substanceUnits": 1,
+      "forageLocation": "Vendigo",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 43
+        }
+      }
+    }
+  },
+  {
+    "_id": "e4ae65b3fb700372",
+    "name": "Vendigo Heart",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 167,
+      "carried": true,
+      "equipped": false,
+      "category": "alchemical",
+      "substance": "Aether",
+      "substanceUnits": 1,
+      "forageLocation": "Vendigo",
+      "source": "A Witcher’s Journal",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 144,
+          "table": 0,
+          "row": 44
+        }
+      }
+    }
+  },
+  {
+    "_id": "56f362dbaf059eb6",
+    "name": "Botchling Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+2 Melee Damage",
+      "craftDC": 18,
+      "consumable": true,
+      "bonuses": {
+        "meleeBonus": 2
+      },
+      "notes": "Cleft palate & reddened sclera",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+2 Melee Damage</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 2
+        },
+        "mutagenColor": "red",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "cd0aa4cee8bb9e9b",
+    "name": "Cockatrice Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+2 Melee Damage",
+      "craftDC": 18,
+      "consumable": true,
+      "bonuses": {
+        "meleeBonus": 2
+      },
+      "notes": "Patches of green feathers",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+2 Melee Damage</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 3
+        },
+        "mutagenColor": "red",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "73e45237364df1c4",
+    "name": "Manticore Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+1 REF",
+      "craftDC": 22,
+      "consumable": true,
+      "bonuses": {
+        "ref": 1
+      },
+      "notes": "Small horns & feline features",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+1 REF</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 4
+        },
+        "mutagenColor": "red",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "0c62a60025e21ab6",
+    "name": "Phoenix Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+3 Melee Damage",
+      "craftDC": 20,
+      "consumable": true,
+      "bonuses": {
+        "meleeBonus": 3
+      },
+      "notes": "Patches of grey feathers & an internal glow",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+3 Melee Damage</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 5
+        },
+        "mutagenColor": "red",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "28a2b8d0dc7f6546",
+    "name": "Vendigo Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+3 Melee Damage",
+      "craftDC": 20,
+      "consumable": true,
+      "bonuses": {
+        "meleeBonus": 3
+      },
+      "notes": "Patchy fur & sickly grey skin",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+3 Melee Damage</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 6
+        },
+        "mutagenColor": "red",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "6be0bd9648c1bfe9",
+    "name": "Bear Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+10 HP",
+      "craftDC": 20,
+      "consumable": true,
+      "bonuses": {
+        "hp": 10
+      },
+      "notes": "Prolific fur growth",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+10 HP</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 8
+        },
+        "mutagenColor": "green",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "64fff9bd7012147b",
+    "name": "Bullvore Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+10 HP",
+      "craftDC": 20,
+      "consumable": true,
+      "bonuses": {
+        "hp": 10
+      },
+      "notes": "Hard growths all over the body",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+10 HP</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 9
+        },
+        "mutagenColor": "green",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "4e1b35d428004e62",
+    "name": "Frightener Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+1 BODY",
+      "craftDC": 22,
+      "consumable": true,
+      "bonuses": {
+        "body": 1
+      },
+      "notes": "Multi-faceted eyes & patches of chitin",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+1 BODY</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 10
+        },
+        "mutagenColor": "green",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "c8674094dcb78dbc",
+    "name": "Garkain Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+10 HP",
+      "craftDC": 20,
+      "consumable": true,
+      "bonuses": {
+        "hp": 10
+      },
+      "notes": "Fleshy growths on the head",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+10 HP</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 11
+        },
+        "mutagenColor": "green",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "14b3ed9cdbf1285b",
+    "name": "Shaelmaar Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+10 HP",
+      "craftDC": 20,
+      "consumable": true,
+      "bonuses": {
+        "hp": 10
+      },
+      "notes": "Patches of thick rock textured skin",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+10 HP</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 12
+        },
+        "mutagenColor": "green",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "346a26bec84d2c65",
+    "name": "Succubus Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+5 HP",
+      "craftDC": 18,
+      "consumable": true,
+      "bonuses": {
+        "hp": 5
+      },
+      "notes": "Small horns and a tail",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+5 HP</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 13
+        },
+        "mutagenColor": "green",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "0767bdeff96afd93",
+    "name": "Troll Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+5 HP",
+      "craftDC": 18,
+      "consumable": true,
+      "bonuses": {
+        "hp": 5
+      },
+      "notes": "Blue-ish skin leathery skin",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+5 HP</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 14
+        },
+        "mutagenColor": "green",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "e46b6dbcead3f917",
+    "name": "Bruxa Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+1 WILL",
+      "craftDC": 22,
+      "consumable": true,
+      "bonuses": {
+        "will": 1
+      },
+      "notes": "Semi-translucent skin & a hissing voice",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+1 WILL</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 16
+        },
+        "mutagenColor": "blue",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "b5aef9725a6bbf91",
+    "name": "Elemental Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+3 Vigor Threshold",
+      "craftDC": 20,
+      "consumable": true,
+      "bonuses": {
+        "vigor": 3
+      },
+      "notes": "Earth: Rocky growths along your body Fire: Small spouts of fire from your mouth Ice: You are always cold to the touch",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+3 Vigor Threshold</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 17
+        },
+        "mutagenColor": "blue",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "304c86a9bbf1ec80",
+    "name": "Foglet Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+2 Vigor Threshold",
+      "craftDC": 18,
+      "consumable": true,
+      "bonuses": {
+        "vigor": 2
+      },
+      "notes": "A weak internal glow & gaunt features",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+2 Vigor Threshold</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 18
+        },
+        "mutagenColor": "blue",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "6773868d0dedc48e",
+    "name": "Leshen Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+1 WILL",
+      "craftDC": 22,
+      "consumable": true,
+      "bonuses": {
+        "will": 1
+      },
+      "notes": "Plants growth on the body",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+1 WILL</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 19
+        },
+        "mutagenColor": "blue",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "e4413a6a2fb12709",
+    "name": "Pesta Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+2 Vigor Threshold",
+      "craftDC": 18,
+      "consumable": true,
+      "bonuses": {
+        "vigor": 2
+      },
+      "notes": "Sickly, pale skin & gaunt features",
+      "priceText": "No weight or market price is provided in the source.",
+      "source": "A Witcher’s Journal",
+      "page": 144,
+      "description": "<p>+2 Vigor Threshold</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Witcher’s Journal",
+          "pdfPage": 145,
+          "table": 0,
+          "row": 20
+        },
+        "mutagenColor": "blue",
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  }
+]

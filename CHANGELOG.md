@@ -1,3 +1,11 @@
+# 0.1.0-alpha.1
+
+- Complete the ordinary equipped-weapon/defense/damage workflow with fast/strong strikes, creature ROF, STA and ammunition.
+- Serialize combat through the active GM, revalidate pending choices and protect resource/damage persistence against duplicate actions.
+- Add all 136 Tools/Journal equipment, recipe, component and mutagen records; integrate school armor combat effects.
+- Add installable release packaging and Forge acceptance instructions.
+- Live Foundry V14 acceptance remains pending; magic, mounted combat and active creature/profession abilities remain deferred.
+
 # Development changelog
 
 ## Unreleased — 0.1.0-dev.1

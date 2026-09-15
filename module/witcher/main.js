@@ -12,6 +12,8 @@ import { registerActivities, craft, treat, useItem, tickActor } from './activiti
 import { skillRoll, save } from './runtime.js';
 import { registerConsequences } from './consequences.js';
 import { registerCreatureAbilities } from './monster-abilities.js';
+import { registerInventory } from './inventory.js';
+import { registerAuthority } from './authority.js';
 import { loadFoundryTemplates } from '../foundry-compat.js';
 
 Hooks.once('init', async () => {
@@ -25,6 +27,10 @@ Hooks.once('init', async () => {
   CONFIG.Item.dataModels = Object.fromEntries(ITEM_TYPES.map((type) => [type, WitcherItemData]));
   CONFIG.Combat.initiative = { formula: '1d10 + @derived.stats.ref', decimals: 2 };
   CONFIG.time.roundTime = 3;
+  Hooks.on('preCreateScene', (scene, data) => {
+    if (!data.grid?.units && !data.grid?.distance)
+      scene.updateSource({ 'grid.distance': 2, 'grid.units': 'm' });
+  });
   CONFIG.statusEffects = Object.entries(CONDITIONS).map(([id, name]) => ({
     id,
     name,
@@ -47,8 +53,19 @@ Hooks.once('init', async () => {
   ]);
 });
 Hooks.once('ready', () => {
+  registerInventory();
   registerCombatChat();
   registerActivities();
   registerConsequences();
   registerCreatureAbilities();
+  registerAuthority();
+  Hooks.on('updateCombat', () => {
+    const actors = new Map(
+      [...game.actors, ...(canvas.tokens?.placeables ?? []).map((t) => t.actor).filter(Boolean)].map((a) => [
+        a.uuid,
+        a,
+      ])
+    );
+    for (const actor of actors.values()) if (actor.sheet?.rendered) actor.sheet.render(false);
+  });
 });

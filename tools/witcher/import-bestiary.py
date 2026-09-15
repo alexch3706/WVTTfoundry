@@ -61,6 +61,9 @@ def identity(*parts):
 
 
 def source_item(actor, name, kind, data, page):
+    if kind == 'weapon' and data.get('properties', {}).get('natural'):
+        data.setdefault('reliability', 0)
+        data.setdefault('maxReliability', 0)
     return {'_id': identity(actor, kind, name), 'name': name, 'type': kind,
             'img': 'icons/svg/sword.svg' if kind == 'weapon' else 'icons/svg/shield.svg' if kind == 'armor' else 'icons/svg/book.svg',
             'system': {'quantity': 1, 'weight': 0, 'cost': 0, 'carried': False,

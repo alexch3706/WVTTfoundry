@@ -1,98 +1,116 @@
 # Witcher V14 implementation status
 
-This is an implementation ledger, not a declaration of readiness.
+Release candidate: **0.1.0-alpha.1**. This ledger distinguishes implemented code
+from live acceptance. No Foundry server has been launched in this environment;
+the owner will test the installable release on The Forge.
 
-Source: user-supplied Core Rulebook v1.35. References use printed page numbers.
-The independent repository retains the Cyberpunk V14 history at `cyberpunk-v14-base`.
-No runtime code from another Witcher system is included.
+## Agreed scope for this release
 
-## Required completion gates
+The owner narrowed the current work to ordinary combat and equipment:
 
-- Character/NPC/monster data and working sheets, item drag/drop, unlinked tokens.
-- Rules engine and real attack/defense/damage workflow with persisted resources.
-- Humanoid, monster and custom target anatomy; location-specific armor and damage.
-- Complete core equipment, ammunition, armor, shields, alchemy, components, diagrams and Witcher equipment compendia.
-- Critical wounds and treatment, effects, saves, healing, action economy.
-- Combat exceptions: grappling, special attacks, ranged combat, cover, bombs/traps and environment.
-- Complete core-book bestiary, including printed variants and animals, as an Actor compendium.
-- Skills, races, professions and progression needed by sheets and non-magic combat.
-- Automated book examples and boundary cases, package/schema/compendium validation.
-- Installable GitHub release and Forge acceptance checklist. User performs live Forge checks.
+- PC, NPC and monster sheets; inventory and compendium drag/drop; equipping,
+  usable hands, ammunition and crossbow loading.
+- Fast/strong player attacks, normal creature attacks with their printed ROF,
+  extra actions and defenses with persisted STA and Luck.
+- Dodge, Reposition, weapon/shield Block, unarmed Block and Parry. Defense uses
+  the appropriate skill and statistic; weapon accuracy modifies attacks only.
+- Real exploding/fumbling d10 rolls, damage dice, armor layering/wear, hit
+  locations, critical wounds, saves and explicit GM damage application.
+- Natural attacks, ordinary-weapon resistance, silver and meteorite exceptions,
+  physical immunity and printed monster weak armor locations.
+- Core equipment and bestiary, plus all equipment in A Witcher’s Tools and the
+  components/mutagens in A Witcher’s Journal.
 
-Spells, signs, rituals and hex automation are deferred by the user.
-Mounted combat is explicitly deprioritized; its incomplete implementation is
-outside the current completion gates.
+Magic/signs, mounted combat, active creature and profession abilities are
+**deferred by the owner**. Advanced maneuvers, area/scatter bombs and contextual
+potion/decoction automation have incomplete paths inherited from the first
+implementation pass; they are not claims of completed ordinary combat and are
+not the primary attack controls. Critical Flurry's Disarm/Trip and school armor
+follow-up strikes are included because they are equipment effects.
 
-## Known textual ambiguities to resolve explicitly
+## Implemented behavior
 
-- Death State: p.153 describes reaching the HP total, while p.162 says below zero. Current implementation uses HP <= 0; this decision must be visible in the conformance notes.
-- Armor layering must use the p.155 worked example (3 + 12 + 20 = 24), including its table boundaries. Do not inherit Cyberpunk's thresholds.
+- Own V14 TypeDataModels and V1 sheets. No third-party Witcher runtime is used.
+  Two general compatibility helpers come from the owner's Cyberpunk repository;
+  its original history is retained at `cyberpunk-v14-base`.
+- One elected active GM handles ordinary attack, defense, damage, inventory,
+  recovery/reload and fumble commands. Persistent requests use the authenticated
+  ChatMessage author. Permissions, current documents and turn identity are
+  checked again after dialogs close.
+- A remaining fast/ROF strike cannot bypass turn, condition or resource checks.
+  Each creature selects one attack per round; extra STA does not reset its ROF.
+- Attack and defense spending is rolled back if creating their result card
+  fails. Defense claims and actor-side damage/wear receipts reject duplicate
+  submissions. Pending post-damage saves/reactions can resume without applying
+  HP/STA damage twice. This is compensation across documents, not a database
+  transaction: a failed rollback is reported to the GM for inspection.
+- Damage cards recalculate from their existing damage dice when armor/resources
+  change before application. New immunity also suppresses wounds/conditions.
+- All 24 core critical wound records, treatment states, recovery, death saves,
+  automatic recurring conditions and passive creature regeneration are present.
+- Tools armor provides critical-tier adjustment and immediate, once-consumed
+  reaction choices. Manticore shield knockback moves the actual target token up
+  to 4 m, stopping at walls/scene bounds, and applies prone. Griffin's Sign
+  reaction is explicitly manual until signs are implemented.
+- **809 catalog Items**: 673 core + 46 Tools + 90 Journal, across ten Item packs.
+  **36 core bestiary Actors**, with **253 embedded Items**, in the eleventh pack.
+  See `bestiary.md` and `supplements.md` for source coverage and adaptations.
+- Real LevelDB packs are built with Foundry's official CLI, extracted back and
+  compared to the source records, including all embedded Item system fields.
+- The installable ZIP includes the Witcher runtime, its two compatibility
+  helpers and actual compendiums. Cyberpunk runtime, PDFs and extraction inputs
+  are excluded. The original Cyberpunk working directory is unchanged.
 
-## Current work
+## Validation and remaining acceptance
 
-The following is implemented locally, but is not a release-readiness declaration:
+**154 automated tests pass.** Tests cover book examples, imported creature attacks and school gear,
+turn/STA accounting, persistence failure recovery and package contents. Syntax,
+module imports and Handlebars compilation are checked. A separate check uses the
+genuine public Foundry V14.365 data layer: **36 Actors and 1062 Items** preserve
+all supplied fields during model cleaning.
 
-- Own TypeDataModels for PCs, NPCs, monsters and thirteen item types.
-- Own V1 sheets using the Cyberpunk V14 token-render compatibility fix.
-- Attack/defense chat workflow, GM damage application, stale-armor recalculation,
-  armor wear, critical wounds, resource persistence and duplicate-apply guard.
-- All 24 core critical wounds represented with untreated/stabilized/treated data.
-- Crafting/alchemy allocation, recovery, repair, item use and recurring effects.
-- 673 catalog entries extracted from the supplied v1.35 PDF, including graphical
-  alchemy ingredients. Eight real LevelDB packs built with the official Foundry
-  CLI and independently extracted back; each stored system object compared.
-- 36 core bestiary Actors with 253 embedded attacks, abilities and equipment
-  records. Printed variants, eight animals and three named adventure NPCs are
-  included. A ninth real LevelDB pack is built and every embedded Item checked
-  after reading it back. See `bestiary.md` for coverage and remaining automation.
-- Creature immunities, Feral INT, regeneration, weak armor, unlimited Golem STA,
-  Shift defense and selected ability actions connect to the rules engine.
-- Fumble application workflow, natural attack damage, effect display, token
-  condition synchronization, potion/oil and environment handling have advanced;
-  their live and concurrent-operation review remains open.
-- 50 pure rules/catalog tests pass. Manifest/import/syntax/template checks pass.
-- Genuine public Foundry V14.365 fields accept 36 Actors and 926 Item records
-  (673 catalog + 253 embedded), preserving supplied fields recursively. This
-  does not launch Foundry or certify sheets/multiplayer behavior.
+These are automated checks, including explicitly controlled document fixtures.
+They do **not** establish that sheets, canvas movement or multiplayer sessions
+work in an actual Foundry installation. The required live run is recorded in
+`forge-checklist.md`; it is still pending. The first release is therefore an
+installable **alpha**, not a claim that every non-magic rule in the books is
+finished.
 
-## Open implementation and review gates
+## Source interpretations and omissions
 
-These must be addressed before claiming the requested nonmagic system is complete.
+- Core v1.35 printed p.151: one grid square is 2 m, one round is 3 seconds.
+  New scenes default to metres; imported/existing scenes need their scale checked.
+- p.151: normal attacks do not themselves cost STA; an extra action costs 3 STA
+  and applies −3. First defense in a round is free, later defenses cost 1 STA;
+  Actively Dodge prevents defense STA drain.
+- Creature ROF: [official Sage's Answers, part 5](https://rtalsoriangames.com/2018/08/20/the-sages-answers-part-5/).
+  The creature chooses one listed attack per round.
+- p.153: an ambush bonus lasts the first round against unaware targets. The GM
+  establishes awareness/ambush, cover and other situational modifiers.
+- Death State uses HP <= 0, reconciling p.153's total-damage wording with p.162.
+- Armor stacking uses Witcher p.155 (3 + 12 + 20 = 24), not Cyberpunk thresholds.
+  Improved AP uses floor(SP/2); the supplied text does not resolve odd-SP rounding.
+  Armor resistance is retained at SP 0 because the source does not say broken
+  armor loses it and p.90 explicitly preserves enhancements on broken armor.
+- Anatomy uses the printed humanoid/non-humanoid tables. Species-specific
+  probabilities absent from the book are not invented; custom anatomy is editable.
+- Elven Shield Diagram requires **Etching Oil**, absent from the supplied
+  component tables. Tools diagrams similarly require **Ruby Dust** and
+  **Emerald Dust**. Requirements remain visible and unresolved; there are no
+  invented prices or silent ingredient substitutions.
+- Unprinted supplement prices/weights are flagged in item source notes. Zero
+  numeric defaults must not be interpreted as a published free/weightless item.
+- Tools gives no critical tier above Deadly. Ursine armor reports that boundary
+  and leaves any additional ruling to the GM.
+- Journal p.12 permits natural-weapon blocks and applies Reliability wear, but
+  Core gives no numeric natural-weapon REL. Core imports use maximum REL 0 to
+  mark it as unspecified. Attacks and parries work; blocking/wear require the
+  GM to set current/maximum REL. A configured weapon at REL 0 is unusable;
+  Regeneration restores 1 REL per day of rest. No default REL is invented.
+- Armed-defense fumble 7 tells the defender to drop the weapon. Neither supplied
+  book defines how an attached claw/tail can be dropped. The system requests and
+  records a GM ruling for that case instead of deleting or dropping the limb.
+- Reposition permits a player-selected unobstructed destination; its allowed
+  movement is shown in the defense card. The player moves their token.
 
-- Review fumble application, self/ally hits, jams, dropped equipment, natural
-  weapons and interruption/retry behavior in actual Foundry.
-- Dual wielding, charge push/contest, fast draw, tie-breaking initiative,
-  fall/environment hazards and human-shield cover. Mounted combat is deferred.
-- Complete creature ability workflows listed in `bestiary.md`, including High
-  Noon Dance, auras, teleportation, knockback and flight consequences.
-- Area placement/scatter, all affected actors, area escape, special bombs/traps,
-  split/explosive ammunition and thrown alchemical items.
-- Finish potion/decoction contextual triggers, oil damage, temporary HP, effects
-  that confer immunities, toxicity recovery and conditional equipment bonuses.
-- Wound arm restrictions, pain relief, healing modifiers, prostheses,
-  treatment timing and pending death-save enforcement/notifications.
-- Character creation/profession skills/trees and progression. Current sheet
-  provides base stats, skills, custom skills, IP, identity and biography.
-- Check token status synchronization and all sheet
-  actions, item editors, unlinked actors and permission-sensitive operations.
-- Review idempotence and rollback across all multi-document operations, not
-  just damage application; serialize simultaneous workflows consistently.
-- Remove retired Cyberpunk runtime from the final package; finish installation
-  docs and release packaging. README/CI now describe Witcher; the Forge
-  acceptance checklist is in `forge-checklist.md`.
-- Commit and publish a release only after implementation gates pass. No release
-  has been pushed at this stage, and no live Foundry session has been tested.
-
-## Source inconsistencies preserved for review
-
-- Elven Shield Diagram (printed p.138) requires **Etching Oil**, but the component
-  tables do not define it. The official 2022 errata repeats that name. The recipe
-  retains this requirement; the source audit reports its missing stock entry.
-  No price or substitute ingredient has been invented.
-- Recipe/product spelling aliases are recorded in the deterministic importer.
-  Examples: Tanning Herb/Herbs, Mahkaman/Mahakaman, Spectacle/Spectacled Helm.
-- Sailing Ship control differs between the transportation price table (−2) and
-  the mounted-combat table (−1); the catalog currently uses the price-table value.
-
-The supplied PDFs and extracted page images remain outside the repository in
-`/root/witcher-reference`; they are not bundled with the system.
+PDFs and extracted source images remain private in `/root/witcher-reference`.

@@ -2759,7 +2759,8 @@
         "meteorite": true
       },
       "description": "<p>Armor Piercing Meteorite</p>",
-      "resistances": []
+      "resistances": [],
+      "witcherWeapon": true
     },
     "flags": {
       "witcher-rilerena": {
@@ -2807,7 +2808,8 @@
         "silverDamage": "3d6"
       },
       "description": "<p>Silver (3d6)</p>",
-      "resistances": []
+      "resistances": [],
+      "witcherWeapon": true
     },
     "flags": {
       "witcher-rilerena": {

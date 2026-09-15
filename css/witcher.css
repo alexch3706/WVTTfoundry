@@ -43,6 +43,11 @@
   background: #dfd1b7;
   box-shadow: none;
 }
+.witcher button:disabled {
+  cursor: default;
+  opacity: 0.5;
+  background: #ffffff40;
+}
 .witcher .witcher-header {
   display: flex;
   gap: 16px;
@@ -238,13 +243,69 @@
   padding: 4px 10px;
 }
 .witcher .weapon-card {
-  display: grid;
-  grid-template-columns: 1fr auto;
+  display: flex;
+  flex-direction: column;
   gap: 4px;
   background: #ffffff50;
   border-left: 3px solid var(--accent);
   padding: 8px;
   margin: 7px 0;
+}
+.witcher .weapon-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.witcher .weapon-card header button {
+  width: auto;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font-weight: bold;
+  text-align: left;
+}
+.witcher .weapon-card .weapon-profile,
+.witcher .weapon-card .item-effect {
+  margin: 2px 0;
+  font:
+    12px system-ui,
+    sans-serif;
+}
+.witcher .weapon-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 5px 0;
+}
+.witcher .weapon-actions button {
+  width: auto;
+  flex: 1 0 auto;
+  padding: 3px 7px;
+}
+.witcher .grip-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font:
+    12px system-ui,
+    sans-serif;
+}
+.witcher .grip-control select {
+  width: 150px;
+}
+.witcher .combat-budget {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  font:
+    12px system-ui,
+    sans-serif;
+}
+.witcher .combat-budget strong {
+  color: var(--accent);
 }
 .witcher .weapon-card span {
   font:
@@ -295,6 +356,36 @@
   display: block;
   color: var(--muted);
   font-size: 10px;
+}
+.witcher .inventory-table th:first-child {
+  width: 38%;
+}
+.witcher .inventory-table select {
+  display: block;
+  max-width: 115px;
+  font-size: 11px;
+}
+.witcher .inventory-effect {
+  margin: 4px 0;
+}
+.witcher .inventory-effect summary {
+  padding: 2px 0;
+  background: transparent;
+  color: var(--accent);
+}
+.witcher .source-note {
+  color: var(--muted);
+  font:
+    12px system-ui,
+    sans-serif;
+}
+.witcher .modifier-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  font:
+    13px system-ui,
+    sans-serif;
 }
 .witcher .item-actions {
   display: flex;

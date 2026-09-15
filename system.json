@@ -1,8 +1,8 @@
 {
   "id": "witcher-rilerena",
   "title": "The Witcher TTRPG — Rilerena",
-  "description": "Witcher TTRPG system for Foundry V14. Non-magic rules implementation in development.",
-  "version": "0.1.0-dev.1",
+  "description": "Witcher TTRPG for Foundry V14: character and creature sheets, ordinary combat, core bestiary, equipment and Witcher school gear. Magic and active creature/profession abilities are deferred.",
+  "version": "0.1.0-alpha.1",
   "compatibility": {
     "minimum": "14",
     "maximum": "14"
@@ -139,6 +139,28 @@
         "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "supplement-tools",
+      "label": "A Witcher’s Tools — School Gear & Diagrams",
+      "path": "packs/witcher/supplement-tools",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "supplement-journal",
+      "label": "A Witcher’s Journal — Components & Mutagens",
+      "path": "packs/witcher/supplement-journal",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "grid": {
@@ -150,6 +172,6 @@
   "primaryTokenAttribute": "hp",
   "secondaryTokenAttribute": "sta",
   "url": "https://github.com/alexch3706/WVTTfoundry",
-  "manifest": "https://github.com/alexch3706/WVTTfoundry/releases/latest/download/system.json",
-  "download": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0/witcher-rilerena.zip"
+  "manifest": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.1/system.json",
+  "download": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.1/witcher-rilerena.zip"
 }

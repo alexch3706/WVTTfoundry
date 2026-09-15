@@ -7,8 +7,26 @@
         value='{{item.name}}'
         aria-label='Item name'
       /><p>{{system.source}} · p. {{system.page}}</p></div></header>
+  {{#if system.priceText}}<p class='source-note'>{{system.priceText}}</p>{{/if}}
+  {{#if owned}}<div class='action-bar'>{{#with inventoryItem}}
+        {{#if canEquip}}<button type='button' data-witcher='equip'>{{#if system.equipped}}Stow / unequip{{else}}Equip{{/if}}</button>{{/if}}
+        {{#each attackStyles}}<button
+            type='button'
+            data-witcher='attack'
+            data-style='{{style}}'
+            title='{{hint}}'
+            {{disabledAttribute}}
+          >{{label}}</button>{{/each}}
+        {{#if isUsable}}<button type='button' data-witcher='use'>{{useLabel}}</button>{{/if}}
+        {{#if isDiagram}}<button type='button' data-witcher='craft'>Craft</button>{{/if}}
+        {{#if canRepair}}<button type='button' data-witcher='repair'>Repair</button>{{/if}}
+      {{/with}}</div>{{/if}}
+  {{#if system.school}}<p class='source-note'>{{system.school}} school</p>{{/if}}
   <h2>Inventory</h2><div class='field-grid'>{{{common}}}</div>
   <h2>Characteristics</h2><div class='field-grid'>{{{details}}}</div>
+  {{#if inventoryItem.reliabilityUnspecified}}<p class='source-note'>Core does not specify this natural
+      weapon's REL. Set current and maximum REL with the GM to enable blocking. Maximum REL 0 means
+      unspecified.</p>{{/if}}
   {{#if armorLocations}}<h2>Current stopping power by location</h2><div class='field-grid'>{{#each
         armorLocations
       }}<label class='witcher-field'><span>{{label}}</span><input
@@ -23,6 +41,8 @@
   {{#if properties}}<details><summary>Weapon and equipment properties</summary><div
         class='field-grid'
       >{{{properties}}}</div></details>{{/if}}
+  {{#if bonuses}}<h2>Modifiers</h2><div class='modifier-list'>{{#each bonuses}}<span>{{label}}
+          <strong>{{value}}</strong></span>{{/each}}</div>{{/if}}
   <h2>Effect</h2><textarea name='system.effectText' rows='6'>{{system.effectText}}</textarea>
   <h2>Description</h2><textarea name='system.description' rows='5'>{{system.description}}</textarea>
   <label>Notes<textarea name='system.notes' rows='4'>{{system.notes}}</textarea></label>

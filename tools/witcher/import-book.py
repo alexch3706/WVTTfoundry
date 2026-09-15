@@ -62,6 +62,7 @@ def coverage(text):
 def emit(pack, item_type, name, data, page, table, row):
     identity = f'core135:{page}:{table}:{row}:{pack}:{name}'
     item_id = hashlib.sha256(identity.encode()).hexdigest()[:16]
+    if item_type == 'weapon' and name in ['Witcher’s Steel Sword','Witcher’s Silver Sword']: data['witcherWeapon'] = True
     data = {'quantity': 1, 'weight': 0, 'cost': 0, 'carried': True, 'equipped': False, **data, 'source': 'The Witcher Core Rulebook v1.35', 'page': page - 1}
     if 'effectText' in data:
         data['properties'] = {**effects(data['effectText']), **data.get('properties', {})}

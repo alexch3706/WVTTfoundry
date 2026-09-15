@@ -176,17 +176,17 @@ export function resolveDamage(
   const afterArmor = Math.max(0, afterCover - sp);
   let resisted = afterArmor;
   const armorResistant = [...layers.flatMap((l) => l.resistances), ...natural.resistances].includes(type);
-  if (
+  // p.154: repeated resistance to the same damage type does not stack. The
+  // separate non-silver monster resistance (p.162) still halves damage again.
+  const resistedByArmor =
     armorResistant &&
     !properties.armorPiercing &&
     !properties.improvedArmorPiercing &&
-    !properties.bypassArmor
-  )
-    resisted /= 2;
+    !properties.bypassArmor;
+  if (resistedByArmor || target.resistances?.includes(type)) resisted /= 2;
   const immune = immuneTo(target, type) || (nonlethal && target.traits?.infiniteStamina);
   if (immune) resisted = 0;
   else {
-    if (target.resistances?.includes(type)) resisted /= 2;
     if (
       isSilverTarget &&
       !properties.silver &&
@@ -197,7 +197,9 @@ export function resolveDamage(
     if (target.vulnerabilities?.includes(type)) resisted *= 2;
   }
   const localized = Math.max(0, Math.floor(resisted * location.multiplier));
-  const penetrated = afterArmor > 0 && !immune;
+  // A critical's separate bonus can bypass intact armor, but cannot itself
+  // trigger staged penetration. The wearer must take damage through the armor.
+  const penetrated = afterArmor > 0 && localized > 0 && !immune;
   const wear =
     properties.bypassArmor || isIncorporeal(target)
       ? 0
@@ -217,6 +219,7 @@ export function resolveDamage(
     afterArmor,
     resisted,
     localized,
+    immune,
     criticalBonus: immune ? 0 : criticalBonus,
     damage: immune ? 0 : localized + criticalBonus,
     nonlethal,
@@ -230,7 +233,7 @@ export function resolveDamage(
       after: Math.max(0, natural.sp - wear),
     },
     penetrated,
-    clearsStun: true,
+    clearsStun: !immune && localized + criticalBonus > 0,
   };
 }
 
@@ -376,20 +379,26 @@ export function strikeProfile(
   weapon,
   { style = 'fast', action = 'normal', npc = false, underwater = false } = {}
 ) {
-  const ranged = ['bow', 'crossbow', 'thrown'].includes(weapon.category);
-  if (npc) {
-    if (style !== 'normal')
-      throw new RuleError('Minor NPCs/monsters use weapon ROF, not fast/strong strikes (p.153)');
-    return { attacks: underwater ? 1 : Math.max(1, n(weapon.rof, 1)), modifier: 0, multiplier: 1 };
-  }
+  if (!['normal', 'fast', 'strong'].includes(style)) throw new RuleError('Unknown strike style.');
+  if (npc && style !== 'normal')
+    throw new RuleError('Minor NPCs/monsters use weapon ROF, not fast/strong strikes (p.153)');
   if (weapon.category === 'crossbow' && style !== 'normal')
     throw new RuleError('Crossbows do not use fast or strong strikes');
+  if (['bomb', 'trap', 'naturalRanged'].includes(weapon.category) && style !== 'normal')
+    throw new RuleError('This attack does not use fast or strong strikes.');
   if (!['normal', 'punch', 'kick'].includes(action))
     return {
       attacks: action === 'joint' ? 2 : 1,
       modifier: action === 'joint' || action === 'charge' ? -3 : 0,
       multiplier: action === 'charge' ? 2 : action === 'pommel' || action === 'pushKick' ? 0.5 : 1,
     };
+  if (npc) {
+    const rof = n(weapon.rof, 1);
+    if (!Number.isInteger(rof) || rof < 1)
+      throw new RuleError('A creature attack needs a positive whole ROF.');
+    const melee = !['bow', 'crossbow', 'thrown', 'bomb', 'trap', 'naturalRanged'].includes(weapon.category);
+    return { attacks: underwater && melee ? 1 : rof, modifier: 0, multiplier: 1 };
+  }
   return {
     attacks:
       style === 'fast' && !['bow', 'crossbow', 'bomb', 'trap'].includes(weapon.category) && !underwater
@@ -402,19 +411,30 @@ export function strikeProfile(
 export function defenseModifier(type, attackCategory) {
   if (type === 'parry' && ['bow', 'crossbow'].includes(attackCategory))
     throw new RuleError('Bow and crossbow projectiles cannot be parried (p.164)');
-  if (type === 'blockWeapon' && ['bow', 'crossbow', 'thrown'].includes(attackCategory))
+  if (
+    ['blockWeapon', 'blockArm'].includes(type) &&
+    ['bow', 'crossbow', 'thrown', 'bomb', 'naturalRanged'].includes(attackCategory)
+  )
     throw new RuleError('Only a shield can block a ranged attack (p.164)');
-  return type === 'parry' ? (attackCategory === 'thrown' ? -5 : -3) : 0;
+  return type === 'parry' ? (['thrown', 'bomb'].includes(attackCategory) ? -5 : -3) : 0;
 }
 export function reserveAction(
   budget,
   { extra = false, full = false, strikes = 1, defense = false, activelyDodging = false } = {}
 ) {
-  const next = { actions: n(budget.actions), extra: n(budget.extra), defenses: n(budget.defenses) };
+  const next = {
+    actions: n(budget.actions),
+    extra: n(budget.extra),
+    defenses: n(budget.defenses),
+    full: !!budget.full,
+  };
   if (defense) {
     next.defenses++;
     return { budget: next, cost: activelyDodging || next.defenses === 1 ? 0 : 1, modifier: 0 };
   }
+  if (next.full) throw new RuleError('The full-round action has used this turn (p.151).');
+  if (full && (extra || next.actions || next.extra))
+    throw new RuleError('A full-round action requires your entire turn (p.151).');
   if (extra) {
     if (next.extra >= 1) throw new RuleError('Only one extra action per turn (p.151)');
     next.extra++;
@@ -422,7 +442,116 @@ export function reserveAction(
   }
   if (next.actions >= 1) throw new RuleError('Your normal action is already spent');
   next.actions = 1;
+  next.full = full;
   return { budget: next, cost: 0, modifier: 0, full, strikes };
+}
+
+/**
+ * Reserve one strike, not an entire set of dice. The caller supplies the current
+ * turn budget and persists this result together with ammunition and Luck.
+ * p.153 and the official Sage's Answers, part 5: a common NPC chooses one attack
+ * per round and repeats that attack up to its ROF; paying STA cannot reset ROF.
+ * https://rtalsoriangames.com/2018/08/20/the-sages-answers-part-5/
+ */
+export function attackSequence(budget, weapon, options = {}) {
+  const {
+    style = 'fast',
+    action = 'normal',
+    npc = false,
+    extra = false,
+    full = false,
+    forfeit = false,
+  } = options;
+  const profile = strikeProfile(weapon, options);
+  const weaponId = weapon.id ?? weapon._id;
+  if (!weaponId) throw new RuleError('An attack needs a stable weapon identifier.');
+  const continuing = n(budget.remaining) > 0 && !forfeit;
+  if (continuing) {
+    if (style !== budget.style || action !== (budget.attackAction || 'normal'))
+      throw new RuleError('Finish or forfeit the remaining strikes before changing the attack style.');
+    if (npc && weaponId !== (budget.npcWeaponId || budget.weaponId))
+      throw new RuleError('A creature repeats one chosen attack up to its ROF (p.153).');
+    if (!npc && (profile.attacks < 2 || full))
+      throw new RuleError('This weapon cannot make a remaining fast strike.');
+    if (npc && n(budget.npcStrikes) >= profile.attacks)
+      throw new RuleError('This creature has used its attack ROF for the round.');
+    const strikeIndex = n(budget.strikeIndex, 1) + 1;
+    return {
+      budget: {
+        ...budget,
+        remaining: n(budget.remaining) - 1,
+        weaponId,
+        strikeIndex,
+        ...(npc ? { npcWeaponId: weaponId, npcStrikes: n(budget.npcStrikes) + 1 } : {}),
+      },
+      cost: 0,
+      modifier: n(budget.extraPenalty),
+      profile,
+      continuing: true,
+      strikeIndex,
+    };
+  }
+  if (npc && (budget.npcWeaponId || n(budget.npcStrikes)))
+    throw new RuleError(
+      'This creature has already chosen its attack for the round; an extra action cannot reset ROF.'
+    );
+  const reservation = reserveAction(budget, { extra, full, strikes: profile.attacks });
+  return {
+    ...reservation,
+    budget: {
+      ...budget,
+      ...reservation.budget,
+      remaining: profile.attacks - 1,
+      weaponId,
+      style,
+      attackAction: action,
+      extraPenalty: reservation.modifier,
+      strikeIndex: 1,
+      ...(npc ? { npcWeaponId: weaponId, npcStrikes: 1 } : {}),
+    },
+    profile,
+    continuing: false,
+    strikeIndex: 1,
+  };
+}
+
+/** p.48: BODY applies to melee and thrown weapons; listed natural damage is final. */
+export function weaponDamageBonus(weapon, bonus) {
+  if (
+    weapon.type === 'shield' ||
+    weapon.properties?.natural ||
+    weapon.properties?.fixedDamage ||
+    weapon.properties?.environmental ||
+    weapon.properties?.brawling ||
+    ['bow', 'crossbow', 'naturalRanged', 'bomb', 'trap'].includes(weapon.category)
+  )
+    return 0;
+  return n(bonus);
+}
+
+/** p.72 Brawling effect; p.164 shield attack and p.48 hand-to-hand table. */
+export function weaponDamageFormula(weapon, { punch = '1d6', body = 5 } = {}) {
+  if (weapon.type === 'shield') {
+    const rows = weapon.armorClass === 'heavy' ? 4 : weapon.armorClass === 'medium' ? 2 : 0;
+    const bonus = meleeBonus(n(body, 5) + rows * 2);
+    return `1d6${bonus >= 0 ? '+' : ''}${bonus}`;
+  }
+  if (weapon.properties?.brawling) return `(${punch}) + (${weapon.damage})`;
+  return weapon.damage;
+}
+
+export function shieldStrike(weapon, body) {
+  if (weapon.type !== 'shield') throw new RuleError('Choose a shield to make a shield attack.');
+  return {
+    ...weapon,
+    type: 'weapon',
+    category: 'bludgeon',
+    skill: 'melee',
+    stat: 'ref',
+    damage: weaponDamageFormula(weapon, { body }),
+    damageTypes: ['bludgeoning'],
+    properties: { ...weapon.properties, brawling: false, fixedDamage: true, nonlethal: false },
+  };
 }
 export function skillImprovementCost(current, difficult = false) {
   if (!Number.isInteger(current) || current < 0 || current >= 10)

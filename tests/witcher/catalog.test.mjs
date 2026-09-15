@@ -7,7 +7,7 @@ const manifest = JSON.parse(await fs.readFile(new URL('../../system.json', impor
 const packs = Object.fromEntries(
   await Promise.all(
     manifest.packs
-      .filter((pack) => pack.type === 'Item')
+      .filter((pack) => pack.type === 'Item' && !pack.name.startsWith('supplement-'))
       .map(async (pack) => {
         const file = new URL(`../../data/witcher/${pack.name}.json`, import.meta.url);
         return [pack.name, JSON.parse(await fs.readFile(file, 'utf8'))];
