@@ -1,6 +1,6 @@
 # Foundry V14 / The Forge acceptance
 
-Version: **0.1.0-alpha.1**. **Live run pending.**
+Version: **0.1.0-alpha.2**. **Live run pending.**
 
 1. Install the pinned release manifest and create a Witcher world in V14. Open
    a character, NPC, monster and Item sheet; check the browser console.
@@ -28,6 +28,9 @@ Version: **0.1.0-alpha.1**. **Live run pending.**
 9. Change armor before applying a damage card; review recalculation with existing
    dice. Double-click Apply; damage/wear must apply once. Exercise critical wounds,
    unconsciousness, death saves and round effects.
+   After damage, compare current/max SP in Combat → Hit locations, Equipment
+   and the owned armor item sheet. Unhit locations and the compendium source
+   must stay unchanged; a fully broken location must display 0 / maximum.
 10. Equip Tools armor and trigger its school reaction. Check once-only choices,
     follow-up attack/defense, Manticore movement/prone, and visible Griffin deferral.
 11. As GM and player, test requests/permissions together. No player can act for

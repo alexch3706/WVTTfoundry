@@ -22,19 +22,33 @@
         {{#if canRepair}}<button type='button' data-witcher='repair'>Repair</button>{{/if}}
       {{/with}}</div>{{/if}}
   {{#if system.school}}<p class='source-note'>{{system.school}} school</p>{{/if}}
+  {{#if isArmor}}<section class='armor-condition'>
+      <h2>Armor condition · SP by location</h2>
+      <p class='source-note'>Current SP absorbs damage. Maximum SP is the value after full repair.</p>
+      {{#if owned}}<p class='source-note'>This is
+          {{ownerName}}'s armor. Apply damage updates these values.</p>{{else}}<p class='source-note'>This is
+          the source item. Check the copy in the character's inventory for combat wear.</p>{{/if}}
+      {{#if armorLocations}}<table class='armor-sp-table'><thead><tr><th>Location</th><th>Current SP</th><th
+              >Max SP</th></tr></thead><tbody>
+            {{#each armorLocations}}<tr data-damaged='{{damaged}}' data-armor-location='{{id}}'>
+                <td>{{label}}{{#if broken}} <strong>Broken</strong>{{/if}}</td>
+                <td><input
+                    type='number'
+                    name='system.sp.{{id}}'
+                    min='0'
+                    value='{{current}}'
+                    aria-label='{{label}} current SP'
+                  /></td>
+                <td>{{maximum}}</td>
+              </tr>{{/each}}
+          </tbody></table>{{else}}<p class='witcher-warning'>No covered locations are set. Add Coverage
+          identifiers in Characteristics.</p>{{/if}}
+    </section>{{/if}}
   <h2>Inventory</h2><div class='field-grid'>{{{common}}}</div>
   <h2>Characteristics</h2><div class='field-grid'>{{{details}}}</div>
   {{#if inventoryItem.reliabilityUnspecified}}<p class='source-note'>Core does not specify this natural
       weapon's REL. Set current and maximum REL with the GM to enable blocking. Maximum REL 0 means
       unspecified.</p>{{/if}}
-  {{#if armorLocations}}<h2>Current stopping power by location</h2><div class='field-grid'>{{#each
-        armorLocations
-      }}<label class='witcher-field'><span>{{label}}</span><input
-            type='number'
-            name='system.sp.{{id}}'
-            min='0'
-            value='{{value}}'
-          /></label>{{/each}}</div>{{/if}}
   {{#if materials}}<h2>Recipe components</h2><table><thead><tr><th>Component / substance</th><th
           >Units</th></tr></thead><tbody>{{#each materials}}<tr><td>{{name}}</td><td
             >{{quantity}}</td></tr>{{/each}}</tbody></table>{{/if}}

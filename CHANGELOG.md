@@ -1,3 +1,10 @@
+# 0.1.0-alpha.2
+
+- Make armor condition visible at the top of its item sheet: editable current SP and maximum SP for every covered location.
+- Show current/max SP in the actor hit-location table and for each armor item in Equipment; highlight wear and broken locations.
+- Preserve zero current SP and show non-humanoid/custom coverage on standalone armor sheets. Distinguish the source item from the worn actor copy.
+- Combat calculation and saved armor values are unchanged; no migration is required.
+
 # 0.1.0-alpha.1
 
 - Complete the ordinary equipped-weapon/defense/damage workflow with fast/strong strikes, creature ROF, STA and ammunition.

@@ -7,7 +7,8 @@ import {
   HUMANOID_LOCATIONS,
   MONSTER_LOCATIONS,
 } from './config.js';
-import { armorAt, stackArmor, validateLocations, strikeProfile, shieldStrike } from './rules.js';
+import { validateLocations, strikeProfile, shieldStrike } from './rules.js';
+import { armorLocationRows, actorArmorRows } from './armor-display.js';
 import { actorSnapshot, itemSnapshot } from './documents.js';
 import { attack } from './combat.js';
 import { skillRoll, input, prompt, escapeHTML as e, errorNotice, serial, turnIdentity } from './runtime.js';
@@ -73,6 +74,8 @@ function inventoryRow(item, actor) {
     img: item.img,
     type: item.type,
     system: s,
+    isArmor: item.type === 'armor',
+    armorLocations: armorLocationRows(item, actor?.system.locationTable),
     totalWeight: Number((s.weight * s.quantity).toFixed(2)),
     isWeapon: weapon,
     isNatural: natural,
@@ -232,15 +235,7 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
     data.wounds = actor.items
       .filter((i) => i.type === 'wound')
       .map((i) => ({ id: i.id, name: i.name, system: i.system }));
-    data.locations = s.locationTable.map((l, index) => {
-      let sp;
-      try {
-        sp = stackArmor(armorAt(state.items, l)) + l.sp + (s.race === 'dwarf' ? 2 : 0);
-      } catch {
-        sp = '!';
-      }
-      return { ...l, index, totalSP: sp };
-    });
+    data.locations = actorArmorRows(state, s.locationTable);
     data.conditionRows = Object.entries(CONDITIONS).map(([key, label]) => ({
       key,
       label,
@@ -511,6 +506,7 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
       s = item.system;
     data.inventoryItem = inventoryRow(item, item.actor);
     data.owned = !!item.actor;
+    data.ownerName = item.actor?.name ?? '';
     const num = (key, label = title(key)) =>
       pathInput('system.' + key, label, foundry.utils.getProperty(s, key));
     const str = (key, label = title(key), choices) =>
@@ -661,12 +657,8 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
     data.details = fields.join('');
     data.system = s;
     data.description = s.description;
-    data.armorLocations =
-      item.type === 'armor'
-        ? (item.actor?.system.locationTable ?? HUMANOID_LOCATIONS)
-            .filter((l) => s.coverage.includes(l.id))
-            .map((l) => ({ id: l.id, label: l.label, value: s.sp[l.id] ?? s.stoppingPower }))
-        : [];
+    data.isArmor = item.type === 'armor';
+    data.armorLocations = data.inventoryItem.armorLocations;
     data.materials = s.materials;
     data.bonuses = Object.entries(s.bonuses).map(([key, value]) => ({
       label:

@@ -146,11 +146,19 @@
               data-key='body'
             >BODY</button></div></section>
         <section><h2>Hit locations</h2><table><thead><tr><th>d10</th><th>Location</th><th>Aim</th><th
-                >Damage</th><th>SP</th></tr></thead><tbody>{{#each locations}}<tr><td>{{min}}–{{max}}</td><td
-                  >{{label}}</td><td>{{aim}}</td><td>×{{multiplier}}</td><td>{{totalSP}}</td></tr>{{#if
-                  weakName
-                }}<tr><td>Aimed</td><td>{{weakName}}</td><td>{{aim}}</td><td>×{{multiplier}}</td><td
-                    >{{weakSp}} (no natural DR)</td></tr>{{/if}}{{/each}}</tbody></table></section></div>
+                >Damage</th><th>SP current / max</th></tr></thead><tbody>{{#each locations}}<tr><td
+                  >{{min}}–{{max}}</td><td>{{label}}</td><td>{{aim}}</td><td>×{{multiplier}}</td><td
+                    class='armor-sp'
+                    data-damaged='{{damaged}}'
+                    data-armor-location='{{id}}'
+                  ><strong>{{totalSP}}</strong> / {{maximumSP}}</td></tr>{{#if weakName}}<tr><td>Aimed</td><td
+                    >{{weakName}}</td><td>{{aim}}</td><td>×{{multiplier}}</td><td><strong
+                      >{{totalWeakSP}}</strong>
+                      /
+                      {{maximumWeakSP}}
+                      (no natural DR)</td></tr>{{/if}}{{/each}}</tbody></table><p class='source-note'>Total
+            protection from equipped armor and natural armor. Max uses the same armor after full repair.
+            Individual items are listed in Equipment.</p></section></div>
       {{#if inWeb}}<button type='button' data-witcher='escapeWeb'>Break arachas webbing (Physique DC 16)</button>{{/if}}
       {{#each effectRows}}<p>{{name}}
           ·
@@ -239,6 +247,16 @@
                 >{{type}}{{#if system.school}} · {{system.school}} school{{/if}}</small>
                 {{#if system.source}}<small>{{system.source}} · p.{{system.page}}</small>{{/if}}
                 {{#if system.priceText}}<small>{{system.priceText}}</small>{{/if}}
+                {{#if isArmor}}<div class='inventory-armor'><strong>SP current / max</strong>
+                    {{#each armorLocations}}<span
+                        class='armor-sp'
+                        data-damaged='{{damaged}}'
+                        data-armor-location='{{id}}'
+                      >{{label}}:
+                        <b>{{current}}</b>
+                        /
+                        {{maximum}}{{#if broken}} · Broken{{/if}}</span>{{else}}<span>No covered locations</span>{{/each}}
+                  </div>{{/if}}
                 {{#if system.effectText}}<details class='inventory-effect'><summary>Effect</summary><p
                     >{{system.effectText}}</p></details>{{/if}}</td><td>{{#if isNatural}}—{{else}}<input
                     type='number'

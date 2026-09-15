@@ -4,6 +4,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import Handlebars from 'handlebars';
+import { armorLocationRows, actorArmorRows } from '../../module/witcher/armor-display.js';
 import { STATS, SKILLS, HUMANOID_LOCATIONS, SYSTEM_ID } from '../../module/witcher/config.js';
 import { derivedStats } from '../../module/witcher/rules.js';
 import { runCommand } from '../../module/witcher/authority.js';
@@ -585,6 +587,52 @@ for (const silver of [false, true])
     await w.apply(damage);
     assert.equal(w.target.system.hp.value, silver ? 11 : 19);
     assert.equal(armor.system.sp.torso, 2);
+    // The displayed current values must come from persisted wear, not the catalog maximum.
+    const armorRows = armorLocationRows(armor, w.target.system.locations);
+    assert.deepEqual(
+      armorRows.map((r) => [r.id, r.current, r.maximum]),
+      [
+        ['torso', 2, 3],
+        ['rightArm', 3, 3],
+        ['leftArm', 3, 3],
+      ]
+    );
+    const locationRows = actorArmorRows(
+      {
+        ...w.target.system,
+        items: w.target.items.map((i) => ({ type: i.type, id: i.id, name: i.name, ...i.system })),
+      },
+      w.target.system.locations
+    );
+    const torso = locationRows.find((l) => l.id === 'torso');
+    assert.equal(torso.totalSP, 2);
+    assert.equal(torso.maximumSP, 3);
+    const hbs = Handlebars.create();
+    hbs.registerHelper('checked', (v) => (v ? 'checked' : ''));
+    const itemHTML = hbs.compile(
+      fs.readFileSync(new URL('../../templates/witcher/item.hbs', import.meta.url), 'utf8')
+    )({
+      item: armor,
+      system: armor.system,
+      isArmor: true,
+      owned: true,
+      armorLocations: armorRows,
+    });
+    assert.match(itemHTML, /name='system\.sp\.torso'[^>]*value='2'/);
+    assert(itemHTML.indexOf('Armor condition') < itemHTML.indexOf('Characteristics'));
+    const actorHTML = hbs.compile(
+      fs.readFileSync(new URL('../../templates/witcher/actor.hbs', import.meta.url), 'utf8')
+    )({
+      actor: w.target,
+      system: w.target.system,
+      locations: locationRows,
+      inventory: [
+        { id: armor.id, name: armor.name, system: armor.system, isArmor: true, armorLocations: armorRows },
+      ],
+    });
+    assert.match(actorHTML, /SP current \/ max/);
+    assert.match(actorHTML, /data-armor-location='torso'[^>]*>\s*<strong>2<\/strong>\s*\/\s*3/);
+    assert.match(actorHTML, /Torso:\s*<b>2<\/b>\s*\/\s*3/);
     assert.equal(other.system.hp.value, 25);
     await assert.rejects(() => w.apply(damage), /already been applied/);
     assert.equal(w.target.system.hp.value, silver ? 11 : 19);

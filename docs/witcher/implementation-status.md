@@ -1,6 +1,6 @@
 # Witcher V14 implementation status
 
-Release candidate: **0.1.0-alpha.1**. This ledger distinguishes implemented code
+Release candidate: **0.1.0-alpha.2**. This ledger distinguishes implemented code
 from live acceptance. No Foundry server has been launched in this environment;
 the owner will test the installable release on The Forge.
 
@@ -27,6 +27,14 @@ potion/decoction automation have incomplete paths inherited from the first
 implementation pass; they are not claims of completed ordinary combat and are
 not the primary attack controls. Critical Flurry's Disarm/Trip and school armor
 follow-up strikes are included because they are equipment effects.
+
+## Armor display in alpha.2
+
+Armor item sheets show current/max SP prominently above Inventory and Characteristics.
+The Equipment tab shows the same values per item/location; Hit locations shows
+total current/max protection from the equipped layers and natural armor. Zero
+current SP remains zero, and custom/monster coverage is not hidden on source items.
+These views read existing saved wear; this release does not change damage rules.
 
 ## Implemented behavior
 
@@ -63,7 +71,7 @@ follow-up strikes are included because they are equipment effects.
 
 ## Validation and remaining acceptance
 
-**154 automated tests pass.** Tests cover book examples, imported creature attacks and school gear,
+**156 automated tests pass.** Tests cover book examples, imported creature attacks and school gear,
 turn/STA accounting, persistence failure recovery and package contents. Syntax,
 module imports and Handlebars compilation are checked. A separate check uses the
 genuine public Foundry V14.365 data layer: **36 Actors and 1062 Items** preserve

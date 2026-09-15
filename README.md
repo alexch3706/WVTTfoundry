@@ -22,8 +22,8 @@ Signs/magic, mounted combat and active creature/profession abilities are deferre
 
 ## Install on The Forge
 
-Use the [v0.1.0-alpha.1 manifest](https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.1/system.json) in **Install from Manifest**.
-See [installation instructions](docs/witcher/install.md) and [release assets](https://github.com/alexch3706/WVTTfoundry/releases/tag/v0.1.0-alpha.1).
+Use the [v0.1.0-alpha.2 manifest](https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.2/system.json) in **Install from Manifest**.
+See [installation instructions](docs/witcher/install.md) and [release assets](https://github.com/alexch3706/WVTTfoundry/releases/tag/v0.1.0-alpha.2).
 Create a new Witcher world; use a 2 m grid and an active GM for combat commands.
 
 ## Validation

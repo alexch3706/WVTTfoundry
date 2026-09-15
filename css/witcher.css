@@ -368,6 +368,33 @@
 .witcher .inventory-effect {
   margin: 4px 0;
 }
+.witcher .armor-condition {
+  background: #ffffff50;
+  border-left: 3px solid var(--accent);
+  padding: 8px 12px;
+  margin: 10px 0;
+}
+.witcher .armor-sp-table input {
+  width: 70px;
+  text-align: center;
+}
+.witcher .armor-sp {
+  font-variant-numeric: tabular-nums;
+}
+.witcher .armor-sp[data-damaged='true'],
+.witcher .armor-sp-table tr[data-damaged='true'] {
+  color: var(--accent);
+  background: #7a25220d;
+}
+.witcher .inventory-armor {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 5px 0;
+  font:
+    12px system-ui,
+    sans-serif;
+}
 .witcher .inventory-effect summary {
   padding: 2px 0;
   background: transparent;
