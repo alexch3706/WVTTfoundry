@@ -1,0 +1,5405 @@
+{
+  "sourceSha256": "2ee43e9a82e7b04281f57db488411fd3d21f471b2a2feedd2905c7e9b7ad8454",
+  "counts": {
+    "weapons": 79,
+    "armor": 44,
+    "alchemy": 22,
+    "equipment": 125,
+    "components": 123,
+    "diagrams": 201,
+    "witcher-gear": 62,
+    "relics": 17
+  },
+  "rows": [
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 2,
+      "pack": "weapons",
+      "id": "5179768f7cb2f0d8",
+      "name": "Iron Long Sword"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 3,
+      "pack": "weapons",
+      "id": "98350b0ce0710f95",
+      "name": "Arming Sword"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 4,
+      "pack": "weapons",
+      "id": "7a4d469af32bf2f3",
+      "name": "Gleddyf"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 5,
+      "pack": "weapons",
+      "id": "83df8cf903019168",
+      "name": "Hunter’s Falchion"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 6,
+      "pack": "weapons",
+      "id": "9b33128538c7133c",
+      "name": "Krigsverd"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 7,
+      "pack": "weapons",
+      "id": "7e00e7f57b9a682e",
+      "name": "Esboda"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 8,
+      "pack": "weapons",
+      "id": "d3430a948933a39d",
+      "name": "Kord"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 9,
+      "pack": "weapons",
+      "id": "d1847dd29936b814",
+      "name": "Vicovarian Blade"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 10,
+      "pack": "weapons",
+      "id": "137cbdb3c3d9b6e2",
+      "name": "Torrwr"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 12,
+      "pack": "weapons",
+      "id": "3dd583712ef569e9",
+      "name": "Dagger"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 13,
+      "pack": "weapons",
+      "id": "87dd4874b85ad1dc",
+      "name": "Stiletto"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 14,
+      "pack": "weapons",
+      "id": "0c9cf847cb2ee1f4",
+      "name": "Poniard"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 15,
+      "pack": "weapons",
+      "id": "245361c04d5b086b",
+      "name": "Jambiya"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 17,
+      "pack": "weapons",
+      "id": "378f7bbf0f27158b",
+      "name": "Hand Axe"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 18,
+      "pack": "weapons",
+      "id": "1eb0060476333644",
+      "name": "Battle Axe"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 19,
+      "pack": "weapons",
+      "id": "dbe44fd14912b42e",
+      "name": "Berserker’s Axe"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 21,
+      "pack": "weapons",
+      "id": "8e383db5ed306f97",
+      "name": "Brass Knuckles"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 22,
+      "pack": "weapons",
+      "id": "772858a3645c0e23",
+      "name": "Mace"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 23,
+      "pack": "weapons",
+      "id": "c98c0987bb1f7837",
+      "name": "Highland Mauler"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 25,
+      "pack": "weapons",
+      "id": "7c224b9dfae64cf6",
+      "name": "Spear"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 26,
+      "pack": "weapons",
+      "id": "24f1a5d197b76d59",
+      "name": "Pole Axe"
+    },
+    {
+      "pdfPage": 74,
+      "table": 0,
+      "row": 27,
+      "pack": "weapons",
+      "id": "b180785f3425d16c",
+      "name": "Red Halberd"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 2,
+      "pack": "weapons",
+      "id": "ca5a592b62e65cfd",
+      "name": "Staff"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 3,
+      "pack": "weapons",
+      "id": "b6cd34ed457e9822",
+      "name": "Hooked Staff"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 4,
+      "pack": "weapons",
+      "id": "fd6be13ba58ec5e3",
+      "name": "Iron Staff"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 5,
+      "pack": "weapons",
+      "id": "0d8a9f982f3cac56",
+      "name": "Crystal Staff"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 7,
+      "pack": "weapons",
+      "id": "870178719215b653",
+      "name": "Throwing Knife"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 8,
+      "pack": "weapons",
+      "id": "93a723a32b8f4bf7",
+      "name": "Throwing Axe"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 9,
+      "pack": "weapons",
+      "id": "850db46ca925ec27",
+      "name": "Orion"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 11,
+      "pack": "weapons",
+      "id": "700301c100f3550e",
+      "name": "Short Bow"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 12,
+      "pack": "weapons",
+      "id": "52f8bba4016d708d",
+      "name": "Long Bow"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 13,
+      "pack": "weapons",
+      "id": "de59e57c44b436d8",
+      "name": "War Bow"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 15,
+      "pack": "weapons",
+      "id": "a92f38a8a5cb4376",
+      "name": "Hand Crossbow"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 16,
+      "pack": "weapons",
+      "id": "ef2cf4b5e52a70cb",
+      "name": "Crossbow"
+    },
+    {
+      "pdfPage": 75,
+      "table": 0,
+      "row": 17,
+      "pack": "weapons",
+      "id": "6e3aa60c891e2ffe",
+      "name": "Monster Hunter’s Crossbow"
+    },
+    {
+      "pdfPage": 75,
+      "table": 1,
+      "row": 1,
+      "pack": "weapons",
+      "id": "4ed1526682817b04",
+      "name": "Standard Ammunition"
+    },
+    {
+      "pdfPage": 75,
+      "table": 1,
+      "row": 2,
+      "pack": "weapons",
+      "id": "dd0152f34d29d413",
+      "name": "Blunt Ammunition"
+    },
+    {
+      "pdfPage": 75,
+      "table": 1,
+      "row": 3,
+      "pack": "weapons",
+      "id": "495d0a676473c613",
+      "name": "Broadhead Ammunition"
+    },
+    {
+      "pdfPage": 75,
+      "table": 1,
+      "row": 4,
+      "pack": "weapons",
+      "id": "8668385acf6d31eb",
+      "name": "Bodkin Ammunition"
+    },
+    {
+      "pdfPage": 80,
+      "table": 0,
+      "row": 2,
+      "pack": "armor",
+      "id": "44da120e6c07c331",
+      "name": "Verden Archer’s Hood"
+    },
+    {
+      "pdfPage": 80,
+      "table": 0,
+      "row": 3,
+      "pack": "armor",
+      "id": "27df78a02abbd095",
+      "name": "Double Woven Hood"
+    },
+    {
+      "pdfPage": 80,
+      "table": 0,
+      "row": 4,
+      "pack": "armor",
+      "id": "dde25c3918d56088",
+      "name": "Spectacled Helm"
+    },
+    {
+      "pdfPage": 80,
+      "table": 0,
+      "row": 6,
+      "pack": "armor",
+      "id": "8ef54fde828748d6",
+      "name": "Chain Coif"
+    },
+    {
+      "pdfPage": 80,
+      "table": 0,
+      "row": 7,
+      "pack": "armor",
+      "id": "58d24db2a7660299",
+      "name": "Armored Hood"
+    },
+    {
+      "pdfPage": 80,
+      "table": 0,
+      "row": 8,
+      "pack": "armor",
+      "id": "997018304b57d8ae",
+      "name": "Temerian Armet"
+    },
+    {
+      "pdfPage": 80,
+      "table": 0,
+      "row": 10,
+      "pack": "armor",
+      "id": "2c2695e0bfe1d5da",
+      "name": "Great Helm"
+    },
+    {
+      "pdfPage": 80,
+      "table": 0,
+      "row": 11,
+      "pack": "armor",
+      "id": "e8616d63cf18ed69",
+      "name": "Skellige Helm"
+    },
+    {
+      "pdfPage": 80,
+      "table": 0,
+      "row": 12,
+      "pack": "armor",
+      "id": "dce99e9014329cbd",
+      "name": "Nilfgaardian Helm"
+    },
+    {
+      "pdfPage": 80,
+      "table": 1,
+      "row": 2,
+      "pack": "armor",
+      "id": "5f20ec465b47a8a2",
+      "name": "Gambeson"
+    },
+    {
+      "pdfPage": 80,
+      "table": 1,
+      "row": 3,
+      "pack": "armor",
+      "id": "06d123c99cc91b62",
+      "name": "Aedirnian Gambeson"
+    },
+    {
+      "pdfPage": 80,
+      "table": 1,
+      "row": 4,
+      "pack": "armor",
+      "id": "f336768e5068a273",
+      "name": "Double Woven Gambeson"
+    },
+    {
+      "pdfPage": 80,
+      "table": 1,
+      "row": 6,
+      "pack": "armor",
+      "id": "cffa17deb5a1c94f",
+      "name": "Brigandine"
+    },
+    {
+      "pdfPage": 80,
+      "table": 1,
+      "row": 7,
+      "pack": "armor",
+      "id": "f60817ae1a707d33",
+      "name": "Redanian Halberdier’s Armor"
+    },
+    {
+      "pdfPage": 80,
+      "table": 1,
+      "row": 8,
+      "pack": "armor",
+      "id": "e749194b91c0efe4",
+      "name": "Lyrian Leather Jacket"
+    },
+    {
+      "pdfPage": 80,
+      "table": 1,
+      "row": 10,
+      "pack": "armor",
+      "id": "95e0512148e95ede",
+      "name": "Plate Armor"
+    },
+    {
+      "pdfPage": 80,
+      "table": 1,
+      "row": 11,
+      "pack": "armor",
+      "id": "5f6e318caf4d0321",
+      "name": "Hindarsfjall Heavy Armor"
+    },
+    {
+      "pdfPage": 80,
+      "table": 1,
+      "row": 12,
+      "pack": "armor",
+      "id": "da24cc34844c6cd3",
+      "name": "Nilfgaardian Plate Armor"
+    },
+    {
+      "pdfPage": 81,
+      "table": 0,
+      "row": 2,
+      "pack": "armor",
+      "id": "35905cc9a95f7e81",
+      "name": "Cavalry Trousers"
+    },
+    {
+      "pdfPage": 81,
+      "table": 0,
+      "row": 3,
+      "pack": "armor",
+      "id": "70b20a803d78d1f0",
+      "name": "Padded Trousers"
+    },
+    {
+      "pdfPage": 81,
+      "table": 0,
+      "row": 4,
+      "pack": "armor",
+      "id": "98f9da4cbf9ed8ad",
+      "name": "Double Woven Trousers"
+    },
+    {
+      "pdfPage": 81,
+      "table": 0,
+      "row": 6,
+      "pack": "armor",
+      "id": "96137467536f7239",
+      "name": "Armored Trousers"
+    },
+    {
+      "pdfPage": 81,
+      "table": 0,
+      "row": 7,
+      "pack": "armor",
+      "id": "e3e46f302be1d680",
+      "name": "Redanian Greaves"
+    },
+    {
+      "pdfPage": 81,
+      "table": 0,
+      "row": 8,
+      "pack": "armor",
+      "id": "ca1c09f09d32af1e",
+      "name": "Lyrian Leather Trousers"
+    },
+    {
+      "pdfPage": 81,
+      "table": 0,
+      "row": 10,
+      "pack": "armor",
+      "id": "0a5ffc0d7a1fc1dd",
+      "name": "Plate Greaves"
+    },
+    {
+      "pdfPage": 81,
+      "table": 0,
+      "row": 11,
+      "pack": "armor",
+      "id": "b8d07419d50f9067",
+      "name": "Hindarsfjall Heavy Chausses"
+    },
+    {
+      "pdfPage": 81,
+      "table": 0,
+      "row": 12,
+      "pack": "armor",
+      "id": "f307f43a8d5f3677",
+      "name": "Nilfgaardian Greaves"
+    },
+    {
+      "pdfPage": 81,
+      "table": 1,
+      "row": 2,
+      "pack": "armor",
+      "id": "2c3e0e61724869dd",
+      "name": "Leather Shield"
+    },
+    {
+      "pdfPage": 81,
+      "table": 1,
+      "row": 3,
+      "pack": "armor",
+      "id": "8cf1edd6363d2bad",
+      "name": "Steel Buckler"
+    },
+    {
+      "pdfPage": 81,
+      "table": 1,
+      "row": 4,
+      "pack": "armor",
+      "id": "5c880f51dfaad54e",
+      "name": "Temerian Shield"
+    },
+    {
+      "pdfPage": 81,
+      "table": 1,
+      "row": 6,
+      "pack": "armor",
+      "id": "66d800a85813b066",
+      "name": "Skellige Raider Shield"
+    },
+    {
+      "pdfPage": 81,
+      "table": 1,
+      "row": 7,
+      "pack": "armor",
+      "id": "3718c75a026a4c9c",
+      "name": "Kaedweni Shield"
+    },
+    {
+      "pdfPage": 81,
+      "table": 1,
+      "row": 8,
+      "pack": "armor",
+      "id": "7fc3494735d7d912",
+      "name": "Steel Kite Shield"
+    },
+    {
+      "pdfPage": 81,
+      "table": 1,
+      "row": 10,
+      "pack": "armor",
+      "id": "0dbd18a25fef0df7",
+      "name": "Pavise"
+    },
+    {
+      "pdfPage": 81,
+      "table": 1,
+      "row": 11,
+      "pack": "armor",
+      "id": "4eec795567916c90",
+      "name": "Nilfgaardian Pavise"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 2,
+      "pack": "weapons",
+      "id": "6717e5de8902da0f",
+      "name": "Elven Messer"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 3,
+      "pack": "weapons",
+      "id": "5b253c174512d141",
+      "name": "Vrihedd Cavalry Sword"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 4,
+      "pack": "weapons",
+      "id": "a3d97481f40ce413",
+      "name": "Meteorite Sword"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 5,
+      "pack": "weapons",
+      "id": "44e7bf1400a5e6a4",
+      "name": "Gnomish Gwyhyr"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 6,
+      "pack": "weapons",
+      "id": "46cf0b192791f37a",
+      "name": "Tir Tochair Blade"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 8,
+      "pack": "weapons",
+      "id": "38ac86632c085a47",
+      "name": "Halfling Rondel"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 9,
+      "pack": "weapons",
+      "id": "089c5cbbd9a87766",
+      "name": "Dwarven Cleaver"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 11,
+      "pack": "weapons",
+      "id": "d1fd873473f8590c",
+      "name": "Dwarven Axe"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 12,
+      "pack": "weapons",
+      "id": "5d925f256e2afe08",
+      "name": "Gnomish Black Axe"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 14,
+      "pack": "weapons",
+      "id": "0343ceeb5f611e20",
+      "name": "Mahakaman Martell"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 15,
+      "pack": "weapons",
+      "id": "2fb55bf5e68d62da",
+      "name": "Meteorite Chain Mace"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 17,
+      "pack": "weapons",
+      "id": "ba55357918f716fd",
+      "name": "Dwarven Pole Hammer"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 18,
+      "pack": "weapons",
+      "id": "fef457f9dd955c4f",
+      "name": "Elven Glaive"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 20,
+      "pack": "weapons",
+      "id": "c60ef410334071d8",
+      "name": "Gnomish Staff"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 21,
+      "pack": "weapons",
+      "id": "c716604efd582a11",
+      "name": "Elven Walking Staff"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 23,
+      "pack": "weapons",
+      "id": "bd3f70e582a5db21",
+      "name": "Elven Travel Bow"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 24,
+      "pack": "weapons",
+      "id": "3e6e323dd384ccce",
+      "name": "Elven Zefhar"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 26,
+      "pack": "weapons",
+      "id": "e6e775c5e45a2e38",
+      "name": "Gnomish Hand Crossbow"
+    },
+    {
+      "pdfPage": 84,
+      "table": 0,
+      "row": 27,
+      "pack": "weapons",
+      "id": "afa4cf356140e9ea",
+      "name": "Dwarven Heavy Crossbow"
+    },
+    {
+      "pdfPage": 85,
+      "table": 0,
+      "row": 1,
+      "pack": "weapons",
+      "id": "63867789169bb8c5",
+      "name": "Elven Burrower Ammunition"
+    },
+    {
+      "pdfPage": 85,
+      "table": 0,
+      "row": 2,
+      "pack": "weapons",
+      "id": "a730d05135162521",
+      "name": "Dwarven Impact Ammunition"
+    },
+    {
+      "pdfPage": 85,
+      "table": 1,
+      "row": 2,
+      "pack": "armor",
+      "id": "d9b702b690fb997c",
+      "name": "Halfling Protective Doublet"
+    },
+    {
+      "pdfPage": 85,
+      "table": 1,
+      "row": 3,
+      "pack": "armor",
+      "id": "4c38255de4c40fe4",
+      "name": "Gnomish Chain"
+    },
+    {
+      "pdfPage": 85,
+      "table": 1,
+      "row": 5,
+      "pack": "armor",
+      "id": "2ad3a4571f1a08db",
+      "name": "Dwarven Cloak"
+    },
+    {
+      "pdfPage": 85,
+      "table": 1,
+      "row": 6,
+      "pack": "armor",
+      "id": "dcc3c7d367a6f913",
+      "name": "Scoia’tael Armor"
+    },
+    {
+      "pdfPage": 85,
+      "table": 1,
+      "row": 8,
+      "pack": "armor",
+      "id": "00e51ce3dbe379c0",
+      "name": "Gnomish Dragoon Armor"
+    },
+    {
+      "pdfPage": 85,
+      "table": 1,
+      "row": 9,
+      "pack": "armor",
+      "id": "bbfa3a112b4e8608",
+      "name": "Mahakaman Plate Armor"
+    },
+    {
+      "pdfPage": 85,
+      "table": 2,
+      "row": 2,
+      "pack": "armor",
+      "id": "06d7ea4b8ff4bad2",
+      "name": "Gnomish Buckler"
+    },
+    {
+      "pdfPage": 85,
+      "table": 2,
+      "row": 4,
+      "pack": "armor",
+      "id": "6edd1eacc7234428",
+      "name": "Elven Shield"
+    },
+    {
+      "pdfPage": 85,
+      "table": 2,
+      "row": 6,
+      "pack": "armor",
+      "id": "615e0751ef0e293a",
+      "name": "Mahakaman Pavise"
+    },
+    {
+      "pdfPage": 88,
+      "table": 0,
+      "row": 1,
+      "pack": "alchemy",
+      "id": "e81723d2656410f1",
+      "name": "Acid Solution"
+    },
+    {
+      "pdfPage": 88,
+      "table": 0,
+      "row": 2,
+      "pack": "alchemy",
+      "id": "2ff0d46f046d6421",
+      "name": "Adda’s Tomb"
+    },
+    {
+      "pdfPage": 88,
+      "table": 0,
+      "row": 3,
+      "pack": "alchemy",
+      "id": "8cc88c251551c8ea",
+      "name": "Alchemical Adhesive"
+    },
+    {
+      "pdfPage": 88,
+      "table": 0,
+      "row": 4,
+      "pack": "alchemy",
+      "id": "80925b840bddfd85",
+      "name": "Base Powder"
+    },
+    {
+      "pdfPage": 88,
+      "table": 0,
+      "row": 5,
+      "pack": "alchemy",
+      "id": "81216c2412581fe1",
+      "name": "Black Venom"
+    },
+    {
+      "pdfPage": 88,
+      "table": 0,
+      "row": 6,
+      "pack": "alchemy",
+      "id": "38de84187865930e",
+      "name": "Bredan’s Fury"
+    },
+    {
+      "pdfPage": 88,
+      "table": 0,
+      "row": 7,
+      "pack": "alchemy",
+      "id": "f56b0f497851f374",
+      "name": "Chloroform"
+    },
+    {
+      "pdfPage": 88,
+      "table": 0,
+      "row": 8,
+      "pack": "alchemy",
+      "id": "f2010902d430e41a",
+      "name": "Clotting Powder"
+    },
+    {
+      "pdfPage": 88,
+      "table": 0,
+      "row": 9,
+      "pack": "alchemy",
+      "id": "5a2bd40d9cbf2d7a",
+      "name": "Fisstech"
+    },
+    {
+      "pdfPage": 88,
+      "table": 0,
+      "row": 10,
+      "pack": "alchemy",
+      "id": "c82381346c082e44",
+      "name": "Hallucinogen"
+    },
+    {
+      "pdfPage": 88,
+      "table": 0,
+      "row": 11,
+      "pack": "alchemy",
+      "id": "723173cf2abadf19",
+      "name": "Invisible Ink"
+    },
+    {
+      "pdfPage": 89,
+      "table": 0,
+      "row": 1,
+      "pack": "alchemy",
+      "id": "1547fb3f0b1881b6",
+      "name": "Numbing Herbs"
+    },
+    {
+      "pdfPage": 89,
+      "table": 0,
+      "row": 2,
+      "pack": "alchemy",
+      "id": "94b0a060b4a7b95b",
+      "name": "Pantagran’s Elixir"
+    },
+    {
+      "pdfPage": 89,
+      "table": 0,
+      "row": 3,
+      "pack": "alchemy",
+      "id": "98ca22124662d1ad",
+      "name": "Perfume Potion"
+    },
+    {
+      "pdfPage": 89,
+      "table": 0,
+      "row": 4,
+      "pack": "alchemy",
+      "id": "99051fc5e5acf487",
+      "name": "Poisoner’s Friend"
+    },
+    {
+      "pdfPage": 89,
+      "table": 0,
+      "row": 5,
+      "pack": "alchemy",
+      "id": "9559a7901a09d993",
+      "name": "Quick Fire"
+    },
+    {
+      "pdfPage": 89,
+      "table": 0,
+      "row": 6,
+      "pack": "alchemy",
+      "id": "35dbe87c2c866c1e",
+      "name": "Smelling Salts"
+    },
+    {
+      "pdfPage": 89,
+      "table": 0,
+      "row": 7,
+      "pack": "alchemy",
+      "id": "9ee38480a8081003",
+      "name": "Sterilizing Fluid"
+    },
+    {
+      "pdfPage": 89,
+      "table": 0,
+      "row": 8,
+      "pack": "alchemy",
+      "id": "ed1518d35a5b2d31",
+      "name": "Succubus’ Breath"
+    },
+    {
+      "pdfPage": 89,
+      "table": 0,
+      "row": 9,
+      "pack": "alchemy",
+      "id": "2d5f49f5e53528eb",
+      "name": "Talgar’s Tears"
+    },
+    {
+      "pdfPage": 89,
+      "table": 0,
+      "row": 10,
+      "pack": "alchemy",
+      "id": "6830f19c1f245ac5",
+      "name": "Wive’s Tears Potion"
+    },
+    {
+      "pdfPage": 89,
+      "table": 0,
+      "row": 11,
+      "pack": "alchemy",
+      "id": "f074b3b122ee31e2",
+      "name": "Zerrikanian Fire"
+    },
+    {
+      "pdfPage": 91,
+      "table": 0,
+      "row": 1,
+      "pack": "equipment",
+      "id": "228da95f8da82576",
+      "name": "Chain Mail Enhancement"
+    },
+    {
+      "pdfPage": 91,
+      "table": 0,
+      "row": 2,
+      "pack": "equipment",
+      "id": "6f9a6d577bc0e8e0",
+      "name": "Dwarven Enhancement"
+    },
+    {
+      "pdfPage": 91,
+      "table": 0,
+      "row": 3,
+      "pack": "equipment",
+      "id": "f108414684c30e00",
+      "name": "Elven Enhancement"
+    },
+    {
+      "pdfPage": 91,
+      "table": 0,
+      "row": 4,
+      "pack": "equipment",
+      "id": "c4f65b01e5123bb0",
+      "name": "Fiber Enhancement"
+    },
+    {
+      "pdfPage": 91,
+      "table": 0,
+      "row": 5,
+      "pack": "equipment",
+      "id": "0d6d168dff97b266",
+      "name": "Hardened Leather Enhancement"
+    },
+    {
+      "pdfPage": 91,
+      "table": 0,
+      "row": 6,
+      "pack": "equipment",
+      "id": "8ad9daaec609acb7",
+      "name": "Steel Enhancement"
+    },
+    {
+      "pdfPage": 91,
+      "table": 0,
+      "row": 7,
+      "pack": "equipment",
+      "id": "c33a3f074c069e80",
+      "name": "Studded Leather Enhancement"
+    },
+    {
+      "pdfPage": 92,
+      "table": 0,
+      "row": 1,
+      "pack": "equipment",
+      "id": "e8e44cca31f0a40f",
+      "name": "Carriage"
+    },
+    {
+      "pdfPage": 92,
+      "table": 0,
+      "row": 2,
+      "pack": "equipment",
+      "id": "fa420c41953f4b48",
+      "name": "Cart"
+    },
+    {
+      "pdfPage": 92,
+      "table": 0,
+      "row": 3,
+      "pack": "equipment",
+      "id": "db37b67217121bc6",
+      "name": "Cutter"
+    },
+    {
+      "pdfPage": 92,
+      "table": 0,
+      "row": 4,
+      "pack": "equipment",
+      "id": "c5f5cdb4b6fdb806",
+      "name": "Horse"
+    },
+    {
+      "pdfPage": 92,
+      "table": 0,
+      "row": 5,
+      "pack": "equipment",
+      "id": "b93cc06d21a7f549",
+      "name": "Mule"
+    },
+    {
+      "pdfPage": 92,
+      "table": 0,
+      "row": 6,
+      "pack": "equipment",
+      "id": "0fc22a6957f6bd50",
+      "name": "Ox"
+    },
+    {
+      "pdfPage": 92,
+      "table": 0,
+      "row": 7,
+      "pack": "equipment",
+      "id": "98cff29635f3200a",
+      "name": "Sailing Boat"
+    },
+    {
+      "pdfPage": 92,
+      "table": 0,
+      "row": 8,
+      "pack": "equipment",
+      "id": "0c98ab6acb7e21ef",
+      "name": "Sailing Ship"
+    },
+    {
+      "pdfPage": 92,
+      "table": 0,
+      "row": 9,
+      "pack": "equipment",
+      "id": "dc48a524cf7084a1",
+      "name": "War Horse"
+    },
+    {
+      "pdfPage": 92,
+      "table": 1,
+      "row": 2,
+      "pack": "equipment",
+      "id": "27e0a2273b184a84",
+      "name": "Saddle"
+    },
+    {
+      "pdfPage": 92,
+      "table": 1,
+      "row": 3,
+      "pack": "equipment",
+      "id": "0c40728895ae8f70",
+      "name": "Cavalry Saddle"
+    },
+    {
+      "pdfPage": 92,
+      "table": 1,
+      "row": 4,
+      "pack": "equipment",
+      "id": "96e4db4294556471",
+      "name": "Racing Saddle"
+    },
+    {
+      "pdfPage": 92,
+      "table": 1,
+      "row": 6,
+      "pack": "equipment",
+      "id": "f2abecefa73d5039",
+      "name": "Blinders"
+    },
+    {
+      "pdfPage": 92,
+      "table": 1,
+      "row": 7,
+      "pack": "equipment",
+      "id": "a52165efa5ff4acb",
+      "name": "Racing Blinders"
+    },
+    {
+      "pdfPage": 92,
+      "table": 1,
+      "row": 9,
+      "pack": "equipment",
+      "id": "6143c8cc66e3ebda",
+      "name": "Saddlebags"
+    },
+    {
+      "pdfPage": 92,
+      "table": 1,
+      "row": 10,
+      "pack": "equipment",
+      "id": "7d3a3e5c6658a1de",
+      "name": "Military Saddlebags"
+    },
+    {
+      "pdfPage": 92,
+      "table": 1,
+      "row": 12,
+      "pack": "equipment",
+      "id": "5f2041915c8e69fa",
+      "name": "Leather Barding"
+    },
+    {
+      "pdfPage": 92,
+      "table": 1,
+      "row": 13,
+      "pack": "equipment",
+      "id": "6c8d13841863761a",
+      "name": "Chain Barding"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 1,
+      "pack": "equipment",
+      "id": "27a2bcae78892451",
+      "name": "Alchemy Set"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 2,
+      "pack": "equipment",
+      "id": "4003d32e0c56ea0c",
+      "name": "Amulet, Gemstone"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 3,
+      "pack": "equipment",
+      "id": "29b72bc77ffd0a34",
+      "name": "Amulet, Simple"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 4,
+      "pack": "equipment",
+      "id": "e512c311d684a17a",
+      "name": "Cooking Tools"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 5,
+      "pack": "equipment",
+      "id": "135913d2cfeb1caa",
+      "name": "Crafting Tools"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 6,
+      "pack": "equipment",
+      "id": "abe644d9c3fdc549",
+      "name": "Disguise Kit"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 7,
+      "pack": "equipment",
+      "id": "9bf7801fe65b461a",
+      "name": "Fine Art Tools"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 8,
+      "pack": "equipment",
+      "id": "aad03b95e7345561",
+      "name": "Fishing Gear"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 9,
+      "pack": "equipment",
+      "id": "441bc916d533dae9",
+      "name": "Forgery Kit"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 10,
+      "pack": "equipment",
+      "id": "1fe28bc5a6b15622",
+      "name": "Makeup Kit"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 11,
+      "pack": "equipment",
+      "id": "e55968bd7ed0ff99",
+      "name": "Merchant’s Tools"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 12,
+      "pack": "equipment",
+      "id": "e2512559b78545ea",
+      "name": "Surgeon’s Kit"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 13,
+      "pack": "equipment",
+      "id": "b8f4de089fd39d28",
+      "name": "Telecommunicator"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 14,
+      "pack": "equipment",
+      "id": "78daeeff1142f552",
+      "name": "Thieves’ Tools"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 15,
+      "pack": "equipment",
+      "id": "5aef15bb08da8d43",
+      "name": "Tinker’s Forge"
+    },
+    {
+      "pdfPage": 93,
+      "table": 0,
+      "row": 16,
+      "pack": "equipment",
+      "id": "35c75b2ab9b0119d",
+      "name": "Writing Kit"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 1,
+      "pack": "equipment",
+      "id": "ec3fcac4d28bbd4b",
+      "name": "Bedroll"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 2,
+      "pack": "equipment",
+      "id": "5b7fb76b11154901",
+      "name": "Candles (x5)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 3,
+      "pack": "equipment",
+      "id": "49c765142d76f84b",
+      "name": "Chalk"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 4,
+      "pack": "equipment",
+      "id": "3a9e8f6a1fbc0491",
+      "name": "Dice Poker Board"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 5,
+      "pack": "equipment",
+      "id": "de92faa772edfd9f",
+      "name": "Flint & Steel"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 6,
+      "pack": "equipment",
+      "id": "145667c5d3a8b732",
+      "name": "Grappling Hook"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 7,
+      "pack": "equipment",
+      "id": "c904d172a27296ae",
+      "name": "Gwent Deck"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 8,
+      "pack": "equipment",
+      "id": "3f5f768145f29198",
+      "name": "Hand Mirror"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 9,
+      "pack": "equipment",
+      "id": "bc1b33c0b3ac3c9f",
+      "name": "Holy Symbol"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 10,
+      "pack": "equipment",
+      "id": "ad138b9e08b98b83",
+      "name": "Hourglass"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 11,
+      "pack": "equipment",
+      "id": "08e75d6d0fe9f414",
+      "name": "Hourglass, Minute"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 12,
+      "pack": "equipment",
+      "id": "b611a2c842588d86",
+      "name": "Instrument"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 13,
+      "pack": "equipment",
+      "id": "0eb66e38934a26d5",
+      "name": "Journal/Ledger"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 14,
+      "pack": "equipment",
+      "id": "f7437cd6a97e75a2",
+      "name": "Lantern"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 15,
+      "pack": "equipment",
+      "id": "116da9e009a08553",
+      "name": "Lantern, Bullseye"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 16,
+      "pack": "equipment",
+      "id": "10bd9bf513b3542a",
+      "name": "Loaded Dice"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 17,
+      "pack": "equipment",
+      "id": "02266806d0d08be3",
+      "name": "Lock"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 18,
+      "pack": "equipment",
+      "id": "705b33bf3fa3d038",
+      "name": "Lock, Strong"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 19,
+      "pack": "equipment",
+      "id": "73e81c19d67d6fa2",
+      "name": "Manacles"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 20,
+      "pack": "equipment",
+      "id": "1b0b30ffe8588aad",
+      "name": "Map of the Continent"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 21,
+      "pack": "equipment",
+      "id": "fe23f4768ba7056e",
+      "name": "Perfume/Cologne"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 22,
+      "pack": "equipment",
+      "id": "048c09bbf1bc2650",
+      "name": "Pipe"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 23,
+      "pack": "equipment",
+      "id": "bcdec9602d34972f",
+      "name": "Pitons (x5)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 24,
+      "pack": "equipment",
+      "id": "a3bae6e27569aca8",
+      "name": "Prosthetic, Basic"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 25,
+      "pack": "equipment",
+      "id": "77dbd6b11cff8088",
+      "name": "Prosthetic, Quality"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 26,
+      "pack": "equipment",
+      "id": "e74d519a1d884600",
+      "name": "Rope, 20m"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 27,
+      "pack": "equipment",
+      "id": "5b3f24f7a7053cd4",
+      "name": "Shackles"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 28,
+      "pack": "equipment",
+      "id": "dbadb6330e8d0f4c",
+      "name": "Soap"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 29,
+      "pack": "equipment",
+      "id": "36c1ee2adf613dea",
+      "name": "Tarp"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 30,
+      "pack": "equipment",
+      "id": "a1586860aecbe2b4",
+      "name": "Tent"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 31,
+      "pack": "equipment",
+      "id": "23e6a9e290afaa60",
+      "name": "Tent, Large"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 32,
+      "pack": "equipment",
+      "id": "9b4e41001f4c4e3b",
+      "name": "Tobacco"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 33,
+      "pack": "equipment",
+      "id": "89e8c87d94840c20",
+      "name": "Torch"
+    },
+    {
+      "pdfPage": 94,
+      "table": 0,
+      "row": 34,
+      "pack": "equipment",
+      "id": "2b3afaae89a2c7be",
+      "name": "Waterskin"
+    },
+    {
+      "pdfPage": 94,
+      "table": 1,
+      "row": 1,
+      "pack": "equipment",
+      "id": "cf88a8c0b47aabba",
+      "name": "Bandolier"
+    },
+    {
+      "pdfPage": 94,
+      "table": 1,
+      "row": 2,
+      "pack": "equipment",
+      "id": "6faed6b601e35543",
+      "name": "Basket"
+    },
+    {
+      "pdfPage": 94,
+      "table": 1,
+      "row": 3,
+      "pack": "equipment",
+      "id": "9b385d7cc8211e8e",
+      "name": "Belt Pouch"
+    },
+    {
+      "pdfPage": 94,
+      "table": 1,
+      "row": 4,
+      "pack": "equipment",
+      "id": "e21672cc5506ad10",
+      "name": "Sack"
+    },
+    {
+      "pdfPage": 94,
+      "table": 1,
+      "row": 5,
+      "pack": "equipment",
+      "id": "b2d840265c20af56",
+      "name": "Satchel"
+    },
+    {
+      "pdfPage": 94,
+      "table": 1,
+      "row": 6,
+      "pack": "equipment",
+      "id": "3a6ea82e2fdc222d",
+      "name": "Secret Pocket"
+    },
+    {
+      "pdfPage": 94,
+      "table": 1,
+      "row": 7,
+      "pack": "equipment",
+      "id": "80dc58bd9255f00c",
+      "name": "Sheath, Bow"
+    },
+    {
+      "pdfPage": 94,
+      "table": 1,
+      "row": 8,
+      "pack": "equipment",
+      "id": "5e2484447bf21b27",
+      "name": "Sheath, Garter"
+    },
+    {
+      "pdfPage": 94,
+      "table": 1,
+      "row": 9,
+      "pack": "equipment",
+      "id": "658166475cabc184",
+      "name": "Sheath, Sleeve"
+    },
+    {
+      "pdfPage": 94,
+      "table": 1,
+      "row": 10,
+      "pack": "equipment",
+      "id": "673f90a18c8782c7",
+      "name": "Wooden Chest"
+    },
+    {
+      "pdfPage": 94,
+      "table": 1,
+      "row": 11,
+      "pack": "equipment",
+      "id": "4c4ca2e6ac3bdadc",
+      "name": "Wooden Chest, Large"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 1,
+      "pack": "equipment",
+      "id": "80b8f0f655094ce1",
+      "name": "Bath, Cold"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 2,
+      "pack": "equipment",
+      "id": "f96223fe23535ecd",
+      "name": "Bath, Hot"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 3,
+      "pack": "equipment",
+      "id": "a530d2d24abe1aa2",
+      "name": "Carriage Ride"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 4,
+      "pack": "equipment",
+      "id": "1d7ccc53aa3b03a1",
+      "name": "Chronicler"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 5,
+      "pack": "equipment",
+      "id": "b378461b3cf51ebe",
+      "name": "Craftsman (Per Piece)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 6,
+      "pack": "equipment",
+      "id": "2e8ed14cc4a02cc9",
+      "name": "Doctor (Per Patient)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 7,
+      "pack": "equipment",
+      "id": "81859e566c9b82c7",
+      "name": "Entertainment (Per Hour)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 8,
+      "pack": "equipment",
+      "id": "db4c786d54391d59",
+      "name": "Fence"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 9,
+      "pack": "equipment",
+      "id": "2c3b3bdc83fbe077",
+      "name": "Hireling (Per Day)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 10,
+      "pack": "equipment",
+      "id": "51db60ce74d138c3",
+      "name": "Investigator"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 11,
+      "pack": "equipment",
+      "id": "65eb79af51e58111",
+      "name": "Laundry"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 12,
+      "pack": "equipment",
+      "id": "6b7c306c1fb8ced2",
+      "name": "Lawyer"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 13,
+      "pack": "equipment",
+      "id": "931ec8b4ec8d2180",
+      "name": "Messenger"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 14,
+      "pack": "equipment",
+      "id": "410a07914b54f135",
+      "name": "Prostitute (Per Hour)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 15,
+      "pack": "equipment",
+      "id": "69ab267e827d5a19",
+      "name": "Rented Horse (Per Day)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 16,
+      "pack": "equipment",
+      "id": "be4d66648bdae989",
+      "name": "Sea Voyage"
+    },
+    {
+      "pdfPage": 94,
+      "table": 2,
+      "row": 17,
+      "pack": "equipment",
+      "id": "fc8be5246f800fce",
+      "name": "Toll Gate"
+    },
+    {
+      "pdfPage": 94,
+      "table": 3,
+      "row": 1,
+      "pack": "equipment",
+      "id": "758762e40b713bea",
+      "name": "A Simple Meal"
+    },
+    {
+      "pdfPage": 94,
+      "table": 3,
+      "row": 2,
+      "pack": "equipment",
+      "id": "23d43c9a40204f60",
+      "name": "A Good Meal"
+    },
+    {
+      "pdfPage": 94,
+      "table": 3,
+      "row": 3,
+      "pack": "equipment",
+      "id": "c47e354ee8791464",
+      "name": "A Feast"
+    },
+    {
+      "pdfPage": 94,
+      "table": 3,
+      "row": 4,
+      "pack": "equipment",
+      "id": "e7a86332f38f2725",
+      "name": "Raw Meat"
+    },
+    {
+      "pdfPage": 94,
+      "table": 3,
+      "row": 5,
+      "pack": "equipment",
+      "id": "0c3712b87b505768",
+      "name": "Sweets"
+    },
+    {
+      "pdfPage": 94,
+      "table": 3,
+      "row": 6,
+      "pack": "equipment",
+      "id": "3b78c35da8284cc1",
+      "name": "Trail Rations (1 day)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 3,
+      "row": 7,
+      "pack": "equipment",
+      "id": "3daedc24da6665f2",
+      "name": "Alcohest"
+    },
+    {
+      "pdfPage": 94,
+      "table": 3,
+      "row": 8,
+      "pack": "equipment",
+      "id": "92c8a6348c30a03d",
+      "name": "Beer"
+    },
+    {
+      "pdfPage": 94,
+      "table": 3,
+      "row": 9,
+      "pack": "equipment",
+      "id": "ca8442f0b4431201",
+      "name": "Spirits"
+    },
+    {
+      "pdfPage": 94,
+      "table": 3,
+      "row": 10,
+      "pack": "equipment",
+      "id": "b45be59943e3ff26",
+      "name": "Wine"
+    },
+    {
+      "pdfPage": 94,
+      "table": 4,
+      "row": 1,
+      "pack": "equipment",
+      "id": "e18605aa339ed6e1",
+      "name": "Straw On the Floor (Per Night)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 4,
+      "row": 2,
+      "pack": "equipment",
+      "id": "6dc969633bdf2090",
+      "name": "Sketchy Inn Room (Per Night)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 4,
+      "row": 3,
+      "pack": "equipment",
+      "id": "88c09754a8f70883",
+      "name": "Cheap Inn Room (Per Night)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 4,
+      "row": 4,
+      "pack": "equipment",
+      "id": "39d672fa03386e1c",
+      "name": "Average Inn Room (Per Night)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 4,
+      "row": 5,
+      "pack": "equipment",
+      "id": "69987529266a5f85",
+      "name": "Quality Inn Room (Per Night)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 4,
+      "row": 6,
+      "pack": "equipment",
+      "id": "ac4c8c2bf17ca589",
+      "name": "High Class Inn Room (Per Night)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 4,
+      "row": 7,
+      "pack": "equipment",
+      "id": "feb3f58a47d15c29",
+      "name": "Stabling (Per Night)"
+    },
+    {
+      "pdfPage": 94,
+      "table": 5,
+      "row": 1,
+      "pack": "equipment",
+      "id": "624d455dcd4c8520",
+      "name": "Basic Clothing"
+    },
+    {
+      "pdfPage": 94,
+      "table": 5,
+      "row": 2,
+      "pack": "equipment",
+      "id": "31a932e318d81301",
+      "name": "Cold Weather Clothing"
+    },
+    {
+      "pdfPage": 94,
+      "table": 5,
+      "row": 3,
+      "pack": "equipment",
+      "id": "309bb3d0b379b4d7",
+      "name": "Fashionable Clothing"
+    },
+    {
+      "pdfPage": 94,
+      "table": 5,
+      "row": 4,
+      "pack": "equipment",
+      "id": "bb25481d185e2369",
+      "name": "Jewelry"
+    },
+    {
+      "pdfPage": 94,
+      "table": 5,
+      "row": 5,
+      "pack": "equipment",
+      "id": "b8e7ea3a2ceaea87",
+      "name": "Rogue’s Clothing"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 1,
+      "pack": "components",
+      "id": "5aa9d671d64687e3",
+      "name": "Ashes"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 2,
+      "pack": "components",
+      "id": "94296f282bf1467d",
+      "name": "Coal"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 3,
+      "pack": "components",
+      "id": "b5ef9793e3daefa5",
+      "name": "Cotton"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 4,
+      "pack": "components",
+      "id": "7713e1e2548468b3",
+      "name": "Double Woven Linen"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 5,
+      "pack": "components",
+      "id": "14ec6e54b1f872bd",
+      "name": "Glass"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 6,
+      "pack": "components",
+      "id": "4adcb07dd0cdde0c",
+      "name": "Hardened Timber"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 7,
+      "pack": "components",
+      "id": "fc95a0edf7664732",
+      "name": "Linen"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 8,
+      "pack": "components",
+      "id": "e0c8dcf11edd53cb",
+      "name": "Oil"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 9,
+      "pack": "components",
+      "id": "667b6343a4d087d3",
+      "name": "Resin"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 10,
+      "pack": "components",
+      "id": "56073d601f915793",
+      "name": "Silk"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 11,
+      "pack": "components",
+      "id": "41368eb3e1c0fcf9",
+      "name": "Thread"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 12,
+      "pack": "components",
+      "id": "21362830ba2ae10c",
+      "name": "Timber"
+    },
+    {
+      "pdfPage": 129,
+      "table": 0,
+      "row": 13,
+      "pack": "components",
+      "id": "0fbb63b840e554c8",
+      "name": "Wax"
+    },
+    {
+      "pdfPage": 129,
+      "table": 1,
+      "row": 1,
+      "pack": "components",
+      "id": "26a0bbe2b463e5fa",
+      "name": "Beast Bones"
+    },
+    {
+      "pdfPage": 129,
+      "table": 1,
+      "row": 2,
+      "pack": "components",
+      "id": "1857bbbb9c83d2d7",
+      "name": "Cow Hide"
+    },
+    {
+      "pdfPage": 129,
+      "table": 1,
+      "row": 3,
+      "pack": "components",
+      "id": "7bfdf100a44b221e",
+      "name": "Draconid Leather"
+    },
+    {
+      "pdfPage": 129,
+      "table": 1,
+      "row": 4,
+      "pack": "components",
+      "id": "feeb0db825b12feb",
+      "name": "Draconid Scales"
+    },
+    {
+      "pdfPage": 129,
+      "table": 1,
+      "row": 5,
+      "pack": "components",
+      "id": "19ac2c21a420c176",
+      "name": "Feathers"
+    },
+    {
+      "pdfPage": 129,
+      "table": 1,
+      "row": 6,
+      "pack": "components",
+      "id": "dab08d4e2480e46e",
+      "name": "Hardened Leather"
+    },
+    {
+      "pdfPage": 129,
+      "table": 1,
+      "row": 7,
+      "pack": "components",
+      "id": "85baebfcb3f541f1",
+      "name": "Leather"
+    },
+    {
+      "pdfPage": 129,
+      "table": 1,
+      "row": 8,
+      "pack": "components",
+      "id": "670679b683d229b5",
+      "name": "Lyrian Leather"
+    },
+    {
+      "pdfPage": 129,
+      "table": 1,
+      "row": 9,
+      "pack": "components",
+      "id": "09273b0674e3100a",
+      "name": "Wolf Hide"
+    },
+    {
+      "pdfPage": 130,
+      "table": 0,
+      "row": 1,
+      "pack": "components",
+      "id": "42a95d62a1a9334d",
+      "name": "Darkening Oil"
+    },
+    {
+      "pdfPage": 130,
+      "table": 0,
+      "row": 2,
+      "pack": "components",
+      "id": "10ecb4620792c491",
+      "name": "Drake Oil"
+    },
+    {
+      "pdfPage": 130,
+      "table": 0,
+      "row": 3,
+      "pack": "components",
+      "id": "c78df72a18a2e0a0",
+      "name": "Ester Grease"
+    },
+    {
+      "pdfPage": 130,
+      "table": 0,
+      "row": 4,
+      "pack": "components",
+      "id": "e0edaa46517d0006",
+      "name": "Etching Acid"
+    },
+    {
+      "pdfPage": 130,
+      "table": 0,
+      "row": 5,
+      "pack": "components",
+      "id": "e13821c5ce96c17f",
+      "name": "Fifth Essence"
+    },
+    {
+      "pdfPage": 130,
+      "table": 0,
+      "row": 6,
+      "pack": "components",
+      "id": "20a45e4f2ab5191b",
+      "name": "Ogre Wax"
+    },
+    {
+      "pdfPage": 130,
+      "table": 0,
+      "row": 7,
+      "pack": "components",
+      "id": "f97c60ecf8b97b34",
+      "name": "Sharpening Grit"
+    },
+    {
+      "pdfPage": 130,
+      "table": 0,
+      "row": 8,
+      "pack": "components",
+      "id": "923bf07bae817bca",
+      "name": "Tanning Herbs"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 1,
+      "pack": "components",
+      "id": "7d20fa52687518c0",
+      "name": "Dark Iron"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 2,
+      "pack": "components",
+      "id": "1568a33e56ac9aaa",
+      "name": "Dark Steel"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 3,
+      "pack": "components",
+      "id": "401263515f571e6f",
+      "name": "Dimeritium"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 4,
+      "pack": "components",
+      "id": "01cc12de11206029",
+      "name": "Gemstone"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 5,
+      "pack": "components",
+      "id": "1166ff0a035bcd59",
+      "name": "Glowing Ore"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 6,
+      "pack": "components",
+      "id": "b756402b6c1de6c6",
+      "name": "Gold"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 7,
+      "pack": "components",
+      "id": "4fce202994cbfec2",
+      "name": "Iron"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 8,
+      "pack": "components",
+      "id": "ce8cdfefbeadd3bd",
+      "name": "Mahakaman Dimeritium"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 9,
+      "pack": "components",
+      "id": "cf9fa9f0ad5f4ffd",
+      "name": "Mahakaman Steel"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 10,
+      "pack": "components",
+      "id": "8883731e72bfeb9c",
+      "name": "Meteorite"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 11,
+      "pack": "components",
+      "id": "fd49e51eda95d166",
+      "name": "River Clay"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 12,
+      "pack": "components",
+      "id": "9664169803f37aea",
+      "name": "Silver"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 13,
+      "pack": "components",
+      "id": "beba339c616a1c68",
+      "name": "Steel"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 14,
+      "pack": "components",
+      "id": "a5ddbfa55a9c3d7d",
+      "name": "Stone"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 15,
+      "pack": "components",
+      "id": "c42ba0fcbe73c64f",
+      "name": "Tretogor Steel"
+    },
+    {
+      "pdfPage": 130,
+      "table": 1,
+      "row": 16,
+      "pack": "components",
+      "id": "48466a3639e9decb",
+      "name": "Zerrikanian Powder"
+    },
+    {
+      "pdfPage": 131,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "5b72de4bffa9439e",
+      "name": "Double Woven Linen Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "607f1ce52da467de",
+      "name": "Hardened Leather Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "645853a5cb5101a6",
+      "name": "Hardened Timber Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 0,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "9104dc8a82b5e541",
+      "name": "Leather Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 0,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "2afc2c406d619fd0",
+      "name": "Linen Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 0,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "1c110533692951b3",
+      "name": "Thread Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 1,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "8530bd498e132187",
+      "name": "Dark Steel Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 1,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "7a43856355c7678d",
+      "name": "Lyrian Leather Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 1,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "9ae2aa0ecf905e48",
+      "name": "Steel Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 1,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "a4ae0a15c908d662",
+      "name": "Tretogor Steel Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 2,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "250967719794586a",
+      "name": "Dimeritium Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 2,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "188815c63c2b27e7",
+      "name": "Draconid Leather Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 2,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "2757951d98811657",
+      "name": "Mahakaman Dimeritium Diagram"
+    },
+    {
+      "pdfPage": 131,
+      "table": 2,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "2445a9c6b409b0a5",
+      "name": "Mahkaman Steel Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "d0257258576d500b",
+      "name": "Ammunition, Blunt (x5) Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "4ebc955421a1a23f",
+      "name": "Ammunition, Standard (x30) Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "23430546b590fc4f",
+      "name": "Arming Sword Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "21abd64659252653",
+      "name": "Brass Knuckles Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "26ab980d20a82f64",
+      "name": "Dagger Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "1e65cafb1e3a2f76",
+      "name": "Gleddyf Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "ecc5cc8a26cf2ddd",
+      "name": "Hand Axe Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 9,
+      "pack": "diagrams",
+      "id": "1f362c0fe2bb1ef1",
+      "name": "Hunter’s Falchion Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 10,
+      "pack": "diagrams",
+      "id": "fb8e45044a9fc7ec",
+      "name": "Iron Long Sword Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 11,
+      "pack": "diagrams",
+      "id": "8aeaafaf67f4d248",
+      "name": "Orions (x3) Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 12,
+      "pack": "diagrams",
+      "id": "dc7010de02b47254",
+      "name": "Short Bow Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 13,
+      "pack": "diagrams",
+      "id": "6e305c41d8bfc647",
+      "name": "Spear Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 14,
+      "pack": "diagrams",
+      "id": "15d72e35c90dacf1",
+      "name": "Throwing Axes (x3) Diagram"
+    },
+    {
+      "pdfPage": 132,
+      "table": 0,
+      "row": 15,
+      "pack": "diagrams",
+      "id": "2775ac23749d120f",
+      "name": "Throwing Knives (x3) Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "1d8344270ee51c84",
+      "name": "Ammunition, Bodkin (x10) Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "fe9d5e47e851aea0",
+      "name": "Ammunition, Broadhead (x10) Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "c50b1b37149c80b6",
+      "name": "Battle Axe Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "ab8f52b97da831f3",
+      "name": "Crossbow Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "49607f45abf72e81",
+      "name": "Esboda Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "1fb6b328069ea80f",
+      "name": "Hand Crossbow Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "dc3eae9e7ac506ee",
+      "name": "Hooked Staff Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 9,
+      "pack": "diagrams",
+      "id": "71358e5a3f72dca7",
+      "name": "Krigsverd Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 10,
+      "pack": "diagrams",
+      "id": "527324fa0b315cd1",
+      "name": "Long Bow Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 11,
+      "pack": "diagrams",
+      "id": "a45abf0c2d3d2a6d",
+      "name": "Mace Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 12,
+      "pack": "diagrams",
+      "id": "4e2178a21e03de99",
+      "name": "Pole Axe Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 13,
+      "pack": "diagrams",
+      "id": "d9464771e10fef3c",
+      "name": "Poniard Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 14,
+      "pack": "diagrams",
+      "id": "f1ed0e63e5837704",
+      "name": "Staff Diagram"
+    },
+    {
+      "pdfPage": 133,
+      "table": 0,
+      "row": 15,
+      "pack": "diagrams",
+      "id": "ce3bff049da989a8",
+      "name": "Stiletto Diagram"
+    },
+    {
+      "pdfPage": 134,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "4923dc19c64e38e1",
+      "name": "Berserker’s Axe Diagram"
+    },
+    {
+      "pdfPage": 134,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "c006f2cf0c89733c",
+      "name": "Crystal Staff Diagram"
+    },
+    {
+      "pdfPage": 134,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "dbfa26a877663517",
+      "name": "Highland Mauler Diagram"
+    },
+    {
+      "pdfPage": 134,
+      "table": 0,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "0d588e45d1e383f9",
+      "name": "Iron Staff Diagram"
+    },
+    {
+      "pdfPage": 134,
+      "table": 0,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "ab8501346264b986",
+      "name": "Jambiya Diagram"
+    },
+    {
+      "pdfPage": 134,
+      "table": 0,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "7e034bd137b464a0",
+      "name": "Kord Diagram"
+    },
+    {
+      "pdfPage": 134,
+      "table": 0,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "6e99bc188491bf7d",
+      "name": "Monster Hunter’s Crossbow Diagram"
+    },
+    {
+      "pdfPage": 134,
+      "table": 0,
+      "row": 9,
+      "pack": "diagrams",
+      "id": "33f13209f5718106",
+      "name": "Red Halberd Diagram"
+    },
+    {
+      "pdfPage": 134,
+      "table": 0,
+      "row": 10,
+      "pack": "diagrams",
+      "id": "883423f45036ed33",
+      "name": "Torrwr Diagram"
+    },
+    {
+      "pdfPage": 134,
+      "table": 0,
+      "row": 11,
+      "pack": "diagrams",
+      "id": "b742bc5786f19bf4",
+      "name": "Vicovarian Blade Diagram"
+    },
+    {
+      "pdfPage": 134,
+      "table": 0,
+      "row": 12,
+      "pack": "diagrams",
+      "id": "ce6afc774c746c68",
+      "name": "War Bow Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "9c94889ed157e216",
+      "name": "Aedirnian Gambeson Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "091e08152f7f21b7",
+      "name": "Cavalry Trousers Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "f250370e4565fc52",
+      "name": "Double Woven Gambeson Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "4eb0d3b4490268de",
+      "name": "Double Woven Hood Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "dc68eb760c872410",
+      "name": "Double Woven Trousers Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "e06dff9bd0ef8a6c",
+      "name": "Gambeson Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "41c655d756e9024f",
+      "name": "Leather Shield Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 9,
+      "pack": "diagrams",
+      "id": "08fb6580be5ffa91",
+      "name": "Padded Trousers Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 10,
+      "pack": "diagrams",
+      "id": "1b40650988d01333",
+      "name": "Spectacle Helm Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 11,
+      "pack": "diagrams",
+      "id": "2788703acf403ce2",
+      "name": "Steel Buckler Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 12,
+      "pack": "diagrams",
+      "id": "43e01db338e33ddd",
+      "name": "Temerian Shield Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 0,
+      "row": 13,
+      "pack": "diagrams",
+      "id": "6de0b5d70e91152e",
+      "name": "Verden Archer’s Hood Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 1,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "fe97b27df05d50e7",
+      "name": "Armored Hood Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 1,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "022da66dd63a72fa",
+      "name": "Armored Trousers Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 1,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "5f618e92280503ba",
+      "name": "Brigandine Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 1,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "f45042d71d0d14d8",
+      "name": "Chain Coif Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 1,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "d7821e6c87837818",
+      "name": "Kaedweni Shield Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 1,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "78a2707087711328",
+      "name": "Lyrian Leather Jacket Diagram"
+    },
+    {
+      "pdfPage": 135,
+      "table": 1,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "d8fe00599dccf73a",
+      "name": "Lyrian Leather Trousers Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 0,
+      "row": 0,
+      "pack": "diagrams",
+      "id": "36a4aee3715ce22a",
+      "name": "Redanian Greaves Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 0,
+      "row": 1,
+      "pack": "diagrams",
+      "id": "c435ec637c327bce",
+      "name": "Redanian Halberdier’s Armor Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "b7d0619a6047c62d",
+      "name": "Skellige Raider Shield Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "68dd827baaa7f90e",
+      "name": "Steel Kite Shield Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "990281f37d2bad83",
+      "name": "Temerian Armet Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 1,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "96e6be37c0175167",
+      "name": "Great Helm Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 1,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "6fbcaeb01e818bcc",
+      "name": "Hindarsfjall Heavy Armor Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 1,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "6317801a2635492b",
+      "name": "Hindarsfjall Heavy Chausses Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 1,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "29176fe3f4fa17d9",
+      "name": "Nilfgaardian Greaves Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 1,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "ec0ad806a9a9a8fd",
+      "name": "Nilfgaardian Helm Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 1,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "15e12b118b63e079",
+      "name": "Nilfgaardian Pavise Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 1,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "ff5b6a36ed451bdb",
+      "name": "Nilfgaardian Plate Armor Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 1,
+      "row": 9,
+      "pack": "diagrams",
+      "id": "ccb097d56d90ab46",
+      "name": "Pavise Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 1,
+      "row": 10,
+      "pack": "diagrams",
+      "id": "2ee735f33b853686",
+      "name": "Plate Greaves Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 1,
+      "row": 11,
+      "pack": "diagrams",
+      "id": "2f82806a80b4ef9e",
+      "name": "Plate Armor Diagram"
+    },
+    {
+      "pdfPage": 136,
+      "table": 1,
+      "row": 12,
+      "pack": "diagrams",
+      "id": "d2441fcea9051b57",
+      "name": "Skellige Helm Diagram"
+    },
+    {
+      "pdfPage": 137,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "a8dc9bf7e0419f8a",
+      "name": "Dwarven Axe Diagram"
+    },
+    {
+      "pdfPage": 137,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "8c7bbf7787fc349e",
+      "name": "Dwarven Cleaver Diagram"
+    },
+    {
+      "pdfPage": 137,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "5d4e90a6a0e23097",
+      "name": "Dwarven Heavy Crossbow Diagram"
+    },
+    {
+      "pdfPage": 137,
+      "table": 0,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "9e9692732e00d395",
+      "name": "Elven Glaive Diagram"
+    },
+    {
+      "pdfPage": 137,
+      "table": 0,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "0a692cf4a51f0d38",
+      "name": "Elven Messer Diagram"
+    },
+    {
+      "pdfPage": 137,
+      "table": 0,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "e12683bfe052d73d",
+      "name": "Elven Travel Bow Diagram"
+    },
+    {
+      "pdfPage": 137,
+      "table": 0,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "568e2600a0c5bffb",
+      "name": "Gnomish Staff Diagram"
+    },
+    {
+      "pdfPage": 137,
+      "table": 0,
+      "row": 9,
+      "pack": "diagrams",
+      "id": "44e844d63acd6509",
+      "name": "Halfling Rondel Diagram"
+    },
+    {
+      "pdfPage": 137,
+      "table": 0,
+      "row": 10,
+      "pack": "diagrams",
+      "id": "8677661c0c4c2778",
+      "name": "Mahakaman Martell Diagram"
+    },
+    {
+      "pdfPage": 137,
+      "table": 0,
+      "row": 11,
+      "pack": "diagrams",
+      "id": "bac8276d2a7798e3",
+      "name": "Meteorite Sword Diagram"
+    },
+    {
+      "pdfPage": 137,
+      "table": 0,
+      "row": 12,
+      "pack": "diagrams",
+      "id": "5efa0d7f6f69e272",
+      "name": "Vrihedd Cavalry Sword Diagram"
+    },
+    {
+      "pdfPage": 138,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "d03773e2528127c2",
+      "name": "Dwarven Pole Hammer Diagram"
+    },
+    {
+      "pdfPage": 138,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "05eb803a6cf7dd51",
+      "name": "Elven Walking Staff Diagram"
+    },
+    {
+      "pdfPage": 138,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "868c8a7b4bc4bb67",
+      "name": "Elven Zefhar Diagram"
+    },
+    {
+      "pdfPage": 138,
+      "table": 0,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "bd4ae36cb7d319b2",
+      "name": "Gnomish Black Axe Diagram"
+    },
+    {
+      "pdfPage": 138,
+      "table": 0,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "518fe9fb07fb7df4",
+      "name": "Gnomish Gwyhyr Diagram"
+    },
+    {
+      "pdfPage": 138,
+      "table": 0,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "1c1563a301aac3cb",
+      "name": "Gnomish Hand Crossbow Diagram"
+    },
+    {
+      "pdfPage": 138,
+      "table": 0,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "5320500602931bdb",
+      "name": "Meteorite Chain Mace Diagram"
+    },
+    {
+      "pdfPage": 138,
+      "table": 0,
+      "row": 9,
+      "pack": "diagrams",
+      "id": "ffd59254ce31a6bc",
+      "name": "Tir Tochair Blade Diagram"
+    },
+    {
+      "pdfPage": 138,
+      "table": 1,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "09ee206b05e68418",
+      "name": "Dwarven Impact (x5) Diagram"
+    },
+    {
+      "pdfPage": 138,
+      "table": 1,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "2f97e462161577a4",
+      "name": "Elven Burrower (x5) Diagram"
+    },
+    {
+      "pdfPage": 139,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "322497ea68f5df0d",
+      "name": "Dwarven Cloak Diagram"
+    },
+    {
+      "pdfPage": 139,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "b8115f09d106d35a",
+      "name": "Elven Shield Diagram"
+    },
+    {
+      "pdfPage": 139,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "25ef6d50e227a5ee",
+      "name": "Gnomish Buckler Diagram"
+    },
+    {
+      "pdfPage": 139,
+      "table": 0,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "b70b8e65c9d7d297",
+      "name": "Halfling Protective Doublet Diagram"
+    },
+    {
+      "pdfPage": 139,
+      "table": 0,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "1524ea1eb10e8a22",
+      "name": "Scoia’tael Armor Diagram"
+    },
+    {
+      "pdfPage": 139,
+      "table": 1,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "eca77fba627a3c7d",
+      "name": "Gnomish Chain Diagram"
+    },
+    {
+      "pdfPage": 139,
+      "table": 1,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "7206504795825ac3",
+      "name": "Gnomish Dragoon Armor Diagram"
+    },
+    {
+      "pdfPage": 139,
+      "table": 1,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "0a7102b03b6df543",
+      "name": "Mahakaman Pavise Diagram"
+    },
+    {
+      "pdfPage": 139,
+      "table": 1,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "4c47e022d5ad4868",
+      "name": "Mahakaman Plate Armor Diagram"
+    },
+    {
+      "pdfPage": 140,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "7045fcb19a63dcc0",
+      "name": "Fiber Diagram"
+    },
+    {
+      "pdfPage": 140,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "946c1f70bc68c4f3",
+      "name": "Studded Leather Diagram"
+    },
+    {
+      "pdfPage": 140,
+      "table": 1,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "5e9d3191e59552f1",
+      "name": "Chain Mail Diagram"
+    },
+    {
+      "pdfPage": 140,
+      "table": 1,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "c12ca6c40722603d",
+      "name": "Hardened Leather Diagram"
+    },
+    {
+      "pdfPage": 140,
+      "table": 1,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "9d33c5474e46c33e",
+      "name": "Steel Diagram"
+    },
+    {
+      "pdfPage": 140,
+      "table": 2,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "ea06cb87e08b7ca8",
+      "name": "Elven Diagram"
+    },
+    {
+      "pdfPage": 140,
+      "table": 2,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "10d7a5e5298b73bd",
+      "name": "Dwarven Diagram"
+    },
+    {
+      "pdfPage": 144,
+      "table": 0,
+      "row": 1,
+      "pack": "components",
+      "id": "0963468d51234fca",
+      "name": "Balisse Fruit"
+    },
+    {
+      "pdfPage": 144,
+      "table": 0,
+      "row": 2,
+      "pack": "components",
+      "id": "7e6f3575e7f01e15",
+      "name": "Barley"
+    },
+    {
+      "pdfPage": 144,
+      "table": 0,
+      "row": 3,
+      "pack": "components",
+      "id": "53d977936af12779",
+      "name": "Calcium Equum"
+    },
+    {
+      "pdfPage": 144,
+      "table": 0,
+      "row": 4,
+      "pack": "components",
+      "id": "f81116d6da50fa8f",
+      "name": "Crow’s Eye"
+    },
+    {
+      "pdfPage": 144,
+      "table": 0,
+      "row": 5,
+      "pack": "components",
+      "id": "47ba63f50017b207",
+      "name": "Ghoul Claw"
+    },
+    {
+      "pdfPage": 144,
+      "table": 0,
+      "row": 6,
+      "pack": "components",
+      "id": "573a512dc6fa50fc",
+      "name": "Nekker Teeth"
+    },
+    {
+      "pdfPage": 144,
+      "table": 0,
+      "row": 7,
+      "pack": "components",
+      "id": "6c6dd7dcd505c7f6",
+      "name": "Sewant Mushrooms"
+    },
+    {
+      "pdfPage": 144,
+      "table": 0,
+      "row": 8,
+      "pack": "components",
+      "id": "bd29956ab7fdf5af",
+      "name": "Troll Hide"
+    },
+    {
+      "pdfPage": 144,
+      "table": 0,
+      "row": 9,
+      "pack": "components",
+      "id": "00020b4866d72e15",
+      "name": "White Myrtle Petals"
+    },
+    {
+      "pdfPage": 144,
+      "table": 1,
+      "row": 1,
+      "pack": "components",
+      "id": "26c2ffbc358bb0cb",
+      "name": "Celandine"
+    },
+    {
+      "pdfPage": 144,
+      "table": 1,
+      "row": 2,
+      "pack": "components",
+      "id": "65d0acd854f62a97",
+      "name": "Drowner Brain"
+    },
+    {
+      "pdfPage": 144,
+      "table": 1,
+      "row": 3,
+      "pack": "components",
+      "id": "f40ef212adc631a2",
+      "name": "Han Fiber"
+    },
+    {
+      "pdfPage": 144,
+      "table": 1,
+      "row": 4,
+      "pack": "components",
+      "id": "d6cfa8afda887cec",
+      "name": "Hag Teeth"
+    },
+    {
+      "pdfPage": 144,
+      "table": 1,
+      "row": 5,
+      "pack": "components",
+      "id": "9a030471af32d0a9",
+      "name": "Lunar Shards"
+    },
+    {
+      "pdfPage": 144,
+      "table": 1,
+      "row": 6,
+      "pack": "components",
+      "id": "2522f370f7d2b012",
+      "name": "Nekker Heart"
+    },
+    {
+      "pdfPage": 144,
+      "table": 1,
+      "row": 7,
+      "pack": "components",
+      "id": "42679cd8fafa8cad",
+      "name": "Wine Stone"
+    },
+    {
+      "pdfPage": 144,
+      "table": 2,
+      "row": 1,
+      "pack": "components",
+      "id": "ac3b472bc54d8383",
+      "name": "Allspice Root"
+    },
+    {
+      "pdfPage": 144,
+      "table": 2,
+      "row": 2,
+      "pack": "components",
+      "id": "ad664cf0d202fd30",
+      "name": "Berbercane Fruit"
+    },
+    {
+      "pdfPage": 144,
+      "table": 2,
+      "row": 3,
+      "pack": "components",
+      "id": "01abaec9df61d632",
+      "name": "Essence of Wraith"
+    },
+    {
+      "pdfPage": 144,
+      "table": 2,
+      "row": 4,
+      "pack": "components",
+      "id": "5d8bf667547349c4",
+      "name": "Ginatia Petals"
+    },
+    {
+      "pdfPage": 144,
+      "table": 2,
+      "row": 5,
+      "pack": "components",
+      "id": "c9985ddb7dd5e863",
+      "name": "Hellebore Petals"
+    },
+    {
+      "pdfPage": 144,
+      "table": 2,
+      "row": 6,
+      "pack": "components",
+      "id": "9282ddc47f6c4f62",
+      "name": "Pearl"
+    },
+    {
+      "pdfPage": 144,
+      "table": 2,
+      "row": 7,
+      "pack": "components",
+      "id": "271b22eef183c832",
+      "name": "Quicksilver Solution"
+    },
+    {
+      "pdfPage": 144,
+      "table": 2,
+      "row": 8,
+      "pack": "components",
+      "id": "6bfb3e7e3fb5add9",
+      "name": "Scleroderm"
+    },
+    {
+      "pdfPage": 145,
+      "table": 0,
+      "row": 1,
+      "pack": "components",
+      "id": "de2997418327cb74",
+      "name": "Balisse Leaves"
+    },
+    {
+      "pdfPage": 145,
+      "table": 0,
+      "row": 2,
+      "pack": "components",
+      "id": "c4ab6674b96a45e9",
+      "name": "Ducal Water"
+    },
+    {
+      "pdfPage": 145,
+      "table": 0,
+      "row": 3,
+      "pack": "components",
+      "id": "d4aa53bf077daec8",
+      "name": "Fool’s Parsley"
+    },
+    {
+      "pdfPage": 145,
+      "table": 0,
+      "row": 4,
+      "pack": "components",
+      "id": "724a68cd3f394df1",
+      "name": "Ghoul Marrow"
+    },
+    {
+      "pdfPage": 145,
+      "table": 0,
+      "row": 5,
+      "pack": "components",
+      "id": "41093a380ef1f336",
+      "name": "Honeysuckle"
+    },
+    {
+      "pdfPage": 145,
+      "table": 0,
+      "row": 6,
+      "pack": "components",
+      "id": "60877d774858d3f1",
+      "name": "Optima Mater"
+    },
+    {
+      "pdfPage": 145,
+      "table": 0,
+      "row": 7,
+      "pack": "components",
+      "id": "a31d6efeab0a26a8",
+      "name": "Sulfur"
+    },
+    {
+      "pdfPage": 145,
+      "table": 1,
+      "row": 1,
+      "pack": "components",
+      "id": "902c62bb41ddc2f0",
+      "name": "Cortinarius"
+    },
+    {
+      "pdfPage": 145,
+      "table": 1,
+      "row": 2,
+      "pack": "components",
+      "id": "fdf41f7037621078",
+      "name": "Essence of Water"
+    },
+    {
+      "pdfPage": 145,
+      "table": 1,
+      "row": 3,
+      "pack": "components",
+      "id": "3cffa287f08573b0",
+      "name": "Infused Dust"
+    },
+    {
+      "pdfPage": 145,
+      "table": 1,
+      "row": 4,
+      "pack": "components",
+      "id": "37cd90eae59c4a8c",
+      "name": "Mistletoe"
+    },
+    {
+      "pdfPage": 145,
+      "table": 1,
+      "row": 5,
+      "pack": "components",
+      "id": "cd0c148b74ad18e5",
+      "name": "Nekker Claw"
+    },
+    {
+      "pdfPage": 145,
+      "table": 1,
+      "row": 6,
+      "pack": "components",
+      "id": "324277891d410821",
+      "name": "Troll Liver"
+    },
+    {
+      "pdfPage": 145,
+      "table": 1,
+      "row": 7,
+      "pack": "components",
+      "id": "d6745615cb0324c1",
+      "name": "Werewolf Saliva"
+    },
+    {
+      "pdfPage": 145,
+      "table": 2,
+      "row": 1,
+      "pack": "components",
+      "id": "60ce62016f2c127d",
+      "name": "Chitin"
+    },
+    {
+      "pdfPage": 145,
+      "table": 2,
+      "row": 2,
+      "pack": "components",
+      "id": "8c17e44369c0fb09",
+      "name": "Endrega Saliva"
+    },
+    {
+      "pdfPage": 145,
+      "table": 2,
+      "row": 3,
+      "pack": "components",
+      "id": "ba2ce9fb2f8141c7",
+      "name": "Griffin Egg"
+    },
+    {
+      "pdfPage": 145,
+      "table": 2,
+      "row": 4,
+      "pack": "components",
+      "id": "5a4d65502c09b8b0",
+      "name": "Griffin Feathers"
+    },
+    {
+      "pdfPage": 145,
+      "table": 2,
+      "row": 5,
+      "pack": "components",
+      "id": "8240e377c8a4484f",
+      "name": "Mandrake Root"
+    },
+    {
+      "pdfPage": 145,
+      "table": 2,
+      "row": 6,
+      "pack": "components",
+      "id": "ef7df20154849b22",
+      "name": "Phosphorus"
+    },
+    {
+      "pdfPage": 145,
+      "table": 2,
+      "row": 7,
+      "pack": "components",
+      "id": "01020314f04fa997",
+      "name": "Wolfsbane"
+    },
+    {
+      "pdfPage": 146,
+      "table": 0,
+      "row": 1,
+      "pack": "components",
+      "id": "9f35b974a19a9b15",
+      "name": "Fiend’s Eye"
+    },
+    {
+      "pdfPage": 146,
+      "table": 0,
+      "row": 2,
+      "pack": "components",
+      "id": "ad856a14fe8840d3",
+      "name": "Light Essence"
+    },
+    {
+      "pdfPage": 146,
+      "table": 0,
+      "row": 3,
+      "pack": "components",
+      "id": "bb6df9380604b690",
+      "name": "Siren Vocal Chords"
+    },
+    {
+      "pdfPage": 146,
+      "table": 0,
+      "row": 4,
+      "pack": "components",
+      "id": "c5563dc2e39f855a",
+      "name": "Vampire Saliva"
+    },
+    {
+      "pdfPage": 146,
+      "table": 0,
+      "row": 5,
+      "pack": "components",
+      "id": "eb05f522f7a40395",
+      "name": "Verbena"
+    },
+    {
+      "pdfPage": 146,
+      "table": 0,
+      "row": 6,
+      "pack": "components",
+      "id": "18e86ece2924bd0c",
+      "name": "Wolf’s Aloe Leaves"
+    },
+    {
+      "pdfPage": 146,
+      "table": 0,
+      "row": 7,
+      "pack": "components",
+      "id": "20d6e3f6eb574b56",
+      "name": "Wyvern Eyes"
+    },
+    {
+      "pdfPage": 146,
+      "table": 1,
+      "row": 1,
+      "pack": "components",
+      "id": "f7873f988d25cebc",
+      "name": "Arachas Venom"
+    },
+    {
+      "pdfPage": 146,
+      "table": 1,
+      "row": 2,
+      "pack": "components",
+      "id": "606ca730bed230b3",
+      "name": "Bryonia"
+    },
+    {
+      "pdfPage": 146,
+      "table": 1,
+      "row": 3,
+      "pack": "components",
+      "id": "c386c4a70f01410d",
+      "name": "Drowner Tongue"
+    },
+    {
+      "pdfPage": 146,
+      "table": 1,
+      "row": 4,
+      "pack": "components",
+      "id": "7d6a64b9977d286b",
+      "name": "Fiend Dung"
+    },
+    {
+      "pdfPage": 146,
+      "table": 1,
+      "row": 5,
+      "pack": "components",
+      "id": "5dd01cfb3b706dad",
+      "name": "Grave Hag Tongue"
+    },
+    {
+      "pdfPage": 146,
+      "table": 1,
+      "row": 6,
+      "pack": "components",
+      "id": "eb36885df799a580",
+      "name": "Green Mold"
+    },
+    {
+      "pdfPage": 146,
+      "table": 1,
+      "row": 7,
+      "pack": "components",
+      "id": "b6cb880e902793fa",
+      "name": "Vampire Teeth"
+    },
+    {
+      "pdfPage": 146,
+      "table": 1,
+      "row": 8,
+      "pack": "components",
+      "id": "3a3ea9d386fe5c66",
+      "name": "Venom Extract"
+    },
+    {
+      "pdfPage": 146,
+      "table": 2,
+      "row": 1,
+      "pack": "components",
+      "id": "b2146c0177e055a6",
+      "name": "Arachas Eyes"
+    },
+    {
+      "pdfPage": 146,
+      "table": 2,
+      "row": 2,
+      "pack": "components",
+      "id": "fbb64a85883deefb",
+      "name": "Dog Tallow"
+    },
+    {
+      "pdfPage": 146,
+      "table": 2,
+      "row": 3,
+      "pack": "components",
+      "id": "db17d41c6a899958",
+      "name": "Dwarven Immortelle"
+    },
+    {
+      "pdfPage": 146,
+      "table": 2,
+      "row": 4,
+      "pack": "components",
+      "id": "78b3fba3d8cab13b",
+      "name": "Endrega Embryo"
+    },
+    {
+      "pdfPage": 146,
+      "table": 2,
+      "row": 5,
+      "pack": "components",
+      "id": "009ba5f774d4e652",
+      "name": "Golem Heart"
+    },
+    {
+      "pdfPage": 146,
+      "table": 2,
+      "row": 6,
+      "pack": "components",
+      "id": "7afcfc437927f36c",
+      "name": "Grave Hag Ear"
+    },
+    {
+      "pdfPage": 146,
+      "table": 2,
+      "row": 7,
+      "pack": "components",
+      "id": "61db2a5755cfb545",
+      "name": "Specter Dust"
+    },
+    {
+      "pdfPage": 146,
+      "table": 2,
+      "row": 8,
+      "pack": "components",
+      "id": "fb9d5896df33bc3a",
+      "name": "Wyvern Egg"
+    },
+    {
+      "pdfPage": 147,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "012eef237ba31ed3",
+      "name": "Adda’s Tomb Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "cb6def5a6550609d",
+      "name": "Base Powder Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "eea5d47f4c84edd6",
+      "name": "Clotting Powder Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 0,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "613c6e1cef190774",
+      "name": "Hallucinogen Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 0,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "a3f0efc06cd432e5",
+      "name": "Invisible Ink Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 0,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "03c3aece4712da6d",
+      "name": "Numbing Herbs Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 0,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "c9b25e9cb1e9d217",
+      "name": "Poisoner’s Friend Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 0,
+      "row": 9,
+      "pack": "diagrams",
+      "id": "c0d1191531cdd81b",
+      "name": "Smelling Salts Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 0,
+      "row": 10,
+      "pack": "diagrams",
+      "id": "21adc88e2ef4a0b1",
+      "name": "Sterilizing Fluid Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 0,
+      "row": 11,
+      "pack": "diagrams",
+      "id": "336eb1d4463328c5",
+      "name": "Succubus’ Breath Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 0,
+      "row": 12,
+      "pack": "diagrams",
+      "id": "759800bb410fc04a",
+      "name": "Wives’ Tears Potion Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 1,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "43cd0f647c29231e",
+      "name": "Acid Solution Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 1,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "b9fffcb7281b3233",
+      "name": "Alchemical Adhesive Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 1,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "c5675caa79439bf6",
+      "name": "Black Venom Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 1,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "3110076e8852f70c",
+      "name": "Chloroform Formula"
+    },
+    {
+      "pdfPage": 147,
+      "table": 1,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "05de0f9f2494f8e5",
+      "name": "Quick Fire Formula"
+    },
+    {
+      "pdfPage": 148,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "7d9c8048f34b3e38",
+      "name": "Bredan’s Fury Formula"
+    },
+    {
+      "pdfPage": 148,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "dee5c11d39c5b5f8",
+      "name": "Fisstech Formula"
+    },
+    {
+      "pdfPage": 148,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "8c412e3daa52fbcd",
+      "name": "Pantagran’s Elixir Formula"
+    },
+    {
+      "pdfPage": 148,
+      "table": 0,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "99876fc42eb070a6",
+      "name": "Perfume Potion Formula"
+    },
+    {
+      "pdfPage": 148,
+      "table": 0,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "8ba21669f52df68e",
+      "name": "Talgar’s Tears Formula"
+    },
+    {
+      "pdfPage": 148,
+      "table": 0,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "4c57b6d1e6ceb94d",
+      "name": "Zerrikanian Fire Formula"
+    },
+    {
+      "pdfPage": 248,
+      "table": 0,
+      "row": 1,
+      "pack": "weapons",
+      "id": "dbf8c53ced81d940",
+      "name": "Witcher’s Steel Sword"
+    },
+    {
+      "pdfPage": 248,
+      "table": 0,
+      "row": 2,
+      "pack": "weapons",
+      "id": "56682416bf5f55ef",
+      "name": "Witcher’s Silver Sword"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 1,
+      "pack": "witcher-gear",
+      "id": "69c3791908d73a77",
+      "name": "Black Blood"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 2,
+      "pack": "witcher-gear",
+      "id": "24e20ec895f5d6f2",
+      "name": "Blizzard"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 3,
+      "pack": "witcher-gear",
+      "id": "0aae86abedc63811",
+      "name": "Cat"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 4,
+      "pack": "witcher-gear",
+      "id": "265652399a2baa7a",
+      "name": "Full Moon"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 5,
+      "pack": "witcher-gear",
+      "id": "f6a4e551557a67f0",
+      "name": "Golden Oriole"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 6,
+      "pack": "witcher-gear",
+      "id": "f932a86abbe71261",
+      "name": "Killer Whale"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 7,
+      "pack": "witcher-gear",
+      "id": "9e7a8c152e0b5132",
+      "name": "Maribor Forest"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 8,
+      "pack": "witcher-gear",
+      "id": "594367c7d28ec72f",
+      "name": "Petri’s Filter"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 9,
+      "pack": "witcher-gear",
+      "id": "96650a851385000c",
+      "name": "Swallow"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 10,
+      "pack": "witcher-gear",
+      "id": "0e611b55dacd7b77",
+      "name": "Tawny Owl"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 11,
+      "pack": "witcher-gear",
+      "id": "b8e8f6807bb533fa",
+      "name": "Thunderbolt"
+    },
+    {
+      "pdfPage": 248,
+      "table": 1,
+      "row": 12,
+      "pack": "witcher-gear",
+      "id": "cd5789e8bba2826d",
+      "name": "White Honey"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 1,
+      "pack": "witcher-gear",
+      "id": "4b8ed0f26cdb3cb4",
+      "name": "Beast Oil"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 2,
+      "pack": "witcher-gear",
+      "id": "f3744651ec3294c1",
+      "name": "Cursed Oil"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 3,
+      "pack": "witcher-gear",
+      "id": "ab73299495745d62",
+      "name": "Draconid Oil"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 4,
+      "pack": "witcher-gear",
+      "id": "9b9c3d29eb043439",
+      "name": "Elementa Oil"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 5,
+      "pack": "witcher-gear",
+      "id": "40787446f7ce7c66",
+      "name": "Hanged Man’s Venom"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 6,
+      "pack": "witcher-gear",
+      "id": "9edbd093eee9ea23",
+      "name": "Hybrid Oil"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 7,
+      "pack": "witcher-gear",
+      "id": "679a9ebfffd1cdbb",
+      "name": "Insectoid Oil"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 8,
+      "pack": "witcher-gear",
+      "id": "97ec78568762f96e",
+      "name": "Necrophage Oil"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 9,
+      "pack": "witcher-gear",
+      "id": "3944804168890cde",
+      "name": "Ogroid Oil"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 10,
+      "pack": "witcher-gear",
+      "id": "5a54d0ffc9aa8d87",
+      "name": "Relict Oil"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 11,
+      "pack": "witcher-gear",
+      "id": "1bfff07cb5f2a003",
+      "name": "Specter Oil"
+    },
+    {
+      "pdfPage": 249,
+      "table": 0,
+      "row": 12,
+      "pack": "witcher-gear",
+      "id": "0b80555431c5444c",
+      "name": "Vampire Oil"
+    },
+    {
+      "pdfPage": 249,
+      "table": 1,
+      "row": 1,
+      "pack": "witcher-gear",
+      "id": "4fdb9b8703d97242",
+      "name": "Arachas Decoction"
+    },
+    {
+      "pdfPage": 249,
+      "table": 1,
+      "row": 2,
+      "pack": "witcher-gear",
+      "id": "44aa0801e9ded109",
+      "name": "Fiend Decoction"
+    },
+    {
+      "pdfPage": 249,
+      "table": 1,
+      "row": 3,
+      "pack": "witcher-gear",
+      "id": "556aef85063c1ef0",
+      "name": "Grave Hag Decoction"
+    },
+    {
+      "pdfPage": 249,
+      "table": 1,
+      "row": 4,
+      "pack": "witcher-gear",
+      "id": "d18c04e47b37f733",
+      "name": "Griffin Decoction"
+    },
+    {
+      "pdfPage": 249,
+      "table": 1,
+      "row": 5,
+      "pack": "witcher-gear",
+      "id": "8ccd0b2643344b37",
+      "name": "Katakan Decoction"
+    },
+    {
+      "pdfPage": 249,
+      "table": 1,
+      "row": 6,
+      "pack": "witcher-gear",
+      "id": "f2dd331403025bf9",
+      "name": "Nekker Decoction"
+    },
+    {
+      "pdfPage": 249,
+      "table": 1,
+      "row": 7,
+      "pack": "witcher-gear",
+      "id": "426fa00ed1b8f034",
+      "name": "Noon Wraith Decoction"
+    },
+    {
+      "pdfPage": 249,
+      "table": 1,
+      "row": 8,
+      "pack": "witcher-gear",
+      "id": "5d29f5041e1a6ca1",
+      "name": "Troll Decoction"
+    },
+    {
+      "pdfPage": 249,
+      "table": 1,
+      "row": 9,
+      "pack": "witcher-gear",
+      "id": "2f6f11a99d3ff039",
+      "name": "Werewolf Decoction"
+    },
+    {
+      "pdfPage": 249,
+      "table": 1,
+      "row": 10,
+      "pack": "witcher-gear",
+      "id": "63b833513997e67f",
+      "name": "Wyvern Decoction"
+    },
+    {
+      "pdfPage": 250,
+      "table": 0,
+      "row": 1,
+      "pack": "diagrams",
+      "id": "575d54215bf2a40e",
+      "name": "Witcher’s Medallion Diagram"
+    },
+    {
+      "pdfPage": 250,
+      "table": 1,
+      "row": 1,
+      "pack": "diagrams",
+      "id": "5905df924afbd487",
+      "name": "Witcher’s Steel Sword Diagram"
+    },
+    {
+      "pdfPage": 250,
+      "table": 1,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "d54471003a57a39b",
+      "name": "Witcher’s Silver Sword Diagram"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 1,
+      "pack": "diagrams",
+      "id": "a9f5c23b907391d3",
+      "name": "Black Blood Formula"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "b45f61a277bb9599",
+      "name": "Blizzard Formula"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "66b74c40535eeaf4",
+      "name": "Cat Formula"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "6e491ce93b683849",
+      "name": "Full Moon Formula"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "5031c858f84f6967",
+      "name": "Golden Oriole Formula"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "d2bcac35c2ee5c46",
+      "name": "Killer Whale Formula"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "c7b4c5cd9dcba178",
+      "name": "Maribor Forest Formula"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "798ae1138d3a035a",
+      "name": "Petri’s Filter Formula"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 9,
+      "pack": "diagrams",
+      "id": "c8501db3bf01d0b7",
+      "name": "Swallow Formula"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 10,
+      "pack": "diagrams",
+      "id": "6739f516be7a41e0",
+      "name": "Tawny Owl Formula"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 11,
+      "pack": "diagrams",
+      "id": "0a87447be9b58c6d",
+      "name": "Thunderbolt Formula"
+    },
+    {
+      "pdfPage": 250,
+      "table": 2,
+      "row": 12,
+      "pack": "diagrams",
+      "id": "46606a5d9b40d075",
+      "name": "White Honey Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 1,
+      "pack": "diagrams",
+      "id": "e6a578a768488d2c",
+      "name": "Beast Oil Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "546fae8281522685",
+      "name": "Cursed Oil Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "a2d86669e50bc6ba",
+      "name": "Draconid Oil Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "6e84593fad7ca4f9",
+      "name": "Elementa Oil Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "405488d63820923e",
+      "name": "Hanged Man’s Venom Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "c9ef30206aa3e8f4",
+      "name": "Hybrid Oil Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "1a6baeeef68622b0",
+      "name": "Insectoid Oil Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "24bc8b4046276962",
+      "name": "Necrophage Oil Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 9,
+      "pack": "diagrams",
+      "id": "52213ce7ff3e99e1",
+      "name": "Ogroid Oil Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 10,
+      "pack": "diagrams",
+      "id": "4c252d58bf03a18a",
+      "name": "Relict Oils Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 11,
+      "pack": "diagrams",
+      "id": "1c4e582406ede366",
+      "name": "Specter Oil Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 0,
+      "row": 12,
+      "pack": "diagrams",
+      "id": "415dbfb65f557318",
+      "name": "Vampire Oil Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 1,
+      "row": 1,
+      "pack": "diagrams",
+      "id": "9d2a1eee7fa86af4",
+      "name": "Arachas Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 1,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "3b50e140922752f3",
+      "name": "Fiend Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 1,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "d9d230bb3834abff",
+      "name": "Grave Hag Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 1,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "493d20b4447575ad",
+      "name": "Griffin Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 1,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "bfb126b508acf3b2",
+      "name": "Katakan Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 1,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "f938f2bbed766488",
+      "name": "Nekker Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 1,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "794aa4e446dfe6ef",
+      "name": "Noon Wraith Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 1,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "29ace60c679f0aa1",
+      "name": "Troll Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 1,
+      "row": 9,
+      "pack": "diagrams",
+      "id": "e8e0ec858e858b98",
+      "name": "Werewolf Formula"
+    },
+    {
+      "pdfPage": 251,
+      "table": 1,
+      "row": 10,
+      "pack": "diagrams",
+      "id": "61afa3447b4b2df9",
+      "name": "Wyvern Formula"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 2,
+      "pack": "witcher-gear",
+      "id": "ed71b19ea8580f75",
+      "name": "Griffin Mutagen"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 3,
+      "pack": "witcher-gear",
+      "id": "2b868641fa04d6fe",
+      "name": "Katakan Mutagen"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 4,
+      "pack": "witcher-gear",
+      "id": "2f23f46fa399d3a3",
+      "name": "Nekker Mutagen"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 5,
+      "pack": "witcher-gear",
+      "id": "59b184354c2ae9f0",
+      "name": "Werewolf Mutagen"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 6,
+      "pack": "witcher-gear",
+      "id": "7d9f44d89bd36a51",
+      "name": "Wyvern Mutagen"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 8,
+      "pack": "witcher-gear",
+      "id": "d852faac12c3948e",
+      "name": "Arachas Mutagen"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 9,
+      "pack": "witcher-gear",
+      "id": "e4fd9dbe44b3b3fc",
+      "name": "Fiend Mutagen"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 10,
+      "pack": "witcher-gear",
+      "id": "8d842b15d2f37232",
+      "name": "Grave Hag Mutagen"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 11,
+      "pack": "witcher-gear",
+      "id": "19a5e96b139c296f",
+      "name": "Noonwraith Mutagen"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 12,
+      "pack": "witcher-gear",
+      "id": "c1a1774295e3b516",
+      "name": "Rock Troll Mutagen"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 14,
+      "pack": "witcher-gear",
+      "id": "3aaeda10349a10d7",
+      "name": "Golem Mutagen"
+    },
+    {
+      "pdfPage": 252,
+      "table": 0,
+      "row": 15,
+      "pack": "witcher-gear",
+      "id": "0b1f1fdef393a8f5",
+      "name": "Siren Mutagen"
+    },
+    {
+      "pdfPage": 255,
+      "table": 0,
+      "row": 1,
+      "pack": "weapons",
+      "id": "5a18102f4899d3a9",
+      "name": "Dancing Star"
+    },
+    {
+      "pdfPage": 255,
+      "table": 0,
+      "row": 2,
+      "pack": "weapons",
+      "id": "999df72d6ba3e1ea",
+      "name": "Devil’s Puffball"
+    },
+    {
+      "pdfPage": 255,
+      "table": 0,
+      "row": 3,
+      "pack": "weapons",
+      "id": "e7aa2dcc744895d8",
+      "name": "Dimeritum Bomb"
+    },
+    {
+      "pdfPage": 255,
+      "table": 0,
+      "row": 4,
+      "pack": "weapons",
+      "id": "eca991414fa30490",
+      "name": "Dragon’s Dream"
+    },
+    {
+      "pdfPage": 255,
+      "table": 0,
+      "row": 5,
+      "pack": "weapons",
+      "id": "39e1dcb9915d4d12",
+      "name": "Grapeshot"
+    },
+    {
+      "pdfPage": 255,
+      "table": 0,
+      "row": 6,
+      "pack": "weapons",
+      "id": "ac3d01f51d07232f",
+      "name": "Samum"
+    },
+    {
+      "pdfPage": 255,
+      "table": 0,
+      "row": 7,
+      "pack": "weapons",
+      "id": "a5a2b7e515c4b808",
+      "name": "Moon Dust"
+    },
+    {
+      "pdfPage": 255,
+      "table": 0,
+      "row": 8,
+      "pack": "weapons",
+      "id": "2ab58bf33295d163",
+      "name": "Northern Wind"
+    },
+    {
+      "pdfPage": 255,
+      "table": 1,
+      "row": 1,
+      "pack": "weapons",
+      "id": "4cff3d78983d1ee9",
+      "name": "Biter"
+    },
+    {
+      "pdfPage": 255,
+      "table": 1,
+      "row": 2,
+      "pack": "weapons",
+      "id": "d80efe179dd46600",
+      "name": "Clawer"
+    },
+    {
+      "pdfPage": 255,
+      "table": 1,
+      "row": 3,
+      "pack": "weapons",
+      "id": "32b8200977a4ed18",
+      "name": "Conflagration"
+    },
+    {
+      "pdfPage": 255,
+      "table": 1,
+      "row": 4,
+      "pack": "weapons",
+      "id": "92c342c7f6a62b1d",
+      "name": "Fury"
+    },
+    {
+      "pdfPage": 255,
+      "table": 1,
+      "row": 5,
+      "pack": "weapons",
+      "id": "a519bb4b8d597fd4",
+      "name": "Marker"
+    },
+    {
+      "pdfPage": 255,
+      "table": 1,
+      "row": 6,
+      "pack": "weapons",
+      "id": "5318f20ffbedf175",
+      "name": "Talgar Winter"
+    },
+    {
+      "pdfPage": 256,
+      "table": 0,
+      "row": 1,
+      "pack": "weapons",
+      "id": "9b63f68b044c538a",
+      "name": "Explosive Ammunition"
+    },
+    {
+      "pdfPage": 256,
+      "table": 0,
+      "row": 2,
+      "pack": "weapons",
+      "id": "323ccefb5e905614",
+      "name": "Split Ammunition"
+    },
+    {
+      "pdfPage": 256,
+      "table": 0,
+      "row": 3,
+      "pack": "weapons",
+      "id": "d705223c105dc7e9",
+      "name": "Tracking Ammunition"
+    },
+    {
+      "pdfPage": 256,
+      "table": 1,
+      "row": 1,
+      "pack": "diagrams",
+      "id": "5534e3abcf836f7b",
+      "name": "Dancing Star Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 1,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "bd26caa65a8dccb5",
+      "name": "Devil’s Puffball Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 1,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "f1fb6ccd5bb3f9e7",
+      "name": "Dimeritium Bomb Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 1,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "0658a2d3d931feb6",
+      "name": "Dragon’s Dream Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 1,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "6f43b54877be2a28",
+      "name": "Grapeshot Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 1,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "e089531b37b18eb8",
+      "name": "Moon Dust Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 1,
+      "row": 7,
+      "pack": "diagrams",
+      "id": "7a79aa5ecdcdccf6",
+      "name": "Northern Wind Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 1,
+      "row": 8,
+      "pack": "diagrams",
+      "id": "d3eff20f3ec4841f",
+      "name": "Samum Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 2,
+      "row": 1,
+      "pack": "diagrams",
+      "id": "8b0bb8489e521184",
+      "name": "Biter Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 2,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "49dceb7763d0b634",
+      "name": "Clawer Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 2,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "2a3c1369cdd0237b",
+      "name": "Conflagration Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 2,
+      "row": 4,
+      "pack": "diagrams",
+      "id": "bdc9bb42eec7d2ca",
+      "name": "Fury Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 2,
+      "row": 5,
+      "pack": "diagrams",
+      "id": "8d3ad677ff3f6143",
+      "name": "Marker Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 2,
+      "row": 6,
+      "pack": "diagrams",
+      "id": "768c920e37580ce6",
+      "name": "Talgar Winter Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 3,
+      "row": 1,
+      "pack": "diagrams",
+      "id": "3cffbe5e1d64e49a",
+      "name": "Explosive (x5) Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 3,
+      "row": 2,
+      "pack": "diagrams",
+      "id": "fa3a34e8306d8fa4",
+      "name": "Split (x5) Diagram"
+    },
+    {
+      "pdfPage": 256,
+      "table": 3,
+      "row": 3,
+      "pack": "diagrams",
+      "id": "45d4e5311d8c0c23",
+      "name": "Tracking (x5) Diagram"
+    },
+    {
+      "pdfPage": 257,
+      "table": 0,
+      "row": 1,
+      "pack": "witcher-gear",
+      "id": "cf84522720f6427c",
+      "name": "Chemobog"
+    },
+    {
+      "pdfPage": 257,
+      "table": 0,
+      "row": 2,
+      "pack": "witcher-gear",
+      "id": "8b81bbd1bf260046",
+      "name": "Dazhbog"
+    },
+    {
+      "pdfPage": 257,
+      "table": 0,
+      "row": 3,
+      "pack": "witcher-gear",
+      "id": "79b7008a214b2de2",
+      "name": "Devanna"
+    },
+    {
+      "pdfPage": 257,
+      "table": 0,
+      "row": 4,
+      "pack": "witcher-gear",
+      "id": "3ee01edc3a171fee",
+      "name": "Morana"
+    },
+    {
+      "pdfPage": 257,
+      "table": 0,
+      "row": 5,
+      "pack": "witcher-gear",
+      "id": "42b4d54a9ee124ec",
+      "name": "Perun"
+    },
+    {
+      "pdfPage": 257,
+      "table": 0,
+      "row": 6,
+      "pack": "witcher-gear",
+      "id": "bef5829999308f8f",
+      "name": "Stribog"
+    },
+    {
+      "pdfPage": 257,
+      "table": 0,
+      "row": 7,
+      "pack": "witcher-gear",
+      "id": "d9f2caea749aeca5",
+      "name": "Svarog"
+    },
+    {
+      "pdfPage": 257,
+      "table": 0,
+      "row": 8,
+      "pack": "witcher-gear",
+      "id": "30a8ba890ea1b705",
+      "name": "Triglav"
+    },
+    {
+      "pdfPage": 257,
+      "table": 0,
+      "row": 9,
+      "pack": "witcher-gear",
+      "id": "efcec875c8a5edaf",
+      "name": "Veles"
+    },
+    {
+      "pdfPage": 257,
+      "table": 0,
+      "row": 10,
+      "pack": "witcher-gear",
+      "id": "6e1fa641a4f1a7dc",
+      "name": "Zoria"
+    },
+    {
+      "pdfPage": 257,
+      "table": 1,
+      "row": 1,
+      "pack": "witcher-gear",
+      "id": "532d8e265fa01b71",
+      "name": "Glyph of Magic"
+    },
+    {
+      "pdfPage": 257,
+      "table": 1,
+      "row": 2,
+      "pack": "witcher-gear",
+      "id": "056915cfa77cf565",
+      "name": "Glyph of Air"
+    },
+    {
+      "pdfPage": 257,
+      "table": 1,
+      "row": 3,
+      "pack": "witcher-gear",
+      "id": "084279d45daf0276",
+      "name": "Glyph of Earth"
+    },
+    {
+      "pdfPage": 257,
+      "table": 1,
+      "row": 4,
+      "pack": "witcher-gear",
+      "id": "d2dfe4668a71cd86",
+      "name": "Glyph of Fire"
+    },
+    {
+      "pdfPage": 257,
+      "table": 1,
+      "row": 5,
+      "pack": "witcher-gear",
+      "id": "db19b76eb91bf5e3",
+      "name": "Glyph of Water"
+    },
+    {
+      "pdfPage": 258,
+      "table": 0,
+      "row": 1,
+      "pack": "relics",
+      "id": "8d6fece6008a5fb6",
+      "name": "Devine"
+    },
+    {
+      "pdfPage": 258,
+      "table": 1,
+      "row": 1,
+      "pack": "relics",
+      "id": "649b478c5097df63",
+      "name": "Cleaver Hood"
+    },
+    {
+      "pdfPage": 259,
+      "table": 0,
+      "row": 1,
+      "pack": "relics",
+      "id": "656f733e23a0af33",
+      "name": "Wolf"
+    },
+    {
+      "pdfPage": 259,
+      "table": 1,
+      "row": 1,
+      "pack": "relics",
+      "id": "753a79cf08f9407a",
+      "name": "Caroline"
+    },
+    {
+      "pdfPage": 260,
+      "table": 0,
+      "row": 1,
+      "pack": "relics",
+      "id": "7ca3cc233493c1f4",
+      "name": "Thorn"
+    },
+    {
+      "pdfPage": 260,
+      "table": 1,
+      "row": 1,
+      "pack": "relics",
+      "id": "c4f5c4a9e7fc7f5b",
+      "name": "Decapitator"
+    },
+    {
+      "pdfPage": 261,
+      "table": 0,
+      "row": 1,
+      "pack": "relics",
+      "id": "92bdbaccfd85f779",
+      "name": "Ogh’r"
+    },
+    {
+      "pdfPage": 261,
+      "table": 1,
+      "row": 1,
+      "pack": "relics",
+      "id": "070316e805c4daa8",
+      "name": "The Abyss Guard"
+    },
+    {
+      "pdfPage": 262,
+      "table": 0,
+      "row": 1,
+      "pack": "relics",
+      "id": "9fbca555cf35535b",
+      "name": "Succubus’ Wand"
+    },
+    {
+      "pdfPage": 262,
+      "table": 1,
+      "row": 1,
+      "pack": "relics",
+      "id": "4735e40360699ec7",
+      "name": "The Moon Bow"
+    },
+    {
+      "pdfPage": 263,
+      "table": 0,
+      "row": 1,
+      "pack": "relics",
+      "id": "46efd5ed608c2e8d",
+      "name": "Red Death"
+    },
+    {
+      "pdfPage": 263,
+      "table": 1,
+      "row": 1,
+      "pack": "relics",
+      "id": "ecd4e9f30819ed24",
+      "name": "Fate"
+    },
+    {
+      "pdfPage": 264,
+      "table": 0,
+      "row": 1,
+      "pack": "relics",
+      "id": "1a7e5a9f08f6d007",
+      "name": "Moon Blade"
+    },
+    {
+      "pdfPage": 264,
+      "table": 1,
+      "row": 1,
+      "pack": "relics",
+      "id": "4146cb235f123b26",
+      "name": "Maugrim"
+    },
+    {
+      "pdfPage": 265,
+      "table": 0,
+      "row": 1,
+      "pack": "relics",
+      "id": "10f9dceb8823b4c4",
+      "name": "Raven’s Armor"
+    },
+    {
+      "pdfPage": 266,
+      "table": 0,
+      "row": 1,
+      "pack": "relics",
+      "id": "66a314768fc797db",
+      "name": "Mountain Folk Armor"
+    },
+    {
+      "pdfPage": 266,
+      "table": 1,
+      "row": 1,
+      "pack": "relics",
+      "id": "cb96c3a215785f08",
+      "name": "Draug Armor"
+    },
+    {
+      "pdfPage": 250,
+      "table": 0,
+      "row": 1,
+      "pack": "witcher-gear",
+      "id": "90cc02d0f8c5dea8",
+      "name": "Witcher’s Medallion"
+    },
+    {
+      "pdfPage": 143,
+      "table": -1,
+      "row": 0,
+      "pack": "components",
+      "id": "5f8330caa5ff5a5f",
+      "name": "Vitriol"
+    },
+    {
+      "pdfPage": 143,
+      "table": -1,
+      "row": 1,
+      "pack": "components",
+      "id": "d4deb507003dc7fc",
+      "name": "Rebis"
+    },
+    {
+      "pdfPage": 143,
+      "table": -1,
+      "row": 2,
+      "pack": "components",
+      "id": "1ff6ae8af75e840b",
+      "name": "Aether"
+    },
+    {
+      "pdfPage": 143,
+      "table": -1,
+      "row": 3,
+      "pack": "components",
+      "id": "3265b8c19385da25",
+      "name": "Quebrith"
+    },
+    {
+      "pdfPage": 143,
+      "table": -1,
+      "row": 4,
+      "pack": "components",
+      "id": "b8cf7ea4b53b3bcb",
+      "name": "Hydragenum"
+    },
+    {
+      "pdfPage": 143,
+      "table": -1,
+      "row": 5,
+      "pack": "components",
+      "id": "7395b2ecdf7bee3f",
+      "name": "Vermilion"
+    },
+    {
+      "pdfPage": 143,
+      "table": -1,
+      "row": 6,
+      "pack": "components",
+      "id": "38f05a30d02dd7ec",
+      "name": "Sol"
+    },
+    {
+      "pdfPage": 143,
+      "table": -1,
+      "row": 7,
+      "pack": "components",
+      "id": "8017676f179297d8",
+      "name": "Caelum"
+    },
+    {
+      "pdfPage": 143,
+      "table": -1,
+      "row": 8,
+      "pack": "components",
+      "id": "1deb990d5b7ea7fa",
+      "name": "Fulgur"
+    }
+  ],
+  "unresolved": [
+    {
+      "diagram": "Elven Shield Diagram",
+      "material": "Etching Oil"
+    }
+  ]
+}

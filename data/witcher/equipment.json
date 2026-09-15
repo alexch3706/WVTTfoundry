@@ -1,0 +1,3554 @@
+[
+  {
+    "_id": "228da95f8da82576",
+    "name": "Chain Mail Enhancement",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 125.0,
+      "carried": true,
+      "equipped": false,
+      "category": "armor",
+      "effectText": "",
+      "stoppingPower": 3.0,
+      "resistances": [
+        "bludgeoning",
+        "slashing"
+      ],
+      "availability": "P",
+      "skillBonuses": [],
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 90,
+      "properties": {},
+      "description": "<p></p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 91,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "6f9a6d577bc0e8e0",
+    "name": "Dwarven Enhancement",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.5,
+      "cost": 195.0,
+      "carried": true,
+      "equipped": false,
+      "category": "armor",
+      "effectText": "",
+      "stoppingPower": 5.0,
+      "resistances": [
+        "slashing",
+        "piercing"
+      ],
+      "availability": "R",
+      "skillBonuses": [],
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 90,
+      "properties": {},
+      "description": "<p></p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 91,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "f108414684c30e00",
+    "name": "Elven Enhancement",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 200.0,
+      "carried": true,
+      "equipped": false,
+      "category": "armor",
+      "effectText": "+1 Stealth",
+      "stoppingPower": 3.0,
+      "resistances": [
+        "bludgeoning",
+        "piercing"
+      ],
+      "availability": "R",
+      "skillBonuses": [
+        {
+          "skill": "stealth",
+          "value": 1,
+          "condition": ""
+        }
+      ],
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 90,
+      "properties": {},
+      "description": "<p>+1 Stealth</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 91,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "c4f65b01e5123bb0",
+    "name": "Fiber Enhancement",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 40.0,
+      "carried": true,
+      "equipped": false,
+      "category": "armor",
+      "effectText": "Bleed Resistance",
+      "stoppingPower": 1.0,
+      "resistances": [
+        "bleeding"
+      ],
+      "availability": "E",
+      "skillBonuses": [],
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 90,
+      "properties": {},
+      "description": "<p>Bleed Resistance</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 91,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "0d6d168dff97b266",
+    "name": "Hardened Leather Enhancement",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 130.0,
+      "carried": true,
+      "equipped": false,
+      "category": "armor",
+      "effectText": "Fire Resistance",
+      "stoppingPower": 2.0,
+      "resistances": [
+        "bludgeoning",
+        "slashing",
+        "fire"
+      ],
+      "availability": "C",
+      "skillBonuses": [],
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 90,
+      "properties": {},
+      "description": "<p>Fire Resistance</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 91,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "8ad9daaec609acb7",
+    "name": "Steel Enhancement",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.5,
+      "cost": 145.0,
+      "carried": true,
+      "equipped": false,
+      "category": "armor",
+      "effectText": "",
+      "stoppingPower": 4.0,
+      "resistances": [
+        "slashing",
+        "piercing"
+      ],
+      "availability": "P",
+      "skillBonuses": [],
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 90,
+      "properties": {},
+      "description": "<p></p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 91,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "c33a3f074c069e80",
+    "name": "Studded Leather Enhancement",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 80.0,
+      "carried": true,
+      "equipped": false,
+      "category": "armor",
+      "effectText": "",
+      "stoppingPower": 2.0,
+      "resistances": [
+        "slashing"
+      ],
+      "availability": "C",
+      "skillBonuses": [],
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 90,
+      "properties": {},
+      "description": "<p></p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 91,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "e8e44cca31f0a40f",
+    "name": "Carriage",
+    "type": "mount",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 600.0,
+      "cost": 660.0,
+      "carried": false,
+      "equipped": false,
+      "category": "vehicle",
+      "mount": {
+        "athletics": 0,
+        "control": -1.0,
+        "speed": 0,
+        "speedModifier": -3.0,
+        "hp": 60.0,
+        "maxHp": 60.0,
+        "ramDamage": "4d6"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "fa420c41953f4b48",
+    "name": "Cart",
+    "type": "mount",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 300.0,
+      "cost": 200.0,
+      "carried": false,
+      "equipped": false,
+      "category": "vehicle",
+      "mount": {
+        "athletics": 0,
+        "control": 0.0,
+        "speed": 0,
+        "speedModifier": -1.0,
+        "hp": 30.0,
+        "maxHp": 30.0,
+        "ramDamage": "3d6"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "db37b67217121bc6",
+    "name": "Cutter",
+    "type": "mount",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 610.0,
+      "cost": 1670.0,
+      "carried": false,
+      "equipped": false,
+      "category": "vehicle",
+      "mount": {
+        "athletics": 0,
+        "control": 0.0,
+        "speed": 10.0,
+        "speedModifier": 0,
+        "hp": 60.0,
+        "maxHp": 60.0,
+        "ramDamage": "5d6"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "c5f5cdb4b6fdb806",
+    "name": "Horse",
+    "type": "mount",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 100.0,
+      "cost": 520.0,
+      "carried": false,
+      "equipped": false,
+      "category": "animal",
+      "mount": {
+        "athletics": 11.0,
+        "control": 2.0,
+        "speed": 12.0,
+        "speedModifier": 0,
+        "hp": 40.0,
+        "maxHp": 40.0,
+        "ramDamage": "3d6"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "b93cc06d21a7f549",
+    "name": "Mule",
+    "type": "mount",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 150.0,
+      "cost": 200.0,
+      "carried": false,
+      "equipped": false,
+      "category": "animal",
+      "mount": {
+        "athletics": 7.0,
+        "control": 0.0,
+        "speed": 9.0,
+        "speedModifier": 0,
+        "hp": 45.0,
+        "maxHp": 45.0,
+        "ramDamage": "2d6"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "0fc22a6957f6bd50",
+    "name": "Ox",
+    "type": "mount",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 300.0,
+      "cost": 278.0,
+      "carried": false,
+      "equipped": false,
+      "category": "animal",
+      "mount": {
+        "athletics": 5.0,
+        "control": -2.0,
+        "speed": 6.0,
+        "speedModifier": 0,
+        "hp": 50.0,
+        "maxHp": 50.0,
+        "ramDamage": "4d6"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "98cff29635f3200a",
+    "name": "Sailing Boat",
+    "type": "mount",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 130.0,
+      "cost": 230.0,
+      "carried": false,
+      "equipped": false,
+      "category": "vehicle",
+      "mount": {
+        "athletics": 0,
+        "control": -1.0,
+        "speed": 6.0,
+        "speedModifier": 0,
+        "hp": 30.0,
+        "maxHp": 30.0,
+        "ramDamage": "2d6"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "0c98ab6acb7e21ef",
+    "name": "Sailing Ship",
+    "type": "mount",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2040.0,
+      "cost": 2180.0,
+      "carried": false,
+      "equipped": false,
+      "category": "vehicle",
+      "mount": {
+        "athletics": 0,
+        "control": -2.0,
+        "speed": 8.0,
+        "speedModifier": 0,
+        "hp": 80.0,
+        "maxHp": 80.0,
+        "ramDamage": "4d6"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "dc48a524cf7084a1",
+    "name": "War Horse",
+    "type": "mount",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 270.0,
+      "cost": 1600.0,
+      "carried": false,
+      "equipped": false,
+      "category": "animal",
+      "mount": {
+        "athletics": 12.0,
+        "control": -2.0,
+        "speed": 11.0,
+        "speedModifier": 0,
+        "hp": 50.0,
+        "maxHp": 50.0,
+        "ramDamage": "4d6"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "27e0a2273b184a84",
+    "name": "Saddle",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 100.0,
+      "carried": true,
+      "equipped": false,
+      "category": "horseGear",
+      "availability": "E",
+      "effectText": "No penalties for Riding",
+      "concealment": "",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91,
+      "properties": {},
+      "description": "<p>No penalties for Riding</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "0c40728895ae8f70",
+    "name": "Cavalry Saddle",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 6.0,
+      "cost": 325.0,
+      "carried": true,
+      "equipped": false,
+      "category": "horseGear",
+      "availability": "P",
+      "effectText": "+1 to Control checks for attacking Built-in sheath for a weapon",
+      "concealment": "",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91,
+      "properties": {},
+      "description": "<p>+1 to Control checks for attacking Built-in sheath for a weapon</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "96e4db4294556471",
+    "name": "Racing Saddle",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 200.0,
+      "carried": true,
+      "equipped": false,
+      "category": "horseGear",
+      "availability": "C",
+      "effectText": "+1 to Control checks for Riding +1 SPD",
+      "concealment": "",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91,
+      "properties": {},
+      "description": "<p>+1 to Control checks for Riding +1 SPD</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "f2abecefa73d5039",
+    "name": "Blinders",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 100.0,
+      "carried": true,
+      "equipped": false,
+      "category": "horseGear",
+      "availability": "E",
+      "effectText": "+1 to calm your mount",
+      "concealment": "",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91,
+      "properties": {},
+      "description": "<p>+1 to calm your mount</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "a52165efa5ff4acb",
+    "name": "Racing Blinders",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 125.0,
+      "carried": true,
+      "equipped": false,
+      "category": "horseGear",
+      "availability": "C",
+      "effectText": "+2 to calm your mount",
+      "concealment": "",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91,
+      "properties": {},
+      "description": "<p>+2 to calm your mount</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "6143c8cc66e3ebda",
+    "name": "Saddlebags",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 100.0,
+      "carried": true,
+      "equipped": false,
+      "category": "horseGear",
+      "availability": "E",
+      "effectText": "Saddlebags have enough room to carry 25kg of small or medium items in each of the two bags.",
+      "concealment": "",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91,
+      "properties": {},
+      "description": "<p>Saddlebags have enough room to carry 25kg of small or medium items in each of the two bags.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 1,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "7d3a3e5c6658a1de",
+    "name": "Military Saddlebags",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 150.0,
+      "carried": true,
+      "equipped": false,
+      "category": "horseGear",
+      "availability": "P",
+      "effectText": "Rugged saddlebags that have enough room to carry 50kg of small or medium items in each of the two bags, with straps for up to 6 large items on the outside.",
+      "concealment": "",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91,
+      "properties": {},
+      "description": "<p>Rugged saddlebags that have enough room to carry 50kg of small or medium items in each of the two bags, with straps for up to 6 large items on the outside.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 1,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "5f2041915c8e69fa",
+    "name": "Leather Barding",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 10.0,
+      "cost": 550.0,
+      "carried": true,
+      "equipped": false,
+      "category": "horseGear",
+      "availability": "P",
+      "effectText": "SP: 10 to your whole mount",
+      "concealment": "",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91,
+      "properties": {},
+      "description": "<p>SP: 10 to your whole mount</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 1,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "6c8d13841863761a",
+    "name": "Chain Barding",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 25.0,
+      "cost": 1050.0,
+      "carried": true,
+      "equipped": false,
+      "category": "horseGear",
+      "availability": "R",
+      "effectText": "SP: 15 to your whole mount -1 to Control checks for Riding",
+      "concealment": "",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 91,
+      "properties": {},
+      "description": "<p>SP: 15 to your whole mount -1 to Control checks for Riding</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 92,
+          "table": 1,
+          "row": 13
+        }
+      }
+    }
+  },
+  {
+    "_id": "27a2bcae78892451",
+    "name": "Alchemy Set",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 80.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "P",
+      "effectText": "Allows you to craft alchemical items",
+      "concealment": "L",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>Allows you to craft alchemical items</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "4003d32e0c56ea0c",
+    "name": "Amulet, Gemstone",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 500.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "R",
+      "effectText": "Focus (3)",
+      "concealment": "T",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {
+        "focus": 3
+      },
+      "description": "<p>Focus (3)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "29b72bc77ffd0a34",
+    "name": "Amulet, Simple",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 250.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "R",
+      "effectText": "Focus (1)",
+      "concealment": "T",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {
+        "focus": 1
+      },
+      "description": "<p>Focus (1)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "e512c311d684a17a",
+    "name": "Cooking Tools",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 15.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "E",
+      "effectText": "Allows you to cook",
+      "concealment": "L",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>Allows you to cook</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "135913d2cfeb1caa",
+    "name": "Crafting Tools",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 83.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "C",
+      "effectText": "Allows you to craft weapons & armor",
+      "concealment": "L",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>Allows you to craft weapons &amp; armor</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "abe644d9c3fdc549",
+    "name": "Disguise Kit",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 58.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "P",
+      "effectText": "+2 Disguise",
+      "concealment": "S",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>+2 Disguise</p>",
+      "resistances": [],
+      "skillBonuses": [
+        {
+          "skill": "disguise",
+          "value": 2,
+          "condition": ""
+        }
+      ]
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "9bf7801fe65b461a",
+    "name": "Fine Art Tools",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 55.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "C",
+      "effectText": "Allows you to create a form of art (Painting, Jewelry, Sculpture, etc.)",
+      "concealment": "S",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>Allows you to create a form of art (Painting, Jewelry, Sculpture, etc.)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "aad03b95e7345561",
+    "name": "Fishing Gear",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 27.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "E",
+      "effectText": "+2 Wilderness Survival for fishing",
+      "concealment": "T",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>+2 Wilderness Survival for fishing</p>",
+      "resistances": [],
+      "skillBonuses": [
+        {
+          "skill": "wildernessSurvival",
+          "value": 2,
+          "condition": "fishing"
+        }
+      ]
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "441bc916d533dae9",
+    "name": "Forgery Kit",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 58.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "P",
+      "effectText": "Allows you to make false coins & false documents",
+      "concealment": "S",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>Allows you to make false coins &amp; false documents</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "1fe28bc5a6b15622",
+    "name": "Makeup Kit",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 35.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "E",
+      "effectText": "+2 Seduction & Charisma",
+      "concealment": "T",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>+2 Seduction &amp; Charisma</p>",
+      "resistances": [],
+      "skillBonuses": [
+        {
+          "skill": "seduction",
+          "value": 2,
+          "condition": ""
+        },
+        {
+          "skill": "charisma",
+          "value": 2,
+          "condition": ""
+        }
+      ]
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "e55968bd7ed0ff99",
+    "name": "Merchant’s Tools",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 60.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "C",
+      "effectText": "+2 Business for appraising goods",
+      "concealment": "S",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>+2 Business for appraising goods</p>",
+      "resistances": [],
+      "skillBonuses": [
+        {
+          "skill": "business",
+          "value": 2,
+          "condition": "appraising goods"
+        }
+      ]
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "e2512559b78545ea",
+    "name": "Surgeon’s Kit",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 83.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "C",
+      "effectText": "Allows you to perform surgery",
+      "concealment": "S",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>Allows you to perform surgery</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "b8f4de089fd39d28",
+    "name": "Telecommunicator",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 1000.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "R",
+      "effectText": "Allows you to communicate with the Telecommunication ritual",
+      "concealment": "L",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>Allows you to communicate with the Telecommunication ritual</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 13
+        }
+      }
+    }
+  },
+  {
+    "_id": "78daeeff1142f552",
+    "name": "Thieves’ Tools",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 80.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "P",
+      "effectText": "Allows you to pick locks",
+      "concealment": "T",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>Allows you to pick locks</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 14
+        }
+      }
+    }
+  },
+  {
+    "_id": "5aef15bb08da8d43",
+    "name": "Tinker’s Forge",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 111.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "P",
+      "effectText": "Allows you to forge weapons and armor anywhere",
+      "concealment": "L",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>Allows you to forge weapons and armor anywhere</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 15
+        }
+      }
+    }
+  },
+  {
+    "_id": "35c75b2ab9b0119d",
+    "name": "Writing Kit",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 25.0,
+      "carried": true,
+      "equipped": false,
+      "category": "tool",
+      "availability": "E",
+      "effectText": "Allows you to write letters, notes, and such",
+      "concealment": "S",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 92,
+      "properties": {},
+      "description": "<p>Allows you to write letters, notes, and such</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 93,
+          "table": 0,
+          "row": 16
+        }
+      }
+    }
+  },
+  {
+    "_id": "ec3fcac4d28bbd4b",
+    "name": "Bedroll",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 16.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "16",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "5b7fb76b11154901",
+    "name": "Candles (x5)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 5.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "5",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "49c765142d76f84b",
+    "name": "Chalk",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 2.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "2",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "3a9e8f6a1fbc0491",
+    "name": "Dice Poker Board",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 25.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "25",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "de92faa772edfd9f",
+    "name": "Flint & Steel",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 6.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "6",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "145667c5d3a8b732",
+    "name": "Grappling Hook",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 13.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "13",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "c904d172a27296ae",
+    "name": "Gwent Deck",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 5.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "5",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "3f5f768145f29198",
+    "name": "Hand Mirror",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 27.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "27",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "bc1b33c0b3ac3c9f",
+    "name": "Holy Symbol",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 14.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "14",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "ad138b9e08b98b83",
+    "name": "Hourglass",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 38.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "38",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "08e75d6d0fe9f414",
+    "name": "Hourglass, Minute",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 18.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "18",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "b611a2c842588d86",
+    "name": "Instrument",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 38.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "38",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "0eb66e38934a26d5",
+    "name": "Journal/Ledger",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "8",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 13
+        }
+      }
+    }
+  },
+  {
+    "_id": "f7437cd6a97e75a2",
+    "name": "Lantern",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 33.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "33",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 14
+        }
+      }
+    }
+  },
+  {
+    "_id": "116da9e009a08553",
+    "name": "Lantern, Bullseye",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 39.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "39",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 15
+        }
+      }
+    }
+  },
+  {
+    "_id": "10bd9bf513b3542a",
+    "name": "Loaded Dice",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 12.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "12",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 16
+        }
+      }
+    }
+  },
+  {
+    "_id": "02266806d0d08be3",
+    "name": "Lock",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 34.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "34",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 17
+        }
+      }
+    }
+  },
+  {
+    "_id": "705b33bf3fa3d038",
+    "name": "Lock, Strong",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 68.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "68",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 18
+        }
+      }
+    }
+  },
+  {
+    "_id": "73e81c19d67d6fa2",
+    "name": "Manacles",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 30.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "30",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 19
+        }
+      }
+    }
+  },
+  {
+    "_id": "1b0b30ffe8588aad",
+    "name": "Map of the Continent",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 18.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "18",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 20
+        }
+      }
+    }
+  },
+  {
+    "_id": "fe23f4768ba7056e",
+    "name": "Perfume/Cologne",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 22.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "22",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 21
+        }
+      }
+    }
+  },
+  {
+    "_id": "048c09bbf1bc2650",
+    "name": "Pipe",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 19.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "19",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 22
+        }
+      }
+    }
+  },
+  {
+    "_id": "bcdec9602d34972f",
+    "name": "Pitons (x5)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 10.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "10",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 23
+        }
+      }
+    }
+  },
+  {
+    "_id": "a3bae6e27569aca8",
+    "name": "Prosthetic, Basic",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 50.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "50",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 24
+        }
+      }
+    }
+  },
+  {
+    "_id": "77dbd6b11cff8088",
+    "name": "Prosthetic, Quality",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 100.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "100",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 25
+        }
+      }
+    }
+  },
+  {
+    "_id": "e74d519a1d884600",
+    "name": "Rope, 20m",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 20.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "20",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 26
+        }
+      }
+    }
+  },
+  {
+    "_id": "5b3f24f7a7053cd4",
+    "name": "Shackles",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 50.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "50",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 27
+        }
+      }
+    }
+  },
+  {
+    "_id": "dbadb6330e8d0f4c",
+    "name": "Soap",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 4.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "4",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 28
+        }
+      }
+    }
+  },
+  {
+    "_id": "36c1ee2adf613dea",
+    "name": "Tarp",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 10.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "10",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 29
+        }
+      }
+    }
+  },
+  {
+    "_id": "a1586860aecbe2b4",
+    "name": "Tent",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 19.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "19",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 30
+        }
+      }
+    }
+  },
+  {
+    "_id": "23e6a9e290afaa60",
+    "name": "Tent, Large",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 8.0,
+      "cost": 36.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "36",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 31
+        }
+      }
+    }
+  },
+  {
+    "_id": "9b4e41001f4c4e3b",
+    "name": "Tobacco",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 4.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "4",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 32
+        }
+      }
+    }
+  },
+  {
+    "_id": "89e8c87d94840c20",
+    "name": "Torch",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 1.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "1",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 33
+        }
+      }
+    }
+  },
+  {
+    "_id": "2b3afaae89a2c7be",
+    "name": "Waterskin",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "category": "general",
+      "priceText": "8",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 0,
+          "row": 34
+        }
+      }
+    }
+  },
+  {
+    "_id": "cf88a8c0b47aabba",
+    "name": "Bandolier",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 19.0,
+      "carried": true,
+      "equipped": false,
+      "category": "container",
+      "priceText": "19",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "6faed6b601e35543",
+    "name": "Basket",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 10.0,
+      "carried": true,
+      "equipped": false,
+      "category": "container",
+      "priceText": "10",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "9b385d7cc8211e8e",
+    "name": "Belt Pouch",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 7.0,
+      "carried": true,
+      "equipped": false,
+      "category": "container",
+      "priceText": "7",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "e21672cc5506ad10",
+    "name": "Sack",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 3.0,
+      "carried": true,
+      "equipped": false,
+      "category": "container",
+      "priceText": "3",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "b2d840265c20af56",
+    "name": "Satchel",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 14.0,
+      "carried": true,
+      "equipped": false,
+      "category": "container",
+      "priceText": "14",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "3a6ea82e2fdc222d",
+    "name": "Secret Pocket",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 11.0,
+      "carried": true,
+      "equipped": false,
+      "category": "container",
+      "priceText": "11",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "80dc58bd9255f00c",
+    "name": "Sheath, Bow",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 24.0,
+      "carried": true,
+      "equipped": false,
+      "category": "container",
+      "priceText": "24",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "5e2484447bf21b27",
+    "name": "Sheath, Garter",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 11.0,
+      "carried": true,
+      "equipped": false,
+      "category": "container",
+      "priceText": "11",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 1,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "658166475cabc184",
+    "name": "Sheath, Sleeve",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 13.0,
+      "carried": true,
+      "equipped": false,
+      "category": "container",
+      "priceText": "13",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 1,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "673f90a18c8782c7",
+    "name": "Wooden Chest",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 18.0,
+      "carried": true,
+      "equipped": false,
+      "category": "container",
+      "priceText": "18",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 1,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "4c4ca2e6ac3bdadc",
+    "name": "Wooden Chest, Large",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 10.0,
+      "cost": 30.0,
+      "carried": true,
+      "equipped": false,
+      "category": "container",
+      "priceText": "30",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 1,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "80b8f0f655094ce1",
+    "name": "Bath, Cold",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 8.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "8",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "f96223fe23535ecd",
+    "name": "Bath, Hot",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 16.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "16",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "a530d2d24abe1aa2",
+    "name": "Carriage Ride",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 85.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "85",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "1d7ccc53aa3b03a1",
+    "name": "Chronicler",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 25.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "25",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "b378461b3cf51ebe",
+    "name": "Craftsman (Per Piece)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 35.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "35",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "2e8ed14cc4a02cc9",
+    "name": "Doctor (Per Patient)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 50.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "50",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "81859e566c9b82c7",
+    "name": "Entertainment (Per Hour)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 10.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "10",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "db4c786d54391d59",
+    "name": "Fence",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "1/4 of the “Take”",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "2c3b3bdc83fbe077",
+    "name": "Hireling (Per Day)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 15.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "15",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "51db60ce74d138c3",
+    "name": "Investigator",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 45.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "45",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "65eb79af51e58111",
+    "name": "Laundry",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 8.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "8",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "6b7c306c1fb8ced2",
+    "name": "Lawyer",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 50.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "50",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "931ec8b4ec8d2180",
+    "name": "Messenger",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 10.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "10",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 13
+        }
+      }
+    }
+  },
+  {
+    "_id": "410a07914b54f135",
+    "name": "Prostitute (Per Hour)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 12.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "12",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 14
+        }
+      }
+    }
+  },
+  {
+    "_id": "69ab267e827d5a19",
+    "name": "Rented Horse (Per Day)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 50.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "50",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 15
+        }
+      }
+    }
+  },
+  {
+    "_id": "be4d66648bdae989",
+    "name": "Sea Voyage",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 85.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "85",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 16
+        }
+      }
+    }
+  },
+  {
+    "_id": "fc8be5246f800fce",
+    "name": "Toll Gate",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 10.0,
+      "carried": false,
+      "equipped": false,
+      "category": "service",
+      "priceText": "10",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 2,
+          "row": 17
+        }
+      }
+    }
+  },
+  {
+    "_id": "758762e40b713bea",
+    "name": "A Simple Meal",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 10.0,
+      "carried": true,
+      "equipped": false,
+      "category": "food",
+      "priceText": "10",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 3,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "23d43c9a40204f60",
+    "name": "A Good Meal",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 30.0,
+      "carried": true,
+      "equipped": false,
+      "category": "food",
+      "priceText": "30",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 3,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "c47e354ee8791464",
+    "name": "A Feast",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 100.0,
+      "carried": true,
+      "equipped": false,
+      "category": "food",
+      "priceText": "100",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 3,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "e7a86332f38f2725",
+    "name": "Raw Meat",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "category": "food",
+      "priceText": "8",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 3,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "0c3712b87b505768",
+    "name": "Sweets",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 5.0,
+      "carried": true,
+      "equipped": false,
+      "category": "food",
+      "priceText": "5",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 3,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "3b78c35da8284cc1",
+    "name": "Trail Rations (1 day)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 5.0,
+      "carried": true,
+      "equipped": false,
+      "category": "food",
+      "priceText": "5",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 3,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "3daedc24da6665f2",
+    "name": "Alcohest",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "category": "food",
+      "priceText": "8",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 3,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "92c8a6348c30a03d",
+    "name": "Beer",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 5.0,
+      "carried": true,
+      "equipped": false,
+      "category": "food",
+      "priceText": "5",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 3,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "ca8442f0b4431201",
+    "name": "Spirits",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 10.0,
+      "carried": true,
+      "equipped": false,
+      "category": "food",
+      "priceText": "10",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 3,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "b45be59943e3ff26",
+    "name": "Wine",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "category": "food",
+      "priceText": "8",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 3,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "e18605aa339ed6e1",
+    "name": "Straw On the Floor (Per Night)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 2.0,
+      "carried": false,
+      "equipped": false,
+      "category": "lodging",
+      "priceText": "2",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 4,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "6dc969633bdf2090",
+    "name": "Sketchy Inn Room (Per Night)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 4.0,
+      "carried": false,
+      "equipped": false,
+      "category": "lodging",
+      "priceText": "4",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 4,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "88c09754a8f70883",
+    "name": "Cheap Inn Room (Per Night)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 8.0,
+      "carried": false,
+      "equipped": false,
+      "category": "lodging",
+      "priceText": "8",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 4,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "39d672fa03386e1c",
+    "name": "Average Inn Room (Per Night)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 16.0,
+      "carried": false,
+      "equipped": false,
+      "category": "lodging",
+      "priceText": "16",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 4,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "69987529266a5f85",
+    "name": "Quality Inn Room (Per Night)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 36.0,
+      "carried": false,
+      "equipped": false,
+      "category": "lodging",
+      "priceText": "36",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 4,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "ac4c8c2bf17ca589",
+    "name": "High Class Inn Room (Per Night)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 72.0,
+      "carried": false,
+      "equipped": false,
+      "category": "lodging",
+      "priceText": "72",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 4,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "feb3f58a47d15c29",
+    "name": "Stabling (Per Night)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.0,
+      "cost": 2.0,
+      "carried": false,
+      "equipped": false,
+      "category": "lodging",
+      "priceText": "2",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 4,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "624d455dcd4c8520",
+    "name": "Basic Clothing",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 10.0,
+      "carried": true,
+      "equipped": false,
+      "category": "clothing",
+      "priceText": "10",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 5,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "31a932e318d81301",
+    "name": "Cold Weather Clothing",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 45.0,
+      "carried": true,
+      "equipped": false,
+      "category": "clothing",
+      "priceText": "45",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 5,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "309bb3d0b379b4d7",
+    "name": "Fashionable Clothing",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 70.0,
+      "carried": true,
+      "equipped": false,
+      "category": "clothing",
+      "priceText": "70",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 5,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "bb25481d185e2369",
+    "name": "Jewelry",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 50.0,
+      "carried": true,
+      "equipped": false,
+      "category": "clothing",
+      "priceText": "50",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 5,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "b8e7ea3a2ceaea87",
+    "name": "Rogue’s Clothing",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 50.0,
+      "carried": true,
+      "equipped": false,
+      "category": "clothing",
+      "priceText": "50",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 93
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 94,
+          "table": 5,
+          "row": 5
+        }
+      }
+    }
+  }
+]

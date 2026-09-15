@@ -1,0 +1,3485 @@
+[
+  {
+    "_id": "5179768f7cb2f0d8",
+    "name": "Iron Long Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 160.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "E",
+      "damage": "2d6+2",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "L",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "98350b0ce0710f95",
+    "name": "Arming Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 270.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "C",
+      "damage": "2d6+4",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "L",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "7a4d469af32bf2f3",
+    "name": "Gleddyf",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 285.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "C",
+      "damage": "3d6+2",
+      "reliability": 5.0,
+      "maxReliability": 5.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "L",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "83df8cf903019168",
+    "name": "Hunter’s Falchion",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 325.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "C",
+      "damage": "3d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "L",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "9b33128538c7133c",
+    "name": "Krigsverd",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 570.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 2.0,
+      "availability": "C",
+      "damage": "4d6+4",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "L",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "7e00e7f57b9a682e",
+    "name": "Esboda",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 650.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 1.0,
+      "availability": "P",
+      "damage": "5d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "d3430a948933a39d",
+    "name": "Kord",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 725.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "5d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Bleeding (25%)",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "bleeding": 25
+      },
+      "description": "<p>Bleeding (25%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "d1847dd29936b814",
+    "name": "Vicovarian Blade",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 955.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "5d6+4",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Balanced",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "balanced": true
+      },
+      "description": "<p>Balanced</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "137cbdb3c3d9b6e2",
+    "name": "Torrwr",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 1075.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "6d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Bleeding (50%)",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "bleeding": 50
+      },
+      "description": "<p>Bleeding (50%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "3dd583712ef569e9",
+    "name": "Dagger",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 50.0,
+      "carried": true,
+      "equipped": false,
+      "category": "smallBlade",
+      "skill": "smallBlades",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "E",
+      "damage": "1d6+2",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "S",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "87dd4874b85ad1dc",
+    "name": "Stiletto",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 275.0,
+      "carried": true,
+      "equipped": false,
+      "category": "smallBlade",
+      "skill": "smallBlades",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 2.0,
+      "availability": "C",
+      "damage": "1d6",
+      "reliability": 5.0,
+      "maxReliability": 5.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Concealment",
+      "concealment": "T",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "concealment": true
+      },
+      "description": "<p>Concealment</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 13
+        }
+      }
+    }
+  },
+  {
+    "_id": "0c9cf847cb2ee1f4",
+    "name": "Poniard",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 350.0,
+      "carried": true,
+      "equipped": false,
+      "category": "smallBlade",
+      "skill": "smallBlades",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 1.0,
+      "availability": "P",
+      "damage": "2d6+2",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Bleed (25%)",
+      "concealment": "S",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "bleeding": 25
+      },
+      "description": "<p>Bleed (25%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 14
+        }
+      }
+    }
+  },
+  {
+    "_id": "245361c04d5b086b",
+    "name": "Jambiya",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 440.0,
+      "carried": true,
+      "equipped": false,
+      "category": "smallBlade",
+      "skill": "smallBlades",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 2.0,
+      "availability": "R",
+      "damage": "2d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Bleed (25%) Armor Piercing",
+      "concealment": "S",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "armorPiercing": true,
+        "bleeding": 25
+      },
+      "description": "<p>Bleed (25%) Armor Piercing</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 15
+        }
+      }
+    }
+  },
+  {
+    "_id": "378f7bbf0f27158b",
+    "name": "Hand Axe",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 205.0,
+      "carried": true,
+      "equipped": false,
+      "category": "axe",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing"
+      ],
+      "accuracy": 0.0,
+      "availability": "E",
+      "damage": "2d6+1",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "S",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 17
+        }
+      }
+    }
+  },
+  {
+    "_id": "1eb0060476333644",
+    "name": "Battle Axe",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 525.0,
+      "carried": true,
+      "equipped": false,
+      "category": "axe",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing"
+      ],
+      "accuracy": 0.0,
+      "availability": "C",
+      "damage": "5d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "L",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 18
+        }
+      }
+    }
+  },
+  {
+    "_id": "dbe44fd14912b42e",
+    "name": "Berserker’s Axe",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 960.0,
+      "carried": true,
+      "equipped": false,
+      "category": "axe",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing"
+      ],
+      "accuracy": 0.0,
+      "availability": "P",
+      "damage": "6d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Ablating Bleeding (25%)",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "ablating": true,
+        "bleeding": 25
+      },
+      "description": "<p>Ablating Bleeding (25%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 19
+        }
+      }
+    }
+  },
+  {
+    "_id": "8e383db5ed306f97",
+    "name": "Brass Knuckles",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 50.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bludgeon",
+      "skill": "brawling",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 1.0,
+      "availability": "E",
+      "damage": "1d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Brawling",
+      "concealment": "T",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "brawling": true
+      },
+      "description": "<p>Brawling</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 21
+        }
+      }
+    }
+  },
+  {
+    "_id": "772858a3645c0e23",
+    "name": "Mace",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 525.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bludgeon",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "C",
+      "damage": "5d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "L",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 22
+        }
+      }
+    }
+  },
+  {
+    "_id": "c98c0987bb1f7837",
+    "name": "Highland Mauler",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 1100.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bludgeon",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "6d6+2",
+      "reliability": 20.0,
+      "maxReliability": 20.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Stun (-2) Meteorite",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "meteorite": true,
+        "stun": -2,
+        "stunWeapon": true
+      },
+      "description": "<p>Stun (-2) Meteorite</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 23
+        }
+      }
+    }
+  },
+  {
+    "_id": "7c224b9dfae64cf6",
+    "name": "Spear",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.5,
+      "cost": 375.0,
+      "carried": true,
+      "equipped": false,
+      "category": "polearm",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "E",
+      "damage": "3d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 2,
+      "effectText": "Long Reach",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "longReach": true
+      },
+      "description": "<p>Long Reach</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 25
+        }
+      }
+    }
+  },
+  {
+    "_id": "24f1a5d197b76d59",
+    "name": "Pole Axe",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 460.0,
+      "carried": true,
+      "equipped": false,
+      "category": "polearm",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing",
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "P",
+      "damage": "4d6+2",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Long Reach",
+      "concealment": "N/A",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "longReach": true
+      },
+      "description": "<p>Long Reach</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 26
+        }
+      }
+    }
+  },
+  {
+    "_id": "b180785f3425d16c",
+    "name": "Red Halberd",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 865.0,
+      "carried": true,
+      "equipped": false,
+      "category": "polearm",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing",
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "P",
+      "damage": "6d6+3",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Long Reach",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 73,
+      "properties": {
+        "longReach": true
+      },
+      "description": "<p>Long Reach</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 74,
+          "table": 0,
+          "row": 27
+        }
+      }
+    }
+  },
+  {
+    "_id": "ca5a592b62e65cfd",
+    "name": "Staff",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 335.0,
+      "carried": true,
+      "equipped": false,
+      "category": "staff",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "C",
+      "damage": "1d6+2",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Long Reach Focus (1)",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {
+        "longReach": true,
+        "focus": 1
+      },
+      "description": "<p>Long Reach Focus (1)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "b6cd34ed457e9822",
+    "name": "Hooked Staff",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.5,
+      "cost": 550.0,
+      "carried": true,
+      "equipped": false,
+      "category": "staff",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "P",
+      "damage": "2d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Long Reach Focus (1) Grappling",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {
+        "longReach": true,
+        "grappling": true,
+        "focus": 1
+      },
+      "description": "<p>Long Reach Focus (1) Grappling</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "fd6be13ba58ec5e3",
+    "name": "Iron Staff",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 675.0,
+      "carried": true,
+      "equipped": false,
+      "category": "staff",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "P",
+      "damage": "3d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Long Reach Focus (2)",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {
+        "longReach": true,
+        "focus": 2
+      },
+      "description": "<p>Long Reach Focus (2)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "0d8a9f982f3cac56",
+    "name": "Crystal Staff",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 835.0,
+      "carried": true,
+      "equipped": false,
+      "category": "staff",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "2d6+2",
+      "reliability": 5.0,
+      "maxReliability": 5.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Long Reach Focus (3) Greater Focus",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {
+        "longReach": true,
+        "greaterFocus": true,
+        "focus": 3
+      },
+      "description": "<p>Long Reach Focus (3) Greater Focus</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "870178719215b653",
+    "name": "Throwing Knife",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 50.0,
+      "carried": true,
+      "equipped": false,
+      "category": "thrown",
+      "skill": "athletics",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "E",
+      "damage": "1d6",
+      "reliability": 5.0,
+      "maxReliability": 5.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 4,
+      "effectText": "",
+      "concealment": "T",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "93a723a32b8f4bf7",
+    "name": "Throwing Axe",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 75.0,
+      "carried": true,
+      "equipped": false,
+      "category": "thrown",
+      "skill": "athletics",
+      "stat": "dex",
+      "damageTypes": [
+        "slashing"
+      ],
+      "accuracy": 0.0,
+      "availability": "E",
+      "damage": "2d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 2,
+      "effectText": "",
+      "concealment": "S",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "850db46ca925ec27",
+    "name": "Orion",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 100.0,
+      "carried": true,
+      "equipped": false,
+      "category": "thrown",
+      "skill": "athletics",
+      "stat": "dex",
+      "damageTypes": [
+        "slashing"
+      ],
+      "accuracy": 1.0,
+      "availability": "P",
+      "damage": "1d6",
+      "reliability": 5.0,
+      "maxReliability": 5.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 4,
+      "effectText": "",
+      "concealment": "T",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "700301c100f3550e",
+    "name": "Short Bow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 290.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bow",
+      "skill": "archery",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "E",
+      "damage": "3d6+3",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 100.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "L",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "52f8bba4016d708d",
+    "name": "Long Bow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 475.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bow",
+      "skill": "archery",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "E",
+      "damage": "4d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 200.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "de59e57c44b436d8",
+    "name": "War Bow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 835.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bow",
+      "skill": "archery",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "C",
+      "damage": "6d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 300.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 13
+        }
+      }
+    }
+  },
+  {
+    "_id": "a92f38a8a5cb4376",
+    "name": "Hand Crossbow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 285.0,
+      "carried": true,
+      "equipped": false,
+      "category": "crossbow",
+      "skill": "crossbow",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 1.0,
+      "availability": "E",
+      "damage": "2d6+2",
+      "reliability": 5.0,
+      "maxReliability": 5.0,
+      "hands": 1.0,
+      "range": 50.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Slow Reload",
+      "concealment": "L",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {
+        "slowReload": true
+      },
+      "description": "<p>Slow Reload</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 15
+        }
+      }
+    }
+  },
+  {
+    "_id": "ef2cf4b5e52a70cb",
+    "name": "Crossbow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 455.0,
+      "carried": true,
+      "equipped": false,
+      "category": "crossbow",
+      "skill": "crossbow",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 1.0,
+      "availability": "E",
+      "damage": "4d6+2",
+      "reliability": 5.0,
+      "maxReliability": 5.0,
+      "hands": 2.0,
+      "range": 100.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Slow Reload",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {
+        "slowReload": true
+      },
+      "description": "<p>Slow Reload</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 16
+        }
+      }
+    }
+  },
+  {
+    "_id": "6e3aa60c891e2ffe",
+    "name": "Monster Hunter’s Crossbow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 1125.0,
+      "carried": true,
+      "equipped": false,
+      "category": "crossbow",
+      "skill": "crossbow",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 1.0,
+      "availability": "R",
+      "damage": "6d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 200.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Slow Reload Armor Piercing",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "properties": {
+        "armorPiercing": true,
+        "slowReload": true
+      },
+      "description": "<p>Slow Reload Armor Piercing</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 0,
+          "row": 17
+        }
+      }
+    }
+  },
+  {
+    "_id": "4ed1526682817b04",
+    "name": "Standard Ammunition",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 10,
+      "weight": 0.05,
+      "cost": 1.0,
+      "carried": true,
+      "equipped": false,
+      "isAmmo": true,
+      "ammoCategory": "projectile",
+      "damageTypes": [
+        "piercing"
+      ],
+      "availability": "E",
+      "reliability": 10.0,
+      "effectText": "",
+      "concealment": "L",
+      "properties": {
+        "burrower": false
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "dd0152f34d29d413",
+    "name": "Blunt Ammunition",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 5.0,
+      "carried": true,
+      "equipped": false,
+      "isAmmo": true,
+      "ammoCategory": "projectile",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "availability": "C",
+      "reliability": 10.0,
+      "effectText": "Non-Lethal",
+      "concealment": "L",
+      "properties": {
+        "nonlethal": true,
+        "burrower": false
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "description": "<p>Non-Lethal</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "495d0a676473c613",
+    "name": "Broadhead Ammunition",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 10.0,
+      "carried": true,
+      "equipped": false,
+      "isAmmo": true,
+      "ammoCategory": "projectile",
+      "damageTypes": [
+        "piercing"
+      ],
+      "availability": "C",
+      "reliability": 10.0,
+      "effectText": "Bleeding (100%)",
+      "concealment": "L",
+      "properties": {
+        "bleeding": 100,
+        "burrower": false
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "description": "<p>Bleeding (100%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "8668385acf6d31eb",
+    "name": "Bodkin Ammunition",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 15.0,
+      "carried": true,
+      "equipped": false,
+      "isAmmo": true,
+      "ammoCategory": "projectile",
+      "damageTypes": [
+        "piercing"
+      ],
+      "availability": "C",
+      "reliability": 10.0,
+      "effectText": "Armor Piercing",
+      "concealment": "L",
+      "properties": {
+        "armorPiercing": true,
+        "burrower": false
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 74,
+      "description": "<p>Armor Piercing</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 75,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "6717e5de8902da0f",
+    "name": "Elven Messer",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 595.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 2.0,
+      "availability": "R",
+      "damage": "3d6+4",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "L",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "5b253c174512d141",
+    "name": "Vrihedd Cavalry Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 745.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 3.0,
+      "availability": "R",
+      "damage": "4d6+4",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Bleed (25%)",
+      "concealment": "L",
+      "enhancements": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "bleeding": 25
+      },
+      "description": "<p>Bleed (25%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "a3d97481f40ce413",
+    "name": "Meteorite Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 875.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 1.0,
+      "availability": "R",
+      "damage": "5d6",
+      "reliability": 20.0,
+      "maxReliability": 20.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Balanced Meteorite",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "balanced": true,
+        "meteorite": true
+      },
+      "description": "<p>Balanced Meteorite</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "44e7bf1400a5e6a4",
+    "name": "Gnomish Gwyhyr",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 1090.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 3.0,
+      "availability": "R",
+      "damage": "5d6+3",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Bleed (50%)",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "bleeding": 50
+      },
+      "description": "<p>Bleed (50%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "46cf0b192791f37a",
+    "name": "Tir Tochair Blade",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 1175.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 3.0,
+      "availability": "R",
+      "damage": "6d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Bleed (25%)",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "bleeding": 25
+      },
+      "description": "<p>Bleed (25%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "38ac86632c085a47",
+    "name": "Halfling Rondel",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 485.0,
+      "carried": true,
+      "equipped": false,
+      "category": "smallBlade",
+      "skill": "smallBlades",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 2.0,
+      "availability": "R",
+      "damage": "2d6+2",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Armor Piercing",
+      "concealment": "S",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "armorPiercing": true
+      },
+      "description": "<p>Armor Piercing</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "089c5cbbd9a87766",
+    "name": "Dwarven Cleaver",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 500.0,
+      "carried": true,
+      "equipped": false,
+      "category": "smallBlade",
+      "skill": "smallBlades",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "bludgeoning"
+      ],
+      "accuracy": 2.0,
+      "availability": "R",
+      "damage": "3d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "S",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "d1fd873473f8590c",
+    "name": "Dwarven Axe",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 740.0,
+      "carried": true,
+      "equipped": false,
+      "category": "axe",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing"
+      ],
+      "accuracy": 3.0,
+      "availability": "R",
+      "damage": "5d6+3",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "L",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "5d925f256e2afe08",
+    "name": "Gnomish Black Axe",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 910.0,
+      "carried": true,
+      "equipped": false,
+      "category": "axe",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing"
+      ],
+      "accuracy": 2.0,
+      "availability": "R",
+      "damage": "6d6+2",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "0343ceeb5f611e20",
+    "name": "Mahakaman Martell",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.5,
+      "cost": 750.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bludgeon",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "5d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Armor Piercing",
+      "concealment": "L",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "armorPiercing": true
+      },
+      "description": "<p>Armor Piercing</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 14
+        }
+      }
+    }
+  },
+  {
+    "_id": "2fb55bf5e68d62da",
+    "name": "Meteorite Chain Mace",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 900.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bludgeon",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 2.0,
+      "availability": "R",
+      "damage": "6d6",
+      "reliability": 20.0,
+      "maxReliability": 20.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Grappling Meteorite",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "meteorite": true,
+        "grappling": true
+      },
+      "description": "<p>Grappling Meteorite</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 15
+        }
+      }
+    }
+  },
+  {
+    "_id": "ba55357918f716fd",
+    "name": "Dwarven Pole Hammer",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 835.0,
+      "carried": true,
+      "equipped": false,
+      "category": "polearm",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "5d6+2",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Long Reach Stun (-2)",
+      "concealment": "N/A",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "longReach": true,
+        "stun": -2,
+        "stunWeapon": true
+      },
+      "description": "<p>Long Reach Stun (-2)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 17
+        }
+      }
+    }
+  },
+  {
+    "_id": "fef457f9dd955c4f",
+    "name": "Elven Glaive",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 925.0,
+      "carried": true,
+      "equipped": false,
+      "category": "polearm",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing",
+        "bludgeoning"
+      ],
+      "accuracy": 2.0,
+      "availability": "R",
+      "damage": "4d6+3",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Long Reach Bleed (25%)",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "longReach": true,
+        "bleeding": 25
+      },
+      "description": "<p>Long Reach Bleed (25%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 18
+        }
+      }
+    }
+  },
+  {
+    "_id": "c60ef410334071d8",
+    "name": "Gnomish Staff",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 910.0,
+      "carried": true,
+      "equipped": false,
+      "category": "staff",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 1.0,
+      "availability": "R",
+      "damage": "3d6+2",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Long Reach Focus (3)",
+      "concealment": "L",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "longReach": true,
+        "focus": 3
+      },
+      "description": "<p>Long Reach Focus (3)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 20
+        }
+      }
+    }
+  },
+  {
+    "_id": "c716604efd582a11",
+    "name": "Elven Walking Staff",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 975.0,
+      "carried": true,
+      "equipped": false,
+      "category": "staff",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 1.0,
+      "availability": "R",
+      "damage": "3d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Long Reach Focus (3) Greater Focus",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "longReach": true,
+        "greaterFocus": true,
+        "focus": 3
+      },
+      "description": "<p>Long Reach Focus (3) Greater Focus</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 21
+        }
+      }
+    }
+  },
+  {
+    "_id": "bd3f70e582a5db21",
+    "name": "Elven Travel Bow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bow",
+      "skill": "archery",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 1.0,
+      "availability": "R",
+      "damage": "4d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 200.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "",
+      "concealment": "L",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 23
+        }
+      }
+    }
+  },
+  {
+    "_id": "3e6e323dd384ccce",
+    "name": "Elven Zefhar",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 1100.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bow",
+      "skill": "archery",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 2.0,
+      "availability": "R",
+      "damage": "6d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 350.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Improved Armor Piercing",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "armorPiercing": true,
+        "improvedArmorPiercing": true
+      },
+      "description": "<p>Improved Armor Piercing</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 24
+        }
+      }
+    }
+  },
+  {
+    "_id": "e6e775c5e45a2e38",
+    "name": "Gnomish Hand Crossbow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 425.0,
+      "carried": true,
+      "equipped": false,
+      "category": "crossbow",
+      "skill": "crossbow",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 3.0,
+      "availability": "R",
+      "damage": "2d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 1.0,
+      "range": 100.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Slow Reload",
+      "concealment": "S",
+      "enhancements": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "slowReload": true
+      },
+      "description": "<p>Slow Reload</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 26
+        }
+      }
+    }
+  },
+  {
+    "_id": "afa4cf356140e9ea",
+    "name": "Dwarven Heavy Crossbow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.5,
+      "cost": 850.0,
+      "carried": true,
+      "equipped": false,
+      "category": "crossbow",
+      "skill": "crossbow",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 3.0,
+      "availability": "R",
+      "damage": "5d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 300.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Slow Reload",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 83,
+      "properties": {
+        "slowReload": true
+      },
+      "description": "<p>Slow Reload</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 84,
+          "table": 0,
+          "row": 27
+        }
+      }
+    }
+  },
+  {
+    "_id": "63867789169bb8c5",
+    "name": "Elven Burrower Ammunition",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 50.0,
+      "carried": true,
+      "equipped": false,
+      "isAmmo": true,
+      "ammoCategory": "projectile",
+      "damageTypes": [
+        "piercing"
+      ],
+      "availability": "R",
+      "reliability": 10.0,
+      "effectText": "Bleeding (100%) See Side Bar",
+      "concealment": "L",
+      "properties": {
+        "bleeding": 100,
+        "burrower": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 84,
+      "description": "<p>Bleeding (100%) See Side Bar</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 85,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "a730d05135162521",
+    "name": "Dwarven Impact Ammunition",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 50.0,
+      "carried": true,
+      "equipped": false,
+      "isAmmo": true,
+      "ammoCategory": "projectile",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "availability": "R",
+      "reliability": 15.0,
+      "effectText": "Ablating",
+      "concealment": "L",
+      "properties": {
+        "ablating": true,
+        "burrower": false
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 84,
+      "description": "<p>Ablating</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 85,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "dbf8c53ced81d940",
+    "name": "Witcher’s Steel Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "4d6+2",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Armor Piercing Meteorite",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {
+        "armorPiercing": true,
+        "meteorite": true
+      },
+      "description": "<p>Armor Piercing Meteorite</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "56682416bf5f55ef",
+    "name": "Witcher’s Silver Sword",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "1d6+2",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Silver (3d6)",
+      "concealment": "N/A",
+      "enhancements": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {
+        "silver": true,
+        "silverDamage": "3d6"
+      },
+      "description": "<p>Silver (3d6)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "5a18102f4899d3a9",
+    "name": "Dancing Star",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 162.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bomb",
+      "skill": "athletics",
+      "stat": "dex",
+      "damageTypes": [
+        "elemental"
+      ],
+      "damage": "5d6",
+      "rangeBodyMultiplier": 4,
+      "consumable": true,
+      "effectText": "Fire (100%)",
+      "properties": {
+        "fire": 100,
+        "area": 4.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Fire (100%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "999df72d6ba3e1ea",
+    "name": "Devil’s Puffball",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 138.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bomb",
+      "skill": "athletics",
+      "stat": "dex",
+      "damageTypes": [
+        "elemental"
+      ],
+      "damage": "0",
+      "rangeBodyMultiplier": 4,
+      "consumable": true,
+      "effectText": "Poison (100%) Devil’s Puffball does double poison damage.",
+      "properties": {
+        "poison": 100,
+        "area": 4.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Poison (100%) Devil’s Puffball does double poison damage.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "e7aa2dcc744895d8",
+    "name": "Dimeritum Bomb",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 264.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bomb",
+      "skill": "athletics",
+      "stat": "dex",
+      "damageTypes": [
+        "elemental"
+      ],
+      "damage": "0",
+      "rangeBodyMultiplier": 4,
+      "consumable": true,
+      "effectText": "Negates the use of magic in this area for 20 rounds.",
+      "properties": {
+        "area": 8.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Negates the use of magic in this area for 20 rounds.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "eca991414fa30490",
+    "name": "Dragon’s Dream",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 177.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bomb",
+      "skill": "athletics",
+      "stat": "dex",
+      "damageTypes": [
+        "elemental"
+      ],
+      "damage": "0",
+      "rangeBodyMultiplier": 4,
+      "consumable": true,
+      "effectText": "Creates a cloud of flammable gas that spreads in a randomly rolled direction for 3 turns before dissipating. If any fire is lit in this gas, it explodes. Everyone in it takes 5d6 damage and has an 75% chance of catching fire.",
+      "properties": {
+        "area": 8.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Creates a cloud of flammable gas that spreads in a randomly rolled direction for 3 turns before dissipating. If any fire is lit in this gas, it explodes. Everyone in it takes 5d6 damage and has an 75% chance of catching fire.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "39e1dcb9915d4d12",
+    "name": "Grapeshot",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 159.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bomb",
+      "skill": "athletics",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "damage": "7d6",
+      "rangeBodyMultiplier": 4,
+      "consumable": true,
+      "effectText": "Fire (25%)",
+      "properties": {
+        "fire": 25,
+        "area": 4.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Fire (25%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "ac3d01f51d07232f",
+    "name": "Samum",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 147.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bomb",
+      "skill": "athletics",
+      "stat": "dex",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "damage": "0",
+      "rangeBodyMultiplier": 4,
+      "consumable": true,
+      "effectText": "Anyone caught in the blast of this bomb must make a Stun save at -2 and is blinded for 6 rounds.",
+      "properties": {
+        "area": 4.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Anyone caught in the blast of this bomb must make a Stun save at -2 and is blinded for 6 rounds.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "a5a2b7e515c4b808",
+    "name": "Moon Dust",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 199.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bomb",
+      "skill": "athletics",
+      "stat": "dex",
+      "damageTypes": [
+        "elemental"
+      ],
+      "damage": "0",
+      "rangeBodyMultiplier": 4,
+      "consumable": true,
+      "effectText": "Any invisible or intangible creatures are made visible and tangible for 20 rounds. This also stops monsters from regenerating or transforming.",
+      "properties": {
+        "area": 8.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Any invisible or intangible creatures are made visible and tangible for 20 rounds. This also stops monsters from regenerating or transforming.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "2ab58bf33295d163",
+    "name": "Northern Wind",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1,
+      "cost": 177.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bomb",
+      "skill": "athletics",
+      "stat": "dex",
+      "damageTypes": [
+        "elemental"
+      ],
+      "damage": "0",
+      "rangeBodyMultiplier": 4,
+      "consumable": true,
+      "effectText": "Any creature caught in the radius freezes in place until they make a DC:18 Physique check, until they are struck, or for 8 rounds. An attack on someone frozen does an extra 2d6 damage.",
+      "properties": {
+        "area": 4.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Any creature caught in the radius freezes in place until they make a DC:18 Physique check, until they are struck, or for 8 rounds. An attack on someone frozen does an extra 2d6 damage.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "4cff3d78983d1ee9",
+    "name": "Biter",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 144.0,
+      "carried": true,
+      "equipped": false,
+      "category": "trap",
+      "skill": "trapCrafting",
+      "stat": "cra",
+      "damageTypes": [
+        "piercing"
+      ],
+      "damage": "7d6",
+      "rangeBodyMultiplier": 0,
+      "consumable": true,
+      "effectText": "N/A",
+      "properties": {
+        "area": 4.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>N/A</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "d80efe179dd46600",
+    "name": "Clawer",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 111.0,
+      "carried": true,
+      "equipped": false,
+      "category": "trap",
+      "skill": "trapCrafting",
+      "stat": "cra",
+      "damageTypes": [
+        "slashing"
+      ],
+      "damage": "5d6",
+      "rangeBodyMultiplier": 0,
+      "consumable": true,
+      "effectText": "Anyone caught within the blast radius takes damage and has an 80% chance of sustaining a bleeding wound.",
+      "properties": {
+        "area": 4.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Anyone caught within the blast radius takes damage and has an 80% chance of sustaining a bleeding wound.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "32b8200977a4ed18",
+    "name": "Conflagration",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 121.0,
+      "carried": true,
+      "equipped": false,
+      "category": "trap",
+      "skill": "trapCrafting",
+      "stat": "cra",
+      "damageTypes": [
+        "elemental"
+      ],
+      "damage": "5d6",
+      "rangeBodyMultiplier": 0,
+      "consumable": true,
+      "effectText": "Fire (75%)",
+      "properties": {
+        "fire": 75,
+        "area": 4.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Fire (75%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "92c342c7f6a62b1d",
+    "name": "Fury",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 114.0,
+      "carried": true,
+      "equipped": false,
+      "category": "trap",
+      "skill": "trapCrafting",
+      "stat": "cra",
+      "damageTypes": [
+        "elemental"
+      ],
+      "damage": "0",
+      "rangeBodyMultiplier": 0,
+      "consumable": true,
+      "effectText": "Any creature caught within the blast radius must make an Endurance roll with a DC of 18 or start fighting the closest person to them until a successful save is made.",
+      "properties": {
+        "area": 8.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Any creature caught within the blast radius must make an Endurance roll with a DC of 18 or start fighting the closest person to them until a successful save is made.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "a519bb4b8d597fd4",
+    "name": "Marker",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 57.0,
+      "carried": true,
+      "equipped": false,
+      "category": "trap",
+      "skill": "trapCrafting",
+      "stat": "cra",
+      "damageTypes": [
+        "elemental"
+      ],
+      "damage": "0",
+      "rangeBodyMultiplier": 0,
+      "consumable": true,
+      "effectText": "Covers those in the blast in a bright paint and a powerful odor that can be smelled from a mile away. The paint lasts for a full day and grants a +5 to spotting/ tracking the target.",
+      "properties": {
+        "area": 8.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Covers those in the blast in a bright paint and a powerful odor that can be smelled from a mile away. The paint lasts for a full day and grants a +5 to spotting/ tracking the target.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "5318f20ffbedf175",
+    "name": "Talgar Winter",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2,
+      "cost": 126.0,
+      "carried": true,
+      "equipped": false,
+      "category": "trap",
+      "skill": "trapCrafting",
+      "stat": "cra",
+      "damageTypes": [
+        "elemental"
+      ],
+      "damage": "0",
+      "rangeBodyMultiplier": 0,
+      "consumable": true,
+      "effectText": "Any creature caught in this blast radius freezes in place until they make a DC:18 Physique check, until they are struck, or for 8 rounds. An attack on someone frozen does an extra 2d6 damage.",
+      "properties": {
+        "area": 4.0,
+        "allLocations": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 254,
+      "description": "<p>Any creature caught in this blast radius freezes in place until they make a DC:18 Physique check, until they are struck, or for 8 rounds. An attack on someone frozen does an extra 2d6 damage.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 255,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "9b63f68b044c538a",
+    "name": "Explosive Ammunition",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 108.0,
+      "carried": true,
+      "equipped": false,
+      "isAmmo": true,
+      "ammoCategory": "projectile",
+      "damageTypes": [
+        "elemental"
+      ],
+      "effectText": "Explosive ammunition carries a small vial of highly reactive chemicals. When it strikes the target the vial breaks, causing an explosion that does 4d6 damage to every location of every person within 2m.",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 255,
+      "properties": {},
+      "description": "<p>Explosive ammunition carries a small vial of highly reactive chemicals. When it strikes the target the vial breaks, causing an explosion that does 4d6 damage to every location of every person within 2m.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 256,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "323ccefb5e905614",
+    "name": "Split Ammunition",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 54.0,
+      "carried": true,
+      "equipped": false,
+      "isAmmo": true,
+      "ammoCategory": "projectile",
+      "damageTypes": [
+        "piercing"
+      ],
+      "effectText": "Split ammunition is made up of several bolts or arrows bound together. When fired, the binding breaks and the ammunition splits. For every point over a target’s defense you roll (maximum 3) you deal the weapon’s full damage to a random location.",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 255,
+      "properties": {},
+      "description": "<p>Split ammunition is made up of several bolts or arrows bound together. When fired, the binding breaks and the ammunition splits. For every point over a target’s defense you roll (maximum 3) you deal the weapon’s full damage to a random location.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 256,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "d705223c105dc7e9",
+    "name": "Tracking Ammunition",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 22.0,
+      "carried": true,
+      "equipped": false,
+      "isAmmo": true,
+      "ammoCategory": "projectile",
+      "damageTypes": [
+        "piercing"
+      ],
+      "effectText": "Tracking ammunition is soaked in a odorous solution which can easily be picked up by scent tracking. As long as it remains in the target, scent tracking requires no roll to follow their trail if it is less than half a day old.",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 255,
+      "properties": {},
+      "description": "<p>Tracking ammunition is soaked in a odorous solution which can easily be picked up by scent tracking. As long as it remains in the target, scent tracking requires no roll to follow their trail if it is less than half a day old.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 256,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  }
+]

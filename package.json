@@ -1,0 +1,15 @@
+{
+  "name": "witcher-rilerena",
+  "version": "0.1.0-dev.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/witcher/*.test.mjs",
+    "build:packs": "node tools/witcher/build-packs.mjs",
+    "validate": "node tools/witcher/validate.mjs"
+  },
+  "devDependencies": {
+    "@foundryvtt/foundryvtt-cli": "3.0.4",
+    "handlebars": "4.7.9"
+  }
+}

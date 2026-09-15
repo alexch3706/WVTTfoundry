@@ -1,0 +1,880 @@
+[
+  {
+    "_id": "8d6fece6008a5fb6",
+    "name": "Devine",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "10d6",
+      "reliability": 20.0,
+      "maxReliability": 20.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Greater Focus (Air Magic) Stun (2) Armor Piercing Meteorite",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 257,
+      "properties": {
+        "armorPiercing": true,
+        "meteorite": true,
+        "greaterFocus": true,
+        "stun": -2,
+        "stunWeapon": true
+      },
+      "description": "<p>Greater Focus (Air Magic) Stun (2) Armor Piercing Meteorite</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 258,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "649b478c5097df63",
+    "name": "Cleaver Hood",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "8d6+2",
+      "reliability": 20.0,
+      "maxReliability": 20.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Armor Piercing Balanced (+5) Meteorite",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 257,
+      "properties": {
+        "armorPiercing": true,
+        "balanced": true,
+        "meteorite": true,
+        "balancedBonus": 5
+      },
+      "description": "<p>Armor Piercing Balanced (+5) Meteorite</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 258,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "656f733e23a0af33",
+    "name": "Wolf",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 2.0,
+      "availability": "R",
+      "damage": "7d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Armor Piercing Bleed (75%)",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 258,
+      "properties": {
+        "armorPiercing": true,
+        "bleeding": 75
+      },
+      "description": "<p>Armor Piercing Bleed (75%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 259,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "753a79cf08f9407a",
+    "name": "Caroline",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 3.0,
+      "availability": "R",
+      "damage": "9d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Greater Focus (Water) +25 Health Points Balanced Bleed (75%)",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 258,
+      "properties": {
+        "balanced": true,
+        "greaterFocus": true,
+        "bleeding": 75
+      },
+      "description": "<p>Greater Focus (Water) +25 Health Points Balanced Bleed (75%)</p>",
+      "resistances": [],
+      "bonuses": {
+        "hp": 25
+      }
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 259,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "7ca3cc233493c1f4",
+    "name": "Thorn",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "smallBlade",
+      "skill": "smallBlades",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 3.0,
+      "availability": "R",
+      "damage": "3d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 1.0,
+      "range": 0,
+      "rangeBodyMultiplier": 2,
+      "effectText": "Bleed (75%) Poison (100%)",
+      "concealment": "J",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 259,
+      "properties": {
+        "bleeding": 75,
+        "poison": 100
+      },
+      "description": "<p>Bleed (75%) Poison (100%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 260,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "c4f5c4a9e7fc7f5b",
+    "name": "Decapitator",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "axe",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "10d6",
+      "reliability": 20.0,
+      "maxReliability": 20.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Balanced Bleed (100%) Meteorite",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 259,
+      "properties": {
+        "balanced": true,
+        "meteorite": true,
+        "bleeding": 100
+      },
+      "description": "<p>Balanced Bleed (100%) Meteorite</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 260,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "92bdbaccfd85f779",
+    "name": "Ogh’r",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bludgeon",
+      "skill": "melee",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "10d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Stun (4) Balanced",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 260,
+      "properties": {
+        "balanced": true,
+        "stun": -4,
+        "stunWeapon": true
+      },
+      "description": "<p>Stun (4) Balanced</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 261,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "070316e805c4daa8",
+    "name": "The Abyss Guard",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "piercing",
+        "bludgeoning"
+      ],
+      "accuracy": 2.0,
+      "availability": "R",
+      "damage": "7d6+4",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 2,
+      "effectText": "Freeze (75%) Greater Focus (Water) Long Reach",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 260,
+      "properties": {
+        "longReach": true,
+        "greaterFocus": true,
+        "freeze": 75
+      },
+      "description": "<p>Freeze (75%) Greater Focus (Water) Long Reach</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 261,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "9fbca555cf35535b",
+    "name": "Succubus’ Wand",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "staff",
+      "skill": "staffSpear",
+      "stat": "ref",
+      "damageTypes": [
+        "bludgeoning"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "3d6+2",
+      "reliability": 5.0,
+      "maxReliability": 5.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Long Reach Fire (25%) +2 Seduction Greater Focus (Fire) Focus (5)",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 261,
+      "properties": {
+        "longReach": true,
+        "greaterFocus": true,
+        "fire": 25,
+        "focus": 5
+      },
+      "description": "<p>Long Reach Fire (25%) +2 Seduction Greater Focus (Fire) Focus (5)</p>",
+      "resistances": [],
+      "skillBonuses": [
+        {
+          "skill": "seduction",
+          "value": 2,
+          "condition": ""
+        }
+      ]
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 262,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "4735e40360699ec7",
+    "name": "The Moon Bow",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "bow",
+      "skill": "archery",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 1.0,
+      "availability": "R",
+      "damage": "8d6+2",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 200.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Freeze (75%) Balanced +3 Damage to Wraiths",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 261,
+      "properties": {
+        "balanced": true,
+        "freeze": 75
+      },
+      "description": "<p>Freeze (75%) Balanced +3 Damage to Wraiths</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 262,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "46efd5ed608c2e8d",
+    "name": "Red Death",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "crossbow",
+      "skill": "crossbow",
+      "stat": "dex",
+      "damageTypes": [
+        "piercing"
+      ],
+      "accuracy": 2.0,
+      "availability": "R",
+      "damage": "10d6",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "hands": 2.0,
+      "range": 300.0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Poison (100%) +3 Hex Weaving & Resist Magic",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 262,
+      "properties": {
+        "poison": 100
+      },
+      "description": "<p>Poison (100%) +3 Hex Weaving &amp; Resist Magic</p>",
+      "resistances": [],
+      "skillBonuses": [
+        {
+          "skill": "hexWeaving",
+          "value": 3,
+          "condition": ""
+        },
+        {
+          "skill": "resistMagic",
+          "value": 3,
+          "condition": ""
+        }
+      ]
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 263,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "ecd4e9f30819ed24",
+    "name": "Fate",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 3.0,
+      "availability": "R",
+      "damage": "2d6+1",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Silver (6d6+4) Greater Focus (Water & Fire) Stagger (75%)",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 262,
+      "properties": {
+        "greaterFocus": true,
+        "stagger": 75,
+        "silver": true,
+        "silverDamage": "6d6+4"
+      },
+      "description": "<p>Silver (6d6+4) Greater Focus (Water &amp; Fire) Stagger (75%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 263,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "1a7e5a9f08f6d007",
+    "name": "Moon Blade",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 1.0,
+      "availability": "R",
+      "damage": "3d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Silver (7d6+4) Greater Focus",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 263,
+      "properties": {
+        "greaterFocus": true,
+        "silver": true,
+        "silverDamage": "7d6+4"
+      },
+      "description": "<p>Silver (7d6+4) Greater Focus</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 264,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "4146cb235f123b26",
+    "name": "Maugrim",
+    "type": "weapon",
+    "img": "icons/svg/sword.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 6.0,
+      "cost": 0.0,
+      "carried": true,
+      "equipped": false,
+      "category": "sword",
+      "skill": "swordsmanship",
+      "stat": "ref",
+      "damageTypes": [
+        "slashing",
+        "piercing"
+      ],
+      "accuracy": 0.0,
+      "availability": "R",
+      "damage": "2d6",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "hands": 2.0,
+      "range": 0,
+      "rangeBodyMultiplier": 0,
+      "effectText": "Silver (6d6+4) Greater Focus (Earth & Water) Balanced Freeze (75%)",
+      "concealment": "N/A",
+      "enhancements": 3.0,
+      "relic": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 263,
+      "properties": {
+        "balanced": true,
+        "greaterFocus": true,
+        "freeze": 75,
+        "silver": true,
+        "silverDamage": "6d6+4"
+      },
+      "description": "<p>Silver (6d6+4) Greater Focus (Earth &amp; Water) Balanced Freeze (75%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 264,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "10f9dceb8823b4c4",
+    "name": "Raven’s Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 12.0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "relic": true,
+      "armorClass": "light",
+      "stoppingPower": 12.0,
+      "enhancements": 3.0,
+      "effectText": "+15 Health Points Poison Resistance Bleeding Resistance +3 Courage",
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 264,
+      "properties": {},
+      "description": "<p>+15 Health Points Poison Resistance Bleeding Resistance +3 Courage</p>",
+      "resistances": [
+        "poison",
+        "bleeding"
+      ],
+      "bonuses": {
+        "hp": 15
+      },
+      "skillBonuses": [
+        {
+          "skill": "courage",
+          "value": 3,
+          "condition": ""
+        }
+      ]
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 265,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "66a314768fc797db",
+    "name": "Mountain Folk Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 15.0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "relic": true,
+      "armorClass": "medium",
+      "stoppingPower": 24.0,
+      "enhancements": 3.0,
+      "effectText": "Piercing Resistance Bludgeoning Resistance Slashing Resistance Poison Resistance",
+      "coverage": [
+        "head",
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 265,
+      "properties": {},
+      "description": "<p>Piercing Resistance Bludgeoning Resistance Slashing Resistance Poison Resistance</p>",
+      "resistances": [
+        "piercing",
+        "bludgeoning",
+        "slashing",
+        "poison"
+      ]
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 266,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "cb96c3a215785f08",
+    "name": "Draug Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 37.0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "relic": true,
+      "armorClass": "heavy",
+      "stoppingPower": 36.0,
+      "enhancements": 3.0,
+      "effectText": "+25 Health Points +2 Resist Magic Fire Resistance Bleeding Resistance Poison Resistance +2 Spell Casting",
+      "coverage": [
+        "head",
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 3.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 265,
+      "properties": {},
+      "description": "<p>+25 Health Points +2 Resist Magic Fire Resistance Bleeding Resistance Poison Resistance +2 Spell Casting</p>",
+      "resistances": [
+        "poison",
+        "bleeding",
+        "fire"
+      ],
+      "bonuses": {
+        "hp": 25
+      },
+      "skillBonuses": [
+        {
+          "skill": "resistMagic",
+          "value": 2,
+          "condition": ""
+        },
+        {
+          "skill": "spellCasting",
+          "value": 2,
+          "condition": ""
+        }
+      ]
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 266,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  }
+]

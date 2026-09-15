@@ -1,0 +1,1955 @@
+[
+  {
+    "_id": "69c3791908d73a77",
+    "name": "Black Blood",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "The witcher’s blood poisons any creature that drinks it, doing 3 points of damage per round until an Endurance check, DC:20 is made. The creature is also forced to recoil 2m.",
+      "duration": 20.0,
+      "toxicity": 25.0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>The witcher’s blood poisons any creature that drinks it, doing 3 points of damage per round until an Endurance check, DC:20 is made. The creature is also forced to recoil 2m.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "24e20ec895f5d6f2",
+    "name": "Blizzard",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "+4 Reflex after killing an enemy. Further kills do not add to the bonus, which lasts until the potion duration ends.",
+      "duration": 10.0,
+      "toxicity": 75.0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>+4 Reflex after killing an enemy. Further kills do not add to the bonus, which lasts until the potion duration ends.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "0aae86abedc63811",
+    "name": "Cat",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "No penalties for darkness or dim light. You also cannot be hypnotised, and gain a +2 to see through illusions.",
+      "duration": 2400,
+      "toxicity": 25.0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>No penalties for darkness or dim light. You also cannot be hypnotised, and gain a +2 to see through illusions.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "265652399a2baa7a",
+    "name": "Full Moon",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "Grants you +30 temporary Health Points until the end of the duration. Full Moon potions do not stack with one another.",
+      "duration": 600,
+      "toxicity": 75.0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>Grants you +30 temporary Health Points until the end of the duration. Full Moon potions do not stack with one another.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "f6a4e551557a67f0",
+    "name": "Golden Oriole",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "Grants immunity to poisons and neutralizes any poisons in your system.",
+      "duration": 600,
+      "toxicity": 50.0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>Grants immunity to poisons and neutralizes any poisons in your system.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "f932a86abbe71261",
+    "name": "Killer Whale",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "Increases your ability to hold your breath by half and negates sight penalties underwater.",
+      "duration": 600,
+      "toxicity": 25.0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>Increases your ability to hold your breath by half and negates sight penalties underwater.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "9e7a8c152e0b5132",
+    "name": "Maribor Forest",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "Each time you gain an adrenaline die, add a second one.",
+      "duration": 15.0,
+      "toxicity": 50.0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>Each time you gain an adrenaline die, add a second one.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "594367c7d28ec72f",
+    "name": "Petri’s Filter",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "+2 point in Spellcasting, Hex Weaving, and Ritual Crafting",
+      "duration": 15.0,
+      "toxicity": 75.0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>+2 point in Spellcasting, Hex Weaving, and Ritual Crafting</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "96650a851385000c",
+    "name": "Swallow",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "Regenerate 3 points per round. In any round you are struck, you do not regenerate. This healing doesn’t stack with multiple uses.",
+      "duration": 20.0,
+      "toxicity": 50.0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>Regenerate 3 points per round. In any round you are struck, you do not regenerate. This healing doesn’t stack with multiple uses.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "0e611b55dacd7b77",
+    "name": "Tawny Owl",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "Each time you use a Recovery action to gain back STA, add an extra 2 points.",
+      "duration": 20.0,
+      "toxicity": 50.0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>Each time you use a Recovery action to gain back STA, add an extra 2 points.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "b8e8f6807bb533fa",
+    "name": "Thunderbolt",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "+3 damage on physical attacks.",
+      "duration": 15.0,
+      "toxicity": 75.0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>+3 damage on physical attacks.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "cd5789e8bba2826d",
+    "name": "White Honey",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "potion",
+      "effectText": "Clears toxicity and removes all potion effects.",
+      "duration": 0,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 247,
+      "properties": {},
+      "description": "<p>Clears toxicity and removes all potion effects.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 248,
+          "table": 1,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "4b8ed0f26cdb3cb4",
+    "name": "Beast Oil",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against beasts",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against beasts</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "f3744651ec3294c1",
+    "name": "Cursed Oil",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against cursed ones",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against cursed ones</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "ab73299495745d62",
+    "name": "Draconid Oil",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against draconids",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against draconids</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "9b9c3d29eb043439",
+    "name": "Elementa Oil",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against elementa",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against elementa</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "40787446f7ce7c66",
+    "name": "Hanged Man’s Venom",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against humanoids",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against humanoids</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "9edbd093eee9ea23",
+    "name": "Hybrid Oil",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against hybrids",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against hybrids</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "679a9ebfffd1cdbb",
+    "name": "Insectoid Oil",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against insectoids",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against insectoids</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "97ec78568762f96e",
+    "name": "Necrophage Oil",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against necrophages",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against necrophages</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "3944804168890cde",
+    "name": "Ogroid Oil",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against ogroids",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against ogroids</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "5a54d0ffc9aa8d87",
+    "name": "Relict Oil",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against relicts",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against relicts</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "1bfff07cb5f2a003",
+    "name": "Specter Oil",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against specters",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against specters</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "0b80555431c5444c",
+    "name": "Vampire Oil",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "oil",
+      "effectText": "+5 damage against vampires",
+      "duration": 600,
+      "toxicity": 0,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+5 damage against vampires</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 0,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "4fdb9b8703d97242",
+    "name": "Arachas Decoction",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "decoction",
+      "effectText": "For every 10 points of ENC you have free you gain +2 SP to all locations.",
+      "duration": 600,
+      "toxicity": 75,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>For every 10 points of ENC you have free you gain +2 SP to all locations.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "44aa0801e9ded109",
+    "name": "Fiend Decoction",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "decoction",
+      "effectText": "Your ENC is doubled.",
+      "duration": 600,
+      "toxicity": 75,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>Your ENC is doubled.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "556aef85063c1ef0",
+    "name": "Grave Hag Decoction",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "decoction",
+      "effectText": "+2 HP regeneration for every enemy slain during combat. This health bonus lasts until the end of the combat.",
+      "duration": 600,
+      "toxicity": 75,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>+2 HP regeneration for every enemy slain during combat. This health bonus lasts until the end of the combat.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "d18c04e47b37f733",
+    "name": "Griffin Decoction",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "decoction",
+      "effectText": "Every time you take more than 5 points of damage you gain +2 SP. This SP applies to all locations and stacks with itself.",
+      "duration": 600,
+      "toxicity": 75,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>Every time you take more than 5 points of damage you gain +2 SP. This SP applies to all locations and stacks with itself.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "8ccd0b2643344b37",
+    "name": "Katakan Decoction",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "decoction",
+      "effectText": "You gain a +3 to your roll when determining the location of a critical wound.",
+      "duration": 600,
+      "toxicity": 75,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>You gain a +3 to your roll when determining the location of a critical wound.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "f2dd331403025bf9",
+    "name": "Nekker Decoction",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "decoction",
+      "effectText": "Your mount never panics and you gain a +3 to all Ride and Athletics checks.",
+      "duration": 600,
+      "toxicity": 75,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>Your mount never panics and you gain a +3 to all Ride and Athletics checks.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "426fa00ed1b8f034",
+    "name": "Noon Wraith Decoction",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "decoction",
+      "effectText": "You gain immunity to Stun & Blindness and cannot be knocked prone.",
+      "duration": 600,
+      "toxicity": 75,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>You gain immunity to Stun &amp; Blindness and cannot be knocked prone.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "5d29f5041e1a6ca1",
+    "name": "Troll Decoction",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "decoction",
+      "effectText": "You regenerate 5 Health Points per round.",
+      "duration": 600,
+      "toxicity": 75,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>You regenerate 5 Health Points per round.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 1,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "2f6f11a99d3ff039",
+    "name": "Werewolf Decoction",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "decoction",
+      "effectText": "Running for long periods of time takes no stamina.",
+      "duration": 600,
+      "toxicity": 75,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>Running for long periods of time takes no stamina.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 1,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "63b833513997e67f",
+    "name": "Wyvern Decoction",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "decoction",
+      "effectText": "You gain +1 damage to your next strike after a successful strike. This +1 is cumulative, and goes up with each hit until the combat ends or you take damage.",
+      "duration": 600,
+      "toxicity": 75,
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 248,
+      "properties": {},
+      "description": "<p>You gain +1 damage to your next strike after a successful strike. This +1 is cumulative, and goes up with each hit until the combat ends or you take damage.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 249,
+          "table": 1,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "ed71b19ea8580f75",
+    "name": "Griffin Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+2 melee damage",
+      "craftDC": 18.0,
+      "notes": "Feather growth",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+2 melee damage</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "2b868641fa04d6fe",
+    "name": "Katakan Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+1 REF",
+      "craftDC": 22.0,
+      "notes": "Gangly proportions",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+1 REF</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "2f23f46fa399d3a3",
+    "name": "Nekker Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+1 melee damage",
+      "craftDC": 15.0,
+      "notes": "Baldness & grey skin",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+1 melee damage</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "59b184354c2ae9f0",
+    "name": "Werewolf Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+3 melee damage",
+      "craftDC": 20.0,
+      "notes": "Rapid hair growth",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+3 melee damage</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "7d9f44d89bd36a51",
+    "name": "Wyvern Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+3 melee damage",
+      "craftDC": 20.0,
+      "notes": "Rough skin",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+3 melee damage</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "d852faac12c3948e",
+    "name": "Arachas Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+5 HP",
+      "craftDC": 18.0,
+      "notes": "Green bodily fluids",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+5 HP</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "e4fd9dbe44b3b3fc",
+    "name": "Fiend Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+1 BODY",
+      "craftDC": 22.0,
+      "notes": "Small antlers",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+1 BODY</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "8d842b15d2f37232",
+    "name": "Grave Hag Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+5 HP",
+      "craftDC": 18.0,
+      "notes": "Long grey tongue",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+5 HP</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "19a5e96b139c296f",
+    "name": "Noonwraith Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+10 HP",
+      "craftDC": 20.0,
+      "notes": "Dry, taut skin",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+10 HP</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "c1a1774295e3b516",
+    "name": "Rock Troll Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+10 HP",
+      "craftDC": 20.0,
+      "notes": "Hunched posture",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+10 HP</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "3aaeda10349a10d7",
+    "name": "Golem Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+2 Vigor threshold",
+      "craftDC": 18.0,
+      "notes": "Hard protrusions",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+2 Vigor threshold</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 14
+        }
+      }
+    }
+  },
+  {
+    "_id": "0b1f1fdef393a8f5",
+    "name": "Siren Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "mutagen",
+      "effectText": "+1 Vigor threshold",
+      "craftDC": 15.0,
+      "notes": "Small fins",
+      "consumable": true,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 251,
+      "properties": {},
+      "description": "<p>+1 Vigor threshold</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 252,
+          "table": 0,
+          "row": 15
+        }
+      }
+    }
+  },
+  {
+    "_id": "cf84522720f6427c",
+    "name": "Chemobog",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "category": "rune",
+      "effectText": "Roll 1d6 when your weapon would take damage. On a roll of a 4, 5, or 6, the weapon takes no damage.",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {},
+      "description": "<p>Roll 1d6 when your weapon would take damage. On a roll of a 4, 5, or 6, the weapon takes no damage.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "8b81bbd1bf260046",
+    "name": "Dazhbog",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 600.0,
+      "carried": true,
+      "equipped": false,
+      "category": "rune",
+      "effectText": "Fire (30%)",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {
+        "fire": 30
+      },
+      "description": "<p>Fire (30%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "79b7008a214b2de2",
+    "name": "Devanna",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "category": "rune",
+      "effectText": "Bleed (30%)",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {
+        "bleeding": 30
+      },
+      "description": "<p>Bleed (30%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "3ee01edc3a171fee",
+    "name": "Morana",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "category": "rune",
+      "effectText": "Poison (30%)",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {
+        "poison": 30
+      },
+      "description": "<p>Poison (30%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "42b4d54a9ee124ec",
+    "name": "Perun",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "category": "rune",
+      "effectText": "Each time you gain an adrenaline die, add a second one.",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {},
+      "description": "<p>Each time you gain an adrenaline die, add a second one.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "bef5829999308f8f",
+    "name": "Stribog",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 500.0,
+      "carried": true,
+      "equipped": false,
+      "category": "rune",
+      "effectText": "Stagger (30%)",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {
+        "stagger": 30
+      },
+      "description": "<p>Stagger (30%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "d9f2caea749aeca5",
+    "name": "Svarog",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 600.0,
+      "carried": true,
+      "equipped": false,
+      "category": "rune",
+      "effectText": "Armor Piercing",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {
+        "armorPiercing": true
+      },
+      "description": "<p>Armor Piercing</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "30a8ba890ea1b705",
+    "name": "Triglav",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "category": "rune",
+      "effectText": "Stun (-1)",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {
+        "stun": -1,
+        "stunWeapon": true
+      },
+      "description": "<p>Stun (-1)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "efcec875c8a5edaf",
+    "name": "Veles",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 600.0,
+      "carried": true,
+      "equipped": false,
+      "category": "rune",
+      "effectText": "Greater Focus",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {
+        "greaterFocus": true
+      },
+      "description": "<p>Greater Focus</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "6e1fa641a4f1a7dc",
+    "name": "Zoria",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 550.0,
+      "carried": true,
+      "equipped": false,
+      "category": "rune",
+      "effectText": "Freeze (30%)",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {
+        "freeze": 30
+      },
+      "description": "<p>Freeze (30%)</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "532d8e265fa01b71",
+    "name": "Glyph of Magic",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "category": "glyph",
+      "effectText": "When wearing this armor, either your spell DCs rise by 3 or your spell damage increases by 1d6. This applies only to mixed element spells.",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {},
+      "description": "<p>When wearing this armor, either your spell DCs rise by 3 or your spell damage increases by 1d6. This applies only to mixed element spells.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "056915cfa77cf565",
+    "name": "Glyph of Air",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "category": "glyph",
+      "effectText": "When wearing this armor, either your spell DCs rise by 3 or your spell damage increases by 1d6. This applies only to air spells.",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {},
+      "description": "<p>When wearing this armor, either your spell DCs rise by 3 or your spell damage increases by 1d6. This applies only to air spells.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "084279d45daf0276",
+    "name": "Glyph of Earth",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "category": "glyph",
+      "effectText": "When wearing this armor, either your spell DCs rise by 3 or your spell damage increases by 1d6. This applies only to earth spells.",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {},
+      "description": "<p>When wearing this armor, either your spell DCs rise by 3 or your spell damage increases by 1d6. This applies only to earth spells.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "d2dfe4668a71cd86",
+    "name": "Glyph of Fire",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "category": "glyph",
+      "effectText": "When wearing this armor, either your spell DCs rise by 3 or your spell damage increases by 1d6. This applies only to fire spells.",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {},
+      "description": "<p>When wearing this armor, either your spell DCs rise by 3 or your spell damage increases by 1d6. This applies only to fire spells.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "db19b76eb91bf5e3",
+    "name": "Glyph of Water",
+    "type": "enhancement",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "category": "glyph",
+      "effectText": "When wearing this armor, either your spell DCs rise by 3 or your spell damage increases by 1d6. This applies only to water spells.",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 256,
+      "properties": {},
+      "description": "<p>When wearing this armor, either your spell DCs rise by 3 or your spell damage increases by 1d6. This applies only to water spells.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 257,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "90cc02d0f8c5dea8",
+    "name": "Witcher’s Medallion",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "category": "witcher",
+      "effectText": "Vibrates near active magic and monsters; crafting requires a mage and attunement at a Place of Power (p.249).",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 249,
+      "properties": {},
+      "description": "<p>Vibrates near active magic and monsters; crafting requires a mage and attunement at a Place of Power (p.249).</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 250,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  }
+]

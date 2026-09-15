@@ -1,260 +1,143 @@
 {
-  "id": "cyberpunk2020-rilerena",
-  "title": "Cyberpunk 2020 (Rilerena fork)",
-  "description": "R. Talsorian Games' Cyberpunk 2020 System",
-  "version": "2.0.1",
+  "id": "witcher-rilerena",
+  "title": "The Witcher TTRPG — Rilerena",
+  "description": "Witcher TTRPG system for Foundry V14. Non-magic rules implementation in development.",
+  "version": "0.1.0-dev.1",
   "compatibility": {
-    "minimum": "14.365",
-    "verified": "14.365",
+    "minimum": "14",
     "maximum": "14"
   },
   "authors": [
     {
-      "name": "OctarineSourceror",
-      "discord": "octarinesorcerer"
-    },
-    {
-      "name": "cybersmily"
-    },
-    {
-      "name": "drowzero0"
+      "name": "alexch3706"
     }
   ],
-  "scripts": [],
   "esmodules": [
-    "module/cyberpunk2020-rilerena.js"
+    "module/witcher/main.js"
   ],
   "styles": [
-    {
-      "src": "css/cyberpunk2020-rilerena.css"
-    }
+    "css/witcher.css"
   ],
+  "documentTypes": {
+    "Actor": {
+      "character": {},
+      "npc": {},
+      "monster": {}
+    },
+    "Item": {
+      "weapon": {},
+      "armor": {},
+      "shield": {},
+      "gear": {},
+      "alchemical": {},
+      "component": {},
+      "diagram": {},
+      "skill": {},
+      "profession": {},
+      "wound": {},
+      "mount": {},
+      "enhancement": {}
+    }
+  },
   "packs": [
     {
-      "name": "roll-tables",
-      "label": "Roll Tables",
-      "system": "cyberpunk2020-rilerena",
-      "path": "./packs/roll-tables",
-      "type": "RollTable"
-    },
-    {
-      "name": "default-skills",
-      "label": "Default Skills",
-      "system": "cyberpunk2020-rilerena",
-      "path": "./packs/default-skills",
-      "type": "Item"
-    },
-    {
-      "name": "role-skills",
-      "label": "Role Skills",
-      "system": "cyberpunk2020-rilerena",
-      "path": "./packs/role-skills",
-      "type": "Item"
-    },
-    {
-      "name": "pistols",
-      "label": "Pistols",
-      "path": "./packs/pistols",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "rifles",
-      "label": "Rifles",
-      "path": "./packs/rifles",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "cyberware",
-      "label": "Cyberware",
-      "path": "./packs/cyberware",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "chipware",
-      "label": "Chipware",
-      "path": "./packs/chipware",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "communication",
-      "label": "Communication",
-      "path": "./packs/communication",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "electronics",
-      "label": "Electronics",
-      "path": "./packs/electronics",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "entertainment",
-      "label": "Entertainment",
-      "path": "./packs/entertainment",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "fashion",
-      "label": "Fashion",
-      "path": "./packs/fashion",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "furnishing",
-      "label": "Furnishing",
-      "path": "./packs/furnishing",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "medical",
-      "label": "Medical",
-      "path": "./packs/medical",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "netrunningEquipment",
-      "label": "Netrunning Equipment",
-      "path": "./packs/netrunningEquipment",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "security",
-      "label": "Security",
-      "path": "./packs/security",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "surveillance",
-      "label": "Surveillance",
-      "path": "./packs/surveillance",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "tools",
-      "label": "Tools",
-      "path": "./packs/tools",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "rentalandservices",
-      "label": "Rental&Services",
-      "path": "./packs/rentalandservices",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "sellthedead",
-      "label": "Sell the Dead",
-      "path": "./packs/sellTheDead",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
+      "name": "weapons",
+      "label": "Weapons & Ammunition",
+      "path": "packs/witcher/weapons",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
       "name": "armor",
-      "label": "Armor",
-      "path": "./packs/armor",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
+      "label": "Armor & Shields",
+      "path": "packs/witcher/armor",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
-      "name": "vehicles",
-      "label": "Vehicles",
-      "path": "./packs/vehicles",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
+      "name": "equipment",
+      "label": "Equipment, Tools & Transport",
+      "path": "packs/witcher/equipment",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
-      "name": "melee",
-      "label": "Melee Weapons",
-      "path": "./packs/melee",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
+      "name": "alchemy",
+      "label": "Alchemical Items",
+      "path": "packs/witcher/alchemy",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
-      "name": "smgs",
-      "label": "SMGs",
-      "path": "./packs/smgs",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
+      "name": "components",
+      "label": "Crafting & Alchemy Components",
+      "path": "packs/witcher/components",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
-      "name": "shotguns",
-      "label": "Shotguns",
-      "path": "./packs/shotguns",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
+      "name": "diagrams",
+      "label": "Diagrams & Formulae",
+      "path": "packs/witcher/diagrams",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
-      "name": "heavyWeapons",
-      "label": "Heavy Weapons",
-      "path": "./packs/heavyWeapons",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
+      "name": "witcher-gear",
+      "label": "Witcher Gear",
+      "path": "packs/witcher/witcher-gear",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     },
     {
-      "name": "bows",
-      "label": "Bows & Crossbows",
-      "path": "./packs/bows",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "exotics",
-      "label": "Exotics",
-      "path": "./packs/exotics",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
-    },
-    {
-      "name": "weapons_other",
-      "label": "Other Weapons",
-      "path": "./packs/weapons_other",
-      "system": "cyberpunk2020-rilerena",
-      "type": "Item"
+      "name": "relics",
+      "label": "Relic Weapons & Armor",
+      "path": "packs/witcher/relics",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "lang/en.json"
-    },
-    {
-      "lang": "es",
-      "name": "Español",
-      "path": "lang/es.json"
-    },
-    {
-      "lang": "it",
-      "name": "Italiano",
-      "path": "lang/it.json"
-    }
-  ],
-  "socket": false,
-  "initiative": "1d10x10 + @stats.ref.total + @itemSkills.combatSense.value",
   "grid": {
     "type": 1,
-    "distance": 5,
-    "units": "m",
-    "diagonals": 0
+    "distance": 2,
+    "units": "m"
   },
-  "primaryTokenAttribute": null,
-  "secondaryTokenAttribute": null,
-  "url": "https://github.com/alexch3706/cyberpunk2020foundry",
-  "manifest": "https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.1/system.json",
-  "download": "https://github.com/alexch3706/cyberpunk2020foundry/releases/download/v2.0.1/cyberpunk2020-rilerena-v2.0.1.zip"
+  "initiative": "1d10 + @derived.stats.ref",
+  "primaryTokenAttribute": "hp",
+  "secondaryTokenAttribute": "sta",
+  "url": "https://github.com/alexch3706/WVTTfoundry",
+  "manifest": "https://github.com/alexch3706/WVTTfoundry/releases/latest/download/system.json",
+  "download": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0/witcher-rilerena.zip"
 }

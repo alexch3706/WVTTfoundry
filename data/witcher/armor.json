@@ -1,0 +1,1655 @@
+[
+  {
+    "_id": "44da120e6c07c331",
+    "name": "Verden Archer’s Hood",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 100.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "light",
+      "stoppingPower": 3.0,
+      "availability": "C",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "head"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "27df78a02abbd095",
+    "name": "Double Woven Hood",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 175.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "light",
+      "stoppingPower": 5.0,
+      "availability": "P",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "head"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "dde25c3918d56088",
+    "name": "Spectacled Helm",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 200.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "light",
+      "stoppingPower": 8.0,
+      "availability": "C",
+      "enhancements": 0.0,
+      "effectText": "",
+      "coverage": [
+        "head"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "8ef54fde828748d6",
+    "name": "Chain Coif",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 250.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "medium",
+      "stoppingPower": 12.0,
+      "availability": "E",
+      "enhancements": 0.0,
+      "effectText": "",
+      "coverage": [
+        "head"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "58d24db2a7660299",
+    "name": "Armored Hood",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 350.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "medium",
+      "stoppingPower": 14.0,
+      "availability": "C",
+      "enhancements": 0.0,
+      "effectText": "",
+      "coverage": [
+        "head"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "997018304b57d8ae",
+    "name": "Temerian Armet",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 475.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "medium",
+      "stoppingPower": 16.0,
+      "availability": "P",
+      "enhancements": 1.0,
+      "effectText": "Restricted Vision",
+      "coverage": [
+        "head"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {
+        "restrictedVision": true
+      },
+      "description": "<p>Restricted Vision</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "2c2695e0bfe1d5da",
+    "name": "Great Helm",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.5,
+      "cost": 575.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "heavy",
+      "stoppingPower": 20.0,
+      "availability": "R",
+      "enhancements": 1.0,
+      "effectText": "Restricted Vision",
+      "coverage": [
+        "head"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {
+        "restrictedVision": true
+      },
+      "description": "<p>Restricted Vision</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "e8616d63cf18ed69",
+    "name": "Skellige Helm",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.5,
+      "cost": 700.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "heavy",
+      "stoppingPower": 25.0,
+      "availability": "P",
+      "enhancements": 1.0,
+      "effectText": "Restricted Vision",
+      "coverage": [
+        "head"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {
+        "restrictedVision": true
+      },
+      "description": "<p>Restricted Vision</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "dce99e9014329cbd",
+    "name": "Nilfgaardian Helm",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 800.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "heavy",
+      "stoppingPower": 30.0,
+      "availability": "R",
+      "enhancements": 2.0,
+      "effectText": "Restricted Vision",
+      "coverage": [
+        "head"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {
+        "restrictedVision": true
+      },
+      "description": "<p>Restricted Vision</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 0,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "5f20ec465b47a8a2",
+    "name": "Gambeson",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 100.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "light",
+      "stoppingPower": 3.0,
+      "availability": "E",
+      "enhancements": 0.0,
+      "effectText": "",
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "06d123c99cc91b62",
+    "name": "Aedirnian Gambeson",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 175.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "light",
+      "stoppingPower": 5.0,
+      "availability": "P",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "f336768e5068a273",
+    "name": "Double Woven Gambeson",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 250.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "light",
+      "stoppingPower": 8.0,
+      "availability": "P",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "cffa17deb5a1c94f",
+    "name": "Brigandine",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 7.0,
+      "cost": 300.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "medium",
+      "stoppingPower": 12.0,
+      "availability": "C",
+      "enhancements": 0.0,
+      "effectText": "",
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm"
+      ],
+      "ev": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "f60817ae1a707d33",
+    "name": "Redanian Halberdier’s Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 8.5,
+      "cost": 400.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "medium",
+      "stoppingPower": 14.0,
+      "availability": "P",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm"
+      ],
+      "ev": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "e749194b91c0efe4",
+    "name": "Lyrian Leather Jacket",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 6.5,
+      "cost": 525.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "medium",
+      "stoppingPower": 16.0,
+      "availability": "R",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm"
+      ],
+      "ev": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 1,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "95e0512148e95ede",
+    "name": "Plate Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 14.0,
+      "cost": 625.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "heavy",
+      "stoppingPower": 20.0,
+      "availability": "R",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm"
+      ],
+      "ev": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 1,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "5f6e318caf4d0321",
+    "name": "Hindarsfjall Heavy Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 15.0,
+      "cost": 750.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "heavy",
+      "stoppingPower": 25.0,
+      "availability": "R",
+      "enhancements": 3.0,
+      "effectText": "",
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm"
+      ],
+      "ev": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 1,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "da24cc34844c6cd3",
+    "name": "Nilfgaardian Plate Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 12.0,
+      "cost": 850.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "heavy",
+      "stoppingPower": 30.0,
+      "availability": "R",
+      "enhancements": 2.0,
+      "effectText": "",
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm"
+      ],
+      "ev": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 79,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 80,
+          "table": 1,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "35905cc9a95f7e81",
+    "name": "Cavalry Trousers",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 75.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "light",
+      "stoppingPower": 3.0,
+      "availability": "C",
+      "enhancements": 0.0,
+      "effectText": "",
+      "coverage": [
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "70b20a803d78d1f0",
+    "name": "Padded Trousers",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 125.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "light",
+      "stoppingPower": 5.0,
+      "availability": "C",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "98f9da4cbf9ed8ad",
+    "name": "Double Woven Trousers",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 225.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "light",
+      "stoppingPower": 8.0,
+      "availability": "P",
+      "enhancements": 0.0,
+      "effectText": "",
+      "coverage": [
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "96137467536f7239",
+    "name": "Armored Trousers",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.5,
+      "cost": 250.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "medium",
+      "stoppingPower": 12.0,
+      "availability": "E",
+      "enhancements": 0.0,
+      "effectText": "",
+      "coverage": [
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "e3e46f302be1d680",
+    "name": "Redanian Greaves",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 400.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "medium",
+      "stoppingPower": 14.0,
+      "availability": "P",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "ca1c09f09d32af1e",
+    "name": "Lyrian Leather Trousers",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.5,
+      "cost": 525.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "medium",
+      "stoppingPower": 16.0,
+      "availability": "R",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "0a5ffc0d7a1fc1dd",
+    "name": "Plate Greaves",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 7.5,
+      "cost": 625.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "heavy",
+      "stoppingPower": 20.0,
+      "availability": "R",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "b8d07419d50f9067",
+    "name": "Hindarsfjall Heavy Chausses",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 650.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "heavy",
+      "stoppingPower": 25.0,
+      "availability": "R",
+      "enhancements": 3.0,
+      "effectText": "",
+      "coverage": [
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "f307f43a8d5f3677",
+    "name": "Nilfgaardian Greaves",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 6.0,
+      "cost": 850.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "heavy",
+      "stoppingPower": 30.0,
+      "availability": "R",
+      "enhancements": 2.0,
+      "effectText": "",
+      "coverage": [
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 0,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "2c3e0e61724869dd",
+    "name": "Leather Shield",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 50.0,
+      "carried": true,
+      "equipped": false,
+      "category": "shield",
+      "armorClass": "light",
+      "reliability": 4.0,
+      "maxReliability": 4.0,
+      "availability": "E",
+      "effectText": "",
+      "ev": 0.0,
+      "skill": "melee",
+      "hands": 1,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "8cf1edd6363d2bad",
+    "name": "Steel Buckler",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 150.0,
+      "carried": true,
+      "equipped": false,
+      "category": "shield",
+      "armorClass": "light",
+      "reliability": 6.0,
+      "maxReliability": 6.0,
+      "availability": "C",
+      "effectText": "",
+      "ev": 0.0,
+      "skill": "melee",
+      "hands": 1,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "5c880f51dfaad54e",
+    "name": "Temerian Shield",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 225.0,
+      "carried": true,
+      "equipped": false,
+      "category": "shield",
+      "armorClass": "light",
+      "reliability": 8.0,
+      "maxReliability": 8.0,
+      "availability": "C",
+      "effectText": "",
+      "ev": 0.0,
+      "skill": "melee",
+      "hands": 1,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "66d800a85813b066",
+    "name": "Skellige Raider Shield",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 325.0,
+      "carried": true,
+      "equipped": false,
+      "category": "shield",
+      "armorClass": "medium",
+      "reliability": 10.0,
+      "maxReliability": 10.0,
+      "availability": "P",
+      "effectText": "",
+      "ev": 0.0,
+      "skill": "melee",
+      "hands": 1,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "3718c75a026a4c9c",
+    "name": "Kaedweni Shield",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.5,
+      "cost": 400.0,
+      "carried": true,
+      "equipped": false,
+      "category": "shield",
+      "armorClass": "medium",
+      "reliability": 14.0,
+      "maxReliability": 14.0,
+      "availability": "P",
+      "effectText": "",
+      "ev": 0.0,
+      "skill": "melee",
+      "hands": 1,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "7fc3494735d7d912",
+    "name": "Steel Kite Shield",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 400.0,
+      "carried": true,
+      "equipped": false,
+      "category": "shield",
+      "armorClass": "medium",
+      "reliability": 16.0,
+      "maxReliability": 16.0,
+      "availability": "C",
+      "effectText": "",
+      "ev": 0.0,
+      "skill": "melee",
+      "hands": 1,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 1,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "0dbd18a25fef0df7",
+    "name": "Pavise",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 500.0,
+      "carried": true,
+      "equipped": false,
+      "category": "shield",
+      "armorClass": "heavy",
+      "reliability": 20.0,
+      "maxReliability": 20.0,
+      "availability": "P",
+      "effectText": "Full Cover",
+      "ev": 1.0,
+      "skill": "melee",
+      "hands": 1,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "properties": {
+        "fullCover": true
+      },
+      "description": "<p>Full Cover</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 1,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "4eec795567916c90",
+    "name": "Nilfgaardian Pavise",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 600.0,
+      "carried": true,
+      "equipped": false,
+      "category": "shield",
+      "armorClass": "heavy",
+      "reliability": 25.0,
+      "maxReliability": 25.0,
+      "availability": "R",
+      "effectText": "Full Cover See Side Bar",
+      "ev": 1.0,
+      "skill": "melee",
+      "hands": 1,
+      "properties": {
+        "fullCover": true,
+        "selfStanding": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 80,
+      "description": "<p>Full Cover See Side Bar</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 81,
+          "table": 1,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "d9b702b690fb997c",
+    "name": "Halfling Protective Doublet",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 375.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "light",
+      "stoppingPower": 8.0,
+      "availability": "R",
+      "enhancements": 1.0,
+      "effectText": "See Side Bar",
+      "coverage": [
+        "torso",
+        "rightArm",
+        "leftArm"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 84,
+      "properties": {},
+      "description": "<p>See Side Bar</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 85,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "4c38255de4c40fe4",
+    "name": "Gnomish Chain",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 975.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "light",
+      "stoppingPower": 10.0,
+      "availability": "R",
+      "enhancements": 1.0,
+      "effectText": "Resistance: Slash",
+      "coverage": [
+        "head",
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 84,
+      "properties": {},
+      "description": "<p>Resistance: Slash</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 85,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "2ad3a4571f1a08db",
+    "name": "Dwarven Cloak",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 1400.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "medium",
+      "stoppingPower": 16.0,
+      "availability": "R",
+      "enhancements": 1.0,
+      "effectText": "",
+      "coverage": [
+        "head",
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 0.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 84,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 85,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "dcc3c7d367a6f913",
+    "name": "Scoia’tael Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 12.0,
+      "cost": 2325.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "medium",
+      "stoppingPower": 20.0,
+      "availability": "R",
+      "enhancements": 2.0,
+      "effectText": "See Side Bar",
+      "coverage": [
+        "head",
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 1.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 84,
+      "properties": {},
+      "description": "<p>See Side Bar</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 85,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "00e51ce3dbe379c0",
+    "name": "Gnomish Dragoon Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 20.0,
+      "cost": 2850.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "heavy",
+      "stoppingPower": 25.0,
+      "availability": "R",
+      "enhancements": 2.0,
+      "effectText": "Resistance: Slash Resistance: Piercing See Side Bar",
+      "coverage": [
+        "head",
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 84,
+      "properties": {},
+      "description": "<p>Resistance: Slash Resistance: Piercing See Side Bar</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 85,
+          "table": 1,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "bbfa3a112b4e8608",
+    "name": "Mahakaman Plate Armor",
+    "type": "armor",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 30.0,
+      "cost": 3525.0,
+      "carried": true,
+      "equipped": false,
+      "armorClass": "heavy",
+      "stoppingPower": 30.0,
+      "availability": "R",
+      "enhancements": 3.0,
+      "effectText": "Resistance: Slash Resistance: Bludgeon Resistance: Piercing",
+      "coverage": [
+        "head",
+        "torso",
+        "rightArm",
+        "leftArm",
+        "rightLeg",
+        "leftLeg"
+      ],
+      "ev": 2.0,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 84,
+      "properties": {},
+      "description": "<p>Resistance: Slash Resistance: Bludgeon Resistance: Piercing</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 85,
+          "table": 1,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "06d7ea4b8ff4bad2",
+    "name": "Gnomish Buckler",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 450.0,
+      "carried": true,
+      "equipped": false,
+      "category": "shield",
+      "armorClass": "light",
+      "reliability": 15.0,
+      "maxReliability": 15.0,
+      "availability": "R",
+      "effectText": "",
+      "ev": 0.0,
+      "skill": "melee",
+      "hands": 1,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 84,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 85,
+          "table": 2,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "6edd1eacc7234428",
+    "name": "Elven Shield",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 700.0,
+      "carried": true,
+      "equipped": false,
+      "category": "shield",
+      "armorClass": "medium",
+      "reliability": 25.0,
+      "maxReliability": 25.0,
+      "availability": "R",
+      "effectText": "",
+      "ev": 0.0,
+      "skill": "melee",
+      "hands": 1,
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 84,
+      "properties": {},
+      "description": "<p></p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 85,
+          "table": 2,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "615e0751ef0e293a",
+    "name": "Mahakaman Pavise",
+    "type": "shield",
+    "img": "icons/svg/shield.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.5,
+      "cost": 1050.0,
+      "carried": true,
+      "equipped": false,
+      "category": "shield",
+      "armorClass": "heavy",
+      "reliability": 35.0,
+      "maxReliability": 35.0,
+      "availability": "R",
+      "effectText": "See Side Bar",
+      "ev": 1.0,
+      "skill": "melee",
+      "hands": 1,
+      "properties": {
+        "parrying": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 84,
+      "description": "<p>See Side Bar</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 85,
+          "table": 2,
+          "row": 6
+        }
+      }
+    }
+  }
+]

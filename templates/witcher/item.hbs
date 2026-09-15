@@ -1,0 +1,12 @@
+<form class="witcher-sheet" autocomplete="off">
+  <header class="witcher-header"><img class="portrait" src="{{item.img}}" data-edit="img" alt="Item"><div class="identity"><p class="eyebrow">THE WITCHER · {{item.type}}</p><input class="actor-name" name="name" value="{{item.name}}" aria-label="Item name"><p>{{system.source}} · p. {{system.page}}</p></div></header>
+  <h2>Inventory</h2><div class="field-grid">{{{common}}}</div>
+  <h2>Characteristics</h2><div class="field-grid">{{{details}}}</div>
+  {{#if armorLocations}}<h2>Current stopping power by location</h2><div class="field-grid">{{#each armorLocations}}<label class="witcher-field"><span>{{label}}</span><input type="number" name="system.sp.{{id}}" min="0" value="{{value}}"></label>{{/each}}</div>{{/if}}
+  {{#if materials}}<h2>Recipe components</h2><table><thead><tr><th>Component / substance</th><th>Units</th></tr></thead><tbody>{{#each materials}}<tr><td>{{name}}</td><td>{{quantity}}</td></tr>{{/each}}</tbody></table>{{/if}}
+  {{#if properties}}<details><summary>Weapon and equipment properties</summary><div class="field-grid">{{{properties}}}</div></details>{{/if}}
+  <h2>Effect</h2><textarea name="system.effectText" rows="6">{{system.effectText}}</textarea>
+  <h2>Description</h2><textarea name="system.description" rows="5">{{system.description}}</textarea>
+  <label>Notes<textarea name="system.notes" rows="4">{{system.notes}}</textarea></label>
+  <div class="field-grid"><label class="witcher-field">Source<input name="system.source" value="{{system.source}}"></label><label class="witcher-field">Printed page<input type="number" name="system.page" value="{{system.page}}"></label></div>
+</form>

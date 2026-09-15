@@ -1,4 +1,3 @@
-package-lock.json
 
 # macOS
 .DS_Store
@@ -55,3 +54,5 @@ _bmad-output/
 # Design artifacts (UX, prototypes, WDS output)
 design-artifacts/
 __pycache__/
+dist/
+.pack-build/

@@ -1,0 +1,3656 @@
+[
+  {
+    "_id": "5aa9d671d64687e3",
+    "name": "Ashes",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 1.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "E",
+      "forageLocation": "Fires & burned items",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 10.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "94296f282bf1467d",
+    "name": "Coal",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 1.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Fires, mountains or underground",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 14.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "b5ef9793e3daefa5",
+    "name": "Cotton",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 1.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Fields & plantations",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "7713e1e2548468b3",
+    "name": "Double Woven Linen",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 22.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "14ec6e54b1f872bd",
+    "name": "Glass",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 5.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Bought",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "4adcb07dd0cdde0c",
+    "name": "Hardened Timber",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 16.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "fc95a0edf7664732",
+    "name": "Linen",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 9.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "e0c8dcf11edd53cb",
+    "name": "Oil",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 3.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "667b6343a4d087d3",
+    "name": "Resin",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 2.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Forests",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 10.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "56073d601f915793",
+    "name": "Silk",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 50.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Bought",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "41368eb3e1c0fcf9",
+    "name": "Thread",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 3.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "21362830ba2ae10c",
+    "name": "Timber",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 3.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "E",
+      "forageLocation": "Forests",
+      "forageQuantity": "2d6 Units",
+      "forageDC": 8.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "0fbb63b840e554c8",
+    "name": "Wax",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 2.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Forests & fields",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 12.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 0,
+          "row": 13
+        }
+      }
+    }
+  },
+  {
+    "_id": "26a0bbe2b463e5fa",
+    "name": "Beast Bones",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.0,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Found on monsters & beasts",
+      "forageQuantity": "Variable",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "1857bbbb9c83d2d7",
+    "name": "Cow Hide",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 10.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Bought",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "7bfdf100a44b221e",
+    "name": "Draconid Leather",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 58.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "feeb0db825b12feb",
+    "name": "Draconid Scales",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 30.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on wyverns",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "19ac2c21a420c176",
+    "name": "Feathers",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 4.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "E",
+      "forageLocation": "Found on birds",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "dab08d4e2480e46e",
+    "name": "Hardened Leather",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 48.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "85baebfcb3f541f1",
+    "name": "Leather",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 28.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "670679b683d229b5",
+    "name": "Lyrian Leather",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 60.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 1,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "09273b0674e3100a",
+    "name": "Wolf Hide",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 3.0,
+      "cost": 14.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Found on wolves",
+      "forageQuantity": "3 Units",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 128
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 129,
+          "table": 1,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "42a95d62a1a9334d",
+    "name": "Darkening Oil",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 24.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Forests",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 16.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "10ecb4620792c491",
+    "name": "Drake Oil",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 45.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Rivers & coasts",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 16.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "c78df72a18a2e0a0",
+    "name": "Ester Grease",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Forests & fields",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 14.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "e0edaa46517d0006",
+    "name": "Etching Acid",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 2.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Caves & mountains",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 14.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "e13821c5ce96c17f",
+    "name": "Fifth Essence",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 82.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Places of Power, mages & fiends",
+      "forageQuantity": "Variable",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "20a45e4f2ab5191b",
+    "name": "Ogre Wax",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 10.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Caves",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 14.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "f97c60ecf8b97b34",
+    "name": "Sharpening Grit",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 32.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Mountains & caves",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 16.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "923bf07bae817bca",
+    "name": "Tanning Herbs",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 3.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Fields & forests",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 14.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "7d20fa52687518c0",
+    "name": "Dark Iron",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 52.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Mountains & underground",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 18.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "1568a33e56ac9aaa",
+    "name": "Dark Steel",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 82.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "401263515f571e6f",
+    "name": "Dimeritium",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 240.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "01cc12de11206029",
+    "name": "Gemstone",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 100.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Mountains & underground",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 24.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "1166ff0a035bcd59",
+    "name": "Glowing Ore",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 80.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Mountains & underground",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 20.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "b756402b6c1de6c6",
+    "name": "Gold",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 85.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Mountains & underground",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 18.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "4fce202994cbfec2",
+    "name": "Iron",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 30.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Mountains & underground",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 16.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "ce8cdfefbeadd3bd",
+    "name": "Mahakaman Dimeritium",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 300.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "cf9fa9f0ad5f4ffd",
+    "name": "Mahakaman Steel",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 114.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "8883731e72bfeb9c",
+    "name": "Meteorite",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 98.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Anywhere above ground",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 24.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "fd49e51eda95d166",
+    "name": "River Clay",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 5.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Rivers or shores",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 14.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "9664169803f37aea",
+    "name": "Silver",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 72.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Mountains & underground",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 16.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 12
+        }
+      }
+    }
+  },
+  {
+    "_id": "beba339c616a1c68",
+    "name": "Steel",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 48.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 13
+        }
+      }
+    }
+  },
+  {
+    "_id": "a5ddbfa55a9c3d7d",
+    "name": "Stone",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 4.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "E",
+      "forageLocation": "Everywhere",
+      "forageQuantity": "2d6 Units",
+      "forageDC": 8.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 14
+        }
+      }
+    }
+  },
+  {
+    "_id": "c42ba0fcbe73c64f",
+    "name": "Tretogor Steel",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 64.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Bought or crafted",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 15
+        }
+      }
+    }
+  },
+  {
+    "_id": "48466a3639e9decb",
+    "name": "Zerrikanian Powder",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 30.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Mountains or underground",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 18.0,
+      "substance": "",
+      "category": "crafting",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 129
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 130,
+          "table": 1,
+          "row": 16
+        }
+      }
+    }
+  },
+  {
+    "_id": "0963468d51234fca",
+    "name": "Balisse Fruit",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Fields",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Vitriol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "7e6f3575e7f01e15",
+    "name": "Barley",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 9.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Fields",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Vitriol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "53d977936af12779",
+    "name": "Calcium Equum",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 12.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Mountains & underground",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Vitriol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "f81116d6da50fa8f",
+    "name": "Crow’s Eye",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 17.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Fields & forests",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Vitriol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "47ba63f50017b207",
+    "name": "Ghoul Claw",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 60.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on ghouls",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Vitriol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "573a512dc6fa50fc",
+    "name": "Nekker Teeth",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 30.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Found on nekkers",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Vitriol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "6c6dd7dcd505c7f6",
+    "name": "Sewant Mushrooms",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 17.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Caves",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Vitriol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "bd29956ab7fdf5af",
+    "name": "Troll Hide",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 4.5,
+      "cost": 147.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on rock trolls",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Vitriol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "00020b4866d72e15",
+    "name": "White Myrtle Petals",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Fields",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Vitriol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "26c2ffbc358bb0cb",
+    "name": "Celandine",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Fields & Forests",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Rebis",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "65d0acd854f62a97",
+    "name": "Drowner Brain",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 80.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Found on drowners",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Rebis",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "f40ef212adc631a2",
+    "name": "Han Fiber",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 17.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Fields",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Rebis",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "d6cfa8afda887cec",
+    "name": "Hag Teeth",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 90.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on grave hags",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Rebis",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "9a030471af32d0a9",
+    "name": "Lunar Shards",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 91.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Mountains or Underground",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 18.0,
+      "substance": "Rebis",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "2522f370f7d2b012",
+    "name": "Nekker Heart",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 30.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Found on nekker",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Rebis",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "42679cd8fafa8cad",
+    "name": "Wine Stone",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 88.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Breweries",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 18.0,
+      "substance": "Rebis",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "ac3b472bc54d8383",
+    "name": "Allspice Root",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 18.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Fields",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Aether",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 2,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "ad664cf0d202fd30",
+    "name": "Berbercane Fruit",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 9.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Mountains & swamps",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Aether",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 2,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "01abaec9df61d632",
+    "name": "Essence of Wraith",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 95.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on wraiths",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Aether",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 2,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "5d8bf667547349c4",
+    "name": "Ginatia Petals",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 17.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Fields",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Aether",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 2,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "c9985ddb7dd5e863",
+    "name": "Hellebore Petals",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 19.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Forests",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Aether",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 2,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "9282ddc47f6c4f62",
+    "name": "Pearl",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 100.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Ocean floor & shore",
+      "forageQuantity": "1d6/3 Units",
+      "forageDC": 20.0,
+      "substance": "Aether",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 2,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "271b22eef183c832",
+    "name": "Quicksilver Solution",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 77.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Mountains or underground",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 18.0,
+      "substance": "Aether",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 2,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "6bfb3e7e3fb5add9",
+    "name": "Scleroderm",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 5.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "E",
+      "forageLocation": "Forests & caves",
+      "forageQuantity": "2d6 Units",
+      "forageDC": 10.0,
+      "substance": "Aether",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 143
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 144,
+          "table": 2,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "de2997418327cb74",
+    "name": "Balisse Leaves",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Fields",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Quebrith",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "c4ab6674b96a45e9",
+    "name": "Ducal Water",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 20.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Mountains & underground",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Quebrith",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "d4aa53bf077daec8",
+    "name": "Fool’s Parsley",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 2.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "E",
+      "forageLocation": "Fields",
+      "forageQuantity": "2d6 Units",
+      "forageDC": 10.0,
+      "substance": "Quebrith",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "724a68cd3f394df1",
+    "name": "Ghoul Marrow",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 80.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on ghouls",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Quebrith",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "41093a380ef1f336",
+    "name": "Honeysuckle",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 21.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Fields",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Quebrith",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "60877d774858d3f1",
+    "name": "Optima Mater",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 100.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Mountains & underground",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 18.0,
+      "substance": "Quebrith",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "a31d6efeab0a26a8",
+    "name": "Sulfur",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 14.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Mountains & underground",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Quebrith",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "902c62bb41ddc2f0",
+    "name": "Cortinarius",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 18.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Forests",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Hydragenum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "fdf41f7037621078",
+    "name": "Essence of Water",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 46.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on drowners & sirens",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Hydragenum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "3cffa287f08573b0",
+    "name": "Infused Dust",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 146.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on wraiths, noon wraiths, griffins, & golems",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Hydragenum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "37cd90eae59c4a8c",
+    "name": "Mistletoe",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Fields & forests",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Hydragenum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "cd0c148b74ad18e5",
+    "name": "Nekker Claw",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 40.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Found on nekkers",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Hydragenum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "324277891d410821",
+    "name": "Troll Liver",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 87.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on rock trolls",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Hydragenum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "d6745615cb0324c1",
+    "name": "Werewolf Saliva",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 60.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on werewolves",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Hydragenum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "60ce62016f2c127d",
+    "name": "Chitin",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 5.0,
+      "cost": 106.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on arachasae & endrega",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Vermilion",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 2,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "8c17e44369c0fb09",
+    "name": "Endrega Saliva",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 38.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Found on endrega",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Vermilion",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 2,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "ba2ce9fb2f8141c7",
+    "name": "Griffin Egg",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 150.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on griffins or in griffin nests",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Vermilion",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 2,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "5a4d65502c09b8b0",
+    "name": "Griffin Feathers",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 148.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on griffins",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Vermilion",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 2,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "8240e377c8a4484f",
+    "name": "Mandrake Root",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 65.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Fields & forests",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 18.0,
+      "substance": "Vermilion",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 2,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "ef7df20154849b22",
+    "name": "Phosphorus",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 20.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Mountains & underground",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Vermilion",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 2,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "01020314f04fa997",
+    "name": "Wolfsbane",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 9.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Fields, forests & mountains",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Vermilion",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 144
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 145,
+          "table": 2,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "9f35b974a19a9b15",
+    "name": "Fiend’s Eye",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 149.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on fiends",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Sol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "ad856a14fe8840d3",
+    "name": "Light Essence",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 43.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Found on noon wraiths",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Sol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "bb6df9380604b690",
+    "name": "Siren Vocal Chords",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 65.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on sirens",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Sol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "c5563dc2e39f855a",
+    "name": "Vampire Saliva",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 155.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on katakans",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Sol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "eb05f522f7a40395",
+    "name": "Verbena",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 18.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Fields",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Sol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "18e86ece2924bd0c",
+    "name": "Wolf’s Aloe Leaves",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 39.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "The Blue Mountains",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 15.0,
+      "substance": "Sol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "20d6e3f6eb574b56",
+    "name": "Wyvern Eyes",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 75.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on wyverns",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Sol",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "f7873f988d25cebc",
+    "name": "Arachas Venom",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 76.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on arachasae",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Caelum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "606ca730bed230b3",
+    "name": "Bryonia",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Mountains & cities",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Caelum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "c386c4a70f01410d",
+    "name": "Drowner Tongue",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 86.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on drowners",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Caelum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "7d6a64b9977d286b",
+    "name": "Fiend Dung",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 106.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found in fiend territory or in fiends",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 20.0,
+      "substance": "Caelum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "5dd01cfb3b706dad",
+    "name": "Grave Hag Tongue",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 80.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on grave hags",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Caelum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "eb36885df799a580",
+    "name": "Green Mold",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 8.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Caves",
+      "forageQuantity": "1d10 Units",
+      "forageDC": 12.0,
+      "substance": "Caelum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "b6cb880e902793fa",
+    "name": "Vampire Teeth",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 150.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on katakans",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Caelum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "3a3ea9d386fe5c66",
+    "name": "Venom Extract",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 38.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Found on ghouls, grave hags, endrega, arachasae, wyverns",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Caelum",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 1,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "b2146c0177e055a6",
+    "name": "Arachas Eyes",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 95.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on arachasae",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Fulgur",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 2,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "fbb64a85883deefb",
+    "name": "Dog Tallow",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 10.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "forageLocation": "Found on dogs & wolves",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Fulgur",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 2,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "db17d41c6a899958",
+    "name": "Dwarven Immortelle",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 75.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Underground",
+      "forageQuantity": "1d6/2 Units",
+      "forageDC": 18.0,
+      "substance": "Fulgur",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 2,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "78b3fba3d8cab13b",
+    "name": "Endrega Embryo",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.5,
+      "cost": 55.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found in endrega nests",
+      "forageQuantity": "1d6",
+      "forageDC": 0,
+      "substance": "Fulgur",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 2,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "009ba5f774d4e652",
+    "name": "Golem Heart",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 1.0,
+      "cost": 167.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on golems",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Fulgur",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 2,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "7afcfc437927f36c",
+    "name": "Grave Hag Ear",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 134.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on grave hags",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Fulgur",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 2,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "61db2a5755cfb545",
+    "name": "Specter Dust",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0,
+      "cost": 30.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "forageLocation": "Found on wraiths",
+      "forageQuantity": "1d6 Units",
+      "forageDC": 0,
+      "substance": "Fulgur",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 2,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "fb9d5896df33bc3a",
+    "name": "Wyvern Egg",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 2.0,
+      "cost": 150.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "forageLocation": "Found on wyverns",
+      "forageQuantity": "N/A",
+      "forageDC": 0,
+      "substance": "Fulgur",
+      "category": "alchemy",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 145
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 146,
+          "table": 2,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "5f8330caa5ff5a5f",
+    "name": "Vitriol",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "substance": "Vitriol",
+      "category": "pureSubstance",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 143,
+          "table": -1,
+          "row": 0
+        }
+      }
+    }
+  },
+  {
+    "_id": "d4deb507003dc7fc",
+    "name": "Rebis",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "substance": "Rebis",
+      "category": "pureSubstance",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 143,
+          "table": -1,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "1ff6ae8af75e840b",
+    "name": "Aether",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "substance": "Aether",
+      "category": "pureSubstance",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 143,
+          "table": -1,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "3265b8c19385da25",
+    "name": "Quebrith",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "substance": "Quebrith",
+      "category": "pureSubstance",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 143,
+          "table": -1,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "b8cf7ea4b53b3bcb",
+    "name": "Hydragenum",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "substance": "Hydragenum",
+      "category": "pureSubstance",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 143,
+          "table": -1,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "7395b2ecdf7bee3f",
+    "name": "Vermilion",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "substance": "Vermilion",
+      "category": "pureSubstance",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 143,
+          "table": -1,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "38f05a30d02dd7ec",
+    "name": "Sol",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "substance": "Sol",
+      "category": "pureSubstance",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 143,
+          "table": -1,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "8017676f179297d8",
+    "name": "Caelum",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "substance": "Caelum",
+      "category": "pureSubstance",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 143,
+          "table": -1,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "1deb990d5b7ea7fa",
+    "name": "Fulgur",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 0,
+      "carried": true,
+      "equipped": false,
+      "substance": "Fulgur",
+      "category": "pureSubstance",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 142
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 143,
+          "table": -1,
+          "row": 8
+        }
+      }
+    }
+  }
+]

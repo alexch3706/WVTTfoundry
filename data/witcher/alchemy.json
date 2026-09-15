@@ -1,0 +1,684 @@
+[
+  {
+    "_id": "e81723d2656410f1",
+    "name": "Acid Solution",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 56.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "effectText": "Acid solution does 2d6 damage to any living creature it is thrown on and does 1d6/2 ablation damage to weapons and armor. Throwing it is an Athletics attack with a range equal to your BODYx2m, and the acid splatters in a 2m cone directly away from where it lands.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 87,
+      "properties": {},
+      "description": "<p>Acid solution does 2d6 damage to any living creature it is thrown on and does 1d6/2 ablation damage to weapons and armor. Throwing it is an Athletics attack with a range equal to your BODYx2m, and the acid splatters in a 2m cone directly away from where it lands.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 88,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "2ff0d46f046d6421",
+    "name": "Adda’s Tomb",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 18.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "A dose of Adda’s tomb can be poured onto perishable foods or even corpses. Treated perishables will not begin to rot or spoil for 1d10 days. Preserving a human-sized body requires 2 doses.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 87,
+      "properties": {},
+      "description": "<p>A dose of Adda’s tomb can be poured onto perishable foods or even corpses. Treated perishables will not begin to rot or spoil for 1d10 days. Preserving a human-sized body requires 2 doses.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 88,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "8cc88c251551c8ea",
+    "name": "Alchemical Adhesive",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 28.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "Alchemical adhesive can be thrown or poured onto a place or person. After 2 rounds the solution will harden, permanently sticking objects together, and sticking people to one another or to objects. The objects must be pried apart with a DC:16 Physique check. Throwing it is an Athletics attack with a range equal to your BODYx2m.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 87,
+      "properties": {},
+      "description": "<p>Alchemical adhesive can be thrown or poured onto a place or person. After 2 rounds the solution will harden, permanently sticking objects together, and sticking people to one another or to objects. The objects must be pried apart with a DC:16 Physique check. Throwing it is an Athletics attack with a range equal to your BODYx2m.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 88,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "80925b840bddfd85",
+    "name": "Base Powder",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 18.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "Base powder counteracts the effects of acid, negating one dose of acid solution per dose of base powder used. Base powder can also negate damage from a torn stomach critical wound.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 87,
+      "properties": {},
+      "description": "<p>Base powder counteracts the effects of acid, negating one dose of acid solution per dose of base powder used. Base powder can also negate damage from a torn stomach critical wound.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 88,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "81216c2412581fe1",
+    "name": "Black Venom",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 45.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "Black venom immediately poisons a target if it gets into their bloodstream or is ingested. A DC:16 Endurance check ends the effect, but the target can become poisoned again if they consume more black venom or are cut by a poisoned weapon.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 87,
+      "properties": {},
+      "description": "<p>Black venom immediately poisons a target if it gets into their bloodstream or is ingested. A DC:16 Endurance check ends the effect, but the target can become poisoned again if they consume more black venom or are cut by a poisoned weapon.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 88,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "38de84187865930e",
+    "name": "Bredan’s Fury",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 95.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "R",
+      "effectText": "Bredan’s fury explodes when exposed to air, doing 2d6 damage to every body location of any creature within 2m. Throwing it is a an Athletics attack with a range equal to your BODYx2m.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 87,
+      "properties": {},
+      "description": "<p>Bredan’s fury explodes when exposed to air, doing 2d6 damage to every body location of any creature within 2m. Throwing it is a an Athletics attack with a range equal to your BODYx2m.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 88,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "f56b0f497851f374",
+    "name": "Chloroform",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 36.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "Chloroform forces anyone who breathes it to make a Stun save at -2 or be knocked unconcious until they do make the save. Using it usually requires a Melee attack with a cloth soaked in the chloroform. It can also be poured into a vessel. Each bottle contains 25 doses.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 87,
+      "properties": {},
+      "description": "<p>Chloroform forces anyone who breathes it to make a Stun save at -2 or be knocked unconcious until they do make the save. Using it usually requires a Melee attack with a cloth soaked in the chloroform. It can also be poured into a vessel. Each bottle contains 25 doses.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 88,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "f2010902d430e41a",
+    "name": "Clotting Powder",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 20.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "Applying clotting powder to a wound stops the bleeding effect for 2d10 rounds. After the rounds elapse the wound begins bleeding again. You can then apply another dose.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 87,
+      "properties": {},
+      "description": "<p>Applying clotting powder to a wound stops the bleeding effect for 2d10 rounds. After the rounds elapse the wound begins bleeding again. You can then apply another dose.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 88,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "5a2bd40d9cbf2d7a",
+    "name": "Fisstech",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 80.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "effectText": "Fisstech sends those who snort it or rub it on their gums into a euphoric trance-like state. It is often used as an anesthetic, as it numbs pain. It is highly addictive. After each use, make an Endurance check at DC:18. If you fail, you become addicted. See pg.32 for addiction rules.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 87,
+      "properties": {},
+      "description": "<p>Fisstech sends those who snort it or rub it on their gums into a euphoric trance-like state. It is often used as an anesthetic, as it numbs pain. It is highly addictive. After each use, make an Endurance check at DC:18. If you fail, you become addicted. See pg.32 for addiction rules.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 88,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "c82381346c082e44",
+    "name": "Hallucinogen",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 25.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "Hallucinogen can be thrown on a target within 3m or slipped into a drink. If the target fails a DC:15 Endurance check, they start hallucinating. These hallucinations last for 1d10 rounds.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 87,
+      "properties": {},
+      "description": "<p>Hallucinogen can be thrown on a target within 3m or slipped into a drink. If the target fails a DC:15 Endurance check, they start hallucinating. These hallucinations last for 1d10 rounds.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 88,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "723173cf2abadf19",
+    "name": "Invisible Ink",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 15.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "Invisible ink allows you to write messages that can only be read when exposed to heat for 1 turn.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 87,
+      "properties": {},
+      "description": "<p>Invisible ink allows you to write messages that can only be read when exposed to heat for 1 turn.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 88,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  },
+  {
+    "_id": "1547fb3f0b1881b6",
+    "name": "Numbing Herbs",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 12.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "E",
+      "effectText": "Numbing herbs placed in a wound relieve pain, lowering negatives from critical wounds by 2. Numbing herbs also lessen penalties from being near death by 2. Numbing herbs work for 2d10 rounds, and then you can apply another dose.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 88,
+      "properties": {},
+      "description": "<p>Numbing herbs placed in a wound relieve pain, lowering negatives from critical wounds by 2. Numbing herbs also lessen penalties from being near death by 2. Numbing herbs work for 2d10 rounds, and then you can apply another dose.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 89,
+          "table": 0,
+          "row": 1
+        }
+      }
+    }
+  },
+  {
+    "_id": "94b0a060b4a7b95b",
+    "name": "Pantagran’s Elixir",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 67.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "effectText": "Consuming a draught of Pantagran’s elixir brings delirious happiness. This effect lasts for 1d6/2 hours and leaves the imbiber incredibly suceptible to Persuasion, Charisma, and Seduction, giving them a -2 to Resist Coercion.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 88,
+      "properties": {},
+      "description": "<p>Consuming a draught of Pantagran’s elixir brings delirious happiness. This effect lasts for 1d6/2 hours and leaves the imbiber incredibly suceptible to Persuasion, Charisma, and Seduction, giving them a -2 to Resist Coercion.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 89,
+          "table": 0,
+          "row": 2
+        }
+      }
+    }
+  },
+  {
+    "_id": "98ca22124662d1ad",
+    "name": "Perfume Potion",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 76.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "effectText": "Someone who consumes a draught of perfume potion must make a DC:16 Endurance check. Failure causes intoxication for 1d10 Hours. This intoxication can only be undone by magic or wives’ tears potion. Perfume potion has a Toxicity of 25%.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 88,
+      "properties": {},
+      "description": "<p>Someone who consumes a draught of perfume potion must make a DC:16 Endurance check. Failure causes intoxication for 1d10 Hours. This intoxication can only be undone by magic or wives’ tears potion. Perfume potion has a Toxicity of 25%.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 89,
+          "table": 0,
+          "row": 3
+        }
+      }
+    }
+  },
+  {
+    "_id": "99051fc5e5acf487",
+    "name": "Poisoner’s Friend",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 16.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "Poisoner’s friend is a clear liquid that can be poured into food or drink to give it a potent savory or sweet taste. This raises the DC to detect poison to 20.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 88,
+      "properties": {},
+      "description": "<p>Poisoner’s friend is a clear liquid that can be poured into food or drink to give it a potent savory or sweet taste. This raises the DC to detect poison to 20.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 89,
+          "table": 0,
+          "row": 4
+        }
+      }
+    }
+  },
+  {
+    "_id": "9559a7901a09d993",
+    "name": "Quick Fire",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 45.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "effectText": "A dose of quick fire poured on a person, surface, or object, dries quickly. Anything so treated is extremely flammable. There’s a 50% chance it will ignite each time it’s exposed to flame or sparks of any kind.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 88,
+      "properties": {},
+      "description": "<p>A dose of quick fire poured on a person, surface, or object, dries quickly. Anything so treated is extremely flammable. There’s a 50% chance it will ignite each time it’s exposed to flame or sparks of any kind.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 89,
+          "table": 0,
+          "row": 5
+        }
+      }
+    }
+  },
+  {
+    "_id": "35dbe87c2c866c1e",
+    "name": "Smelling Salts",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 25.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "Smelling salts can be placed under an unconcious or stunned person, or creature’s nose to immediately bring them out of their stunned state. Smelling salts can be used 25 times.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 88,
+      "properties": {},
+      "description": "<p>Smelling salts can be placed under an unconcious or stunned person, or creature’s nose to immediately bring them out of their stunned state. Smelling salts can be used 25 times.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 89,
+          "table": 0,
+          "row": 6
+        }
+      }
+    }
+  },
+  {
+    "_id": "9ee38480a8081003",
+    "name": "Sterilizing Fluid",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 22.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "Sterilizing fluid poured on a wound raises the patient’s natural healing rate by 2 points and lessens the number of days a critical wound takes to heal by 2. Multiple uses of sterilizing fluid don’t stack.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 88,
+      "properties": {},
+      "description": "<p>Sterilizing fluid poured on a wound raises the patient’s natural healing rate by 2 points and lessens the number of days a critical wound takes to heal by 2. Multiple uses of sterilizing fluid don’t stack.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 89,
+          "table": 0,
+          "row": 7
+        }
+      }
+    }
+  },
+  {
+    "_id": "ed1518d35a5b2d31",
+    "name": "Succubus’ Breath",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 20.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "C",
+      "effectText": "A dose of succubus’ breath can be used to aid seduction. Used on the skin, it gives you a +2 to Seduction. If poured into someone’s drink, it gives them a -5 to Seduction Resistance. Like black venom, it takes a DC:16 Awareness check to realize there is succubus’ breath in a drink.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 88,
+      "properties": {},
+      "description": "<p>A dose of succubus’ breath can be used to aid seduction. Used on the skin, it gives you a +2 to Seduction. If poured into someone’s drink, it gives them a -5 to Seduction Resistance. Like black venom, it takes a DC:16 Awareness check to realize there is succubus’ breath in a drink.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 89,
+          "table": 0,
+          "row": 8
+        }
+      }
+    }
+  },
+  {
+    "_id": "2d5f49f5e53528eb",
+    "name": "Talgar’s Tears",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 79.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "effectText": "Talgar’s tears immediately freezes anything it is thrown on. If used on weapons, armor, or objects, those items take double ablation damage. Throwing it is an Athletics attack with a range equal to your BODYx2m, and the liquid splatters in a 2m cone directly away from where it lands, freezing anything it hits.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 88,
+      "properties": {},
+      "description": "<p>Talgar’s tears immediately freezes anything it is thrown on. If used on weapons, armor, or objects, those items take double ablation damage. Throwing it is an Athletics attack with a range equal to your BODYx2m, and the liquid splatters in a 2m cone directly away from where it lands, freezing anything it hits.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 89,
+          "table": 0,
+          "row": 9
+        }
+      }
+    }
+  },
+  {
+    "_id": "6830f19c1f245ac5",
+    "name": "Wive’s Tears Potion",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.1,
+      "cost": 56.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "effectText": "Imbibing wives’ tears potion negates the effects of intoxication. Immediately after drinking a dose of wives’ tears potion the imbiber sobers up.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 88,
+      "properties": {},
+      "description": "<p>Imbibing wives’ tears potion negates the effects of intoxication. Immediately after drinking a dose of wives’ tears potion the imbiber sobers up.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 89,
+          "table": 0,
+          "row": 10
+        }
+      }
+    }
+  },
+  {
+    "_id": "f074b3b122ee31e2",
+    "name": "Zerrikanian Fire",
+    "type": "alchemical",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "weight": 0.5,
+      "cost": 65.0,
+      "carried": true,
+      "equipped": false,
+      "availability": "P",
+      "effectText": "Zerrikanian fire immediately sets whatever it touches on fire. Throwing it is an Athletics attack with a range equal to your BODYx2m, and the it splatters in a 2m cone away from where it lands, lighting anyone and anything in that area on fire.",
+      "consumable": true,
+      "category": "alchemical",
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 88,
+      "properties": {},
+      "description": "<p>Zerrikanian fire immediately sets whatever it touches on fire. Throwing it is an Athletics attack with a range equal to your BODYx2m, and the it splatters in a 2m cone away from where it lands, lighting anyone and anything in that area on fire.</p>",
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "pdfPage": 89,
+          "table": 0,
+          "row": 11
+        }
+      }
+    }
+  }
+]
