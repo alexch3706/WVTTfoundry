@@ -1,55 +1,20 @@
-name: CI
-
+name: Witcher V14 checks
 on:
   push:
   pull_request:
-
 permissions:
   contents: read
-
 jobs:
-  test:
+  validate:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - name: Check JavaScript syntax
-        run: find module tests tools -type f \( -name '*.js' -o -name '*.mjs' \) -print0 | sort -z | xargs -0 -n1 node --check
-
-      - name: Validate JSON data
-        run: find . -path './.git' -prune -o -name '*.json' -type f -print0 | xargs -0 -n1 node -e 'JSON.parse(require("node:fs").readFileSync(process.argv[1], "utf8"))'
-
-      - name: Compile Handlebars templates
-        run: npx --yes handlebars@4.7.8 $(find templates -type f -name '*.hbs' -print | sort) -f /tmp/cyberpunk2020-templates.js
-
-      - name: Run combat and UI contract suite
-        run: |
-          node tests/run-combat-fixtures.mjs
-          node --test tests/attack-*.test.mjs tests/saves-manual.test.mjs tests/suppressive-placement-transaction.test.mjs
-          node --test tests/actor-sheet-*.test.mjs
-
-      - name: Validate catalog semantics and safe world migration
-        run: |
-          node --test tests/*catalog*.test.mjs tests/item-contract.test.mjs
-          node tools/catalog.mjs check
-
-      - name: Validate V14 manifest and compendia
-        run: |
-          node tests/system-manifest.test.mjs
-          node tests/pack-compatibility.test.mjs
-
-      - name: Verify generated fixture coverage map
-        run: git diff --exit-code -- tests/combat/fixture-coverage-map.md
-
-      - name: Verify compiled Sass artifact
-        run: |
-          npx --yes sass@1.104.0 --style=compressed --source-map scss/cyberpunk2020-rilerena.scss css/cyberpunk2020-rilerena.css
-          git diff --exit-code -- css/cyberpunk2020-rilerena.css css/cyberpunk2020-rilerena.css.map
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build:packs
+      - run: npm run validate

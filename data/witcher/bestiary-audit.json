@@ -1,0 +1,694 @@
+{
+  "sourceSha256": "2ee43e9a82e7b04281f57db488411fd3d21f471b2a2feedd2905c7e9b7ad8454",
+  "count": 36,
+  "rows": [
+    {
+      "name": "Bandit",
+      "id": "457d92acb05226b4",
+      "pdfPages": [
+        271,
+        272
+      ],
+      "attacks": [
+        "Iron long sword",
+        "Dagger",
+        "Hand crossbow"
+      ],
+      "abilities": [
+        "Hanged Man’s Venom"
+      ]
+    },
+    {
+      "name": "Mage",
+      "id": "54339d5f0d4287d6",
+      "pdfPages": [
+        273,
+        274
+      ],
+      "attacks": [
+        "Iron staff",
+        "Dagger"
+      ],
+      "abilities": [
+        "Spells",
+        "Rituals",
+        "Hexes",
+        "Hanged Man’s Venom",
+        "Dimeritium"
+      ]
+    },
+    {
+      "name": "Scoia’tael Archer",
+      "id": "d6b3cbefed0f6802",
+      "pdfPages": [
+        275,
+        276
+      ],
+      "attacks": [
+        "Hunter’s falchion",
+        "Dagger",
+        "Throwing knives",
+        "Longbow"
+      ],
+      "abilities": [
+        "Ambush Specialist",
+        "Hanged Man’s Venom"
+      ]
+    },
+    {
+      "name": "Drowner",
+      "id": "2e4b9000e7d66051",
+      "pdfPages": [
+        277,
+        278
+      ],
+      "attacks": [
+        "Claws"
+      ],
+      "abilities": [
+        "Feral",
+        "Poison Immunity",
+        "Amphibious",
+        "Impenetrably Dim",
+        "Necrophage Oil",
+        "Fire Vulnerability"
+      ]
+    },
+    {
+      "name": "Ghoul",
+      "id": "b8b935e20613ee6a",
+      "pdfPages": [
+        279,
+        280
+      ],
+      "attacks": [
+        "Claws",
+        "Bite"
+      ],
+      "abilities": [
+        "Pounce",
+        "Fury",
+        "Night Vision",
+        "Feral",
+        "Necrophage Oil"
+      ]
+    },
+    {
+      "name": "Grave Hag",
+      "id": "1f83d8de2ab0cabd",
+      "pdfPages": [
+        281,
+        282
+      ],
+      "attacks": [
+        "Claws",
+        "Bite",
+        "Tongue"
+      ],
+      "abilities": [
+        "Skull Circle",
+        "Command the Undead",
+        "Night Vision",
+        "Necrophage Oil",
+        "Whip Tongue"
+      ]
+    },
+    {
+      "name": "Wraith",
+      "id": "ae3e33762c444917",
+      "pdfPages": [
+        283,
+        284
+      ],
+      "attacks": [
+        "Wraith sword",
+        "Wraith lantern"
+      ],
+      "abilities": [
+        "Fueled By Rage",
+        "Shift",
+        "Teleportation",
+        "Night Vision",
+        "Specter Oil",
+        "Moondust & Yrden"
+      ]
+    },
+    {
+      "name": "Noonwraith",
+      "id": "4dd850d88e0f4ac9",
+      "pdfPages": [
+        285,
+        286
+      ],
+      "attacks": [
+        "Claws",
+        "Dust Devil"
+      ],
+      "abilities": [
+        "Fueled By Rage",
+        "Incorporeal",
+        "High Noon Dance",
+        "Dust Devil",
+        "Specter Oil",
+        "Moondust & Yrden",
+        "Celestial Weakness"
+      ]
+    },
+    {
+      "name": "Wolf",
+      "id": "971a9d2f3e47553a",
+      "pdfPages": [
+        287,
+        288
+      ],
+      "attacks": [
+        "Bite"
+      ],
+      "abilities": [
+        "Scent Tracking",
+        "Night Vision",
+        "Leader",
+        "Beast Oil"
+      ]
+    },
+    {
+      "name": "Warg",
+      "id": "ef40bd8e37e8069c",
+      "pdfPages": [
+        287,
+        288
+      ],
+      "attacks": [
+        "Bite"
+      ],
+      "abilities": [
+        "Scent Tracking",
+        "Night Vision",
+        "Leader",
+        "Beast Oil"
+      ]
+    },
+    {
+      "name": "Werewolf",
+      "id": "a96c80647edde546",
+      "pdfPages": [
+        289,
+        290
+      ],
+      "attacks": [
+        "Claws",
+        "Bite"
+      ],
+      "abilities": [
+        "Regeneration",
+        "Scent Tracking",
+        "Night Vision",
+        "Cursed Oil",
+        "Moondust Bombs"
+      ]
+    },
+    {
+      "name": "Siren",
+      "id": "08494c5667e51fb2",
+      "pdfPages": [
+        291,
+        292
+      ],
+      "attacks": [
+        "Claws",
+        "Tail"
+      ],
+      "abilities": [
+        "Illusion",
+        "Sonic Screech",
+        "Amphibious",
+        "Flight",
+        "Hybrid Oil",
+        "Limited Movement"
+      ]
+    },
+    {
+      "name": "Griffin",
+      "id": "9b81be32baee1f76",
+      "pdfPages": [
+        293,
+        294
+      ],
+      "attacks": [
+        "Claws",
+        "Bite",
+        "Charge"
+      ],
+      "abilities": [
+        "Sonic Screech",
+        "Charge",
+        "Feral",
+        "Flight",
+        "Night Vision",
+        "Hybrid Oil"
+      ]
+    },
+    {
+      "name": "Endrega Worker",
+      "id": "f95b8db0efd4b514",
+      "pdfPages": [
+        295,
+        296
+      ],
+      "attacks": [
+        "Claws"
+      ],
+      "abilities": [
+        "Pounce",
+        "Resistances",
+        "Poison Immunity",
+        "Feral",
+        "Insectoid Oil",
+        "Worker’s Claws"
+      ]
+    },
+    {
+      "name": "Endrega Warrior",
+      "id": "fea9a70aa38ff744",
+      "pdfPages": [
+        295,
+        296
+      ],
+      "attacks": [
+        "Claws",
+        "Tail"
+      ],
+      "abilities": [
+        "Pounce",
+        "Resistances",
+        "Poison Immunity",
+        "Feral",
+        "Insectoid Oil",
+        "Warrior’s Tail"
+      ]
+    },
+    {
+      "name": "Endrega Drone",
+      "id": "ec1a7bf1f6650fd6",
+      "pdfPages": [
+        295,
+        296
+      ],
+      "attacks": [
+        "Claws"
+      ],
+      "abilities": [
+        "Pounce",
+        "Resistances",
+        "Poison Immunity",
+        "Feral",
+        "Insectoid Oil",
+        "Drone’s Quills"
+      ]
+    },
+    {
+      "name": "Arachas",
+      "id": "1f76b4f7cecfc25e",
+      "pdfPages": [
+        297,
+        298
+      ],
+      "attacks": [
+        "Claws",
+        "Webbing"
+      ],
+      "abilities": [
+        "Pounce",
+        "Resistances",
+        "Poison Immunity",
+        "Camouflage",
+        "Webbing",
+        "Feral",
+        "Insectoid Oil",
+        "Soft Spot"
+      ]
+    },
+    {
+      "name": "Golem",
+      "id": "1908fa33754e2485",
+      "pdfPages": [
+        299,
+        300
+      ],
+      "attacks": [
+        "Punch",
+        "Charge"
+      ],
+      "abilities": [
+        "Crushing Force",
+        "Charge",
+        "Constructed",
+        "Resistances",
+        "Elementa Oil",
+        "Electricity Vulnerability",
+        "Dimeritium Bombs"
+      ]
+    },
+    {
+      "name": "Fiend",
+      "id": "e23cd1e7bd88c8e9",
+      "pdfPages": [
+        301,
+        302
+      ],
+      "attacks": [
+        "Claws",
+        "Bite",
+        "Horns",
+        "Charge"
+      ],
+      "abilities": [
+        "Regeneration",
+        "Charge",
+        "Massive Bulk",
+        "Hypnosis",
+        "Feral",
+        "Relict Oil",
+        "Moondust Bombs",
+        "Sensitive Hearing"
+      ]
+    },
+    {
+      "name": "Nekker",
+      "id": "21408f90b2fb2b6c",
+      "pdfPages": [
+        303,
+        304
+      ],
+      "attacks": [
+        "Claws"
+      ],
+      "abilities": [
+        "Leader",
+        "Night Vision",
+        "Ogroid Oil"
+      ]
+    },
+    {
+      "name": "Nekker Chieftain",
+      "id": "db8dcc264453e1ba",
+      "pdfPages": [
+        303,
+        304
+      ],
+      "attacks": [
+        "Claws"
+      ],
+      "abilities": [
+        "Leader",
+        "Night Vision",
+        "Ogroid Oil"
+      ]
+    },
+    {
+      "name": "Rock Troll",
+      "id": "2b275e73224ce345",
+      "pdfPages": [
+        305,
+        306
+      ],
+      "attacks": [
+        "Punch",
+        "Thrown Boulder"
+      ],
+      "abilities": [
+        "Crushing Force",
+        "Thrown Boulders",
+        "Resistances",
+        "Ogroid Oil",
+        "Soft Spot"
+      ]
+    },
+    {
+      "name": "Wyvern",
+      "id": "d41ac7dd9f825a77",
+      "pdfPages": [
+        307,
+        308
+      ],
+      "attacks": [
+        "Claws",
+        "Bite",
+        "Tail barbs",
+        "Spit Venom"
+      ],
+      "abilities": [
+        "Flight",
+        "Spit Venom",
+        "Resistances",
+        "Feral",
+        "Draconid Oil"
+      ]
+    },
+    {
+      "name": "Katakan",
+      "id": "b331be25f86742ff",
+      "pdfPages": [
+        309,
+        310
+      ],
+      "attacks": [
+        "Claws",
+        "Bite"
+      ],
+      "abilities": [
+        "Regeneration",
+        "Invisibility",
+        "Invisible to Magical Scanning",
+        "Telepathy",
+        "Night Vision",
+        "Vampire Oil",
+        "Black Blood Potion",
+        "Celestial Weakness",
+        "Fire Vulnerability",
+        "Blood Transference"
+      ]
+    },
+    {
+      "name": "Endrega Queen",
+      "id": "f1233a256e78752d",
+      "pdfPages": [
+        295,
+        297,
+        298
+      ],
+      "attacks": [
+        "Claws",
+        "Webbing"
+      ],
+      "abilities": [
+        "Pounce",
+        "Resistances",
+        "Poison Immunity",
+        "Camouflage",
+        "Webbing",
+        "Feral",
+        "Insectoid Oil",
+        "Soft Spot"
+      ]
+    },
+    {
+      "name": "Cat",
+      "id": "722f932ec776d939",
+      "pdfPages": [
+        311,
+        311
+      ],
+      "attacks": [
+        "Claw",
+        "Bite"
+      ],
+      "abilities": [
+        "Night Vision",
+        "Pounce",
+        "Magically Attuned",
+        "Feral",
+        "Beast Oil"
+      ]
+    },
+    {
+      "name": "Dog",
+      "id": "7565c9f299524893",
+      "pdfPages": [
+        311,
+        311
+      ],
+      "attacks": [
+        "Bite"
+      ],
+      "abilities": [
+        "Scent Tracking",
+        "Feral",
+        "Beast Oil"
+      ]
+    },
+    {
+      "name": "Bird",
+      "id": "7ac58149c0a29df1",
+      "pdfPages": [
+        312,
+        312
+      ],
+      "attacks": [
+        "Claw"
+      ],
+      "abilities": [
+        "Flight",
+        "Feral",
+        "Beast Oil"
+      ]
+    },
+    {
+      "name": "Serpent",
+      "id": "87e4f177ef97c222",
+      "pdfPages": [
+        312,
+        312
+      ],
+      "attacks": [
+        "Bite"
+      ],
+      "abilities": [
+        "Swimming",
+        "Feral",
+        "Beast Oil"
+      ]
+    },
+    {
+      "name": "Horse",
+      "id": "0bbb5417bc60d779",
+      "pdfPages": [
+        313,
+        313
+      ],
+      "attacks": [
+        "Hooves"
+      ],
+      "abilities": [
+        "Feral",
+        "Beast Oil"
+      ]
+    },
+    {
+      "name": "War Horse",
+      "id": "feab0b796f74c975",
+      "pdfPages": [
+        313,
+        313
+      ],
+      "attacks": [
+        "Hooves"
+      ],
+      "abilities": [
+        "Feral",
+        "Beast Oil"
+      ]
+    },
+    {
+      "name": "Ox",
+      "id": "01ff85ab29e13613",
+      "pdfPages": [
+        314,
+        314
+      ],
+      "attacks": [
+        "Hooves",
+        "Gore",
+        "Charge"
+      ],
+      "abilities": [
+        "Feral",
+        "Charge",
+        "Beast Oil"
+      ]
+    },
+    {
+      "name": "Mule",
+      "id": "f1b9580dfef0b1dc",
+      "pdfPages": [
+        314,
+        314
+      ],
+      "attacks": [
+        "Hooves"
+      ],
+      "abilities": [
+        "Feral",
+        "Beast Oil"
+      ]
+    },
+    {
+      "name": "“Crucible” Kowal",
+      "id": "d6a824457d808ad4",
+      "pdfPages": [
+        322,
+        322
+      ],
+      "attacks": [
+        "Esboda",
+        "Stiletto",
+        "Hand Crossbow"
+      ],
+      "abilities": [
+        "Trustworthy",
+        "Blindly Stubborn",
+        "Hanged Man’s Venom"
+      ]
+    },
+    {
+      "name": "Lord Nowak",
+      "id": "67cbff9e3d9340a3",
+      "pdfPages": [
+        322,
+        322
+      ],
+      "attacks": [
+        "Elven Messer",
+        "Dagger"
+      ],
+      "abilities": [
+        "Trustworthy",
+        "Blindly Stubborn",
+        "Hanged Man’s Venom"
+      ]
+    },
+    {
+      "name": "Woolabag",
+      "id": "41358d2950c03502",
+      "pdfPages": [
+        305,
+        306,
+        319,
+        323
+      ],
+      "attacks": [
+        "Punch",
+        "Thrown Boulder",
+        "Branch Club"
+      ],
+      "abilities": [
+        "Crushing Force",
+        "Thrown Boulders",
+        "Resistances",
+        "Ogroid Oil",
+        "Soft Spot"
+      ]
+    }
+  ],
+  "adaptations": [
+    "Standard humanoid / nonhumanoid tables are assigned by body form (p.154); the book gives no species-specific d10 tables. The table and labels remain editable.",
+    "Natural attacks use the complete printed damage; their physical damage types are assigned by attack form because the bestiary table omits types.",
+    "Warg and Nekker Chieftain use their printed variant stats and the base entry’s skills, weapons and loot. Endrega Queen uses Arachas as directed on p.294.",
+    "Animal and NPC RUN / LEAP / REC differences from derived formulas are retained as explicit overrides.",
+    "Woolabag references the Rock Troll block and Branch Club. The source supplies no Melee rank for the club; none is invented.",
+    "Kowal’s Hand Crossbow has no printed ROF; standard crossbow ROF 1 is used.",
+    "Thrown Boulder and Spit Venom use Athletics as ranged attacks; their ability paragraphs do not specify an attack skill.",
+    "Bandit level suggestions offer variable REF/DEX and equipment; no single invented veteran stat block is emitted.",
+    "Magic spell, ritual and hex lists are references; player spell automation remains deferred."
+  ]
+}

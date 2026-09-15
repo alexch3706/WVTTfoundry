@@ -1,67 +1,398 @@
-.witcher { --ink:#282723; --paper:#ede7d9; --accent:#7a2522; --line:#b8ad96; --muted:#645b4b; font-family:Georgia,serif; color:var(--ink); }
-.witcher .window-content { background:var(--paper); padding:16px; color:var(--ink); }
-.witcher input,.witcher select,.witcher textarea,.witcher button { color:var(--ink); font-family:system-ui,sans-serif; font-size:13px; }
-.witcher input,.witcher select,.witcher textarea { background:#ffffff75; border:1px solid var(--line); border-radius:3px; }
-.witcher input:focus,.witcher select:focus,.witcher textarea:focus { outline:2px solid #9a7439; box-shadow:none; }
-.witcher button { background:#ffffff70; border:1px solid var(--line); border-radius:3px; cursor:pointer; }
-.witcher button:hover { background:#dfd1b7; box-shadow:none; }
-.witcher .witcher-header { display:flex; gap:16px; padding-bottom:12px; border-bottom:3px double var(--accent); }
-.witcher .portrait { width:94px; height:114px; object-fit:cover; border:2px solid var(--line); cursor:pointer; }
-.witcher .identity { flex:1; min-width:0; }
-.witcher .eyebrow { letter-spacing:.2em; font:10px system-ui,sans-serif; margin:0 0 6px; color:var(--accent); text-transform:uppercase; }
-.witcher .actor-name { height:38px; font:26px Georgia,serif; background:transparent; border:0; border-bottom:1px solid var(--line); }
-.witcher .identity-fields { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:5px 12px; margin-top:8px; }
-.witcher .witcher-field { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:3px 0; }
-.witcher .witcher-field span { flex:1; }
-.witcher .witcher-field input:not([type=checkbox]),.witcher .witcher-field select { width:48%; min-width:0; }
-.witcher .identity-fields .witcher-field { display:block; font:11px system-ui,sans-serif; }
-.witcher .identity-fields input,.witcher .identity-fields select { width:100%!important; }
-.witcher .resource-row { display:grid; grid-template-columns:1.3fr 1.3fr 1.3fr .65fr .8fr; gap:14px; padding:12px 0; }
-.witcher .resource-row label { color:var(--accent); font-weight:bold; }
-.witcher .resource-row span { display:flex; align-items:center; gap:6px; color:var(--ink); }
-.witcher .resource-row input { max-width:78px; height:29px; text-align:center; }
-.witcher .stat-row { display:grid; grid-template-columns:repeat(9,1fr); border:1px solid var(--line); }
-.witcher .stat-row label { text-align:center; padding:7px 4px; border-right:1px solid var(--line); }
-.witcher .stat-row label:last-child { border:0; }
-.witcher .stat-row input { display:block; width:48px; margin:4px auto; font-size:20px; height:30px; text-align:center; }
-.witcher .stat-row span { font:10px system-ui,sans-serif; color:var(--muted); }
-.witcher .derived-strip { display:flex; flex-wrap:wrap; gap:12px; padding:10px 0; font:11px system-ui,sans-serif; }
-.witcher .sheet-tabs { display:flex; border-block:1px solid var(--accent); margin:6px 0 14px; padding:9px 0; gap:8px; font:13px system-ui,sans-serif; }
-.witcher .sheet-tabs a.active { color:var(--accent); text-shadow:none; font-weight:700; border-bottom:2px solid var(--accent); }
-.witcher .sheet-body { min-height:300px; }
-.witcher h2 { font:20px Georgia,serif; color:var(--accent); border-bottom:1px solid var(--line); margin:16px 0 8px; }
-.witcher table { background:transparent; border:1px solid var(--line); width:100%; margin:8px 0; font:12px system-ui,sans-serif; }
-.witcher th { color:#fff8e9; background:#473d31; padding:6px; text-align:left; }
-.witcher td { padding:5px 6px; border-bottom:1px solid #b8ad9655; }
-.witcher tbody tr:nth-child(even) { background:#ffffff30; }
-.witcher table button { text-align:left; border:0; background:transparent; padding:3px; }
-.witcher .combat-columns { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-.witcher .action-bar { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0; }
-.witcher .action-bar button { flex:1 0 auto; width:auto; padding:4px 10px; }
-.witcher .weapon-card { display:grid; grid-template-columns:1fr auto; gap:4px; background:#ffffff50; border-left:3px solid var(--accent); padding:8px; margin:7px 0; }
-.witcher .weapon-card span { font:11px system-ui,sans-serif; }
-.witcher .conditions { display:flex; flex-wrap:wrap; gap:5px; }
-.witcher .conditions label { display:flex; align-items:center; padding:3px 8px 3px 3px; background:#ffffff50; border:1px solid var(--line); border-radius:12px; font:12px system-ui,sans-serif; }
-.witcher .conditions label.active { background:#7a252219; border-color:var(--accent); }
-.witcher .conditions input { width:14px; height:14px; margin:3px 5px; }
-.witcher .wound-card { display:grid; grid-template-columns:1fr 1.6fr auto; align-items:center; gap:8px; margin:6px 0; font:12px system-ui,sans-serif; }
-.witcher .skill-table input,.witcher .inventory-table input[type=number] { width:50px; text-align:center; }
-.witcher .inventory-table small { display:block; color:var(--muted); font-size:10px; }
-.witcher .item-actions { display:flex; flex-wrap:wrap; gap:3px; }
-.witcher .item-actions button { width:auto; }
-.witcher .field-grid { display:grid; grid-template-columns:1fr 1fr; column-gap:20px; }
-.witcher .witcher-error { background:#762823; color:#fff5e6; padding:8px 12px; border-radius:3px; }
-.witcher .witcher-warning { background:#d5b870; color:#362a14; padding:8px 12px; }
-.witcher .empty-note { color:var(--muted); font-style:italic; }
-.witcher textarea { width:100%; min-height:80px; resize:vertical; padding:8px; }
-.witcher details { margin:14px 0; }
-.witcher summary { cursor:pointer; padding:8px; background:#d9cfbb; }
-.witcher-chat { font-family:system-ui,sans-serif; font-size:12px; }
-.witcher-chat h3 { font-family:Georgia,serif; border-bottom:2px solid #7a2522; }
-.witcher-chat .witcher-total { font-size:26px; text-align:center; font-weight:bold; margin:8px; }
-.witcher-chat table { font-size:10px; width:100%; }
-.witcher-chat td,.witcher-chat th { padding:3px; text-align:center; }
-.witcher-dialog .witcher-field { display:flex; justify-content:space-between; align-items:center; gap:12px; margin:8px 0; }
-.witcher-dialog .witcher-field input:not([type=checkbox]),.witcher-dialog .witcher-field select { width:45%; }
-.witcher-dialog fieldset { margin:10px 0; }
-@media(max-width:760px){ .witcher .combat-columns,.witcher .field-grid{grid-template-columns:1fr}.witcher .identity-fields{grid-template-columns:1fr 1fr}.witcher .sheet-tabs{flex-wrap:wrap}.witcher .resource-row{gap:5px}.witcher .wound-card{grid-template-columns:1fr}.witcher .stat-row input{width:34px} }
+.witcher {
+  --ink: #282723;
+  --paper: #ede7d9;
+  --accent: #7a2522;
+  --line: #b8ad96;
+  --muted: #645b4b;
+  font-family: Georgia, serif;
+  color: var(--ink);
+}
+.witcher .window-content {
+  background: var(--paper);
+  padding: 16px;
+  color: var(--ink);
+}
+.witcher input,
+.witcher select,
+.witcher textarea,
+.witcher button {
+  color: var(--ink);
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+}
+.witcher input,
+.witcher select,
+.witcher textarea {
+  background: #ffffff75;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+.witcher input:focus,
+.witcher select:focus,
+.witcher textarea:focus {
+  outline: 2px solid #9a7439;
+  box-shadow: none;
+}
+.witcher button {
+  background: #ffffff70;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  cursor: pointer;
+}
+.witcher button:hover {
+  background: #dfd1b7;
+  box-shadow: none;
+}
+.witcher .witcher-header {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 12px;
+  border-bottom: 3px double var(--accent);
+}
+.witcher .portrait {
+  width: 94px;
+  height: 114px;
+  object-fit: cover;
+  border: 2px solid var(--line);
+  cursor: pointer;
+}
+.witcher .identity {
+  flex: 1;
+  min-width: 0;
+}
+.witcher .eyebrow {
+  letter-spacing: 0.2em;
+  font:
+    10px system-ui,
+    sans-serif;
+  margin: 0 0 6px;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+.witcher .actor-name {
+  height: 38px;
+  font:
+    26px Georgia,
+    serif;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}
+.witcher .identity-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px 12px;
+  margin-top: 8px;
+}
+.witcher .witcher-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 3px 0;
+}
+.witcher .witcher-field span {
+  flex: 1;
+}
+.witcher .witcher-field input:not([type='checkbox']),
+.witcher .witcher-field select {
+  width: 48%;
+  min-width: 0;
+}
+.witcher .identity-fields .witcher-field {
+  display: block;
+  font:
+    11px system-ui,
+    sans-serif;
+}
+.witcher .identity-fields input,
+.witcher .identity-fields select {
+  width: 100% !important;
+}
+.witcher .resource-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1.3fr 1.3fr 0.65fr 0.8fr;
+  gap: 14px;
+  padding: 12px 0;
+}
+.witcher .resource-row label {
+  color: var(--accent);
+  font-weight: bold;
+}
+.witcher .resource-row span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+}
+.witcher .resource-row input {
+  max-width: 78px;
+  height: 29px;
+  text-align: center;
+}
+.witcher .stat-row {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  border: 1px solid var(--line);
+}
+.witcher .stat-row label {
+  text-align: center;
+  padding: 7px 4px;
+  border-right: 1px solid var(--line);
+}
+.witcher .stat-row label:last-child {
+  border: 0;
+}
+.witcher .stat-row input {
+  display: block;
+  width: 48px;
+  margin: 4px auto;
+  font-size: 20px;
+  height: 30px;
+  text-align: center;
+}
+.witcher .stat-row span {
+  font:
+    10px system-ui,
+    sans-serif;
+  color: var(--muted);
+}
+.witcher .derived-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 10px 0;
+  font:
+    11px system-ui,
+    sans-serif;
+}
+.witcher .sheet-tabs {
+  display: flex;
+  border-block: 1px solid var(--accent);
+  margin: 6px 0 14px;
+  padding: 9px 0;
+  gap: 8px;
+  font:
+    13px system-ui,
+    sans-serif;
+}
+.witcher .sheet-tabs a.active {
+  color: var(--accent);
+  text-shadow: none;
+  font-weight: 700;
+  border-bottom: 2px solid var(--accent);
+}
+.witcher .sheet-body {
+  min-height: 300px;
+}
+.witcher h2 {
+  font:
+    20px Georgia,
+    serif;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+  margin: 16px 0 8px;
+}
+.witcher table {
+  background: transparent;
+  border: 1px solid var(--line);
+  width: 100%;
+  margin: 8px 0;
+  font:
+    12px system-ui,
+    sans-serif;
+}
+.witcher th {
+  color: #fff8e9;
+  background: #473d31;
+  padding: 6px;
+  text-align: left;
+}
+.witcher td {
+  padding: 5px 6px;
+  border-bottom: 1px solid #b8ad9655;
+}
+.witcher tbody tr:nth-child(even) {
+  background: #ffffff30;
+}
+.witcher table button {
+  text-align: left;
+  border: 0;
+  background: transparent;
+  padding: 3px;
+}
+.witcher .combat-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.witcher .action-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+.witcher .action-bar button {
+  flex: 1 0 auto;
+  width: auto;
+  padding: 4px 10px;
+}
+.witcher .weapon-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px;
+  background: #ffffff50;
+  border-left: 3px solid var(--accent);
+  padding: 8px;
+  margin: 7px 0;
+}
+.witcher .weapon-card span {
+  font:
+    11px system-ui,
+    sans-serif;
+}
+.witcher .conditions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.witcher .conditions label {
+  display: flex;
+  align-items: center;
+  padding: 3px 8px 3px 3px;
+  background: #ffffff50;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font:
+    12px system-ui,
+    sans-serif;
+}
+.witcher .conditions label.active {
+  background: #7a252219;
+  border-color: var(--accent);
+}
+.witcher .conditions input {
+  width: 14px;
+  height: 14px;
+  margin: 3px 5px;
+}
+.witcher .wound-card {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr auto;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  font:
+    12px system-ui,
+    sans-serif;
+}
+.witcher .skill-table input,
+.witcher .inventory-table input[type='number'] {
+  width: 50px;
+  text-align: center;
+}
+.witcher .inventory-table small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+.witcher .item-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.witcher .item-actions button {
+  width: auto;
+}
+.witcher .field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+.witcher .witcher-error {
+  background: #762823;
+  color: #fff5e6;
+  padding: 8px 12px;
+  border-radius: 3px;
+}
+.witcher .witcher-warning {
+  background: #d5b870;
+  color: #362a14;
+  padding: 8px 12px;
+}
+.witcher .empty-note {
+  color: var(--muted);
+  font-style: italic;
+}
+.witcher textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  padding: 8px;
+}
+.witcher details {
+  margin: 14px 0;
+}
+.witcher summary {
+  cursor: pointer;
+  padding: 8px;
+  background: #d9cfbb;
+}
+.witcher-chat {
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+}
+.witcher-chat h3 {
+  font-family: Georgia, serif;
+  border-bottom: 2px solid #7a2522;
+}
+.witcher-chat .witcher-total {
+  font-size: 26px;
+  text-align: center;
+  font-weight: bold;
+  margin: 8px;
+}
+.witcher-chat table {
+  font-size: 10px;
+  width: 100%;
+}
+.witcher-chat td,
+.witcher-chat th {
+  padding: 3px;
+  text-align: center;
+}
+.witcher-dialog .witcher-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0;
+}
+.witcher-dialog .witcher-field input:not([type='checkbox']),
+.witcher-dialog .witcher-field select {
+  width: 45%;
+}
+.witcher-dialog fieldset {
+  margin: 10px 0;
+}
+@media (max-width: 760px) {
+  .witcher .combat-columns,
+  .witcher .field-grid {
+    grid-template-columns: 1fr;
+  }
+  .witcher .identity-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+  .witcher .sheet-tabs {
+    flex-wrap: wrap;
+  }
+  .witcher .resource-row {
+    gap: 5px;
+  }
+  .witcher .wound-card {
+    grid-template-columns: 1fr;
+  }
+  .witcher .stat-row input {
+    width: 34px;
+  }
+}

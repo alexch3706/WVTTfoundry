@@ -36,7 +36,8 @@
       "profession": {},
       "wound": {},
       "mount": {},
-      "enhancement": {}
+      "enhancement": {},
+      "ability": {}
     }
   },
   "packs": [
@@ -125,6 +126,17 @@
       "system": "witcher-rilerena",
       "ownership": {
         "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "bestiary",
+      "label": "Core Bestiary & NPCs",
+      "path": "packs/witcher/bestiary",
+      "type": "Actor",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       }
     }

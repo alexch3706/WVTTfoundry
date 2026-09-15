@@ -1,38 +1,264 @@
-<form class="witcher-sheet" autocomplete="off">
-  <header class="witcher-header">
-    <img class="portrait" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" alt="Portrait">
-    <div class="identity"><p class="eyebrow">THE WITCHER · {{actor.type}}</p><input class="actor-name" name="name" value="{{actor.name}}" aria-label="Name"><div class="identity-fields">{{{identity}}}</div></div>
+<form class='witcher-sheet' autocomplete='off'>
+  <header class='witcher-header'>
+    <img class='portrait' src='{{actor.img}}' data-edit='img' title='{{actor.name}}' alt='Portrait' />
+    <div class='identity'><p class='eyebrow'>THE WITCHER · {{actor.type}}</p><input
+        class='actor-name'
+        name='name'
+        value='{{actor.name}}'
+        aria-label='Name'
+      /><div class='identity-fields'>{{{identity}}}</div></div>
   </header>
-  <section class="resource-row">
-    <label>Health <span><input type="number" name="system.hp.value" value="{{system.hp.value}}"> / {{system.hp.max}}</span></label>
-    <label>Stamina <span><input type="number" name="system.sta.value" value="{{system.sta.value}}"> / {{system.sta.max}}</span></label>
-    <label>Luck <span><input type="number" name="system.luck.value" value="{{system.luck.value}}"> / {{system.luck.max}}</span></label>
-    <label>IP <input type="number" name="system.ip" value="{{system.ip}}"></label>
-    <label>Crowns <input type="number" name="system.coins" value="{{system.coins}}"></label>
+  <section class='resource-row'>
+    <label>Health
+      <span><input type='number' name='system.hp.value' value='{{system.hp.value}}' />
+        /
+        {{system.hp.max}}</span></label>
+    <label>Stamina
+      {{#if system.traits.infiniteStamina}}<span>∞</span>{{else}}<span><input
+            type='number'
+            name='system.sta.value'
+            value='{{system.sta.value}}'
+          />
+          /
+          {{system.sta.max}}</span>{{/if}}</label>
+    <label>Luck
+      <span><input type='number' name='system.luck.value' value='{{system.luck.value}}' />
+        /
+        {{system.luck.max}}</span></label>
+    <label>IP <input type='number' name='system.ip' value='{{system.ip}}' /></label>
+    <label>Crowns <input type='number' name='system.coins' value='{{system.coins}}' /></label>
   </section>
-  <section class="stat-row">{{#each statRows}}<label><strong>{{label}}</strong><input type="number" name="system.stats.{{key}}" value="{{value}}" min="1"><span>Current {{current}}</span></label>{{/each}}</section>
-  <div class="derived-strip"><span>STUN <b>{{system.derived.stun}}</b></span><span>REC <b>{{system.derived.rec}}</b></span><span>RUN <b>{{system.derived.run}} m</b></span><span>LEAP <b>{{system.derived.leap}} m</b></span><span>EV <b>{{system.derived.ev}}</b></span><span>Weight <b>{{system.derived.weight}} / {{system.derived.enc}} kg</b></span><span>Wound threshold <b>{{system.derived.woundThreshold}}</b></span></div>
-  {{#if system.armorError}}<p class="witcher-error">{{system.armorError}}</p>{{/if}}
-  {{#if system.derived.dying}}<p class="witcher-error">Death State · {{system.pendingDeathSaves}} pending saves · cumulative penalty −{{system.deathSaves}}</p>{{else}}{{#if system.derived.wound}}<p class="witcher-warning">Below wound threshold: REF, DEX, INT and WILL are halved.</p>{{/if}}{{/if}}
-  <nav class="sheet-tabs tabs" data-group="primary"><a data-tab="combat">Combat</a><a data-tab="skills">Skills</a><a data-tab="inventory">Equipment</a><a data-tab="story">Character</a><a data-tab="setup">Anatomy & settings</a></nav>
-  <section class="sheet-body">
-    <div class="tab" data-group="primary" data-tab="combat">
-      <div class="action-bar"><button type="button" data-witcher="unarmed" data-key="punch">Punch {{system.derived.punch}}</button><button type="button" data-witcher="unarmed" data-key="kick">Kick {{system.derived.kick}}</button><button type="button" data-witcher="turn" data-key="recover">Recover</button><button type="button" data-witcher="turn" data-key="aim">Aim</button><button type="button" data-witcher="turn" data-key="activeDodge">Actively dodge</button><button type="button" data-witcher="turn" data-key="run">Run</button><button type="button" data-witcher="turn" data-key="stand">Stand up</button></div>
-      <p>Actions: {{system.combat.actions}} normal · {{system.combat.extra}} extra · {{system.combat.defenses}} defenses · {{system.combat.remaining}} strikes remaining. Aim: +{{system.combat.aim}}.</p>
-      <div class="combat-columns"><section><h2>Weapons</h2>{{#each inventory}}{{#if isWeapon}}<div class="weapon-card"><button type="button" data-witcher="attack" data-item-id="{{id}}">{{name}}</button><span>{{system.damage}} · REL {{system.reliability}} / {{system.maxReliability}}</span><button type="button" class="icon-button" data-witcher="item" data-item-id="{{id}}" title="Edit weapon">⚙</button><button type="button" data-witcher="turn" data-key="reload" data-item-id="{{id}}">Reload</button></div>{{/if}}{{/each}}
-      <h2>Saving throws</h2><div class="action-bar"><button type="button" data-witcher="save" data-key="stun">Stun</button><button type="button" data-witcher="save" data-key="death">Death</button><button type="button" data-witcher="save" data-key="body">BODY</button></div></section>
-      <section><h2>Hit locations</h2><table><thead><tr><th>d10</th><th>Location</th><th>Aim</th><th>Damage</th><th>SP</th></tr></thead><tbody>{{#each locations}}<tr><td>{{min}}–{{max}}</td><td>{{label}}</td><td>{{aim}}</td><td>×{{multiplier}}</td><td>{{totalSP}}</td></tr>{{/each}}</tbody></table></section></div>
-      <h2>Conditions</h2><div class="conditions">{{#each conditionRows}}<label class="{{#if active}}active{{/if}}"><input type="checkbox" name="condition.{{key}}" {{checked active}}>{{label}}</label>{{/each}}</div>
-      <div class="action-bar"><button type="button" data-witcher="turn" data-key="endCondition">End a condition</button><button type="button" data-witcher="turn" data-key="tick">Apply one round of effects (GM)</button><button type="button" data-witcher="treat">First Aid / Healing Hands</button><button type="button" data-witcher="rest">Rest</button></div>
-      <h2>Critical wounds</h2>{{#each wounds}}<div class="wound-card"><button type="button" data-witcher="item" data-item-id="{{id}}">{{name}}</button><span>{{system.wound.severity}} · {{system.wound.location}} · {{system.wound.treatment}} · {{system.wound.daysRemaining}} days</span><button type="button" data-witcher="treat" data-item-id="{{id}}">Treat</button></div>{{else}}<p class="empty-note">No critical wounds.</p>{{/each}}
+  <section class='stat-row'>{{#each statRows}}<label><strong>{{label}}</strong><input
+          type='number'
+          name='system.stats.{{key}}'
+          value='{{value}}'
+          min='0'
+        /><span>Current {{current}}</span></label>{{/each}}</section>
+  <div class='derived-strip'><span>STUN <b>{{system.derived.stun}}</b></span><span>REC
+      <b>{{system.derived.rec}}</b></span><span>RUN <b>{{system.derived.run}} m</b></span><span>LEAP
+      <b>{{system.derived.leap}} m</b></span><span>EV <b>{{system.derived.ev}}</b></span><span>Weight
+      <b>{{system.derived.weight}} / {{system.derived.enc}} kg</b></span><span>Wound threshold
+      <b>{{system.derived.woundThreshold}}</b></span></div>
+  {{#if system.armorError}}<p class='witcher-error'>{{system.armorError}}</p>{{/if}}
+  {{#if system.derived.dying}}<p class='witcher-error'>Death State ·
+      {{system.pendingDeathSaves}}
+      pending saves · cumulative penalty −{{system.deathSaves}}</p>{{else if system.derived.wound}}<p
+      class='witcher-warning'
+    >Below wound threshold: REF, DEX, INT and WILL are halved.</p>{{/if}}
+  <nav class='sheet-tabs tabs' data-group='primary'><a data-tab='combat'>Combat</a><a
+      data-tab='skills'
+    >Skills</a><a data-tab='inventory'>Equipment</a>{{#if hasBestiary}}<a
+        data-tab='bestiary'
+      >Creature</a>{{/if}}<a data-tab='story'>Character</a><a data-tab='setup'>Anatomy & settings</a></nav>
+  <section class='sheet-body'>
+    <div class='tab' data-group='primary' data-tab='combat'>
+      <div class='action-bar'><button type='button' data-witcher='unarmed' data-key='punch'>Punch
+          {{system.derived.punch}}</button><button type='button' data-witcher='unarmed' data-key='kick'>Kick
+          {{system.derived.kick}}</button><button
+          type='button'
+          data-witcher='turn'
+          data-key='recover'
+        >Recover</button><button type='button' data-witcher='turn' data-key='aim'>Aim</button><button
+          type='button'
+          data-witcher='turn'
+          data-key='activeDodge'
+        >Actively dodge</button><button type='button' data-witcher='turn' data-key='run'>Run</button><button
+          type='button'
+          data-witcher='turn'
+          data-key='stand'
+        >Stand up</button></div>
+      <p>Actions:
+        {{system.combat.actions}}
+        normal ·
+        {{system.combat.extra}}
+        extra ·
+        {{system.combat.defenses}}
+        defenses ·
+        {{system.combat.remaining}}
+        strikes remaining. Aim: +{{system.combat.aim}}.</p>
+      <div class='combat-columns'><section><h2>Weapons</h2>{{#each inventory}}{{#if isWeapon}}<div
+                class='weapon-card'
+              ><button type='button' data-witcher='attack' data-item-id='{{id}}'>{{name}}</button><span
+                >{{system.damage}} · REL {{system.reliability}} / {{system.maxReliability}}</span><button
+                  type='button'
+                  class='icon-button'
+                  data-witcher='item'
+                  data-item-id='{{id}}'
+                  title='Edit weapon'
+                >⚙</button><button
+                  type='button'
+                  data-witcher='turn'
+                  data-key='reload'
+                  data-item-id='{{id}}'
+                >Reload</button><button
+                  type='button'
+                  data-witcher='turn'
+                  data-key='unjam'
+                  data-item-id='{{id}}'
+                >Free / unjam</button></div>{{/if}}{{/each}}
+          <div class='action-bar'><button type='button' data-witcher='control'>Mount control</button><button
+              type='button'
+              data-witcher='fall'
+            >Falling damage</button></div>
+          <h2>Saving throws</h2><div class='action-bar'><button
+              type='button'
+              data-witcher='save'
+              data-key='stun'
+            >Stun</button><button type='button' data-witcher='save' data-key='death'>Death</button><button
+              type='button'
+              data-witcher='save'
+              data-key='body'
+            >BODY</button></div></section>
+        <section><h2>Hit locations</h2><table><thead><tr><th>d10</th><th>Location</th><th>Aim</th><th
+                >Damage</th><th>SP</th></tr></thead><tbody>{{#each locations}}<tr><td>{{min}}–{{max}}</td><td
+                  >{{label}}</td><td>{{aim}}</td><td>×{{multiplier}}</td><td>{{totalSP}}</td></tr>{{#if
+                  weakName
+                }}<tr><td>Aimed</td><td>{{weakName}}</td><td>{{aim}}</td><td>×{{multiplier}}</td><td
+                    >{{weakSp}} (no natural DR)</td></tr>{{/if}}{{/each}}</tbody></table></section></div>
+      {{#if inWeb}}<button type='button' data-witcher='escapeWeb'>Break arachas webbing (Physique DC 16)</button>{{/if}}
+      {{#each effectRows}}<p>{{name}}
+          ·
+          {{expires}}
+          <button type='button' data-witcher='endEffect' data-key='{{id}}'>End effect</button></p>{{/each}}
+      <h2>Conditions</h2><div class='conditions'>{{#each conditionRows}}<label class='{{cssClass}}'><input
+              type='checkbox'
+              name='condition.{{key}}'
+              {{checked active}}
+            />{{label}}</label>{{/each}}</div>
+      <div class='action-bar'><button type='button' data-witcher='turn' data-key='endCondition'>End a
+          condition</button><button type='button' data-witcher='turn' data-key='tick'>Apply one round of
+          effects (GM)</button><button type='button' data-witcher='treat'>First Aid / Healing Hands</button><button
+          type='button'
+          data-witcher='rest'
+        >Rest</button></div>
+      <h2>Critical wounds</h2>{{#each wounds}}<div class='wound-card'><button
+            type='button'
+            data-witcher='item'
+            data-item-id='{{id}}'
+          >{{name}}</button><span>{{system.wound.severity}}
+            ·
+            {{system.wound.location}}
+            ·
+            {{system.wound.treatment}}
+            ·
+            {{system.wound.daysRemaining}}
+            days</span><button
+            type='button'
+            data-witcher='treat'
+            data-item-id='{{id}}'
+          >Treat</button></div>{{else}}<p class='empty-note'>No critical wounds.</p>{{/each}}
     </div>
-    <div class="tab" data-group="primary" data-tab="skills"><table class="skill-table"><thead><tr><th>Skill</th><th>Stat</th><th>Rank</th><th>Base</th><th>Improve</th></tr></thead><tbody>{{#each skillRows}}<tr><td><button type="button" data-witcher="skill" data-key="{{key}}">{{name}}{{#if difficult}} (2){{/if}}</button></td><td>{{stat}}</td><td><input type="number" name="system.skills.{{key}}" value="{{rank}}" min="0" max="10"></td><td>{{base}}</td><td><button type="button" data-witcher="improve" data-key="{{key}}">+1 with IP</button></td></tr>{{/each}}</tbody></table><h2>Profession & custom skills</h2>{{#each system.customSkills}}<p><button type="button" data-witcher="skill" data-key="{{id}}">{{name}} · {{stat}} + {{rank}}</button></p>{{/each}}<button type="button" data-witcher="customSkill">Add skill</button></div>
-    <div class="tab" data-group="primary" data-tab="inventory">
-      <p>Drag items from the compendiums onto this sheet. Equipped armor and held weapons affect combat; carried items contribute to weight.</p>
-      <div class="action-bar"><button type="button" data-witcher="newItem" data-key="weapon">New weapon</button><button type="button" data-witcher="newItem" data-key="armor">New armor</button><button type="button" data-witcher="newItem" data-key="gear">New equipment</button></div>
-      <table class="inventory-table"><thead><tr><th>Item</th><th>Qty</th><th>Carried</th><th>Equipped</th><th>kg</th><th>Actions</th></tr></thead><tbody>{{#each inventory}}<tr class="item" data-item-id="{{id}}" draggable="true"><td><button type="button" data-witcher="item" data-item-id="{{id}}">{{name}}</button><small>{{type}}</small></td><td><input type="number" min="0" data-item-id="{{id}}" data-item-field="quantity" value="{{system.quantity}}"></td><td><input type="checkbox" data-item-id="{{id}}" data-item-field="carried" {{checked system.carried}}></td><td><input type="checkbox" data-item-id="{{id}}" data-item-field="equipped" {{checked system.equipped}}></td><td>{{totalWeight}}</td><td class="item-actions">{{#if isWeapon}}<button type="button" data-witcher="attack" data-item-id="{{id}}">Attack</button>{{/if}}{{#if isDiagram}}<button type="button" data-witcher="craft" data-item-id="{{id}}">Craft</button>{{/if}}{{#if isUsable}}<button type="button" data-witcher="use" data-item-id="{{id}}">Use</button>{{/if}}<button type="button" data-witcher="repair" data-item-id="{{id}}">Repair</button><button type="button" data-witcher="delete" data-item-id="{{id}}" title="Remove item">×</button></td></tr>{{/each}}</tbody></table>
+    <div class='tab' data-group='primary' data-tab='bestiary'>
+      <h2>{{system.category}} · {{system.bestiary.threat}}</h2>
+      <p>{{system.source}}, p.{{system.page}} · Bounty: {{system.bestiary.bounty}} crowns</p>
+      <dl><dt>Height / weight</dt><dd>{{system.bestiary.height}} / {{system.bestiary.weight}}</dd>
+        <dt>Environment</dt><dd>{{system.bestiary.environment}}</dd>
+        <dt>Intelligence</dt><dd>{{system.bestiary.intelligence}}</dd>
+        <dt>Organization</dt><dd>{{system.bestiary.organization}}</dd></dl>
+      <h2>Abilities & vulnerabilities</h2>
+      {{#each creatureAbilities}}<section class='creature-ability'><h3>{{name}}</h3><p>{{text}}</p><p>{{mode}}
+            · p.{{page}}</p>
+          <button type='button' data-witcher='ability' data-item-id='{{id}}'>{{#if usable}}Use / toggle{{else}}Open
+              rule{{/if}}</button></section>{{/each}}
+      <h2>Loot</h2>
+      {{#each system.bestiary.loot}}<p>{{name}}
+          ·
+          {{formula}}{{#if inInventory}} · In inventory{{/if}}</p>{{/each}}
+      <button type='button' data-witcher='loot'>Generate loot (GM, once)</button>
+      <p>{{system.notes}}</p>
     </div>
-    <div class="tab" data-group="primary" data-tab="story"><label>Biography<textarea name="system.biography" rows="12">{{system.biography}}</textarea></label><label>Notes<textarea name="system.notes" rows="8">{{system.notes}}</textarea></label><label>Reputation<input name="system.reputation" type="number" value="{{system.reputation}}"></label><button type="button" data-witcher="refreshLuck">Refresh Luck for a new session</button></div>
-    <div class="tab" data-group="primary" data-tab="setup"><h2>Actor & anatomy</h2><div class="field-grid">{{{setup}}}</div><div class="action-bar"><button type="button" data-witcher="editAnatomy">Edit hit locations & natural armor</button><button type="button" data-witcher="addLocation">Add hit location</button><button type="button" data-witcher="resetAnatomy">Restore standard locations</button></div><h2>Damage traits</h2><p>Types: slashing, piercing, bludgeoning, elemental, fire, poison, bleeding.</p><div class="field-grid">{{{damageTraits}}}</div><h2>Environment</h2><div class="field-grid">{{{environment}}}</div><h2>Derived statistic overrides</h2><div class="field-grid">{{{overrides}}}</div></div>
+    <div class='tab' data-group='primary' data-tab='skills'><table class='skill-table'><thead><tr><th
+            >Skill</th><th>Stat</th><th>Rank</th><th>Base</th><th>Improve</th></tr></thead><tbody>{{#each
+            skillRows
+          }}<tr><td><button type='button' data-witcher='skill' data-key='{{key}}'>{{name}}{{#if difficult}}
+                    (2){{/if}}</button></td><td>{{stat}}</td><td><input
+                  type='number'
+                  name='system.skills.{{key}}'
+                  value='{{rank}}'
+                  min='0'
+                  max='{{../skillMaximum}}'
+                /></td><td>{{base}}</td><td><button type='button' data-witcher='improve' data-key='{{key}}'>+1
+                  with IP</button></td></tr>{{/each}}</tbody></table><h2>Profession & custom skills</h2>{{#each
+        system.customSkills
+      }}<p><button type='button' data-witcher='skill' data-key='{{id}}'>{{name}}
+            ·
+            {{stat}}
+            +
+            {{rank}}</button></p>{{/each}}<button type='button' data-witcher='customSkill'>Add skill</button></div>
+    <div class='tab' data-group='primary' data-tab='inventory'>
+      <p>Drag items from the compendiums onto this sheet. Equipped armor and held weapons affect combat;
+        carried items contribute to weight.</p>
+      <div class='action-bar'><button type='button' data-witcher='newItem' data-key='weapon'>New weapon</button><button
+          type='button'
+          data-witcher='newItem'
+          data-key='armor'
+        >New armor</button><button type='button' data-witcher='newItem' data-key='gear'>New equipment</button></div>
+      <table class='inventory-table'><thead><tr><th>Item</th><th>Qty</th><th>Carried</th><th>Equipped</th><th
+            >kg</th><th>Actions</th></tr></thead><tbody>{{#each inventory}}<tr
+              class='item'
+              data-item-id='{{id}}'
+              draggable='true'
+            ><td><button type='button' data-witcher='item' data-item-id='{{id}}'>{{name}}</button><small
+                >{{type}}</small></td><td><input
+                  type='number'
+                  min='0'
+                  data-item-id='{{id}}'
+                  data-item-field='quantity'
+                  value='{{system.quantity}}'
+                /></td><td><input
+                  type='checkbox'
+                  data-item-id='{{id}}'
+                  data-item-field='carried'
+                  {{checked system.carried}}
+                /></td><td><input
+                  type='checkbox'
+                  data-item-id='{{id}}'
+                  data-item-field='equipped'
+                  {{checked system.equipped}}
+                /></td><td>{{totalWeight}}</td><td class='item-actions'>{{#if isWeapon}}<button
+                    type='button'
+                    data-witcher='attack'
+                    data-item-id='{{id}}'
+                  >Attack</button>{{/if}}{{#if isDiagram}}<button
+                    type='button'
+                    data-witcher='craft'
+                    data-item-id='{{id}}'
+                  >Craft</button>{{/if}}{{#if isUsable}}<button
+                    type='button'
+                    data-witcher='use'
+                    data-item-id='{{id}}'
+                  >Use</button>{{/if}}<button
+                  type='button'
+                  data-witcher='repair'
+                  data-item-id='{{id}}'
+                >Repair</button><button
+                  type='button'
+                  data-witcher='delete'
+                  data-item-id='{{id}}'
+                  title='Remove item'
+                >×</button></td></tr>{{/each}}</tbody></table>
+    </div>
+    <div class='tab' data-group='primary' data-tab='story'><label>Biography<textarea
+          name='system.biography'
+          rows='12'
+        >{{system.biography}}</textarea></label><label>Notes<textarea
+          name='system.notes'
+          rows='8'
+        >{{system.notes}}</textarea></label><label>Reputation<input
+          name='system.reputation'
+          type='number'
+          value='{{system.reputation}}'
+        /></label><button type='button' data-witcher='refreshLuck'>Refresh Luck for a new session</button></div>
+    <div class='tab' data-group='primary' data-tab='setup'><h2>Actor & anatomy</h2><div
+        class='field-grid'
+      >{{{setup}}}</div><div class='action-bar'><button type='button' data-witcher='editAnatomy'>Edit hit
+          locations & natural armor</button><button type='button' data-witcher='addLocation'>Add hit location</button><button
+          type='button'
+          data-witcher='resetAnatomy'
+        >Restore standard locations</button></div><h2>Damage traits</h2><p>Types: slashing, piercing,
+        bludgeoning, elemental, fire, poison, bleeding.</p><div class='field-grid'>{{{damageTraits}}}</div><h2
+      >Environment</h2><div class='field-grid'>{{{environment}}}</div><h2>Derived statistic overrides</h2><div
+        class='field-grid'
+      >{{{overrides}}}</div></div>
   </section>
 </form>

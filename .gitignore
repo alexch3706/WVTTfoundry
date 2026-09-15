@@ -56,3 +56,6 @@ design-artifacts/
 __pycache__/
 dist/
 .pack-build/
+packs/witcher/**/LOCK
+packs/witcher/**/LOG
+packs/witcher/**/LOG.old
