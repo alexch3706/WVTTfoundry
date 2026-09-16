@@ -1,6 +1,6 @@
 # Foundry V14 / The Forge acceptance
 
-Version: **0.1.0-alpha.3**. **Live run pending.**
+Version: **0.1.0-alpha.4**. **Live run pending.**
 
 1. Install the pinned release manifest and create a Witcher world in V14. Open
    a character, NPC, monster and Item sheet; check the browser console.
@@ -44,6 +44,17 @@ Version: **0.1.0-alpha.3**. **Live run pending.**
     request; inspect any reported persistence failure before manually retrying.
 12. Use a Journal mutagen and process Crystallized Essence with Crafting DC 10;
     verify material consumption/output. Exercise a school diagram and repairs.
+13. Open the bestiary: all 36 entries must have portraits. Import one creature,
+    an animal and a named NPC; open their sheets and drag each onto the scene.
+    Check round token art and transparent corners on the map, including a new
+    token after refresh. Inspect horses and the generated ordinary animals.
+14. Upgrade a test copy of an alpha.3 world with imported default-image Actors,
+    renamed imports, linked/unlinked tokens and an inactive scene. Open as GM:
+    placeholders should update in sheets and on both scenes. Custom portraits,
+    token textures and unlinked custom portrait overrides must remain unchanged.
+    Compare HP, armor wear, inventory and token positions before/after. Reload
+    or call `await game.witcher.updateBestiaryArt()` again: no further changes
+    should be needed. Only the elected active GM performs the migration.
 
 Report the release version, failing step, reproduction and console error. Tests
 of deferred magic, profession/creature active powers, mounted combat and area

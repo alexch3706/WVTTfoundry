@@ -1,6 +1,6 @@
 # Witcher V14 implementation status
 
-Release candidate: **0.1.0-alpha.3**. This ledger distinguishes implemented code
+Release candidate: **0.1.0-alpha.4**. This ledger distinguishes implemented code
 from live acceptance. No Foundry server has been launched in this environment;
 the owner will test the installable release on The Forge.
 
@@ -27,6 +27,20 @@ potion/decoction automation have incomplete paths inherited from the first
 implementation pass; they are not claims of completed ordinary combat and are
 not the primary attack controls. Critical Flurry's Disarm/Trip and school armor
 follow-up strikes are included because they are equipment effects.
+
+## Bestiary portraits and tokens in alpha.4
+
+All 36 bestiary Actors have portraits and round map tokens: 28 book-art entries
+and 8 generated originals following a review of all six supplied books. Related
+variants share art where no separate illustration exists. Sources and generation
+prompts are documented in `art-sources.md` and the art manifest.
+
+The elected GM updates recognized imported Actors and placed tokens, including
+inactive scenes, only where they still use default images. Custom portraits and
+token art are preserved independently. Renamed imports are matched by source
+UUID; older imports require book/page markers and an exact name. Unlinked token
+portrait inheritance is repaired without changing combat data. Failed writes
+remain retryable through `game.witcher.updateBestiaryArt()` or a world restart.
 
 ## Manual combat dice in alpha.3
 
@@ -84,12 +98,17 @@ These views read existing saved wear; this release does not change damage rules.
 
 ## Validation and remaining acceptance
 
-**170 automated tests pass.** Tests cover manual attack/defense entry and validation,
+**181 automated tests pass.** Tests cover art provenance, packaged asset references,
+default-image migration, custom image preservation, retry safety, manual attack/defense entry and validation,
 book examples, imported creature attacks and school gear,
 turn/STA accounting, persistence failure recovery and package contents. Syntax,
 module imports and Handlebars compilation are checked. A separate check uses the
 genuine public Foundry V14.365 data layer: **36 Actors and 1062 Items** preserve
 all supplied fields during model cleaning.
+
+All 36 portraits and 36 token images decode and render to canvas in Chromium;
+round tokens have transparent corners. The entire gallery was visually reviewed.
+This checks browser rendering, not a running Foundry canvas or Forge asset hosting.
 
 These are automated checks, including explicitly controlled document fixtures.
 They do **not** establish that sheets, canvas movement or multiplayer sessions
@@ -135,4 +154,6 @@ finished.
 - Reposition permits a player-selected unobstructed destination; its allowed
   movement is shown in the defense card. The player moves their token.
 
-PDFs and extracted source images remain private in `/root/witcher-reference`.
+PDFs and the full image audit remain private in `/root/witcher-reference`.
+Selected bestiary illustrations are included in the system assets; see their
+provenance and attribution in `art-sources.md`.

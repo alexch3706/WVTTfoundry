@@ -44,6 +44,8 @@ for (const pack of manifest.packs) {
     const stored = documents.find((d) => d._id === item._id);
     assert.deepEqual(stored?.system, item.system, `${pack.name}/${item.name}: stored system data`);
     if (pack.type === 'Actor') {
+      assert.equal(stored.img, item.img, `${item.name}: stored portrait`);
+      assert.deepEqual(stored.prototypeToken, item.prototypeToken, `${item.name}: stored prototype token`);
       assert.equal(stored.items.length, item.items.length, `${item.name}: embedded item count`);
       for (const embedded of item.items)
         assert.deepEqual(

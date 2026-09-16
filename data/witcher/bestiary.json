@@ -3,7 +3,7 @@
     "_id": "457d92acb05226b4",
     "name": "Bandit",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/bandit.webp",
     "prototypeToken": {
       "name": "Bandit",
       "actorLink": false,
@@ -14,7 +14,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/bandit.svg"
       }
     },
     "system": {
@@ -214,7 +214,7 @@
         "system": {
           "quantity": 1,
           "weight": 1.5,
-          "cost": 160.0,
+          "cost": 160,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 73,
@@ -226,17 +226,17 @@
             "slashing",
             "piercing"
           ],
-          "accuracy": 0.0,
+          "accuracy": 0,
           "availability": "E",
           "damage": "2d6+2",
-          "reliability": 10.0,
-          "maxReliability": 10.0,
-          "hands": 2.0,
+          "reliability": 10,
+          "maxReliability": 10,
+          "hands": 2,
           "range": 0,
           "rangeBodyMultiplier": 0,
           "effectText": "N/A",
           "concealment": "L",
-          "enhancements": 0.0,
+          "enhancements": 0,
           "properties": {
             "fixedDamage": true
           },
@@ -254,7 +254,7 @@
         "system": {
           "quantity": 1,
           "weight": 0.5,
-          "cost": 50.0,
+          "cost": 50,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 73,
@@ -266,17 +266,17 @@
             "slashing",
             "piercing"
           ],
-          "accuracy": 0.0,
+          "accuracy": 0,
           "availability": "E",
           "damage": "1d6",
-          "reliability": 10.0,
-          "maxReliability": 10.0,
-          "hands": 1.0,
+          "reliability": 10,
+          "maxReliability": 10,
+          "hands": 1,
           "range": 0,
           "rangeBodyMultiplier": 0,
           "effectText": "N/A",
           "concealment": "S",
-          "enhancements": 0.0,
+          "enhancements": 0,
           "properties": {
             "fixedDamage": true
           },
@@ -294,7 +294,7 @@
         "system": {
           "quantity": 1,
           "weight": 0.5,
-          "cost": 285.0,
+          "cost": 285,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 74,
@@ -308,14 +308,14 @@
           "accuracy": 1,
           "availability": "E",
           "damage": "2d6+2",
-          "reliability": 5.0,
-          "maxReliability": 5.0,
-          "hands": 1.0,
+          "reliability": 5,
+          "maxReliability": 5,
+          "hands": 1,
           "range": 50,
           "rangeBodyMultiplier": 0,
           "effectText": "RNG: 50m Slow Loading WA +1",
           "concealment": "L",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "properties": {
             "slowReload": true,
             "fixedDamage": true
@@ -356,7 +356,7 @@
         "system": {
           "quantity": 20,
           "weight": 0.05,
-          "cost": 1.0,
+          "cost": 1,
           "carried": true,
           "equipped": false,
           "isAmmo": true,
@@ -365,7 +365,7 @@
             "piercing"
           ],
           "availability": "E",
-          "reliability": 10.0,
+          "reliability": 10,
           "effectText": "",
           "concealment": "L",
           "properties": {
@@ -394,20 +394,20 @@
         "system": {
           "quantity": 1,
           "weight": 1.5,
-          "cost": 175.0,
+          "cost": 175,
           "carried": true,
           "equipped": true,
           "armorClass": "light",
-          "stoppingPower": 5.0,
+          "stoppingPower": 5,
           "availability": "P",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "effectText": "",
           "coverage": [
             "torso",
             "rightArm",
             "leftArm"
           ],
-          "ev": 0.0,
+          "ev": 0,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 79,
           "properties": {},
@@ -431,19 +431,19 @@
         "img": "icons/svg/shield.svg",
         "system": {
           "quantity": 1,
-          "weight": 1.0,
-          "cost": 175.0,
+          "weight": 1,
+          "cost": 175,
           "carried": true,
           "equipped": true,
           "armorClass": "light",
-          "stoppingPower": 5.0,
+          "stoppingPower": 5,
           "availability": "P",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "effectText": "",
           "coverage": [
             "head"
           ],
-          "ev": 0.0,
+          "ev": 0,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 79,
           "properties": {},
@@ -467,20 +467,20 @@
         "img": "icons/svg/shield.svg",
         "system": {
           "quantity": 1,
-          "weight": 1.0,
-          "cost": 125.0,
+          "weight": 1,
+          "cost": 125,
           "carried": true,
           "equipped": true,
           "armorClass": "light",
-          "stoppingPower": 5.0,
+          "stoppingPower": 5,
           "availability": "C",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "effectText": "",
           "coverage": [
             "rightLeg",
             "leftLeg"
           ],
-          "ev": 0.0,
+          "ev": 0,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 80,
           "properties": {},
@@ -504,7 +504,8 @@
         "sourcePages": [
           271,
           272
-        ]
+        ],
+        "bestiaryId": "457d92acb05226b4"
       }
     }
   },
@@ -512,7 +513,7 @@
     "_id": "54339d5f0d4287d6",
     "name": "Mage",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/mage.webp",
     "prototypeToken": {
       "name": "Mage",
       "actorLink": false,
@@ -523,7 +524,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/mage.svg"
       }
     },
     "system": {
@@ -722,8 +723,8 @@
         "img": "icons/svg/sword.svg",
         "system": {
           "quantity": 1,
-          "weight": 4.0,
-          "cost": 675.0,
+          "weight": 4,
+          "cost": 675,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 74,
@@ -734,17 +735,17 @@
           "damageTypes": [
             "bludgeoning"
           ],
-          "accuracy": 0.0,
+          "accuracy": 0,
           "availability": "P",
           "damage": "3d6",
-          "reliability": 15.0,
-          "maxReliability": 15.0,
-          "hands": 2.0,
+          "reliability": 15,
+          "maxReliability": 15,
+          "hands": 2,
           "range": 0,
           "rangeBodyMultiplier": 0,
           "effectText": "Focus (2)",
           "concealment": "N/A",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "properties": {
             "longReach": true,
             "focus": 2,
@@ -764,7 +765,7 @@
         "system": {
           "quantity": 1,
           "weight": 0.5,
-          "cost": 50.0,
+          "cost": 50,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 73,
@@ -776,17 +777,17 @@
             "slashing",
             "piercing"
           ],
-          "accuracy": 0.0,
+          "accuracy": 0,
           "availability": "E",
           "damage": "1d6",
-          "reliability": 10.0,
-          "maxReliability": 10.0,
-          "hands": 1.0,
+          "reliability": 10,
+          "maxReliability": 10,
+          "hands": 1,
           "range": 0,
           "rangeBodyMultiplier": 0,
           "effectText": "N/A",
           "concealment": "S",
-          "enhancements": 0.0,
+          "enhancements": 0,
           "properties": {
             "fixedDamage": true
           },
@@ -908,7 +909,8 @@
         "sourcePages": [
           273,
           274
-        ]
+        ],
+        "bestiaryId": "54339d5f0d4287d6"
       }
     }
   },
@@ -916,7 +918,7 @@
     "_id": "d6b3cbefed0f6802",
     "name": "Scoia’tael Archer",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/scoia-tael-archer.webp",
     "prototypeToken": {
       "name": "Scoia’tael Archer",
       "actorLink": false,
@@ -927,7 +929,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/scoia-tael-archer.svg"
       }
     },
     "system": {
@@ -1132,8 +1134,8 @@
         "img": "icons/svg/sword.svg",
         "system": {
           "quantity": 1,
-          "weight": 2.0,
-          "cost": 325.0,
+          "weight": 2,
+          "cost": 325,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 73,
@@ -1145,17 +1147,17 @@
             "slashing",
             "piercing"
           ],
-          "accuracy": 0.0,
+          "accuracy": 0,
           "availability": "C",
           "damage": "3d6",
-          "reliability": 15.0,
-          "maxReliability": 15.0,
-          "hands": 1.0,
+          "reliability": 15,
+          "maxReliability": 15,
+          "hands": 1,
           "range": 0,
           "rangeBodyMultiplier": 0,
           "effectText": "N/A",
           "concealment": "L",
-          "enhancements": 0.0,
+          "enhancements": 0,
           "properties": {
             "fixedDamage": true
           },
@@ -1173,7 +1175,7 @@
         "system": {
           "quantity": 1,
           "weight": 0.5,
-          "cost": 50.0,
+          "cost": 50,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 73,
@@ -1185,17 +1187,17 @@
             "slashing",
             "piercing"
           ],
-          "accuracy": 0.0,
+          "accuracy": 0,
           "availability": "E",
           "damage": "1d6",
-          "reliability": 10.0,
-          "maxReliability": 10.0,
-          "hands": 1.0,
+          "reliability": 10,
+          "maxReliability": 10,
+          "hands": 1,
           "range": 0,
           "rangeBodyMultiplier": 0,
           "effectText": "N/A",
           "concealment": "S",
-          "enhancements": 0.0,
+          "enhancements": 0,
           "properties": {
             "fixedDamage": true
           },
@@ -1213,7 +1215,7 @@
         "system": {
           "quantity": 1,
           "weight": 0.5,
-          "cost": 50.0,
+          "cost": 50,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 74,
@@ -1224,17 +1226,17 @@
           "damageTypes": [
             "piercing"
           ],
-          "accuracy": 0.0,
+          "accuracy": 0,
           "availability": "E",
           "damage": "1d6",
-          "reliability": 5.0,
-          "maxReliability": 5.0,
-          "hands": 1.0,
+          "reliability": 5,
+          "maxReliability": 5,
+          "hands": 1,
           "range": 20,
           "rangeBodyMultiplier": 4,
           "effectText": "RNG: 20m",
           "concealment": "T",
-          "enhancements": 0.0,
+          "enhancements": 0,
           "properties": {
             "fixedDamage": true
           },
@@ -1251,8 +1253,8 @@
         "img": "icons/svg/sword.svg",
         "system": {
           "quantity": 1,
-          "weight": 2.0,
-          "cost": 475.0,
+          "weight": 2,
+          "cost": 475,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 74,
@@ -1263,17 +1265,17 @@
           "damageTypes": [
             "piercing"
           ],
-          "accuracy": 0.0,
+          "accuracy": 0,
           "availability": "E",
           "damage": "4d6",
-          "reliability": 10.0,
-          "maxReliability": 10.0,
-          "hands": 2.0,
+          "reliability": 10,
+          "maxReliability": 10,
+          "hands": 2,
           "range": 200,
           "rangeBodyMultiplier": 0,
           "effectText": "RNG: 200m",
           "concealment": "N/A",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "properties": {
             "fixedDamage": true
           },
@@ -1334,7 +1336,7 @@
         "system": {
           "quantity": 30,
           "weight": 0.05,
-          "cost": 1.0,
+          "cost": 1,
           "carried": true,
           "equipped": false,
           "isAmmo": true,
@@ -1343,7 +1345,7 @@
             "piercing"
           ],
           "availability": "E",
-          "reliability": 10.0,
+          "reliability": 10,
           "effectText": "",
           "concealment": "L",
           "properties": {
@@ -1372,20 +1374,20 @@
         "system": {
           "quantity": 1,
           "weight": 1.5,
-          "cost": 175.0,
+          "cost": 175,
           "carried": true,
           "equipped": true,
           "armorClass": "light",
-          "stoppingPower": 5.0,
+          "stoppingPower": 5,
           "availability": "P",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "effectText": "",
           "coverage": [
             "torso",
             "rightArm",
             "leftArm"
           ],
-          "ev": 0.0,
+          "ev": 0,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 79,
           "properties": {},
@@ -1409,19 +1411,19 @@
         "img": "icons/svg/shield.svg",
         "system": {
           "quantity": 1,
-          "weight": 1.0,
-          "cost": 175.0,
+          "weight": 1,
+          "cost": 175,
           "carried": true,
           "equipped": true,
           "armorClass": "light",
-          "stoppingPower": 5.0,
+          "stoppingPower": 5,
           "availability": "P",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "effectText": "",
           "coverage": [
             "head"
           ],
-          "ev": 0.0,
+          "ev": 0,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 79,
           "properties": {},
@@ -1445,20 +1447,20 @@
         "img": "icons/svg/shield.svg",
         "system": {
           "quantity": 1,
-          "weight": 1.0,
-          "cost": 125.0,
+          "weight": 1,
+          "cost": 125,
           "carried": true,
           "equipped": true,
           "armorClass": "light",
-          "stoppingPower": 5.0,
+          "stoppingPower": 5,
           "availability": "C",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "effectText": "",
           "coverage": [
             "rightLeg",
             "leftLeg"
           ],
-          "ev": 0.0,
+          "ev": 0,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 80,
           "properties": {},
@@ -1482,7 +1484,8 @@
         "sourcePages": [
           275,
           276
-        ]
+        ],
+        "bestiaryId": "d6b3cbefed0f6802"
       }
     }
   },
@@ -1490,7 +1493,7 @@
     "_id": "2e4b9000e7d66051",
     "name": "Drowner",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/drowner.webp",
     "prototypeToken": {
       "name": "Drowner",
       "actorLink": false,
@@ -1501,7 +1504,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/drowner.svg"
       }
     },
     "system": {
@@ -1848,7 +1851,8 @@
         "sourcePages": [
           277,
           278
-        ]
+        ],
+        "bestiaryId": "2e4b9000e7d66051"
       }
     }
   },
@@ -1856,7 +1860,7 @@
     "_id": "b8b935e20613ee6a",
     "name": "Ghoul",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/ghoul.webp",
     "prototypeToken": {
       "name": "Ghoul",
       "actorLink": false,
@@ -1867,7 +1871,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/ghoul.svg"
       }
     },
     "system": {
@@ -2216,7 +2220,8 @@
         "sourcePages": [
           279,
           280
-        ]
+        ],
+        "bestiaryId": "b8b935e20613ee6a"
       }
     }
   },
@@ -2224,7 +2229,7 @@
     "_id": "1f83d8de2ab0cabd",
     "name": "Grave Hag",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/grave-hag.webp",
     "prototypeToken": {
       "name": "Grave Hag",
       "actorLink": false,
@@ -2235,7 +2240,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/grave-hag.svg"
       }
     },
     "system": {
@@ -2642,7 +2647,8 @@
         "sourcePages": [
           281,
           282
-        ]
+        ],
+        "bestiaryId": "1f83d8de2ab0cabd"
       }
     }
   },
@@ -2650,7 +2656,7 @@
     "_id": "ae3e33762c444917",
     "name": "Wraith",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/wraith.webp",
     "prototypeToken": {
       "name": "Wraith",
       "actorLink": false,
@@ -2661,7 +2667,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/wraith.svg"
       }
     },
     "system": {
@@ -3040,7 +3046,8 @@
         "sourcePages": [
           283,
           284
-        ]
+        ],
+        "bestiaryId": "ae3e33762c444917"
       }
     }
   },
@@ -3048,7 +3055,7 @@
     "_id": "4dd850d88e0f4ac9",
     "name": "Noonwraith",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/noonwraith.webp",
     "prototypeToken": {
       "name": "Noonwraith",
       "actorLink": false,
@@ -3059,7 +3066,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/noonwraith.svg"
       }
     },
     "system": {
@@ -3462,7 +3469,8 @@
         "sourcePages": [
           285,
           286
-        ]
+        ],
+        "bestiaryId": "4dd850d88e0f4ac9"
       }
     }
   },
@@ -3470,7 +3478,7 @@
     "_id": "971a9d2f3e47553a",
     "name": "Wolf",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/wolf.webp",
     "prototypeToken": {
       "name": "Wolf",
       "actorLink": false,
@@ -3481,7 +3489,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/wolf.svg"
       }
     },
     "system": {
@@ -3771,7 +3779,8 @@
         "sourcePages": [
           287,
           288
-        ]
+        ],
+        "bestiaryId": "971a9d2f3e47553a"
       }
     }
   },
@@ -3779,7 +3788,7 @@
     "_id": "ef40bd8e37e8069c",
     "name": "Warg",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/wolf.webp",
     "prototypeToken": {
       "name": "Warg",
       "actorLink": false,
@@ -3790,7 +3799,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/warg.svg"
       }
     },
     "system": {
@@ -4081,7 +4090,8 @@
         "sourcePages": [
           287,
           288
-        ]
+        ],
+        "bestiaryId": "ef40bd8e37e8069c"
       }
     }
   },
@@ -4089,7 +4099,7 @@
     "_id": "a96c80647edde546",
     "name": "Werewolf",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/werewolf.webp",
     "prototypeToken": {
       "name": "Werewolf",
       "actorLink": false,
@@ -4100,7 +4110,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/werewolf.svg"
       }
     },
     "system": {
@@ -4461,7 +4471,8 @@
         "sourcePages": [
           289,
           290
-        ]
+        ],
+        "bestiaryId": "a96c80647edde546"
       }
     }
   },
@@ -4469,7 +4480,7 @@
     "_id": "08494c5667e51fb2",
     "name": "Siren",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/siren.webp",
     "prototypeToken": {
       "name": "Siren",
       "actorLink": false,
@@ -4480,7 +4491,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/siren.svg"
       }
     },
     "system": {
@@ -4850,7 +4861,8 @@
         "sourcePages": [
           291,
           292
-        ]
+        ],
+        "bestiaryId": "08494c5667e51fb2"
       }
     }
   },
@@ -4858,7 +4870,7 @@
     "_id": "9b81be32baee1f76",
     "name": "Griffin",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/griffin.webp",
     "prototypeToken": {
       "name": "Griffin",
       "actorLink": false,
@@ -4869,7 +4881,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/griffin.svg"
       }
     },
     "system": {
@@ -5273,7 +5285,8 @@
         "sourcePages": [
           293,
           294
-        ]
+        ],
+        "bestiaryId": "9b81be32baee1f76"
       }
     }
   },
@@ -5281,7 +5294,7 @@
     "_id": "f95b8db0efd4b514",
     "name": "Endrega Worker",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/endrega-worker.webp",
     "prototypeToken": {
       "name": "Endrega Worker",
       "actorLink": false,
@@ -5292,7 +5305,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/endrega-worker.svg"
       }
     },
     "system": {
@@ -5629,7 +5642,8 @@
         "sourcePages": [
           295,
           296
-        ]
+        ],
+        "bestiaryId": "f95b8db0efd4b514"
       }
     }
   },
@@ -5637,7 +5651,7 @@
     "_id": "fea9a70aa38ff744",
     "name": "Endrega Warrior",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/endrega-worker.webp",
     "prototypeToken": {
       "name": "Endrega Warrior",
       "actorLink": false,
@@ -5648,7 +5662,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/endrega-warrior.svg"
       }
     },
     "system": {
@@ -6019,7 +6033,8 @@
         "sourcePages": [
           295,
           296
-        ]
+        ],
+        "bestiaryId": "fea9a70aa38ff744"
       }
     }
   },
@@ -6027,7 +6042,7 @@
     "_id": "ec1a7bf1f6650fd6",
     "name": "Endrega Drone",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/endrega-worker.webp",
     "prototypeToken": {
       "name": "Endrega Drone",
       "actorLink": false,
@@ -6038,7 +6053,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/endrega-drone.svg"
       }
     },
     "system": {
@@ -6376,7 +6391,8 @@
         "sourcePages": [
           295,
           296
-        ]
+        ],
+        "bestiaryId": "ec1a7bf1f6650fd6"
       }
     }
   },
@@ -6384,7 +6400,7 @@
     "_id": "1f76b4f7cecfc25e",
     "name": "Arachas",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/arachas.webp",
     "prototypeToken": {
       "name": "Arachas",
       "actorLink": false,
@@ -6395,7 +6411,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/arachas.svg"
       }
     },
     "system": {
@@ -6818,7 +6834,8 @@
         "sourcePages": [
           297,
           298
-        ]
+        ],
+        "bestiaryId": "1f76b4f7cecfc25e"
       }
     }
   },
@@ -6826,7 +6843,7 @@
     "_id": "1908fa33754e2485",
     "name": "Golem",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/golem.webp",
     "prototypeToken": {
       "name": "Golem",
       "actorLink": false,
@@ -6837,7 +6854,7 @@
         "attribute": null
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/golem.svg"
       }
     },
     "system": {
@@ -7246,7 +7263,8 @@
         "sourcePages": [
           299,
           300
-        ]
+        ],
+        "bestiaryId": "1908fa33754e2485"
       }
     }
   },
@@ -7254,7 +7272,7 @@
     "_id": "e23cd1e7bd88c8e9",
     "name": "Fiend",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/fiend.webp",
     "prototypeToken": {
       "name": "Fiend",
       "actorLink": false,
@@ -7265,7 +7283,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/fiend.svg"
       }
     },
     "system": {
@@ -7751,7 +7769,8 @@
         "sourcePages": [
           301,
           302
-        ]
+        ],
+        "bestiaryId": "e23cd1e7bd88c8e9"
       }
     }
   },
@@ -7759,7 +7778,7 @@
     "_id": "21408f90b2fb2b6c",
     "name": "Nekker",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/nekker.webp",
     "prototypeToken": {
       "name": "Nekker",
       "actorLink": false,
@@ -7770,7 +7789,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/nekker.svg"
       }
     },
     "system": {
@@ -8050,7 +8069,8 @@
         "sourcePages": [
           303,
           304
-        ]
+        ],
+        "bestiaryId": "21408f90b2fb2b6c"
       }
     }
   },
@@ -8058,7 +8078,7 @@
     "_id": "db8dcc264453e1ba",
     "name": "Nekker Chieftain",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/nekker-chieftain.webp",
     "prototypeToken": {
       "name": "Nekker Chieftain",
       "actorLink": false,
@@ -8069,7 +8089,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/nekker-chieftain.svg"
       }
     },
     "system": {
@@ -8350,7 +8370,8 @@
         "sourcePages": [
           303,
           304
-        ]
+        ],
+        "bestiaryId": "db8dcc264453e1ba"
       }
     }
   },
@@ -8358,7 +8379,7 @@
     "_id": "2b275e73224ce345",
     "name": "Rock Troll",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/rock-troll.webp",
     "prototypeToken": {
       "name": "Rock Troll",
       "actorLink": false,
@@ -8369,7 +8390,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/rock-troll.svg"
       }
     },
     "system": {
@@ -8736,7 +8757,8 @@
         "sourcePages": [
           305,
           306
-        ]
+        ],
+        "bestiaryId": "2b275e73224ce345"
       }
     }
   },
@@ -8744,7 +8766,7 @@
     "_id": "d41ac7dd9f825a77",
     "name": "Wyvern",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/wyvern.webp",
     "prototypeToken": {
       "name": "Wyvern",
       "actorLink": false,
@@ -8755,7 +8777,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/wyvern.svg"
       }
     },
     "system": {
@@ -9180,7 +9202,8 @@
         "sourcePages": [
           307,
           308
-        ]
+        ],
+        "bestiaryId": "d41ac7dd9f825a77"
       }
     }
   },
@@ -9188,7 +9211,7 @@
     "_id": "b331be25f86742ff",
     "name": "Katakan",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/katakan.webp",
     "prototypeToken": {
       "name": "Katakan",
       "actorLink": false,
@@ -9199,7 +9222,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/katakan.svg"
       }
     },
     "system": {
@@ -9662,7 +9685,8 @@
         "sourcePages": [
           309,
           310
-        ]
+        ],
+        "bestiaryId": "b331be25f86742ff"
       }
     }
   },
@@ -9670,7 +9694,7 @@
     "_id": "f1233a256e78752d",
     "name": "Endrega Queen",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/arachas.webp",
     "prototypeToken": {
       "name": "Endrega Queen",
       "actorLink": false,
@@ -9681,7 +9705,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/endrega-queen.svg"
       }
     },
     "system": {
@@ -10106,7 +10130,8 @@
           295,
           297,
           298
-        ]
+        ],
+        "bestiaryId": "f1233a256e78752d"
       }
     }
   },
@@ -10114,7 +10139,7 @@
     "_id": "722f932ec776d939",
     "name": "Cat",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/cat.webp",
     "prototypeToken": {
       "name": "Cat",
       "actorLink": false,
@@ -10125,7 +10150,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/cat.svg"
       }
     },
     "system": {
@@ -10458,7 +10483,8 @@
         "sourcePages": [
           311,
           311
-        ]
+        ],
+        "bestiaryId": "722f932ec776d939"
       }
     }
   },
@@ -10466,7 +10492,7 @@
     "_id": "7565c9f299524893",
     "name": "Dog",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/dog.webp",
     "prototypeToken": {
       "name": "Dog",
       "actorLink": false,
@@ -10477,7 +10503,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/dog.svg"
       }
     },
     "system": {
@@ -10738,7 +10764,8 @@
         "sourcePages": [
           311,
           311
-        ]
+        ],
+        "bestiaryId": "7565c9f299524893"
       }
     }
   },
@@ -10746,7 +10773,7 @@
     "_id": "7ac58149c0a29df1",
     "name": "Bird",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/bird.webp",
     "prototypeToken": {
       "name": "Bird",
       "actorLink": false,
@@ -10757,7 +10784,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/bird.svg"
       }
     },
     "system": {
@@ -11019,7 +11046,8 @@
         "sourcePages": [
           312,
           312
-        ]
+        ],
+        "bestiaryId": "7ac58149c0a29df1"
       }
     }
   },
@@ -11027,7 +11055,7 @@
     "_id": "87e4f177ef97c222",
     "name": "Serpent",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/serpent.webp",
     "prototypeToken": {
       "name": "Serpent",
       "actorLink": false,
@@ -11038,7 +11066,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/serpent.svg"
       }
     },
     "system": {
@@ -11299,7 +11327,8 @@
         "sourcePages": [
           312,
           312
-        ]
+        ],
+        "bestiaryId": "87e4f177ef97c222"
       }
     }
   },
@@ -11307,7 +11336,7 @@
     "_id": "0bbb5417bc60d779",
     "name": "Horse",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/horse.svg",
     "prototypeToken": {
       "name": "Horse",
       "actorLink": false,
@@ -11318,7 +11347,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/horse.svg"
       }
     },
     "system": {
@@ -11465,7 +11494,7 @@
         "printedArmor": 0
       },
       "transport": {
-        "control": 2.0,
+        "control": 2,
         "ramDamage": "3d6"
       },
       "biography": "<p>The Witcher Core Rulebook v1.35, p.312.</p>"
@@ -11555,7 +11584,8 @@
         "sourcePages": [
           313,
           313
-        ]
+        ],
+        "bestiaryId": "0bbb5417bc60d779"
       }
     }
   },
@@ -11563,7 +11593,7 @@
     "_id": "feab0b796f74c975",
     "name": "War Horse",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/war-horse.svg",
     "prototypeToken": {
       "name": "War Horse",
       "actorLink": false,
@@ -11574,7 +11604,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/war-horse.svg"
       }
     },
     "system": {
@@ -11721,7 +11751,7 @@
         "printedArmor": 0
       },
       "transport": {
-        "control": -2.0,
+        "control": -2,
         "ramDamage": "4d6"
       },
       "biography": "<p>The Witcher Core Rulebook v1.35, p.312.</p>"
@@ -11811,7 +11841,8 @@
         "sourcePages": [
           313,
           313
-        ]
+        ],
+        "bestiaryId": "feab0b796f74c975"
       }
     }
   },
@@ -11819,7 +11850,7 @@
     "_id": "01ff85ab29e13613",
     "name": "Ox",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/ox.webp",
     "prototypeToken": {
       "name": "Ox",
       "actorLink": false,
@@ -11830,7 +11861,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/ox.svg"
       }
     },
     "system": {
@@ -11977,7 +12008,7 @@
         "printedArmor": 0
       },
       "transport": {
-        "control": -2.0,
+        "control": -2,
         "ramDamage": "4d6"
       },
       "biography": "<p>The Witcher Core Rulebook v1.35, p.313.</p>"
@@ -12159,7 +12190,8 @@
         "sourcePages": [
           314,
           314
-        ]
+        ],
+        "bestiaryId": "01ff85ab29e13613"
       }
     }
   },
@@ -12167,7 +12199,7 @@
     "_id": "f1b9580dfef0b1dc",
     "name": "Mule",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/mule.webp",
     "prototypeToken": {
       "name": "Mule",
       "actorLink": false,
@@ -12178,7 +12210,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/mule.svg"
       }
     },
     "system": {
@@ -12325,7 +12357,7 @@
         "printedArmor": 0
       },
       "transport": {
-        "control": 0.0,
+        "control": 0,
         "ramDamage": "2d6"
       },
       "biography": "<p>The Witcher Core Rulebook v1.35, p.313.</p>"
@@ -12415,7 +12447,8 @@
         "sourcePages": [
           314,
           314
-        ]
+        ],
+        "bestiaryId": "f1b9580dfef0b1dc"
       }
     }
   },
@@ -12423,7 +12456,7 @@
     "_id": "d6a824457d808ad4",
     "name": "“Crucible” Kowal",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/kowal.webp",
     "prototypeToken": {
       "name": "“Crucible” Kowal",
       "actorLink": false,
@@ -12434,7 +12467,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/kowal.svg"
       }
     },
     "system": {
@@ -12610,7 +12643,7 @@
         "system": {
           "quantity": 1,
           "weight": 1.5,
-          "cost": 650.0,
+          "cost": 650,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 73,
@@ -12625,14 +12658,14 @@
           "accuracy": 1,
           "availability": "P",
           "damage": "5d6",
-          "reliability": 10.0,
-          "maxReliability": 10.0,
-          "hands": 1.0,
+          "reliability": 10,
+          "maxReliability": 10,
+          "hands": 1,
           "range": 0,
           "rangeBodyMultiplier": 0,
           "effectText": "WA +1",
           "concealment": "N/A",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "properties": {
             "fixedDamage": true
           },
@@ -12650,7 +12683,7 @@
         "system": {
           "quantity": 1,
           "weight": 0.5,
-          "cost": 275.0,
+          "cost": 275,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 73,
@@ -12665,14 +12698,14 @@
           "accuracy": 2,
           "availability": "C",
           "damage": "1d6",
-          "reliability": 5.0,
-          "maxReliability": 5.0,
-          "hands": 1.0,
+          "reliability": 5,
+          "maxReliability": 5,
+          "hands": 1,
           "range": 0,
           "rangeBodyMultiplier": 0,
           "effectText": "WA +2 Concealment",
           "concealment": "T",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "properties": {
             "concealment": true,
             "fixedDamage": true
@@ -12691,7 +12724,7 @@
         "system": {
           "quantity": 1,
           "weight": 0.5,
-          "cost": 285.0,
+          "cost": 285,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 74,
@@ -12705,14 +12738,14 @@
           "accuracy": 1,
           "availability": "E",
           "damage": "2d6+2",
-          "reliability": 5.0,
-          "maxReliability": 5.0,
-          "hands": 1.0,
+          "reliability": 5,
+          "maxReliability": 5,
+          "hands": 1,
           "range": 50,
           "rangeBodyMultiplier": 0,
           "effectText": "WA +1 RNG: 50m Slow Reload",
           "concealment": "L",
-          "enhancements": 1.0,
+          "enhancements": 1,
           "properties": {
             "slowReload": true,
             "fixedDamage": true
@@ -12795,7 +12828,7 @@
         "system": {
           "quantity": 20,
           "weight": 0.05,
-          "cost": 1.0,
+          "cost": 1,
           "carried": true,
           "equipped": false,
           "isAmmo": true,
@@ -12804,7 +12837,7 @@
             "piercing"
           ],
           "availability": "E",
-          "reliability": 10.0,
+          "reliability": 10,
           "effectText": "",
           "concealment": "L",
           "properties": {
@@ -12857,7 +12890,8 @@
         "sourcePages": [
           322,
           322
-        ]
+        ],
+        "bestiaryId": "d6a824457d808ad4"
       }
     }
   },
@@ -12865,7 +12899,7 @@
     "_id": "67cbff9e3d9340a3",
     "name": "Lord Nowak",
     "type": "npc",
-    "img": "icons/svg/mystery-man.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/nowak.webp",
     "prototypeToken": {
       "name": "Lord Nowak",
       "actorLink": false,
@@ -12876,7 +12910,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/mystery-man.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/nowak.svg"
       }
     },
     "system": {
@@ -13041,8 +13075,8 @@
         "img": "icons/svg/sword.svg",
         "system": {
           "quantity": 1,
-          "weight": 2.0,
-          "cost": 595.0,
+          "weight": 2,
+          "cost": 595,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 83,
@@ -13057,14 +13091,14 @@
           "accuracy": 2,
           "availability": "R",
           "damage": "3d6+4",
-          "reliability": 15.0,
-          "maxReliability": 15.0,
-          "hands": 1.0,
+          "reliability": 15,
+          "maxReliability": 15,
+          "hands": 1,
           "range": 0,
           "rangeBodyMultiplier": 0,
           "effectText": "WA +2",
           "concealment": "L",
-          "enhancements": 2.0,
+          "enhancements": 2,
           "properties": {
             "fixedDamage": true
           },
@@ -13082,7 +13116,7 @@
         "system": {
           "quantity": 1,
           "weight": 0.5,
-          "cost": 50.0,
+          "cost": 50,
           "carried": true,
           "source": "The Witcher Core Rulebook v1.35",
           "page": 73,
@@ -13094,17 +13128,17 @@
             "slashing",
             "piercing"
           ],
-          "accuracy": 0.0,
+          "accuracy": 0,
           "availability": "E",
           "damage": "1d6+2",
-          "reliability": 10.0,
-          "maxReliability": 10.0,
-          "hands": 1.0,
+          "reliability": 10,
+          "maxReliability": 10,
+          "hands": 1,
           "range": 0,
           "rangeBodyMultiplier": 0,
           "effectText": "",
           "concealment": "S",
-          "enhancements": 0.0,
+          "enhancements": 0,
           "properties": {
             "fixedDamage": true
           },
@@ -13209,7 +13243,8 @@
         "sourcePages": [
           322,
           322
-        ]
+        ],
+        "bestiaryId": "67cbff9e3d9340a3"
       }
     }
   },
@@ -13217,7 +13252,7 @@
     "_id": "41358d2950c03502",
     "name": "Woolabag",
     "type": "monster",
-    "img": "icons/svg/pawprint.svg",
+    "img": "systems/witcher-rilerena/assets/bestiary/portraits/rock-troll.webp",
     "prototypeToken": {
       "name": "Woolabag",
       "actorLink": false,
@@ -13228,7 +13263,7 @@
         "attribute": "sta"
       },
       "texture": {
-        "src": "icons/svg/pawprint.svg"
+        "src": "systems/witcher-rilerena/assets/bestiary/tokens/woolabag.svg"
       }
     },
     "system": {
@@ -13633,7 +13668,8 @@
           306,
           319,
           323
-        ]
+        ],
+        "bestiaryId": "41358d2950c03502"
       }
     }
   }

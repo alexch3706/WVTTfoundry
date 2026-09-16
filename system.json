@@ -2,7 +2,7 @@
   "id": "witcher-rilerena",
   "title": "The Witcher TTRPG — Rilerena",
   "description": "Witcher TTRPG for Foundry V14: character and creature sheets, ordinary combat, core bestiary, equipment and Witcher school gear. Magic and active creature/profession abilities are deferred.",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "compatibility": {
     "minimum": "14",
     "maximum": "14"
@@ -12,12 +12,8 @@
       "name": "alexch3706"
     }
   ],
-  "esmodules": [
-    "module/witcher/main.js"
-  ],
-  "styles": [
-    "css/witcher.css"
-  ],
+  "esmodules": ["module/witcher/main.js"],
+  "styles": ["css/witcher.css"],
   "documentTypes": {
     "Actor": {
       "character": {},
@@ -172,6 +168,6 @@
   "primaryTokenAttribute": "hp",
   "secondaryTokenAttribute": "sta",
   "url": "https://github.com/alexch3706/WVTTfoundry",
-  "manifest": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.3/system.json",
-  "download": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.3/witcher-rilerena.zip"
+  "manifest": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.4/system.json",
+  "download": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.4/witcher-rilerena.zip"
 }

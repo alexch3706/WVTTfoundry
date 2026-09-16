@@ -55,6 +55,10 @@ async function fixture(t) {
     'docs/witcher/install.md': '# Install\n',
     'docs/witcher/forge-checklist.md': '# Live acceptance\n',
     'docs/witcher/bestiary.md': '# Bestiary\n',
+    'docs/witcher/art-sources.md': '# Art provenance\n',
+    'assets/bestiary/portraits/example.webp': Buffer.from([82, 73, 70, 70]),
+    'assets/bestiary/tokens/example.svg': '<svg xmlns="http://www.w3.org/2000/svg"/>',
+    'assets/bestiary/source.pdf': 'source book must not ship',
     'docs/witcher/supplements.md': '# Supplement coverage\n',
     'docs/witcher/implementation-status.md': '# Known limitations\n',
     // Deliberately small packaging fixtures; compendium validity is tested by build-packs.mjs.
@@ -120,6 +124,8 @@ test('actual ZIP has root manifest, only declared runtime, preserved binary pack
   const built = await buildRelease({ root, tag: `v${version}` });
   assert(built.files.includes('system.json'));
   assert(built.files.includes('module/actor/actor-sheet-render.js'));
+  assert(built.files.includes('assets/bestiary/portraits/example.webp'));
+  assert(built.files.includes('assets/bestiary/tokens/example.svg'));
   assert(built.files.includes('packs/witcher/equipment/000004.log'));
   for (const file of [
     'module/cyberpunk.js',
@@ -127,6 +133,7 @@ test('actual ZIP has root manifest, only declared runtime, preserved binary pack
     'templates/actor.hbs',
     'README.md',
     'module/witcher/book.pdf',
+    'assets/bestiary/source.pdf',
     'data/witcher/equipment.json',
     'node_modules/private/index.js',
     'packs/witcher/undeclared/000003.ldb',

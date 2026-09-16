@@ -1,0 +1,749 @@
+{
+  "schemaVersion": 1,
+  "reviewedBooks": [
+    "The Witcher Core Rulebook [v1.35].pdf",
+    "A Witcher’s Tools.pdf",
+    "A Witcher's Journal.pdf",
+    "A Book of Tales.pdf",
+    "A Tome of Chaos [v1.01].pdf",
+    "Lords & Lands.pdf"
+  ],
+  "actors": [
+    {
+      "id": "457d92acb05226b4",
+      "name": "Bandit",
+      "portrait": "assets/bestiary/portraits/bandit.webp",
+      "width": 861,
+      "height": 1344,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 270,
+        "pdfPage": 271,
+        "imageXref": 1069
+      },
+      "token": "assets/bestiary/tokens/bandit.svg",
+      "viewport": [
+        60,
+        0,
+        760
+      ]
+    },
+    {
+      "id": "54339d5f0d4287d6",
+      "name": "Mage",
+      "portrait": "assets/bestiary/portraits/mage.webp",
+      "width": 864,
+      "height": 1345,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 272,
+        "pdfPage": 273,
+        "imageXref": 1076
+      },
+      "token": "assets/bestiary/tokens/mage.svg",
+      "viewport": [
+        244,
+        0,
+        620
+      ]
+    },
+    {
+      "id": "d6b3cbefed0f6802",
+      "name": "Scoia’tael Archer",
+      "portrait": "assets/bestiary/portraits/scoia-tael-archer.webp",
+      "width": 864,
+      "height": 1344,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 274,
+        "pdfPage": 275,
+        "imageXref": 1083
+      },
+      "token": "assets/bestiary/tokens/scoia-tael-archer.svg",
+      "viewport": [
+        40,
+        20,
+        800
+      ]
+    },
+    {
+      "id": "2e4b9000e7d66051",
+      "name": "Drowner",
+      "portrait": "assets/bestiary/portraits/drowner.webp",
+      "width": 863,
+      "height": 1349,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 276,
+        "pdfPage": 277,
+        "imageXref": 1090
+      },
+      "token": "assets/bestiary/tokens/drowner.svg",
+      "viewport": [
+        160,
+        230,
+        680
+      ]
+    },
+    {
+      "id": "b8b935e20613ee6a",
+      "name": "Ghoul",
+      "portrait": "assets/bestiary/portraits/ghoul.webp",
+      "width": 862,
+      "height": 1354,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 278,
+        "pdfPage": 279,
+        "imageXref": 1097
+      },
+      "token": "assets/bestiary/tokens/ghoul.svg",
+      "viewport": [
+        180,
+        180,
+        670
+      ]
+    },
+    {
+      "id": "1f83d8de2ab0cabd",
+      "name": "Grave Hag",
+      "portrait": "assets/bestiary/portraits/grave-hag.webp",
+      "width": 865,
+      "height": 1347,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 280,
+        "pdfPage": 281,
+        "imageXref": 1104
+      },
+      "token": "assets/bestiary/tokens/grave-hag.svg",
+      "viewport": [
+        0,
+        300,
+        865
+      ]
+    },
+    {
+      "id": "ae3e33762c444917",
+      "name": "Wraith",
+      "portrait": "assets/bestiary/portraits/wraith.webp",
+      "width": 869,
+      "height": 1346,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 282,
+        "pdfPage": 283,
+        "imageXref": 1111
+      },
+      "token": "assets/bestiary/tokens/wraith.svg",
+      "viewport": [
+        100,
+        100,
+        750
+      ]
+    },
+    {
+      "id": "4dd850d88e0f4ac9",
+      "name": "Noonwraith",
+      "portrait": "assets/bestiary/portraits/noonwraith.webp",
+      "width": 904,
+      "height": 1413,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 284,
+        "pdfPage": 285,
+        "imageXref": 1118
+      },
+      "token": "assets/bestiary/tokens/noonwraith.svg",
+      "viewport": [
+        100,
+        120,
+        780
+      ]
+    },
+    {
+      "id": "971a9d2f3e47553a",
+      "name": "Wolf",
+      "portrait": "assets/bestiary/portraits/wolf.webp",
+      "width": 861,
+      "height": 1348,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 286,
+        "pdfPage": 287,
+        "imageXref": 1125
+      },
+      "token": "assets/bestiary/tokens/wolf.svg",
+      "viewport": [
+        0,
+        250,
+        861
+      ]
+    },
+    {
+      "id": "ef40bd8e37e8069c",
+      "name": "Warg",
+      "portrait": "assets/bestiary/portraits/wolf.webp",
+      "width": 861,
+      "height": 1348,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 286,
+        "pdfPage": 287,
+        "imageXref": 1125,
+        "sharedWith": "Wolf",
+        "note": "Shared book illustration for a related variant; not a separate depiction."
+      },
+      "token": "assets/bestiary/tokens/warg.svg",
+      "viewport": [
+        120,
+        400,
+        730
+      ]
+    },
+    {
+      "id": "a96c80647edde546",
+      "name": "Werewolf",
+      "portrait": "assets/bestiary/portraits/werewolf.webp",
+      "width": 866,
+      "height": 1345,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 288,
+        "pdfPage": 289,
+        "imageXref": 1134
+      },
+      "token": "assets/bestiary/tokens/werewolf.svg",
+      "viewport": [
+        200,
+        100,
+        660
+      ]
+    },
+    {
+      "id": "08494c5667e51fb2",
+      "name": "Siren",
+      "portrait": "assets/bestiary/portraits/siren.webp",
+      "width": 866,
+      "height": 1349,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 290,
+        "pdfPage": 291,
+        "imageXref": 1143
+      },
+      "token": "assets/bestiary/tokens/siren.svg",
+      "viewport": [
+        0,
+        100,
+        866
+      ]
+    },
+    {
+      "id": "9b81be32baee1f76",
+      "name": "Griffin",
+      "portrait": "assets/bestiary/portraits/griffin.webp",
+      "width": 919,
+      "height": 1424,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 292,
+        "pdfPage": 293,
+        "imageXref": 1150
+      },
+      "token": "assets/bestiary/tokens/griffin.svg",
+      "viewport": [
+        20,
+        0,
+        700
+      ]
+    },
+    {
+      "id": "f95b8db0efd4b514",
+      "name": "Endrega Worker",
+      "portrait": "assets/bestiary/portraits/endrega-worker.webp",
+      "width": 873,
+      "height": 1348,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 294,
+        "pdfPage": 295,
+        "imageXref": 1157
+      },
+      "token": "assets/bestiary/tokens/endrega-worker.svg",
+      "viewport": [
+        0,
+        350,
+        873
+      ]
+    },
+    {
+      "id": "fea9a70aa38ff744",
+      "name": "Endrega Warrior",
+      "portrait": "assets/bestiary/portraits/endrega-worker.webp",
+      "width": 873,
+      "height": 1348,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 294,
+        "pdfPage": 295,
+        "imageXref": 1157,
+        "sharedWith": "Endrega Worker",
+        "note": "Shared book illustration for a related variant; not a separate depiction."
+      },
+      "token": "assets/bestiary/tokens/endrega-warrior.svg",
+      "viewport": [
+        180,
+        540,
+        620
+      ]
+    },
+    {
+      "id": "ec1a7bf1f6650fd6",
+      "name": "Endrega Drone",
+      "portrait": "assets/bestiary/portraits/endrega-worker.webp",
+      "width": 873,
+      "height": 1348,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 294,
+        "pdfPage": 295,
+        "imageXref": 1157,
+        "sharedWith": "Endrega Worker",
+        "note": "Shared book illustration for a related variant; not a separate depiction."
+      },
+      "token": "assets/bestiary/tokens/endrega-drone.svg",
+      "viewport": [
+        10,
+        310,
+        860
+      ]
+    },
+    {
+      "id": "1f76b4f7cecfc25e",
+      "name": "Arachas",
+      "portrait": "assets/bestiary/portraits/arachas.webp",
+      "width": 870,
+      "height": 1347,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 296,
+        "pdfPage": 297,
+        "imageXref": 1164
+      },
+      "token": "assets/bestiary/tokens/arachas.svg",
+      "viewport": [
+        0,
+        270,
+        870
+      ]
+    },
+    {
+      "id": "1908fa33754e2485",
+      "name": "Golem",
+      "portrait": "assets/bestiary/portraits/golem.webp",
+      "width": 866,
+      "height": 1342,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 298,
+        "pdfPage": 299,
+        "imageXref": 1171
+      },
+      "token": "assets/bestiary/tokens/golem.svg",
+      "viewport": [
+        40,
+        40,
+        820
+      ]
+    },
+    {
+      "id": "e23cd1e7bd88c8e9",
+      "name": "Fiend",
+      "portrait": "assets/bestiary/portraits/fiend.webp",
+      "width": 862,
+      "height": 1349,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 300,
+        "pdfPage": 301,
+        "imageXref": 1180
+      },
+      "token": "assets/bestiary/tokens/fiend.svg",
+      "viewport": [
+        0,
+        350,
+        862
+      ]
+    },
+    {
+      "id": "21408f90b2fb2b6c",
+      "name": "Nekker",
+      "portrait": "assets/bestiary/portraits/nekker.webp",
+      "width": 864,
+      "height": 1346,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 302,
+        "pdfPage": 303,
+        "imageXref": 1189
+      },
+      "token": "assets/bestiary/tokens/nekker.svg",
+      "viewport": [
+        244,
+        500,
+        620
+      ]
+    },
+    {
+      "id": "db8dcc264453e1ba",
+      "name": "Nekker Chieftain",
+      "portrait": "assets/bestiary/portraits/nekker-chieftain.webp",
+      "width": 368,
+      "height": 486,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 244,
+        "pdfPage": 245,
+        "imageXref": 952
+      },
+      "token": "assets/bestiary/tokens/nekker-chieftain.svg",
+      "viewport": [
+        30,
+        10,
+        338
+      ]
+    },
+    {
+      "id": "2b275e73224ce345",
+      "name": "Rock Troll",
+      "portrait": "assets/bestiary/portraits/rock-troll.webp",
+      "width": 866,
+      "height": 1343,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 304,
+        "pdfPage": 305,
+        "imageXref": 1196
+      },
+      "token": "assets/bestiary/tokens/rock-troll.svg",
+      "viewport": [
+        40,
+        170,
+        800
+      ]
+    },
+    {
+      "id": "d41ac7dd9f825a77",
+      "name": "Wyvern",
+      "portrait": "assets/bestiary/portraits/wyvern.webp",
+      "width": 917,
+      "height": 1424,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 306,
+        "pdfPage": 307,
+        "imageXref": 1203
+      },
+      "token": "assets/bestiary/tokens/wyvern.svg",
+      "viewport": [
+        257,
+        330,
+        660
+      ]
+    },
+    {
+      "id": "b331be25f86742ff",
+      "name": "Katakan",
+      "portrait": "assets/bestiary/portraits/katakan.webp",
+      "width": 858,
+      "height": 1344,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 308,
+        "pdfPage": 309,
+        "imageXref": 1212
+      },
+      "token": "assets/bestiary/tokens/katakan.svg",
+      "viewport": [
+        40,
+        50,
+        810
+      ]
+    },
+    {
+      "id": "f1233a256e78752d",
+      "name": "Endrega Queen",
+      "portrait": "assets/bestiary/portraits/arachas.webp",
+      "width": 870,
+      "height": 1347,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 296,
+        "pdfPage": 297,
+        "imageXref": 1164,
+        "sharedWith": "Arachas",
+        "note": "Shared book illustration for a related variant; not a separate depiction."
+      },
+      "token": "assets/bestiary/tokens/endrega-queen.svg",
+      "viewport": [
+        100,
+        420,
+        740
+      ]
+    },
+    {
+      "id": "722f932ec776d939",
+      "name": "Cat",
+      "portrait": "assets/bestiary/portraits/cat.webp",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "kind": "generated",
+        "promptKey": "cat",
+        "prompts": "data/witcher/generated-art-prompts.json",
+        "note": "Original interpretation; no suitable illustration found after reviewing the supplied books."
+      },
+      "token": "assets/bestiary/tokens/cat.svg",
+      "viewport": [
+        150,
+        30,
+        850
+      ]
+    },
+    {
+      "id": "7565c9f299524893",
+      "name": "Dog",
+      "portrait": "assets/bestiary/portraits/dog.webp",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "kind": "generated",
+        "promptKey": "dog",
+        "prompts": "data/witcher/generated-art-prompts.json",
+        "note": "Original interpretation; no suitable illustration found after reviewing the supplied books."
+      },
+      "token": "assets/bestiary/tokens/dog.svg",
+      "viewport": [
+        150,
+        20,
+        850
+      ]
+    },
+    {
+      "id": "7ac58149c0a29df1",
+      "name": "Bird",
+      "portrait": "assets/bestiary/portraits/bird.webp",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "kind": "generated",
+        "promptKey": "bird",
+        "prompts": "data/witcher/generated-art-prompts.json",
+        "note": "Original interpretation; no suitable illustration found after reviewing the supplied books."
+      },
+      "token": "assets/bestiary/tokens/bird.svg",
+      "viewport": [
+        150,
+        0,
+        850
+      ]
+    },
+    {
+      "id": "87e4f177ef97c222",
+      "name": "Serpent",
+      "portrait": "assets/bestiary/portraits/serpent.webp",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "kind": "generated",
+        "promptKey": "serpent",
+        "prompts": "data/witcher/generated-art-prompts.json",
+        "note": "Original interpretation; no suitable illustration found after reviewing the supplied books."
+      },
+      "token": "assets/bestiary/tokens/serpent.svg",
+      "viewport": [
+        150,
+        80,
+        850
+      ]
+    },
+    {
+      "id": "0bbb5417bc60d779",
+      "name": "Horse",
+      "portrait": "assets/bestiary/portraits/horse.svg",
+      "width": 1130,
+      "height": 614,
+      "source": {
+        "kind": "book",
+        "book": "A Tome of Chaos [v1.01].pdf",
+        "printedPage": 105,
+        "pdfPage": 106,
+        "imageXref": 446
+      },
+      "image": "assets/bestiary/illustrations/horse.webp",
+      "portraitViewport": [
+        710,
+        0,
+        420,
+        610
+      ],
+      "token": "assets/bestiary/tokens/horse.svg",
+      "viewport": [
+        570,
+        0,
+        560
+      ]
+    },
+    {
+      "id": "feab0b796f74c975",
+      "name": "War Horse",
+      "portrait": "assets/bestiary/portraits/war-horse.svg",
+      "width": 1726,
+      "height": 607,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 171,
+        "pdfPage": 172,
+        "imageXref": 618
+      },
+      "image": "assets/bestiary/illustrations/war-horse.webp",
+      "portraitViewport": [
+        420,
+        0,
+        780,
+        607
+      ],
+      "token": "assets/bestiary/tokens/war-horse.svg",
+      "viewport": [
+        500,
+        0,
+        607
+      ]
+    },
+    {
+      "id": "01ff85ab29e13613",
+      "name": "Ox",
+      "portrait": "assets/bestiary/portraits/ox.webp",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "kind": "generated",
+        "promptKey": "ox",
+        "prompts": "data/witcher/generated-art-prompts.json",
+        "note": "Original interpretation; no suitable illustration found after reviewing the supplied books."
+      },
+      "token": "assets/bestiary/tokens/ox.svg",
+      "viewport": [
+        0,
+        0,
+        1024
+      ]
+    },
+    {
+      "id": "f1b9580dfef0b1dc",
+      "name": "Mule",
+      "portrait": "assets/bestiary/portraits/mule.webp",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "kind": "generated",
+        "promptKey": "mule",
+        "prompts": "data/witcher/generated-art-prompts.json",
+        "note": "Original interpretation; no suitable illustration found after reviewing the supplied books."
+      },
+      "token": "assets/bestiary/tokens/mule.svg",
+      "viewport": [
+        210,
+        0,
+        800
+      ]
+    },
+    {
+      "id": "d6a824457d808ad4",
+      "name": "“Crucible” Kowal",
+      "portrait": "assets/bestiary/portraits/kowal.webp",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "kind": "generated",
+        "promptKey": "kowal",
+        "prompts": "data/witcher/generated-art-prompts.json",
+        "note": "Original interpretation; no suitable illustration found after reviewing the supplied books."
+      },
+      "token": "assets/bestiary/tokens/kowal.svg",
+      "viewport": [
+        120,
+        0,
+        850
+      ]
+    },
+    {
+      "id": "67cbff9e3d9340a3",
+      "name": "Lord Nowak",
+      "portrait": "assets/bestiary/portraits/nowak.webp",
+      "width": 1024,
+      "height": 1536,
+      "source": {
+        "kind": "generated",
+        "promptKey": "nowak",
+        "prompts": "data/witcher/generated-art-prompts.json",
+        "note": "Original interpretation; no suitable illustration found after reviewing the supplied books."
+      },
+      "token": "assets/bestiary/tokens/nowak.svg",
+      "viewport": [
+        120,
+        0,
+        850
+      ]
+    },
+    {
+      "id": "41358d2950c03502",
+      "name": "Woolabag",
+      "portrait": "assets/bestiary/portraits/rock-troll.webp",
+      "width": 866,
+      "height": 1343,
+      "source": {
+        "kind": "book",
+        "book": "The Witcher Core Rulebook [v1.35].pdf",
+        "printedPage": 304,
+        "pdfPage": 305,
+        "imageXref": 1196,
+        "sharedWith": "Rock Troll",
+        "note": "Shared book illustration for a related variant; not a separate depiction."
+      },
+      "token": "assets/bestiary/tokens/woolabag.svg",
+      "viewport": [
+        110,
+        220,
+        720
+      ]
+    }
+  ]
+}

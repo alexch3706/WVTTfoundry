@@ -416,6 +416,14 @@ def main():
         AUDIT.append({'name': actor['name'], 'id': actor['_id'], 'pdfPages': actor['flags'][SYSTEM]['sourcePages'],
                       'attacks': [i['name'] for i in actor['items'] if i['type'] == 'weapon' and not i['system'].get('isAmmo')],
                       'abilities': [i['name'] for i in actor['items'] if i['type'] == 'ability']})
+    art_path = ROOT / 'data/witcher/bestiary-art.json'
+    if art_path.exists():
+        art = {entry['id']: entry for entry in json.loads(art_path.read_text())['actors']}
+        for actor in ACTORS:
+            entry = art[actor['_id']]
+            actor['img'] = f'systems/{SYSTEM}/' + entry['portrait']
+            actor['prototypeToken']['texture']['src'] = f'systems/{SYSTEM}/' + entry['token']
+            actor['flags'][SYSTEM]['bestiaryId'] = actor['_id']
     assert len(ACTORS) == 36 and len({a['_id'] for a in ACTORS}) == 36
     destination = ROOT / 'data/witcher'
     (destination / 'bestiary.json').write_text(json.dumps(ACTORS, ensure_ascii=False, indent=2) + '\n')

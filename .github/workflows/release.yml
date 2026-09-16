@@ -36,6 +36,10 @@ jobs:
           );
           JS
       - run: npm ci
+      - name: Verify committed bestiary art outputs
+        run: |
+          npm run build:art
+          git diff --quiet -- assets/bestiary module/witcher/bestiary-art.js data/witcher/bestiary.json
       - run: npm test
       - run: npm run build:packs
       - run: npm run validate

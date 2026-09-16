@@ -18,6 +18,7 @@ const FIXED_FILES = [
   'docs/witcher/install.md',
   'docs/witcher/forge-checklist.md',
   'docs/witcher/bestiary.md',
+  'docs/witcher/art-sources.md',
   'docs/witcher/supplements.md',
   'docs/witcher/implementation-status.md',
 ];
@@ -82,15 +83,15 @@ async function regularFile(root, relative) {
   return absolute;
 }
 
-async function runtimeFiles(root, relative) {
+async function runtimeFiles(root, relative, extensions = /\.(?:js|hbs)$/) {
   const directory = await fs.lstat(path.join(root, relative));
   assert(directory.isDirectory() && !directory.isSymbolicLink(), `Invalid runtime directory: ${relative}`);
   const files = [];
   for (const entry of await fs.readdir(path.join(root, relative), { withFileTypes: true })) {
     const file = `${relative}/${entry.name}`;
     assert(!entry.isSymbolicLink(), `Symlinks are not package inputs: ${file}`);
-    if (entry.isDirectory()) files.push(...(await runtimeFiles(root, file)));
-    else if (entry.isFile() && /\.(?:js|hbs)$/.test(file)) files.push(file);
+    if (entry.isDirectory()) files.push(...(await runtimeFiles(root, file, extensions)));
+    else if (entry.isFile() && extensions.test(file)) files.push(file);
   }
   return files;
 }
@@ -99,6 +100,7 @@ export async function collectReleaseFiles(root, manifest) {
   const files = new Set(FIXED_FILES);
   for (const directory of RUNTIME_ROOTS)
     for (const file of await runtimeFiles(root, directory)) files.add(file);
+  for (const file of await runtimeFiles(root, 'assets/bestiary', /\.(?:webp|png|jpg|svg)$/)) files.add(file);
   const packNames = new Set();
   for (const pack of manifest.packs ?? []) {
     assert.match(pack.path, /^packs\/witcher\/[a-z0-9-]+$/, `Invalid pack directory: ${pack.name}`);

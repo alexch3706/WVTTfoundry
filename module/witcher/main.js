@@ -9,11 +9,13 @@ import {
 import { WitcherActorSheet, WitcherItemSheet } from './sheets.js';
 import { attack, defend, applyDamage, registerCombatChat } from './combat.js';
 import { registerActivities, craft, treat, useItem, tickActor } from './activities.js';
-import { skillRoll, save } from './runtime.js';
+import { skillRoll, save, errorNotice } from './runtime.js';
 import { registerConsequences } from './consequences.js';
 import { registerCreatureAbilities } from './monster-abilities.js';
 import { registerInventory } from './inventory.js';
 import { registerAuthority } from './authority.js';
+import { BESTIARY_ART } from './bestiary-art.js';
+import { updateBestiaryArt } from './bestiary-art-migration.js';
 import { loadFoundryTemplates } from '../foundry-compat.js';
 
 Hooks.once('init', async () => {
@@ -46,13 +48,24 @@ Hooks.once('init', async () => {
     makeDefault: true,
     label: 'Witcher equipment',
   });
-  game.witcher = { attack, defend, applyDamage, skillRoll, save, craft, treat, useItem, tickActor };
+  game.witcher = {
+    attack,
+    defend,
+    applyDamage,
+    skillRoll,
+    save,
+    craft,
+    treat,
+    useItem,
+    tickActor,
+    updateBestiaryArt: () => updateBestiaryArt(BESTIARY_ART),
+  };
   await loadFoundryTemplates([
     `systems/${SYSTEM_ID}/templates/witcher/actor.hbs`,
     `systems/${SYSTEM_ID}/templates/witcher/item.hbs`,
   ]);
 });
-Hooks.once('ready', () => {
+Hooks.once('ready', async () => {
   registerInventory();
   registerCombatChat();
   registerActivities();
@@ -68,4 +81,15 @@ Hooks.once('ready', () => {
     );
     for (const actor of actors.values()) if (actor.sheet?.rendered) actor.sheet.render(false);
   });
+  try {
+    const result = await game.witcher.updateBestiaryArt();
+    if (result.errors.length) {
+      console.warn(`${SYSTEM_ID} | Bestiary art update`, result);
+      ui.notifications.warn(
+        'Some bestiary images could not be updated. The GM can retry with game.witcher.updateBestiaryArt(). Details are in the console.'
+      );
+    }
+  } catch (error) {
+    errorNotice(error);
+  }
 });
