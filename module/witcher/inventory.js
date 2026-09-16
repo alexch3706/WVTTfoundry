@@ -1,6 +1,7 @@
 import { RuleError, armorEncumbrance } from './rules.js';
 import { registerCommand, authorizedActor, runCommand } from './authority.js';
 import { actionPlan, commitActor, owner, chat, escapeHTML as e } from './runtime.js';
+import { woundModifiers } from './wounds.js';
 
 const system = (entry) => entry.system ?? entry;
 const itemId = (entry) => entry.id ?? entry._id;
@@ -29,12 +30,7 @@ export function availableHands(actorState, items = actorState.items ?? []) {
     if (item.type !== 'wound') continue;
     const wound = system(item).wound;
     if (!wound) continue;
-    const modifiers =
-      wound.treatment === 'treated'
-        ? wound.treatedModifiers
-        : wound.treatment === 'stabilized'
-          ? wound.stabilizedModifiers
-          : wound.modifiers;
+    const modifiers = woundModifiers(wound);
     if (!modifiers?.armDisabled) continue;
     if (wound.location) disabled.add(wound.location);
     else unspecified++;

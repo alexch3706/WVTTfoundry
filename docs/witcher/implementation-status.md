@@ -1,6 +1,6 @@
 # Witcher V14 implementation status
 
-Release candidate: **0.1.0-alpha.4**. This ledger distinguishes implemented code
+Release candidate: **0.1.0-alpha.5**. This ledger distinguishes implemented code
 from live acceptance. No Foundry server has been launched in this environment;
 the owner will test the installable release on The Forge.
 
@@ -27,6 +27,27 @@ potion/decoction automation have incomplete paths inherited from the first
 implementation pass; they are not claims of completed ordinary combat and are
 not the primary attack controls. Critical Flurry's Disarm/Trip and school armor
 follow-up strikes are included because they are equipment effects.
+
+## Critical wound cards in alpha.5
+
+The new **Critical Wounds** pack has all 24 Core injuries. Drag/drop selects the
+affected body location; combat creates the same embedded Item. Cards expose
+four stages, penalties, medical/magic requirements, progress and recovery clocks.
+Stabilization does not start recovery; Healing Hands checks once after the
+required rounds. The magic control records successful uses manually.
+
+Healed temporary wounds remain as inactive history. Permanent consequences stay
+active even when healed. Wound conditions track sources separately; ordinary
+condition-ending checks can stop bleeding/poison without removing other injury
+penalties. Selected-arm checks, visual Awareness, fractured-skull head damage
+and Stamina limits use the actual wound effects. Old condition flags need
+explicit GM review when treating legacy wounds.
+
+Recovery uses the printed BODY 3–13 range. Foreign Object has no unambiguous
+conversion of Critical Healing modifiers to days in the supplied rules; these
+clocks need a GM duration and pause for review if the modifier context changes.
+Deadly injuries have no ordinary recovery-days entry in the corrected table.
+See [critical wound details](critical-wounds.md).
 
 ## Bestiary portraits and tokens in alpha.4
 
@@ -87,8 +108,9 @@ These views read existing saved wear; this release does not change damage rules.
   reaction choices. Manticore shield knockback moves the actual target token up
   to 4 m, stopping at walls/scene bounds, and applies prone. Griffin's Sign
   reaction is explicitly manual until signs are implemented.
-- **809 catalog Items**: 673 core + 46 Tools + 90 Journal, across ten Item packs.
-  **36 core bestiary Actors**, with **253 embedded Items**, in the eleventh pack.
+- **833 catalog Items**: 673 core equipment + 46 Tools + 90 Journal + 24 wounds,
+  across eleven Item packs. **36 core bestiary Actors**, with **253 embedded
+  Items**, in the twelfth pack.
   See `bestiary.md` and `supplements.md` for source coverage and adaptations.
 - Real LevelDB packs are built with Foundry's official CLI, extracted back and
   compared to the source records, including all embedded Item system fields.
@@ -98,12 +120,13 @@ These views read existing saved wear; this release does not change damage rules.
 
 ## Validation and remaining acceptance
 
-**181 automated tests pass.** Tests cover art provenance, packaged asset references,
+**240 automated tests pass.** They cover wound cards, treatment and recovery, contextual injury
+effects, authority and rollback, plus art provenance, packaged asset references,
 default-image migration, custom image preservation, retry safety, manual attack/defense entry and validation,
 book examples, imported creature attacks and school gear,
 turn/STA accounting, persistence failure recovery and package contents. Syntax,
 module imports and Handlebars compilation are checked. A separate check uses the
-genuine public Foundry V14.365 data layer: **36 Actors and 1062 Items** preserve
+genuine public Foundry V14.365 data layer: **36 Actors and 1086 Items** preserve
 all supplied fields during model cleaning.
 
 All 36 portraits and 36 token images decode and render to canvas in Chromium;

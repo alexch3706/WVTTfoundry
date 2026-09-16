@@ -159,11 +159,34 @@ export const WOUNDS = {
   ],
 };
 export const woundModifiers = (w) =>
-  w.treatment === 'treated'
-    ? w.treatedModifiers
-    : w.treatment === 'stabilized'
-      ? w.stabilizedModifiers
-      : w.modifiers;
+  w.treatment === 'healed'
+    ? w.permanent
+      ? Object.keys(w.healedModifiers ?? {}).length
+        ? w.healedModifiers
+        : w.treatedModifiers
+      : {}
+    : w.treatment === 'treated'
+      ? w.treatedModifiers
+      : w.treatment === 'stabilized'
+        ? w.stabilizedModifiers
+        : w.modifiers;
+
+/** Critical wound conditions remain independent of other bleeding/poison/choking. */
+export function woundConditionSources(items = [], condition) {
+  if (!['bleeding', 'poison', 'suffocating'].includes(condition)) return [];
+  return items.filter((item) => {
+    if (item.type !== 'wound') return false;
+    const wound = (item.system ?? item).wound;
+    return (
+      wound?.treatment === 'untreated' && wound[condition] && !wound.endedConditions?.includes(condition)
+    );
+  });
+}
+export function woundConditions(items = []) {
+  return ['bleeding', 'poison', 'suffocating'].filter(
+    (condition) => woundConditionSources(items, condition).length > 0
+  );
+}
 export function combinedModifiers(actor, items = []) {
   const out = {};
   const sets = [
@@ -174,7 +197,8 @@ export function combinedModifiers(actor, items = []) {
   ];
   for (const mods of sets)
     for (const [key, value] of Object.entries(mods ?? {})) {
-      if (key.endsWith('Multiplier')) out[key] = (out[key] ?? 1) * Number(value);
+      if (key === 'headMultiplier') out[key] = Math.max(out[key] ?? 0, Number(value));
+      else if (key.endsWith('Multiplier')) out[key] = (out[key] ?? 1) * Number(value);
       else out[key] = (out[key] ?? 0) + Number(value);
     }
   return out;

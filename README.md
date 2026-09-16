@@ -15,6 +15,10 @@ compatibility helpers are retained from Cyberpunk.
 - Optional manual d10 entry for attacks and defenses, with complete exploding
   and fumbling chains, automatic modifiers and a visible manual-entry label.
 - **809 equipment, component, mutagen and recipe records** in ten Item compendia: 673 core + 46 A Witcher’s Tools + 90 A Witcher’s Journal.
+- **24 critical injury Items** in **Critical Wounds**: drag onto an actor,
+  apply stage-specific penalties, stabilize/treat and track recovery. Healed
+  cards preserve history and permanent consequences. See the
+  [critical wound guide](docs/witcher/critical-wounds.md).
 - **36 creatures and NPCs** in **Core Bestiary & NPCs**, including printed
   variants, animals and three named adventure NPCs; **253 embedded records**.
 - Portraits and round map tokens for all **36 entries**: 28 use book art and
@@ -27,8 +31,8 @@ Signs/magic, mounted combat and active creature/profession abilities are deferre
 
 ## Install on The Forge
 
-Use the [v0.1.0-alpha.4 manifest](https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.4/system.json) in **Install from Manifest**.
-See [installation instructions](docs/witcher/install.md) and [release assets](https://github.com/alexch3706/WVTTfoundry/releases/tag/v0.1.0-alpha.4).
+Use the [v0.1.0-alpha.5 manifest](https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.5/system.json) in **Install from Manifest**.
+See [installation instructions](docs/witcher/install.md) and [release assets](https://github.com/alexch3706/WVTTfoundry/releases/tag/v0.1.0-alpha.5).
 Create a new Witcher world; use a 2 m grid and an active GM for combat commands.
 
 ## Validation
@@ -36,6 +40,7 @@ Create a new Witcher world; use a 2 m grid and an active GM for combat commands.
 ```sh
 npm ci
 npm test
+npm run build:wounds
 npm run build:packs
 npm run validate
 ```

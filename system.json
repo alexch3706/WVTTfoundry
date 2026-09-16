@@ -2,7 +2,7 @@
   "id": "witcher-rilerena",
   "title": "The Witcher TTRPG — Rilerena",
   "description": "Witcher TTRPG for Foundry V14: character and creature sheets, ordinary combat, core bestiary, equipment and Witcher school gear. Magic and active creature/profession abilities are deferred.",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "compatibility": {
     "minimum": "14",
     "maximum": "14"
@@ -157,6 +157,17 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "critical-wounds",
+      "label": "Critical Wounds",
+      "path": "packs/witcher/critical-wounds",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "grid": {
@@ -168,6 +179,6 @@
   "primaryTokenAttribute": "hp",
   "secondaryTokenAttribute": "sta",
   "url": "https://github.com/alexch3706/WVTTfoundry",
-  "manifest": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.4/system.json",
-  "download": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.4/witcher-rilerena.zip"
+  "manifest": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.5/system.json",
+  "download": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.5/witcher-rilerena.zip"
 }

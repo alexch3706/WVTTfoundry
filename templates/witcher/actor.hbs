@@ -164,7 +164,10 @@
           ·
           {{expires}}
           <button type='button' data-witcher='endEffect' data-key='{{id}}'>End effect</button></p>{{/each}}
-      <h2>Conditions</h2><div class='conditions'>{{#each conditionRows}}<label class='{{cssClass}}'><input
+      <h2>Conditions</h2>{{#if woundConditions}}<p class='source-note'>From untreated wounds:
+          {{woundConditions}}. Treat the injury to end its effects.</p>{{/if}}<div class='conditions'>{{#each
+          conditionRows
+        }}<label class='{{cssClass}}'><input
               type='checkbox'
               name='condition.{{key}}'
               {{checked active}}
@@ -175,22 +178,61 @@
           type='button'
           data-witcher='rest'
         >Rest</button></div>
-      <h2>Critical wounds</h2>{{#each wounds}}<div class='wound-card'><button
-            type='button'
-            data-witcher='item'
-            data-item-id='{{id}}'
-          >{{name}}</button><span>{{system.wound.severity}}
-            ·
-            {{system.wound.location}}
-            ·
-            {{system.wound.treatment}}
-            ·
-            {{system.wound.daysRemaining}}
-            days</span><button
-            type='button'
-            data-witcher='treat'
-            data-item-id='{{id}}'
-          >Treat</button></div>{{else}}<p class='empty-note'>No critical wounds.</p>{{/each}}
+      <h2>Critical wounds</h2>{{#each wounds}}<section class='wound-card' data-wound-stage='{{stage}}'>
+          <div class='wound-heading'><button
+              type='button'
+              data-witcher='item'
+              data-item-id='{{id}}'
+            >{{name}}</button><strong class='wound-stage'>{{stageLabel}}</strong></div>
+          <p class='source-note'>{{severity}} · {{location}}</p>
+          <p class='wound-effect'>{{activeText}}</p>
+          <p class='wound-recovery'>{{recovery}}</p>
+          {{#if recoveryReason}}<p class='witcher-warning'>{{recoveryReason}}</p>{{/if}}
+          {{#unless fatal}}<p class='source-note'>Medicine DC
+              {{requirements.dc}}
+              · Healing Hands
+              {{requirements.rounds}}
+              rounds · Magic
+              {{magicCompleted}}
+              /
+              {{requirements.magicUses}}
+              successful applications, DC
+              {{requirements.magicDC}}</p>{{/unless}}
+          {{#if legacyNotice}}<p class='witcher-warning'>{{legacyNotice}}</p>{{/if}}
+          <div class='action-bar wound-controls'>
+            {{#if canMedical}}<button
+                type='button'
+                data-witcher='wound'
+                data-key='medical'
+                data-item-id='{{id}}'
+              >First Aid / Healing Hands</button>{{/if}}
+            {{#if canDays}}<button
+                type='button'
+                data-witcher='wound'
+                data-key='days'
+                data-item-id='{{id}}'
+              >{{daysLabel}}</button>{{/if}}
+            {{#if canMarkStabilized}}<button
+                type='button'
+                data-witcher='wound'
+                data-key='markStabilized'
+                data-item-id='{{id}}'
+              >Mark stabilized (GM)</button>{{/if}}
+            {{#if canMarkTreated}}<button
+                type='button'
+                data-witcher='wound'
+                data-key='markTreated'
+                data-item-id='{{id}}'
+              >Mark treated (GM)</button>{{/if}}
+            {{#if canHeal}}<button
+                type='button'
+                data-witcher='wound'
+                data-key='heal'
+                data-item-id='{{id}}'
+              >{{healLabel}}</button>{{/if}}
+          </div>
+        </section>{{else}}<p class='empty-note'>No critical wounds. Drag an injury from the Critical Wounds
+          compendium onto this sheet to add one.</p>{{/each}}
     </div>
     <div class='tab' data-group='primary' data-tab='bestiary'>
       <h2>{{system.category}} · {{system.bestiary.threat}}</h2>

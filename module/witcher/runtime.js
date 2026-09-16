@@ -1,6 +1,8 @@
 import { SYSTEM_ID } from './config.js';
 import { resolveCheck, parseManualCheck, RuleError, reserveAction, attackSequence } from './rules.js';
 import { resolveFoundryUuid } from '../foundry-compat.js';
+import { injuredArmChoices, resolveWoundArm } from './wound-rules.js';
+import { woundModifiers } from './wounds.js';
 
 export const escapeHTML = (value) =>
   String(value ?? '').replace(
@@ -99,6 +101,16 @@ export function manualCheckInput() {
   return (
     input('manualDice', 'Manual d10 (optional)', { type: 'text' }) +
     '<p class="notes">Leave empty to roll automatically. Enter dice only, separated by commas: 7; 10,6; or 1,10,4. Include every follow-up die; stats and modifiers are added automatically.</p>'
+  );
+}
+export function woundArmInput(actor, { optional = true } = {}) {
+  const choices = injuredArmChoices(actor.system, [...actor.items]);
+  if (!choices || !Object.keys(choices).length) return '';
+  return (
+    input('woundArm', 'Arm used for this action', {
+      options: { ...(optional ? { '': 'No arm used' } : {}), ...choices, both: 'Both arms' },
+    }) +
+    '<p class="notes">The selected arm determines injury penalties. Two-handed weapons always use both arms.</p>'
   );
 }
 export function validateManualCheck(values) {
@@ -248,22 +260,33 @@ export function actionPlan(actor, options = {}) {
     },
   };
 }
-export async function skillRoll(actor, key, { modifier = 0, stat, dialog = true, title } = {}) {
+export async function skillRoll(
+  actor,
+  key,
+  { modifier = 0, stat, dialog = true, title, arm = '', sight = false } = {}
+) {
   owner(actor);
   let luck = 0;
   if (dialog) {
     const values = await prompt(
       title ?? key,
       input('modifier', 'Situational modifier', { value: modifier }) +
-        input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value })
+        input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value }) +
+        woundArmInput(actor) +
+        (key === 'awareness' &&
+        actor.items.some((i) => i.type === 'wound' && woundModifiers(i.system.wound)?.sightAwareness)
+          ? input('sight', 'Visual Awareness (apply eye injury)', { type: 'checkbox', checked: true })
+          : '')
     );
     if (!values) return;
     modifier = Number(values.modifier);
     luck = Number(values.luck);
+    arm = resolveWoundArm(actor.system, [...actor.items], values.woundArm);
+    sight = !!values.sight;
   }
   if (!Number.isInteger(luck) || luck < 0 || luck > actor.system.luck.value)
     throw new RuleError('Invalid Luck expenditure.');
-  const result = await check(actor.skillBase(key, { stat, modifier: modifier + luck }).total);
+  const result = await check(actor.skillBase(key, { stat, modifier: modifier + luck, arm, sight }).total);
   if (luck) await actor.update({ 'system.luck.value': actor.system.luck.value - luck });
   await chat(actor, title ?? key, checkHTML(result), { rolls: result.rolls });
   return result;

@@ -56,6 +56,7 @@ async function fixture(t) {
     'docs/witcher/forge-checklist.md': '# Live acceptance\n',
     'docs/witcher/bestiary.md': '# Bestiary\n',
     'docs/witcher/art-sources.md': '# Art provenance\n',
+    'docs/witcher/critical-wounds.md': '# Critical wound cards\n',
     'assets/bestiary/portraits/example.webp': Buffer.from([82, 73, 70, 70]),
     'assets/bestiary/tokens/example.svg': '<svg xmlns="http://www.w3.org/2000/svg"/>',
     'assets/bestiary/source.pdf': 'source book must not ship',

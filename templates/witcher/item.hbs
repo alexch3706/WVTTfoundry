@@ -7,65 +7,155 @@
         value='{{item.name}}'
         aria-label='Item name'
       /><p>{{system.source}} · p. {{system.page}}</p></div></header>
-  {{#if system.priceText}}<p class='source-note'>{{system.priceText}}</p>{{/if}}
-  {{#if owned}}<div class='action-bar'>{{#with inventoryItem}}
-        {{#if canEquip}}<button type='button' data-witcher='equip'>{{#if system.equipped}}Stow / unequip{{else}}Equip{{/if}}</button>{{/if}}
-        {{#each attackStyles}}<button
-            type='button'
-            data-witcher='attack'
-            data-style='{{style}}'
-            title='{{hint}}'
-            {{disabledAttribute}}
-          >{{label}}</button>{{/each}}
-        {{#if isUsable}}<button type='button' data-witcher='use'>{{useLabel}}</button>{{/if}}
-        {{#if isDiagram}}<button type='button' data-witcher='craft'>Craft</button>{{/if}}
-        {{#if canRepair}}<button type='button' data-witcher='repair'>Repair</button>{{/if}}
-      {{/with}}</div>{{/if}}
-  {{#if system.school}}<p class='source-note'>{{system.school}} school</p>{{/if}}
-  {{#if isArmor}}<section class='armor-condition'>
-      <h2>Armor condition · SP by location</h2>
-      <p class='source-note'>Current SP absorbs damage. Maximum SP is the value after full repair.</p>
-      {{#if owned}}<p class='source-note'>This is
-          {{ownerName}}'s armor. Apply damage updates these values.</p>{{else}}<p class='source-note'>This is
-          the source item. Check the copy in the character's inventory for combat wear.</p>{{/if}}
-      {{#if armorLocations}}<table class='armor-sp-table'><thead><tr><th>Location</th><th>Current SP</th><th
-              >Max SP</th></tr></thead><tbody>
-            {{#each armorLocations}}<tr data-damaged='{{damaged}}' data-armor-location='{{id}}'>
-                <td>{{label}}{{#if broken}} <strong>Broken</strong>{{/if}}</td>
-                <td><input
-                    type='number'
-                    name='system.sp.{{id}}'
-                    min='0'
-                    value='{{current}}'
-                    aria-label='{{label}} current SP'
-                  /></td>
-                <td>{{maximum}}</td>
-              </tr>{{/each}}
-          </tbody></table>{{else}}<p class='witcher-warning'>No covered locations are set. Add Coverage
-          identifiers in Characteristics.</p>{{/if}}
-    </section>{{/if}}
-  <h2>Inventory</h2><div class='field-grid'>{{{common}}}</div>
-  <h2>Characteristics</h2><div class='field-grid'>{{{details}}}</div>
-  {{#if inventoryItem.reliabilityUnspecified}}<p class='source-note'>Core does not specify this natural
-      weapon's REL. Set current and maximum REL with the GM to enable blocking. Maximum REL 0 means
-      unspecified.</p>{{/if}}
-  {{#if materials}}<h2>Recipe components</h2><table><thead><tr><th>Component / substance</th><th
-          >Units</th></tr></thead><tbody>{{#each materials}}<tr><td>{{name}}</td><td
-            >{{quantity}}</td></tr>{{/each}}</tbody></table>{{/if}}
-  {{#if properties}}<details><summary>Weapon and equipment properties</summary><div
-        class='field-grid'
-      >{{{properties}}}</div></details>{{/if}}
-  {{#if bonuses}}<h2>Modifiers</h2><div class='modifier-list'>{{#each bonuses}}<span>{{label}}
-          <strong>{{value}}</strong></span>{{/each}}</div>{{/if}}
-  <h2>Effect</h2><textarea name='system.effectText' rows='6'>{{system.effectText}}</textarea>
-  <h2>Description</h2><textarea name='system.description' rows='5'>{{system.description}}</textarea>
-  <label>Notes<textarea name='system.notes' rows='4'>{{system.notes}}</textarea></label>
-  <div class='field-grid'><label class='witcher-field'>Source<input
-        name='system.source'
-        value='{{system.source}}'
-      /></label><label class='witcher-field'>Printed page<input
-        type='number'
-        name='system.page'
-        value='{{system.page}}'
-      /></label></div>
+  {{#if isWound}}
+    {{#with wound}}
+      <section class='wound-detail' data-wound-stage='{{stage}}'>
+        <div class='wound-heading'><h2>{{severity}} critical wound</h2><strong
+            class='wound-stage'
+          >{{stageLabel}}</strong></div>
+        <p class='source-note'>{{location}}</p>
+        {{#unless owned}}<p class='wound-guidance'>Drag this Item onto a character or NPC sheet to apply the
+            injury. Choose the affected location when adding it. This source card does not apply effects by
+            itself.</p>{{/unless}}
+        {{#if fatal}}<p class='witcher-error'>{{recovery}}</p>{{else}}
+          <section class='wound-current'>
+            <h3>{{#if owned}}Current effects{{else}}Effects when received{{/if}}</h3>
+            <p>{{activeText}}</p>
+            {{#if modifiers}}<dl class='wound-modifiers'>{{#each modifiers}}<div><dt>{{label}}</dt><dd
+                    >{{value}}</dd></div>{{/each}}</dl>{{/if}}
+            {{#if extraResult}}<p>{{extraLabel}}: <strong>{{extraResult}}</strong></p>{{/if}}
+          </section>
+          <h3>Stabilization and treatment</h3>
+          <dl class='wound-requirements'>
+            <dt>First Aid · stabilization</dt><dd>DC
+              {{requirements.dc}}. Stabilization does not begin recovery.</dd>
+            <dt>Healing Hands · treatment</dt><dd>Complete
+              {{requirements.rounds}}
+              rounds, then check DC
+              {{requirements.dc}}.{{#if owned}}
+                Recorded:
+                {{roundsCompleted}}
+                /
+                {{requirements.rounds}}
+                rounds.{{/if}}</dd>
+            <dt>Healing magic · treatment</dt><dd>{{requirements.magicUses}}
+              successful applications against DC
+              {{requirements.magicDC}}.{{#if owned}}
+                Recorded:
+                {{magicCompleted}}
+                /
+                {{requirements.magicUses}}.{{/if}}
+              Count successful applications, not HP restored.</dd>
+          </dl>
+          <p class='source-note'>Magic progress is recorded manually; these controls do not cast a spell or
+            spend a caster's resources.</p>
+          <h3>Recovery</h3>
+          <p>{{recovery}}</p>
+          {{#if recoveryReason}}<p class='witcher-warning'>{{recoveryReason}}</p>{{/if}}
+          {{#if recoveryBody}}<p class='source-note'>Recovery BODY: {{recoveryBody}}.</p>{{/if}}
+          {{#if recoveryTable}}<table class='wound-recovery-table'><caption>Days after treatment, by BODY ·
+                Core p. 174</caption><thead><tr><th>BODY</th>{{#each recoveryTable}}<th
+                    >{{body}}</th>{{/each}}</tr></thead><tbody><tr><th>Days</th>{{#each recoveryTable}}<td
+                    >{{days}}</td>{{/each}}</tr></tbody></table><p class='source-note'>This printed table
+              covers BODY 3–13. Effects that modify Critical Healing require a GM ruling on the recovery time.</p>{{/if}}
+        {{/if}}
+        {{#if legacyNotice}}<p class='witcher-warning'>{{legacyNotice}}</p>{{/if}}
+        <div class='action-bar wound-controls'>
+          {{#if canMedical}}<button type='button' data-witcher='wound' data-key='medical'>First Aid / Healing
+              Hands</button>{{/if}}
+          {{#if canMagic}}<button type='button' data-witcher='wound' data-key='magic'>Record successful
+              healing spell (GM)</button>{{/if}}
+          {{#if canDays}}<button
+              type='button'
+              data-witcher='wound'
+              data-key='days'
+            >{{daysLabel}}</button>{{/if}}
+          {{#if canMarkStabilized}}<button type='button' data-witcher='wound' data-key='markStabilized'>Mark
+              stabilized (GM)</button>{{/if}}
+          {{#if canMarkTreated}}<button type='button' data-witcher='wound' data-key='markTreated'>Mark treated
+              (GM)</button>{{/if}}
+          {{#if canHeal}}<button
+              type='button'
+              data-witcher='wound'
+              data-key='heal'
+            >{{healLabel}}</button>{{/if}}
+        </div>
+        <h3>Effects by stage</h3>
+        <div class='wound-stages'>{{#each stages}}<section
+              class='wound-stage-row'
+              data-current='{{current}}'
+            ><h4>{{label}}{{#if current}} · current{{/if}}</h4><p>{{text}}</p></section>{{/each}}</div>
+        {{#unless known}}<p class='witcher-warning'>Custom injury: the core wound catalog has no matching rule
+            text. Review its configured effects with the GM.</p>{{/unless}}
+        {{#if note}}<p class='source-note'>{{note}}</p>{{/if}}
+        {{#each contextual}}<p class='source-note'>{{this}}</p>{{/each}}
+        {{#if owned}}<label class='wound-notes'>Injury notes<textarea
+              name='system.wound.notes'
+              rows='4'
+            >{{notes}}</textarea></label>{{/if}}
+      </section>
+    {{/with}}
+  {{else}}
+    {{#if system.priceText}}<p class='source-note'>{{system.priceText}}</p>{{/if}}
+    {{#if owned}}<div class='action-bar'>{{#with inventoryItem}}
+          {{#if canEquip}}<button type='button' data-witcher='equip'>{{#if system.equipped}}Stow / unequip{{else}}Equip{{/if}}</button>{{/if}}
+          {{#each attackStyles}}<button
+              type='button'
+              data-witcher='attack'
+              data-style='{{style}}'
+              title='{{hint}}'
+              {{disabledAttribute}}
+            >{{label}}</button>{{/each}}
+          {{#if isUsable}}<button type='button' data-witcher='use'>{{useLabel}}</button>{{/if}}
+          {{#if isDiagram}}<button type='button' data-witcher='craft'>Craft</button>{{/if}}
+          {{#if canRepair}}<button type='button' data-witcher='repair'>Repair</button>{{/if}}
+        {{/with}}</div>{{/if}}
+    {{#if system.school}}<p class='source-note'>{{system.school}} school</p>{{/if}}
+    {{#if isArmor}}<section class='armor-condition'>
+        <h2>Armor condition · SP by location</h2>
+        <p class='source-note'>Current SP absorbs damage. Maximum SP is the value after full repair.</p>
+        {{#if owned}}<p class='source-note'>This is
+            {{ownerName}}'s armor. Apply damage updates these values.</p>{{else}}<p class='source-note'>This
+            is the source item. Check the copy in the character's inventory for combat wear.</p>{{/if}}
+        {{#if armorLocations}}<table class='armor-sp-table'><thead><tr><th>Location</th><th>Current SP</th><th
+                >Max SP</th></tr></thead><tbody>
+              {{#each armorLocations}}<tr data-damaged='{{damaged}}' data-armor-location='{{id}}'>
+                  <td>{{label}}{{#if broken}} <strong>Broken</strong>{{/if}}</td>
+                  <td><input
+                      type='number'
+                      name='system.sp.{{id}}'
+                      min='0'
+                      value='{{current}}'
+                      aria-label='{{label}} current SP'
+                    /></td>
+                  <td>{{maximum}}</td>
+                </tr>{{/each}}
+            </tbody></table>{{else}}<p class='witcher-warning'>No covered locations are set. Add Coverage
+            identifiers in Characteristics.</p>{{/if}}
+      </section>{{/if}}
+    <h2>Inventory</h2><div class='field-grid'>{{{common}}}</div>
+    <h2>Characteristics</h2><div class='field-grid'>{{{details}}}</div>
+    {{#if inventoryItem.reliabilityUnspecified}}<p class='source-note'>Core does not specify this natural
+        weapon's REL. Set current and maximum REL with the GM to enable blocking. Maximum REL 0 means
+        unspecified.</p>{{/if}}
+    {{#if materials}}<h2>Recipe components</h2><table><thead><tr><th>Component / substance</th><th
+            >Units</th></tr></thead><tbody>{{#each materials}}<tr><td>{{name}}</td><td
+              >{{quantity}}</td></tr>{{/each}}</tbody></table>{{/if}}
+    {{#if properties}}<details><summary>Weapon and equipment properties</summary><div
+          class='field-grid'
+        >{{{properties}}}</div></details>{{/if}}
+    {{#if bonuses}}<h2>Modifiers</h2><div class='modifier-list'>{{#each bonuses}}<span>{{label}}
+            <strong>{{value}}</strong></span>{{/each}}</div>{{/if}}
+    <h2>Effect</h2><textarea name='system.effectText' rows='6'>{{system.effectText}}</textarea>
+    <h2>Description</h2><textarea name='system.description' rows='5'>{{system.description}}</textarea>
+    <label>Notes<textarea name='system.notes' rows='4'>{{system.notes}}</textarea></label>
+    <div class='field-grid'><label class='witcher-field'>Source<input
+          name='system.source'
+          value='{{system.source}}'
+        /></label><label class='witcher-field'>Printed page<input
+          type='number'
+          name='system.page'
+          value='{{system.page}}'
+        /></label></div>
+  {{/if}}
 </form>

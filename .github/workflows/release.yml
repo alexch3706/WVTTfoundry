@@ -41,6 +41,10 @@ jobs:
           npm run build:art
           git diff --quiet -- assets/bestiary module/witcher/bestiary-art.js data/witcher/bestiary.json
       - run: npm test
+      - name: Verify committed wound compendium sources
+        run: |
+          npm run build:wounds
+          git diff --quiet -- data/witcher/critical-wounds.json
       - run: npm run build:packs
       - run: npm run validate
       - name: Build and inspect installable archive

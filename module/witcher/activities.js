@@ -1,5 +1,5 @@
 import { SYSTEM_ID, CONDITIONS } from './config.js';
-import { RuleError, beats, criticalHealingDays, hitLocations, resolveDamage } from './rules.js';
+import { RuleError, beats, hitLocations, resolveDamage } from './rules.js';
 import { immuneTo, creatureRegeneration } from './monster-rules.js';
 import { allocateMaterials, craftingRecovery, repairDifficulty, materialKey } from './crafting.js';
 import { actorSnapshot, itemSnapshot } from './documents.js';
@@ -24,6 +24,8 @@ import { isPrimaryActiveGm, resolveFoundryUuid } from '../foundry-compat.js';
 import { deployMount } from './transport.js';
 import { registerCommand, authorizedActor, runCommand } from './authority.js';
 import { validateReload, validateWeaponGrip } from './inventory.js';
+import { woundConditions, woundConditionSources } from './wounds.js';
+import { woundAction } from './wound-actions.js';
 
 const now = () => game.time.worldTime;
 const has = (actor, key) => actor.system.conditions.includes(key);
@@ -44,7 +46,10 @@ export async function turnAction(actor, key, item, options = {}) {
   owner(actor);
   if (key === 'endCondition') {
     const choices = Object.fromEntries(
-      actor.system.conditions.map((condition) => [condition, CONDITIONS[condition]])
+      [...new Set([...actor.system.conditions, ...woundConditions([...actor.items])])].map((condition) => [
+        condition,
+        CONDITIONS[condition],
+      ])
     );
     const values = await prompt(
       'End a condition',
@@ -133,7 +138,9 @@ async function performTurnAction(actor, key, item, options, user) {
 }
 
 async function endCondition(actor, key, options = {}) {
-  if (!has(actor, key)) throw new RuleError('This actor no longer has the chosen condition.');
+  const woundSources = woundConditionSources([...actor.items], key);
+  if (!has(actor, key) && !woundSources.length)
+    throw new RuleError('This actor no longer has the chosen condition.');
   const plan = actionPlan(actor, {
     full: ['fire', 'blinded', 'stunned', 'unconscious'].includes(key),
     recovery: ['stunned', 'unconscious'].includes(key),
@@ -163,9 +170,18 @@ async function endCondition(actor, key, options = {}) {
     ? await check(actor.skillBase(specs[key][0], { modifier: plan.modifier }).total)
     : null;
   const changes = { ...plan.changes };
-  if (!result || beats(result.total, specs[key][1]))
+  const itemChanges = [];
+  if (!result || beats(result.total, specs[key][1])) {
     changes['system.conditions'] = actor.system.conditions.filter((condition) => condition !== key);
-  return commitActor(actor, changes, [], () =>
+    // A condition cannot stack (p.161): ending it clears every current source,
+    // while each critical injury retains its stage, penalties, and recovery clock.
+    for (const item of woundSources)
+      itemChanges.push({
+        _id: item.id,
+        'system.wound.endedConditions': [...new Set([...(item.system.wound.endedConditions ?? []), key])],
+      });
+  }
+  return commitActor(actor, changes, itemChanges, () =>
     chat(
       actor,
       'End ' + CONDITIONS[key],
@@ -179,6 +195,7 @@ async function endCondition(actor, key, options = {}) {
 }
 
 export async function treat(patient, woundItem) {
+  if (woundItem) return woundAction(patient, woundItem, 'medical');
   owner(patient);
   const candidates = game.actors.filter((a) => a.isOwner);
   const values = await prompt(
@@ -188,19 +205,13 @@ export async function treat(patient, woundItem) {
       options: Object.fromEntries(candidates.map((a) => [a.id, a.name])),
     }) +
       input('kind', 'Treatment', {
-        options: woundItem
-          ? {
-              stabilize: 'Stabilize critical wound (First Aid)',
-              treat: 'Treat critical wound (Healing Hands)',
-            }
-          : {
-              firstAid: 'Begin natural healing (First Aid)',
-              healingHands: 'Begin natural healing (Healing Hands)',
-              death: 'Stabilize Death State (First Aid)',
-            },
+        options: {
+          firstAid: 'Begin natural healing (First Aid)',
+          healingHands: 'Begin natural healing (Healing Hands)',
+          death: 'Stabilize Death State (First Aid)',
+        },
       }) +
-      input('modifier', 'Situational modifier', { value: 0 }) +
-      input('rounds', 'Rounds spent treating this wound', { value: 0, min: 0 }),
+      input('modifier', 'Situational modifier', { value: 0 }),
     { button: 'Treat' }
   );
   if (!values) return;
@@ -208,7 +219,7 @@ export async function treat(patient, woundItem) {
   return serial(healer.uuid, async () => {
     const plan = actionPlan(healer),
       kind = values.kind,
-      skill = ['healingHands', 'treat'].includes(kind) ? 'healingHands' : 'firstAid';
+      skill = kind === 'healingHands' ? 'healingHands' : 'firstAid';
     if (
       skill === 'healingHands' &&
       !healer.system.customSkills.some((s) => s.id === 'healingHands' || s.name === 'Healing Hands') &&
@@ -220,25 +231,6 @@ export async function treat(patient, woundItem) {
       if (patient.system.hp.value > 0) throw new RuleError('The patient is not in Death State.');
       dc = Math.abs(patient.system.hp.value);
     }
-    if (woundItem) {
-      const wound = woundItem.system.wound;
-      if (wound.fatal) throw new RuleError('This fatal wound cannot be stabilized or treated.');
-      dc = { simple: 12, complex: 14, difficult: 16, deadly: 18 }[wound.severity];
-      if (kind === 'treat') {
-        const rounds = { simple: 2, complex: 4, difficult: 6, deadly: 8 }[wound.severity];
-        const total = wound.turnsTreated + Number(values.rounds || 1);
-        if (total < rounds) {
-          await commitActor(healer, plan.changes);
-          await woundItem.update({ 'system.wound.turnsTreated': total });
-          await chat(
-            healer,
-            'Treatment',
-            `<p>${total} / ${rounds} rounds. Roll Healing Hands after completing the required time.</p>`
-          );
-          return;
-        }
-      }
-    }
     const result = await check(
       healer.skillBase(skill, { stat: 'cra', modifier: Number(values.modifier) + plan.modifier }).total
     );
@@ -247,23 +239,7 @@ export async function treat(patient, woundItem) {
     if (success) {
       if (kind === 'death')
         await patient.update({ 'system.hp.value': 1, 'system.deathSaves': 0, 'system.pendingDeathSaves': 0 });
-      else if (woundItem) {
-        const severity = woundItem.system.wound.severity;
-        await woundItem.update({
-          'system.wound.treatment': kind === 'treat' ? 'treated' : 'stabilized',
-          'system.wound.turnsTreated': 0,
-          'system.wound.daysRemaining':
-            kind === 'treat' ? (criticalHealingDays(patient.system.derived.stats.body, severity) ?? 0) : 0,
-        });
-        if (['bleeding', 'poison', 'suffocating'].some((c) => woundItem.system.wound[c])) {
-          const remaining = patient.items.filter(
-            (i) => i.type === 'wound' && i.id !== woundItem.id && i.system.wound.treatment === 'untreated'
-          );
-          for (const c of ['bleeding', 'poison', 'suffocating'])
-            if (woundItem.system.wound[c] && !remaining.some((i) => i.system.wound[c]))
-              await patient.setCondition(c, false);
-        }
-      } else
+      else
         await patient.update({
           'system.healingEnabled': true,
           'system.healingBonus': kind === 'healingHands' ? 3 : 0,
@@ -903,19 +879,22 @@ export async function tickActor(actor, key) {
           state.items
         )
       );
+  const fromWounds = woundConditions([...actor.items]);
+  const suffering = (key) => has(actor, key) || fromWounds.includes(key);
   const poisonImmune = active(actor, 'Golden Oriole') || immuneTo(state, 'poison');
-  if (has(actor, 'poison') && !poisonImmune) direct += 3;
-  if (has(actor, 'bleeding') && !active(actor, 'Clotting Powder') && !immuneTo(state, 'bleeding')) {
+  if (suffering('poison') && !poisonImmune) direct += 3;
+  if (suffering('bleeding') && !active(actor, 'Clotting Powder') && !immuneTo(state, 'bleeding')) {
     const resistant =
       state.naturalResistances.includes('bleeding') ||
       state.resistances.includes('bleeding') ||
       state.items.some((i) => i.type === 'armor' && i.equipped && i.resistances.includes('bleeding'));
     direct += Math.floor((2 + (actor.system.derived.mods.bleedingDamage ?? 0)) * (resistant ? 0.5 : 1));
   }
-  if (has(actor, 'suffocating') && !immuneTo(state, 'suffocating')) direct += 3;
+  if (suffering('suffocating') && !immuneTo(state, 'suffocating')) direct += 3;
   const woundUpdates = [];
   let saves = 0;
   for (const item of actor.items.filter((i) => i.type === 'wound')) {
+    if (item.system.wound.treatment === 'healed') continue;
     const w = item.system.wound,
       age = w.ageRounds + 1;
     direct +=

@@ -338,14 +338,121 @@
   margin: 3px 5px;
 }
 .witcher .wound-card {
-  display: grid;
-  grid-template-columns: 1fr 1.6fr auto;
-  align-items: center;
-  gap: 8px;
-  margin: 6px 0;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  background: #ffffff35;
   font:
     12px system-ui,
     sans-serif;
+}
+.witcher .wound-card p {
+  margin: 7px 0;
+}
+.witcher .wound-card[data-wound-stage='healed'] {
+  border-left-color: #5a7051;
+}
+.witcher .wound-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.witcher .wound-heading button {
+  width: auto;
+  text-align: left;
+  font-weight: bold;
+}
+.witcher .wound-stage {
+  font:
+    12px system-ui,
+    sans-serif;
+  text-align: right;
+}
+.witcher .wound-detail h3 {
+  margin-top: 18px;
+  border-bottom: 1px solid var(--line);
+}
+.witcher .wound-detail p,
+.witcher .wound-requirements {
+  font:
+    13px/1.5 system-ui,
+    sans-serif;
+}
+.witcher .wound-guidance,
+.witcher .wound-current {
+  padding: 10px 12px;
+  background: #ffffff50;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+.witcher .wound-current h3 {
+  margin-top: 0;
+}
+.witcher .wound-requirements dt {
+  font-weight: bold;
+  margin-top: 8px;
+}
+.witcher .wound-requirements dd {
+  margin: 2px 0 10px;
+}
+.witcher .wound-modifiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font:
+    12px system-ui,
+    sans-serif;
+}
+.witcher .wound-modifiers div {
+  display: flex;
+  gap: 6px;
+}
+.witcher .wound-modifiers dd {
+  margin: 0;
+  font-weight: bold;
+}
+.witcher .wound-stages {
+  display: grid;
+  gap: 8px;
+}
+.witcher .wound-stage-row {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 10px;
+}
+.witcher .wound-stage-row h4,
+.witcher .wound-stage-row p {
+  margin: 0 0 5px;
+}
+.witcher .wound-stage-row[data-current='true'] {
+  border-color: var(--accent);
+  background: #7a25220a;
+}
+.witcher .wound-controls button {
+  width: auto;
+  flex: 0 1 auto;
+}
+.witcher .wound-recovery-table {
+  table-layout: fixed;
+  font:
+    11px system-ui,
+    sans-serif;
+  text-align: center;
+}
+.witcher .wound-recovery-table caption {
+  margin: 6px 0;
+  text-align: left;
+}
+.witcher .wound-recovery-table th,
+.witcher .wound-recovery-table td {
+  padding: 5px 2px;
+}
+.witcher .wound-notes {
+  display: block;
+  margin-top: 14px;
 }
 .witcher .skill-table input,
 .witcher .inventory-table input[type='number'] {
@@ -507,8 +614,8 @@
   .witcher .resource-row {
     gap: 5px;
   }
-  .witcher .wound-card {
-    grid-template-columns: 1fr;
+  .witcher .wound-heading {
+    flex-wrap: wrap;
   }
   .witcher .stat-row input {
     width: 34px;

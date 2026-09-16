@@ -215,7 +215,12 @@ export function resolveDamage(
       resisted /= 2;
     if (target.vulnerabilities?.includes(type)) resisted *= 2;
   }
-  const localized = Math.max(0, Math.floor(resisted * location.multiplier));
+  const mods = combinedModifiers(target, items);
+  const locationMultiplier =
+    (location.group === 'head' || /head/i.test(location.id)) && mods.headMultiplier
+      ? Math.max(location.multiplier, mods.headMultiplier)
+      : location.multiplier;
+  const localized = Math.max(0, Math.floor(resisted * locationMultiplier));
   // A critical's separate bonus can bypass intact armor, but cannot itself
   // trigger staged penetration. The wearer must take damage through the armor.
   const penetrated = afterArmor > 0 && localized > 0 && !immune;
@@ -227,7 +232,7 @@ export function resolveDamage(
         : ((penetrated ? 1 + n(properties.ablation) : 0) + n(properties.alwaysAblate)) *
           n(properties.wearMultiplier, 1);
   return {
-    location: { ...location },
+    location: { ...location, multiplier: locationMultiplier },
     raw,
     silver: isSilverTarget ? silver : 0,
     multiplier,

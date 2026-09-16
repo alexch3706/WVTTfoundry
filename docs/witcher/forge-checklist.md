@@ -1,10 +1,10 @@
 # Foundry V14 / The Forge acceptance
 
-Version: **0.1.0-alpha.4**. **Live run pending.**
+Version: **0.1.0-alpha.5**. **Live run pending.**
 
 1. Install the pinned release manifest and create a Witcher world in V14. Open
    a character, NPC, monster and Item sheet; check the browser console.
-2. Open all **11 packs**: **809 catalog Items**, **36 Actors**. Import a Witcher
+2. Open all **12 packs**: **833 catalog Items**, **36 Actors**. Import a Witcher
    sword, armor, crossbow/ammunition and Tools school equipment. Open recipes.
 3. Drag a weapon onto a PC sheet; equip it; check hands, carried weight and EV.
    Test a two-handed weapon in one hand (−3) and a shield occupying the other.
@@ -55,6 +55,31 @@ Version: **0.1.0-alpha.4**. **Live run pending.**
     Compare HP, armor wear, inventory and token positions before/after. Reload
     or call `await game.witcher.updateBestiaryArt()` again: no further changes
     should be needed. Only the elected active GM performs the migration.
+
+15. Open **Critical Wounds**, inspect all 24 cards, and drop injuries onto a PC,
+    NPC and unlinked monster. Choose valid locations and check independent
+    cards. Organless creatures must reject organ wounds. Compare combat-created
+    and dropped cards; the drop must not repeat attack damage.
+16. Stabilize with First Aid, then use Healing Hands for the required rounds
+    and one final check. Stabilization must not start recovery. Try an injured
+    healer's healthy/injured/disabled arms, manual dice and stale dialogs. As a
+    player, own both actors and keep a GM connected.
+17. Test GM manual treatment controls and the successful-magic counter. At the
+    required total the card becomes treated without restoring HP or spending
+    spell resources. Advance recovery, including actor Rest, then reload: a
+    healed temporary card remains without penalties.
+18. Mark a treated severed limb healed: permanent penalties must remain. Add
+    Foreign Object and change its stage during another wound's recovery: the
+    clock must ask for GM review. Test BODY outside the printed table. Review
+    legacy condition warnings on an older wound.
+19. Add Ruptured Spleen/Septic Shock and tick rounds. End bleeding/poison with
+    the usual condition action: other wound penalties remain. A later new wound
+    can inflict the condition again. Heart Damage from combat with positive HP
+    must still require its Death save. STA cannot exceed the injured maximum
+    or refill merely from treating the injury.
+20. Check injured-arm attacks/defenses, visual versus nonvisual Awareness, and
+    Skull Fracture head damage ×4. Concussion and Lost Teeth must retain their
+    initial die results across refresh.
 
 Report the release version, failing step, reproduction and console error. Tests
 of deferred magic, profession/creature active powers, mounted combat and area

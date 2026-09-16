@@ -8,6 +8,9 @@ import {
   beats,
 } from './rules.js';
 import { immuneTo } from './monster-rules.js';
+import { woundModifiers } from './wounds.js';
+import { advanceWoundDays, woundCheckModifier, recoveryClockChanged } from './wound-rules.js';
+import { commitActor } from './runtime.js';
 
 const f = foundry.data.fields;
 const num = (initial = 0, options = {}) =>
@@ -283,14 +286,27 @@ export class WitcherItemData extends foundry.abstract.TypeDataModel {
         new f.SchemaField({ name: str(), quantity: num(1), uuid: str(), substance: str() })
       ),
       wound: new f.SchemaField({
+        key: str(),
+        name: str(),
+        group: str(),
         severity: str('simple'),
         location: str(),
         treatment: str('untreated'),
         daysRemaining: num(),
         turnsTreated: num(),
+        magicUses: num(0, { min: 0, integer: true }),
+        daysTotal: num(0, { min: 0 }),
+        recoveryBody: num(),
+        recoveryPending: bool(),
+        recoveryContext: str(),
+        separateConditions: bool(),
+        endedConditions: strings(),
+        extraResult: num(),
+        notes: str(),
         modifiers: new f.ObjectField({ initial: {} }),
         stabilizedModifiers: new f.ObjectField({ initial: {} }),
         treatedModifiers: new f.ObjectField({ initial: {} }),
+        healedModifiers: new f.ObjectField({ initial: {} }),
         damagePerTurn: num(),
         stabilizedDamagePerTurn: num(),
         stunEvery: num(),
@@ -340,6 +356,16 @@ export function actorSnapshot(actor) {
   return state;
 }
 
+/** Persist a reduced STA ceiling without restoring points when it later rises.
+ * Prepared data can already be capped while _source still contains the old value.
+ * Projected items let a treatment transaction calculate its resulting ceiling.
+ */
+export function staminaCapChanges(actor, projectedItems) {
+  const state = actorSnapshot(actor);
+  const maximum = Math.max(0, derivedStats(state, projectedItems ?? state.items).staMax);
+  return { 'system.sta.value': Math.min(actor.system.sta.value, maximum) };
+}
+
 export class WitcherActor extends Actor {
   getRollData() {
     return { ...this.system.toObject(), derived: this.system.derived };
@@ -387,7 +413,8 @@ export class WitcherActor extends Actor {
       this.system.armorError = error.message;
     }
     this.system.hp.max = this.system.derived.hpMax;
-    this.system.sta.max = this.system.derived.staMax;
+    this.system.sta.max = Math.max(0, this.system.derived.staMax);
+    this.system.sta.value = Math.min(this.system.sta.value, this.system.sta.max);
     this.system.luck.max = this.system.derived.base.luck;
     this.system.locationTable = hitLocations(state);
   }
@@ -395,12 +422,12 @@ export class WitcherActor extends Actor {
     await super._preUpdate(changes, options, user);
     const expanded = foundry.utils.expandObject(changes);
     if (expanded.system?.locations) validateLocations(expanded.system.locations);
-    if (expanded.system?.hp?.value > 0) {
-      changes['system.deathSaves'] = 0;
-      changes['system.pendingDeathSaves'] = 0;
+    if (this.system.hp.value <= 0 && expanded.system?.hp?.value > 0) {
+      if (!Object.hasOwn(expanded.system, 'deathSaves')) changes['system.deathSaves'] = 0;
+      if (!Object.hasOwn(expanded.system, 'pendingDeathSaves')) changes['system.pendingDeathSaves'] = 0;
     }
   }
-  skillBase(key, { stat, modifier = 0 } = {}) {
+  skillBase(key, { stat, modifier = 0, arm = '', sight = false } = {}) {
     const skill = SKILLS[key];
     const custom = this.system.customSkills.find(
       (s) => s.id === key || s.name.replace(/\s/g, '').toLowerCase() === key.toLowerCase()
@@ -443,18 +470,14 @@ export class WitcherActor extends Actor {
         for (const b of item.system.skillBonuses ?? []) if (b.skill === key && !b.condition) bonus += b.value;
       if (item.type === 'wound') {
         const w = item.system.wound;
-        const mods =
-          w.treatment === 'treated'
-            ? w.treatedModifiers
-            : w.treatment === 'stabilized'
-              ? w.stabilizedModifiers
-              : w.modifiers;
+        const mods = woundModifiers(w);
         bonus += Number(mods?.[key] ?? 0);
       }
     }
     if (this.system.conditions.includes('grappled') && ['ref', 'dex', 'body', 'spd'].includes(attribute))
       bonus -= 2;
     bonus += Number(this.system.derived.mods.allActions ?? 0);
+    bonus += woundCheckModifier([...this.items], { arm, sight: key === 'awareness' && sight });
     const multiplier = Number(this.system.derived.mods[key + 'Multiplier'] ?? 1);
     const feralInt = this.system.traits.feralInt || (this.system.transport.feral ? 7 : 0);
     const statValue =
@@ -497,18 +520,23 @@ export class WitcherActor extends Actor {
     const heal = this.system.healingEnabled
       ? Math.floor((this.system.derived.rec + this.system.healingBonus) * (strenuous ? 0.5 : 1)) * days
       : 0;
-    await this.update({
+    const changes = {
       'system.hp.value': Math.min(this.system.hp.max, this.system.hp.value + heal),
       'system.sta.value': this.system.sta.max,
-    });
+    };
     const updates = [];
-    const healed = [];
+    const recoveryState = actorSnapshot(this);
     for (const w of this.items.filter(
       (i) => i.type === 'wound' && i.system.wound.treatment === 'treated' && !i.system.wound.permanent
     )) {
-      const remaining = Math.max(0, w.system.wound.daysRemaining - days);
-      if (remaining === 0) healed.push(w.id);
-      else updates.push({ _id: w.id, 'system.wound.daysRemaining': remaining });
+      const patch = recoveryClockChanged(w.system.wound, recoveryState, recoveryState.items)
+        ? { recoveryPending: true }
+        : advanceWoundDays(w.system.wound, days);
+      if (patch)
+        updates.push({
+          _id: w.id,
+          ...Object.fromEntries(Object.entries(patch).map(([k, v]) => ['system.wound.' + k, v])),
+        });
     }
     if (this.system.traits.regeneration > 0) {
       for (const item of this.items.filter(
@@ -520,8 +548,7 @@ export class WitcherActor extends Actor {
         });
       }
     }
-    if (updates.length) await this.updateEmbeddedDocuments('Item', updates);
-    if (healed.length) await this.deleteEmbeddedDocuments('Item', healed);
+    await commitActor(this, changes, updates);
   }
 }
 

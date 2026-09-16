@@ -1,0 +1,975 @@
+[
+  {
+    "_id": "f8c716588d21d86b",
+    "name": "Sprained Leg",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Sprained Leg",
+        "modifiers": {
+          "spd": -2,
+          "dodge": -2,
+          "athletics": -2
+        },
+        "stabilizedModifiers": {
+          "spd": -1,
+          "dodge": -1,
+          "athletics": -1
+        },
+        "treatedModifiers": {
+          "spd": -1
+        },
+        "key": "simple-0",
+        "severity": "simple",
+        "group": "leg",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 158,
+      "description": "<p><strong>Sprained Leg</strong> — simple critical injury; leg.</p>\n<p><strong>Untreated:</strong> SPD, Dodge/Escape, and Athletics −2.</p>\n<p><strong>Stabilized:</strong> SPD, Dodge/Escape, and Athletics −1.</p>\n<p><strong>Treated:</strong> SPD −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 12; Healing Hands can perform First Aid tasks. Medical treatment takes 2 rounds followed by one Healing Hands check at DC 12. Magical treatment requires 4 successful healing-spell uses at Spell Casting DC 14; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.158; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: SPD, Dodge/Escape, and Athletics −2.\nStabilized: SPD, Dodge/Escape, and Athletics −1.\nTreated: SPD −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "41cf9942193f3748",
+    "name": "Sprained Arm",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Sprained Arm",
+        "modifiers": {
+          "armActions": -2
+        },
+        "stabilizedModifiers": {
+          "armActions": -1
+        },
+        "treatedModifiers": {
+          "physique": -1
+        },
+        "key": "simple-1",
+        "severity": "simple",
+        "group": "arm",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 158,
+      "description": "<p><strong>Sprained Arm</strong> — simple critical injury; arm.</p>\n<p><strong>Untreated:</strong> Actions using the injured arm −2.</p>\n<p><strong>Stabilized:</strong> Actions using the injured arm −1.</p>\n<p><strong>Treated:</strong> Physique −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 12; Healing Hands can perform First Aid tasks. Medical treatment takes 2 rounds followed by one Healing Hands check at DC 12. Magical treatment requires 4 successful healing-spell uses at Spell Casting DC 14; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.158; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: Actions using the injured arm −2.\nStabilized: Actions using the injured arm −1.\nTreated: Physique −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "dd3497cda96d1ff6",
+    "name": "Foreign Object",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Foreign Object",
+        "modifiers": {
+          "recMultiplier": 0.25,
+          "criticalHealingMultiplier": 0.25
+        },
+        "stabilizedModifiers": {
+          "recMultiplier": 0.5,
+          "criticalHealingMultiplier": 0.5
+        },
+        "treatedModifiers": {
+          "rec": -2,
+          "criticalHealing": -1
+        },
+        "organ": true,
+        "key": "simple-2",
+        "severity": "simple",
+        "group": "torso",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 158,
+      "description": "<p><strong>Foreign Object</strong> — simple critical injury; torso.</p>\n<p><strong>Untreated:</strong> REC and critical-wound recovery operate at one quarter of their normal rate.</p>\n<p><strong>Stabilized:</strong> REC and critical-wound recovery operate at one half of their normal rate.</p>\n<p><strong>Treated:</strong> REC −2 and Critical Healing −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 12; Healing Hands can perform First Aid tasks. Medical treatment takes 2 rounds followed by one Healing Hands check at DC 12. Magical treatment requires 4 successful healing-spell uses at Spell Casting DC 14; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Core p.158 does not define a separate Critical Healing statistic. The recovery table on p.174 uses BODY to give days. The exact arithmetic for the treated −1 is not specified. The GM must set the duration while this Critical Healing modifier is relevant. The infection slows recovery of other treated wounds too.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.158; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: REC and critical-wound recovery operate at one quarter of their normal rate.\nStabilized: REC and critical-wound recovery operate at one half of their normal rate.\nTreated: REC −2 and Critical Healing −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "af8f02d78f8e6d34",
+    "name": "Cracked Ribs",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Cracked Ribs",
+        "modifiers": {
+          "body": -2
+        },
+        "stabilizedModifiers": {
+          "body": -1
+        },
+        "treatedModifiers": {
+          "enc": -10
+        },
+        "key": "simple-3",
+        "severity": "simple",
+        "group": "torso",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 158,
+      "description": "<p><strong>Cracked Ribs</strong> — simple critical injury; torso.</p>\n<p><strong>Untreated:</strong> BODY −2; maximum HP does not change.</p>\n<p><strong>Stabilized:</strong> BODY −1.</p>\n<p><strong>Treated:</strong> Encumbrance capacity −10.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 12; Healing Hands can perform First Aid tasks. Medical treatment takes 2 rounds followed by one Healing Hands check at DC 12. Magical treatment requires 4 successful healing-spell uses at Spell Casting DC 14; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.158; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: BODY −2; maximum HP does not change.\nStabilized: BODY −1.\nTreated: Encumbrance capacity −10.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "704e68b94f7d1d88",
+    "name": "Disfiguring Scar",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Disfiguring Scar",
+        "modifiers": {
+          "charisma": -3,
+          "persuasion": -3,
+          "seduction": -3,
+          "leadership": -3,
+          "deceit": -3,
+          "socialEtiquette": -3
+        },
+        "stabilizedModifiers": {
+          "charisma": -1,
+          "persuasion": -1,
+          "seduction": -1,
+          "leadership": -1,
+          "deceit": -1,
+          "socialEtiquette": -1
+        },
+        "treatedModifiers": {
+          "seduction": -1
+        },
+        "key": "simple-4",
+        "severity": "simple",
+        "group": "head",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 158,
+      "description": "<p><strong>Disfiguring Scar</strong> — simple critical injury; head.</p>\n<p><strong>Untreated:</strong> Charisma, Persuasion, Seduction, Leadership, Deceit, and Social Etiquette: −3. Intimidation is unaffected.</p>\n<p><strong>Stabilized:</strong> Charisma, Persuasion, Seduction, Leadership, Deceit, and Social Etiquette: −1. Intimidation is unaffected.</p>\n<p><strong>Treated:</strong> Seduction −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 12; Healing Hands can perform First Aid tasks. Medical treatment takes 2 rounds followed by one Healing Hands check at DC 12. Magical treatment requires 4 successful healing-spell uses at Spell Casting DC 14; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.158; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: Charisma, Persuasion, Seduction, Leadership, Deceit, and Social Etiquette: −3. Intimidation is unaffected.\nStabilized: Charisma, Persuasion, Seduction, Leadership, Deceit, and Social Etiquette: −1. Intimidation is unaffected.\nTreated: Seduction −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "08c645abb9acc85e",
+    "name": "Cracked Jaw",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Cracked Jaw",
+        "modifiers": {
+          "charisma": -2,
+          "persuasion": -2,
+          "seduction": -2,
+          "leadership": -2,
+          "deceit": -2,
+          "socialEtiquette": -2,
+          "intimidation": -2,
+          "spellCasting": -2,
+          "hexWeaving": -2,
+          "ritualCrafting": -2
+        },
+        "stabilizedModifiers": {
+          "charisma": -1,
+          "persuasion": -1,
+          "seduction": -1,
+          "leadership": -1,
+          "deceit": -1,
+          "socialEtiquette": -1,
+          "intimidation": -1,
+          "spellCasting": -1,
+          "hexWeaving": -1,
+          "ritualCrafting": -1
+        },
+        "treatedModifiers": {
+          "spellCasting": -1,
+          "hexWeaving": -1,
+          "ritualCrafting": -1
+        },
+        "key": "simple-5",
+        "severity": "simple",
+        "group": "head",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 158,
+      "description": "<p><strong>Cracked Jaw</strong> — simple critical injury; head.</p>\n<p><strong>Untreated:</strong> Spell Casting, Hex Weaving, and Ritual Crafting and Charisma, Persuasion, Seduction, Leadership, Deceit, Social Etiquette, and Intimidation: −2.</p>\n<p><strong>Stabilized:</strong> Spell Casting, Hex Weaving, and Ritual Crafting and Charisma, Persuasion, Seduction, Leadership, Deceit, Social Etiquette, and Intimidation: −1.</p>\n<p><strong>Treated:</strong> Spell Casting, Hex Weaving, and Ritual Crafting: −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 12; Healing Hands can perform First Aid tasks. Medical treatment takes 2 rounds followed by one Healing Hands check at DC 12. Magical treatment requires 4 successful healing-spell uses at Spell Casting DC 14; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.158; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: Spell Casting, Hex Weaving, and Ritual Crafting and Charisma, Persuasion, Seduction, Leadership, Deceit, Social Etiquette, and Intimidation: −2.\nStabilized: Spell Casting, Hex Weaving, and Ritual Crafting and Charisma, Persuasion, Seduction, Leadership, Deceit, Social Etiquette, and Intimidation: −1.\nTreated: Spell Casting, Hex Weaving, and Ritual Crafting: −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "d1a31992bf48318a",
+    "name": "Fractured Leg",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Fractured Leg",
+        "modifiers": {
+          "spd": -3,
+          "dodge": -3,
+          "athletics": -3
+        },
+        "stabilizedModifiers": {
+          "spd": -2,
+          "dodge": -2,
+          "athletics": -2
+        },
+        "treatedModifiers": {
+          "spd": -1,
+          "dodge": -1,
+          "athletics": -1
+        },
+        "key": "complex-0",
+        "severity": "complex",
+        "group": "leg",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 159,
+      "description": "<p><strong>Fractured Leg</strong> — complex critical injury; leg.</p>\n<p><strong>Untreated:</strong> SPD, Dodge/Escape, and Athletics −3.</p>\n<p><strong>Stabilized:</strong> SPD, Dodge/Escape, and Athletics −2.</p>\n<p><strong>Treated:</strong> SPD, Dodge/Escape, and Athletics −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 14; Healing Hands can perform First Aid tasks. Medical treatment takes 4 rounds followed by one Healing Hands check at DC 14. Magical treatment requires 6 successful healing-spell uses at Spell Casting DC 16; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.159; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: SPD, Dodge/Escape, and Athletics −3.\nStabilized: SPD, Dodge/Escape, and Athletics −2.\nTreated: SPD, Dodge/Escape, and Athletics −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "bf392763ba302197",
+    "name": "Fractured Arm",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Fractured Arm",
+        "modifiers": {
+          "armActions": -3
+        },
+        "stabilizedModifiers": {
+          "armActions": -2
+        },
+        "treatedModifiers": {
+          "armActions": -1
+        },
+        "key": "complex-1",
+        "severity": "complex",
+        "group": "arm",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 159,
+      "description": "<p><strong>Fractured Arm</strong> — complex critical injury; arm.</p>\n<p><strong>Untreated:</strong> Actions using the injured arm −3.</p>\n<p><strong>Stabilized:</strong> Actions using the injured arm −2.</p>\n<p><strong>Treated:</strong> Actions using the injured arm −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 14; Healing Hands can perform First Aid tasks. Medical treatment takes 4 rounds followed by one Healing Hands check at DC 14. Magical treatment requires 6 successful healing-spell uses at Spell Casting DC 16; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.159; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: Actions using the injured arm −3.\nStabilized: Actions using the injured arm −2.\nTreated: Actions using the injured arm −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "fdff83ed328c1a0f",
+    "name": "Broken Ribs",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Broken Ribs",
+        "modifiers": {
+          "body": -2,
+          "ref": -1,
+          "dex": -1
+        },
+        "stabilizedModifiers": {
+          "body": -1,
+          "ref": -1
+        },
+        "treatedModifiers": {
+          "body": -1
+        },
+        "key": "complex-2",
+        "severity": "complex",
+        "group": "torso",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 159,
+      "description": "<p><strong>Broken Ribs</strong> — complex critical injury; torso.</p>\n<p><strong>Untreated:</strong> BODY −2; REF and DEX −1.</p>\n<p><strong>Stabilized:</strong> BODY and REF −1.</p>\n<p><strong>Treated:</strong> BODY −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 14; Healing Hands can perform First Aid tasks. Medical treatment takes 4 rounds followed by one Healing Hands check at DC 14. Magical treatment requires 6 successful healing-spell uses at Spell Casting DC 16; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.159; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: BODY −2; REF and DEX −1.\nStabilized: BODY and REF −1.\nTreated: BODY −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "21e068afa1708a13",
+    "name": "Ruptured Spleen",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Ruptured Spleen",
+        "modifiers": {},
+        "stabilizedModifiers": {},
+        "treatedModifiers": {
+          "stun": -2
+        },
+        "stunEvery": 5,
+        "stabilizedStunEvery": 10,
+        "bleeding": true,
+        "organ": true,
+        "key": "complex-3",
+        "severity": "complex",
+        "group": "torso",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 159,
+      "description": "<p><strong>Ruptured Spleen</strong> — complex critical injury; torso.</p>\n<p><strong>Untreated:</strong> Bleeding begins. Make a Stun save every 5 rounds.</p>\n<p><strong>Stabilized:</strong> Wound-induced bleeding ends. Make a Stun save every 10 rounds.</p>\n<p><strong>Treated:</strong> STUN −2. This wound no longer requires periodic Stun saves.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 14; Healing Hands can perform First Aid tasks. Medical treatment takes 4 rounds followed by one Healing Hands check at DC 14. Magical treatment requires 6 successful healing-spell uses at Spell Casting DC 16; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.159; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: Bleeding begins. Make a Stun save every 5 rounds.\nStabilized: Wound-induced bleeding ends. Make a Stun save every 10 rounds.\nTreated: STUN −2. This wound no longer requires periodic Stun saves.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "68b37a3e7ebdef12",
+    "name": "Lost Teeth",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Lost Teeth",
+        "modifiers": {
+          "charisma": -3,
+          "persuasion": -3,
+          "seduction": -3,
+          "leadership": -3,
+          "deceit": -3,
+          "socialEtiquette": -3,
+          "intimidation": -3,
+          "spellCasting": -3,
+          "hexWeaving": -3,
+          "ritualCrafting": -3
+        },
+        "stabilizedModifiers": {
+          "charisma": -2,
+          "persuasion": -2,
+          "seduction": -2,
+          "leadership": -2,
+          "deceit": -2,
+          "socialEtiquette": -2,
+          "intimidation": -2,
+          "spellCasting": -2,
+          "hexWeaving": -2,
+          "ritualCrafting": -2
+        },
+        "treatedModifiers": {
+          "charisma": -1,
+          "persuasion": -1,
+          "seduction": -1,
+          "leadership": -1,
+          "deceit": -1,
+          "socialEtiquette": -1,
+          "intimidation": -1,
+          "spellCasting": -1,
+          "hexWeaving": -1,
+          "ritualCrafting": -1
+        },
+        "extraRoll": "1d10",
+        "key": "complex-4",
+        "severity": "complex",
+        "group": "head",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 159,
+      "description": "<p><strong>Lost Teeth</strong> — complex critical injury; head.</p>\n<p><strong>Untreated:</strong> Lose 1d10 teeth. Spell Casting, Hex Weaving, and Ritual Crafting and Charisma, Persuasion, Seduction, Leadership, Deceit, Social Etiquette, and Intimidation: −3.</p>\n<p><strong>Stabilized:</strong> Spell Casting, Hex Weaving, and Ritual Crafting and Charisma, Persuasion, Seduction, Leadership, Deceit, Social Etiquette, and Intimidation: −2.</p>\n<p><strong>Treated:</strong> Spell Casting, Hex Weaving, and Ritual Crafting and Charisma, Persuasion, Seduction, Leadership, Deceit, Social Etiquette, and Intimidation: −1.</p>\n<p><strong>Healed:</strong> The temporary skill penalties end. Keep the recorded number of lost teeth as part of the injury history.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 14; Healing Hands can perform First Aid tasks. Medical treatment takes 4 rounds followed by one Healing Hands check at DC 14. Magical treatment requires 6 successful healing-spell uses at Spell Casting DC 16; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Roll 1d10 once when the injury is acquired and record how many teeth were lost. Changing treatment does not roll again or regrow teeth.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.159; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: Lose 1d10 teeth. Spell Casting, Hex Weaving, and Ritual Crafting and Charisma, Persuasion, Seduction, Leadership, Deceit, Social Etiquette, and Intimidation: −3.\nStabilized: Spell Casting, Hex Weaving, and Ritual Crafting and Charisma, Persuasion, Seduction, Leadership, Deceit, Social Etiquette, and Intimidation: −2.\nTreated: Spell Casting, Hex Weaving, and Ritual Crafting and Charisma, Persuasion, Seduction, Leadership, Deceit, Social Etiquette, and Intimidation: −1.\nHealed: The temporary skill penalties end. Keep the recorded number of lost teeth as part of the injury history.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "05751a86be09be40",
+    "name": "Minor Head Wound",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Minor Head Wound",
+        "modifiers": {
+          "int": -1,
+          "will": -1,
+          "stun": -1
+        },
+        "stabilizedModifiers": {
+          "int": -1,
+          "will": -1
+        },
+        "treatedModifiers": {
+          "will": -1
+        },
+        "key": "complex-5",
+        "severity": "complex",
+        "group": "head",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 159,
+      "description": "<p><strong>Minor Head Wound</strong> — complex critical injury; head.</p>\n<p><strong>Untreated:</strong> INT, WILL, and STUN −1.</p>\n<p><strong>Stabilized:</strong> INT and WILL −1.</p>\n<p><strong>Treated:</strong> WILL −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 14; Healing Hands can perform First Aid tasks. Medical treatment takes 4 rounds followed by one Healing Hands check at DC 14. Magical treatment requires 6 successful healing-spell uses at Spell Casting DC 16; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.159; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: INT, WILL, and STUN −1.\nStabilized: INT and WILL −1.\nTreated: WILL −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "20420338ddf92eda",
+    "name": "Compound Leg Fracture",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Compound Leg Fracture",
+        "modifiers": {
+          "spdMultiplier": 0.25,
+          "dodgeMultiplier": 0.25,
+          "athleticsMultiplier": 0.25
+        },
+        "stabilizedModifiers": {
+          "spdMultiplier": 0.5,
+          "dodgeMultiplier": 0.5,
+          "athleticsMultiplier": 0.5
+        },
+        "treatedModifiers": {
+          "spd": -2,
+          "dodge": -2,
+          "athletics": -2
+        },
+        "bleeding": true,
+        "key": "difficult-0",
+        "severity": "difficult",
+        "group": "leg",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 160,
+      "description": "<p><strong>Compound Leg Fracture</strong> — difficult critical injury; leg.</p>\n<p><strong>Untreated:</strong> SPD, Dodge/Escape, and Athletics are quartered. Bleeding begins.</p>\n<p><strong>Stabilized:</strong> SPD, Dodge/Escape, and Athletics are halved. Wound-induced bleeding ends.</p>\n<p><strong>Treated:</strong> SPD, Dodge/Escape, and Athletics −2.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 16; Healing Hands can perform First Aid tasks. Medical treatment takes 6 rounds followed by one Healing Hands check at DC 16. Magical treatment requires 8 successful healing-spell uses at Spell Casting DC 18; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.160; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: SPD, Dodge/Escape, and Athletics are quartered. Bleeding begins.\nStabilized: SPD, Dodge/Escape, and Athletics are halved. Wound-induced bleeding ends.\nTreated: SPD, Dodge/Escape, and Athletics −2.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "fd47a737c714c646",
+    "name": "Compound Arm Fracture",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Compound Arm Fracture",
+        "modifiers": {
+          "armDisabled": 1
+        },
+        "stabilizedModifiers": {
+          "armDisabled": 1
+        },
+        "treatedModifiers": {
+          "armDisabled": 1
+        },
+        "bleeding": true,
+        "key": "difficult-1",
+        "severity": "difficult",
+        "group": "arm",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 160,
+      "description": "<p><strong>Compound Arm Fracture</strong> — difficult critical injury; arm.</p>\n<p><strong>Untreated:</strong> The injured arm cannot be used. Bleeding begins.</p>\n<p><strong>Stabilized:</strong> The injured arm cannot be used. Wound-induced bleeding ends.</p>\n<p><strong>Treated:</strong> Keep the arm in a sling. It can hold an object but cannot perform normal arm actions.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 16; Healing Hands can perform First Aid tasks. Medical treatment takes 6 rounds followed by one Healing Hands check at DC 16. Magical treatment requires 8 successful healing-spell uses at Spell Casting DC 18; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Treatment permits holding things, not wielding a weapon or otherwise using the arm normally. This restriction ends after healing.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.160; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: The injured arm cannot be used. Bleeding begins.\nStabilized: The injured arm cannot be used. Wound-induced bleeding ends.\nTreated: Keep the arm in a sling. It can hold an object but cannot perform normal arm actions.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "f3865401ea84eb6e",
+    "name": "Sucking Chest Wound",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Sucking Chest Wound",
+        "modifiers": {
+          "body": -3,
+          "spd": -3
+        },
+        "stabilizedModifiers": {
+          "body": -2,
+          "spd": -2
+        },
+        "treatedModifiers": {
+          "body": -1,
+          "spd": -1
+        },
+        "suffocating": true,
+        "organ": true,
+        "key": "difficult-2",
+        "severity": "difficult",
+        "group": "torso",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 159,
+      "description": "<p><strong>Sucking Chest Wound</strong> — difficult critical injury; torso.</p>\n<p><strong>Untreated:</strong> BODY and SPD −3. Suffocation begins: 3 damage per round, ignoring armor.</p>\n<p><strong>Stabilized:</strong> BODY and SPD −2. Suffocation caused by this wound ends.</p>\n<p><strong>Treated:</strong> BODY and SPD −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 16; Healing Hands can perform First Aid tasks. Medical treatment takes 6 rounds followed by one Healing Hands check at DC 16. Magical treatment requires 8 successful healing-spell uses at Spell Casting DC 18; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.159; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: BODY and SPD −3. Suffocation begins: 3 damage per round, ignoring armor.\nStabilized: BODY and SPD −2. Suffocation caused by this wound ends.\nTreated: BODY and SPD −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "668ab37dcae1bf64",
+    "name": "Torn Stomach",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Torn Stomach",
+        "modifiers": {
+          "allActions": -2
+        },
+        "stabilizedModifiers": {
+          "allActions": -2
+        },
+        "treatedModifiers": {
+          "allActions": -1
+        },
+        "damagePerTurn": 4,
+        "organ": true,
+        "key": "difficult-3",
+        "severity": "difficult",
+        "group": "torso",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 159,
+      "description": "<p><strong>Torn Stomach</strong> — difficult critical injury; torso.</p>\n<p><strong>Untreated:</strong> All actions −2. Suffer 4 acid damage per round.</p>\n<p><strong>Stabilized:</strong> All actions −2. The recurring acid damage ends.</p>\n<p><strong>Treated:</strong> All actions −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 16; Healing Hands can perform First Aid tasks. Medical treatment takes 6 rounds followed by one Healing Hands check at DC 16. Magical treatment requires 8 successful healing-spell uses at Spell Casting DC 18; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.159; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: All actions −2. Suffer 4 acid damage per round.\nStabilized: All actions −2. The recurring acid damage ends.\nTreated: All actions −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "e674c84b62d74fae",
+    "name": "Concussion",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Concussion",
+        "modifiers": {
+          "int": -2,
+          "ref": -2,
+          "dex": -2
+        },
+        "stabilizedModifiers": {
+          "int": -1,
+          "ref": -1,
+          "dex": -1
+        },
+        "treatedModifiers": {
+          "int": -1,
+          "dex": -1
+        },
+        "stunEveryFormula": "1d6",
+        "key": "difficult-4",
+        "severity": "difficult",
+        "group": "head",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 159,
+      "description": "<p><strong>Concussion</strong> — difficult critical injury; head.</p>\n<p><strong>Untreated:</strong> INT, REF, and DEX −2. Roll 1d6 once; make a Stun save after each interval of that many rounds.</p>\n<p><strong>Stabilized:</strong> INT, REF, and DEX −1. This wound no longer requires periodic Stun saves.</p>\n<p><strong>Treated:</strong> INT and DEX −1.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 16; Healing Hands can perform First Aid tasks. Medical treatment takes 6 rounds followed by one Healing Hands check at DC 16. Magical treatment requires 8 successful healing-spell uses at Spell Casting DC 18; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Record the 1d6 round interval when the injury is acquired. Stabilizing the wound stops its recurring Stun saves.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.159; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: INT, REF, and DEX −2. Roll 1d6 once; make a Stun save after each interval of that many rounds.\nStabilized: INT, REF, and DEX −1. This wound no longer requires periodic Stun saves.\nTreated: INT and DEX −1.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "b06e18a093a3320b",
+    "name": "Skull Fracture",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Skull Fracture",
+        "modifiers": {
+          "int": -1,
+          "dex": -1,
+          "headMultiplier": 4
+        },
+        "stabilizedModifiers": {
+          "int": -1,
+          "dex": -1,
+          "headMultiplier": 4
+        },
+        "treatedModifiers": {
+          "headMultiplier": 4
+        },
+        "bleeding": true,
+        "key": "difficult-5",
+        "severity": "difficult",
+        "group": "head",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 159,
+      "description": "<p><strong>Skull Fracture</strong> — difficult critical injury; head.</p>\n<p><strong>Untreated:</strong> INT and DEX −1. Head damage uses a ×4 location multiplier. Bleeding begins.</p>\n<p><strong>Stabilized:</strong> INT and DEX −1. Head damage still uses ×4. Wound-induced bleeding ends.</p>\n<p><strong>Treated:</strong> Head damage uses a ×4 location multiplier.</p>\n<p><strong>Healed:</strong> The wound has healed. Its temporary penalties no longer apply.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 16; Healing Hands can perform First Aid tasks. Medical treatment takes 6 rounds followed by one Healing Hands check at DC 16. Magical treatment requires 8 successful healing-spell uses at Spell Casting DC 18; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> Stabilization does not start healing. After medical or magical treatment, use BODY and severity in the Critical Healing table (p.174) for the recovery time. Temporary treated penalties end when that recovery is complete.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>The ×4 multiplier replaces the normal head-location multiplier; it is not an additional ×4 applied after that multiplier.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.159; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: INT and DEX −1. Head damage uses a ×4 location multiplier. Bleeding begins.\nStabilized: INT and DEX −1. Head damage still uses ×4. Wound-induced bleeding ends.\nTreated: Head damage uses a ×4 location multiplier.\nHealed: The wound has healed. Its temporary penalties no longer apply.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "de5dc84f1795c9ac",
+    "name": "Dismembered Leg",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Dismembered Leg",
+        "modifiers": {
+          "spdMultiplier": 0.25,
+          "dodgeMultiplier": 0.25,
+          "athleticsMultiplier": 0.25
+        },
+        "stabilizedModifiers": {
+          "spdMultiplier": 0.25,
+          "dodgeMultiplier": 0.25,
+          "athleticsMultiplier": 0.25
+        },
+        "treatedModifiers": {
+          "spdMultiplier": 0.25,
+          "dodgeMultiplier": 0.25,
+          "athleticsMultiplier": 0.25
+        },
+        "bleeding": true,
+        "permanent": true,
+        "key": "deadly-0",
+        "severity": "deadly",
+        "group": "leg",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 160,
+      "description": "<p><strong>Dismembered Leg</strong> — deadly critical injury; leg.</p>\n<p><strong>Untreated:</strong> The leg is lost or permanently unusable. SPD, Dodge/Escape, and Athletics are quartered. Bleeding begins.</p>\n<p><strong>Stabilized:</strong> SPD, Dodge/Escape, and Athletics remain quartered. Wound-induced bleeding ends.</p>\n<p><strong>Treated:</strong> The missing or unusable leg can be replaced with a prosthesis. Without a prosthesis, the quartered SPD, Dodge/Escape, and Athletics remain.</p>\n<p><strong>Healed:</strong> Permanent consequence: the leg remains missing or unusable. SPD, Dodge/Escape, and Athletics remain quartered unless a prosthesis changes these penalties.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 18; Healing Hands can perform First Aid tasks. Medical treatment takes 8 rounds followed by one Healing Hands check at DC 18. Magical treatment requires 10 successful healing-spell uses at Spell Casting DC 20; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> The book gives no recovery duration for Deadly wounds. Permanent consequences remain after treatment or a healed label.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Core p.174 gives no healing duration for Deadly wounds. A healed label does not restore the leg. Prostheses and their training rules are on pp.160 and 174.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.160; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: The leg is lost or permanently unusable. SPD, Dodge/Escape, and Athletics are quartered. Bleeding begins.\nStabilized: SPD, Dodge/Escape, and Athletics remain quartered. Wound-induced bleeding ends.\nTreated: The missing or unusable leg can be replaced with a prosthesis. Without a prosthesis, the quartered SPD, Dodge/Escape, and Athletics remain.\nHealed: Permanent consequence: the leg remains missing or unusable. SPD, Dodge/Escape, and Athletics remain quartered unless a prosthesis changes these penalties.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "ce88244a7c3adbb6",
+    "name": "Dismembered Arm",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Dismembered Arm",
+        "modifiers": {
+          "armDisabled": 1
+        },
+        "stabilizedModifiers": {
+          "armDisabled": 1
+        },
+        "treatedModifiers": {
+          "armDisabled": 1
+        },
+        "bleeding": true,
+        "permanent": true,
+        "key": "deadly-1",
+        "severity": "deadly",
+        "group": "arm",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 160,
+      "description": "<p><strong>Dismembered Arm</strong> — deadly critical injury; arm.</p>\n<p><strong>Untreated:</strong> The arm is lost or permanently unusable. Bleeding begins.</p>\n<p><strong>Stabilized:</strong> The arm remains unusable. Wound-induced bleeding ends.</p>\n<p><strong>Treated:</strong> The arm can be replaced with a prosthesis. It remains unusable without one.</p>\n<p><strong>Healed:</strong> Permanent consequence: the arm remains missing or unusable unless a prosthesis changes what it can do.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 18; Healing Hands can perform First Aid tasks. Medical treatment takes 8 rounds followed by one Healing Hands check at DC 18. Magical treatment requires 10 successful healing-spell uses at Spell Casting DC 20; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> The book gives no recovery duration for Deadly wounds. Permanent consequences remain after treatment or a healed label.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Core p.174 gives no healing duration for Deadly wounds. A healed label does not restore the arm. Prostheses and their training rules are on pp.160 and 174.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.160; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: The arm is lost or permanently unusable. Bleeding begins.\nStabilized: The arm remains unusable. Wound-induced bleeding ends.\nTreated: The arm can be replaced with a prosthesis. It remains unusable without one.\nHealed: Permanent consequence: the arm remains missing or unusable unless a prosthesis changes what it can do.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "e38f01b7274882a3",
+    "name": "Septic Shock",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Septic Shock",
+        "modifiers": {
+          "staMultiplier": 0.25,
+          "int": -3,
+          "will": -3,
+          "ref": -3,
+          "dex": -3
+        },
+        "stabilizedModifiers": {
+          "staMultiplier": 0.5,
+          "int": -1,
+          "will": -1,
+          "ref": -1,
+          "dex": -1
+        },
+        "treatedModifiers": {
+          "sta": -5
+        },
+        "poison": true,
+        "permanent": true,
+        "organ": true,
+        "key": "deadly-2",
+        "severity": "deadly",
+        "group": "torso",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 160,
+      "description": "<p><strong>Septic Shock</strong> — deadly critical injury; torso.</p>\n<p><strong>Untreated:</strong> Stamina is quartered. INT, WILL, REF, and DEX −3. Poison begins: 3 damage per round, ignoring armor.</p>\n<p><strong>Stabilized:</strong> Stamina is halved. INT, WILL, REF, and DEX −1. Poison caused by this wound ends.</p>\n<p><strong>Treated:</strong> Stamina −5 permanently.</p>\n<p><strong>Healed:</strong> Permanent consequence: Stamina −5 remains.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 18; Healing Hands can perform First Aid tasks. Medical treatment takes 8 rounds followed by one Healing Hands check at DC 18. Magical treatment requires 10 successful healing-spell uses at Spell Casting DC 20; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> The book gives no recovery duration for Deadly wounds. Permanent consequences remain after treatment or a healed label.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Core p.174 gives no healing duration for Deadly wounds. Completing treatment or marking this wound healed does not remove the permanent Stamina penalty.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.160; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: Stamina is quartered. INT, WILL, REF, and DEX −3. Poison begins: 3 damage per round, ignoring armor.\nStabilized: Stamina is halved. INT, WILL, REF, and DEX −1. Poison caused by this wound ends.\nTreated: Stamina −5 permanently.\nHealed: Permanent consequence: Stamina −5 remains.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "be1db95b667c101b",
+    "name": "Heart Damage",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Heart Damage",
+        "modifiers": {
+          "staMultiplier": 0.25,
+          "spdMultiplier": 0.25,
+          "bodyMultiplier": 0.25
+        },
+        "stabilizedModifiers": {
+          "staMultiplier": 0.5,
+          "spdMultiplier": 0.5,
+          "bodyMultiplier": 0.5
+        },
+        "treatedModifiers": {
+          "bleedingDamage": 2
+        },
+        "bleeding": true,
+        "deathSave": true,
+        "permanent": true,
+        "key": "deadly-3",
+        "severity": "deadly",
+        "group": "torso",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 160,
+      "description": "<p><strong>Heart Damage</strong> — deadly critical injury; torso.</p>\n<p><strong>Untreated:</strong> Make an immediate Death save. If the character survives, Stamina, SPD, and BODY are quartered and bleeding begins.</p>\n<p><strong>Stabilized:</strong> Stamina, SPD, and BODY are halved. Wound-induced bleeding ends.</p>\n<p><strong>Treated:</strong> Whenever the character is bleeding, bleeding damage increases by 2 per round, permanently.</p>\n<p><strong>Healed:</strong> Permanent consequence: whenever the character is bleeding, bleeding damage increases by 2 per round.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 18; Healing Hands can perform First Aid tasks. Medical treatment takes 8 rounds followed by one Healing Hands check at DC 18. Magical treatment requires 10 successful healing-spell uses at Spell Casting DC 20; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> The book gives no recovery duration for Deadly wounds. Permanent consequences remain after treatment or a healed label.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>The initial Death save occurs once when the injury is acquired. The permanent penalty does not cause bleeding on its own; it increases damage while bleeding. This follows the p.160 correction in Core Errata 2022. Core p.174 gives no healing duration for Deadly wounds.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.160; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: Make an immediate Death save. If the character survives, Stamina, SPD, and BODY are quartered and bleeding begins.\nStabilized: Stamina, SPD, and BODY are halved. Wound-induced bleeding ends.\nTreated: Whenever the character is bleeding, bleeding damage increases by 2 per round, permanently.\nHealed: Permanent consequence: whenever the character is bleeding, bleeding damage increases by 2 per round.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "47a2b30eebd60a01",
+    "name": "Damaged Eye",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Damaged Eye",
+        "modifiers": {
+          "sightAwareness": -5,
+          "dex": -4
+        },
+        "stabilizedModifiers": {
+          "sightAwareness": -3,
+          "dex": -2
+        },
+        "treatedModifiers": {
+          "sightAwareness": -1,
+          "dex": -1
+        },
+        "bleeding": true,
+        "permanent": true,
+        "key": "deadly-4",
+        "severity": "deadly",
+        "group": "head",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 160,
+      "description": "<p><strong>Damaged Eye</strong> — deadly critical injury; head.</p>\n<p><strong>Untreated:</strong> Sight-based Awareness −5; DEX −4. Bleeding begins.</p>\n<p><strong>Stabilized:</strong> Sight-based Awareness −3; DEX −2. Wound-induced bleeding ends.</p>\n<p><strong>Treated:</strong> Sight-based Awareness and DEX −1 permanently.</p>\n<p><strong>Healed:</strong> Permanent consequence: sight-based Awareness and DEX −1 remain.</p>\n<p><strong>Care:</strong> Stabilize with one First Aid check at DC 18; Healing Hands can perform First Aid tasks. Medical treatment takes 8 rounds followed by one Healing Hands check at DC 18. Magical treatment requires 10 successful healing-spell uses at Spell Casting DC 20; these uses do not restore HP.</p>\n<p><strong>Recovery:</strong> The book gives no recovery duration for Deadly wounds. Permanent consequences remain after treatment or a healed label.</p>\n<p>Record successful magical treatment manually. Spellcasting and its resource costs are not automated by this wound card.</p>\n<p>Apply the Awareness penalty only to checks that use sight. Core p.174 gives no healing duration for Deadly wounds; the permanent penalties remain after treatment or a healed label.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.160; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: Sight-based Awareness −5; DEX −4. Bleeding begins.\nStabilized: Sight-based Awareness −3; DEX −2. Wound-induced bleeding ends.\nTreated: Sight-based Awareness and DEX −1 permanently.\nHealed: Permanent consequence: sight-based Awareness and DEX −1 remain.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  },
+  {
+    "_id": "65f2eb865d0a9e26",
+    "name": "Separated Spine / Decapitated",
+    "type": "wound",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "wound": {
+        "name": "Separated Spine / Decapitated",
+        "modifiers": {},
+        "stabilizedModifiers": {},
+        "treatedModifiers": {},
+        "fatal": true,
+        "permanent": true,
+        "key": "deadly-5",
+        "severity": "deadly",
+        "group": "head",
+        "treatment": "untreated",
+        "location": "",
+        "separateConditions": true
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 160,
+      "description": "<p><strong>Separated Spine / Decapitated</strong> — deadly critical injury; head.</p>\n<p><strong>Untreated:</strong> The character dies immediately.</p>\n<p><strong>Stabilized:</strong> This fatal injury cannot be stabilized.</p>\n<p><strong>Treated:</strong> This fatal injury cannot be treated.</p>\n<p><strong>Healed:</strong> This fatal injury cannot heal. Changing its record does not revive the character.</p>\n<p><strong>Care:</strong> Fatal injury: stabilization, treatment, and healing are unavailable.</p>\n<p><strong>Recovery:</strong> No recovery clock applies.</p>\n<p>No stabilization, medical treatment, magical treatment, or recovery clock is available for this fatal injury.</p>\n<p>Source: The Witcher Core Rulebook v1.35, p.160; stabilization p.162; treatment and recovery pp.173–174. Core Errata 2022 applies.</p>",
+      "effectText": "Untreated: The character dies immediately.\nStabilized: This fatal injury cannot be stabilized.\nTreated: This fatal injury cannot be treated.\nHealed: This fatal injury cannot heal. Changing its record does not revive the character.",
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false
+    }
+  }
+]

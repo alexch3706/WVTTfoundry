@@ -1,11 +1,12 @@
 {
   "name": "witcher-rilerena",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "private": true,
   "type": "module",
   "scripts": {
     "test": "node --test tests/witcher/*.test.mjs",
     "build:art": "node tools/witcher/build-art.mjs",
+    "build:wounds": "node tools/witcher/build-wounds.mjs",
     "build:packs": "node tools/witcher/build-packs.mjs",
     "validate": "node tools/witcher/validate.mjs",
     "build:release": "node tools/witcher/build-release.mjs"

@@ -17,15 +17,18 @@ import { adjustSchoolCritical, schoolReactions } from './school-gear.js';
 import { registerCommand, runCommand, authorizedActor } from './authority.js';
 import { validateWeaponGrip } from './inventory.js';
 import { criticalWound, fumbleText } from './wounds.js';
+import { woundItemData } from './wound-catalog.js';
+import { resolveWoundArm, woundCheckModifier } from './wound-rules.js';
 import { rangeDifficulty } from './advanced-rules.js';
 import { immuneTo, locationChoices, crushingForce, suppressed, isIncorporeal } from './monster-rules.js';
-import { actorSnapshot, itemSnapshot } from './documents.js';
+import { actorSnapshot, itemSnapshot, staminaCapChanges } from './documents.js';
 import { measureTokenDistance, isPrimaryActiveGm } from '../foundry-compat.js';
 import {
   owner,
   prompt,
   input,
   manualCheckInput,
+  woundArmInput,
   validateManualCheck,
   check,
   dice,
@@ -229,6 +232,7 @@ export async function attack(actor, item, options = {}) {
     input('outside', 'Target outside your vision cone (−3; no aiming)', { type: 'checkbox' }) +
     input('rear', 'You are outside the defender’s vision cone (+3)', { type: 'checkbox' }) +
     input('ambush', 'Successful ambush in the first round (+5, p.153)', { type: 'checkbox' }) +
+    woundArmInput(actor, { optional: !!weapon.properties?.natural }) +
     manualCheckInput();
   const values =
     options.values ??
@@ -317,6 +321,18 @@ async function executeAttack(payload, context) {
   if (item && (item.system.quantity < 1 || (!w.properties?.natural && !item.system.carried)))
     throw new RuleError('Carry at least one of this item before using it.');
   const grip = validateWeaponGrip(actorSnapshot(actor), w, actorSnapshot(actor).items);
+  const injuryArm = resolveWoundArm(
+    actor.system,
+    [...actor.items],
+    values.woundArm,
+    ['kick', 'pushKick', 'escape', 'feint'].includes(action)
+      ? 'none'
+      : grip.hands === 2
+        ? 'both'
+        : action === 'punch' || !w.properties?.natural
+          ? 'one'
+          : 'optional'
+  );
   if (w.properties?.minimumDistance && !(distance > w.properties.minimumDistance))
     throw new RuleError(`This ability requires a target farther than ${w.properties.minimumDistance} m.`);
   if (w.name === 'Charge' && actor.system.category === 'elementa' && suppressed(actor.system, 'Dimeritium'))
@@ -365,6 +381,9 @@ async function executeAttack(payload, context) {
     `extra action ${plan.modifier}`,
     `situational ${values.modifier}`,
     `Luck ${luck}`,
+    ...(injuryArm
+      ? [`${injuryArm}: arm injury ${woundCheckModifier([...actor.items], { arm: injuryArm })}`]
+      : []),
   ];
   if (location) {
     modifier += locate(table, location).aim;
@@ -430,6 +449,7 @@ async function executeAttack(payload, context) {
     actor.skillBase(skill, {
       stat: action === 'feint' ? 'emp' : action === 'escape' ? 'ref' : w.stat,
       modifier,
+      arm: injuryArm,
     }).total,
     { manualDice: values.manualDice }
   );
@@ -505,6 +525,7 @@ export async function defend(message, quick = {}) {
       input('modifier', 'Other modifier', { value: 0 }) +
       input('gang', 'Assailants in melee reach', { value: 1, min: 1 }) +
       input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value }) +
+      woundArmInput(actor) +
       manualCheckInput()
     : null;
   const values = await prompt(
@@ -545,6 +566,7 @@ export async function defend(message, quick = {}) {
           min: 0,
         }) +
         input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value }) +
+        woundArmInput(actor) +
         manualCheckInput(),
     { validate: validateManualCheck }
   );
@@ -655,11 +677,28 @@ async function executeDefense(payload, context) {
   if (passive && !context.user.isGM && !has(actor, 'stunned') && !has(actor, 'unconscious'))
     throw new RuleError('Only the GM chooses an unaware or inanimate target DC.');
   const dc = has(actor, 'stunned') || has(actor, 'unconscious') ? 10 : Number(values.dc);
+  const usesArms = armed || ['blockArm', 'parry', 'grapple'].includes(defense);
+  const injuryArm = usesArms
+    ? resolveWoundArm(
+        actor.system,
+        [...actor.items],
+        defense === 'blockArm' ? values.arm : values.woundArm,
+        armed && (w.system.handsUsed || w.system.hands) === 2
+          ? 'both'
+          : armed && w.system.properties?.natural
+            ? 'optional'
+            : 'one'
+      )
+    : '';
   const result = passive
     ? { total: dc, rolls: [], base: dc, dice: [], fumble: 0, source: 'passive' }
-    : await check(actor.skillBase(skill, { modifier: modifier + luck }).total, {
-        manualDice: values.manualDice,
-      });
+    : await check(
+        actor.skillBase(skill, { modifier: modifier + luck, arm: injuryArm, sight: skill === 'awareness' })
+          .total,
+        {
+          manualDice: values.manualDice,
+        }
+      );
   const attackRef = message.uuid;
   const defenseId = foundry.utils.randomID();
   // Reserve this attack before spending anything. A second open dialog cannot roll again.
@@ -987,7 +1026,8 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
     if (wound?.extraRoll) {
       const r = await dice(wound.extraRoll);
       rolls.push(r);
-      wound.notes = `Additional roll: ${r.total}`;
+      wound.extraResult = r.total;
+      wound.notes = `Teeth lost: ${r.total}`;
     }
   } else if (a.aimed) location = locate(table, a.aimed);
   else {
@@ -1183,23 +1223,12 @@ export async function applyDamage(message, internal = false) {
     const created = [];
     try {
       if (data.wound) {
-        created.push(
-          ...(await target.createEmbeddedDocuments('Item', [
-            {
-              name: data.wound.name,
-              type: 'wound',
-              system: {
-                wound: data.wound,
-                source: 'The Witcher Core Rulebook v1.35',
-                page: { simple: 158, complex: 159, difficult: 159, deadly: 160 }[data.wound.severity],
-              },
-            },
-          ]))
+        created.push(...(await target.createEmbeddedDocuments('Item', [woundItemData(data.wound)])));
+        changes.actor['system.sta.value'] = Math.min(
+          changes.actor['system.sta.value'],
+          staminaCapChanges(target)['system.sta.value']
         );
         if (data.wound.fatal) changes.actor['system.conditions'].push('dead');
-        for (const key of ['bleeding', 'poison', 'suffocating'])
-          if (data.wound[key] && !changes.actor['system.conditions'].includes(key))
-            changes.actor['system.conditions'].push(key);
         if (data.wound.deathSave)
           changes.actor['system.pendingDeathSaves'] =
             (changes.actor['system.pendingDeathSaves'] ?? target.system.pendingDeathSaves) + 1;

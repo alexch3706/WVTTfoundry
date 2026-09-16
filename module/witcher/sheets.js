@@ -9,6 +9,9 @@ import {
 } from './config.js';
 import { validateLocations, strikeProfile, shieldStrike } from './rules.js';
 import { armorLocationRows, actorArmorRows } from './armor-display.js';
+import { woundDisplay } from './wound-display.js';
+import { woundConditions } from './wounds.js';
+import { woundAction, addWound, woundFingerprint } from './wound-actions.js';
 import { actorSnapshot, itemSnapshot } from './documents.js';
 import { attack } from './combat.js';
 import { skillRoll, input, prompt, escapeHTML as e, errorNotice, serial, turnIdentity } from './runtime.js';
@@ -234,7 +237,10 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
     }));
     data.wounds = actor.items
       .filter((i) => i.type === 'wound')
-      .map((i) => ({ id: i.id, name: i.name, system: i.system }));
+      .map((item) => woundDisplay(item, { actor, isGM: game.user.isGM }));
+    data.woundConditions = woundConditions([...actor.items])
+      .map((key) => CONDITIONS[key])
+      .join(', ');
     data.locations = actorArmorRows(state, s.locationTable);
     data.conditionRows = Object.entries(CONDITIONS).map(([key, label]) => ({
       key,
@@ -318,6 +324,18 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
       .join('');
     return data;
   }
+  async _onDropItemCreate(itemData, event) {
+    if (!this.actor.isOwner) return [];
+    const entries = Array.isArray(itemData) ? itemData : [itemData];
+    if (!entries.some((item) => item.type === 'wound')) return super._onDropItemCreate(itemData, event);
+    const created = [];
+    for (const item of entries) {
+      const result =
+        item.type === 'wound' ? await addWound(this.actor, item) : await super._onDropItemCreate(item, event);
+      if (result) created.push(...(Array.isArray(result) ? result : [result]));
+    }
+    return created;
+  }
   activateListeners(html) {
     super.activateListeners(html);
     const root = html[0] ?? html;
@@ -356,11 +374,20 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
     if (action === 'equip') return changeInventory(actor, item, { equipped: !item.system.equipped });
     if (action === 'unarmed') return attack(actor, null, { action: key });
     if (action === 'item') return item?.sheet.render(true);
+    if (action === 'wound') return woundAction(actor, item, key);
     if (action === 'delete') {
       const result = await prompt('Delete item', `<p>Delete ${e(item.name)} from ${e(actor.name)}?</p>`, {
         button: 'Delete',
       });
-      if (result) return item.delete();
+      if (result) {
+        if (item.type === 'wound')
+          return runCommand('removeWound', {
+            actorUuid: actor.uuid,
+            itemId: item.id,
+            expected: woundFingerprint(item),
+          });
+        return item.delete();
+      }
     }
     if (action === 'newItem')
       return Item.create({ name: 'New ' + key, type: key }, { parent: actor, renderSheet: true });
@@ -392,7 +419,16 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
           input('strenuous', 'Strenuous activity: half healing', { type: 'checkbox' }),
         { button: 'Rest' }
       );
-      if (values) return actor.rest({ days: Number(values.days), strenuous: values.strenuous });
+      if (values)
+        return runCommand(
+          'woundRest',
+          {
+            actorUuid: actor.uuid,
+            days: Number(values.days),
+            strenuous: !!values.strenuous,
+          },
+          { label: `${actor.name}: rest` }
+        );
     }
     if (action === 'refreshLuck') return actor.update({ 'system.luck.value': actor.system.luck.max });
     if (action === 'resetAnatomy')
@@ -504,9 +540,15 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
     const data = await super.getData(options);
     const item = this.item,
       s = item.system;
-    data.inventoryItem = inventoryRow(item, item.actor);
+    data.system = s;
     data.owned = !!item.actor;
     data.ownerName = item.actor?.name ?? '';
+    data.isWound = item.type === 'wound';
+    if (data.isWound) {
+      data.wound = woundDisplay(item, { isGM: game.user.isGM });
+      return data;
+    }
+    data.inventoryItem = inventoryRow(item, item.actor);
     const num = (key, label = title(key)) =>
       pathInput('system.' + key, label, foundry.utils.getProperty(s, key));
     const str = (key, label = title(key), choices) =>
@@ -639,15 +681,6 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
         fields.push(
           typeof s.mount[key] === 'string' ? str('mount.' + key, title(key)) : num('mount.' + key, title(key))
         );
-    if (item.type === 'wound')
-      fields.push(
-        str('wound.severity', 'Severity', optionsMap(['simple', 'complex', 'difficult', 'deadly'])),
-        str('wound.location', 'Location'),
-        str('wound.treatment', 'Treatment', optionsMap(['untreated', 'stabilized', 'treated'])),
-        num('wound.daysRemaining', 'Days remaining'),
-        num('wound.turnsTreated', 'Rounds of treatment'),
-        checkbox('wound.permanent', 'Permanent injury')
-      );
     if (item.type === 'ability')
       fields.push(
         str('ability.key', 'Ability identifier'),
@@ -680,6 +713,9 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
         button.disabled = true;
         try {
           switch (button.dataset.witcher) {
+            case 'wound':
+              await woundAction(actor, item, button.dataset.key);
+              break;
             case 'equip':
               await changeInventory(actor, item, { equipped: !item.system.equipped });
               break;
@@ -706,6 +742,15 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
   }
   async _updateObject(event, formData) {
     const data = foundry.utils.expandObject(formData);
+    // Wound state and timers change through validated actions, never a generic form submission.
+    if (this.item.type === 'wound') {
+      const patch = {};
+      if (Object.hasOwn(data, 'name')) patch.name = data.name;
+      if (Object.hasOwn(data, 'img')) patch.img = data.img;
+      if (this.item.actor && Object.hasOwn(data.system?.wound ?? {}, 'notes'))
+        patch['system.wound.notes'] = data.system.wound.notes;
+      return this.item.update(patch);
+    }
     for (const key of ['coverage', 'resistances', 'damageTypes'])
       if (typeof data.system?.[key] === 'string')
         data.system[key] = data.system[key]

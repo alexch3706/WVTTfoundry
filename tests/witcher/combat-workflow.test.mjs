@@ -9,6 +9,8 @@ import { armorLocationRows, actorArmorRows } from '../../module/witcher/armor-di
 import { STATS, SKILLS, HUMANOID_LOCATIONS, SYSTEM_ID } from '../../module/witcher/config.js';
 import { derivedStats } from '../../module/witcher/rules.js';
 import { runCommand } from '../../module/witcher/authority.js';
+import { WOUNDS } from '../../module/witcher/wounds.js';
+import { woundItemData } from '../../module/witcher/wound-catalog.js';
 
 const catalog = ['weapons', 'armor', 'bestiary'].flatMap((name) =>
   JSON.parse(fs.readFileSync(new URL(`../../data/witcher/${name}.json`, import.meta.url)))
@@ -51,7 +53,7 @@ function serializableSystem(data) {
   return data;
 }
 
-async function workflow(t, { creature = false, attackerName } = {}) {
+async function workflow(t, { creature = false, attackerName, separatePrepared = false } = {}) {
   const names = ['foundry', 'game', 'ui', 'Hooks', 'ChatMessage', 'Roll', 'Actor', 'Item', 'canvas'];
   const previous = new Map(names.map((name) => [name, Object.getOwnPropertyDescriptor(globalThis, name)]));
   t.after(() => {
@@ -79,12 +81,18 @@ async function workflow(t, { creature = false, attackerName } = {}) {
     utils: {
       deepClone: clone,
       getProperty,
+      expandObject: (changes) => {
+        const expanded = {};
+        patch(expanded, changes);
+        return expanded;
+      },
       randomID,
       fromUuid: async (uuid) => docs.get(uuid),
     },
   };
   globalThis.Actor = class {
     prepareDerivedData() {}
+    async _preUpdate() {}
   };
   globalThis.Item = class {};
   globalThis.canvas = { tokens: { controlled: [] } };
@@ -213,9 +221,14 @@ async function workflow(t, { creature = false, attackerName } = {}) {
         }),
       },
       get system() {
-        return this._source.system;
+        return this._prepared ?? this._source.system;
       },
       prepare() {
+        if (separatePrepared) {
+          this._prepared = serializableSystem(clone(this._source.system));
+          WitcherActor.prototype.prepareDerivedData.call(this);
+          return;
+        }
         this.system.derived = derivedStats(
           this.system,
           this.items.map((item) => ({ id: item.id, type: item.type, ...item.system.toObject() }))
@@ -229,6 +242,7 @@ async function workflow(t, { creature = false, attackerName } = {}) {
         return WitcherActor.prototype.skillBase.call(this, key, options);
       },
       async update(changes) {
+        await WitcherActor.prototype._preUpdate.call(this, changes, {}, game.user);
         patch(this._source, changes);
         this.prepare();
         return this;
@@ -383,6 +397,64 @@ async function workflow(t, { creature = false, attackerName } = {}) {
     rolls,
   };
 }
+
+test('injured-arm attack and weapon-defense penalties use the selected limb and end on healing', async (t) => {
+  const w = await workflow(t),
+    sword = await w.importItem(w.attacker, 'Arming Sword', { equipped: true }),
+    guard = await w.importItem(w.target, 'Arming Sword', { equipped: true });
+  const add = async (actor) =>
+    (
+      await actor.createEmbeddedDocuments('Item', [
+        woundItemData({ ...WOUNDS.complex[1], severity: 'complex', location: 'rightArm' }),
+      ])
+    )[0];
+  const injury = await add(w.attacker);
+  await add(w.target);
+  w.start();
+  const first = await w.attack(sword, { woundArm: 'rightArm', manualDice: '2' });
+  assert.equal(first.flags[SYSTEM_ID].check.base, 6); // REF5 + Sword5 - WA1 - arm3.
+  const defense = await w.defend(first, {
+    defense: 'blockWeapon',
+    weapon: guard.id,
+    woundArm: 'rightArm',
+    manualDice: '8',
+  });
+  assert.equal(defense.flags[SYSTEM_ID].check.base, 7); // No weapon WA on defense.
+  const second = await w.attack(sword, { woundArm: 'leftArm', manualDice: '2' });
+  assert.equal(second.flags[SYSTEM_ID].check.base, 9);
+  await injury.update({ 'system.wound.treatment': 'healed' });
+  game.combat.round++;
+  const third = await w.attack(sword, { woundArm: 'rightArm', manualDice: '2' });
+  assert.equal(third.flags[SYSTEM_ID].check.base, 9);
+  assert.equal(w.rolls.length, 0);
+});
+
+test('disabled-arm selection rejects before spending while the sound arm can still wield one weapon', async (t) => {
+  const w = await workflow(t),
+    sword = await w.importItem(w.attacker, 'Arming Sword', { equipped: true });
+  await w.attacker.createEmbeddedDocuments('Item', [
+    woundItemData({ ...WOUNDS.deadly[1], severity: 'deadly', location: 'rightArm', treatment: 'healed' }),
+  ]);
+  w.start();
+  const before = clone(w.attacker._source);
+  await assert.rejects(() => w.attack(sword, { woundArm: 'rightArm', manualDice: '2' }), /injured arm/);
+  await assert.rejects(() => w.attack(sword, { woundArm: 'inventedArm', manualDice: '2' }), /Choose the arm/);
+  assert.deepEqual(w.attacker._source, before);
+  const result = await w.attack(sword, { woundArm: 'leftArm', manualDice: '2' });
+  assert.equal(result.flags[SYSTEM_ID].check.base, 9);
+});
+
+test('real skill totals include eye injury only for sight and retain the healed permanent penalty', async (t) => {
+  const w = await workflow(t);
+  const [eye] = await w.attacker.createEmbeddedDocuments('Item', [
+    woundItemData({ ...WOUNDS.deadly[4], severity: 'deadly', location: 'head' }),
+  ]);
+  assert.equal(w.attacker.skillBase('awareness', { sight: true }).total, 5);
+  assert.equal(w.attacker.skillBase('awareness', { sight: false }).total, 10);
+  await eye.update({ 'system.wound.treatment': 'healed' });
+  assert.equal(w.attacker.skillBase('awareness', { sight: true }).total, 9);
+  assert.equal(w.attacker.skillBase('awareness', { sight: false }).total, 10);
+});
 
 test('manual attacks preserve Luck, modifiers, paid fast strikes and persisted dice provenance', async (t) => {
   const w = await workflow(t),
@@ -992,4 +1064,72 @@ test('critical wound, damage and its Stun save are each persisted once when the 
   assert.equal(w.target.items.filter((item) => item.type === 'wound').length, 1);
   assert.equal(damage.flags[SYSTEM_ID].applied, true);
   assert.equal(w.rolls.length, 0, 'Finishing the card must not roll its Stun save twice');
+});
+
+test('real actor pre-update preserves positive-HP Heart saves and resets only the death state being left', async (t) => {
+  const w = await workflow(t, { separatePrepared: true });
+  await w.target.update({ 'system.deathSaves': 2, 'system.pendingDeathSaves': 1 });
+  await w.target.update({ 'system.hp.value': 20 });
+  assert.equal(w.target._source.system.pendingDeathSaves, 1);
+  assert.equal(w.target._source.system.deathSaves, 2);
+  await w.target.update({ 'system.hp.value': 15, 'system.pendingDeathSaves': 2 });
+  assert.equal(w.target._source.system.pendingDeathSaves, 2);
+  await w.target.update({ 'system.hp.value': -1 });
+  await w.target.update({ 'system.hp.value': 1 });
+  assert.equal(w.target._source.system.pendingDeathSaves, 0);
+  assert.equal(w.target._source.system.deathSaves, 0);
+  await w.target.update({ 'system.hp.value': -1, 'system.deathSaves': 4, 'system.pendingDeathSaves': 3 });
+  await w.target.update({ 'system.hp.value': 1, 'system.pendingDeathSaves': 1 });
+  assert.equal(w.target._source.system.pendingDeathSaves, 1);
+  assert.equal(w.target._source.system.deathSaves, 0);
+});
+
+test('prepared STA is capped independently from stored STA and a treatment ceiling increase restores no points', async (t) => {
+  const w = await workflow(t, { separatePrepared: true });
+  const { woundItemData } = await import('../../module/witcher/wound-catalog.js');
+  const { actorSnapshot, staminaCapChanges } = await import('../../module/witcher/documents.js');
+  const { actionPlan } = await import('../../module/witcher/runtime.js');
+  const [injury] = await w.target.createEmbeddedDocuments('Item', [
+    woundItemData({ key: 'deadly-2', location: 'torso' }),
+  ]);
+  assert.equal(w.target.system.sta.max, 6);
+  assert.equal(w.target.system.sta.value, 6);
+  assert.equal(
+    w.target._source.system.sta.value,
+    25,
+    'Preparation alone must not pretend the source was persisted'
+  );
+  const plan = actionPlan(w.target, { extra: true });
+  assert.equal(plan.changes['system.sta.value'], 3, 'Spending starts from the prepared cap');
+  const state = actorSnapshot(w.target);
+  const projected = state.items.map((item) => ({ ...item, wound: { ...item.wound, treatment: 'treated' } }));
+  await w.target.update(staminaCapChanges(w.target, projected));
+  await injury.update({ 'system.wound.treatment': 'treated' });
+  assert.equal(w.target.system.sta.max, 20);
+  assert.equal(w.target.system.sta.value, 6);
+  assert.equal(w.target._source.system.sta.value, 6);
+  await w.target.deleteEmbeddedDocuments('Item', [injury.id]);
+  assert.equal(w.target.system.sta.max, 25);
+  assert.equal(w.target.system.sta.value, 6);
+});
+
+test('a registered Heart Damage hit persists the STA cap and pending Death save while HP is still positive', async (t) => {
+  const w = await workflow(t, { separatePrepared: true }),
+    sword = await w.importItem(w.attacker, 'Arming Sword', { equipped: true });
+  await w.target.update({ 'system.overrides.hp': 100, 'system.hp.value': 100 });
+  w.start();
+  w.enqueue(['1d10', 6], ['1d10', 4], ['2d6', 9], ['1d6', 6], ['1d6', 3], ['2d6+4', 12], ['1d10', 2]);
+  const attack = await w.attack(sword, { modifier: 20 });
+  await w.defend(attack);
+  const damage = w.damageFor(attack);
+  assert.equal(damage.flags[SYSTEM_ID].wound.name, 'Heart Damage');
+  await w.apply(damage);
+  assert(w.target.system.hp.value > 0);
+  assert.equal(w.target._source.system.pendingDeathSaves, 1);
+  assert.equal(w.target.system.pendingDeathSaves, 1);
+  assert.equal(w.target._source.system.sta.value, 6);
+  assert.equal(w.target.system.sta.max, 6);
+  assert.equal(w.target.system.sta.value, 6);
+  assert(w.messages.some((message) => message.flags[SYSTEM_ID]?.deathFor === damage.uuid));
+  assert.equal(w.rolls.length, 0);
 });

@@ -19,6 +19,7 @@ const FIXED_FILES = [
   'docs/witcher/forge-checklist.md',
   'docs/witcher/bestiary.md',
   'docs/witcher/art-sources.md',
+  'docs/witcher/critical-wounds.md',
   'docs/witcher/supplements.md',
   'docs/witcher/implementation-status.md',
 ];

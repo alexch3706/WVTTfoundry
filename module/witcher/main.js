@@ -16,6 +16,7 @@ import { registerInventory } from './inventory.js';
 import { registerAuthority } from './authority.js';
 import { BESTIARY_ART } from './bestiary-art.js';
 import { updateBestiaryArt } from './bestiary-art-migration.js';
+import { registerWoundActions, woundAction, addWound } from './wound-actions.js';
 import { loadFoundryTemplates } from '../foundry-compat.js';
 
 Hooks.once('init', async () => {
@@ -58,6 +59,8 @@ Hooks.once('init', async () => {
     treat,
     useItem,
     tickActor,
+    woundAction,
+    addWound,
     updateBestiaryArt: () => updateBestiaryArt(BESTIARY_ART),
   };
   await loadFoundryTemplates([
@@ -69,6 +72,7 @@ Hooks.once('ready', async () => {
   registerInventory();
   registerCombatChat();
   registerActivities();
+  registerWoundActions();
   registerConsequences();
   registerCreatureAbilities();
   registerAuthority();
