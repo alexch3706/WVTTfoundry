@@ -384,6 +384,216 @@ async function workflow(t, { creature = false, attackerName } = {}) {
   };
 }
 
+test('manual attacks preserve Luck, modifiers, paid fast strikes and persisted dice provenance', async (t) => {
+  const w = await workflow(t),
+    sword = await w.importItem(w.attacker, 'Arming Sword', { equipped: true });
+  w.start();
+  const first = await w.attack(sword, { manualDice: '7', extra: true, luck: 1, modifier: 2 });
+  const a = first.flags[SYSTEM_ID];
+  assert.equal(a.check.base, 9); // REF 5 + skill 5 - WA 1 - extra 3 + modifier 2 + Luck 1
+  assert.equal(a.check.total, 16);
+  assert.equal(a.check.source, 'manual');
+  assert.deepEqual(a.check.dice, [7]);
+  assert.deepEqual(first.rolls, []);
+  assert.match(first.content, /manual entry/);
+  assert.equal(w.attacker.system.sta.value, 22);
+  assert.equal(w.attacker.system.luck.value, 4);
+  const second = await w.attack(sword, { manualDice: '10,10,4' });
+  assert.equal(second.flags[SYSTEM_ID].check.total, 30);
+  assert.deepEqual(second.flags[SYSTEM_ID].check.dice, [10, 10, 4]);
+  assert.equal(w.attacker.system.combat.remaining, 0);
+  assert.equal(w.attacker.system.sta.value, 22);
+});
+
+for (const defense of ['dodge', 'reposition', 'blockWeapon', 'blockShield', 'parry']) {
+  test(`manual ${defense} preserves normal defense resolution and STA expenditure`, async (t) => {
+    const w = await workflow(t),
+      sword = await w.importItem(w.attacker, 'Arming Sword', { equipped: true });
+    const guard = ['blockWeapon', 'parry'].includes(defense)
+      ? await w.importItem(w.target, 'Arming Sword', { equipped: true })
+      : defense === 'blockShield'
+        ? await w.importItem(w.target, 'Leather Shield', { equipped: true })
+        : null;
+    w.start();
+    for (let i = 0; i < 2; i++) {
+      const attack = await w.attack(sword, { manualDice: '2' });
+      const response = await w.defend(attack, {
+        defense,
+        weapon: guard?.id ?? '',
+        manualDice: '8',
+        luck: 1,
+      });
+      assert.equal(response.flags[SYSTEM_ID].check.source, 'manual');
+      assert.deepEqual(response.flags[SYSTEM_ID].check.dice, [8]);
+      assert.match(response.content, /manual entry/);
+      assert.equal(attack.flags[SYSTEM_ID].resolved, true);
+      assert.equal(w.damageFor(attack), undefined);
+      assert.equal(w.target.system.sta.value, 25 - i);
+      assert.equal(w.target.system.luck.value, 4 - i);
+    }
+    assert.equal(w.notices.length, 0);
+  });
+}
+
+test('manual attack/defense still roll damage automatically and apply HP and armor wear once', async (t) => {
+  const w = await workflow(t),
+    sword = await w.importItem(w.attacker, 'Arming Sword', { equipped: true });
+  const armor = await w.importItem(w.target, 'Gambeson', { equipped: true });
+  w.start();
+  const attack = await w.attack(sword, { manualDice: '8' });
+  w.enqueue(['2d6+4', 12]);
+  await w.defend(attack, { manualDice: '4' });
+  const damage = w.damageFor(attack);
+  assert(damage, w.notices.join('; '));
+  assert.equal(damage.flags[SYSTEM_ID].summary[0].damage, 9);
+  assert.equal(damage.rolls[0].formula, '2d6+4');
+  await w.apply(damage);
+  await assert.rejects(() => w.apply(damage), /already been applied/);
+  assert.equal(w.target.system.hp.value, 16);
+  assert.equal(armor.system.sp.torso, 2);
+  assert.equal(w.rolls.length, 0);
+});
+
+test('attack, quick defense and full defense dialogs submit their manual dice to real commands', async (t) => {
+  const w = await workflow(t),
+    sword = await w.importItem(w.attacker, 'Arming Sword', { equipped: true });
+  const { attack, defend } = await import('../../module/witcher/combat.js');
+  const names = ['Dialog', 'FormData'];
+  const previous = new Map(names.map((name) => [name, Object.getOwnPropertyDescriptor(globalThis, name)]));
+  t.after(() => {
+    for (const [name, descriptor] of previous)
+      if (descriptor) Object.defineProperty(globalThis, name, descriptor);
+      else delete globalThis[name];
+  });
+  let dialog, values;
+  const form = { reportValidity: () => true, querySelectorAll: () => [] };
+  globalThis.FormData = class {
+    constructor() {
+      return Object.entries(values);
+    }
+  };
+  globalThis.Dialog = class {
+    constructor(data) {
+      this.data = data;
+      this.element = [{ querySelector: () => form }];
+      dialog = this;
+    }
+    render() {
+      return this;
+    }
+    submit(button) {
+      button.callback(this.element);
+      this.data.close();
+    }
+  };
+  w.start();
+  for (const quick of [{ defense: 'dodge' }, {}]) {
+    values = {
+      action: 'normal',
+      style: 'fast',
+      location: 'torso',
+      type: 'slashing',
+      modifier: '0',
+      luck: '0',
+      cover: '0',
+      manualDice: '7',
+    };
+    const pendingAttack = attack(w.attacker, sword, { target: w.target });
+    assert.match(dialog.data.content, /name="manualDice"/);
+    await dialog.submit(dialog.data.buttons.submit);
+    const message = await pendingAttack;
+    assert.deepEqual(message.flags[SYSTEM_ID].check.dice, [7]);
+
+    values = {
+      defense: quick.defense ?? 'reposition',
+      weapon: '',
+      modifier: '0',
+      gang: '1',
+      luck: '0',
+      dc: '10',
+      manualDice: '10,6',
+    };
+    const pendingDefense = defend(message, quick);
+    await new Promise(setImmediate); // defend first resolves the owning Actor UUID.
+    assert.match(dialog.data.content, /name="manualDice"/);
+    await dialog.submit(dialog.data.buttons.submit);
+    const response = await pendingDefense;
+    assert.deepEqual(response.flags[SYSTEM_ID].check.dice, [10, 6]);
+    assert.equal(response.flags[SYSTEM_ID].check.source, 'manual');
+    assert.equal(message.flags[SYSTEM_ID].resolved, true);
+  }
+  assert.equal(w.notices.length, 0);
+});
+
+test('manual fumbles retain pending consequences and duplicate-defense protection', async (t) => {
+  const w = await workflow(t),
+    sword = await w.importItem(w.attacker, 'Arming Sword', { equipped: true });
+  w.start();
+  const attack = await w.attack(sword, { manualDice: '1,10,4' });
+  assert.equal(attack.flags[SYSTEM_ID].check.total, 0);
+  assert.equal(attack.flags[SYSTEM_ID].check.fumble, 14);
+  const defense = await w.defend(attack, { manualDice: '1,6' });
+  assert.equal(defense.flags[SYSTEM_ID].check.total, 4);
+  assert.equal(defense.flags[SYSTEM_ID].check.fumble, 6);
+  assert.equal(attack.flags[SYSTEM_ID].resolved, false);
+  await assert.rejects(() => runCommand('resolveDefense', { messageUuid: defense.uuid }), /pending fumble/);
+  await assert.rejects(() => w.defend(attack, { manualDice: '9' }), /already has a defense/);
+  assert.equal(w.target.system.combat.defenses, 1);
+});
+
+test('invalid manual attacks cannot spend ammunition, Luck, STA or attack slots', async (t) => {
+  const w = await workflow(t),
+    bow = await w.importItem(w.attacker, 'Short Bow', { equipped: true });
+  const ammo = await w.importItem(w.attacker, 'Standard Ammunition');
+  await bow.update({ 'system.ammoId': ammo.id });
+  w.start();
+  const before = clone(w.attacker._source);
+  const items = w.attacker.items.map((item) => item.toObject());
+  const messages = w.messages.size;
+  for (const manualDice of ['10', '1,10', '8,2', '11', '10,,5']) {
+    await assert.rejects(
+      () => w.attack(bow, { manualDice, extra: true, luck: 2, distance: 8 }),
+      /d10|follow-up/
+    );
+    assert.deepEqual(w.attacker._source, before);
+    assert.deepEqual(
+      w.attacker.items.map((item) => item.toObject()),
+      items
+    );
+    assert.equal(w.messages.size, messages);
+  }
+  const quantity = ammo.system.quantity;
+  const attack = await w.attack(bow, { manualDice: '7', extra: true, luck: 2, distance: 8 });
+  assert.equal(attack.flags[SYSTEM_ID].check.source, 'manual');
+  assert.equal(ammo.system.quantity, quantity - 1);
+  assert.equal(w.attacker.system.sta.value, 22);
+  assert.equal(w.attacker.system.luck.value, 3);
+});
+
+test('invalid manual defenses leave resources and attack availability intact; Passive DC rejects dice', async (t) => {
+  const w = await workflow(t),
+    sword = await w.importItem(w.attacker, 'Arming Sword', { equipped: true });
+  w.start();
+  const attack = await w.attack(sword, { manualDice: '2', modifier: -5 });
+  const before = clone(w.target._source),
+    messages = w.messages.size;
+  for (const values of [
+    { manualDice: '1' },
+    { manualDice: '10,3,2' },
+    { defense: 'passive', manualDice: '7' },
+  ]) {
+    await assert.rejects(() => w.defend(attack, values));
+    assert.deepEqual(w.target._source, before);
+    assert.equal(attack.flags[SYSTEM_ID].defenseRef, undefined);
+    assert.equal(w.messages.size, messages);
+  }
+  const response = await w.defend(attack, { defense: 'passive', manualDice: '' });
+  assert.equal(response.flags[SYSTEM_ID].check.source, 'passive');
+  assert.equal(response.flags[SYSTEM_ID].check.total, 10);
+  assert.doesNotMatch(response.content, /manual entry/);
+  assert.equal(attack.flags[SYSTEM_ID].resolved, true);
+});
+
 test('imported sword must be equipped; registered commands preserve two fast strikes and two paid extra strikes', async (t) => {
   const w = await workflow(t),
     sword = await w.importItem(w.attacker, 'Arming Sword');

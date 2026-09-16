@@ -1,6 +1,6 @@
 # Witcher V14 implementation status
 
-Release candidate: **0.1.0-alpha.2**. This ledger distinguishes implemented code
+Release candidate: **0.1.0-alpha.3**. This ledger distinguishes implemented code
 from live acceptance. No Foundry server has been launched in this environment;
 the owner will test the installable release on The Forge.
 
@@ -27,6 +27,19 @@ potion/decoction automation have incomplete paths inherited from the first
 implementation pass; they are not claims of completed ordinary combat and are
 not the primary attack controls. Critical Flurry's Disarm/Trip and school armor
 follow-up strikes are included because they are equipment effects.
+
+## Manual combat dice in alpha.3
+
+Attack and defense dialogs, including quick defenses, offer an optional **Manual d10**
+field. Blank uses automatic dice. Enter the complete comma-separated sequence, such
+as `7`, `10,10,6` or `1,10,4`; Core p.57 critical/fumble math is shared with automatic
+checks. Stats, skills, situational modifiers, Luck and resource expenditure still
+use the ordinary combat workflow. Chat and saved check flags identify manual input.
+
+Invalid or incomplete input keeps the dialog open. GM command handlers validate
+the sequence again before spending resources. Passive DC rejects dice; damage,
+hit-location, critical-table and save dice remain automatic. No data migration is
+needed. General skill-check dialogs are outside this change.
 
 ## Armor display in alpha.2
 
@@ -71,7 +84,8 @@ These views read existing saved wear; this release does not change damage rules.
 
 ## Validation and remaining acceptance
 
-**156 automated tests pass.** Tests cover book examples, imported creature attacks and school gear,
+**170 automated tests pass.** Tests cover manual attack/defense entry and validation,
+book examples, imported creature attacks and school gear,
 turn/STA accounting, persistence failure recovery and package contents. Syntax,
 module imports and Handlebars compilation are checked. A separate check uses the
 genuine public Foundry V14.365 data layer: **36 Actors and 1062 Items** preserve

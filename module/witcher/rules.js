@@ -32,6 +32,25 @@ export function resolveCheck(base, dice) {
     critical: first === 10,
   };
 }
+
+/** Physical d10 results, including every continuation required by Core p.57. */
+export function parseManualCheck(value) {
+  if (value === undefined || value === null || value === '') return null;
+  if (typeof value !== 'string') throw new RuleError('Manual d10 must be a comma-separated list of dice.');
+  const text = value.trim();
+  if (!text) return null;
+  const parts = text.split(',').map((part) => part.trim());
+  if (parts.some((part) => !/^(?:[1-9]|10)$/.test(part)))
+    throw new RuleError('Enter whole d10 values from 1 to 10, separated by commas (for example 10,6).');
+  const dice = parts.map(Number);
+  if ([1, 10].includes(dice[0])) {
+    if (dice.length < 2 || dice.at(-1) === 10)
+      throw new RuleError('Add the next d10 after the initial 1 or 10 and after every further 10.');
+    if (dice.slice(1, -1).some((die) => die !== 10))
+      throw new RuleError('The chain ends at the first follow-up die below 10. Remove the extra dice.');
+  } else if (dice.length !== 1) throw new RuleError('An initial d10 from 2 to 9 has no follow-up dice.');
+  return dice;
+}
 export const beats = (roll, difficulty) => n(roll) > n(difficulty);
 export function criticalSeverity(margin) {
   for (const [threshold, level, bonus] of [

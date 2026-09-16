@@ -1,5 +1,5 @@
 import { SYSTEM_ID } from './config.js';
-import { resolveCheck, RuleError, reserveAction, attackSequence } from './rules.js';
+import { resolveCheck, parseManualCheck, RuleError, reserveAction, attackSequence } from './rules.js';
 import { resolveFoundryUuid } from '../foundry-compat.js';
 
 export const escapeHTML = (value) =>
@@ -95,14 +95,38 @@ export function input(
       : `<input name="${e(name)}" type="${e(type)}" value="${e(value)}" ${min !== undefined ? `min="${min}"` : ''} ${max !== undefined ? `max="${max}"` : ''} step="${step}">`;
   return `<label class="witcher-field"><span>${e(label)}</span>${element}</label>`;
 }
-export function prompt(title, content, { button = 'Roll', width = 480 } = {}) {
+export function manualCheckInput() {
+  return (
+    input('manualDice', 'Manual d10 (optional)', { type: 'text' }) +
+    '<p class="notes">Leave empty to roll automatically. Enter dice only, separated by commas: 7; 10,6; or 1,10,4. Include every follow-up die; stats and modifiers are added automatically.</p>'
+  );
+}
+export function validateManualCheck(values) {
+  const dice = parseManualCheck(values.manualDice);
+  if (dice && values.defense === 'passive')
+    throw new RuleError('Passive DC does not roll a die. Clear Manual d10 or choose an active defense.');
+}
+export function prompt(title, content, { button = 'Roll', width = 480, validate } = {}) {
   return new Promise((resolve) => {
+    const formValues = (form) => {
+      const values = Object.fromEntries(new FormData(form));
+      for (const el of form.querySelectorAll('input[type=checkbox]')) values[el.name] = el.checked;
+      return values;
+    };
     const DialogClass = globalThis.Dialog ?? foundry.appv1.api.Dialog;
     class ValidatedDialog extends DialogClass {
       async submit(button, event) {
         const element = this.element?.[0] ?? this.element;
-        if (button === this.data.buttons.submit && element?.querySelector('form')?.reportValidity() === false)
-          return;
+        if (button === this.data.buttons.submit) {
+          const form = element?.querySelector('form');
+          if (form?.reportValidity() === false) return;
+          try {
+            if (form && validate) validate(formValues(form));
+          } catch (error) {
+            ui.notifications.error(error.message);
+            return;
+          }
+        }
         return super.submit(button, event);
       }
     }
@@ -117,9 +141,7 @@ export function prompt(title, content, { button = 'Roll', width = 480 } = {}) {
               const element = html[0] ?? html;
               const form = element.querySelector('form');
               if (!form.reportValidity()) return false;
-              const values = Object.fromEntries(new FormData(form));
-              for (const el of form.querySelectorAll('input[type=checkbox]')) values[el.name] = el.checked;
-              resolve(values);
+              resolve(formValues(form));
             },
           },
           cancel: { label: 'Cancel', callback: () => resolve(null) },
@@ -137,7 +159,9 @@ export async function dice(formula) {
   if (!Number.isFinite(roll.total)) throw new RuleError('The dice did not produce a number.');
   return roll;
 }
-export async function check(base) {
+export async function check(base, { manualDice } = {}) {
+  const entered = parseManualCheck(manualDice);
+  if (entered) return { ...resolveCheck(base, entered), rolls: [], source: 'manual' };
   const rolls = [await dice('1d10')];
   if ([1, 10].includes(rolls[0].total))
     do {
@@ -149,6 +173,7 @@ export async function check(base) {
       rolls.map((r) => r.total)
     ),
     rolls,
+    source: 'automatic',
   };
 }
 export async function chat(actor, title, content, { rolls = [], flags = {}, whisper, id } = {}) {
@@ -164,7 +189,7 @@ export async function chat(actor, title, content, { rolls = [], flags = {}, whis
   return ChatMessage.create(data, { keepId: !!id });
 }
 export function checkHTML(result) {
-  return `<p class="witcher-total">${result.total}</p><p>Base ${result.base}; d10: ${result.dice.join(', ')}${result.fumble ? '; fumble ' + result.fumble : ''}</p>`;
+  return `<p class="witcher-total">${result.total}</p><p>Base ${result.base}; d10: ${result.dice.join(', ')}${result.source === 'manual' ? ' <strong>(manual entry)</strong>' : ''}${result.fumble ? '; fumble ' + result.fumble : ''}</p>`;
 }
 export function turnIdentity() {
   const combat = game.combat;

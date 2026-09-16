@@ -12,6 +12,8 @@ compatibility helpers are retained from Cyberpunk.
 - Character, NPC and monster data models and sheets.
 - Attack, defense and GM damage workflow, location armor, wounds, saves,
   resources, crafting and equipment.
+- Optional manual d10 entry for attacks and defenses, with complete exploding
+  and fumbling chains, automatic modifiers and a visible manual-entry label.
 - **809 equipment, component, mutagen and recipe records** in ten Item compendia: 673 core + 46 A Witcher’s Tools + 90 A Witcher’s Journal.
 - **36 creatures and NPCs** in **Core Bestiary & NPCs**, including printed
   variants, animals and three named adventure NPCs; **253 embedded records**.
@@ -22,8 +24,8 @@ Signs/magic, mounted combat and active creature/profession abilities are deferre
 
 ## Install on The Forge
 
-Use the [v0.1.0-alpha.2 manifest](https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.2/system.json) in **Install from Manifest**.
-See [installation instructions](docs/witcher/install.md) and [release assets](https://github.com/alexch3706/WVTTfoundry/releases/tag/v0.1.0-alpha.2).
+Use the [v0.1.0-alpha.3 manifest](https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.3/system.json) in **Install from Manifest**.
+See [installation instructions](docs/witcher/install.md) and [release assets](https://github.com/alexch3706/WVTTfoundry/releases/tag/v0.1.0-alpha.3).
 Create a new Witcher world; use a 2 m grid and an active GM for combat commands.
 
 ## Validation

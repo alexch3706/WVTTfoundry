@@ -378,11 +378,17 @@ test('actual check() evaluates exploding/fumbling d10 chains and returns evaluat
   };
   let result = await check(12);
   assert.equal(result.total, 36);
+  assert.equal(result.source, 'automatic');
   assert(result.rolls.every((roll) => roll.evaluated));
   totals = [1, 10, 4];
   result = await check(12);
   assert.equal(result.total, 0);
   assert.equal(result.fumble, 14);
+  totals = [7];
+  result = await check(12, { manualDice: '  ' });
+  assert.equal(result.total, 19);
+  assert.equal(result.source, 'automatic');
+  assert.equal(result.rolls.length, 1);
 });
 
 test('UUID resolution and authority distinguish two unlinked tokens sharing a world actor', async (t) => {

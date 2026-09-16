@@ -25,6 +25,8 @@ import {
   owner,
   prompt,
   input,
+  manualCheckInput,
+  validateManualCheck,
   check,
   dice,
   chat,
@@ -47,6 +49,7 @@ const snapshotRoll = (result) => ({
   dice: result.dice,
   total: result.total,
   fumble: result.fumble,
+  source: result.source,
 });
 const has = (actor, status) => actor.system.conditions.includes(status);
 const tokenFor = (actor) => actor.token?.object ?? actor.getActiveTokens()?.[0];
@@ -225,10 +228,15 @@ export async function attack(actor, item, options = {}) {
     input('extra', 'Extra action: 3 STA, −3', { type: 'checkbox' }) +
     input('outside', 'Target outside your vision cone (−3; no aiming)', { type: 'checkbox' }) +
     input('rear', 'You are outside the defender’s vision cone (+3)', { type: 'checkbox' }) +
-    input('ambush', 'Successful ambush in the first round (+5, p.153)', { type: 'checkbox' });
+    input('ambush', 'Successful ambush in the first round (+5, p.153)', { type: 'checkbox' }) +
+    manualCheckInput();
   const values =
     options.values ??
-    (await prompt('Attack', fields, { button: continuing ? 'Next strike' : 'Attack', width: 510 }));
+    (await prompt('Attack', fields, {
+      button: continuing ? 'Next strike' : 'Attack',
+      width: 510,
+      validate: validateManualCheck,
+    }));
   if (!values) return;
   return runCommand(
     'attack',
@@ -422,7 +430,8 @@ async function executeAttack(payload, context) {
     actor.skillBase(skill, {
       stat: action === 'feint' ? 'emp' : action === 'escape' ? 'ref' : w.stat,
       modifier,
-    }).total
+    }).total,
+    { manualDice: values.manualDice }
   );
   changes['system.luck.value'] = actor.system.luck.value - luck;
   changes['system.combat.aim'] = 0;
@@ -495,7 +504,8 @@ export async function defend(message, quick = {}) {
     ? `<p>${e(titleCase(quick.defense))}${quick.weapon ? ': ' + e(actor.items.get(quick.weapon)?.name) : ''}</p><input type="hidden" name="defense" value="${e(quick.defense)}"><input type="hidden" name="weapon" value="${e(quick.weapon ?? '')}">` +
       input('modifier', 'Other modifier', { value: 0 }) +
       input('gang', 'Assailants in melee reach', { value: 1, min: 1 }) +
-      input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value })
+      input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value }) +
+      manualCheckInput()
     : null;
   const values = await prompt(
     `${actor.name}: defense`,
@@ -534,7 +544,9 @@ export async function defend(message, quick = {}) {
                 : 10,
           min: 0,
         }) +
-        input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value })
+        input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value }) +
+        manualCheckInput(),
+    { validate: validateManualCheck }
   );
   if (!values) return;
   return runCommand(
@@ -553,6 +565,7 @@ async function executeDefense(payload, context) {
   const values = payload.values;
   const defense = values.defense,
     passive = defense === 'passive';
+  validateManualCheck(values);
   if (
     !['dodge', 'reposition', 'blockWeapon', 'blockShield', 'blockArm', 'parry', 'passive'].includes(defense)
   )
@@ -643,8 +656,10 @@ async function executeDefense(payload, context) {
     throw new RuleError('Only the GM chooses an unaware or inanimate target DC.');
   const dc = has(actor, 'stunned') || has(actor, 'unconscious') ? 10 : Number(values.dc);
   const result = passive
-    ? { total: dc, rolls: [], base: dc, dice: [], fumble: 0 }
-    : await check(actor.skillBase(skill, { modifier: modifier + luck }).total);
+    ? { total: dc, rolls: [], base: dc, dice: [], fumble: 0, source: 'passive' }
+    : await check(actor.skillBase(skill, { modifier: modifier + luck }).total, {
+        manualDice: values.manualDice,
+      });
   const attackRef = message.uuid;
   const defenseId = foundry.utils.randomID();
   // Reserve this attack before spending anything. A second open dialog cannot roll again.

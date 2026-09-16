@@ -1,6 +1,6 @@
 # Foundry V14 / The Forge acceptance
 
-Version: **0.1.0-alpha.2**. **Live run pending.**
+Version: **0.1.0-alpha.3**. **Live run pending.**
 
 1. Install the pinned release manifest and create a Witcher world in V14. Open
    a character, NPC, monster and Item sheet; check the browser console.
@@ -13,6 +13,12 @@ Version: **0.1.0-alpha.2**. **Live run pending.**
    choose Dodge/Block/Parry from chat; apply damage as GM. Finish the second
    strike. An extra action costs 3 STA once and applies −3 to both fast strikes.
    A strong attack is one strike at −3 with double damage before armor.
+   In attack and quick/full defense dialogs, enter **Manual d10**: `7`, `10,10,6`,
+   and `1,10,4`. Check the chat's manual-entry label, displayed dice, totals and
+   fumble consequences. Leave it empty to roll automatically. Try incomplete
+   `10` and invalid `7,6`: the dialog must stay open with other values preserved,
+   and resources must not change. Correct the input or cancel. Passive DC must
+   reject nonempty manual dice. Repeat as a player with an active GM.
 5. Open a second-strike dialog, advance the turn, then submit: it must reject.
    Open two defense dialogs for one attack: only one may roll/spend. Check first
    free defense, subsequent 1 STA and round reset. Test unarmed Parry/Brawling.
