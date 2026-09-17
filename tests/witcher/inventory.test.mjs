@@ -7,6 +7,7 @@ import {
   validateWeaponGrip,
   validateReload,
   planInventoryChange,
+  focusUse,
 } from '../../module/witcher/inventory.js';
 
 const oneHand = {
@@ -49,6 +50,39 @@ test('printed grip remains the default; a two-handed weapon can use one hand at 
 test('a weapon stack occupies one grip, not one grip per copy', () => {
   const knives = { ...oneHand, quantity: 10 };
   assert.equal(validateWeaponGrip({}, knives, [knives, shield]).totalHands, 2);
+});
+
+test('ordinary focus accessories can be worn or held; taking a worn focus in hand needs a free hand and a draw action', () => {
+  const amulet = { ...oneHand, id: 'amulet', type: 'gear', focusUse: 'worn', properties: { focus: 3 } };
+  assert.equal(handsUsed(amulet), 0);
+  assert.throws(() => planInventoryChange({}, amulet.id, { focusUse: 'held' }, [amulet, twoHand]), /3 hands/);
+  const ready = planInventoryChange({}, amulet.id, { focusUse: 'held' }, [amulet, oneHand]);
+  assert.equal(ready.drawsWeapon, true);
+  assert.equal(handsUsed(ready.item), 1);
+  assert.equal(
+    planInventoryChange({}, amulet.id, { focusUse: 'worn' }, [ready.item, oneHand]).drawsWeapon,
+    false
+  );
+  assert.throws(() => planInventoryChange({}, oneHand.id, { focusUse: 'worn' }, [oneHand]), /accessory/);
+  assert.throws(
+    () => planInventoryChange({}, amulet.id, { focusUse: 'invisible' }, [amulet]),
+    /held or worn/
+  );
+});
+
+test('old enchanted amulet records infer worn usage while ordinary old focuses remain held', () => {
+  const ordinary = { ...oneHand, type: 'gear', properties: { focus: 2 } };
+  const enchanted = {
+    ...ordinary,
+    flags: { 'witcher-rilerena': { ritualArtifact: { key: 'enchant-amulet' } } },
+  };
+  assert.equal(focusUse(ordinary), 'held');
+  assert.equal(focusUse(enchanted), 'worn');
+  assert.equal(handsUsed(enchanted), 0);
+  assert.equal(
+    planInventoryChange({}, enchanted.id, { equipped: true }, [enchanted, twoHand]).drawsWeapon,
+    false
+  );
 });
 
 test('disabled hands are counted by limb rather than by number of critical wounds', () => {

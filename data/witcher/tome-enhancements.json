@@ -1,0 +1,1557 @@
+[
+  {
+    "_id": "adfefeddd709e454",
+    "name": "Glyph of Binding",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 110,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 200,
+      "weight": 0,
+      "category": "glyph",
+      "effectText": "While worn, reduces the chance of suffering Bleeding by 30 percentage points (40 with Runewright inscription).",
+      "properties": {},
+      "resistances": [],
+      "notes": "Weight is not printed. Ordinary inscription uses Crafting Tools; improved inscription uses Runewright’s Tools and takes 30 minutes (Tome p.120).",
+      "description": "<p>While worn, reduces the chance of suffering Bleeding by 30 percentage points (40 with Runewright inscription).</p><p>A Tome of Chaos v1.01, pp.110,120. Weight is not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "binding",
+          "category": "glyph"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 111
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "151b051d76214bed",
+    "name": "Glyph of Mending",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 110,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 450,
+      "weight": 0,
+      "category": "glyph",
+      "effectText": "While worn, each time you regain HP, regain 1 additional HP (2 with Runewright inscription).",
+      "properties": {},
+      "resistances": [],
+      "notes": "Weight is not printed. Ordinary inscription uses Crafting Tools; improved inscription uses Runewright’s Tools and takes 30 minutes (Tome p.120).",
+      "description": "<p>While worn, each time you regain HP, regain 1 additional HP (2 with Runewright inscription).</p><p>A Tome of Chaos v1.01, pp.110,120. Weight is not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "mending",
+          "category": "glyph"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 111
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "67bde5e212b80d4b",
+    "name": "Glyph of Reinforcement",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 110,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 100,
+      "weight": 0,
+      "category": "glyph",
+      "effectText": "Armor SP increases by 3 (4 with Runewright inscription).",
+      "properties": {},
+      "resistances": [],
+      "notes": "Weight is not printed. Ordinary inscription uses Crafting Tools; improved inscription uses Runewright’s Tools and takes 30 minutes (Tome p.120).",
+      "description": "<p>Armor SP increases by 3 (4 with Runewright inscription).</p><p>A Tome of Chaos v1.01, pp.110,120. Weight is not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "reinforcement",
+          "category": "glyph"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 111
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "01693d6228afa963",
+    "name": "Glyph of Warding",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 110,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 300,
+      "weight": 0,
+      "category": "glyph",
+      "effectText": "While worn, grants resistance to damage from an elemental source such as fire or lightning. Runewright inscription also grants +1 Resist Magic.",
+      "properties": {},
+      "resistances": [],
+      "notes": "Weight is not printed. Ordinary inscription uses Crafting Tools; improved inscription uses Runewright’s Tools and takes 30 minutes (Tome p.120).",
+      "description": "<p>While worn, grants resistance to damage from an elemental source such as fire or lightning. Runewright inscription also grants +1 Resist Magic.</p><p>A Tome of Chaos v1.01, pp.110,120. Weight is not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "warding",
+          "category": "glyph"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 111
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "a46fe51e53882398",
+    "name": "Runeword: Burning",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 111,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "runeword",
+      "effectText": "The wielder may change this weapon’s damage to fire, bypassing physical damage resistance but respecting fire resistance and immunity. This does not ignite the target.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>The wielder may change this weapon’s damage to fire, bypassing physical damage resistance but respecting fire resistance and immunity. This does not ignite the target.</p><p>Requires 2 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.111,113. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "burning",
+          "category": "runeword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 112
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "f8b6b227a232c0da",
+    "name": "Runeword: Deflection",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 111,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "runeword",
+      "effectText": "Parry a ranged attack using weapon skill base −6. On success choose a target within 10m; they take a defense action against the parry roll or become Staggered. If the wielder has Parry Arrows ranks, instead grant +2 to that ability.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>Parry a ranged attack using weapon skill base −6. On success choose a target within 10m; they take a defense action against the parry roll or become Staggered. If the wielder has Parry Arrows ranks, instead grant +2 to that ability.</p><p>Requires 3 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.111,114. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "deflection",
+          "category": "runeword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 112
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "da4044d2cc628c2f",
+    "name": "Runeword: Depletion",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 111,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "runeword",
+      "effectText": "When a spell or invocation is cast using this weapon as its focus, a target who fails to defend additionally loses 1d6 STA.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>When a spell or invocation is cast using this weapon as its focus, a target who fails to defend additionally loses 1d6 STA.</p><p>Requires 3 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.111,114. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "depletion",
+          "category": "runeword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 112
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "b5c1acbf88593494",
+    "name": "Runeword: Placation",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 111,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "runeword",
+      "effectText": "While carried, using an Adrenaline die costs 5 STA instead of 10.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>While carried, using an Adrenaline die costs 5 STA instead of 10.</p><p>Requires 2 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.111,113. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "placation",
+          "category": "runeword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 112
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "5b9dd553098e13e2",
+    "name": "Runeword: Preservation",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 111,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "runeword",
+      "effectText": "The weapon or shield gains +5 maximum and current Reliability while retaining existing wear.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>The weapon or shield gains +5 maximum and current Reliability while retaining existing wear.</p><p>Requires 2 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.111,113. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "preservation",
+          "category": "runeword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 112
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "321c8cfa63e9e1ad",
+    "name": "Runeword: Prolongation",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 111,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "runeword",
+      "effectText": "When a spell or invocation is cast using this weapon as its focus and its duration is expressed in dice, roll duration twice and keep the higher result.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>When a spell or invocation is cast using this weapon as its focus and its duration is expressed in dice, roll duration twice and keep the higher result.</p><p>Requires 2 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.111,113. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "prolongation",
+          "category": "runeword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 112
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "e6f9ae08a7bebd98",
+    "name": "Runeword: Rejuvenation",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 111,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "runeword",
+      "effectText": "When this weapon kills a creature, restore STA equal to the wielder’s REC.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>When this weapon kills a creature, restore STA equal to the wielder’s REC.</p><p>Requires 3 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.111,114. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "rejuvenation",
+          "category": "runeword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 112
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "9f5701b2013637f4",
+    "name": "Runeword: Shearing",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 111,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "runeword",
+      "effectText": "An attack penetrating armor or a shield deals an additional 1 damage to its SP or Reliability respectively.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>An attack penetrating armor or a shield deals an additional 1 damage to its SP or Reliability respectively.</p><p>Requires 2 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.111,113. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "shearing",
+          "category": "runeword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 112
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "916dc71708b89d48",
+    "name": "Glyphword: Balance",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 112,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "glyphword",
+      "effectText": "Armor EV decreases by 1, to a minimum of 0.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>Armor EV decreases by 1, to a minimum of 0.</p><p>Requires 2 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.112,113. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "balance",
+          "category": "glyphword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 113
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "4faf830356ee6ad9",
+    "name": "Glyphword: Beguilement",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 112,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "glyphword",
+      "effectText": "While worn, grants +1 Charisma, Grooming and Style, and Leadership.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>While worn, grants +1 Charisma, Grooming and Style, and Leadership.</p><p>Requires 2 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.112,113. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "beguilement",
+          "category": "glyphword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 113
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "1dc59fe88a61b77b",
+    "name": "Glyphword: Heft",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 112,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "glyphword",
+      "effectText": "Armor SP increases by 2 and EV doubles; EV0 remains 0.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>Armor SP increases by 2 and EV doubles; EV0 remains 0.</p><p>Requires 2 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.112,113. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "heft",
+          "category": "glyphword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 113
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "04dbc55120732ee4",
+    "name": "Glyphword: Protection",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 112,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "glyphword",
+      "effectText": "While worn, grants +5 HP. Equipping and removing the armor must not repeatedly heal damage.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>While worn, grants +5 HP. Equipping and removing the armor must not repeatedly heal damage.</p><p>Requires 3 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.112,114. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "protection",
+          "category": "glyphword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 113
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "b4d75a0b5a4b0b4c",
+    "name": "Glyphword: Retribution",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 112,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "glyphword",
+      "effectText": "When the wearer takes damage from an attack, its attacker takes 3 damage to the torso, ignoring armor.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>When the wearer takes damage from an attack, its attacker takes 3 damage to the torso, ignoring armor.</p><p>Requires 3 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.112,114. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "retribution",
+          "category": "glyphword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 113
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "dc52e29af0f4b7d5",
+    "name": "Glyphword: Rotation",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 112,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "glyphword",
+      "effectText": "While worn, attackers gain no bonus for attacking from outside the wearer’s vision cone.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>While worn, attackers gain no bonus for attacking from outside the wearer’s vision cone.</p><p>Requires 2 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.112,113. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "rotation",
+          "category": "glyphword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 113
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "8cb1aac32bf6cbe8",
+    "name": "Glyphword: Shining",
+    "type": "enhancement",
+    "img": "icons/svg/upgrade.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 112,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "category": "glyphword",
+      "effectText": "Spend an action to produce daylight out to 6m for 30 minutes, affecting weaknesses and susceptibility to light and sunlight.",
+      "properties": {},
+      "resistances": [],
+      "description": "<p>Spend an action to produce daylight out to 6m for 30 minutes, affecting weaknesses and susceptibility to light and sunlight.</p><p>Requires 2 slots. The word replaces its component stones, blocks other runes/glyphs, and its benefit does not stack with the same word on another item. Must be etched with its diagram and Runewright’s Tools.</p><p>A Tome of Chaos v1.01, pp.112,113. Finished-word price and weight are not printed.</p>",
+      "notes": "Installed enchantment record; not a consumable loose stone. Use the enchantment diagram to craft it onto equipment."
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "shining",
+          "category": "glyphword"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 113
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "enchantmentRecipeRequired": true
+      }
+    }
+  },
+  {
+    "_id": "e8049a8fd23822fe",
+    "name": "Runeword: Burning Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 113,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 2150,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 15,
+      "craftLevel": "journeyman",
+      "craftTime": "1 Hour",
+      "investment": 1175,
+      "productName": "Runeword: Burning",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.a46fe51e53882398",
+      "materials": [
+        {
+          "name": "Chemobog",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.cf84522720f6427c",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Dazhbog",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.8b81bbd1bf260046",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>The wielder may change this weapon’s damage to fire, bypassing physical damage resistance but respecting fire resistance and immunity. This does not ignite the target.</p><p>A Tome of Chaos v1.01, pp.113. One hour; 2 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "burning",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 114
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "f992bbd3fd5832a6",
+    "name": "Runeword: Deflection Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 114,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 3300,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 21,
+      "craftLevel": "master",
+      "craftTime": "1 Hour",
+      "investment": 1650,
+      "productName": "Runeword: Deflection",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.f8b6b227a232c0da",
+      "materials": [
+        {
+          "name": "Chemobog",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.cf84522720f6427c",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Perun",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.42b4d54a9ee124ec",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Stribog",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.bef5829999308f8f",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>Parry a ranged attack using weapon skill base −6. On success choose a target within 10m; they take a defense action against the parry roll or become Staggered. If the wielder has Parry Arrows ranks, instead grant +2 to that ability.</p><p>A Tome of Chaos v1.01, pp.114. One hour; 3 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "deflection",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 115
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "82db80b801b5a961",
+    "name": "Runeword: Depletion Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 114,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 3350,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 21,
+      "craftLevel": "master",
+      "craftTime": "1 Hour",
+      "investment": 1675,
+      "productName": "Runeword: Depletion",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.da4044d2cc628c2f",
+      "materials": [
+        {
+          "name": "Stribog",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.bef5829999308f8f",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Triglav",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.30a8ba890ea1b705",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Veles",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.efcec875c8a5edaf",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>When a spell or invocation is cast using this weapon as its focus, a target who fails to defend additionally loses 1d6 STA.</p><p>A Tome of Chaos v1.01, pp.114. One hour; 3 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "depletion",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 115
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "721b53ac855615e5",
+    "name": "Runeword: Placation Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 113,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 2150,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 15,
+      "craftLevel": "journeyman",
+      "craftTime": "1 Hour",
+      "investment": 1075,
+      "productName": "Runeword: Placation",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.b5c1acbf88593494",
+      "materials": [
+        {
+          "name": "Morana",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.3ee01edc3a171fee",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Stribog",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.bef5829999308f8f",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>While carried, using an Adrenaline die costs 5 STA instead of 10.</p><p>A Tome of Chaos v1.01, pp.113. One hour; 2 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "placation",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 114
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "fa4ed24c30756a6e",
+    "name": "Runeword: Preservation Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 113,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 2300,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 15,
+      "craftLevel": "journeyman",
+      "craftTime": "1 Hour",
+      "investment": 1150,
+      "productName": "Runeword: Preservation",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.5b9dd553098e13e2",
+      "materials": [
+        {
+          "name": "Devanna",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.79b7008a214b2de2",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Morana",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.3ee01edc3a171fee",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>The weapon or shield gains +5 maximum and current Reliability while retaining existing wear.</p><p>A Tome of Chaos v1.01, pp.113. One hour; 2 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "preservation",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 114
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "b68f1814f52da1f0",
+    "name": "Runeword: Prolongation Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 113,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 2150,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 15,
+      "craftLevel": "journeyman",
+      "craftTime": "1 Hour",
+      "investment": 1175,
+      "productName": "Runeword: Prolongation",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.321c8cfa63e9e1ad",
+      "materials": [
+        {
+          "name": "Perun",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.42b4d54a9ee124ec",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Svarog",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.d9f2caea749aeca5",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>When a spell or invocation is cast using this weapon as its focus and its duration is expressed in dice, roll duration twice and keep the higher result.</p><p>A Tome of Chaos v1.01, pp.113. One hour; 2 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "prolongation",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 114
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "7b1b7c01f18299f5",
+    "name": "Runeword: Rejuvenation Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 114,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 3500,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 21,
+      "craftLevel": "master",
+      "craftTime": "1 Hour",
+      "investment": 1750,
+      "productName": "Runeword: Rejuvenation",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.e6f9ae08a7bebd98",
+      "materials": [
+        {
+          "name": "Perun",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.42b4d54a9ee124ec",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Svarog",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.d9f2caea749aeca5",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Triglav",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.30a8ba890ea1b705",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>When this weapon kills a creature, restore STA equal to the wielder’s REC.</p><p>A Tome of Chaos v1.01, pp.114. One hour; 3 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "rejuvenation",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 115
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "e2f8e99e87b5ed92",
+    "name": "Runeword: Shearing Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 113,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 2300,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 15,
+      "craftLevel": "journeyman",
+      "craftTime": "1 Hour",
+      "investment": 1150,
+      "productName": "Runeword: Shearing",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.9f5701b2013637f4",
+      "materials": [
+        {
+          "name": "Veles",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.efcec875c8a5edaf",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Zoria",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.6e1fa641a4f1a7dc",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>An attack penetrating armor or a shield deals an additional 1 damage to its SP or Reliability respectively.</p><p>A Tome of Chaos v1.01, pp.113. One hour; 2 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "shearing",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 114
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "8341531e84796ab3",
+    "name": "Glyphword: Balance Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 113,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 1100,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 15,
+      "craftLevel": "journeyman",
+      "craftTime": "1 Hour",
+      "investment": 550,
+      "productName": "Glyphword: Balance",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.916dc71708b89d48",
+      "materials": [
+        {
+          "name": "Glyph of Mending",
+          "uuid": "Compendium.witcher-rilerena.tome-enhancements.Item.151b051d76214bed",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Glyph of Reinforcement",
+          "uuid": "Compendium.witcher-rilerena.tome-enhancements.Item.67bde5e212b80d4b",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>Armor EV decreases by 1, to a minimum of 0.</p><p>A Tome of Chaos v1.01, pp.113. One hour; 2 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "balance",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 114
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "621e99e5bcc29275",
+    "name": "Glyphword: Beguilement Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 113,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 2300,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 15,
+      "craftLevel": "journeyman",
+      "craftTime": "1 Hour",
+      "investment": 1150,
+      "productName": "Glyphword: Beguilement",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.4faf830356ee6ad9",
+      "materials": [
+        {
+          "name": "Glyph of Fire",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.d2dfe4668a71cd86",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Glyph of Water",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.db19b76eb91bf5e3",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>While worn, grants +1 Charisma, Grooming and Style, and Leadership.</p><p>A Tome of Chaos v1.01, pp.113. One hour; 2 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "beguilement",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 114
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "690b4b46ce155514",
+    "name": "Glyphword: Heft Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 113,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 1100,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 15,
+      "craftLevel": "journeyman",
+      "craftTime": "1 Hour",
+      "investment": 550,
+      "productName": "Glyphword: Heft",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.1dc59fe88a61b77b",
+      "materials": [
+        {
+          "name": "Glyph of Mending",
+          "uuid": "Compendium.witcher-rilerena.tome-enhancements.Item.151b051d76214bed",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Glyph of Reinforcement",
+          "uuid": "Compendium.witcher-rilerena.tome-enhancements.Item.67bde5e212b80d4b",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>Armor SP increases by 2 and EV doubles; EV0 remains 0.</p><p>A Tome of Chaos v1.01, pp.113. One hour; 2 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "heft",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 114
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "b3e8b5688903d747",
+    "name": "Glyphword: Protection Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 114,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 2900,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 21,
+      "craftLevel": "master",
+      "craftTime": "1 Hour",
+      "investment": 1450,
+      "productName": "Glyphword: Protection",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.04dbc55120732ee4",
+      "materials": [
+        {
+          "name": "Glyph of Earth",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.084279d45daf0276",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Glyph of Magic",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.532d8e265fa01b71",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Glyph of Warding",
+          "uuid": "Compendium.witcher-rilerena.tome-enhancements.Item.01693d6228afa963",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>While worn, grants +5 HP. Equipping and removing the armor must not repeatedly heal damage.</p><p>A Tome of Chaos v1.01, pp.114. One hour; 3 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "protection",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 115
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "d69ead5f89650640",
+    "name": "Glyphword: Retribution Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 114,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 2500,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 21,
+      "craftLevel": "master",
+      "craftTime": "1 Hour",
+      "investment": 1250,
+      "productName": "Glyphword: Retribution",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.b4d75a0b5a4b0b4c",
+      "materials": [
+        {
+          "name": "Glyph of Earth",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.084279d45daf0276",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Glyph of Fire",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.d2dfe4668a71cd86",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Glyph of Reinforcement",
+          "uuid": "Compendium.witcher-rilerena.tome-enhancements.Item.67bde5e212b80d4b",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>When the wearer takes damage from an attack, its attacker takes 3 damage to the torso, ignoring armor.</p><p>A Tome of Chaos v1.01, pp.114. One hour; 3 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "retribution",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 115
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "ecbdd683cf06c9ae",
+    "name": "Glyphword: Rotation Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 113,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 600,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 15,
+      "craftLevel": "journeyman",
+      "craftTime": "1 Hour",
+      "investment": 300,
+      "productName": "Glyphword: Rotation",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.dc52e29af0f4b7d5",
+      "materials": [
+        {
+          "name": "Glyph of Binding",
+          "uuid": "Compendium.witcher-rilerena.tome-enhancements.Item.adfefeddd709e454",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Glyph of Reinforcement",
+          "uuid": "Compendium.witcher-rilerena.tome-enhancements.Item.67bde5e212b80d4b",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>While worn, attackers gain no bonus for attacking from outside the wearer’s vision cone.</p><p>A Tome of Chaos v1.01, pp.113. One hour; 2 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "rotation",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 114
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "0a94f87dd2ba3717",
+    "name": "Glyphword: Shining Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 113,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 1750,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 15,
+      "craftLevel": "journeyman",
+      "craftTime": "1 Hour",
+      "investment": 875,
+      "productName": "Glyphword: Shining",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-enhancements.Item.8cb1aac32bf6cbe8",
+      "materials": [
+        {
+          "name": "Glyph of Air",
+          "uuid": "Compendium.witcher-rilerena.witcher-gear.Item.056915cfa77cf565",
+          "quantity": 1,
+          "substance": ""
+        },
+        {
+          "name": "Glyph of Warding",
+          "uuid": "Compendium.witcher-rilerena.tome-enhancements.Item.01693d6228afa963",
+          "quantity": 1,
+          "substance": ""
+        }
+      ],
+      "notes": "Requires Runewright’s Tools and eligible equipment. Installed required stones may contribute. On failure, one immediate check at the same DC can recover one chosen rune/glyph; all others are lost. Use the dedicated enchantment workflow.",
+      "description": "<p>Spend an action to produce daylight out to 6m for 30 minutes, affecting weaknesses and susceptibility to light and sunlight.</p><p>A Tome of Chaos v1.01, pp.113. One hour; 2 slots. The result is etched onto existing equipment, not created as a loose stone.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "shining",
+          "category": "word-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 114
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "word"
+      }
+    }
+  },
+  {
+    "_id": "f4dfdf55431ba5d7",
+    "name": "Enhancement Slot Diagram",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "source": "A Tome of Chaos v1.01",
+      "page": 114,
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 1368,
+      "weight": 0,
+      "skill": "crafting",
+      "craftDC": 25,
+      "craftLevel": "master",
+      "craftTime": "4 Hours",
+      "investment": 684,
+      "productName": "Extra rune/glyph slot on existing equipment",
+      "productQuantity": 1,
+      "productUuid": "",
+      "materials": [
+        {
+          "name": "Meteorite",
+          "quantity": 4,
+          "uuid": "Compendium.witcher-rilerena.components.Item.8883731e72bfeb9c",
+          "substance": ""
+        },
+        {
+          "name": "Infused Dust",
+          "quantity": 2,
+          "uuid": "Compendium.witcher-rilerena.components.Item.3cffa287f08573b0",
+          "substance": ""
+        }
+      ],
+      "effectText": "Add one rune/glyph-only slot to a weapon or armor at full Reliability/SP, to a maximum of three total slots.",
+      "notes": "Requires Crafting Tools. Every covered armor location must be at full SP. This modifies an existing item; it does not create a loose enhancement. Use the dedicated enhancement workflow.",
+      "description": "<p>A Tome of Chaos v1.01, p.114. Master diagram; Crafting DC25; 4 hours; Meteorite4 and Infused Dust2. The additional slot only accepts runes/glyphs. Maximum three slots.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "enhancement": {
+          "key": "extra-slot",
+          "category": "slot-diagram"
+        },
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 115
+        },
+        "weightUnspecified": true,
+        "enhancementProcedure": "slot"
+      }
+    }
+  }
+]

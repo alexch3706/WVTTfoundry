@@ -569,3 +569,30 @@ test('a fixed printed DC must be exceeded even for a Dodge defense', async () =>
   assert.equal(result.result.success, false);
   assert.equal(f.executions.length, 1);
 });
+
+test('a repeat opposed casting adds saved Greater Focus only to resistance DC, retaining the fresh raw check for execution', async () => {
+  const f = setup();
+  const focus = { name: 'Crystal Staff', defenseBonus: 2 };
+  const effect = await install(
+    f,
+    [
+      {
+        type: 'damage',
+        formula: '1d6',
+        timing: 'startTurn',
+        save: { skill: 'dodge', versus: 'newSpellCasting', onSuccess: 'avoidAttack' },
+      },
+    ],
+    { focus }
+  );
+  let context;
+  f.context.executeOperations = async (_operations, ctx) => {
+    context = ctx;
+    return { rollback: async () => {} };
+  };
+  await triggerMagicOngoing(f.actor, event(), f.context);
+  const result = await resolveMagicOngoing(request(f, effect), { user: f.owner }, f.context);
+  assert.equal(result.result.success, false, 'the defender20 does not reach new casting20 plus2');
+  assert.equal(f.checks[1].dc, 22);
+  assert.equal(context.castTotal, 20, 'downstream damage gets the raw check, not the defensive threshold');
+});

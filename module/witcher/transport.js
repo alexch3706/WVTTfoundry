@@ -1,4 +1,5 @@
 import { SYSTEM_ID } from './config.js';
+import { activeAlchemy } from './alchemy-rules.js';
 import { magicDamageRules } from './magic-effect-hooks.js';
 import { RuleError, beats } from './rules.js';
 import { mountedControlLoss, vehicleControlLoss, fallingDice } from './advanced-rules.js';
@@ -202,10 +203,15 @@ export async function loseControl(rider, mount) {
     });
   }
   const state = result.animal;
-  if (state.kind === 'spooked') {
+  if (state.kind === 'spooked' && activeAlchemy(rider.system, 'nekker-decoction'))
+    await chat(
+      rider,
+      'Nekker Decoction',
+      `<p>${e(mount.document.name)} does not panic. No rearing or rider Athletics check.</p>`
+    );
+  else if (state.kind === 'spooked') {
     if (!(await checkAthletics(rider, 16, 'Stay on rearing mount'))) unseated = true;
-    if (!rider.system.effects.some((e) => e.key === 'Nekker Decoction'))
-      await mount.document.update({ 'system.transport.spooked': true });
+    await mount.document.update({ 'system.transport.spooked': true });
   }
   if (['stumble', 'trip'].includes(state.kind)) {
     const roll = await check(mount.athletics);

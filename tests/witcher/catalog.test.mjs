@@ -12,6 +12,7 @@ const packs = Object.fromEntries(
           pack.type === 'Item' &&
           !pack.name.startsWith('magic-') &&
           !pack.name.startsWith('supplement-') &&
+          !pack.name.startsWith('tome-') &&
           pack.name !== 'critical-wounds'
       )
       .map(async (pack) => {
@@ -87,4 +88,17 @@ test('p.254: experimental weights and bomb range are not ordinary thrown-weapon 
   assert.equal(find('Dancing Star').rangeBodyMultiplier, 4);
   assert.equal(find('Biter').weight, 2);
   assert.equal(find('Explosive Ammunition').weight, 0.1);
+});
+
+test('p.139 enhancement diagrams produce armor enhancements rather than raw components', () => {
+  for (const [name, id] of [
+    ['Hardened Leather', '0d6d168dff97b266'],
+    ['Steel', '8ad9daaec609acb7'],
+  ]) {
+    const diagram = packs.diagrams.find(
+      (item) => item.name === `${name} Diagram` && item.system.page === 139
+    );
+    assert(diagram, name);
+    assert.equal(diagram.system.productUuid, `Compendium.witcher-rilerena.equipment.Item.${id}`);
+  }
 });

@@ -23,6 +23,17 @@ import {
 import { WitcherActorSheet, WitcherItemSheet } from './sheets.js';
 import { attack, defend, applyDamage, registerCombatChat } from './combat.js';
 import { registerActivities, craft, treat, useItem, tickActor } from './activities.js';
+import { registerAlchemyCombat } from './alchemy-combat.js';
+import { registerAdrenalineSetting, registerAdrenaline } from './adrenaline.js';
+import { registerAlchemyRuntime } from './alchemy-runtime.js';
+import { registerAlchemyEvents } from './alchemy-events.js';
+import { registerAlchemyExertion } from './alchemy-exertion.js';
+import { registerAlchemyVision } from './alchemy-vision.js';
+import { registerEnhancements, registerEnhancementSettings } from './enhancement-runtime.js';
+import { registerEnhancementCombat } from './enhancement-combat.js';
+import { registerShining } from './enhancements-light.js';
+import { registerSocialCommands } from './social-runtime.js';
+import { registerSocialUI } from './social-ui.js';
 import { skillRoll, save, errorNotice } from './runtime.js';
 import { registerConsequences } from './consequences.js';
 import { registerCreatureAbilities } from './monster-abilities.js';
@@ -38,6 +49,9 @@ import { registerMagicChat, castMagic, defendMagic, counterMagic } from './magic
 import { loadFoundryTemplates } from '../foundry-compat.js';
 
 Hooks.once('init', async () => {
+  registerAdrenalineSetting();
+  registerEnhancementSettings();
+  registerAlchemyVision();
   CONFIG.Actor.documentClass = WitcherActor;
   CONFIG.Item.documentClass = WitcherItem;
   CONFIG.Actor.dataModels = {
@@ -98,6 +112,16 @@ Hooks.once('ready', async () => {
   registerInventory();
   registerCombatChat();
   registerActivities();
+  registerAlchemyCombat();
+  registerAdrenaline();
+  registerAlchemyRuntime();
+  registerAlchemyEvents();
+  registerAlchemyExertion();
+  registerEnhancements();
+  registerEnhancementCombat();
+  registerShining();
+  registerSocialCommands();
+  registerSocialUI();
   registerWoundActions();
   registerMagicCommands();
   registerWorldMagicRuntime({ refreshCard: refreshMagicCard });

@@ -2,7 +2,7 @@ import { placeOfPowerBenefits, leyLineBenefits } from './magic-power-rules.js';
 import { magicCastingRules, magicModifierSummary } from './magic-effect-hooks.js';
 import { BASIC_SPELL_KEYS } from './magic-support.js';
 import { RuleError } from './rules.js';
-import { availableHands, handsUsed } from './inventory.js';
+import { availableHands, handsUsed, isMagicalFocus, focusUse, validateWeaponGrip } from './inventory.js';
 import { woundModifiers } from './wounds.js';
 
 export const IMPLEMENTED_MAGIC = new Set([
@@ -48,12 +48,19 @@ export function magicVigor(state, magic = null, time = globalThis.game?.time?.wo
       Number(state.magic?.dimeritiumUnits || 0)
   );
 }
-export function magicFocus(state, items, focusId = '', kind = '') {
-  if (!focusId) return 0;
+export function selectedMagicFocus(state, items, focusId = '', kind = '') {
+  if (!focusId) return null;
   const item = items.find((i) => (i.id ?? i._id) === focusId),
     s = item?.system ?? item;
-  if (!s?.equipped || s.carried === false || !(s.quantity > 0) || !(s.properties?.focus > 0))
+  if (
+    !s?.equipped ||
+    s.carried === false ||
+    !(s.quantity > 0) ||
+    !isMagicalFocus(item) ||
+    focusUse(item) !== 'held'
+  )
     throw new RuleError('Select one carried, held magical focus.');
+  validateWeaponGrip(state, item, items);
   const kinds = item?.flags?.['witcher-rilerena']?.focusKinds;
   if (kind && kinds && !kinds.includes(kind))
     throw new RuleError('This focus is restricted to its listed kinds of magic.');
@@ -62,7 +69,11 @@ export function magicFocus(state, items, focusId = '', kind = '') {
     throw new RuleError('Witchers can use the specific Griffin weapon focus, not ordinary mage focuses.');
   if (!['mage', 'priest', 'druid', 'witcher'].includes(tradition))
     throw new RuleError('This tradition cannot use a magical focus.');
-  return Number(s.properties.focus);
+  return item;
+}
+export function magicFocus(state, items, focusId = '', kind = '') {
+  const item = selectedMagicFocus(state, items, focusId, kind);
+  return Number((item?.system ?? item)?.properties?.focus || 0);
 }
 export function maintainedMagic(state) {
   return (state.effects ?? []).find(

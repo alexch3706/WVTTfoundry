@@ -1943,11 +1943,22 @@ async function bindingCommand({ messageUuid, action, values = {} }, { user }) {
       data.agreed ||
       data.cageUntil <= worldNow() ||
       !String(values.agreement ?? '').trim() ||
-      !String(values.verbalCombatEvidence ?? '').trim()
+      (!String(values.verbalCombatEvidence ?? '').trim() && !values.socialMessageUuid)
     )
       throw new RuleError(
         'Before the cage expires, the GM records the actual won Verbal Combat and agreement.'
       );
+    let socialReceipt = null;
+    if (values.socialMessageUuid) {
+      const { validatedSocialVictory } = await import('./social-runtime.js');
+      socialReceipt = await validatedSocialVictory(values.socialMessageUuid, {
+        winnerUuid: caster.uuid,
+        loserUuid: demon.uuid,
+        goal: values.agreement,
+      });
+      if (socialReceipt.time < data.cageUntil - 86400 || socialReceipt.time > worldNow())
+        throw new RuleError('The Verbal Combat victory must occur during this binding cage.');
+    }
     return ritualTransaction(async (tx) => {
       await tx.update(demon, {
         [`flags.${SYSTEM_ID}.demonBinding`]: {
@@ -1957,6 +1968,7 @@ async function bindingCommand({ messageUuid, action, values = {} }, { user }) {
           castingTotal: data.castingTotal,
           agreement: values.agreement,
           evidence: values.verbalCombatEvidence,
+          socialReceipt,
           nextEscapeAt: worldNow() + 1209600,
           messageUuid,
         },
@@ -2970,6 +2982,16 @@ export function registerRitualArtifactCommands() {
               values = await prompt(
                 'Binding agreement',
                 input('agreement', 'Actual binding agreement', { type: 'text' }) +
+                  input('socialMessageUuid', 'Completed Verbal Combat', {
+                    options: {
+                      '': 'Record an externally resolved argument',
+                      ...Object.fromEntries(
+                        [...game.messages]
+                          .filter((entry) => entry.flags?.[SYSTEM_ID]?.kind === 'socialCombat')
+                          .map((entry) => [entry.uuid, entry.flags[SYSTEM_ID].name])
+                      ),
+                    },
+                  }) +
                   input('verbalCombatEvidence', 'Completed Verbal Combat receipt / result', { type: 'text' })
               );
               if (!values) return;

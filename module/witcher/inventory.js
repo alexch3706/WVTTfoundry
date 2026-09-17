@@ -2,6 +2,7 @@ import { RuleError, armorEncumbrance } from './rules.js';
 import { registerCommand, authorizedActor, runCommand } from './authority.js';
 import { actionPlan, commitActor, owner, chat, escapeHTML as e } from './runtime.js';
 import { woundModifiers } from './wounds.js';
+import { SYSTEM_ID } from './config.js';
 
 const system = (entry) => entry.system ?? entry;
 const itemId = (entry) => entry.id ?? entry._id;
@@ -9,9 +10,23 @@ const snapshot = (entry) => ({
   id: itemId(entry),
   name: entry.name,
   type: entry.type,
+  flags: entry.flags ?? {},
   ...(entry.system?.toObject ? entry.system.toObject() : system(entry)),
 });
-const isHeld = (entry) => ['weapon', 'shield'].includes(entry.type) || system(entry).properties?.focus > 0;
+export const isMagicalFocus = (entry) =>
+  ['gear', 'weapon', 'shield', 'armor'].includes(entry.type) &&
+  (system(entry).properties?.focus > 0 || !!system(entry).properties?.greaterFocus);
+/** Ordinary focuses work in the hand. Tome enchanted amulets can be worn to use
+ * their stored magic; old copies infer that usage from their source identity. */
+export function focusUse(entry) {
+  if (['weapon', 'shield'].includes(entry.type)) return 'held';
+  return (
+    system(entry).focusUse ||
+    (entry.flags?.[SYSTEM_ID]?.ritualArtifact?.key === 'enchant-amulet' ? 'worn' : 'held')
+  );
+}
+const isHeld = (entry) =>
+  ['weapon', 'shield'].includes(entry.type) || (isMagicalFocus(entry) && focusUse(entry) === 'held');
 
 /** Zero means use the printed grip. Natural attacks never occupy a hand. */
 export function handsUsed(item) {
@@ -93,13 +108,18 @@ export function validateReload(actorState, weapon, items = actorState.items ?? [
 
 /** Validate the complete resulting inventory before persisting any checkbox or quantity. */
 export function planInventoryChange(actorState, id, patch, items = actorState.items ?? []) {
-  const allowed = new Set(['equipped', 'carried', 'quantity', 'handsUsed']);
+  const allowed = new Set(['equipped', 'carried', 'quantity', 'handsUsed', 'focusUse']);
   if (!patch || Object.keys(patch).some((key) => !allowed.has(key)))
     throw new RuleError('Unknown inventory change.');
   const source = items.map(snapshot),
     item = source.find((entry) => entry.id === id);
   if (!item) throw new RuleError('The item is no longer in this inventory.');
   const changed = { ...item, ...patch };
+  if (
+    Object.hasOwn(patch, 'focusUse') &&
+    (item.type !== 'gear' || !isMagicalFocus(item) || !['', 'held', 'worn'].includes(patch.focusUse))
+  )
+    throw new RuleError('Choose held or worn for a magical focus accessory.');
   for (const key of ['equipped', 'carried'])
     if (Object.hasOwn(patch, key) && typeof patch[key] !== 'boolean')
       throw new RuleError('Invalid inventory checkbox value.');
@@ -137,7 +157,11 @@ export function planInventoryChange(actorState, id, patch, items = actorState.it
   return {
     update,
     item: changed,
-    drawsWeapon: isHeld(changed) && changed.equipped && !item.equipped && !changed.properties?.natural,
+    drawsWeapon:
+      isHeld(changed) &&
+      changed.equipped &&
+      (!item.equipped || !isHeld(item)) &&
+      !changed.properties?.natural,
   };
 }
 

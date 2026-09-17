@@ -54,10 +54,10 @@ export function shieldOwner(uuid) {
   return null;
 }
 /** Persist a shared pool and victim changes together, compensating either side on failure. */
-export async function commitDamage(actor, planned, itemChanges = planned.items, after) {
+export async function commitDamage(actor, planned, itemChanges = planned.items, after, options = {}) {
   const entries = [...(planned.wards ?? new Map()).entries()];
   const apply = async (index) => {
-    if (index === entries.length) return commitActor(actor, planned.actor, itemChanges, after);
+    if (index === entries.length) return commitActor(actor, planned.actor, itemChanges, after, options);
     const [uuid, effects] = entries[index],
       owner = shieldOwner(uuid);
     if (!owner) throw new Error('The shared Active Shield owner no longer exists.');

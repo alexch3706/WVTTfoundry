@@ -249,11 +249,6 @@ async function performFumble({ messageUuid, allies = [], naturalRuling = '' }, {
     const rolled = await dice(plan.weaponDamage);
     rolls.push(rolled);
     let wear = rolled.total;
-    if (weapon.system.attachments.some((attachment) => attachment.name === 'Chemobog')) {
-      const protection = await dice('1d6');
-      rolls.push(protection);
-      if (protection.total >= 4) wear = 0;
-    }
     itemChanges.push({ _id: weapon.id, 'system.reliability': Math.max(0, weapon.system.reliability - wear) });
     text.push(`${weapon.name} loses ${wear} reliability.`);
   }

@@ -1,4 +1,10 @@
 import { trophyRulesFor } from './magic-trophies.js';
+import { activeAlchemy, reconcileAlchemyToxicity } from './alchemy-rules.js';
+import { alchemyAttackPlan, alchemyCriticalBonus, alchemyDamageEffects } from './alchemy-combat-rules.js';
+import { alchemyHitRecord, applyAlchemyStrike } from './alchemy-combat.js';
+import { adrenalineEnabled, adrenalineState, adrenalineSpendPlan } from './adrenaline.js';
+import { enhancementBenefits, actorEnhancementBenefits } from './enhancements.js';
+import { offerDeflection, applyRetribution } from './enhancement-combat.js';
 import { magicCreatureDefenseAdjustment } from './magic-creature-profiles.js';
 import { hexCriticalWound } from './magic-hex-rules.js';
 import {
@@ -92,7 +98,7 @@ export function combatModifier(actor, { defense = false, melee = false, context 
       reasons.push(`${status} ${value}`);
     }
   const env = actor.system.environment;
-  if (env.light === 'dark' && !actor.system.effects.some((x) => x.key === 'Cat')) {
+  if (env.light === 'dark' && !activeAlchemy(actor.system, 'cat')) {
     result -= 2;
     reasons.push('darkness -2');
   }
@@ -161,6 +167,8 @@ function weaponFor(actor, item, action = 'normal') {
     if (ammo?.system.isAmmo && ammo.system.damageTypes?.length)
       snapshot.damageTypes = [...ammo.system.damageTypes];
   }
+  if (enhancementBenefits(item).words.includes('burning'))
+    snapshot.damageTypes = [...new Set([...snapshot.damageTypes, 'fire'])];
   return item.type === 'shield' ? shieldStrike(snapshot, actor.system.derived.stats.body) : snapshot;
 }
 function defenseButtons(target) {
@@ -248,8 +256,27 @@ export async function attack(actor, item, options = {}) {
       : '') +
     input('forfeit', 'Forfeit unused strikes to start a different action', { type: 'checkbox' }) +
     input('cover', 'Cover stopping power', { value: 0, min: 0 }) +
+    input('coverItemId', 'Target crouches behind held pavise', {
+      options: {
+        '': 'No pavise cover',
+        ...Object.fromEntries(
+          target.items
+            .filter(
+              (item) => item.type === 'shield' && item.system.equipped && item.system.properties.fullCover
+            )
+            .map((item) => [item.id, item.name])
+        ),
+      },
+    }) +
     input('modifier', 'Other attack modifiers', { value: 0 }) +
     input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value }) +
+    (adrenalineEnabled()
+      ? input('adrenalineDice', 'Adrenaline damage dice (10 STA each)', {
+          value: 0,
+          min: 0,
+          max: adrenalineState(actor).dice,
+        })
+      : '') +
     input('extra', 'Extra action: 3 STA, −3', { type: 'checkbox' }) +
     input('outside', 'Target outside your vision cone (−3; no aiming)', { type: 'checkbox' }) +
     input('rear', 'You are outside the defender’s vision cone (+3)', { type: 'checkbox' }) +
@@ -389,6 +416,10 @@ async function executeAttack(payload, context) {
       });
   const profile = plan.profile;
   const changes = { ...plan.changes };
+  Object.assign(
+    changes,
+    adrenalineSpendPlan(actor, values.adrenalineDice, changes['system.sta.value'] ?? actor.system.sta.value)
+  );
   if (reaction)
     changes['system.combat.reactions'] = actor.system.combat.reactions.filter((r) => r.id !== reaction.id);
   const luck = Number(values.luck);
@@ -423,7 +454,7 @@ async function executeAttack(payload, context) {
     reasons.push(`aim ${locate(table, location).aim}`);
   }
   if (values.outside) modifier -= 3;
-  if (values.rear) modifier += 3;
+  if (values.rear && !actorEnhancementBenefits(target.items).rotation) modifier += 3;
   if (values.ambush) modifier += 5;
   if (has(target, 'activelyDodging') && !RANGED.includes(w.category)) modifier -= 2;
   if (has(target, 'pinned')) modifier += 4;
@@ -494,6 +525,18 @@ async function executeAttack(payload, context) {
   );
   changes['system.luck.value'] = actor.system.luck.value - luck;
   changes['system.combat.aim'] = 0;
+  const alchemyAttack = alchemyAttackPlan(actor.system, {
+    physical: !w.properties?.magic && !w.properties?.environmental,
+  });
+  if (alchemyAttack.lightningId) {
+    const alchemy = reconcileAlchemyToxicity(
+      actor.system,
+      actor.system.effects.filter((effect) => effect.id !== alchemyAttack.lightningId)
+    );
+    changes['system.effects'] = alchemy.effects;
+    changes['system.conditions'] = alchemy.conditions;
+    changes['system.toxicity.value'] = alchemy.toxicity;
+  }
   const packet = {
     kind: 'attack',
     authorId: context.user.id,
@@ -501,6 +544,9 @@ async function executeAttack(payload, context) {
     sourceTokenUuid: payload.sourceTokenUuid ?? '',
     targetTokenUuid: payload.targetTokenUuid ?? '',
     magicAttack: magicalAttack,
+    alchemyAttack,
+    combatId: game.combat?.started ? game.combat.id : '',
+    adrenalineDice: Number(values.adrenalineDice ?? 0),
     schoolOnHit: reactionChoice?.onHit ?? null,
     nonlethal: w.id === 'unarmed' || (!!w.properties?.nonlethal && !!values.nonlethal),
     damageFormula: weaponDamageFormula(w, {
@@ -516,6 +562,7 @@ async function executeAttack(payload, context) {
     aimed: location,
     type: values.type,
     cover: Number(values.cover),
+    coverItemId: values.coverItemId || '',
     multiplier: profile.multiplier,
     meleeBonus: actor.system.derived.meleeBonus,
     range,
@@ -525,7 +572,9 @@ async function executeAttack(payload, context) {
     invisible: actor.system.effects.some((x) => x.key === 'Invisibility'),
   };
   if (packet.invisible)
-    changes['system.effects'] = actor.system.effects.filter((x) => x.key !== 'Invisibility');
+    changes['system.effects'] = (changes['system.effects'] ?? actor.system.effects).filter(
+      (x) => x.key !== 'Invisibility'
+    );
   const fumbleKind = w.id === 'unarmed' ? 'unarmed' : RANGED.includes(w.category) ? 'ranged' : 'melee';
   return commitActor(actor, changes, itemChanges, () =>
     chat(
@@ -681,13 +730,20 @@ async function executeDefense(payload, context) {
     passive || ['awareness', 'grapple'].includes(defense)
       ? { changes: {}, modifier: 0 }
       : actionPlan(actor, { defense: true });
+  const deflection =
+    defense === 'parry' &&
+    !!w &&
+    RANGED.includes(attackData.weapon.category) &&
+    enhancementBenefits(w).words.includes('deflection');
+  const arrowSkill = deflection && Number(actor.system.professionRanks.parryArrows) > 0;
   let modifier =
     Number(values.modifier) -
     Math.max(0, Number(values.gang) - 1) +
-    defenseModifier(defense, attackData.weapon.category);
-  if (defense === 'parry' && w?.system.properties.parrying) modifier += 3;
-  const skill =
-    defense === 'shift'
+    (deflection ? (arrowSkill ? -1 : -6) : defenseModifier(defense, attackData.weapon.category));
+  if (defense === 'parry' && !deflection && w?.system.properties.parrying) modifier += 3;
+  const skill = arrowSkill
+    ? 'parryArrows'
+    : defense === 'shift'
       ? 'spellCasting'
       : defense === 'awareness'
         ? 'awareness'
@@ -739,8 +795,12 @@ async function executeDefense(payload, context) {
   const result = passive
     ? { total: dc, rolls: [], base: dc, dice: [], fumble: 0, source: 'passive' }
     : await check(
-        actor.skillBase(skill, { modifier: modifier + luck, arm: injuryArm, sight: skill === 'awareness' })
-          .total,
+        actor.skillBase(skill, {
+          modifier: modifier + luck,
+          arm: injuryArm,
+          sight: skill === 'awareness',
+          ...(arrowSkill ? { stat: 'dex' } : {}),
+        }).total,
         {
           ...{
             manualDice: values.manualDice,
@@ -780,6 +840,7 @@ async function executeDefense(payload, context) {
               attackRef,
               actorUuid: actor.uuid,
               defense,
+              deflection,
               weaponId: armed ? w.id : '',
               arm: values.arm,
               check: snapshotRoll(result),
@@ -847,7 +908,8 @@ export async function resolveDefense(message, internal = false) {
           updates
         );
       }
-      if (defense.defense === 'parry') await attacker.setCondition('staggered');
+      if (defense.defense === 'parry' && !defense.deflection) await attacker.setCondition('staggered');
+      if (defense.deflection && defense.check.total > a.check.total) await offerDeflection(message, a);
       if (
         defense.defense === 'parry' &&
         a.weapon.properties?.severableTongue &&
@@ -893,6 +955,26 @@ export async function resolveDefense(message, internal = false) {
       );
       return;
     }
+    if (a.deflectedProjectile) {
+      const receipt = `deflected:${attackMessage.uuid}`;
+      if (!target.system.combat.applied.includes(receipt))
+        await commitActor(
+          target,
+          {
+            'system.conditions': [
+              ...new Set([
+                ...target.system.conditions,
+                ...(immuneTo(target.system, 'staggered') ? [] : ['staggered']),
+              ]),
+            ],
+            'system.combat.applied': [...target.system.combat.applied, receipt],
+          },
+          [],
+          () => attackMessage.update({ [`flags.${SYSTEM_ID}.resolved`]: true })
+        );
+      else await attackMessage.update({ [`flags.${SYSTEM_ID}.resolved`]: true });
+      return;
+    }
     if (NO_DAMAGE.includes(a.action)) {
       await resolveSpecial(attacker, target, a, defense);
       await attackMessage.update({ [`flags.${SYSTEM_ID}.resolved`]: true });
@@ -919,10 +1001,13 @@ export async function resolveDefense(message, internal = false) {
         flags: {
           kind: 'damage',
           attackRef: attackMessage.uuid,
+          combatId: a.combatId ?? '',
           actorUuid: attacker.uuid,
           targetUuid: target.uuid,
           request: damage.request,
           wound: damage.wound,
+          criticalLevel: damage.criticalLevel,
+          adrenalineRetained: damage.adrenalineRetained,
           schoolAdjustment: damage.schoolAdjustment,
           reactions: damage.reactions,
           schoolOnHit: a.schoolOnHit,
@@ -1044,6 +1129,10 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
       Object.entries(ammo?.properties ?? {}).filter(([, v]) => v !== false && v !== 0 && v !== '')
     ),
   };
+  if (enhancementBenefits(w).words.includes('shearing')) {
+    properties.ablation = Number(properties.ablation || 0) + 1;
+    properties.shearingCover = 1;
+  }
   let wound = null,
     bonus = 0,
     location;
@@ -1068,7 +1157,9 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
       aimed: a.aimed?.replace(/:weak$/, ''),
       greater: greater.total,
       side: side.total,
-      balanced: properties.balanced ? (a.aimed ? 1 : properties.balancedBonus || 2) : 0,
+      balanced:
+        (properties.balanced ? (a.aimed ? 1 : properties.balancedBonus || 2) : 0) +
+        alchemyCriticalBonus(attacker.system),
       organless: target.system.organless,
     });
     let selectedCritical = result;
@@ -1080,7 +1171,9 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
         aimed: a.aimed?.replace(/:weak$/, ''),
         greater: a.aimed ? second.total : greater.total,
         side: side.total,
-        balanced: properties.balanced ? (a.aimed ? 1 : properties.balancedBonus || 2) : 0,
+        balanced:
+          (properties.balanced ? (a.aimed ? 1 : properties.balancedBonus || 2) : 0) +
+          alchemyCriticalBonus(attacker.system),
         organless: target.system.organless,
       });
       const choices = [result, alternative];
@@ -1124,6 +1217,17 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
   if (defense.defense === 'blockArm' && defense.blockSucceeded) location = locate(table, defense.arm);
   if (a.aimed?.endsWith(':weak') && location.id === a.aimed.slice(0, -5)) location = locate(table, a.aimed);
   const chosen = properties.allLocations ? table : [location];
+  let adrenalineDamage = 0;
+  let adrenalineRetained = 0;
+  if (a.adrenalineDice > 0) {
+    const adrenalineRoll = await dice(`${a.adrenalineDice}d6`);
+    rolls.push(adrenalineRoll);
+    adrenalineDamage = adrenalineRoll.total;
+    if (enhancementBenefits(w).adrenalineRetainOne)
+      adrenalineRetained = (adrenalineRoll.dice ?? [])
+        .flatMap((die) => die.results ?? [])
+        .filter((result) => result.active !== false && result.result === 1).length;
+  }
   const requests = [],
     results = [];
   const conditions = [];
@@ -1141,6 +1245,8 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
     rolls.push(roll);
     let raw = Math.max(0, roll.total + weaponDamageBonus(w, a.meleeBonus));
     if (!w.properties?.environmental && !zeroDamage) raw += Number(attacker.system.derived.mods.damage ?? 0);
+    if (!properties.magic && !properties.environmental && !zeroDamage)
+      raw += (a.alchemyAttack?.damage ?? alchemyAttackPlan(attacker.system).damage) + adrenalineDamage;
     const oil = w.oil;
     if (oil?.expires > game.time.worldTime) {
       const categories = {
@@ -1157,7 +1263,7 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
         'Specter Oil': 'specter',
         'Vampire Oil': 'vampire',
       };
-      const category = target.type === 'monster' ? target.system.category : 'humanoid';
+      const category = target.system.category || 'humanoid';
       if (categories[oil.name] === category) raw += 5;
     }
     if (a.underwater && ['bow', 'crossbow'].includes(w.category)) raw /= 2;
@@ -1185,6 +1291,7 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
       multiplier: a.multiplier ?? 1,
       nonlethal: !!a.nonlethal || a.action === 'pommel',
       cover: a.cover ?? 0,
+      coverItemId: a.coverItemId || '',
       criticalBonus: chosen.length === 1 ? bonus : 0,
       location: loc.id + (loc.weakSpot ? ':weak' : ''),
     };
@@ -1207,6 +1314,7 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
       ['fire', 'fire'],
       ['freeze', 'frozen'],
       ['stagger', 'staggered'],
+      ['prone', 'prone'],
     ])
       if (properties[property] && !immuneTo(state, condition)) {
         const r = await dice('1d100');
@@ -1218,7 +1326,9 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
         const chance =
           condition === 'fire'
             ? magicIgnitionChance(state, bonusChance, { separateAttack: true }).chance
-            : bonusChance;
+            : condition === 'bleeding'
+              ? Math.max(0, bonusChance - actorEnhancementBenefits(target.items).bleedingReduction)
+              : bonusChance;
         if (r.total <= chance) conditions.push(condition);
       }
   }
@@ -1263,6 +1373,10 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
     results,
     rolls,
     wound,
+    criticalLevel: results.some((result) => !result.immune && !result.shield?.fullyAbsorbed)
+      ? severity?.level
+      : null,
+    adrenalineRetained,
     schoolAdjustment: severity?.schoolAdjustment ?? null,
     reactions: schoolReactions(actorSnapshot(attacker), {
       trigger: 'critical',
@@ -1291,7 +1405,7 @@ export function damageState(actor) {
     conditions: actor.system.conditions,
     locations: actor.system.locations,
     items: actor.items
-      .filter((i) => ['armor', 'wound'].includes(i.type))
+      .filter((i) => ['armor', 'wound', 'shield'].includes(i.type))
       .map((i) => [i.id, i.system.toObject()]),
     race: actor.system.race,
     resistances: actor.system.resistances,
@@ -1303,6 +1417,7 @@ export function damageState(actor) {
     traits: actor.system.traits,
     trophy: trophyRulesFor(actorSnapshot(actor)),
     effects: magicDamageSnapshot(actor).effects,
+    alchemyEnc: { enc: actor.system.derived.enc, weight: actor.system.derived.weight },
   });
 }
 export function damageHTML(damage) {
@@ -1341,6 +1456,7 @@ export async function applyDamage(message, internal = false) {
       return;
     }
     const changes = planDamageChanges(target, data.summary, data.conditions ?? []);
+    Object.assign(changes.actor, alchemyHitRecord(message, data));
     if (data.effects?.length)
       changes.actor['system.effects'] = [
         ...(changes.actor['system.effects'] ?? target.system.effects),
@@ -1374,6 +1490,8 @@ export async function applyDamage(message, internal = false) {
 }
 
 async function finalizeDamage(message, target, data) {
+  await applyAlchemyStrike(message, target, data);
+  await applyRetribution(message, target, data);
   // Suffocate ends when its caster is actually struck by a weapon, even if armor
   // absorbs the hit. A completely absorbed Quen hit does not reach that caster.
   if (
@@ -1524,20 +1642,37 @@ export function planDamageChanges(actor, results, addConditions = [], { directHP
       update[`system.sp.${change.location}`] = change.after;
       items.set(change.id, update);
     }
+    if (result.coverItemChange) {
+      const change = result.coverItemChange;
+      items.set(change.id, { _id: change.id, 'system.reliability': change.after });
+    }
     const loc = locations.find((l) => l.id === result.naturalChange.location);
     if (loc) loc[result.naturalChange.field ?? 'sp'] = result.naturalChange.after;
   }
   const protection = magicDamageRules(actor.system, { hpAfter: hp });
   hp = protection.hpAfter;
   const changes = { 'system.hp.value': hp, 'system.sta.value': sta, 'system.locations': locations };
-  if (results.some((r) => r.damage > 0)) changes['system.combat.hitThisRound'] = true;
-  const effects = protection.protectionEffectId
+  if (results.some((r) => r.afterShield > 0 && !r.immune && (!r.source || r.source === 'attack')))
+    changes['system.combat.hitThisRound'] = true;
+  let effects = protection.protectionEffectId
     ? magicEffectCommit(
         { ...actor.system, effects: waking?.effects ?? actor.system.effects },
         { protectionEffectId: protection.protectionEffectId }
       ).effects
     : foundry.utils.deepClone(waking?.effects ?? actor.system.effects);
   if (waking?.removed.length || protection.protectionEffectId) changes['system.effects'] = effects;
+  if (changes['system.combat.hitThisRound']) {
+    const swallow = effects.find((effect) => effect.alchemy?.key === 'swallow' || effect.key === 'Swallow');
+    if (swallow) {
+      swallow.alchemy = { ...swallow.alchemy, key: 'swallow', lastHitAt: game.time.worldTime };
+      changes['system.effects'] = effects;
+    }
+  }
+  const totalDamage = directHP + results.reduce((sum, result) => sum + result.damage, 0);
+  if (totalDamage > 0) {
+    effects = alchemyDamageEffects(actor.system, effects, { damage: totalDamage });
+    changes['system.effects'] = effects;
+  }
   for (const result of results) {
     if (!result.shield) continue;
     if (result.shield.ownerUuid && result.shield.ownerUuid !== actor.uuid) {
@@ -1562,7 +1697,7 @@ export function planDamageChanges(actor, results, addConditions = [], { directHP
   if (fullMoon) {
     fullMoon.temporaryHp = Math.max(
       0,
-      fullMoon.temporaryHp - results.filter((r) => !r.nonlethal).reduce((n, r) => n + r.damage, 0)
+      fullMoon.temporaryHp - directHP - results.filter((r) => !r.nonlethal).reduce((n, r) => n + r.damage, 0)
     );
     changes['system.effects'] = effects;
   }

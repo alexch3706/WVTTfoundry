@@ -88,6 +88,7 @@ function contextFor(magic, values, requirements) {
     rolls,
     power: values.power ?? magic.cost.min,
     castTotal: values.castTotal,
+    defenseDC: values.castTotal + (values.defenseBonus ?? 0),
     get: (key) => choices[key],
     number: (key, options = {}) => needed(key, values[key], { type: 'contextNumber', ...options }),
     roll: (key, formula, options = {}) => needed(key, rolls[key], { type: 'roll', formula, ...options }),
@@ -165,6 +166,10 @@ export function spellEffectPlan(value, values = {}) {
   const spec = registry.get(magic?.key);
   if (!spec) throw new RuleError('This magic has no audited effect procedure.');
   if (!Number.isFinite(values.castTotal)) throw new RuleError('Supply the authoritative casting total.');
+  if (!Number.isInteger(values.defenseBonus ?? 0) || (values.defenseBonus ?? 0) < 0)
+    throw new RuleError(
+      'Supply a nonnegative whole defense DC bonus from validated focus and glyph sources.'
+    );
   const power = values.power ?? magic.cost.min;
   if (!Number.isFinite(power) || power < 0) throw new RuleError('Magic power must be a nonnegative number.');
   if (magic.cost.max > 0 && (power < magic.cost.min || power > magic.cost.max))
@@ -441,6 +446,7 @@ function procedureVariants(spec) {
         rolls: {},
         power,
         castTotal: 25,
+        defenseDC: 25,
         duration: magic.duration,
         get: (key) => values[key],
         number: (_key, options = {}) => Math.max(options.min ?? 0, Math.min(options.max ?? 10, 10)),
@@ -579,7 +585,7 @@ define(
     rule('telepathyDetection', {
       witcherMedallion: 'vibrate',
       perRoundSkill: 'magicTraining',
-      dc: c.castTotal,
+      dc: c.defenseDC,
       covertOnly: c.get('mode') === 'listen',
     }),
   ],
@@ -659,7 +665,7 @@ define(
       hp: 15,
       purpose: 'restraint',
       onDestroy: 'endEffect',
-      escape: save('dodge', c.castTotal, [], { action: 'escape', onSuccess: 'endEffect' }),
+      escape: save('dodge', c.defenseDC, [], { action: 'escape', onSuccess: 'endEffect' }),
     }),
   ],
   { triggers: ['escapeAttempt', 'damageRestraint'] }
@@ -887,7 +893,7 @@ define(
           'suffocating',
           {
             timing: 'startTurn',
-            save: save('swimming', c.castTotal, [condition('suffocating')], {
+            save: save('swimming', c.defenseDC, [condition('suffocating')], {
               onSuccess: 'surface',
               repeat: 'eachRound',
             }),
@@ -944,7 +950,7 @@ define(
         'prone',
         {
           timing: 'enter',
-          save: save('athletics', c.castTotal, [condition('prone')], { onSuccess: 'none' }),
+          save: save('athletics', c.defenseDC, [condition('prone')], { onSuccess: 'none' }),
         },
         'occupants'
       ),
@@ -1123,7 +1129,7 @@ define(
       [
         rule(
           'projectileBarrier',
-          { defenseDC: c.castTotal, onFailure: move(8, { direction: 'random', target: 'projectile' }) },
+          { defenseDC: c.defenseDC, onFailure: move(8, { direction: 'random', target: 'projectile' }) },
           'occupants'
         ),
       ],
@@ -1184,7 +1190,7 @@ define(
           {
             damageType: 'fire',
             timing: 'crossTarget',
-            save: save('dodge', c.castTotal, [], { onSuccess: 'avoidAttack', comparison: 'atLeast' }),
+            save: save('dodge', c.defenseDC, [], { onSuccess: 'avoidAttack', comparison: 'atLeast' }),
           },
           'occupants'
         ),
@@ -1203,7 +1209,7 @@ define(
     condition('fire'),
     rule('escalatingEscape', {
       skill: 'dodge',
-      dc: c.castTotal,
+      dc: c.defenseDC,
       increasePerFailure: 1,
       endsAllEffects: true,
       duration: { rounds: c.get('durationRounds') },
@@ -1223,7 +1229,7 @@ define(
           physicalCritical: true,
           element: 'ice',
           timing: 'startTurn',
-          save: save('dodge', c.castTotal, [], { onSuccess: 'avoidAttack', comparison: 'atLeast' }),
+          save: save('dodge', c.defenseDC, [], { onSuccess: 'avoidAttack', comparison: 'atLeast' }),
         },
         'occupants'
       ),
@@ -1241,7 +1247,7 @@ define(
       endsWhen: 'taskCompleted',
       repeatSave: {
         skill: 'resistMagic',
-        dc: c.castTotal,
+        dc: c.defenseDC,
         timing: 'targetTurn',
         initialDelayRounds: c.roll('resistAfter', '1d6', { min: 1, max: 6 }),
         intervalFormula: '1d6',
@@ -1348,7 +1354,7 @@ define(
       {
         cannotRun: true,
         cannotAttackOut: true,
-        projectileDC: c.castTotal,
+        projectileDC: c.defenseDC,
         deflectDistance: 8,
         deflectDirection: 'random',
       },
@@ -1371,7 +1377,7 @@ define(
             location: 'torso',
             timing: 'startTurn',
             selectionChance: 35,
-            save: save('dodge', c.castTotal, [], { onSuccess: 'avoidAttack', comparison: 'atLeast' }),
+            save: save('dodge', c.defenseDC, [], { onSuccess: 'avoidAttack', comparison: 'atLeast' }),
             onHit: condition('fire', { chance: 75 }),
           },
           'occupants'
@@ -1395,7 +1401,7 @@ define(
             damageType: 'fire',
             timing: 'startTurn',
             selectionChance: 75,
-            save: save(['dodge', 'block'], c.castTotal, [], { onSuccess: 'avoidAttack' }),
+            save: save(['dodge', 'block'], c.defenseDC, [], { onSuccess: 'avoidAttack' }),
             onHit: condition('fire', { chance: 75 }),
           },
           'occupants'
@@ -1496,7 +1502,7 @@ define(
     condition(c.power === 2 ? 'staggered' : c.power === 4 ? 'stunned' : 'poison'),
     rule('illnessRecovery', {
       skill: 'endurance',
-      dc: c.castTotal,
+      dc: c.defenseDC,
       endsAllSpellConditions: true,
       duration: { until: 'successfulEndurance' },
     }),
@@ -1597,7 +1603,7 @@ define(
                     location: 'torso',
                     timing: 'startTurn',
                     selectionChance: 35,
-                    save: save('dodge', c.castTotal, [], { onSuccess: 'avoidAttack', comparison: 'atLeast' }),
+                    save: save('dodge', c.defenseDC, [], { onSuccess: 'avoidAttack', comparison: 'atLeast' }),
                     onHit: condition('fire', { chance: 75 }),
                   },
                   'occupants'
@@ -1791,7 +1797,7 @@ define(
     zone({ shape: 'circle', radius: 10 }, [
       condition('frozen', { action: 'remove' }, 'occupants'),
       op('dispel', { element: 'water', existingEffects: true }, 'area'),
-      rule('waterCastingBarrier', { mustBeat: c.castTotal }, 'area'),
+      rule('waterCastingBarrier', { mustBeat: c.defenseDC }, 'area'),
       rule('sunlightVulnerabilityMultiplier', { multiplier: 2 }, 'occupants'),
       reveal(['illumination'], { intensity: 'bright', burns: false }, 'area'),
     ]),
@@ -1860,7 +1866,7 @@ define(
           {
             description: c.get('appearance'),
             observerSaveWithin: 4,
-            save: save('resistMagic', c.castTotal, [], { onSuccess: 'seeThrough', comparison: 'atLeast' }),
+            save: save('resistMagic', c.defenseDC, [], { onSuccess: 'seeThrough', comparison: 'atLeast' }),
           },
           'observers'
         ),
@@ -2020,7 +2026,7 @@ define(
           {
             timing: 'enterOrStartTurn',
             duration: { seconds: 60 },
-            save: save('endurance', c.castTotal, [condition('nausea', { duration: { seconds: 60 } })]),
+            save: save('endurance', c.defenseDC, [condition('nausea', { duration: { seconds: 60 } })]),
           },
           'occupants'
         ),
@@ -2898,7 +2904,7 @@ define(
         ),
         rule(
           'castingPermission',
-          { permitted: 'selectedOrInitiallyResisted', initialDefenseTotal: c.castTotal },
+          { permitted: 'selectedOrInitiallyResisted', initialDefenseTotal: c.defenseDC },
           'occupants'
         ),
       ],
@@ -3129,7 +3135,7 @@ define(
             onCross: [
               damage('4d6', {
                 location: 'torso',
-                save: save('athletics', total, [], { onSuccess: 'avoidAttack' }),
+                save: save('athletics', c.defenseDC, [], { onSuccess: 'avoidAttack' }),
                 onHit: move(10, { direction: 'gm' }),
               }),
             ],
@@ -3179,7 +3185,7 @@ define(
       swamp: [
         zone(
           { shape: 'circle', radius: 6 },
-          [rule('disease', { save: { skill: 'endurance', dc: total } }, 'occupants')],
+          [rule('disease', { save: { skill: 'endurance', dc: c.defenseDC } }, 'occupants')],
           { ignitesOnOpenFlame: { damage: '5d6', location: 'torso', fireChance: 75 } }
         ),
       ],

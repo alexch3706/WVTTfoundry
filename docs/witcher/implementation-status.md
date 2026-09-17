@@ -1,6 +1,6 @@
 # Witcher V14 implementation status
 
-Release candidate: **0.1.0-alpha.6**. This ledger distinguishes implemented code
+Release: **0.1.0-alpha.7**. This ledger distinguishes implemented code
 from live acceptance. No Foundry server has been launched in this environment;
 the owner will test the installable release on The Forge.
 
@@ -25,11 +25,18 @@ The owner subsequently approved magic. Alpha.6 adds 12 Signs, 34 spells and
 20 invocations, with separate ritual/hex workflows. **126 spells/invocations
 remain references without automated casting.** See the [support matrix](magic-progress.md)
 and [play guide](magic-play-guide.md). Mounted combat and broader active creature
-and profession abilities remain lower priority. Advanced maneuvers, area/scatter bombs and contextual
-potion/decoction automation have incomplete paths inherited from the first
+and profession abilities remain lower priority. Advanced maneuvers, area/scatter bombs and some ordinary chemical hazards have incomplete paths inherited from the first
 implementation pass; they are not claims of completed ordinary combat and are
 not the primary attack controls. Critical Flurry's Disarm/Trip and school armor
 follow-up strikes are included because they are equipment effects.
+
+## Focus, alchemy, enhancements and Verbal Combat in alpha.7
+
+All four approved feature blocks are implemented. Held/worn Focus validates actual equipment and hands; Greater Focus changes defense DC independently of the casting check. Alchemy includes Core potions/decoctions/oils, Tome elixirs, source-aware toxicity/expiry, attack and damage effects, native Cat vision, mutagen ingestion, real crafting and Last Hope medical treatment. Enhancement attachments preserve original gear values and current wear, support real inscription/crafting, and feed combat, magic and native Shining light. Verbal Combat has saved Resolve encounters, the printed attacks/defenses/tools and persistent relationship/reputation outcomes.
+
+See [the play guide](alpha7-play-guide.md), [alchemy](alchemy-runtime.md), [enhancements](enhancements.md), and [social combat](social-combat.md). Source ambiguities are recorded as table conventions rather than silently presented as printed rules. Breath/run baselines require a GM value because no universal baseline is printed. Kill-triggered enemy bonuses require the GM's actual enemy-kill confirmation; zero HP alone is not a kill.
+
+Ordinary chemical hazards (such as Adhesive, Quick Fire and multi-target delivery) retain the earlier incomplete procedures. Their presence in a compendium is not a claim of full automation. The release does not expand the previous spell/invocation casting coverage.
 
 ## Critical wound cards in alpha.5
 
@@ -123,14 +130,14 @@ These views read existing saved wear; this release does not change damage rules.
 
 ## Validation and remaining acceptance
 
-**240 automated tests pass.** They cover wound cards, treatment and recovery, contextual injury
+**820 automated tests pass.** They cover wound cards, treatment and recovery, contextual injury
 effects, authority and rollback, plus art provenance, packaged asset references,
 default-image migration, custom image preservation, retry safety, manual attack/defense entry and validation,
 book examples, imported creature attacks and school gear,
 turn/STA accounting, persistence failure recovery and package contents. Syntax,
 module imports and Handlebars compilation are checked. A separate check uses the
-genuine public Foundry V14.365 data layer: **36 Actors and 1086 Items** preserve
-all supplied fields during model cleaning.
+genuine public Foundry V14.365 data layer: **36 Actors and 1420 Items** preserve
+all supplied fields during model cleaning. The new alpha.7 checks also cover Focus, potion lifecycle/crafting, glyph/word consumers and Verbal Combat. Native AmbientLight data passes V14 validation; actual sheet templates render without overflow at 600/1000px.
 
 All 36 portraits and 36 token images decode and render to canvas in Chromium;
 round tokens have transparent corners. The entire gallery was visually reviewed.
@@ -156,7 +163,7 @@ finished.
   establishes awareness/ambush, cover and other situational modifiers.
 - Death State uses HP <= 0, reconciling p.153's total-damage wording with p.162.
 - Armor stacking uses Witcher p.155 (3 + 12 + 20 = 24), not Cyberpunk thresholds.
-  Improved AP uses floor(SP/2); the supplied text does not resolve odd-SP rounding.
+  Improved AP uses ceil(SP/2); the supplied text does not resolve odd-SP rounding.
   Armor resistance is retained at SP 0 because the source does not say broken
   armor loses it and p.90 explicitly preserves enhancements on broken armor.
 - Anatomy uses the printed humanoid/non-humanoid tables. Species-specific

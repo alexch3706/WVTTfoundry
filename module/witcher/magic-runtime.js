@@ -1,3 +1,5 @@
+import { greaterFocusSnapshot, magicDefenseTotal, magicDefenseBonus } from './magic-focus-rules.js';
+import { castEnhancementSnapshot, depletionChanges } from './magic-enhancements.js';
 import {
   placeOfPowerBenefits,
   leyLineBenefits,
@@ -6,7 +8,12 @@ import {
 } from './magic-power-rules.js';
 import { validateLeyContact, synchronizeLeyBorrowed } from './magic-learning.js';
 import { endMagicSource } from './magic-source-cleanup.js';
-import { magicCastingRules, magicEffectCommit, magicConditionRules } from './magic-effect-hooks.js';
+import {
+  magicCastingRules,
+  magicEffectCommit,
+  magicConditionRules,
+  magicAttackEffectChance,
+} from './magic-effect-hooks.js';
 import { validateMagicChoices } from './magic-choices.js';
 import { magicTargetingProfile, validateMagicTargetCount } from './magic-targeting.js';
 import { ritualTargetingBlock } from './magic-ritual-effects.js';
@@ -32,6 +39,7 @@ import {
   magicTradition,
   magicVigor,
   magicFocus,
+  selectedMagicFocus,
   validateCasting,
   magicShield,
   maintainedMagic,
@@ -56,7 +64,7 @@ import {
 } from './runtime.js';
 import { equippedSchoolPerks } from './school-gear.js';
 import { resolveWoundArm } from './wound-rules.js';
-import { validateWeaponGrip } from './inventory.js';
+import { validateWeaponGrip, isMagicalFocus } from './inventory.js';
 import { damageHTML, damageState, prepareDamage, planDamageChanges, combatModifier } from './combat.js';
 import { immuneTo } from './monster-rules.js';
 import { magicalWoundTreatment, woundFingerprint } from './wound-actions.js';
@@ -253,7 +261,7 @@ function magicCard(data) {
     ${t.status === 'ready' ? `<button type="button" data-magic-action="apply" data-target="${e(t.tokenUuid)}">Apply (GM)</button>` : ''}</li>`
     )
     .join('');
-  return `${checkHTML(data.check)}<p>${data.power} power · ${data.staCost} STA · Vigor ${data.roundSpend}/${data.vigor}${data.hpCost ? ` · overdraw ${data.hpCost} HP` : ''}</p>
+  return `${checkHTML(data.check)}${magicDefenseBonus(data) ? `<p>Spell defense DC ${magicDefenseTotal(data)}${data.focus?.defenseBonus ? ` · +2 Greater Focus (${e(data.focus.name)})` : ''}${data.focus?.glyphDC ? ` · +${data.focus.glyphDC} elemental glyph` : ''}; casting check unchanged.</p>` : ''}<p>${data.power} power · ${data.staCost} STA · Vigor ${data.roundSpend}/${data.vigor}${data.hpCost ? ` · overdraw ${data.hpCost} HP` : ''}</p>
     ${data.pendingReplacement ? '<p><strong>Awaiting the mandatory Air replacement.</strong></p>' : data.failed ? '<p><strong>The magic failed.</strong></p>' : `<ul>${rows}</ul>`}
     ${!data.failed && !data.applied && !data.pendingGM && data.targets.length === 0 ? '<button type="button" data-magic-action="apply">Apply magic (GM)</button>' : ''}
     ${data.fumble?.damage ? `<p>Fumble: ${data.fumble.damage} direct HP lost.</p>` : ''}
@@ -939,6 +947,19 @@ async function executeCast(payload, { user, id }) {
     reaction: !!reaction,
   });
   const { cost, changes } = magicSpending(actor, magic, power, values, plan);
+  const focusState = actorSnapshot(actor);
+  const selectedFocus = amulet
+    ? null
+    : selectedMagicFocus(focusState, focusState.items, values.focusId, magic.kind);
+  const enhancementFocus = castEnhancementSnapshot(actor, magic, selectedFocus, values);
+  const greaterFocus = amulet ? null : greaterFocusSnapshot(selectedFocus, magic);
+  const focus =
+    greaterFocus ||
+    enhancementFocus.glyphs.sources.length ||
+    enhancementFocus.depletion ||
+    enhancementFocus.prolongation
+      ? { ...greaterFocus, ...enhancementFocus }
+      : null;
   const luck = number(values.luck);
   if (!Number.isInteger(luck) || luck < 0 || luck > actor.system.luck.value)
     throw new RuleError('Invalid Luck expenditure.');
@@ -973,6 +994,17 @@ async function executeCast(payload, { user, id }) {
     changes['system.conditions'] = removed.conditions;
   }
   const rolls = [...result.rolls];
+  // A critical-treatment use replaces HP healing and has no rolled duration.
+  if (
+    focus?.prolongation &&
+    magic.duration.formula &&
+    !(magic.key === 'magic-healing' && values.healingWoundId)
+  ) {
+    const first = await dice(magic.duration.formula),
+      second = await dice(magic.duration.formula);
+    rolls.push(first, second);
+    focus.prolongationDuration = Math.max(first.total, second.total);
+  }
   const element = ['priest', 'druid'].includes(magicTradition(actor.system))
     ? 'mixed'
     : magic.element === 'unspecified'
@@ -1020,6 +1052,7 @@ async function executeCast(payload, { user, id }) {
     power,
     resolved,
     castingRules,
+    focus,
     ley,
     choices: clone(values.choices ?? {}),
     check: savedCheck(result),
@@ -1113,7 +1146,7 @@ async function executeDefense({ messageUuid, targetUuid, values = {}, turn }, { 
     if (!helpless && !user.isGM) throw new RuleError('The GM sets an unaware target’s passive DC.');
     const dc = helpless ? 10 : number(values.dc, 'Passive DC');
     if (dc < 0) throw new RuleError('Passive DC cannot be negative.');
-    row.status = beats(data.check.total, dc) ? 'ready' : 'defended';
+    row.status = beats(magicDefenseTotal(data), dc) ? 'ready' : 'defended';
     row.defense = { kind: 'passive', check: { total: dc, base: dc, dice: [], fumble: 0, source: 'passive' } };
     return refreshMagicCard(message, { targets: data.targets });
   }
@@ -1150,7 +1183,7 @@ async function executeDefense({ messageUuid, targetUuid, values = {}, turn }, { 
       actor: actor,
     }
   );
-  const success = result.total >= data.check.total;
+  const success = result.total >= magicDefenseTotal(data);
   if (defense === 'block' && success) {
     const weapon = actor.items.get(values.weaponId);
     itemChanges.push({ _id: weapon.id, 'system.reliability': Math.max(0, weapon.system.reliability - 1) });
@@ -1213,6 +1246,8 @@ export function effectFor(data, details = {}) {
       power: data.power,
       staCost: data.staCost,
       castingTotal: data.check.total,
+      focus: clone(data.focus ?? null),
+      defenseDC: magicDefenseTotal(data),
       maintenance: data.magic.duration.maintenance,
       maintenanceIntervalSeconds: data.magic.duration.maintenanceUnit === 'minute' ? 60 : 3,
       createdAt: now(),
@@ -1255,6 +1290,7 @@ export async function magicDamageCard(caster, target, data, row) {
         ? leyDamageFormula(parameters.damageFormula, data.ley.extraDamageDice)
         : parameters.damageFormula,
       ...(data.castingRules?.extraDamage ?? []),
+      ...(data.focus?.glyphDamageDice ? [`${data.focus.glyphDamageDice}d6`] : []),
     ].join('+'),
     meleeBonus: 0,
     check: data.check,
@@ -1360,7 +1396,12 @@ async function executeApply({ messageUuid, targetUuid }, { user }) {
   } else if (['aard', 'aard-sweep'].includes(data.magicKey)) {
     const roll = await dice('1d100');
     rolls.push(roll);
-    const prone = roll.total <= params.proneChance,
+    const prone =
+        roll.total <=
+        magicAttackEffectChance(caster.system, 'prone', params.proneChance, {
+          spell: true,
+          castingRules: data.castingRules,
+        }).chance,
       conditions = [];
     if (data.magicKey === 'aard' || prone) conditions.push('staggered');
     if (prone) conditions.push('prone');
@@ -1396,7 +1437,7 @@ async function executeApply({ messageUuid, targetUuid }, { user }) {
     effects.push(
       effectFor(data, {
         magic: { controlled: true, repeatDefense: 'resistMagic' },
-        notes: `Ally of ${caster.name}; Resist Magic against ${data.check.total} each round to break free.`,
+        notes: `Ally of ${caster.name}; Resist Magic against ${magicDefenseTotal(data)} each round to break free.`,
       })
     );
   } else if (data.magicKey === 'magic-healing') {
@@ -1413,8 +1454,10 @@ async function executeApply({ messageUuid, targetUuid }, { user }) {
         ? `${treatment.uses}/${treatment.required} successful healing uses; no HP restored.`
         : `Spell Casting did not beat DC ${treatment.dc}; no critical-treatment progress or HP restored.`;
     } else {
-      const duration = await dice('1d10');
-      rolls.push(duration);
+      const duration = data.focus?.prolongationDuration
+        ? { total: data.focus.prolongationDuration }
+        : await dice('1d10');
+      if (!data.focus?.prolongationDuration) rolls.push(duration);
       effects.push(
         effectFor(data, {
           expires: now() + duration.total * 3,
@@ -1450,6 +1493,7 @@ async function executeApply({ messageUuid, targetUuid }, { user }) {
           key: data.magicKey,
           power: data.power,
           check: data.check,
+          focus: clone(data.focus ?? null),
           staCost: data.staCost,
           createdAt: now(),
           preparedAt: now() + (data.magicKey === 'magic-trap' ? 3 : 0),
@@ -1482,6 +1526,7 @@ async function executeApply({ messageUuid, targetUuid }, { user }) {
       changes['system.effects'] = next.effects;
       changes['system.conditions'] = next.conditions;
     }
+    rolls.push(...(await depletionChanges(target, data, row, changes)));
     await commitActor(target, changes, itemChanges, async () => {
       if (row) row.status = 'applied';
       await refreshMagicCard(message, {
@@ -1701,7 +1746,9 @@ async function executeCounter({ messageUuid, reactorUuid, tokenUuid, values = {}
     changes['system.pendingDeathSaves'] = actor.system.pendingDeathSaves + 1;
   let success =
     fumble.spellSucceeds &&
-    (kind === 'heliotrope' ? result.total >= data.check.total : beats(result.total, data.check.total));
+    (kind === 'heliotrope'
+      ? result.total >= magicDefenseTotal(data)
+      : beats(result.total, magicDefenseTotal(data)));
   const counterLey = {
     castId: id,
     actorUuid: actor.uuid,
@@ -1974,7 +2021,7 @@ async function executeResist({ actorUuid, effectId, values = {} }, { user }) {
     actor.skillBase('resistMagic', { modifier: number(values.modifier) + luck }).total,
     { ...{ manualDice: values.manualDice }, actor: actor }
   );
-  const success = result.total >= effect.magic.castingTotal;
+  const success = result.total >= (effect.magic.defenseDC ?? magicDefenseTotal(effect.magic));
   const removed = success ? removeMagicEffects(actor.system, (ef) => ef.id === effect.id) : null;
   const effects = removed?.effects ?? clone(actor.system.effects);
   if (!success) effects.find((ef) => ef.id === effect.id).magic.lastResistRound = cycle;
@@ -2110,8 +2157,7 @@ async function executeBacklash({ messageUuid, values = {} }, { user }) {
     const receipt = `focusExplosion:${data.castId}`;
     if (!actor.system.combat.applied.includes(receipt)) {
       const foci = actor.items.filter(
-        (item) =>
-          item.system.properties?.focus > 0 && item.system.carried !== false && item.system.quantity > 0
+        (item) => isMagicalFocus(item) && item.system.carried !== false && item.system.quantity > 0
       );
       const cards = [];
       try {
@@ -2219,6 +2265,7 @@ async function executeTrapAttack({ messageUuid, targetUuid, values = {}, turn },
     power: state.power,
     resolved: resolvedMagic(magic, state.power),
     check: savedCheck(checkResult),
+    focus: clone(state.focus ?? null),
     staCost: state.staCost,
     hpCost: 0,
     roundSpend: currentSpent(caster),

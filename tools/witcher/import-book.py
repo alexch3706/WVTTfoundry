@@ -259,6 +259,9 @@ def link_recipes():
         product = re.sub(r'\s*\(x\d+\)', '', data['productName'])
         k = key(product)
         match = index.get(k) or index.get(key(product + ' Enhancement')) or index.get(aliases.get(k,''))
+        # Core p.139 names enhancement products like the p.130 components.
+        if data.get('page') == 139:
+            match = index.get(key(product + ' Enhancement')) or match
         if match:
             pack, target = match; data['productUuid'] = f'Compendium.{SYSTEM}.{pack}.Item.{target["_id"]}'
         else: unresolved.append({'diagram': item['name'], 'product': product})

@@ -1,6 +1,6 @@
 import { SYSTEM_ID } from './config.js';
 import { RuleError, beats } from './rules.js';
-import { suppressed } from './monster-rules.js';
+import { suppressed, immuneTo } from './monster-rules.js';
 import {
   owner,
   serial,
@@ -135,6 +135,10 @@ export async function useCreatureAbility(actor, item) {
       const roll = await check(actor.skillBase('spellCasting', { modifier: plan.modifier }).total);
       await chat(actor, name, checkHTML(roll), { rolls: roll.rolls });
       for (const target of targets) {
+        if (immuneTo(target.system, 'hypnosis')) {
+          await chat(target, 'Resist Hypnosis', '<p>Cat prevents hypnosis.</p>');
+          continue;
+        }
         const defense = await check(target.skillBase('resistMagic').total);
         await chat(target, 'Resist Hypnosis', checkHTML(defense), { rolls: defense.rolls });
         if (!beats(roll.total, defense.total)) continue;

@@ -153,7 +153,19 @@ function persistenceFixture() {
     async update(changes) {
       for (const [key, value] of Object.entries(changes)) put(this._source, key, value);
     },
-    items: new Map([['weapon', { id: 'weapon', _source: { system: { reliability: 15 } } }]]),
+    items: new Map([
+      [
+        'weapon',
+        {
+          id: 'weapon',
+          type: 'weapon',
+          get system() {
+            return this._source.system;
+          },
+          _source: { system: { reliability: 15, attachments: [] } },
+        },
+      ],
+    ]),
     failItemWrite: false,
     async updateEmbeddedDocuments(type, changes) {
       for (const change of changes)

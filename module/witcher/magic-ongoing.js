@@ -1,3 +1,4 @@
+import { magicDefenseTotal } from './magic-focus-rules.js';
 /** Authoritative continuing spell procedures. Native events are inputs, never player declarations. */
 import { SYSTEM_ID } from './config.js';
 import { RuleError } from './rules.js';
@@ -496,6 +497,7 @@ async function sourceContext(store, effect, event, context) {
     effectId: effect.id,
     castId: effect.magic.castId,
     castTotal: effect.magic.castingTotal ?? effect.magic.castTotal,
+    focus: copy(effect.magic.focus ?? effect.magic.initialCast?.focus ?? null),
     sourceMagic: magicInfo(effect.magic.key) ?? context.sourceMagic,
     sourceMetadata: copy(effect.magic),
     sourceEffect: copy(effect),
@@ -785,6 +787,7 @@ export function ongoingEffectData(operations, context = {}) {
       castId: context.castId,
       casterUuid: context.caster.uuid,
       castingTotal: context.castTotal,
+      focus: copy(context.focus ?? context.initialCast?.focus ?? null),
       createdAt: now,
       duration: copy(context.duration ?? {}),
       point: copy(context.point),
@@ -930,7 +933,7 @@ async function saveProcedure(pending, effect, actor, values, context, tx) {
         castId: `${context.castId}:${pending.id}:opposition`,
       });
       if (castingCheck?.rollback) await tx.receive(castingCheck);
-      dc = finite(castingCheck?.total, 'Opposed Spell Casting total');
+      dc = magicDefenseTotal(context, finite(castingCheck?.total, 'Opposed Spell Casting total'));
     } else dc = finite(pending.dc, 'Resistance DC');
     const check = await callback(context, 'rollCheck')(actor, {
       skill,
@@ -953,7 +956,14 @@ async function saveProcedure(pending, effect, actor, values, context, tx) {
     if (check.fumbleMessageUuid)
       return {
         deferred: true,
-        resolvedCheck: { total, dc, success, defense, fumbleMessageUuid: check.fumbleMessageUuid },
+        resolvedCheck: {
+          total,
+          dc,
+          success,
+          defense,
+          castingTotal: castingCheck?.total ?? context.castTotal,
+          fumbleMessageUuid: check.fumbleMessageUuid,
+        },
         summary: 'Resolve the defensive fumble, then use this card again to finish the saved defense.',
       };
   }
@@ -965,7 +975,10 @@ async function saveProcedure(pending, effect, actor, values, context, tx) {
         ...context,
         defense,
         pendingId: pending.id,
-        castTotal: pending.versus === 'newSpellCasting' ? dc : context.castTotal,
+        castTotal:
+          pending.versus === 'newSpellCasting'
+            ? (castingCheck?.total ?? pending.resolvedCheck?.castingTotal ?? context.castTotal)
+            : context.castTotal,
       },
       tx
     );

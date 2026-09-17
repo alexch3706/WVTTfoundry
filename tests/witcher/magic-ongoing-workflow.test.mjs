@@ -5,6 +5,13 @@ import { SYSTEM_ID } from '../../module/witcher/config.js';
 import { magicInfo, magicItemData } from '../../module/witcher/magic-catalog.js';
 import { runCommand } from '../../module/witcher/authority.js';
 import { installMagicOngoing, triggerMagicOngoing } from '../../module/witcher/magic-ongoing.js';
+import { readFileSync } from 'node:fs';
+import {
+  installStonePlan,
+  makeAttachment,
+  rebuildEnhancementUpdate,
+  extraSlotUpdate,
+} from '../../module/witcher/enhancements.js';
 let executeBasicSpell, executeContinuingAttack;
 
 async function setup(t) {
@@ -777,7 +784,7 @@ async function restraintWorld(w) {
   restraints.registerMagicRestraints();
   return restraints;
 }
-async function castBookMagic(w, key, { power, accept = true } = {}) {
+async function castBookMagic(w, key, { power, accept = true, values = {} } = {}) {
   const { turnIdentity } = await import('../../module/witcher/runtime.js');
   const [item] = await w.attacker.createEmbeddedDocuments('Item', [magicItemData(key)]);
   const self = magicInfo(key).range.targeting === 'self';
@@ -788,7 +795,7 @@ async function castBookMagic(w, key, { power, accept = true } = {}) {
     turn: turnIdentity(),
     tokenUuid: w.source.uuid,
     targetUuids: self ? [] : [w.targetToken.uuid],
-    values: { power: power ?? magicInfo(key).cost.min, manualDice: '5' },
+    values: { power: power ?? magicInfo(key).cost.min, manualDice: '5', ...values },
   });
   const row = message.flags[SYSTEM_ID].targets[0];
   if (accept && !self)
@@ -1231,4 +1238,201 @@ test('a player can submit either agreed Dormyn area convention, while absent or 
   await assert.rejects(validateMagicChoices(magic, {}, context), /Complete the spell choices/);
   await assert.rejects(validateMagicChoices(magic, { followCaster: 'false' }, context), /true or false/);
   assert.match(magicChoiceFields(magic, w.attacker), /Table convention: fog follows caster/);
+});
+
+async function equipGreaterFocus(w) {
+  const focus = await w.importItem(w.attacker, 'Crystal Staff');
+  await runCommand('inventory', {
+    actorUuid: w.attacker.uuid,
+    itemId: focus.id,
+    patch: { equipped: true, handsUsed: 1 },
+  });
+  return focus;
+}
+
+test('actual focused Talfryn preserves its boosted escape DC after the staff is put away', async (t) => {
+  const w = await setup(t);
+  await restraintWorld(w);
+  const focus = await equipGreaterFocus(w);
+  const cast = await castBookMagic(w, 'talfryns-prison', { values: { focusId: focus.id } });
+  await cast.apply();
+  const roots = [...game.actors].find((actor) => actor.flags[SYSTEM_ID]?.magicRestraint);
+  assert.equal(roots.flags[SYSTEM_ID].magicRestraint.castingTotal, 15);
+  assert.equal(roots.flags[SYSTEM_ID].magicRestraint.defenseDC, 17);
+  await focus.update({ 'system.equipped': false });
+  const tie = 17 - w.target.skillBase('dodge').total;
+  assert(tie >= 2 && tie <= 9);
+  await runCommand('magicRestraintEscape', { rootsUuid: roots.uuid, manualDice: String(tie) });
+  assert(w.target.system.conditions.includes('grappled'), 'tied 17 must not escape');
+  await runCommand('magicRestraintEscape', {
+    rootsUuid: roots.uuid,
+    manualDice: tie === 9 ? '10, 2' : String(tie + 1),
+  });
+  assert.equal(w.target.system.conditions.includes('grappled'), false);
+});
+
+test('actual focused Cursed Illness uses boosted Endurance DC and its strict comparison while Stunned', async (t) => {
+  const w = await setup(t);
+  const focus = await equipGreaterFocus(w);
+  const { registerMagicRecovery } = await import('../../module/witcher/magic-recovery.js');
+  registerMagicRecovery();
+  await w.attacker.update({ 'system.magic.tradition': 'druid' });
+  const cast = await castBookMagic(w, 'cursed-illness', { power: 4, values: { focusId: focus.id } });
+  await cast.apply();
+  const effect = w.target.system.effects.find((effect) => effect.magic?.ongoing?.managed);
+  assert.equal(effect.magic.castingTotal, 15);
+  assert.equal(effect.magic.operations[0].rule.dc, 17);
+  await focus.update({ 'system.equipped': false });
+  await runCommand('magicRecoveryRequest', { actorUuid: w.target.uuid, effectId: effect.id });
+  await w.saves(w.target, { manualDice: '7' });
+  assert(w.target.system.conditions.includes('stunned'));
+  await runCommand('magicRecoveryRequest', { actorUuid: w.target.uuid, effectId: effect.id });
+  await w.saves(w.target, { manualDice: '8' });
+  assert.equal(w.target.system.conditions.includes('stunned'), false);
+});
+
+for (const fresh of [false, true]) {
+  test(`continuing spell defenses retain original Greater Focus with ${fresh ? 'a fresh' : 'the saved'} casting check`, async (t) => {
+    const w = await setup(t);
+    const focus = await equipGreaterFocus(w);
+    const cast = await castBookMagic(w, 'aenye', { values: { focusId: focus.id } });
+    const initial = cast.message.flags[SYSTEM_ID];
+    await focus.update({ 'system.equipped': false });
+    const result = await executeContinuingAttack([w.operation], {
+      ...w.context,
+      initialCast: initial,
+      castTotal: initial.check.total,
+      values: { manualDice: '6' },
+      actionRule: fresh ? { newCastingCheckEachAttack: true } : {},
+    });
+    const attack = w.docs.get(result.receipt.attackMessageUuid);
+    const total = fresh ? 16 : 15;
+    assert.equal(attack.flags[SYSTEM_ID].check.total, total);
+    const pending = Object.values(
+      w.target.system.effects.find((effect) => effect.magic?.ongoing?.managed).magic.ongoing.pending
+    )[0];
+    assert.equal(pending.dc, total + 2);
+    assert.equal(pending.comparison, 'atLeast');
+    await w.saves(w.target, {
+      skill: 'dodge',
+      manualDice: String(total + 2 - w.target.skillBase('dodge').total),
+    });
+    assert.equal(w.damageCards().length, 0, 'a tied boosted DC defends');
+  });
+}
+
+async function completedCastingEnhancement(w, { glyphName, wordKey, focus } = {}) {
+  // Installation is covered end to end in enhancement and magic workflow tests.
+  // Here real embedded equipment starts with a completed, source-tracked inscription.
+  if (glyphName) {
+    const armor = await w.importItem(w.attacker, 'Nilfgaardian Helm');
+    const catalog = JSON.parse(
+      readFileSync(new URL('../../data/witcher/witcher-gear.json', import.meta.url))
+    );
+    const [stone] = await w.attacker.createEmbeddedDocuments('Item', [
+      catalog.find((item) => item.name === glyphName),
+    ]);
+    const plan = installStonePlan(armor, stone, {
+      id: 'saved-glyph',
+      mode: 'ordinary',
+      stoneWeight: 'consumed',
+    });
+    await w.attacker.updateEmbeddedDocuments('Item', [plan.update, plan.sourceUpdate]);
+    await runCommand('inventory', {
+      actorUuid: w.attacker.uuid,
+      itemId: armor.id,
+      patch: { equipped: true },
+    });
+    return { armor, choice: { itemId: armor.id, attachmentId: 'saved-glyph', mode: 'dc' } };
+  }
+  if (wordKey === 'depletion') await focus.update(extraSlotUpdate(focus));
+  const catalog = JSON.parse(
+    readFileSync(new URL('../../data/witcher/tome-enhancements.json', import.meta.url))
+  );
+  const word = catalog.find(
+    (item) => item.type === 'enhancement' && item.flags?.[SYSTEM_ID]?.enhancement?.key === wordKey
+  );
+  await focus.update(rebuildEnhancementUpdate(focus, [makeAttachment(word, { id: 'saved-word', now: 0 })]));
+}
+
+for (const fresh of [false, true]) {
+  test(`actual worn glyph DC is retained by continuing defenses with ${fresh ? 'fresh' : 'saved'} casting checks`, async (t) => {
+    const w = await setup(t),
+      focus = await equipGreaterFocus(w),
+      glyph = await completedCastingEnhancement(w, { glyphName: 'Glyph of Fire' });
+    const cast = await castBookMagic(w, 'aenye', { values: { focusId: focus.id, glyphs: [glyph.choice] } });
+    const initial = cast.message.flags[SYSTEM_ID];
+    await glyph.armor.update({ 'system.equipped': false });
+    await focus.update({ 'system.equipped': false });
+    await w.target.update({ 'system.stats.ref': 8 });
+    const result = await executeContinuingAttack([w.operation], {
+      ...w.context,
+      castId: initial.castId,
+      initialCast: initial,
+      castTotal: initial.check.total,
+      values: { manualDice: '6' },
+      actionRule: fresh ? { newCastingCheckEachAttack: true } : {},
+    });
+    const attack = w.docs.get(result.receipt.attackMessageUuid),
+      raw = fresh ? 16 : 15;
+    assert.equal(attack.flags[SYSTEM_ID].check.total, raw);
+    assert.match(attack.content, /\+3 elemental glyph/);
+    const pending = Object.values(
+      w.target.system.effects.find((effect) => effect.magic?.ongoing?.managed).magic.ongoing.pending
+    )[0];
+    assert.equal(pending.dc, raw + 5);
+    const tie = pending.dc - w.target.skillBase('dodge').total;
+    assert(tie >= 2 && tie <= 9);
+    await w.saves(w.target, { skill: 'dodge', manualDice: String(tie) });
+    assert.equal(w.damageCards().length, 0, 'a tied saved glyph DC successfully defends');
+  });
+}
+
+test('actual glyph-boosted Cursed Illness keeps its strict recovery DC after removing the armor', async (t) => {
+  const w = await setup(t),
+    focus = await equipGreaterFocus(w),
+    glyph = await completedCastingEnhancement(w, { glyphName: 'Glyph of Magic' });
+  const { registerMagicRecovery } = await import('../../module/witcher/magic-recovery.js');
+  registerMagicRecovery();
+  await w.attacker.update({ 'system.magic.tradition': 'druid' });
+  const cast = await castBookMagic(w, 'cursed-illness', {
+    power: 4,
+    values: { focusId: focus.id, glyphs: [glyph.choice], manualDice: '4' },
+  });
+  await cast.apply();
+  const effect = w.target.system.effects.find((effect) => effect.magic?.ongoing?.managed);
+  assert.equal(effect.magic.castingTotal, 14);
+  assert.equal(effect.magic.operations[0].rule.dc, 19);
+  await glyph.armor.update({ 'system.equipped': false });
+  await runCommand('magicRecoveryRequest', { actorUuid: w.target.uuid, effectId: effect.id });
+  await w.saves(w.target, { manualDice: '9' });
+  assert(w.target.system.conditions.includes('stunned'), 'tied19 cannot recover');
+  await runCommand('magicRecoveryRequest', { actorUuid: w.target.uuid, effectId: effect.id });
+  await w.saves(w.target, { manualDice: '10, 1' });
+  assert.equal(w.target.system.conditions.includes('stunned'), false);
+});
+
+test('Depletion never triggers on a periodic effect without a defense; actual later failed defenses deplete only once per original cast and target', async (t) => {
+  const w = await setup(t),
+    focus = await equipGreaterFocus(w);
+  await completedCastingEnhancement(w, { wordKey: 'depletion', focus });
+  const cast = await castBookMagic(w, 'aenye', { values: { focusId: focus.id } });
+  const initial = cast.message.flags[SYSTEM_ID],
+    context = { ...w.context, castId: initial.castId, initialCast: initial, castTotal: initial.check.total };
+  const { executeContinuingOperations } = await import('../../module/witcher/magic-ongoing-runtime.js');
+  w.enqueue(['2d6', 8]);
+  await executeContinuingOperations([w.operation], context);
+  assert.equal(w.target.system.sta.value, 25, 'no defense took place during this periodic operation');
+  await executeContinuingAttack([w.operation], { ...context, pending: { id: 'actual-failed-defense' } });
+  w.enqueue(['2d6', 8], ['1d6', 4]);
+  await w.saves(w.target, { skill: 'dodge', manualDice: '4' });
+  assert.equal(w.target.system.sta.value, 21);
+  await executeContinuingAttack([w.operation], { ...context, pending: { id: 'second-failed-defense' } });
+  w.enqueue(['2d6', 8]);
+  await w.saves(w.target, { skill: 'dodge', manualDice: '4' });
+  assert.equal(
+    w.target.system.sta.value,
+    21,
+    'the same original casting cannot apply Depletion twice to one target'
+  );
 });

@@ -1,6 +1,6 @@
 {
   "name": "witcher-rilerena",
-  "version": "0.1.0-alpha.6",
+  "version": "0.1.0-alpha.7",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,9 @@
     "build:packs": "node tools/witcher/build-packs.mjs",
     "validate": "node tools/witcher/validate.mjs",
     "build:release": "node tools/witcher/build-release.mjs",
-    "build:magic": "node tools/witcher/build-magic.mjs && node tools/witcher/build-magic-gear.mjs"
+    "build:magic": "node tools/witcher/build-magic.mjs && node tools/witcher/build-magic-gear.mjs",
+    "build:alchemy": "node tools/witcher/build-alchemy.mjs",
+    "build:enhancements": "node tools/witcher/build-enhancements.mjs"
   },
   "devDependencies": {
     "@foundryvtt/foundryvtt-cli": "3.0.4",

@@ -1,3 +1,4 @@
+import { magicDefenseBonus } from './magic-focus-rules.js';
 /** Effect execution is separate from book metadata: only completed procedures are enabled. */
 import { RuleError, hitLocations } from './rules.js';
 import { magicInfo } from './magic-catalog.js';
@@ -6,6 +7,8 @@ import { SYSTEM_ID } from './config.js';
 import { addMagicEffect, magicVigor } from './magic-state.js';
 import { immuneTo } from './monster-rules.js';
 import { dice, commitActor, chat, escapeHTML as e } from './runtime.js';
+import { depletionChanges } from './magic-enhancements.js';
+import { actorEnhancementBenefits } from './enhancements.js';
 import {
   magicRecoveryRules,
   unconditionalMagicModifiers,
@@ -34,8 +37,9 @@ export async function resolvedSpellPlan(data, { caster, target, row, preview = f
   const values = {
     power: data.power,
     castTotal: data.check.total,
+    defenseBonus: magicDefenseBonus(data),
     choices: data.choices ?? {},
-    rolls: {},
+    rolls: data.focus?.prolongationDuration ? { duration: data.focus.prolongationDuration } : {},
     defenseTotal: row?.defense?.check?.total ?? 0,
     defenseFumbled: row?.defense?.check?.fumble > 0 ? 1 : 0,
     spellCastingRank: caster.system.skills.spellCasting,
@@ -298,6 +302,7 @@ export async function executeBasicSpell({
           target: actor,
           castId: data.castId,
           castTotal: data.check.total,
+          focus: copy(data.focus ?? null),
           sourceMagic: data.magic,
           duration: operation.duration,
           scene: sourceToken.parent,
@@ -377,6 +382,8 @@ export async function executeBasicSpell({
             spell: true,
             castingRules: data.castingRules,
           }).chance;
+          if (hit.condition === 'bleeding' && hit.chance !== undefined)
+            chance = Math.max(0, chance - actorEnhancementBenefits(actor.items).bleedingReduction);
           if (hit.condition === 'fire') {
             if ((hit.chance ?? 100) > 0 && data.ley?.ignitionChance === 100) chance = 100;
             chance = magicIgnitionChance(entry.state, chance, { separateAttack: true }).chance;
@@ -402,6 +409,8 @@ export async function executeBasicSpell({
           spell: true,
           castingRules: data.castingRules,
         }).chance;
+        if (condition === 'bleeding')
+          chance = Math.max(0, chance - actorEnhancementBenefits(actor.items).bleedingReduction);
         if (condition === 'fire') {
           if ((operation.chance ?? 100) > 0 && data.ley?.ignitionChance === 100) chance = 100;
           chance = magicIgnitionChance(entry.state, chance, { separateAttack: true }).chance;
@@ -516,6 +525,7 @@ export async function executeBasicSpell({
         }
       }
     }
+    rolls.push(...(await depletionChanges(target, data, row, rootPlan.changes)));
     const entries = [...plans.values()];
     const commit = async (index) =>
       index === entries.length

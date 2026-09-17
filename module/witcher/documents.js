@@ -11,6 +11,7 @@ import {
   beats,
 } from './rules.js';
 import { immuneTo } from './monster-rules.js';
+import { activeAlchemy, lastHopeLocked } from './alchemy-rules.js';
 import { woundModifiers, WOUNDS } from './wounds.js';
 import { advanceWoundDays, woundCheckModifier, recoveryClockChanged } from './wound-rules.js';
 import { commitActor, check, checkHTML, chat } from './runtime.js';
@@ -61,6 +62,10 @@ export class WitcherActorData extends foundry.abstract.TypeDataModel {
       source: str(),
       page: num(),
       category: str('humanoid'),
+      social: new f.SchemaField({
+        relationships: new f.ArrayField(new f.ObjectField()),
+        reputationEffects: new f.ArrayField(new f.ObjectField()),
+      }),
       vigor: num(),
       magic: new f.SchemaField({
         tradition: str(),
@@ -199,6 +204,7 @@ export class WitcherItemData extends foundry.abstract.TypeDataModel {
       cost: num(0, { min: 0 }),
       carried: bool(true),
       equipped: bool(),
+      focusUse: str(),
       category: str(),
       availability: str(),
       concealment: str(),
@@ -486,8 +492,8 @@ export class WitcherActor extends Actor {
     bonus += Number(magicModifierSummary(this.system, context).modifiers[key] ?? 0) + magical.bonus;
     if (key === 'awareness') {
       const light = this.system.environment.light;
-      const cat = this.system.effects.some((x) => x.key === 'Cat');
-      if (!cat)
+      const cat = !!activeAlchemy(this.system, 'cat');
+      if (!cat || light === 'bright')
         bonus +=
           light === 'bright'
             ? -3
@@ -501,10 +507,11 @@ export class WitcherActor extends Actor {
       if (
         this.system.environment.underwater &&
         !this.system.traits.amphibious &&
-        !this.system.effects.some((x) => x.key === 'Killer Whale')
+        !activeAlchemy(this.system, 'killer-whale')
       )
         bonus -= 3;
     }
+    if (context.seeThroughIllusion && activeAlchemy(this.system, 'cat')) bonus += 2;
     for (const item of this.items) {
       if (item.system.equipped)
         for (const b of item.system.skillBonuses ?? []) if (b.skill === key && !b.condition) bonus += b.value;
@@ -600,7 +607,11 @@ export class WitcherActor extends Actor {
     const updates = [];
     const recoveryState = actorSnapshot(this);
     for (const w of this.items.filter(
-      (i) => i.type === 'wound' && i.system.wound.treatment === 'treated' && !i.system.wound.permanent
+      (i) =>
+        i.type === 'wound' &&
+        i.system.wound.treatment === 'treated' &&
+        !i.system.wound.permanent &&
+        !lastHopeLocked(i)
     )) {
       const patch = recoveryClockChanged(w.system.wound, recoveryState, recoveryState.items)
         ? { recoveryPending: true }

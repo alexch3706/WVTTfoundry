@@ -4,6 +4,20 @@ import { requestMagicRecovery } from './magic-recovery.js';
 import { trophyRulesFor } from './magic-trophies.js';
 import { magicGearDisplay, magicGearAction } from './magic-gear.js';
 import { useRitualArtifact } from './magic-ritual-effects.js';
+import { adrenalineEnabled, adrenalineState, spendAdrenalineHP } from './adrenaline.js';
+import { activeAlchemy, alchemyKey } from './alchemy-rules.js';
+import { blackBloodIngestion } from './alchemy-events.js';
+import { endAlchemyEffect } from './alchemy-runtime.js';
+import { socialActorDisplay, startSocialCombat, openSocialEncounter } from './social-ui.js';
+import {
+  removeEnhancementAction,
+  finishEnhancementWork,
+  masterCraftAction,
+  reconcileEnhancementsAction,
+} from './enhancement-runtime.js';
+import { activateShining } from './enhancements-light.js';
+import { enhancementBenefits } from './enhancements.js';
+import { openAlchemyExertion } from './alchemy-exertion.js';
 import {
   SYSTEM_ID,
   STATS,
@@ -22,7 +36,7 @@ import { magicActorDisplay, magicItemDisplay, castMagic, applyUIaction } from '.
 import { actorSnapshot, itemSnapshot } from './documents.js';
 import { attack } from './combat.js';
 import { skillRoll, input, prompt, escapeHTML as e, errorNotice, serial, turnIdentity } from './runtime.js';
-import { setInventory, handsUsed } from './inventory.js';
+import { setInventory, handsUsed, focusUse, isMagicalFocus, planInventoryChange } from './inventory.js';
 import { runCommand } from './authority.js';
 import { prepareActorSheetRenderOptions } from '../actor/actor-sheet-render.js';
 import { renderFoundryTemplate } from '../foundry-compat.js';
@@ -86,6 +100,15 @@ function inventoryRow(item, actor) {
     type: item.type,
     system: s,
     isArmor: item.type === 'armor',
+    hasAttachments: !!s.attachments?.length,
+    attachmentNames: (s.attachments ?? []).map((attachment) => attachment.name).join(', '),
+    canMasterCraft:
+      !natural &&
+      ['weapon', 'armor', 'shield'].includes(item.type) &&
+      actor.system.professionRanks.masterCrafting > 0,
+    canReconcile:
+      game.user.isGM && !!s.attachments?.length && item.flags?.[SYSTEM_ID]?.enhancementState?.version !== 1,
+    canShine: s.equipped && enhancementBenefits(item).words.includes('shining'),
     armorLocations: armorLocationRows(item, actor?.system.locationTable),
     totalWeight: Number((s.weight * s.quantity).toFixed(2)),
     isWeapon: weapon,
@@ -99,6 +122,12 @@ function inventoryRow(item, actor) {
     canEquip: !natural && ['weapon', 'shield', 'armor', 'gear'].includes(item.type),
     canRepair: !natural && ['weapon', 'shield', 'armor'].includes(item.type),
     showGrip: weapon && !natural && s.equipped,
+    showFocusUse: item.type === 'gear' && isMagicalFocus(item),
+    focusChoices: ['held', 'worn'].map((value) => ({
+      value,
+      label: value === 'held' ? 'Held · uses a hand' : 'Worn · hands free',
+      selectedAttribute: focusUse(item) === value ? 'selected' : '',
+    })),
     grip: handsUsed(item),
     gripChoices: gripChoices.map((choice) => ({
       ...choice,
@@ -149,17 +178,13 @@ function inventoryRow(item, actor) {
 }
 
 async function changeInventory(actor, item, patch) {
-  const drawing =
-      ['weapon', 'shield'].includes(item.type) &&
-      !item.system.properties.natural &&
-      patch.equipped &&
-      !item.system.equipped,
+  const drawing = planInventoryChange(actor.system, item.id, patch, [...actor.items]).drawsWeapon,
     budget = combatBudget(actor);
   let action = {};
   if (drawing && budget.active && (budget.actions > 0 || budget.remaining > 0)) {
     action = await prompt(
       `Draw ${item.name}`,
-      '<p>Drawing a weapon uses an action.</p>' +
+      '<p>Readying this item in your hand uses an action.</p>' +
         input('extra', `Use the extra action (${actor.system.traits.infiniteStamina ? 0 : 3} STA)`, {
           type: 'checkbox',
           checked: budget.actions > 0,
@@ -235,12 +260,28 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
               : '',
       }));
     data.hasBestiary = !!s.source || data.creatureAbilities.length > 0;
+    data.adrenaline = { enabled: adrenalineEnabled(), ...adrenalineState(actor) };
+    data.blackBlood = game.user.isGM && !!activeAlchemy(s, 'black-blood');
+    data.social = socialActorDisplay(actor);
+    data.enhancementWork = actor.flags?.[SYSTEM_ID]?.enhancementWork;
     data.inWeb = s.effects.some((x) => x.key === 'Webbing');
     data.effectRows = s.effects
       .filter((effect) => !effect.magic)
       .map((x) => ({
         id: x.id,
         name: x.key,
+        details: [
+          x.potion ? `Toxicity ${x.toxicity || 0}%` : '',
+          x.alchemy?.armorBonus ? `+${x.alchemy.armorBonus} SP` : '',
+          x.alchemy?.wyvernBonus ? `Next strike +${x.alchemy.wyvernBonus} damage` : '',
+          x.alchemy?.kills ? `${x.alchemy.kills} kills; +${x.alchemy.kills * 2} HP/round` : '',
+          x.temporaryHp > 0 ? `${x.temporaryHp} temporary HP remaining` : '',
+          alchemyKey(x) === 'maribor-forest' && !adrenalineEnabled()
+            ? 'Requires optional Adrenaline rule'
+            : '',
+        ]
+          .filter(Boolean)
+          .join(' · '),
         expires: x.expires
           ? Math.max(0, Math.ceil((x.expires - game.time.worldTime) / 3)) + ' rounds'
           : x.untilTurn
@@ -269,7 +310,7 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
     }));
     data.identity =
       pathInput('system.race', 'Race', s.race, {
-        options: optionsMap(['human', 'elf', 'dwarf', 'witcher', 'other']),
+        options: optionsMap(['human', 'elf', 'dwarf', 'halfling', 'witcher', 'other']),
       }) +
       pathInput('system.profession', 'Profession', s.profession, { type: 'text' }) +
       pathInput('system.age', 'Age', s.age) +
@@ -389,7 +430,12 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
       el.addEventListener('change', (event) => {
         event.stopPropagation();
         const item = this.actor.items.get(el.dataset.itemId);
-        const value = el.type === 'checkbox' ? el.checked : Number(el.value);
+        const value =
+          el.type === 'checkbox'
+            ? el.checked
+            : el.dataset.itemField === 'focusUse'
+              ? el.value
+              : Number(el.value);
         if (!item?.isOwner) return;
         el.disabled = true;
         changeInventory(this.actor, item, { [el.dataset.itemField]: value })
@@ -407,6 +453,17 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
     if (action === 'attack') return attack(actor, item, { style });
     if (action === 'equip') return changeInventory(actor, item, { equipped: !item.system.equipped });
     if (action === 'unarmed') return attack(actor, null, { action: key });
+    if (action === 'adrenalineHP') return spendAdrenalineHP(actor);
+    if (action === 'blackBlood') return blackBloodIngestion(actor);
+    if (action === 'socialStart') return startSocialCombat(actor);
+    if (action === 'socialOpen') return openSocialEncounter(await foundry.utils.fromUuid(key));
+    if (action === 'enhancementFinish') return finishEnhancementWork(actor);
+    if (action === 'enhancementCancel') return finishEnhancementWork(actor, { cancel: true });
+    if (action === 'enhancementRemove') return removeEnhancementAction(actor, item);
+    if (action === 'masterCraft') return masterCraftAction(actor, item);
+    if (action === 'enhancementReconcile') return reconcileEnhancementsAction(actor, item);
+    if (action === 'shine') return activateShining(actor, item);
+    if (action === 'exertion') return openAlchemyExertion(actor, key);
     if (action === 'item') return item?.sheet.render(true);
     if (action === 'wound') return woundAction(actor, item, key);
     if (action === 'magicLearning') return magicLearningAction(actor, key, effectId);
@@ -453,8 +510,11 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
     if (action === 'ability') return useCreatureAbility(actor, item);
     if (action === 'loot') return rollCreatureLoot(actor);
     if (action === 'escapeWeb') return escapeWeb(actor);
-    if (action === 'endEffect')
+    if (action === 'endEffect') {
+      const effect = actor.system.effects.find((entry) => entry.id === key);
+      if (alchemyKey(effect)) return endAlchemyEffect(actor, key);
       return actor.update({ 'system.effects': actor.system.effects.filter((x) => x.id !== key) });
+    }
     if (action === 'rest') {
       const restHexes = actor.system.effects.filter(
         (effect) => effect.magic?.kind === 'hex' && !effect.magic.suppressed && !effect.disabled
@@ -730,7 +790,17 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
         )
         .join('');
     }
-    if (item.type === 'gear') fields.push(checkbox('isAmmo'), str('ammoCategory'));
+    if (item.type === 'gear') {
+      fields.push(checkbox('isAmmo'), str('ammoCategory'));
+      if (isMagicalFocus(item))
+        fields.push(
+          str('focusUse', 'Use focus accessory', {
+            '': 'Printed/default usage',
+            held: 'Held · uses a hand',
+            worn: 'Worn · no ordinary focus discount',
+          })
+        );
+    }
     if (item.type === 'component')
       fields.push(
         str('substance'),
@@ -856,7 +926,7 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
           .filter(Boolean);
     if (this.item.actor && data.system) {
       const patch = {};
-      for (const key of ['quantity', 'carried', 'equipped', 'handsUsed']) {
+      for (const key of ['quantity', 'carried', 'equipped', 'handsUsed', 'focusUse']) {
         if (!Object.hasOwn(data.system, key)) continue;
         const value = ['quantity', 'handsUsed'].includes(key) ? Number(data.system[key]) : data.system[key];
         if (value !== this.item.system[key]) patch[key] = value;

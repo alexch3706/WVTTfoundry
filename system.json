@@ -2,7 +2,7 @@
   "id": "witcher-rilerena",
   "title": "The Witcher TTRPG \u2014 Rilerena",
   "description": "Witcher TTRPG for Foundry V14: character, NPC and monster sheets, location combat, equipment, critical injuries and an initial Core/Tome magic implementation. See the support guide for available magic and remaining references.",
-  "version": "0.1.0-alpha.6",
+  "version": "0.1.0-alpha.7",
   "compatibility": {
     "minimum": "14",
     "maximum": "14"
@@ -12,12 +12,8 @@
       "name": "alexch3706"
     }
   ],
-  "esmodules": [
-    "module/witcher/main.js"
-  ],
-  "styles": [
-    "css/witcher.css"
-  ],
+  "esmodules": ["module/witcher/main.js"],
+  "styles": ["css/witcher.css"],
   "documentTypes": {
     "RegionBehavior": {
       "witcher-rilerena.magicArea": {},
@@ -243,6 +239,28 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "tome-alchemy",
+      "label": "Alchemy — Tome of Chaos",
+      "path": "packs/witcher/tome-alchemy",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "tome-enhancements",
+      "label": "Runes, Glyphs and Enchantments — Tome of Chaos",
+      "path": "packs/witcher/tome-enhancements",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "grid": {
@@ -254,6 +272,6 @@
   "primaryTokenAttribute": "hp",
   "secondaryTokenAttribute": "sta",
   "url": "https://github.com/alexch3706/WVTTfoundry",
-  "manifest": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.6/system.json",
-  "download": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.6/witcher-rilerena.zip"
+  "manifest": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.7/system.json",
+  "download": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.7/witcher-rilerena.zip"
 }

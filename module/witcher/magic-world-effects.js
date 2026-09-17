@@ -1,6 +1,7 @@
 import { SYSTEM_ID, STATS, SKILLS } from './config.js';
 import { RuleError } from './rules.js';
 import { MAGIC_CREATURE_PROFILES, magicCreatureProfile } from './magic-creature-profiles.js';
+import { enhancementBenefits } from './enhancements.js';
 
 const clone = (value) => structuredClone(value);
 const source = (document) =>
@@ -836,7 +837,13 @@ async function itemOperation(operation, context, tx) {
             Number(protection[location] ?? equipment.system.stoppingPower) - amount
           );
         patch['system.sp'] = protection;
-      } else patch['system.reliability'] = Math.max(0, equipment.system.reliability - amount);
+      } else {
+        const threshold = enhancementBenefits(equipment).chemobogThreshold;
+        const protectedREL = amount > 0 && threshold <= 6 && (await rollAmount(context, '1d6')) >= threshold;
+        patch['system.reliability'] = protectedREL
+          ? equipment.system.reliability
+          : Math.max(0, equipment.system.reliability - amount);
+      }
       await tx.update(equipment, patch);
     }
   } else if (operation.action === 'transmute') {

@@ -7,6 +7,7 @@ import { addMagicEffect, removeMagicEffects } from './magic-state.js';
 import { magicRecoveryRules } from './magic-effect-hooks.js';
 import { chat, commitActor, escapeHTML as e } from './runtime.js';
 import { SYSTEM_ID } from './config.js';
+import { lastHopeLocked } from './alchemy-rules.js';
 
 const clone = (value) => foundry.utils.deepClone(value);
 const woundData = (item) => item.system.wound.toObject?.() ?? item.system.wound;
@@ -64,6 +65,10 @@ export async function preflightExtraHealing(data, { caster, target }) {
     return plan;
   }
   const item = selectedWound(data, target);
+  if (lastHopeLocked(item))
+    throw new RuleError(
+      'Last Hope requires a Doctor’s Healing Hands reapplication and treatment before this critical wound can heal.'
+    );
   if (data.magicKey === 'blessing-of-healing') magicalWoundTreatment(target, item, data.check.total);
   else if (fullyRestored(woundData(item)))
     throw new RuleError('This wound has already healed completely and has no lingering penalty.');
@@ -163,6 +168,10 @@ export async function executeExtraHealing({
       'The one-day Healing Rest has begun. Recovery occurs only after the full day, while this invocation remains in effect.';
   } else {
     const item = selectedWound(data, target, { current: true });
+    if (lastHopeLocked(item))
+      throw new RuleError(
+        'Last Hope requires a Doctor’s Healing Hands reapplication and treatment before this critical wound can heal.'
+      );
     if (data.magicKey === 'blessing-of-healing') {
       const treatment = magicalWoundTreatment(target, item, data.check.total);
       Object.assign(changes, treatment.changes);
@@ -261,7 +270,10 @@ export async function healingRestCompletionPlan(actor, time) {
     ? actor.items
         .filter(
           (item) =>
-            item.type === 'wound' && item.system.wound.treatment === 'treated' && !item.system.wound.fatal
+            item.type === 'wound' &&
+            item.system.wound.treatment === 'treated' &&
+            !item.system.wound.fatal &&
+            !lastHopeLocked(item)
         )
         .map((item) => woundUpdate(item, healedFields()))
     : [];

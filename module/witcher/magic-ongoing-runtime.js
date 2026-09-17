@@ -1,3 +1,4 @@
+import { magicDefenseTotal } from './magic-focus-rules.js';
 import { SYSTEM_ID } from './config.js';
 import { RuleError } from './rules.js';
 import { registerCommand, runCommand } from './authority.js';
@@ -73,6 +74,7 @@ export async function createContinuingZone(
       operationIndex,
       operations: copy(operation.operations),
       castingTotal: data.check.total,
+      focus: copy(data.focus ?? null),
       duration: copy(duration),
       createdAt: game.time.worldTime,
       expires: seconds > 0 ? game.time.worldTime + seconds : 0,
@@ -186,6 +188,7 @@ async function executeContinuingTarget(operations, context) {
     power: original.power ?? magic.cost.min,
     resolved: resolvedMagic(magic, original.power ?? magic.cost.min),
     check: { total: castTotal, base: castTotal, dice: [], fumble: 0 },
+    focus: copy(context.focus ?? original.focus ?? null),
     staCost: original.staCost ?? magic.cost.min,
     choices: { ...(original.choices ?? {}), ...(context.choices ?? {}) },
     messageUuid: sourceMessage?.uuid,
@@ -260,6 +263,7 @@ export async function executeContinuingAttack(operations, context) {
       executionId,
       parentCastId: context.castId,
       check: savedCheck(attackCheck),
+      focus: copy(context.focus ?? context.initialCast?.focus ?? null),
       staCost: context.initialCast?.staCost ?? magic.cost.min,
       power: context.initialCast?.power ?? magic.cost.min,
       failed: attackCheck.spellSucceeds === false,
@@ -279,7 +283,7 @@ export async function executeContinuingAttack(operations, context) {
       caster,
       `${magic.name}: continuing attack`,
       checkHTML(attack.check) +
-        `<p>${attack.failed ? 'The magical attack failed.' : `The ${attackSkill || actionRule.newCastingCheckEachAttack || actionRule.newCastingCheck ? 'new' : 'original'} attack total is ${attack.check.total}. Each selected target must resolve its printed defense.`}</p>` +
+        `<p>${attack.failed ? 'The magical attack failed.' : `The ${attackSkill || actionRule.newCastingCheckEachAttack || actionRule.newCastingCheck ? 'new' : 'original'} attack check is ${attack.check.total}; defense DC ${magicDefenseTotal(attack)}${attack.focus?.defenseBonus ? ' (+2 Greater Focus)' : ''}${attack.focus?.glyphDC ? ` (+${attack.focus.glyphDC} elemental glyph)` : ''}. Each selected target must resolve its printed defense.`}</p>` +
         (!attack.failed
           ? '<button type="button" data-magic-action="counter">Dispel / Heliotrope</button>'
           : ''),
@@ -308,10 +312,11 @@ export async function executeContinuingAttack(operations, context) {
             ...(operation.save ?? {}),
             skill: [...new Set(defenses)],
             dc:
-              actionRule.useCastingTotal ??
-              (actionRule.newCastingCheckEachAttack || actionRule.newCastingCheck || attackSkill
-                ? attack.check.total
-                : (operation.save?.dc ?? attack.check.total)),
+              actionRule.useCastingTotal !== undefined
+                ? magicDefenseTotal(attack, actionRule.useCastingTotal)
+                : actionRule.newCastingCheckEachAttack || actionRule.newCastingCheck || attackSkill
+                  ? magicDefenseTotal(attack)
+                  : (operation.save?.dc ?? magicDefenseTotal(attack)),
             onSuccess: operation.save?.onSuccess ?? 'avoidAttack',
             comparison:
               actionRule.useCastingTotal !== undefined ||
@@ -346,6 +351,7 @@ export async function executeContinuingAttack(operations, context) {
           caster,
           castId: context.castId,
           castTotal: attack.check.total,
+          focus: copy(attack.focus),
           sourceMagic: magic,
           effectId: `attack:${executionId}:${actor.id}`,
           time: game.time.worldTime,

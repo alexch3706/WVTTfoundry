@@ -1,0 +1,1007 @@
+[
+  {
+    "_id": "67d444ad8a82a5eb",
+    "name": "Anabolic Steroids",
+    "type": "alchemical",
+    "img": "icons/svg/potion.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "category": "elixir",
+      "consumable": true,
+      "availability": "R",
+      "cost": 165,
+      "weight": 0.1,
+      "toxicity": 50,
+      "duration": 200,
+      "effectText": "For 10 minutes, maximum HP increases by 10 and Endurance and Physique checks gain +2. The drinker is also extremely aggressive toward everyone for 1 hour.",
+      "notes": "Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).",
+      "description": "<p>For 10 minutes, maximum HP increases by 10 and Endurance and Physique checks gain +2. The drinker is also extremely aggressive toward everyone for 1 hour.</p><p>Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).</p><p>Source: A Tome of Chaos v1.01, pp.115–116. Toxicity: 50%.</p>",
+      "properties": {},
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 0,
+          "row": 1
+        },
+        "alchemy": {
+          "key": "anabolic-steroids",
+          "kind": "elixir",
+          "durationKind": "timed",
+          "durationSeconds": 600,
+          "secondaryDurationSeconds": 3600
+        }
+      }
+    }
+  },
+  {
+    "_id": "27278d0cb7d01113",
+    "name": "Last Hope",
+    "type": "alchemical",
+    "img": "icons/svg/potion.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "category": "elixir",
+      "consumable": true,
+      "availability": "R",
+      "cost": 200,
+      "weight": 0.1,
+      "toxicity": 75,
+      "duration": 0,
+      "effectText": "Treat one existing critical wound. That wound cannot heal until a Doctor succeeds at Healing Hands DC24 to reopen it, then treats it again with Healing Hands.",
+      "notes": "Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).",
+      "description": "<p>Treat one existing critical wound. That wound cannot heal until a Doctor succeeds at Healing Hands DC24 to reopen it, then treats it again with Healing Hands.</p><p>Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).</p><p>Source: A Tome of Chaos v1.01, pp.115–116. Toxicity: 75%.</p>",
+      "properties": {},
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 0,
+          "row": 2
+        },
+        "alchemy": {
+          "key": "last-hope",
+          "kind": "elixir",
+          "durationKind": "until-doctor-reopens-and-treats",
+          "durationSeconds": 0
+        }
+      }
+    }
+  },
+  {
+    "_id": "01b31881bcb0ae93",
+    "name": "Lightning",
+    "type": "alchemical",
+    "img": "icons/svg/potion.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "category": "elixir",
+      "consumable": true,
+      "availability": "R",
+      "cost": 75,
+      "weight": 0.1,
+      "toxicity": 75,
+      "duration": 0,
+      "effectText": "Add 3 damage to the drinker’s next physical attack. The entry does not state a time limit.",
+      "notes": "Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).",
+      "description": "<p>Add 3 damage to the drinker’s next physical attack. The entry does not state a time limit.</p><p>Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).</p><p>Source: A Tome of Chaos v1.01, pp.115–116. Toxicity: 75%.</p>",
+      "properties": {},
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 0,
+          "row": 3
+        },
+        "alchemy": {
+          "key": "lightning",
+          "kind": "elixir",
+          "durationKind": "next-physical-attack",
+          "durationSeconds": 0
+        }
+      }
+    }
+  },
+  {
+    "_id": "dcdf3bed0a8893c2",
+    "name": "Mongoose",
+    "type": "alchemical",
+    "img": "icons/svg/potion.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "category": "elixir",
+      "consumable": true,
+      "availability": "R",
+      "cost": 50,
+      "weight": 0.1,
+      "toxicity": 50,
+      "duration": 600,
+      "effectText": "The drinker is immune to the poisoned condition for 30 minutes.",
+      "notes": "Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).",
+      "description": "<p>The drinker is immune to the poisoned condition for 30 minutes.</p><p>Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).</p><p>Source: A Tome of Chaos v1.01, pp.115–116. Toxicity: 50%.</p>",
+      "properties": {},
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 0,
+          "row": 4
+        },
+        "alchemy": {
+          "key": "mongoose",
+          "kind": "elixir",
+          "durationKind": "timed",
+          "durationSeconds": 1800
+        }
+      }
+    }
+  },
+  {
+    "_id": "7c4e68201cb731ea",
+    "name": "Strider",
+    "type": "alchemical",
+    "img": "icons/svg/potion.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "category": "elixir",
+      "consumable": true,
+      "availability": "R",
+      "cost": 64,
+      "weight": 0.1,
+      "toxicity": 50,
+      "duration": 28800,
+      "effectText": "The drinker does not need sleep for 24 hours.",
+      "notes": "Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).",
+      "description": "<p>The drinker does not need sleep for 24 hours.</p><p>Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).</p><p>Source: A Tome of Chaos v1.01, pp.115–116. Toxicity: 50%.</p>",
+      "properties": {},
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 0,
+          "row": 5
+        },
+        "alchemy": {
+          "key": "strider",
+          "kind": "elixir",
+          "durationKind": "timed",
+          "durationSeconds": 86400
+        }
+      }
+    }
+  },
+  {
+    "_id": "01815088da6c4ea0",
+    "name": "Tempest",
+    "type": "alchemical",
+    "img": "icons/svg/potion.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "category": "elixir",
+      "consumable": true,
+      "availability": "R",
+      "cost": 52,
+      "weight": 0.1,
+      "toxicity": 50,
+      "duration": 0,
+      "effectText": "Increase an existing chance to inflict Fire, Freeze or Prone with an attack or spell by 10 percentage points. The entry supplies no duration; record a table ruling before applying a timed effect.",
+      "notes": "Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).",
+      "description": "<p>Increase an existing chance to inflict Fire, Freeze or Prone with an attack or spell by 10 percentage points. The entry supplies no duration; record a table ruling before applying a timed effect.</p><p>Elixirs can be consumed by non-witchers. Halflings gain no benefit but still suffer toxicity. Toxicity above 100% affects a non-witcher as it does a witcher (Tome p.115).</p><p>Source: A Tome of Chaos v1.01, pp.115–116. Toxicity: 50%.</p>",
+      "properties": {},
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 0,
+          "row": 6
+        },
+        "alchemy": {
+          "key": "tempest",
+          "kind": "elixir",
+          "durationKind": "unspecified",
+          "durationSeconds": 0
+        },
+        "durationUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "155697e533763a6e",
+    "name": "Anabolic Steroids Formula",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "skill": "alchemy",
+      "craftDC": 16,
+      "craftTime": "1/2 Hour",
+      "craftLevel": "journeyman",
+      "cost": 330,
+      "weight": 0,
+      "investment": 0,
+      "productName": "Anabolic Steroids",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-alchemy.Item.67d444ad8a82a5eb",
+      "materials": [
+        {
+          "name": "Rebis",
+          "quantity": 1,
+          "substance": "Rebis",
+          "uuid": "Compendium.witcher-rilerena.components.Item.d4deb507003dc7fc"
+        },
+        {
+          "name": "Caelum",
+          "quantity": 1,
+          "substance": "Caelum",
+          "uuid": "Compendium.witcher-rilerena.components.Item.8017676f179297d8"
+        },
+        {
+          "name": "Quebrith",
+          "quantity": 1,
+          "substance": "Quebrith",
+          "uuid": "Compendium.witcher-rilerena.components.Item.3265b8c19385da25"
+        },
+        {
+          "name": "Hydragenum",
+          "quantity": 2,
+          "substance": "Hydragenum",
+          "uuid": "Compendium.witcher-rilerena.components.Item.b8cf7ea4b53b3bcb"
+        },
+        {
+          "name": "Alcohest",
+          "quantity": 1,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.equipment.Item.3daedc24da6665f2"
+        }
+      ],
+      "notes": "Requires an Alchemy Set. Each batch consumes one bottle of Alcohest in addition to the listed alchemical substances (Tome p.116).",
+      "description": "<p>Creates one dose of Anabolic Steroids. Alchemy DC16; 1/2 Hour.</p><p>Rebis ×1; Caelum ×1; Quebrith ×1; Hydragenum ×2; Alcohest ×1.</p><p>Source: A Tome of Chaos v1.01, p.116. Graphical ingredients checked against the Core p.142 substance legend. Formula weight and investment are not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 1,
+          "row": 1
+        },
+        "alchemy": {
+          "key": "anabolic-steroids",
+          "kind": "formula",
+          "craftSeconds": 1800
+        },
+        "weightUnspecified": true,
+        "investmentUnspecified": true,
+        "sourceSymbols": {
+          "verified": true,
+          "method": "visual-pdf",
+          "page": 116,
+          "legend": "Core v1.35 p.142",
+          "sequence": [
+            "Rebis",
+            "Caelum",
+            "Quebrith",
+            "Hydragenum",
+            "Hydragenum"
+          ],
+          "pdfSha256": "239d63bdf0e7bcd70f062fafb84b6b63dfa110aea62e3e28368a78a9c20a5c88"
+        }
+      }
+    }
+  },
+  {
+    "_id": "2fa9f07712209100",
+    "name": "Last Hope Formula",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "skill": "alchemy",
+      "craftDC": 22,
+      "craftTime": "1 Hour",
+      "craftLevel": "journeyman",
+      "cost": 400,
+      "weight": 0,
+      "investment": 0,
+      "productName": "Last Hope",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-alchemy.Item.27278d0cb7d01113",
+      "materials": [
+        {
+          "name": "Sol",
+          "quantity": 2,
+          "substance": "Sol",
+          "uuid": "Compendium.witcher-rilerena.components.Item.38f05a30d02dd7ec"
+        },
+        {
+          "name": "Vitriol",
+          "quantity": 1,
+          "substance": "Vitriol",
+          "uuid": "Compendium.witcher-rilerena.components.Item.5f8330caa5ff5a5f"
+        },
+        {
+          "name": "Aether",
+          "quantity": 2,
+          "substance": "Aether",
+          "uuid": "Compendium.witcher-rilerena.components.Item.1ff6ae8af75e840b"
+        },
+        {
+          "name": "Vermilion",
+          "quantity": 3,
+          "substance": "Vermilion",
+          "uuid": "Compendium.witcher-rilerena.components.Item.7395b2ecdf7bee3f"
+        },
+        {
+          "name": "Alcohest",
+          "quantity": 1,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.equipment.Item.3daedc24da6665f2"
+        }
+      ],
+      "notes": "Requires an Alchemy Set. Each batch consumes one bottle of Alcohest in addition to the listed alchemical substances (Tome p.116).",
+      "description": "<p>Creates one dose of Last Hope. Alchemy DC22; 1 Hour.</p><p>Sol ×2; Vitriol ×1; Aether ×2; Vermilion ×3; Alcohest ×1.</p><p>Source: A Tome of Chaos v1.01, p.116. Graphical ingredients checked against the Core p.142 substance legend. Formula weight and investment are not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 2,
+          "row": 1
+        },
+        "alchemy": {
+          "key": "last-hope",
+          "kind": "formula",
+          "craftSeconds": 3600
+        },
+        "weightUnspecified": true,
+        "investmentUnspecified": true,
+        "sourceSymbols": {
+          "verified": true,
+          "method": "visual-pdf",
+          "page": 116,
+          "legend": "Core v1.35 p.142",
+          "sequence": [
+            "Sol",
+            "Sol",
+            "Vitriol",
+            "Aether",
+            "Aether",
+            "Vermilion",
+            "Vermilion",
+            "Vermilion"
+          ],
+          "pdfSha256": "239d63bdf0e7bcd70f062fafb84b6b63dfa110aea62e3e28368a78a9c20a5c88"
+        }
+      }
+    }
+  },
+  {
+    "_id": "a520c1dd868cafe7",
+    "name": "Lightning Formula",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "skill": "alchemy",
+      "craftDC": 16,
+      "craftTime": "15 Minutes",
+      "craftLevel": "journeyman",
+      "cost": 150,
+      "weight": 0,
+      "investment": 0,
+      "productName": "Lightning",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-alchemy.Item.01b31881bcb0ae93",
+      "materials": [
+        {
+          "name": "Vitriol",
+          "quantity": 2,
+          "substance": "Vitriol",
+          "uuid": "Compendium.witcher-rilerena.components.Item.5f8330caa5ff5a5f"
+        },
+        {
+          "name": "Vermilion",
+          "quantity": 2,
+          "substance": "Vermilion",
+          "uuid": "Compendium.witcher-rilerena.components.Item.7395b2ecdf7bee3f"
+        },
+        {
+          "name": "Hydragenum",
+          "quantity": 2,
+          "substance": "Hydragenum",
+          "uuid": "Compendium.witcher-rilerena.components.Item.b8cf7ea4b53b3bcb"
+        },
+        {
+          "name": "Alcohest",
+          "quantity": 1,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.equipment.Item.3daedc24da6665f2"
+        }
+      ],
+      "notes": "Requires an Alchemy Set. Each batch consumes one bottle of Alcohest in addition to the listed alchemical substances (Tome p.116).",
+      "description": "<p>Creates one dose of Lightning. Alchemy DC16; 15 Minutes.</p><p>Vitriol ×2; Vermilion ×2; Hydragenum ×2; Alcohest ×1.</p><p>Source: A Tome of Chaos v1.01, p.116. Graphical ingredients checked against the Core p.142 substance legend. Formula weight and investment are not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 1,
+          "row": 2
+        },
+        "alchemy": {
+          "key": "lightning",
+          "kind": "formula",
+          "craftSeconds": 900
+        },
+        "weightUnspecified": true,
+        "investmentUnspecified": true,
+        "sourceSymbols": {
+          "verified": true,
+          "method": "visual-pdf",
+          "page": 116,
+          "legend": "Core v1.35 p.142",
+          "sequence": [
+            "Vitriol",
+            "Vitriol",
+            "Vermilion",
+            "Vermilion",
+            "Hydragenum",
+            "Hydragenum"
+          ],
+          "pdfSha256": "239d63bdf0e7bcd70f062fafb84b6b63dfa110aea62e3e28368a78a9c20a5c88"
+        }
+      }
+    }
+  },
+  {
+    "_id": "8e2650dc5c9aace4",
+    "name": "Mongoose Formula",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "skill": "alchemy",
+      "craftDC": 15,
+      "craftTime": "15 Minutes",
+      "craftLevel": "journeyman",
+      "cost": 100,
+      "weight": 0,
+      "investment": 0,
+      "productName": "Mongoose",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-alchemy.Item.dcdf3bed0a8893c2",
+      "materials": [
+        {
+          "name": "Rebis",
+          "quantity": 2,
+          "substance": "Rebis",
+          "uuid": "Compendium.witcher-rilerena.components.Item.d4deb507003dc7fc"
+        },
+        {
+          "name": "Aether",
+          "quantity": 2,
+          "substance": "Aether",
+          "uuid": "Compendium.witcher-rilerena.components.Item.1ff6ae8af75e840b"
+        },
+        {
+          "name": "Fulgur",
+          "quantity": 2,
+          "substance": "Fulgur",
+          "uuid": "Compendium.witcher-rilerena.components.Item.1deb990d5b7ea7fa"
+        },
+        {
+          "name": "Alcohest",
+          "quantity": 1,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.equipment.Item.3daedc24da6665f2"
+        }
+      ],
+      "notes": "Requires an Alchemy Set. Each batch consumes one bottle of Alcohest in addition to the listed alchemical substances (Tome p.116).",
+      "description": "<p>Creates one dose of Mongoose. Alchemy DC15; 15 Minutes.</p><p>Rebis ×2; Aether ×2; Fulgur ×2; Alcohest ×1.</p><p>Source: A Tome of Chaos v1.01, p.116. Graphical ingredients checked against the Core p.142 substance legend. Formula weight and investment are not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 1,
+          "row": 3
+        },
+        "alchemy": {
+          "key": "mongoose",
+          "kind": "formula",
+          "craftSeconds": 900
+        },
+        "weightUnspecified": true,
+        "investmentUnspecified": true,
+        "sourceSymbols": {
+          "verified": true,
+          "method": "visual-pdf",
+          "page": 116,
+          "legend": "Core v1.35 p.142",
+          "sequence": [
+            "Rebis",
+            "Rebis",
+            "Aether",
+            "Aether",
+            "Fulgur",
+            "Fulgur"
+          ],
+          "pdfSha256": "239d63bdf0e7bcd70f062fafb84b6b63dfa110aea62e3e28368a78a9c20a5c88"
+        }
+      }
+    }
+  },
+  {
+    "_id": "ef53bf227ca19142",
+    "name": "Strider Formula",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "skill": "alchemy",
+      "craftDC": 16,
+      "craftTime": "15 Minutes",
+      "craftLevel": "journeyman",
+      "cost": 128,
+      "weight": 0,
+      "investment": 0,
+      "productName": "Strider",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-alchemy.Item.7c4e68201cb731ea",
+      "materials": [
+        {
+          "name": "Rebis",
+          "quantity": 2,
+          "substance": "Rebis",
+          "uuid": "Compendium.witcher-rilerena.components.Item.d4deb507003dc7fc"
+        },
+        {
+          "name": "Aether",
+          "quantity": 1,
+          "substance": "Aether",
+          "uuid": "Compendium.witcher-rilerena.components.Item.1ff6ae8af75e840b"
+        },
+        {
+          "name": "Fulgur",
+          "quantity": 1,
+          "substance": "Fulgur",
+          "uuid": "Compendium.witcher-rilerena.components.Item.1deb990d5b7ea7fa"
+        },
+        {
+          "name": "Caelum",
+          "quantity": 1,
+          "substance": "Caelum",
+          "uuid": "Compendium.witcher-rilerena.components.Item.8017676f179297d8"
+        },
+        {
+          "name": "Alcohest",
+          "quantity": 1,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.equipment.Item.3daedc24da6665f2"
+        }
+      ],
+      "notes": "Requires an Alchemy Set. Each batch consumes one bottle of Alcohest in addition to the listed alchemical substances (Tome p.116).",
+      "description": "<p>Creates one dose of Strider. Alchemy DC16; 15 Minutes.</p><p>Rebis ×2; Aether ×1; Fulgur ×1; Caelum ×1; Alcohest ×1.</p><p>Source: A Tome of Chaos v1.01, p.116. Graphical ingredients checked against the Core p.142 substance legend. Formula weight and investment are not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 1,
+          "row": 4
+        },
+        "alchemy": {
+          "key": "strider",
+          "kind": "formula",
+          "craftSeconds": 900
+        },
+        "weightUnspecified": true,
+        "investmentUnspecified": true,
+        "sourceSymbols": {
+          "verified": true,
+          "method": "visual-pdf",
+          "page": 116,
+          "legend": "Core v1.35 p.142",
+          "sequence": [
+            "Rebis",
+            "Rebis",
+            "Aether",
+            "Fulgur",
+            "Caelum"
+          ],
+          "pdfSha256": "239d63bdf0e7bcd70f062fafb84b6b63dfa110aea62e3e28368a78a9c20a5c88"
+        }
+      }
+    }
+  },
+  {
+    "_id": "cd926c97e67537af",
+    "name": "Tempest Formula",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 116,
+      "skill": "alchemy",
+      "craftDC": 15,
+      "craftTime": "15 Minutes",
+      "craftLevel": "journeyman",
+      "cost": 104,
+      "weight": 0,
+      "investment": 0,
+      "productName": "Tempest",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-alchemy.Item.01815088da6c4ea0",
+      "materials": [
+        {
+          "name": "Vitriol",
+          "quantity": 1,
+          "substance": "Vitriol",
+          "uuid": "Compendium.witcher-rilerena.components.Item.5f8330caa5ff5a5f"
+        },
+        {
+          "name": "Aether",
+          "quantity": 1,
+          "substance": "Aether",
+          "uuid": "Compendium.witcher-rilerena.components.Item.1ff6ae8af75e840b"
+        },
+        {
+          "name": "Quebrith",
+          "quantity": 1,
+          "substance": "Quebrith",
+          "uuid": "Compendium.witcher-rilerena.components.Item.3265b8c19385da25"
+        },
+        {
+          "name": "Caelum",
+          "quantity": 1,
+          "substance": "Caelum",
+          "uuid": "Compendium.witcher-rilerena.components.Item.8017676f179297d8"
+        },
+        {
+          "name": "Hydragenum",
+          "quantity": 1,
+          "substance": "Hydragenum",
+          "uuid": "Compendium.witcher-rilerena.components.Item.b8cf7ea4b53b3bcb"
+        },
+        {
+          "name": "Alcohest",
+          "quantity": 1,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.equipment.Item.3daedc24da6665f2"
+        }
+      ],
+      "notes": "Requires an Alchemy Set. Each batch consumes one bottle of Alcohest in addition to the listed alchemical substances (Tome p.116).",
+      "description": "<p>Creates one dose of Tempest. Alchemy DC15; 15 Minutes.</p><p>Vitriol ×1; Aether ×1; Quebrith ×1; Caelum ×1; Hydragenum ×1; Alcohest ×1.</p><p>Source: A Tome of Chaos v1.01, p.116. Graphical ingredients checked against the Core p.142 substance legend. Formula weight and investment are not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 117,
+          "table": 1,
+          "row": 5
+        },
+        "alchemy": {
+          "key": "tempest",
+          "kind": "formula",
+          "craftSeconds": 900
+        },
+        "weightUnspecified": true,
+        "investmentUnspecified": true,
+        "sourceSymbols": {
+          "verified": true,
+          "method": "visual-pdf",
+          "page": 116,
+          "legend": "Core v1.35 p.142",
+          "sequence": [
+            "Vitriol",
+            "Aether",
+            "Quebrith",
+            "Caelum",
+            "Hydragenum"
+          ],
+          "pdfSha256": "239d63bdf0e7bcd70f062fafb84b6b63dfa110aea62e3e28368a78a9c20a5c88"
+        }
+      }
+    }
+  },
+  {
+    "_id": "9edee8b3471fd53c",
+    "name": "Penitent Mutagen",
+    "type": "alchemical",
+    "img": "icons/svg/blood.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 210,
+      "category": "mutagen",
+      "consumable": true,
+      "cost": 0,
+      "weight": 0,
+      "craftDC": 18,
+      "bonuses": {
+        "vigor": 2
+      },
+      "effectText": "+2 Vigor Threshold.",
+      "notes": "Minor mutation: glowing white markings. Blue mutagen. Apply the actual mutagen preparation/consumption rules (Core p.251).",
+      "priceText": "The source does not provide weight or market price.",
+      "description": "<p>Blue mutagen: +2 Vigor Threshold. Alchemy DC18. Minor mutation: glowing white markings.</p><p>Source: A Tome of Chaos v1.01, p.210. Weight and market price are not printed.</p>",
+      "properties": {},
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 211,
+          "table": 1,
+          "row": 2
+        },
+        "alchemy": {
+          "key": "penitent",
+          "kind": "mutagen"
+        },
+        "mutagenColor": "blue",
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "sourceOmissions": [
+          "weight",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "341bcd8824f1f145",
+    "name": "Cerebral Elixir",
+    "type": "alchemical",
+    "img": "icons/svg/potion.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 147,
+      "category": "elixir",
+      "consumable": true,
+      "availability": "R",
+      "weight": 0.1,
+      "cost": 0,
+      "toxicity": 0,
+      "duration": 28800,
+      "effectText": "Protects against possession by a bes for 24 hours. Drinking it while possessed by a bes immediately forces that bes out. For a summoning, consume it at the beginning of the ritual.",
+      "notes": "The source does not print toxicity or market price. The numeric zero fields are schema placeholders, not a rule that the elixir is free or non-toxic. Possession protection applies specifically to a bes.",
+      "description": "<p>Protects against possession by a bes for 24 hours. Drinking it while possessed by a bes immediately forces that bes out. For a summoning, consume it at the beginning of the ritual.</p><p>Source: A Tome of Chaos v1.01, p.147. Toxicity and market price are not printed.</p>",
+      "properties": {},
+      "resistances": []
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 148,
+          "table": 0,
+          "row": 1
+        },
+        "alchemy": {
+          "key": "cerebral-elixir",
+          "kind": "elixir",
+          "durationSeconds": 86400,
+          "durationKind": "timed",
+          "toxicityUnspecified": true
+        },
+        "toxicityUnspecified": true,
+        "priceUnspecified": true,
+        "sourceOmissions": [
+          "toxicity",
+          "marketPrice"
+        ]
+      }
+    }
+  },
+  {
+    "_id": "6549ad9232cef811",
+    "name": "Cerebral Elixir Formula",
+    "type": "diagram",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 147,
+      "skill": "alchemy",
+      "craftDC": 22,
+      "craftTime": "10 Hours",
+      "craftLevel": "master",
+      "cost": 1332,
+      "investment": 666,
+      "weight": 0,
+      "productName": "Cerebral Elixir",
+      "productQuantity": 1,
+      "productUuid": "Compendium.witcher-rilerena.tome-alchemy.Item.341bcd8824f1f145",
+      "materials": [
+        {
+          "name": "Alcohest",
+          "quantity": 3,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.equipment.Item.3daedc24da6665f2"
+        },
+        {
+          "name": "Feline Brain",
+          "quantity": 1,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.tome-alchemy.Item.da469a8f21c3606b"
+        },
+        {
+          "name": "Hallucinogen",
+          "quantity": 1,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.alchemy.Item.c82381346c082e44"
+        },
+        {
+          "name": "Hellebore Petals",
+          "quantity": 3,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.components.Item.c9985ddb7dd5e863"
+        },
+        {
+          "name": "Mandrake Root",
+          "quantity": 5,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.components.Item.8240e377c8a4484f"
+        },
+        {
+          "name": "Crow’s Eye",
+          "quantity": 3,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.components.Item.f81116d6da50fa8f"
+        },
+        {
+          "name": "Wolfsbane",
+          "quantity": 4,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.components.Item.01020314f04fa997"
+        },
+        {
+          "name": "Silver",
+          "quantity": 1,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.components.Item.9664169803f37aea"
+        },
+        {
+          "name": "Han Fiber",
+          "quantity": 4,
+          "substance": "",
+          "uuid": "Compendium.witcher-rilerena.components.Item.f40ef212adc631a2"
+        }
+      ],
+      "notes": "Requires an Alchemy Set. These are named ingredients: matching only their alchemical substance does not replace them. The printed three bottles of Alcohest are the complete requirement.",
+      "description": "<p>Creates one Cerebral Elixir. Master Alchemy DC22; 10 hours.</p><p>Alcohest ×3; Feline Brain ×1; Hallucinogen ×1; Hellebore Petals ×3; Mandrake Root ×5; Crow’s Eye ×3; Wolfsbane ×4; Silver ×1; Han Fiber ×4.</p><p>Source: A Tome of Chaos v1.01, p.147. Investment: 666; formula price: 1332. Formula weight is not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 148,
+          "table": 1,
+          "row": 1
+        },
+        "alchemy": {
+          "key": "cerebral-elixir",
+          "kind": "formula",
+          "craftSeconds": 36000
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "da469a8f21c3606b",
+    "name": "Feline Brain",
+    "type": "component",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "source": "A Tome of Chaos v1.01",
+      "page": 147,
+      "category": "ingredient",
+      "weight": 0,
+      "cost": 0,
+      "substance": "",
+      "notes": "Named ingredient for Cerebral Elixir. The source does not provide a substance classification, weight or market price.",
+      "description": "<p>One feline brain, used as a named ingredient in the Cerebral Elixir formula (A Tome of Chaos v1.01, p.147).</p><p>Substance, weight and market price are not printed.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "sourceRow": {
+          "book": "A Tome of Chaos v1.01",
+          "pdfPage": 148,
+          "table": 1,
+          "row": 1
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true,
+        "substanceUnspecified": true,
+        "sourceOmissions": [
+          "weight",
+          "marketPrice",
+          "substance"
+        ]
+      }
+    }
+  }
+]

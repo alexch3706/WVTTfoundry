@@ -1,3 +1,4 @@
+import { magicDefenseTotal } from './magic-focus-rules.js';
 /** Core v1.35 p.103: Talfryn's Prison has one real, source-linked 15 HP restraint. */
 import { registerSpellExecutionAdapters } from './magic-execution.js';
 import { SYSTEM_ID } from './config.js';
@@ -85,6 +86,8 @@ export async function createTalfrynRoots(
       targetTokenUuid: targetToken.uuid,
       sourceMessageUuid: message?.uuid ?? '',
       castingTotal: data.check.total,
+      defenseDC: magicDefenseTotal(data),
+      focus: copy(data.focus ?? null),
       effectId,
       active: false,
       createdAt: game.time.worldTime,
@@ -142,7 +145,7 @@ export async function createTalfrynRoots(
     const controls = await chat(
       caster,
       'Talfryn’s Prison · binding roots',
-      `<p>${e(target.name)} is bound by roots with 15 HP and no armor. Escape with Dodge/Escape against the original casting total ${data.check.total}. Attack the roots token or record actual damage to the roots below.</p><button data-magic-restraint="escape">Dodge/Escape</button><button data-magic-restraint="damage">Damage roots (GM)</button>`,
+      `<p>${e(target.name)} is bound by roots with 15 HP and no armor. Escape with Dodge/Escape against the spell DC ${magicDefenseTotal(data)}. Attack the roots token or record actual damage to the roots below.</p><button data-magic-restraint="escape">Dodge/Escape</button><button data-magic-restraint="damage">Damage roots (GM)</button>`,
       {
         flags: {
           kind: 'magic-restraint',
@@ -252,13 +255,14 @@ export async function escapeTalfrynRoots(
   await authorizedActor(target.uuid, user);
   if (target.system.conditions.some((condition) => ['dead', 'unconscious', 'stunned'].includes(condition)))
     throw new RuleError('This creature cannot attempt an escape in its current condition.');
+  const defenseDC = state.defenseDC ?? magicDefenseTotal(state);
   const action = actionPlan(target, { extra: !!extra, forfeit: !!forfeit });
   const result = await check(target.skillBase('dodge', { modifier: action.modifier }).total, {
     actor: target,
     manualDice,
-    context: { skill: 'dodge', dc: state.castingTotal },
+    context: { skill: 'dodge', dc: defenseDC },
   });
-  const success = !result.fumble && result.total > state.castingTotal;
+  const success = !result.fumble && result.total > defenseDC;
   const changes = { ...action.changes };
   if (success) {
     const next = removeMagicEffects(target.system, (effect) => sourceEffect(effect, state));
@@ -269,7 +273,7 @@ export async function escapeTalfrynRoots(
       target,
       'Escape Talfryn’s Prison',
       checkHTML(result) +
-        `<p>Original casting total ${state.castingTotal}: ${success ? 'The creature escapes these roots.' : 'The roots still hold.'}</p>`,
+        `<p>Spell DC ${defenseDC}: ${success ? 'The creature escapes these roots.' : 'The roots still hold.'}</p>`,
       {
         rolls: result.rolls,
         flags: { kind: 'magic-restraint-escape', rootsUuid, castId: state.castId, success },

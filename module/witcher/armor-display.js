@@ -1,5 +1,6 @@
 import { HUMANOID_LOCATIONS, MONSTER_LOCATIONS } from './config.js';
-import { armorAt, stackArmor } from './rules.js';
+import { armorAt, stackArmor, derivedStats } from './rules.js';
+import { alchemyArmorBonus } from './alchemy-combat-rules.js';
 
 /** Read the same per-location values as armorAt; a stored zero is broken armor. */
 export function armorLocationRows(item, locations = []) {
@@ -25,20 +26,22 @@ export function armorLocationRows(item, locations = []) {
 export function actorArmorRows(state, locations) {
   const repaired = state.items.map((item) => ({ ...item, sp: {} }));
   const inherent = state.race === 'dwarf' ? 2 : 0;
+  const alchemySP = alchemyArmorBonus(state, derivedStats(state, state.items)).total;
   return locations.map((location, index) => {
     try {
       const worn = stackArmor(armorAt(state.items, location));
       const maximumWorn = stackArmor(armorAt(repaired, location));
-      const totalSP = worn + (location.sp ?? 0) + inherent;
-      const maximumSP = maximumWorn + (location.maxSp ?? 0) + inherent;
+      const totalSP = worn + (location.sp ?? 0) + inherent + alchemySP;
+      const maximumSP = maximumWorn + (location.maxSp ?? 0) + inherent + alchemySP;
       return {
         ...location,
         index,
         totalSP,
         maximumSP,
+        alchemySP,
         damaged: totalSP < maximumSP,
-        totalWeakSP: worn + (location.weakSp ?? 0) + inherent,
-        maximumWeakSP: maximumWorn + (location.weakMaxSp ?? 0) + inherent,
+        totalWeakSP: worn + (location.weakSp ?? 0) + inherent + alchemySP,
+        maximumWeakSP: maximumWorn + (location.weakMaxSp ?? 0) + inherent + alchemySP,
       };
     } catch {
       return { ...location, index, totalSP: '!', maximumSP: '!', totalWeakSP: '!', maximumWeakSP: '!' };

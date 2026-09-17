@@ -513,3 +513,31 @@ test('ritual creature profiles create actual printed Actors and preserve paid ar
   await armor.rollback();
   assert(created.every((doc) => doc.deleted));
 });
+
+test('Chemobog checks real magical Rust REL loss without discarding the separate rust record', async () => {
+  const caster = actor();
+  const weapon = await addItem(caster, {
+    name: 'Runed sword',
+    type: 'weapon',
+    system: {
+      quantity: 1,
+      reliability: 12,
+      attachments: [{ key: 'chemobog', category: 'rune', mode: 'runewright' }],
+    },
+  });
+  const formulas = [];
+  const result = await executeWorldMagic(
+    { type: 'item', action: 'rust', sourceItem: weapon.id, formula: '2d6', penalties: { ref: -2 } },
+    context(caster, {
+      rollFormula: async (formula) => {
+        formulas.push(formula);
+        return formula === '2d6' ? 5 : 3;
+      },
+    })
+  );
+  assert.deepEqual(formulas, ['2d6', '1d6']);
+  assert.equal(weapon.system.reliability, 12);
+  assert(weapon.flags[SYSTEM].rust);
+  await result.rollback();
+  assert.equal(weapon.flags[SYSTEM]?.rust, undefined);
+});

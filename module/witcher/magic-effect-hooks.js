@@ -1,4 +1,5 @@
 import { trophyRulesFor } from './magic-trophies.js';
+import { alchemyProcChance } from './alchemy-combat-rules.js';
 /** Pure, contextual rules for persisted spell modifiers. No Foundry documents,
  * random rolls, clock reads, or writes occur here. See docs/witcher/magic-effect-hooks.md.
  *
@@ -135,9 +136,21 @@ export function magicModifierSummary(state = {}, context = {}) {
     visionRange = null;
   for (const effect of state.effects ?? []) {
     if (effect.disabled || effect.magic?.suppressed || effect.magic?.expired) continue;
+    if (
+      (effect.alchemy || effect.potion) &&
+      effect.expires &&
+      effect.expires <= (globalThis.game?.time?.worldTime ?? 0)
+    )
+      continue;
     const entries = magicRuleEntries({ effects: [effect] });
     if (!entries.length) {
-      merge(modifiers, effect.modifiers);
+      const ordinary = { ...effect.modifiers };
+      // Legacy Thunderbolt used generic damage; the accepted attack now snapshots it.
+      if (effect.alchemy?.key === 'thunderbolt' || effect.key === 'Thunderbolt') {
+        delete ordinary.damage;
+        delete ordinary.physicalDamage;
+      }
+      merge(modifiers, ordinary);
       continue;
     }
     for (const { operation } of entries) {
@@ -474,7 +487,7 @@ export function magicAttackEffectChance(state, effect, baseChance = 0, context =
   // Empower changes an existing spell effect's chance; it creates no new effect.
   if (context.spell && baseChance > 0 && Number.isFinite(context.castingRules?.effectChance))
     chance = Math.max(chance, context.castingRules.effectChance);
-  return { chance: clamp(chance, 0, 100), unresolved: unique(unresolved) };
+  return { chance: alchemyProcChance(state, effect, clamp(chance, 0, 100)), unresolved: unique(unresolved) };
 }
 
 /** Resistance is a boolean category, not another stacked factor: OR it with

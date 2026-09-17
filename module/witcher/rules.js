@@ -10,6 +10,8 @@ import { combinedModifiers } from './wounds.js';
 import { heatFactor } from './advanced-rules.js';
 import { immuneTo, isIncorporeal, suppressed } from './monster-rules.js';
 import { absorbQuen } from './magic-rules.js';
+import { alchemyArmorBonus } from './alchemy-combat-rules.js';
+import { actorEnhancementBenefits } from './enhancements.js';
 
 export class RuleError extends Error {}
 const n = (v, fallback = 0) => (Number.isFinite(Number(v)) ? Number(v) : fallback);
@@ -178,6 +180,7 @@ export function resolveDamage(
     multiplier = 1,
     nonlethal = false,
     cover = 0,
+    coverItemId = '',
     criticalBonus = 0,
   },
   target,
@@ -195,10 +198,24 @@ export function resolveDamage(
   };
   const worn = properties.bypassArmor ? 0 : stackArmor(layers);
   // Natural armor is a separate inherent protection; it does not consume a clothing layer.
-  const originalSp = (properties.bypassArmor ? 0 : natural.sp + (target.race === 'dwarf' ? 2 : 0)) + worn;
+  const alchemySP = properties.bypassArmor ? 0 : alchemyArmorBonus(target, derivedStats(target, items)).total;
+  const originalSp =
+    (properties.bypassArmor ? 0 : natural.sp + (target.race === 'dwarf' ? 2 : 0)) + worn + alchemySP;
   const sp = properties.improvedArmorPiercing ? Math.ceil(originalSp / 2) : originalSp;
   const isSilverTarget = target.silverVulnerable === true;
   const rolled = Math.max(0, (raw + (isSilverTarget ? silver : 0)) * multiplier);
+  const pavise = coverItemId
+    ? items.find(
+        (item) =>
+          item.id === coverItemId &&
+          item.type === 'shield' &&
+          item.carried !== false &&
+          item.equipped &&
+          item.properties?.fullCover
+      )
+    : null;
+  if (coverItemId && !pavise) throw new RuleError('The selected pavise no longer provides held full cover.');
+  if (pavise) cover = Math.max(0, n(pavise.reliability));
   const afterCover = Math.max(0, rolled - Math.max(0, cover));
   const magicDamage = magicDamageRules(target, {
     damageType: type,
@@ -243,7 +260,11 @@ export function resolveDamage(
     !properties.armorPiercing &&
     !properties.improvedArmorPiercing &&
     !properties.bypassArmor;
-  if (resistedByArmor || target.resistances?.includes(type) || magicDamage.resistant) resisted /= 2;
+  const elementalResistance =
+    actorEnhancementBenefits(items).elementalResistance &&
+    (['fire', 'elemental', 'lightning', 'electricity', 'cold', 'ice'].includes(type) || !!properties.element);
+  if (resistedByArmor || target.resistances?.includes(type) || magicDamage.resistant || elementalResistance)
+    resisted /= 2;
   const immune =
     magicDamage.preventDamage || immuneTo(target, type) || (nonlethal && target.traits?.infiniteStamina);
   if (immune) resisted = 0;
@@ -288,9 +309,19 @@ export function resolveDamage(
     rolled,
     cover,
     afterCover,
+    coverItemChange:
+      pavise && rolled > 0
+        ? {
+            id: pavise.id,
+            before: cover,
+            after: Math.max(0, cover - 1 - (afterCover > 0 ? n(properties.shearingCover) : 0)),
+            penetrated: afterCover > 0,
+          }
+        : null,
     afterShield,
     shield,
     sp,
+    alchemySP,
     afterArmor,
     resisted,
     localized,
@@ -383,7 +414,7 @@ export function derivedStats(actor, items = [], { movementBaseline = false } = {
     if (Number.isFinite(magic.statOverrides[key])) base[key] = magic.statOverrides[key];
   }
   const physical = Math.floor((base.body + base.will) / 2);
-  const hpMax = (n(actor.overrides?.hp) || physical * 5) + n(mods.hp);
+  const hpMax = (n(actor.overrides?.hp) || physical * 5) + n(mods.hp) + actorEnhancementBenefits(items).hp;
   const staMax = actor.traits?.infiniteStamina
     ? 0
     : Math.floor(

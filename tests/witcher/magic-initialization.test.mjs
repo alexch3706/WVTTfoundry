@@ -54,13 +54,30 @@ test('fresh main module imports and overlapping ready callbacks install native m
     messages: [],
     combat: null,
     time: { worldTime: 0 },
-    settings: { get: () => false },
+    settings: {
+      get: () => false,
+      register: (scope, key, value) => {
+        assert.equal(scope, 'witcher-rilerena');
+        assert.equal(value.scope, 'world');
+      },
+    },
   };
   globalThis.canvas = { ready: false, tokens: { placeables: [], controlled: [] } };
   globalThis.ui = {
     notifications: { warn: (message) => notices.push(message), error: (message) => notices.push(message) },
   };
-  globalThis.CONFIG = { Actor: {}, Item: {}, Combat: {}, time: {}, RegionBehavior: { dataModels: {} } };
+  globalThis.CONFIG = {
+    Actor: {},
+    Item: {},
+    Token: {
+      documentClass: class {
+        prepareDerivedData() {}
+      },
+    },
+    Combat: {},
+    time: {},
+    RegionBehavior: { dataModels: {} },
+  };
   await import('../../module/witcher/main.js');
   await Promise.all(hooks.get('init').map((callback) => callback()));
   assert.equal(CONFIG.time.roundTime, 3);

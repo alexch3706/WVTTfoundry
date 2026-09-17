@@ -47,10 +47,37 @@
     >Below wound threshold: REF, DEX, INT and WILL are halved.</p>{{/if}}
   <nav class='sheet-tabs tabs' data-group='primary'><a data-tab='combat'>Combat</a><a
       data-tab='skills'
-    >Skills</a><a data-tab='inventory'>Equipment</a><a data-tab='magic'>Magic</a>{{#if hasBestiary}}<a
-        data-tab='bestiary'
-      >Creature</a>{{/if}}<a data-tab='story'>Character</a><a data-tab='setup'>Anatomy & settings</a></nav>
+    >Skills</a><a data-tab='inventory'>Equipment</a><a data-tab='magic'>Magic</a><a
+      data-tab='social'
+    >Social</a>{{#if hasBestiary}}<a data-tab='bestiary'>Creature</a>{{/if}}<a
+      data-tab='story'
+    >Character</a><a data-tab='setup'>Anatomy & settings</a></nav>
   <section class='sheet-body'>
+    <div class='tab' data-group='primary' data-tab='social'>
+      <h2>Verbal Combat</h2>
+      <button type='button' data-witcher='socialStart'>Start an argument</button>
+      {{#each social.encounters}}<section class='weapon-card'><h3>{{name}}</h3><p>Resolve
+            {{resolve}}
+            /
+            {{maxResolve}}
+            ·
+            {{status}}{{#if isTurn}} · Your turn{{/if}}</p><p>{{goal}}</p><button
+            type='button'
+            data-witcher='socialOpen'
+            data-key='{{messageUuid}}'
+          >Open argument</button></section>{{/each}}
+      <h2>Relationships</h2>
+      {{#each social.relationships}}<p>{{otherName}}
+          ·
+          {{friendshipLabel}}{{#if romanceLabel}} · {{romanceLabel}}{{/if}}</p>{{/each}}
+      <h2>Temporary reputation</h2>
+      {{#each social.reputationEffects}}<p>{{value}}
+          ·
+          {{audienceLabel}}
+          ·
+          {{remainingHours}}
+          hours</p>{{/each}}
+    </div>
     <div class='tab' data-group='primary' data-tab='magic'>{{{magicPanel}}}</div>
     <div class='tab' data-group='primary' data-tab='combat'>
       <div class='action-bar'><button type='button' data-witcher='unarmed' data-key='punch'>Punch
@@ -152,7 +179,11 @@
                     class='armor-sp'
                     data-damaged='{{damaged}}'
                     data-armor-location='{{id}}'
-                  ><strong>{{totalSP}}</strong> / {{maximumSP}}</td></tr>{{#if weakName}}<tr><td>Aimed</td><td
+                  ><strong>{{totalSP}}</strong>
+                    /
+                    {{maximumSP}}{{#if alchemySP}}<small>
+                        (+{{alchemySP}}
+                        alchemy)</small>{{/if}}</td></tr>{{#if weakName}}<tr><td>Aimed</td><td
                     >{{weakName}}</td><td>{{aim}}</td><td>×{{multiplier}}</td><td><strong
                       >{{totalWeakSP}}</strong>
                       /
@@ -161,9 +192,24 @@
             protection from equipped armor and natural armor. Max uses the same armor after full repair.
             Individual items are listed in Equipment.</p></section></div>
       {{#if inWeb}}<button type='button' data-witcher='escapeWeb'>Break arachas webbing (Physique DC 16)</button>{{/if}}
+      {{#if adrenaline.enabled}}<p>Adrenaline:
+          {{adrenaline.dice}}
+          dice
+          <button type='button' data-witcher='adrenalineHP'>Spend for temporary HP</button></p>{{/if}}
+      {{#if blackBlood}}<button type='button' data-witcher='blackBlood'>Target drank Black Blood (GM)</button>{{/if}}
+      <details><summary>Breath and prolonged running</summary><div class='action-bar'><button
+            type='button'
+            data-witcher='exertion'
+            data-key='holdBreath'
+          >Hold breath</button><button type='button' data-witcher='exertion' data-key='restoreAir'>Breathe
+            again</button><button type='button' data-witcher='exertion' data-key='startRunning'>Start
+            prolonged run</button><button type='button' data-witcher='exertion' data-key='stopRunning'>Stop
+            running</button><button type='button' data-witcher='exertion' data-key='configure'>Set baseline
+            durations and cost (GM)</button></div></details>
       {{#each effectRows}}<p>{{name}}
           ·
           {{expires}}
+          {{#if details}} · {{details}}{{/if}}
           <button type='button' data-witcher='endEffect' data-key='{{id}}'>End effect</button></p>{{/each}}
       <h2>Conditions</h2>{{#if woundConditions}}<p class='source-note'>From untreated wounds:
           {{woundConditions}}. Treat the injury to end its effects.</p>{{/if}}<div class='conditions'>{{#each
@@ -274,6 +320,12 @@
             +
             {{rank}}</button></p>{{/each}}<button type='button' data-witcher='customSkill'>Add skill</button></div>
     <div class='tab' data-group='primary' data-tab='inventory'>
+      {{#if enhancementWork}}<p>Enhancement work in progress:
+          {{enhancementWork.procedure}}
+          <button type='button' data-witcher='enhancementFinish'>Finish work</button><button
+            type='button'
+            data-witcher='enhancementCancel'
+          >Cancel work</button></p>{{/if}}
       <p>Drag items from a compendium onto this sheet. Equip a weapon, then select a fast or strong attack.
         Drawing a weapon uses an action in combat. Carried items contribute to weight.</p>
       <div class='action-bar'><button type='button' data-witcher='newItem' data-key='weapon'>New weapon</button><button
@@ -290,6 +342,7 @@
                 >{{type}}{{#if system.school}} · {{system.school}} school{{/if}}</small>
                 {{#if system.source}}<small>{{system.source}} · p.{{system.page}}</small>{{/if}}
                 {{#if system.priceText}}<small>{{system.priceText}}</small>{{/if}}
+                {{#if hasAttachments}}<small>{{attachmentNames}}</small>{{/if}}
                 {{#if isArmor}}<div class='inventory-armor'><strong>SP current / max</strong>
                     {{#each armorLocations}}<span
                         class='armor-sp'
@@ -318,6 +371,14 @@
                     data-item-field='equipped'
                     {{checked system.equipped}}
                   />{{else if isNatural}}Natural{{else}}—{{/if}}
+                {{#if showFocusUse}}<select
+                    data-item-id='{{id}}'
+                    data-item-field='focusUse'
+                    aria-label='Focus usage for {{name}}'
+                  >{{#each focusChoices}}<option
+                        value='{{value}}'
+                        {{selectedAttribute}}
+                      >{{label}}</option>{{/each}}</select>{{/if}}
                 {{#if showGrip}}<select
                     data-item-id='{{id}}'
                     data-item-field='handsUsed'
@@ -347,7 +408,23 @@
                     type='button'
                     data-witcher='repair'
                     data-item-id='{{id}}'
-                  >Repair</button>{{/if}}<button
+                  >Repair</button>{{/if}}{{#if hasAttachments}}<button
+                    type='button'
+                    data-witcher='enhancementRemove'
+                    data-item-id='{{id}}'
+                  >Attachments</button>{{/if}}{{#if canMasterCraft}}<button
+                    type='button'
+                    data-witcher='masterCraft'
+                    data-item-id='{{id}}'
+                  >Master Crafting</button>{{/if}}{{#if canReconcile}}<button
+                    type='button'
+                    data-witcher='enhancementReconcile'
+                    data-item-id='{{id}}'
+                  >Reconcile legacy upgrades (GM)</button>{{/if}}{{#if canShine}}<button
+                    type='button'
+                    data-witcher='shine'
+                    data-item-id='{{id}}'
+                  >Shining</button>{{/if}}<button
                   type='button'
                   data-witcher='delete'
                   data-item-id='{{id}}'

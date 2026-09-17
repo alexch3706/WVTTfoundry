@@ -21,4 +21,10 @@ export const TROPHY_INSTALLED_HOOKS = Object.freeze([
   'grappleVictimEscapeModifier',
   'criticalRolls',
   'chooseCriticalResult',
+  'socialStanding',
+  'doubleExistingFearedBonus',
+  'socialStandingSteps',
+  'speakToAnimals',
+  'verbalCombatAnimals',
+  'cannotCompelSelfHarm',
 ]);

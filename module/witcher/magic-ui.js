@@ -1,3 +1,4 @@
+import { magicDefenseTotal, greaterFocusSnapshot } from './magic-focus-rules.js';
 import { magicChoiceFields, readMagicChoices } from './magic-choices.js';
 import { magicTargetingProfile, validateMagicTargetCount } from './magic-targeting.js';
 import { supportsRitualRuntime } from './magic-ritual-effects.js';
@@ -5,12 +6,14 @@ import { SYSTEM_ID } from './config.js';
 import { RuleError, hitLocations } from './rules.js';
 import { magicInfo } from './magic-catalog.js';
 import { magicDefenses, validateMagicPower } from './magic-rules.js';
+import { glyphFields, readGlyphChoices } from './magic-enhancements.js';
 import {
   IMPLEMENTED_MAGIC,
   MAGIC_TRADITIONS,
   magicTradition,
   magicVigor,
   magicFocus,
+  selectedMagicFocus,
   magicEffectLabel,
 } from './magic-state.js';
 import {
@@ -125,12 +128,18 @@ export function magicActorDisplay(
   const focuses = rows
     .filter((item) => {
       try {
-        return magicFocus(state, rows, item.id) > 0;
+        return !!selectedMagicFocus(state, rows, item.id);
       } catch {
         return false;
       }
     })
-    .map((item) => ({ id: item.id, name: item.name, value: Number(item.properties.focus) }));
+    .map((item) => ({
+      id: item.id,
+      name: item.name,
+      value: Number(item.properties.focus || 0),
+      greater: !!item.properties.greaterFocus,
+      greaterElements: greaterFocusSnapshot(item)?.elements ?? [],
+    }));
   const all = list(actor.items)
     .filter((item) => item.type === 'magic')
     .map((item) => magicItemDisplay(item, { actor }));
@@ -328,7 +337,12 @@ function focusField(actor) {
   return input('focusId', 'Held focus — choose one', {
     options: {
       '': 'None',
-      ...Object.fromEntries(focuses.map((focus) => [focus.id, `${focus.name} · Focus (${focus.value})`])),
+      ...Object.fromEntries(
+        focuses.map((focus) => [
+          focus.id,
+          `${focus.name} · Focus (${focus.value})${focus.greater ? ` · Greater Focus${focus.greaterElements?.length ? ` (${focus.greaterElements.join(' / ')})` : ''}` : ''}`,
+        ])
+      ),
     },
   });
 }
@@ -398,7 +412,8 @@ export async function castMagic(actor, item, options = {}) {
       ? '<p>The Ley consequence determines the actual cost. Other focuses do not change this payment.</p>'
       : learned.amulet
         ? '<p>Stored amulet spell: only its Focus 2 applies. The wearer must have sufficient Vigor; overdraw is unavailable.</p>'
-        : focusField(actor));
+        : focusField(actor)) +
+    glyphFields(actor, magic, { input, escapeHTML: e });
   if (magic.key === 'fire-stream' && target)
     content += input('aimed', 'Body location', {
       options: {
@@ -456,6 +471,7 @@ export async function castMagic(actor, item, options = {}) {
   if (!values) return null;
   values.power = Number(options.leyJob?.type === 'repeatSpell' ? options.power : values.power);
   values.choices = readMagicChoices(magic, values);
+  values.glyphs = readGlyphChoices(actor, values);
   if (options.reactionId) values.reactionId = options.reactionId;
   const profile = initialProfile
     ? magicTargetingProfile(magic, {
@@ -578,7 +594,7 @@ export async function defendMagic(message, targetUuid, options = {}) {
   )
     defenses.push('passive');
   let content =
-    `<p>${e(data.name)} · casting total ${e(data.check.total)}</p>` +
+    `<p>${e(data.name)} · casting check ${e(data.check.total)} · defense DC ${e(magicDefenseTotal(data))}${data.focus?.defenseBonus ? ' (+2 Greater Focus)' : ''}${data.focus?.glyphDC ? ` (+${e(data.focus.glyphDC)} elemental glyph)` : ''}</p>` +
     input('defense', 'Defense', {
       options: Object.fromEntries([...defenses, 'accept'].map((key) => [key, labels[key] ?? title(key)])),
     });
@@ -637,17 +653,17 @@ export async function counterMagic(message, options = {}) {
         return false;
       }
     });
-  if (dispels.length) choices.dispel = 'Dispel (must beat casting total)';
+  if (dispels.length) choices.dispel = 'Dispel (must beat spell DC)';
   if (
     Number(actor.system.professionRanks?.heliotrope) > 0 ||
     actor.system.customSkills?.some((skill) => skill.id === 'heliotrope' && skill.rank > 0)
   )
-    choices.heliotrope = 'Heliotrope (may tie casting total)';
+    choices.heliotrope = 'Heliotrope (may tie spell DC)';
   if (!Object.keys(choices).length)
     throw new RuleError('This actor has neither learned Dispel nor trained Heliotrope.');
   const values = await api.prompt(
     `Counter ${data.name}`,
-    `<p>Original casting: ${e(data.staCost)} STA, total ${e(data.check.total)}. Counter cost before a usable focus: ${e(data.staCost / 2)} STA.</p>` +
+    `<p>Original casting: ${e(data.staCost)} STA, casting check ${e(data.check.total)}, defense DC ${e(magicDefenseTotal(data))}. Counter cost before a usable focus: ${e(data.staCost / 2)} STA.</p>` +
       input('defense', 'Counter', { options: choices }) +
       (dispels.length
         ? input('dispelItemId', 'Dispel source (amulet forces its Focus 2)', {

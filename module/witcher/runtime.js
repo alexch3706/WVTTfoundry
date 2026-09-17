@@ -1,4 +1,7 @@
 import { trophyRulesFor } from './magic-trophies.js';
+import { activeAlchemy } from './alchemy-rules.js';
+import { alchemyDamageEffects } from './alchemy-combat-rules.js';
+import { actorEnhancementBenefits, enhancementBenefits } from './enhancements.js';
 import { immuneTo } from './monster-rules.js';
 import { ritualActionRestriction, compressedDeathChanges } from './magic-ritual-effects.js';
 import { activeHexes, hexDiceRules, parseHexManualCheck, resolveHexCheck } from './magic-hex-rules.js';
@@ -48,7 +51,48 @@ function restoreField(source, key) {
 }
 
 /** Await each persistence operation and restore the exact changed fields on failure. */
-export async function commitActor(actor, changes = {}, itemChanges = [], after) {
+export async function commitActor(
+  actor,
+  changes = {},
+  itemChanges = [],
+  after,
+  { healingBonusApplied = false } = {}
+) {
+  const protections = [];
+  itemChanges = foundry.utils.deepClone(itemChanges);
+  for (const update of itemChanges) {
+    const item = actor.items.get(update._id);
+    if (
+      !item ||
+      !Number.isFinite(update['system.reliability']) ||
+      update['system.reliability'] >= item.system.reliability ||
+      Object.hasOwn(update, 'system.maxReliability')
+    )
+      continue;
+    const threshold = enhancementBenefits(item).chemobogThreshold;
+    if (threshold > 6) continue;
+    const roll = await dice('1d6');
+    const prevented = roll.total >= threshold;
+    if (prevented) update['system.reliability'] = item.system.reliability;
+    protections.push({ item, roll, prevented, threshold });
+  }
+  if (
+    !healingBonusApplied &&
+    Number.isFinite(changes['system.hp.value']) &&
+    changes['system.hp.value'] > actor.system.hp.value
+  ) {
+    const effects = changes['system.effects'] ?? actor.system.effects;
+    const oldTemporary = actor.system.effects.reduce(
+      (sum, effect) => sum + Number(effect.temporaryHp || 0),
+      0
+    );
+    const newTemporary = effects.reduce((sum, effect) => sum + Number(effect.temporaryHp || 0), 0);
+    if (newTemporary <= oldTemporary) {
+      const bonus = actorEnhancementBenefits(actor.items).healingBonus;
+      if (bonus)
+        changes['system.hp.value'] = Math.min(actor.system.hp.max, changes['system.hp.value'] + bonus);
+    }
+  }
   if (Array.isArray(changes['system.conditions']))
     changes['system.conditions'] = changes['system.conditions'].filter(
       (condition) => actor.system.conditions.includes(condition) || !immuneTo(actor.system, condition)
@@ -77,6 +121,45 @@ export async function commitActor(actor, changes = {}, itemChanges = [], after) 
       if (changes['system.pendingDeathSaves'] === actor.system.pendingDeathSaves + 1)
         changes['system.pendingDeathSaves'] = actor.system.pendingDeathSaves;
     }
+    const loss = Math.max(0, actor.system.hp.value - changes['system.hp.value']);
+    const effects = foundry.utils.deepClone(changes['system.effects'] ?? actor.system.effects);
+    const oldPool = actor.system.effects.reduce(
+      (sum, effect) => sum + Math.max(0, Number(effect.temporaryHp) || 0),
+      0
+    );
+    const nextPool = effects.reduce((sum, effect) => sum + Math.max(0, Number(effect.temporaryHp) || 0), 0);
+    // Direct damage (overdrawing magic, fumbles, severing a tongue) also triggers
+    // decoctions. Resource expiry/capping is not an injury. Damage plans already
+    // update these fields, so preserve their recorded result instead of doubling it.
+    const hpBonus = (list) => list.reduce((sum, effect) => sum + Number(effect.modifiers?.hp || 0), 0);
+    const lostMaximum = Math.max(0, hpBonus(actor.system.effects) - hpBonus(effects));
+    const capLoss = lostMaximum
+      ? Math.max(0, actor.system.hp.value - (actor.system.hp.max - lostMaximum))
+      : 0;
+    const injury = Math.max(0, loss - Math.max(oldPool - nextPool, capLoss));
+    if (injury) {
+      const triggered = alchemyDamageEffects(actor.system, effects, { damage: injury });
+      for (const [key, field] of [
+        ['griffin-decoction', 'armorBonus'],
+        ['wyvern-decoction', 'wyvernBonus'],
+      ]) {
+        const previous = activeAlchemy(actor.system, key);
+        const current = previous && effects.find((effect) => effect.id === previous.id);
+        if (current && Number(current.alchemy?.[field] || 0) === Number(previous.alchemy?.[field] || 0)) {
+          const next = triggered.find((effect) => effect.id === current.id);
+          current.alchemy = next.alchemy;
+        }
+      }
+    }
+    let remaining = Math.max(0, loss - Math.max(0, oldPool - nextPool));
+    for (const effect of effects) {
+      if (!(effect.temporaryHp > 0) || remaining <= 0) continue;
+      const absorbed = Math.min(effect.temporaryHp, remaining);
+      effect.temporaryHp -= absorbed;
+      remaining -= absorbed;
+    }
+    if (JSON.stringify(effects) !== JSON.stringify(changes['system.effects'] ?? actor.system.effects))
+      changes['system.effects'] = effects;
     const { removeMagicEffects } = await import('./magic-state.js');
     const removed = removeMagicEffects(
       {
@@ -113,15 +196,30 @@ export async function commitActor(actor, changes = {}, itemChanges = [], after) 
     };
   });
   let actorWritten = false;
+  let protectionCard;
   try {
     if (Object.keys(changes).length) {
       await actor.update(changes);
       actorWritten = true;
     }
     if (itemChanges.length) await actor.updateEmbeddedDocuments('Item', itemChanges);
+    if (protections.length)
+      protectionCard = await chat(
+        actor,
+        'Chemobog',
+        protections
+          .map(
+            ({ item, roll, prevented, threshold }) =>
+              `<p>${escapeHTML(item.name)}: ${roll.total} vs ${threshold}–6; ${prevented ? 'weapon damage prevented' : 'weapon takes damage'}.</p>`
+          )
+          .join(''),
+        { rolls: protections.map((entry) => entry.roll) }
+      );
     if (after) return await after();
+    return protectionCard;
   } catch (error) {
     const recovery = [];
+    if (protectionCard) recovery.push(protectionCard.delete());
     if (actorWritten) recovery.push(actor.update(before));
     // Embedded operations can partially succeed, so restore every affected field.
     if (beforeItems.length) recovery.push(actor.updateEmbeddedDocuments('Item', beforeItems));
@@ -359,6 +457,9 @@ export async function skillRoll(
       input('modifier', 'Situational modifier', { value: modifier }) +
         input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value }) +
         woundArmInput(actor) +
+        (activeAlchemy(actor.system, 'cat')
+          ? input('seeThroughIllusion', 'Seeing through an illusion (Cat +2)', { type: 'checkbox' })
+          : '') +
         (key === 'seduction' && activeHexes(actor.system).has('the-eternal-itch')
           ? input('intimacy', 'Intimate contact (Eternal Itch)', { type: 'checkbox' })
           : '') +
@@ -396,6 +497,7 @@ export async function skillRoll(
     context = {
       ...context,
       intimacy: !!values.intimacy,
+      seeThroughIllusion: !!values.seeThroughIllusion,
       animalHandling: !!values.animalHandling,
       socialStanding: values.socialStanding,
       stressed: !!values.stressed || !!game.combat?.started,

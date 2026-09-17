@@ -7432,7 +7432,7 @@
       "notes": "Hardened Leather (x1), Leather (x1), Thread (x5), Wax (x3)",
       "source": "The Witcher Core Rulebook v1.35",
       "page": 139,
-      "productUuid": "Compendium.witcher-rilerena.components.Item.dab08d4e2480e46e"
+      "productUuid": "Compendium.witcher-rilerena.equipment.Item.0d6d168dff97b266"
     },
     "flags": {
       "witcher-rilerena": {
@@ -7482,7 +7482,7 @@
       "notes": "Steel (x2), Thread (x3), Etching Acid (x2)",
       "source": "The Witcher Core Rulebook v1.35",
       "page": 139,
-      "productUuid": "Compendium.witcher-rilerena.components.Item.beba339c616a1c68"
+      "productUuid": "Compendium.witcher-rilerena.equipment.Item.8ad9daaec609acb7"
     },
     "flags": {
       "witcher-rilerena": {

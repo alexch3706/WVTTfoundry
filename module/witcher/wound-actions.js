@@ -1,4 +1,6 @@
 import { hexTreatmentModifier, hexCriticalWound } from './magic-hex-rules.js';
+import { SYSTEM_ID } from './config.js';
+import { lastHopeLocked, lastHopeState } from './alchemy-rules.js';
 import { RuleError, beats } from './rules.js';
 import { WOUNDS } from './wounds.js';
 import { woundInfo, woundItemData } from './wound-catalog.js';
@@ -94,6 +96,10 @@ function startRecovery(actor, item, options, user) {
 /** A successful Healing spell advances one critical-treatment use, never HP. */
 export function magicalWoundTreatment(actor, item, checkTotal) {
   if (item?.type !== 'wound') throw new RuleError('Choose an existing critical wound.');
+  if (lastHopeLocked(item))
+    throw new RuleError(
+      'Last Hope requires Doctor reapplication and subsequent Healing Hands treatment before this wound can heal.'
+    );
   const w = woundData(item),
     req = requirements(w);
   if (!['untreated', 'stabilized'].includes(w.treatment))
@@ -135,12 +141,18 @@ function legacyConditions(actor, item, options, user) {
 }
 
 async function performWoundAction(actor, item, action, options, user) {
+  const lastHope = lastHopeState(item);
+  if (lastHope?.phase === 'locked')
+    throw new RuleError('Use the medical button to reapply Last Hope’s wound with Healing Hands DC24 first.');
+  if (lastHope?.phase === 'reapplied' && !(action === 'medical' && options.kind === 'treat'))
+    throw new RuleError('This reapplied Last Hope injury must be treated again with Healing Hands.');
   const w = woundData(item),
     req = requirements(w);
   let changes = {},
     actorChanges = {},
     text = '',
     rolls = [];
+  const itemMetadata = {};
   if (action === 'markStabilized') {
     requireGM(user);
     if (w.treatment !== 'untreated') throw new RuleError('Only an untreated wound can be stabilized.');
@@ -249,6 +261,12 @@ async function performWoundAction(actor, item, action, options, user) {
             ? startRecovery(actor, item, options, user)
             : { treatment: 'stabilized', ageRounds: 0, separateConditions: true };
         actorChanges = legacyConditions(actor, item, options, user);
+        if (options.kind === 'treat' && lastHope?.phase === 'reapplied')
+          itemMetadata[`flags.${SYSTEM_ID}.lastHope`] = {
+            ...foundry.utils.deepClone(lastHope),
+            phase: 'released',
+            treatedAt: game.time.worldTime,
+          };
       }
     }
     const publish = () => chat(healer, `Treatment: ${actor.name} · ${item.name}`, text, { rolls });
@@ -260,11 +278,11 @@ async function performWoundAction(actor, item, action, options, user) {
           plan.changes['system.sta.value'],
           actorChanges['system.sta.value']
         );
-      return commitActor(actor, combined, [updateFields(item, changes)], publish);
+      return commitActor(actor, combined, [{ ...updateFields(item, changes), ...itemMetadata }], publish);
     }
     // Nested compensation restores healer spending if the patient's write or chat fails.
     return commitActor(healer, plan.changes, [], () =>
-      commitActor(actor, actorChanges, [updateFields(item, changes)], publish)
+      commitActor(actor, actorChanges, [{ ...updateFields(item, changes), ...itemMetadata }], publish)
     );
   } else throw new RuleError('Unknown wound action.');
   if (changes.treatment && ['stabilized', 'treated', 'healed'].includes(changes.treatment))
@@ -306,6 +324,10 @@ function durationInput(actor, item) {
 export async function woundAction(actor, item, action) {
   owner(actor);
   if (!item || item.type !== 'wound') throw new RuleError('Choose a critical wound.');
+  if (action === 'medical' && lastHopeState(item)?.phase === 'locked') {
+    const { lastHopeDoctor } = await import('./alchemy-runtime.js');
+    return lastHopeDoctor(actor, item);
+  }
   const w = woundData(item),
     req = requirements(w),
     expected = woundFingerprint(item),
@@ -450,6 +472,8 @@ export function registerWoundActions() {
     const actor = await authorizedActor(actorUuid, user),
       item = actor.items.get(itemId);
     assertCurrent(item, expected);
+    if (lastHopeLocked(item))
+      throw new RuleError('Last Hope’s injury cannot be removed before the Doctor reapplies and treats it.');
     return commitActor(actor, staminaCapChanges(actor), [], async () => {
       const removed = await actor.deleteEmbeddedDocuments('Item', [item.id]);
       if (!removed?.length) throw new RuleError('Removing the wound was cancelled.');

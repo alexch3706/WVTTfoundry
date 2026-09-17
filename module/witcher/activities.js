@@ -1,11 +1,10 @@
 import { magicRecoveryRules, magicEnvironmentRules, magicActionRules } from './magic-effect-hooks.js';
-import { forgottenRecipe } from './magic-hex-runtime.js';
 import { hasCursedIllness } from './magic-recovery.js';
 import { SYSTEM_ID, CONDITIONS } from './config.js';
 import { RuleError, beats, hitLocations, resolveDamage, resolveDamageSequence } from './rules.js';
 import { activeShieldFor, magicDamageSnapshot, commitDamage } from './magic-shields.js';
 import { immuneTo, creatureRegeneration } from './monster-rules.js';
-import { allocateMaterials, craftingRecovery, repairDifficulty, materialKey } from './crafting.js';
+import { materialKey } from './crafting.js';
 import { actorSnapshot, itemSnapshot } from './documents.js';
 import { planDamageChanges, attack } from './combat.js';
 import {
@@ -30,10 +29,18 @@ import { registerCommand, authorizedActor, runCommand } from './authority.js';
 import { validateReload, validateWeaponGrip } from './inventory.js';
 import { woundConditions, woundConditionSources } from './wounds.js';
 import { woundAction } from './wound-actions.js';
+import { enhancementAction } from './enhancement-runtime.js';
+import { alchemyRegeneration } from './alchemy-combat-rules.js';
+import { alchemyProfile, alchemyKey, toxicityPoison } from './alchemy-rules.js';
+import { useAlchemy, expireAlchemy, recoverAlchemyPoison } from './alchemy-runtime.js';
+import { advanceAlchemyTime, markAlchemyRound } from './alchemy-time.js';
+import { advanceAlchemyExertion } from './alchemy-exertion.js';
+import { actorEnhancementBenefits } from './enhancements.js';
 
 const now = () => game.time.worldTime;
 const has = (actor, key) => actor.system.conditions.includes(key);
-const active = (actor, key) => actor.system.effects.find((x) => x.key === key);
+const active = (actor, key) =>
+  actor.system.effects.find((x) => x.key === key && !x.disabled && (!x.expires || x.expires > now()));
 const targetFor = (actor) => [...game.user.targets][0]?.actor ?? actor;
 const effect = (key, duration, details = {}) => ({
   id: foundry.utils.randomID(),
@@ -149,6 +156,16 @@ async function performTurnAction(actor, key, item, options, user) {
 }
 
 async function endCondition(actor, key, options = {}) {
+  if (
+    key === 'poison' &&
+    actor.system.effects.some(
+      (effect) =>
+        toxicityPoison(effect) ||
+        effect.alchemy?.key === 'failed-witcher-potion' ||
+        effect.alchemy?.key === 'black-blood-poison'
+    )
+  )
+    return recoverAlchemyPoison(actor, options, { user: game.user, id: foundry.utils.randomID() });
   if (hasCursedIllness(actor.system, key))
     throw new RuleError(
       'Use Cursed Illness’s Endurance recovery on the Magic tab against its original casting total.'
@@ -272,127 +289,14 @@ export async function treat(patient, woundItem) {
   });
 }
 
-function stock(actor) {
-  return actor.items.map((i) => ({
-    ...itemSnapshot(i),
-    sourceUuid: i._stats?.compendiumSource ?? i.flags.core?.sourceId,
-  }));
-}
-function hasTool(actor, name) {
-  return actor.items.some((i) => i.system.carried && i.system.quantity > 0 && i.name === name);
-}
 async function craftAttempt(actor, diagram, { repairItem = null } = {}) {
-  owner(actor);
-  if (diagram?.type !== 'diagram') throw new RuleError('Select a crafting diagram or alchemy formula.');
-  const d = diagram.system,
-    alchemy = d.skill === 'alchemy';
-  if (!hasTool(actor, alchemy ? 'Alchemy Set' : 'Crafting Tools'))
-    throw new RuleError(`A carried ${alchemy ? 'Alchemy Set' : 'Crafting Tools'} is required.`);
-  if (!d.productUuid && !repairItem) throw new RuleError('The recipe needs a valid product compendium link.');
-  const materials = repairItem ? d.materials.map((m) => ({ ...m, quantity: 1 })) : d.materials;
-  if (!materials.length) throw new RuleError('This recipe has no component requirements.');
-  const used = allocateMaterials(materials, stock(actor));
-  const metal = materials.some((m) => /iron|steel|silver|gold|meteorite|dimeritium/i.test(m.name));
-  const values = await prompt(
-    repairItem ? 'Repair equipment' : 'Craft',
-    `<p>${e(diagram.name)} · ${e(d.craftTime)}</p><ul>${used.map((i) => `<li>${e(i.name)} × ${i.quantity}</li>`).join('')}</ul>` +
-      input('written', 'Written recipe available (+2)', { type: 'checkbox', checked: d.carried !== false }) +
-      input('forge', 'Forge available', { type: 'checkbox', checked: hasTool(actor, 'Tinker’s Forge') }) +
-      input('time', 'Required crafting time has elapsed', { type: 'checkbox' }) +
-      input('modifier', 'Other modifiers', { value: 0 }),
-    { button: 'Complete crafting' }
-  );
-  if (!values) return;
-  if (!values.time) throw new RuleError('Complete the recipe’s crafting time first.');
-  if (metal && !values.forge) throw new RuleError('Recipes with metal components require a forge (p.127).');
-  if (!values.written && !d.memorized)
-    throw new RuleError('The recipe must be memorized or physically available.');
-  if (!values.written && forgottenRecipe(actor.system, diagram.id))
-    throw new RuleError(
-      'Hex of Forgetfulness removed this recipe from memory; use an actual written recipe or lift the hex.'
-    );
-  const dc = repairItem ? repairDifficulty(d, repairItem.system.attachments.length) : d.craftDC;
-  const result = await check(
-    actor.skillBase(d.skill, { modifier: (values.written ? 2 : 0) + Number(values.modifier) }).total,
-    { actor: actor }
-  );
-  const success = beats(result.total, dc);
-  const updates = used.map((i) => ({ _id: i.id, 'system.quantity': i.after }));
-  const created = [];
-  if (success && !repairItem) {
-    const product = await resolveFoundryUuid(d.productUuid);
-    if (!product) throw new RuleError('The product compendium entry is unavailable.');
-    const data = product.toObject();
-    delete data._id;
-    data.system.quantity = d.productQuantity;
-    data.system.equipped = false;
-    created.push(...(await actor.createEmbeddedDocuments('Item', [data])));
-  }
-  if (success && repairItem) {
-    const update = { _id: repairItem.id };
-    if (repairItem.type === 'armor')
-      update['system.sp'] = Object.fromEntries(
-        repairItem.system.coverage.map((id) => [id, repairItem.system.stoppingPower])
-      );
-    else update['system.reliability'] = repairItem.system.maxReliability;
-    updates.push(update);
-  }
-  try {
-    await commitActor(actor, {}, updates);
-  } catch (error) {
-    if (created.length)
-      await actor.deleteEmbeddedDocuments(
-        'Item',
-        created.map((i) => i.id)
-      );
-    throw error;
-  }
-  await chat(
-    actor,
-    repairItem ? 'Repair' : 'Crafting',
-    checkHTML(result) + `<p>DC ${dc}: ${success ? 'Completed.' : 'Failed; components consumed.'}</p>`,
-    { rolls: result.rolls }
-  );
-  if (!success) {
-    const recover = await prompt('Recover components', '<p>One immediate recovery attempt is allowed.</p>', {
-      button: 'Recovery roll',
-    });
-    if (!recover) return;
-    const roll = await check(actor.skillBase(d.skill).total, { actor: actor });
-    const recovered = craftingRecovery(used, { alchemy, success: beats(roll.total, dc) });
-    if (alchemy && recovered.length) {
-      const choice = await prompt(
-        'Recovered substance',
-        input('substance', 'Choose one pure substance', {
-          options: Object.fromEntries(recovered.map((i) => [i.name, i.name])),
-        }),
-        { button: 'Recover' }
-      );
-      if (choice)
-        await actor.createEmbeddedDocuments('Item', [
-          {
-            name: choice.substance,
-            type: 'component',
-            system: { substance: choice.substance, category: 'pureSubstance', quantity: 1, weight: 0.1 },
-          },
-        ]);
-    } else if (recovered.length)
-      await actor.updateEmbeddedDocuments(
-        'Item',
-        recovered.map((i) => ({
-          _id: i.id,
-          'system.quantity': actor.items.get(i.id).system.quantity + i.quantity,
-        }))
-      );
-    await chat(
-      actor,
-      'Crafting recovery',
-      checkHTML(roll) + `<p>DC ${dc}: ${recovered.length ? 'Materials recovered.' : 'No recovery.'}</p>`,
-      { rolls: roll.rolls }
-    );
-  }
+  const { startCrafting } = await import('./alchemy-crafting-runtime.js');
+  return startCrafting(actor, diagram, { repairItem });
 }
-export const craft = (actor, diagram) => serial(actor.uuid, () => craftAttempt(actor, diagram));
+export const craft = (actor, diagram) =>
+  diagram.flags?.[SYSTEM_ID]?.enhancementProcedure
+    ? enhancementAction(actor, diagram)
+    : serial(actor.uuid, () => craftAttempt(actor, diagram));
 export async function repair(actor, item) {
   if (!['weapon', 'armor', 'shield'].includes(item?.type))
     throw new RuleError('Only weapons, armor and shields use this repair action.');
@@ -418,78 +322,14 @@ export async function repair(actor, item) {
 }
 
 export async function enhance(actor, enhancement) {
-  owner(actor);
-  return serial(actor.uuid, async () => {
-    if (enhancement.system.quantity < 1) throw new RuleError('No enhancement remains.');
-    const rune = enhancement.system.category === 'rune',
-      glyph = enhancement.system.category === 'glyph';
-    const eligible = actor.items.filter(
-      (i) => i.type === (rune ? 'weapon' : 'armor') && i.system.attachments.length < i.system.enhancements
-    );
-    if (!eligible.length) throw new RuleError('No suitable item has a free enhancement slot.');
-    const values = await prompt(
-      'Apply enhancement',
-      input('target', 'Equipment', { options: Object.fromEntries(eligible.map((i) => [i.id, i.name])) }) +
-        input('modifier', 'Crafting modifier', { value: 0 }),
-      { button: 'Apply' }
-    );
-    if (!values) return;
-    const target = actor.items.get(values.target),
-      s = target.system,
-      enh = enhancement.system;
-    if (!rune && !glyph && !hasTool(actor, 'Crafting Tools'))
-      throw new RuleError('Crafting Tools are required.');
-    const plan = actionPlan(actor, { full: true });
-    const result =
-      !rune && !glyph
-        ? await check(
-            actor.skillBase('crafting', { modifier: Number(values.modifier) + plan.modifier }).total,
-            { actor: actor }
-          )
-        : null;
-    if (result && !beats(result.total, 14)) {
-      await commitActor(actor, plan.changes);
-      await chat(
-        actor,
-        'Enhancement failed',
-        checkHTML(result) + '<p>DC 14; the enhancement can be tried again.</p>',
-        { rolls: result.rolls }
-      );
-      return;
-    }
-    const update = {
-      _id: target.id,
-      'system.attachments': [
-        ...s.attachments,
-        { id: enhancement.id, name: enhancement.name, category: enh.category, system: enh.toObject() },
-      ],
-      'system.weight': s.weight + enh.weight,
-      'system.properties': { ...s.properties, ...positiveProps(enh.properties) },
-      'system.resistances': [...new Set([...s.resistances, ...enh.resistances])],
-      'system.skillBonuses': [...s.skillBonuses, ...enh.skillBonuses],
-    };
-    if (!rune && !glyph) {
-      update['system.stoppingPower'] = s.stoppingPower + enh.stoppingPower;
-      update['system.sp'] = Object.fromEntries(
-        s.coverage.map((id) => [id, (s.sp[id] ?? s.stoppingPower) + enh.stoppingPower])
-      );
-    }
-    await commitActor(actor, plan.changes, [
-      update,
-      { _id: enhancement.id, 'system.quantity': enh.quantity - 1 },
-    ]);
-    await chat(
-      actor,
-      'Enhancement applied',
-      `<p>${e(enhancement.name)} → ${e(target.name)}</p>` + (result ? checkHTML(result) : ''),
-      { rolls: result?.rolls ?? [] }
-    );
-  });
+  return enhancementAction(actor, enhancement);
 }
 
 export async function useItem(actor, item) {
   owner(actor);
-  if (!item || item.system.quantity < 1) throw new RuleError('No item remains to use.');
+  if (alchemyProfile(item)) return useAlchemy(actor, item);
+  const doseCost = ['Chloroform', 'Smelling Salts'].includes(item?.name) ? 1 / 25 : 1;
+  if (!item || item.system.quantity + 1e-8 < doseCost) throw new RuleError('No item remains to use.');
   if (item.system.carried === false) throw new RuleError('Carry the item before using it.');
   if (item.type === 'component' && item.system.ability.key === 'crushEssence')
     return crushEssence(actor, item);
@@ -686,7 +526,8 @@ async function performCrushEssence(actor, item) {
 async function applyItem(actor, target, item) {
   owner(actor);
   owner(target);
-  if (item.system.quantity < 1) throw new RuleError('The item has already been consumed.');
+  const doseCost = ['Chloroform', 'Smelling Salts'].includes(item.name) ? 1 / 25 : 1;
+  if (item.system.quantity + 1e-8 < doseCost) throw new RuleError('The item has already been consumed.');
   if (item.type !== 'alchemical')
     return chat(actor, item.name, `<p>${e(item.system.effectText || item.system.notes)}</p>`);
   const plan = actionPlan(actor),
@@ -958,19 +799,29 @@ export async function tickActor(actor, key) {
       (i) => i.type === 'weapon' && i.system.equipped && !i.system.properties.natural
     ))
       planned.items.push({ _id: i.id, 'system.reliability': Math.max(0, i.system.reliability - 1) });
-  let regen = (active(actor, 'Troll Decoction') ? 5 : 0) + creatureRegeneration(state);
-  if (active(actor, 'Swallow') && !actor.system.combat.hitThisRound) regen += 3;
-  if (active(actor, 'Grave Hag Decoction')) regen += active(actor, 'Grave Hag Decoction').kills * 2 || 0;
-  regen = magicRecoveryRules(actor.system, { source: 'magical', amount: regen }).hpAmount;
+  const alchemicalRegen = alchemyRegeneration(state, {
+    struck: actor.system.combat.hitThisRound,
+    combatId: game.combat?.started ? game.combat.id : '',
+  });
+  let regen =
+    creatureRegeneration(state) +
+    magicRecoveryRules(actor.system, { source: 'magical', amount: alchemicalRegen }).hpAmount;
   if (actor.system.conditions.includes('dead')) regen = 0;
+  if (regen > 0) regen += actorEnhancementBenefits(actor.items).healingBonus;
   planned.actor['system.hp.value'] = Math.min(actor.system.hp.max, planned.actor['system.hp.value'] + regen);
   if (actor.system.hp.value <= 0 || planned.actor['system.hp.value'] <= 0)
     planned.actor['system.pendingDeathSaves'] = actor.system.pendingDeathSaves + 1;
   planned.actor['system.combat.lastEffectTurn'] = key;
   planned.actor['system.combat.hitThisRound'] = false;
+  planned.actor['system.effects'] = markAlchemyRound(
+    planned.actor['system.effects'] ?? actor.system.effects,
+    now()
+  );
   // Tick damage does not free a stunned victim unless an actual damaging effect hit them.
   if (!results.length && !direct) planned.actor['system.conditions'] = actor.system.conditions;
-  await commitDamage(actor, planned, [...planned.items, ...woundUpdates]);
+  await commitDamage(actor, planned, [...planned.items, ...woundUpdates], undefined, {
+    healingBonusApplied: true,
+  });
   if (direct || results.length || regen)
     await chat(
       actor,
@@ -981,7 +832,10 @@ export async function tickActor(actor, key) {
   await expireEffects(actor);
 }
 export async function expireEffects(actor) {
-  const expired = actor.system.effects.filter((x) => !x.magic && x.expires && x.expires <= now());
+  await expireAlchemy(actor);
+  const expired = actor.system.effects.filter(
+    (x) => !x.magic && !alchemyKey(x) && x.expires && x.expires <= now()
+  );
   if (!expired.length) return;
   const effects = actor.system.effects.filter((x) => !expired.some((e) => e.id === x.id));
   const conditions = new Set(actor.system.conditions);
@@ -1025,16 +879,21 @@ export function registerActivities() {
         'system.conditions': conditions,
         'system.effects': actor.system.effects.filter((e) => !e.untilTurn),
       });
+      await advanceAlchemyExertion(actor, now());
       await tickActor(actor, `${combat.id}:${combat.round}:${combat.turn}`);
     }).catch(errorNotice);
   });
   Hooks.on('updateWorldTime', () => {
     if (!isPrimaryActiveGm()) return;
     const actors = new Map(game.actors.map((a) => [a.uuid, a]));
-    for (const token of canvas.tokens?.placeables ?? [])
-      if (token.actor) actors.set(token.actor.uuid, token.actor);
+    for (const scene of game.scenes ?? [])
+      for (const token of scene.tokens ?? []) if (token.actor) actors.set(token.actor.uuid, token.actor);
     for (const actor of actors.values())
-      serial('witcher-authority', () => expireEffects(actor)).catch(errorNotice);
+      serial('witcher-authority', async () => {
+        await advanceAlchemyExertion(actor, now());
+        await advanceAlchemyTime(actor, now());
+        await expireEffects(actor);
+      }).catch(errorNotice);
   });
   Hooks.on('renderChatMessageHTML', (message, html) =>
     html.querySelector('[data-witcher-use]')?.addEventListener('click', () =>
