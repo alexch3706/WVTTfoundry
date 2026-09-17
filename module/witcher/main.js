@@ -1,3 +1,17 @@
+import { registerContinuingMagicRuntime } from './magic-ongoing-runtime.js';
+import { registerMagicMovement } from './magic-movement.js';
+import { registerMagicRecovery } from './magic-recovery.js';
+import { registerMagicRestraints } from './magic-restraints.js';
+import { registerWindFog } from './magic-wind-fog.js';
+import { registerHexRuntime } from './magic-hex-runtime.js';
+import { registerMagicGear } from './magic-gear.js';
+import {
+  registerRitualRegions,
+  registerRitualRuntime,
+  ritualActionRestriction,
+} from './magic-ritual-effects.js';
+import { registerMagicLearning } from './magic-learning.js';
+import { registerWorldMagicRuntime } from './magic-world-runtime.js';
 import { SYSTEM_ID, ITEM_TYPES, CONDITIONS } from './config.js';
 import {
   WitcherActorData,
@@ -17,6 +31,10 @@ import { registerAuthority } from './authority.js';
 import { BESTIARY_ART } from './bestiary-art.js';
 import { updateBestiaryArt } from './bestiary-art-migration.js';
 import { registerWoundActions, woundAction, addWound } from './wound-actions.js';
+import { registerMagicCommands, promptMagicCollapse, refreshMagicCard } from './magic-runtime.js';
+import { registerMagicZones } from './magic-zones.js';
+import { registerMagicLifecycle } from './magic-lifecycle.js';
+import { registerMagicChat, castMagic, defendMagic, counterMagic } from './magic-ui.js';
 import { loadFoundryTemplates } from '../foundry-compat.js';
 
 Hooks.once('init', async () => {
@@ -30,6 +48,9 @@ Hooks.once('init', async () => {
   CONFIG.Item.dataModels = Object.fromEntries(ITEM_TYPES.map((type) => [type, WitcherItemData]));
   CONFIG.Combat.initiative = { formula: '1d10 + @derived.stats.ref', decimals: 2 };
   CONFIG.time.roundTime = 3;
+  registerMagicZones();
+  registerRitualRegions();
+  registerMagicLifecycle({ onCollapse: promptMagicCollapse });
   Hooks.on('preCreateScene', (scene, data) => {
     if (!data.grid?.units && !data.grid?.distance)
       scene.updateSource({ 'grid.distance': 2, 'grid.units': 'm' });
@@ -61,11 +82,16 @@ Hooks.once('init', async () => {
     tickActor,
     woundAction,
     addWound,
+    castMagic,
+    defendMagic,
+    counterMagic,
     updateBestiaryArt: () => updateBestiaryArt(BESTIARY_ART),
   };
   await loadFoundryTemplates([
     `systems/${SYSTEM_ID}/templates/witcher/actor.hbs`,
     `systems/${SYSTEM_ID}/templates/witcher/item.hbs`,
+    `systems/${SYSTEM_ID}/templates/witcher/magic.hbs`,
+    `systems/${SYSTEM_ID}/templates/witcher/magic-item.hbs`,
   ]);
 });
 Hooks.once('ready', async () => {
@@ -73,6 +99,35 @@ Hooks.once('ready', async () => {
   registerCombatChat();
   registerActivities();
   registerWoundActions();
+  registerMagicCommands();
+  registerWorldMagicRuntime({ refreshCard: refreshMagicCard });
+  registerMagicChat();
+  registerMagicLearning();
+  registerHexRuntime();
+  registerContinuingMagicRuntime();
+  registerMagicMovement();
+  registerMagicRecovery();
+  registerMagicRestraints();
+  registerWindFog();
+  await registerRitualRuntime();
+  registerMagicGear();
+  Hooks.on('preUpdateToken', (token, changes, options = {}) => {
+    if (!token.actor || !['x', 'y', 'elevation'].some((key) => Object.hasOwn(changes, key))) return;
+    const healingRest = token.actor.system.effects.some(
+      (effect) => effect.magic?.healingRest && !effect.disabled && !effect.magic.suppressed
+    );
+    if (healingRest && !game.user.isGM && !options.witcherForcedMovement && !options.witcherMagicRollback) {
+      ui.notifications.warn(
+        'Healing Rest prevents voluntary movement. The GM can move a carried or displaced body.'
+      );
+      return false;
+    }
+    const reason = ritualActionRestriction(token.actor, 'move');
+    if (reason) {
+      ui.notifications.warn(reason);
+      return false;
+    }
+  });
   registerConsequences();
   registerCreatureAbilities();
   registerAuthority();

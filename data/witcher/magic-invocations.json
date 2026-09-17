@@ -1,0 +1,3589 @@
+[
+  {
+    "_id": "602d2d37b32165d4",
+    "name": "Boiling Blood",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "boiling-blood",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 3,
+          "max": 3,
+          "step": 1,
+          "options": [],
+          "text": "3"
+        },
+        "range": {
+          "text": "8m",
+          "distance": 8,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1d10 Rounds",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none",
+          "formula": "1d10"
+        },
+        "defenses": [
+          "willTriple"
+        ],
+        "defenseText": "Creature’s WILLx3",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "boiling-blood",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 110,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "An animal or nonsentient monster attacks a chosen target after the caster beats the creature’s WILL × 3.",
+      "description": "<p>An animal or nonsentient monster attacks a chosen target after the caster beats the creature’s WILL × 3.</p><p><strong>STA:</strong> 3. <strong>Range:</strong> 8m. <strong>Duration:</strong> 1d10 Rounds. <strong>Defense:</strong> Creature’s WILLx3.</p><p>Source: The Witcher Core Rulebook v1.35, p.110.</p>"
+    }
+  },
+  {
+    "_id": "2dd8d31066d480b1",
+    "name": "Cursed Illness",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "cursed-illness",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 2,
+          "max": 6,
+          "step": 1,
+          "options": [
+            2,
+            4,
+            6
+          ],
+          "text": "2 / 4 / 6"
+        },
+        "range": {
+          "text": "8m",
+          "distance": 8,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Endurance Roll Ends",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "cursed-illness",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 110,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Cause illness at one of three STA levels: 2 staggers with coughing, 4 stuns with severe sickness, or 6 applies disease as poison. An Endurance check against the original casting total ends the illness.",
+      "description": "<p>Cause illness at one of three STA levels: 2 staggers with coughing, 4 stuns with severe sickness, or 6 applies disease as poison. An Endurance check against the original casting total ends the illness.</p><p><strong>STA:</strong> 2 / 4 / 6. <strong>Range:</strong> 8m. <strong>Duration:</strong> Endurance Roll Ends. <strong>Defense:</strong> Resist Magic.</p><p>Source: The Witcher Core Rulebook v1.35, p.110.</p>"
+    }
+  },
+  {
+    "_id": "dd3fcd147858c042",
+    "name": "Friend to Wild Kind",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "friend-to-wild-kind",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 1,
+          "max": 1,
+          "step": 1,
+          "options": [],
+          "text": "1"
+        },
+        "range": {
+          "text": "Self or 5m",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1d6 Hours",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none",
+          "formula": "1d6"
+        },
+        "defenses": [
+          "willTriple"
+        ],
+        "defenseText": "Creature’s WILLx3",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "friend-to-wild-kind",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 110,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Gain +3 Wilderness Survival for animal handling, or calm an animal by exceeding its WILL × 3 with Spell Casting.",
+      "description": "<p>Gain +3 Wilderness Survival for animal handling, or calm an animal by exceeding its WILL × 3 with Spell Casting.</p><p><strong>STA:</strong> 1. <strong>Range:</strong> Self or 5m. <strong>Duration:</strong> 1d6 Hours. <strong>Defense:</strong> Creature’s WILLx3.</p><p>Source: The Witcher Core Rulebook v1.35, p.110.</p>"
+    }
+  },
+  {
+    "_id": "153c76e3bb763012",
+    "name": "Nature’s Gift",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "natures-gift",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 1,
+          "max": 0,
+          "step": 1,
+          "options": [],
+          "text": "1 STA per person fed",
+          "formula": "peopleFed"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "natures-gift",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 110,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Grow edible plants in any soil, providing one day of food for one person per STA invested.",
+      "description": "<p>Grow edible plants in any soil, providing one day of food for one person per STA invested.</p><p><strong>STA:</strong> 1 STA per person fed. <strong>Range:</strong> 2m. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.110.</p>"
+    }
+  },
+  {
+    "_id": "aaa66c13e378b51b",
+    "name": "Nature’s Sight",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "natures-sight",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 2,
+          "max": 2,
+          "step": 1,
+          "options": [],
+          "text": "2"
+        },
+        "range": {
+          "text": "Self",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "self"
+        },
+        "duration": {
+          "text": "Active (1 STA)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 1,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "natures-sight",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 110,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "See unnatural creatures within 50m as glowing forms, even through obstructions.",
+      "description": "<p>See unnatural creatures within 50m as glowing forms, even through obstructions.</p><p><strong>STA:</strong> 2. <strong>Range:</strong> Self. <strong>Duration:</strong> Active (1 STA). <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.110.</p>"
+    }
+  },
+  {
+    "_id": "b6a2080e6f6652aa",
+    "name": "Sigil of the Hidden",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "sigil-of-the-hidden",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 2,
+          "max": 2,
+          "step": 1,
+          "options": [],
+          "text": "2"
+        },
+        "range": {
+          "text": "Self",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "self"
+        },
+        "duration": {
+          "text": "Until Dispelled",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "sigil-of-the-hidden",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 110,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Conceal a 3m area beneath natural foliage for complete visual cover and +5 Stealth. Occupants cannot move until it is removed by recasting or by inflicting 10 damage on the vegetation.",
+      "description": "<p>Conceal a 3m area beneath natural foliage for complete visual cover and +5 Stealth. Occupants cannot move until it is removed by recasting or by inflicting 10 damage on the vegetation.</p><p><strong>STA:</strong> 2. <strong>Range:</strong> Self. <strong>Duration:</strong> Until Dispelled. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.110.</p>"
+    }
+  },
+  {
+    "_id": "7b49f98c58d4a449",
+    "name": "Blessing of Healing",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "blessing-of-healing",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 5,
+          "max": 5,
+          "step": 1,
+          "options": [],
+          "text": "5"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Active (3 STA)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 3,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "blessing-of-healing",
+          "params": {
+            "healPerRound": 3,
+            "criticalTreatment": true
+          }
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 110,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Restore 3 HP per round while maintained. Repeated uses may instead treat a critical injury according to the separate critical-healing requirements.",
+      "description": "<p>Restore 3 HP per round while maintained. Repeated uses may instead treat a critical injury according to the separate critical-healing requirements.</p><p><strong>STA:</strong> 5. <strong>Range:</strong> 2m. <strong>Duration:</strong> Active (3 STA). <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.110.</p>"
+    }
+  },
+  {
+    "_id": "bbfc88fd90475c1a",
+    "name": "Primal Reservoir",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "primal-reservoir",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 6,
+          "max": 6,
+          "step": 1,
+          "options": [],
+          "text": "6"
+        },
+        "range": {
+          "text": "5m",
+          "distance": 5,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "2d6 Rounds",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none",
+          "formula": "2d6"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "primal-reservoir",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 110,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Awaken a target’s primal strength: +2 melee damage and −2 INT.",
+      "description": "<p>Awaken a target’s primal strength: +2 melee damage and −2 INT.</p><p><strong>STA:</strong> 6. <strong>Range:</strong> 5m. <strong>Duration:</strong> 2d6 Rounds. <strong>Defense:</strong> Resist Magic.</p><p>Source: The Witcher Core Rulebook v1.35, p.110.</p>"
+    }
+  },
+  {
+    "_id": "cbca0cd3b1683a70",
+    "name": "Threads of Life",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "threads-of-life",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 4,
+          "max": 4,
+          "step": 1,
+          "options": [],
+          "text": "4"
+        },
+        "range": {
+          "text": "10m",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Active (2 STA)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 2,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "threads-of-life",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 110,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "See the current HP and critical injuries of all targets within the invocation’s range.",
+      "description": "<p>See the current HP and critical injuries of all targets within the invocation’s range.</p><p><strong>STA:</strong> 4. <strong>Range:</strong> 10m. <strong>Duration:</strong> Active (2 STA). <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.110.</p>"
+    }
+  },
+  {
+    "_id": "7fbc22f27d727ddb",
+    "name": "Shape Nature",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "shape-nature",
+        "kind": "invocation",
+        "tier": "master",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 12,
+          "max": 12,
+          "step": 1,
+          "options": [],
+          "text": "12"
+        },
+        "range": {
+          "text": "10m",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1d10 Rounds",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none",
+          "formula": "1d10"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "shape-nature",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 111,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Animate a small tree as a standard golem that serves the caster. It reverts when the spell ends; destruction yields only 2d10 units of timber.",
+      "description": "<p>Animate a small tree as a standard golem that serves the caster. It reverts when the spell ends; destruction yields only 2d10 units of timber.</p><p><strong>STA:</strong> 12. <strong>Range:</strong> 10m. <strong>Duration:</strong> 1d10 Rounds. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.111.</p>"
+    }
+  },
+  {
+    "_id": "9060b70b8b4b09f4",
+    "name": "Song of the Sky",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "song-of-the-sky",
+        "kind": "invocation",
+        "tier": "master",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 10,
+          "max": 10,
+          "step": 1,
+          "options": [],
+          "text": "10"
+        },
+        "range": {
+          "text": "50m",
+          "distance": 50,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Active (5 STA)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 5,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "song-of-the-sky",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 111,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Change local weather to clear, cloudy, rainstorm, windstorm, or lightning storm. Rain extinguishes fires; wind imposes −2 DEX on ranged attacks; lightning uses Lightning Storm with a 35% strike chance.",
+      "description": "<p>Change local weather to clear, cloudy, rainstorm, windstorm, or lightning storm. Rain extinguishes fires; wind imposes −2 DEX on ranged attacks; lightning uses Lightning Storm with a 35% strike chance.</p><p><strong>STA:</strong> 10. <strong>Range:</strong> 50m. <strong>Duration:</strong> Active (5 STA). <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.111.</p>"
+    }
+  },
+  {
+    "_id": "4eb9768efb7a3c22",
+    "name": "Blessing of Fortune",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "blessing-of-fortune",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 1,
+          "max": 1,
+          "step": 1,
+          "options": [],
+          "text": "1"
+        },
+        "range": {
+          "text": "10m",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Until Expended",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "blessing-of-fortune",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 111,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Grant temporary LUCK equal to half the casting margin over DC12, capped at 5 points, lasting until spent.",
+      "description": "<p>Grant temporary LUCK equal to half the casting margin over DC12, capped at 5 points, lasting until spent.</p><p><strong>STA:</strong> 1. <strong>Range:</strong> 10m. <strong>Duration:</strong> Until Expended. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.111.</p>"
+    }
+  },
+  {
+    "_id": "bbc4607c8921121c",
+    "name": "Blessing of Love",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "blessing-of-love",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 2,
+          "max": 2,
+          "step": 1,
+          "options": [],
+          "text": "2"
+        },
+        "range": {
+          "text": "5m",
+          "distance": 5,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1d10 Rounds",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none",
+          "formula": "1d10"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "blessing-of-love",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 111,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Grant the caster +3 Charisma and Seduction.",
+      "description": "<p>Grant the caster +3 Charisma and Seduction.</p><p><strong>STA:</strong> 2. <strong>Range:</strong> 5m. <strong>Duration:</strong> 1d10 Rounds. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.111.</p>"
+    }
+  },
+  {
+    "_id": "e503ae8de33b4e62",
+    "name": "Holy Light",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "holy-light",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 1,
+          "max": 1,
+          "step": 1,
+          "options": [],
+          "text": "1"
+        },
+        "range": {
+          "text": "Self",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "self"
+        },
+        "duration": {
+          "text": "3d10 Rounds",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none",
+          "formula": "3d10"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "holy-light",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 111,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Provide torch-like illumination without heat or ignition.",
+      "description": "<p>Provide torch-like illumination without heat or ignition.</p><p><strong>STA:</strong> 1. <strong>Range:</strong> Self. <strong>Duration:</strong> 3d10 Rounds. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.111.</p>"
+    }
+  },
+  {
+    "_id": "33d4d857cb2bba13",
+    "name": "Vaults of Knowledge",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "vaults-of-knowledge",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 3,
+          "max": 3,
+          "step": 1,
+          "options": [],
+          "text": "3"
+        },
+        "range": {
+          "text": "Self",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "self"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "vaults-of-knowledge",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 111,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Recall any knowledge or memory the caster has previously held as vividly as the original experience.",
+      "description": "<p>Recall any knowledge or memory the caster has previously held as vividly as the original experience.</p><p><strong>STA:</strong> 3. <strong>Range:</strong> Self. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.111.</p>"
+    }
+  },
+  {
+    "_id": "f280e5f3d97eccff",
+    "name": "Waters of Clearance",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "waters-of-clearance",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 1,
+          "max": 1,
+          "step": 1,
+          "options": [],
+          "text": "1"
+        },
+        "range": {
+          "text": "5m",
+          "distance": 5,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "waters-of-clearance",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 111,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Immediately remove intoxication from alcohol or intoxicating alchemical substances.",
+      "description": "<p>Immediately remove intoxication from alcohol or intoxicating alchemical substances.</p><p><strong>STA:</strong> 1. <strong>Range:</strong> 5m. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> Resist Magic.</p><p>Source: The Witcher Core Rulebook v1.35, p.111.</p>"
+    }
+  },
+  {
+    "_id": "a967ce3372e3ef62",
+    "name": "Web of Lies",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "web-of-lies",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 3,
+          "max": 3,
+          "step": 1,
+          "options": [],
+          "text": "3"
+        },
+        "range": {
+          "text": "8m",
+          "distance": 8,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "INT roll ends",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "web-of-lies",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 111,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Confuse the target into being stunned. Once per round on its turn, it may roll 1d10 below INT to end the effect.",
+      "description": "<p>Confuse the target into being stunned. Once per round on its turn, it may roll 1d10 below INT to end the effect.</p><p><strong>STA:</strong> 3. <strong>Range:</strong> 8m. <strong>Duration:</strong> INT roll ends. <strong>Defense:</strong> Resist Magic.</p><p>Source: The Witcher Core Rulebook v1.35, p.111.</p>"
+    }
+  },
+  {
+    "_id": "ec75af28d9494a8c",
+    "name": "Cleansing Fire",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "cleansing-fire",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 6,
+          "max": 6,
+          "step": 1,
+          "options": [],
+          "text": "6"
+        },
+        "range": {
+          "text": "10m",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Until Put Out",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "cleansing-fire",
+          "params": {},
+          "damageFormula": "3d6",
+          "damageType": "fire",
+          "physicalCritical": false,
+          "blockable": false
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 112,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Deal 3d6 damage and set the target on fire.",
+      "description": "<p>Deal 3d6 damage and set the target on fire.</p><p><strong>STA:</strong> 6. <strong>Range:</strong> 10m. <strong>Duration:</strong> Until Put Out. <strong>Defense:</strong> Resist Magic.</p><p>Source: The Witcher Core Rulebook v1.35, p.112.</p>"
+    }
+  },
+  {
+    "_id": "bbf4ae1ae2543625",
+    "name": "Holy Fortification",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "holy-fortification",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 5,
+          "max": 5,
+          "step": 1,
+          "options": [],
+          "text": "5"
+        },
+        "range": {
+          "text": "10m",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "holy-fortification",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 112,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Allow the target another check against each spell currently affecting it.",
+      "description": "<p>Allow the target another check against each spell currently affecting it.</p><p><strong>STA:</strong> 5. <strong>Range:</strong> 10m. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.112.</p>"
+    }
+  },
+  {
+    "_id": "cab6aa81501ae173",
+    "name": "Light of Truth",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "light-of-truth",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 4,
+          "max": 4,
+          "step": 1,
+          "options": [],
+          "text": "4"
+        },
+        "range": {
+          "text": "5m",
+          "distance": 5,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Active (2 STA)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 2,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "light-of-truth",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 112,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "A target that fails its Resist Magic check must answer questions truthfully. Repeat the opposed check every round.",
+      "description": "<p>A target that fails its Resist Magic check must answer questions truthfully. Repeat the opposed check every round.</p><p><strong>STA:</strong> 4. <strong>Range:</strong> 5m. <strong>Duration:</strong> Active (2 STA). <strong>Defense:</strong> Resist Magic.</p><p>Source: The Witcher Core Rulebook v1.35, p.112.</p>"
+    }
+  },
+  {
+    "_id": "2ee4aa5bc003082d",
+    "name": "Divine Portal",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "divine-portal",
+        "kind": "invocation",
+        "tier": "master",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 12,
+          "max": 12,
+          "step": 1,
+          "options": [],
+          "text": "12"
+        },
+        "range": {
+          "text": "N/A",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "1 Round",
+          "rounds": 1,
+          "seconds": 3,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "divine-portal",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 112,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Open a portal for one round to a remembered location, following Standing Portal’s other rules.",
+      "description": "<p>Open a portal for one round to a remembered location, following Standing Portal’s other rules.</p><p><strong>STA:</strong> 12. <strong>Range:</strong> N/A. <strong>Duration:</strong> 1 Round. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.112.</p>"
+    }
+  },
+  {
+    "_id": "c5bf26b0b63fef62",
+    "name": "Divine Wisdom",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "divine-wisdom",
+        "kind": "invocation",
+        "tier": "master",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 10,
+          "max": 10,
+          "step": 1,
+          "options": [],
+          "text": "10"
+        },
+        "range": {
+          "text": "50m",
+          "distance": 50,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Active (5 STA)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 5,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "divine-wisdom",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 112,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Seek an answer about existing or past facts; this does not predict the future. The GM determines the DC from how secret the information is.",
+      "description": "<p>Seek an answer about existing or past facts; this does not predict the future. The GM determines the DC from how secret the information is.</p><p><strong>STA:</strong> 10. <strong>Range:</strong> 50m. <strong>Duration:</strong> Active (5 STA). <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.112.</p>"
+    }
+  },
+  {
+    "_id": "71a53afd9c0f5913",
+    "name": "Blessing of Death",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "blessing-of-death",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "10m",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "blessing-of-death",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 113,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Send the target into Death state. Successful First Aid or Healing Hands at DC16 restores its previous HP immediately.",
+      "description": "<p>Send the target into Death state. Successful First Aid or Healing Hands at DC16 restores its previous HP immediately.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 10m. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> Resist Magic.</p><p>Source: The Witcher Core Rulebook v1.35, p.113.</p>"
+    }
+  },
+  {
+    "_id": "9d25f3d55b8d4003",
+    "name": "Eternal Judgement",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "eternal-judgement",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "10m",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Until Put Out",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "eternal-judgement",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 113,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Ignite the target with supernatural fire dealing twice normal fire damage. Only magic or full submersion for three rounds extinguishes it. Contact spreads ordinary fire, which can be extinguished in one full round.",
+      "description": "<p>Ignite the target with supernatural fire dealing twice normal fire damage. Only magic or full submersion for three rounds extinguishes it. Contact spreads ordinary fire, which can be extinguished in one full round.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 10m. <strong>Duration:</strong> Until Put Out. <strong>Defense:</strong> Resist Magic.</p><p>Source: The Witcher Core Rulebook v1.35, p.113.</p>"
+    }
+  },
+  {
+    "_id": "e54939fceab8a748",
+    "name": "Freya’s Bravery",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "freyas-bravery",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "20m Radius",
+          "distance": 20,
+          "unit": "m",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "20 Rounds",
+          "rounds": 20,
+          "seconds": 60,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 20,
+          "angle": null
+        },
+        "effect": {
+          "key": "freyas-bravery",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 113,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Selected creatures within 20m gain immunity to fear and 25 HP for the duration. After leaving, the benefit lasts another 1d6 rounds; reentering refreshes that grace period.",
+      "description": "<p>Selected creatures within 20m gain immunity to fear and 25 HP for the duration. After leaving, the benefit lasts another 1d6 rounds; reentering refreshes that grace period.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 20m Radius. <strong>Duration:</strong> 20 Rounds. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.113.</p>"
+    }
+  },
+  {
+    "_id": "f5e551260922a15d",
+    "name": "Healing Rest",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "healing-rest",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "5m",
+          "distance": 5,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1 Day",
+          "rounds": 0,
+          "seconds": 86400,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "healing-rest",
+          "params": {
+            "healFullHP": true,
+            "healsTreatedWounds": true,
+            "keepsPermanentInjury": true,
+            "targetsPerSkill": 1
+          }
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 113,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Place up to Spell Casting skill value targets into an unresponsive one-day coma. At its end, restore full HP and heal already-treated critical injuries. Permanent consequences of deadly injuries remain.",
+      "description": "<p>Place up to Spell Casting skill value targets into an unresponsive one-day coma. At its end, restore full HP and heal already-treated critical injuries. Permanent consequences of deadly injuries remain.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 5m. <strong>Duration:</strong> 1 Day. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.113.</p>"
+    }
+  },
+  {
+    "_id": "d93b9361633f91b7",
+    "name": "Luck of the Father",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "luck-of-the-father",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "Self//10m",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1 Hour",
+          "rounds": 0,
+          "seconds": 3600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "luck-of-the-father",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 113,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Gain a pool of LUCK equal to three times Spell Casting skill. Spend it on personal rolls or to improve or penalize another creature’s roll within 10m.",
+      "description": "<p>Gain a pool of LUCK equal to three times Spell Casting skill. Spend it on personal rolls or to improve or penalize another creature’s roll within 10m.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> Self//10m. <strong>Duration:</strong> 1 Hour. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.113.</p>"
+    }
+  },
+  {
+    "_id": "3120ff8c005330d6",
+    "name": "White Flame",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "white-flame",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "10m Radius",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "1 Hour",
+          "rounds": 0,
+          "seconds": 3600,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 10,
+          "angle": null
+        },
+        "effect": {
+          "key": "white-flame",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 113,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Create bright, nonburning firelight that thaws frozen creatures and dispels water magic. New water magic must beat the original casting total. Monsters vulnerable to sunlight suffer twice their usual penalties.",
+      "description": "<p>Create bright, nonburning firelight that thaws frozen creatures and dispels water magic. New water magic must beat the original casting total. Monsters vulnerable to sunlight suffer twice their usual penalties.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 10m Radius. <strong>Duration:</strong> 1 Hour. <strong>Defense:</strong> Resist Magic.</p><p>Source: The Witcher Core Rulebook v1.35, p.113.</p>"
+    }
+  },
+  {
+    "_id": "93b5dc9151595f84",
+    "name": "Blessed Weapon",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "blessed-weapon",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 2,
+          "max": 2,
+          "step": 1,
+          "options": [],
+          "text": "2"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "½ Hour",
+          "rounds": 0,
+          "seconds": 1800,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "blessed-weapon",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 92,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "A touched melee weapon gains the Balanced property for half an hour.",
+      "description": "<p>A touched melee weapon gains the Balanced property for half an hour.</p><p><strong>STA:</strong> 2. <strong>Range:</strong> 2m. <strong>Duration:</strong> ½ Hour. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.92.</p>"
+    }
+  },
+  {
+    "_id": "9d7b1ae6f8f52db2",
+    "name": "Divine Inspiration",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "divine-inspiration",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 2,
+          "max": 2,
+          "step": 1,
+          "options": [],
+          "text": "2"
+        },
+        "range": {
+          "text": "8m",
+          "distance": 8,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "10 Minutes",
+          "rounds": 0,
+          "seconds": 600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "divine-inspiration",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 92,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Grant +2 to one skill in which the target already has at least rank1. A creature can benefit only once per day.",
+      "description": "<p>Grant +2 to one skill in which the target already has at least rank1. A creature can benefit only once per day.</p><p><strong>STA:</strong> 2. <strong>Range:</strong> 8m. <strong>Duration:</strong> 10 Minutes. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.92.</p>"
+    }
+  },
+  {
+    "_id": "cf65979aa6dc492e",
+    "name": "Duplicitous Darkness",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "duplicitous-darkness",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 2,
+          "max": 2,
+          "step": 1,
+          "options": [],
+          "text": "2"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1 Hour",
+          "rounds": 0,
+          "seconds": 3600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "duplicitous-darkness",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 92,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Grant +2 Deceit and protection from magical truth compulsion and telepathic spying. A magical observer detects this protection only with Awareness DC20.",
+      "description": "<p>Grant +2 Deceit and protection from magical truth compulsion and telepathic spying. A magical observer detects this protection only with Awareness DC20.</p><p><strong>STA:</strong> 2. <strong>Range:</strong> 2m. <strong>Duration:</strong> 1 Hour. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.92.</p>"
+    }
+  },
+  {
+    "_id": "a853aa61a17bc8b1",
+    "name": "Light of Penance",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "light-of-penance",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 3,
+          "max": 3,
+          "step": 1,
+          "options": [],
+          "text": "3"
+        },
+        "range": {
+          "text": "6m",
+          "distance": 6,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "light-of-penance",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 92,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Drain 2d6 current STA, plus another 2d6 if the target has Vigor1 or higher.",
+      "description": "<p>Drain 2d6 current STA, plus another 2d6 if the target has Vigor1 or higher.</p><p><strong>STA:</strong> 3. <strong>Range:</strong> 6m. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> Resist Magic.</p><p>Source: A Tome of Chaos v1.01, p.92.</p>"
+    }
+  },
+  {
+    "_id": "22c7dd360b08f987",
+    "name": "Presence of the Divine",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "presence-of-the-divine",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 3,
+          "max": 3,
+          "step": 1,
+          "options": [],
+          "text": "3"
+        },
+        "range": {
+          "text": "10m",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "10 Minutes",
+          "rounds": 0,
+          "seconds": 600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "presence-of-the-divine",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 92,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Make the caster’s voice carry and grant +4 Intimidation, or make up to six targets immune to fear.",
+      "description": "<p>Make the caster’s voice carry and grant +4 Intimidation, or make up to six targets immune to fear.</p><p><strong>STA:</strong> 3. <strong>Range:</strong> 10m. <strong>Duration:</strong> 10 Minutes. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.92.</p>"
+    }
+  },
+  {
+    "_id": "dde4f08895fa6525",
+    "name": "Blessing of Abundance",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "blessing-of-abundance",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 6,
+          "max": 6,
+          "step": 1,
+          "options": [],
+          "text": "6"
+        },
+        "range": {
+          "text": "Self",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "self"
+        },
+        "duration": {
+          "text": "1 Day",
+          "rounds": 0,
+          "seconds": 86400,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "blessing-of-abundance",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 93,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "For the next loot source, roll every loot quantity twice and keep each higher result.",
+      "description": "<p>For the next loot source, roll every loot quantity twice and keep each higher result.</p><p><strong>STA:</strong> 6. <strong>Range:</strong> Self. <strong>Duration:</strong> 1 Day. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.93.</p>"
+    }
+  },
+  {
+    "_id": "411385db0aa71a5d",
+    "name": "Brand of Withering",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "brand-of-withering",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 6,
+          "max": 6,
+          "step": 1,
+          "options": [],
+          "text": "6"
+        },
+        "range": {
+          "text": "8m",
+          "distance": 8,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1 Week",
+          "rounds": 0,
+          "seconds": 604800,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "brand-of-withering",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 93,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Prevent all HP recovery, including natural healing, for one week.",
+      "description": "<p>Prevent all HP recovery, including natural healing, for one week.</p><p><strong>STA:</strong> 6. <strong>Range:</strong> 8m. <strong>Duration:</strong> 1 Week. <strong>Defense:</strong> Resist Magic.</p><p>Source: A Tome of Chaos v1.01, p.93.</p>"
+    }
+  },
+  {
+    "_id": "35e3fbdbad1f53e1",
+    "name": "Seek the Seekers",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "seek-the-seekers",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 6,
+          "max": 6,
+          "step": 1,
+          "options": [],
+          "text": "6"
+        },
+        "range": {
+          "text": "Self",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "self"
+        },
+        "duration": {
+          "text": "1 Day",
+          "rounds": 0,
+          "seconds": 86400,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "seek-the-seekers",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 93,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Warn the caster when divination targets them or anyone within 10m, revealing the diviner’s face. Education or Magic Training DC20 lets the diviner realize the detection; success also tells the protected caster that the diviner knows.",
+      "description": "<p>Warn the caster when divination targets them or anyone within 10m, revealing the diviner’s face. Education or Magic Training DC20 lets the diviner realize the detection; success also tells the protected caster that the diviner knows.</p><p><strong>STA:</strong> 6. <strong>Range:</strong> Self. <strong>Duration:</strong> 1 Day. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.93.</p>"
+    }
+  },
+  {
+    "_id": "ba1e0d3770b35568",
+    "name": "Quill of the Divine",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "quill-of-the-divine",
+        "kind": "invocation",
+        "tier": "master",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 14,
+          "max": 16,
+          "step": 1,
+          "options": [
+            14,
+            16
+          ],
+          "text": "14 / 16"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Permanent",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "quill-of-the-divine",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 93,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "At 14 STA, seal the target’s memories behind severe retrograde amnesia. At 16 STA, implant invented memories; a target whose original memories are still accessible gains +5 to resist implantation.",
+      "description": "<p>At 14 STA, seal the target’s memories behind severe retrograde amnesia. At 16 STA, implant invented memories; a target whose original memories are still accessible gains +5 to resist implantation.</p><p><strong>STA:</strong> 14 / 16. <strong>Range:</strong> 2m. <strong>Duration:</strong> Permanent. <strong>Defense:</strong> Resist Magic.</p><p>Source: A Tome of Chaos v1.01, p.93.</p>"
+    }
+  },
+  {
+    "_id": "075cc0cc46d744f2",
+    "name": "Sagitta Aurea",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "sagitta-aurea",
+        "kind": "invocation",
+        "tier": "master",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 14,
+          "max": 14,
+          "step": 1,
+          "options": [],
+          "text": "14"
+        },
+        "range": {
+          "text": "20m",
+          "distance": 20,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "dodge"
+        ],
+        "defenseText": "Dodge",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "sagitta-aurea",
+          "params": {},
+          "damageFormula": "7d6",
+          "damageType": "light",
+          "physicalCritical": false,
+          "blockable": false
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 93,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "A golden spear deals 7d6 damage along a straight line, each target defending separately. A possessing demon also takes the damage and is expelled. Any demon damaged loses its abilities for the following round.",
+      "description": "<p>A golden spear deals 7d6 damage along a straight line, each target defending separately. A possessing demon also takes the damage and is expelled. Any demon damaged loses its abilities for the following round.</p><p><strong>STA:</strong> 14. <strong>Range:</strong> 20m. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> Dodge.</p><p>Source: A Tome of Chaos v1.01, p.93.</p>"
+    }
+  },
+  {
+    "_id": "3863442850e70fe4",
+    "name": "Blessed Herd (Epona)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "blessed-herd",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "N/A",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "1 Week",
+          "rounds": 0,
+          "seconds": 604800,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "blessed-herd",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 94,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Summon up to ten horses within an hour, lasting a week. Swift horses have SPD24 and Athletics base20; strong warhorses have Control +2 and natural armor20 that cannot layer with barding. Chosen riders gain +5 Riding. The caster may sustain at most ten summoned horses.",
+      "description": "<p>Summon up to ten horses within an hour, lasting a week. Swift horses have SPD24 and Athletics base20; strong warhorses have Control +2 and natural armor20 that cannot layer with barding. Chosen riders gain +5 Riding. The caster may sustain at most ten summoned horses.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> N/A. <strong>Duration:</strong> 1 Week. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.94.</p>"
+    }
+  },
+  {
+    "_id": "e0e430ac983ba8d3",
+    "name": "Blood of the Berserker (Svalblod)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "blood-of-the-berserker",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "Self",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "self"
+        },
+        "duration": {
+          "text": "1 Day",
+          "rounds": 0,
+          "seconds": 86400,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "blood-of-the-berserker",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 94,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Become a Great Bear, merging equipment and replacing statistics and skills only when the bear’s values are higher. Gain bear abilities but lose profession abilities and magic. Existing damage and injuries carry into the form and back; reverting with otherwise lethal damage leaves 1 HP instead.",
+      "description": "<p>Become a Great Bear, merging equipment and replacing statistics and skills only when the bear’s values are higher. Gain bear abilities but lose profession abilities and magic. Existing damage and injuries carry into the form and back; reverting with otherwise lethal damage leaves 1 HP instead.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> Self. <strong>Duration:</strong> 1 Day. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.94.</p>"
+    }
+  },
+  {
+    "_id": "1465f9a16e7366dd",
+    "name": "Champion of The River (Veyopatis)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "champion-of-the-river",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "10m",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Active (5)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 5,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "champion-of-the-river",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 94,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Anoint a champion with river water. While maintained, the champion resists every damage source and gains +5 to all rolls.",
+      "description": "<p>Anoint a champion with river water. While maintained, the champion resists every damage source and gains +5 to all rolls.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 10m. <strong>Duration:</strong> Active (5). <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.94.</p>"
+    }
+  },
+  {
+    "_id": "d7e14cc3322478d9",
+    "name": "Feast of Plenty (Dana Meadbh)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "feast-of-plenty",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "feast-of-plenty",
+          "params": {
+            "healing": "6d6",
+            "treatsAllWounds": true,
+            "removesConditions": [
+              "poison",
+              "disease"
+            ]
+          }
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 94,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Bless a locally gathered feast sufficient for at least twenty people. Each eater heals 6d6 HP, has all critical injuries treated, and loses poison and disease. The feast’s size determines the number affected.",
+      "description": "<p>Bless a locally gathered feast sufficient for at least twenty people. Each eater heals 6d6 HP, has all critical injuries treated, and loses poison and disease. The feast’s size determines the number affected.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 2m. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.94.</p>"
+    }
+  },
+  {
+    "_id": "f3c772b548197067",
+    "name": "Miracle of Lebioda (Lebioda)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "miracle-of-lebioda",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "miracle-of-lebioda",
+          "params": {
+            "healsWounds": 1,
+            "removesPermanentInjury": true,
+            "regrowsLimbs": true
+          }
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 95,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Completely erase one critical injury or a lingering injury penalty from a living target, including regrowing lost limbs or eyes.",
+      "description": "<p>Completely erase one critical injury or a lingering injury penalty from a living target, including regrowing lost limbs or eyes.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 2m. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.95.</p>"
+    }
+  },
+  {
+    "_id": "661bde89aa96d78d",
+    "name": "Omens of the Future (Nehaleni)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "omens-of-the-future",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "Self",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "self"
+        },
+        "duration": {
+          "text": "1 Day",
+          "rounds": 0,
+          "seconds": 86400,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "omens-of-the-future",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 95,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Roll and record three d10 results excluding 1 and 10. During the day, when a target within 20m rolls one of them, the caster may intervene without an action and force a fumble instead.",
+      "description": "<p>Roll and record three d10 results excluding 1 and 10. During the day, when a target within 20m rolls one of them, the caster may intervene without an action and force a fumble instead.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> Self. <strong>Duration:</strong> 1 Day. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.95.</p>"
+    }
+  },
+  {
+    "_id": "e228dfb0efbbef20",
+    "name": "Retribution of the Raven (Morrigan)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "retribution-of-the-raven",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "20m",
+          "distance": 20,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Active (5)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 5,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "retribution-of-the-raven",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 95,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Render magical effects and items in the area inert. Only chosen creatures or those that successfully resist may cast while it lasts. This invocation cannot be dispelled.",
+      "description": "<p>Render magical effects and items in the area inert. Only chosen creatures or those that successfully resist may cast while it lasts. This invocation cannot be dispelled.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 20m. <strong>Duration:</strong> Active (5). <strong>Defense:</strong> Resist Magic.</p><p>Source: A Tome of Chaos v1.01, p.95.</p>"
+    }
+  },
+  {
+    "_id": "40799011a618a109",
+    "name": "Silverlight (Lilvani)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "silverlight",
+        "kind": "invocation",
+        "tier": "archpriest",
+        "tradition": "priest",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Until the next Sunrise",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "silverlight",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 95,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Bless up to five targets until sunrise. They ignore wound-threshold and Death-state penalties, and the first reduction below 1 HP instead leaves them at 1 HP.",
+      "description": "<p>Bless up to five targets until sunrise. They ignore wound-threshold and Death-state penalties, and the first reduction below 1 HP instead leaves them at 1 HP.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 2m. <strong>Duration:</strong> Until the next Sunrise. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.95.</p>"
+    }
+  },
+  {
+    "_id": "167ef6e780570292",
+    "name": "Herbalism",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "herbalism",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 2,
+          "max": 2,
+          "step": 1,
+          "options": [],
+          "text": "2"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "herbalism",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 97,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Use Spell Casting instead of Alchemy to craft or recover an elixir whose ingredients are entirely plants.",
+      "description": "<p>Use Spell Casting instead of Alchemy to craft or recover an elixir whose ingredients are entirely plants.</p><p><strong>STA:</strong> 2. <strong>Range:</strong> 2m. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.97.</p>"
+    }
+  },
+  {
+    "_id": "d7dacc037817b6c4",
+    "name": "Sigil of Bounty",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "sigil-of-bounty",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 1,
+          "max": 1,
+          "step": 1,
+          "options": [],
+          "text": "1"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1 Year",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "sigil-of-bounty",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 97,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Choose one benefit: restore spoiled food or drink, double a plant’s forageable yield, or make plants in blessed soil grow twice as large in half the normal time.",
+      "description": "<p>Choose one benefit: restore spoiled food or drink, double a plant’s forageable yield, or make plants in blessed soil grow twice as large in half the normal time.</p><p><strong>STA:</strong> 1. <strong>Range:</strong> 2m. <strong>Duration:</strong> 1 Year. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.97.</p>"
+    }
+  },
+  {
+    "_id": "8580f6cdb9869ff0",
+    "name": "Voice of the Counselor",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "voice-of-the-counselor",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 3,
+          "max": 3,
+          "step": 1,
+          "options": [],
+          "text": "3"
+        },
+        "range": {
+          "text": "10m",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "10 Minutes",
+          "rounds": 0,
+          "seconds": 600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "voice-of-the-counselor",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 97,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Project a booming voice or whisper to one listener within range, and gain +4 Leadership.",
+      "description": "<p>Project a booming voice or whisper to one listener within range, and gain +4 Leadership.</p><p><strong>STA:</strong> 3. <strong>Range:</strong> 10m. <strong>Duration:</strong> 10 Minutes. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.97.</p>"
+    }
+  },
+  {
+    "_id": "768661aef9982840",
+    "name": "Web of Roots",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "web-of-roots",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 2,
+          "max": 2,
+          "step": 1,
+          "options": [],
+          "text": "2"
+        },
+        "range": {
+          "text": "10m",
+          "distance": 10,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Active (1)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 1,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "web-of-roots",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 97,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Animate a nearby tree’s roots to grapple, trip, or disarm a target within 10m of that tree. Each maintained round preserves a grapple or allows another attempt. Escaping a grapple requires Dodge/Escape against a fresh casting check or 15 damage to the roots.",
+      "description": "<p>Animate a nearby tree’s roots to grapple, trip, or disarm a target within 10m of that tree. Each maintained round preserves a grapple or allows another attempt. Escaping a grapple requires Dodge/Escape against a fresh casting check or 15 damage to the roots.</p><p><strong>STA:</strong> 2. <strong>Range:</strong> 10m. <strong>Duration:</strong> Active (1). <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.97.</p>"
+    }
+  },
+  {
+    "_id": "9dec68ba3344ca97",
+    "name": "Word of Summoning",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "word-of-summoning",
+        "kind": "invocation",
+        "tier": "novice",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 2,
+          "max": 10,
+          "step": 1,
+          "options": [
+            2,
+            5,
+            10
+          ],
+          "text": "2 / 5 / 10"
+        },
+        "range": {
+          "text": "N/A",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "10 Minutes",
+          "rounds": 0,
+          "seconds": 600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "word-of-summoning",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 97,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Summon a friendly animal arriving in 1d6 rounds: small for 2 STA, medium for 5, or large for 10. It helps unless mistreated, becomes neutral afterward, and this invocation can be used only once per area each day.",
+      "description": "<p>Summon a friendly animal arriving in 1d6 rounds: small for 2 STA, medium for 5, or large for 10. It helps unless mistreated, becomes neutral afterward, and this invocation can be used only once per area each day.</p><p><strong>STA:</strong> 2 / 5 / 10. <strong>Range:</strong> N/A. <strong>Duration:</strong> 10 Minutes. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.97.</p>"
+    }
+  },
+  {
+    "_id": "fdf63327154283c0",
+    "name": "Bigelow’s Befoulment",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "bigelows-befoulment",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 5,
+          "max": 10,
+          "step": 1,
+          "options": [
+            5,
+            10
+          ],
+          "text": "5 / 10"
+        },
+        "range": {
+          "text": "4m",
+          "distance": 4,
+          "unit": "m",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "Permanent",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "rectangle",
+          "distance": 0,
+          "radius": 0,
+          "angle": null,
+          "width": 2,
+          "height": 2,
+          "verticalHeight": 2
+        },
+        "effect": {
+          "key": "bigelows-befoulment",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 97,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Contaminate chosen food or drink in a 2m cube. At 5 STA, consumers become diseased within an hour: −2 actions, maximum STA reduced by one quarter, and Endurance DC14 against nausea when required by the GM. Healing Hands DC15 and a full night’s rest cure it. At 10 STA, consumers also become poisoned.",
+      "description": "<p>Contaminate chosen food or drink in a 2m cube. At 5 STA, consumers become diseased within an hour: −2 actions, maximum STA reduced by one quarter, and Endurance DC14 against nausea when required by the GM. Healing Hands DC15 and a full night’s rest cure it. At 10 STA, consumers also become poisoned.</p><p><strong>STA:</strong> 5 / 10. <strong>Range:</strong> 4m. <strong>Duration:</strong> Permanent. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.97.</p>"
+    }
+  },
+  {
+    "_id": "b94b4519abfd0484",
+    "name": "Blood of the Mountain",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "blood-of-the-mountain",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 6,
+          "max": 6,
+          "step": 1,
+          "options": [],
+          "text": "6"
+        },
+        "range": {
+          "text": "6m",
+          "distance": 6,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "10 Minutes",
+          "rounds": 0,
+          "seconds": 600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "blood-of-the-mountain",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 98,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "The target’s melee attacks cannot be parried and inflict double ablation to weapons, shields, and armor. The target is immune to being knocked off its feet.",
+      "description": "<p>The target’s melee attacks cannot be parried and inflict double ablation to weapons, shields, and armor. The target is immune to being knocked off its feet.</p><p><strong>STA:</strong> 6. <strong>Range:</strong> 6m. <strong>Duration:</strong> 10 Minutes. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.98.</p>"
+    }
+  },
+  {
+    "_id": "a974d317ba6e8e71",
+    "name": "Sigil of the Hunt",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "sigil-of-the-hunt",
+        "kind": "invocation",
+        "tier": "journeyman",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 5,
+          "max": 5,
+          "step": 1,
+          "options": [],
+          "text": "5"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1 Day",
+          "rounds": 0,
+          "seconds": 86400,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "sigil-of-the-hunt",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 98,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Mark up to six targets as safe or prey. Safe targets initially meet friendly beasts and neutral monsters; predatory creatures attack prey-marked targets on sight. Education DC16 distinguishes the otherwise similar marks.",
+      "description": "<p>Mark up to six targets as safe or prey. Safe targets initially meet friendly beasts and neutral monsters; predatory creatures attack prey-marked targets on sight. Education DC16 distinguishes the otherwise similar marks.</p><p><strong>STA:</strong> 5. <strong>Range:</strong> 2m. <strong>Duration:</strong> 1 Day. <strong>Defense:</strong> Resist Magic.</p><p>Source: A Tome of Chaos v1.01, p.98.</p>"
+    }
+  },
+  {
+    "_id": "debdf2ab9d1c4770",
+    "name": "Druidic Totem",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "druidic-totem",
+        "kind": "invocation",
+        "tier": "master",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 14,
+          "max": 14,
+          "step": 1,
+          "options": [],
+          "text": "14"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "druidic-totem",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 98,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Sacrifice an Oak and Mistletoe focus to grow a 2m totem with 20 HP; only one may exist. Within one mile, gain Focus4 and friendly animals, plus terrain benefits: fields SPD12; mountains physical resistance; underground superior night vision and +4 Stealth; forest fruit gives regeneration3 for an hour; swamp poison/disease immunity; shore water breathing and unhindered underwater activity; desert heat immunity, reliable water, and daily full STA from local water; tundra Snow & Ice immunity, no ignition/freezing, and fire/ice resistance.",
+      "description": "<p>Sacrifice an Oak and Mistletoe focus to grow a 2m totem with 20 HP; only one may exist. Within one mile, gain Focus4 and friendly animals, plus terrain benefits: fields SPD12; mountains physical resistance; underground superior night vision and +4 Stealth; forest fruit gives regeneration3 for an hour; swamp poison/disease immunity; shore water breathing and unhindered underwater activity; desert heat immunity, reliable water, and daily full STA from local water; tundra Snow &amp; Ice immunity, no ignition/freezing, and fire/ice resistance.</p><p><strong>STA:</strong> 14. <strong>Range:</strong> 2m. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.98.</p>"
+    }
+  },
+  {
+    "_id": "d8e28246cbffcd86",
+    "name": "Wrath of Nature",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "wrath-of-nature",
+        "kind": "invocation",
+        "tier": "master",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 14,
+          "max": 14,
+          "step": 1,
+          "options": [],
+          "text": "14"
+        },
+        "range": {
+          "text": "60m",
+          "distance": 60,
+          "unit": "m",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "Active (6)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 6,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [
+          "variable"
+        ],
+        "defenseText": "Variable",
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 60,
+          "angle": null,
+          "text": "60m operating radius; individual terrain powers have smaller areas described in the effect"
+        },
+        "effect": {
+          "key": "wrath-of-nature",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 99,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Channel terrain-dependent powers in a 60m radius, spending a full-round action for each command. Fields: create or move a 4m-cube tornado 10m, opposed by Athletics, for 4d6 torso damage and 10m knockback. Mountains: lightning, Dodge/Escape or Athletics, 6d6 torso damage and 50% fire. Underground: stone spike, Dodge/Escape, Athletics, or Block, 5d6 damage, leaving SP20 cover. Forest: immobile Long Reach roots grapple, trip, disarm, choke, or pin at Brawling base16 or the higher casting base. Swamp: 6m-radius gas causes disease against Endurance; exposed flame detonates it for 5d6 torso damage and 75% fire. Shore: two jets against one or two targets within 20m, Dodge/Escape or Athletics, 3d6 damage and 6m knockback. Desert: 6m-radius burning sand, Dodge/Escape or Athletics, blinds for five rounds and ignites. Tundra: ice imprisonment, Dodge/Escape, Athletics, or Resist Magic; escape with Physique DC16, 10 normal damage, or 5 fire damage, with excess damage applied to the torso.",
+      "description": "<p>Channel terrain-dependent powers in a 60m radius, spending a full-round action for each command. Fields: create or move a 4m-cube tornado 10m, opposed by Athletics, for 4d6 torso damage and 10m knockback. Mountains: lightning, Dodge/Escape or Athletics, 6d6 torso damage and 50% fire. Underground: stone spike, Dodge/Escape, Athletics, or Block, 5d6 damage, leaving SP20 cover. Forest: immobile Long Reach roots grapple, trip, disarm, choke, or pin at Brawling base16 or the higher casting base. Swamp: 6m-radius gas causes disease against Endurance; exposed flame detonates it for 5d6 torso damage and 75% fire. Shore: two jets against one or two targets within 20m, Dodge/Escape or Athletics, 3d6 damage and 6m knockback. Desert: 6m-radius burning sand, Dodge/Escape or Athletics, blinds for five rounds and ignites. Tundra: ice imprisonment, Dodge/Escape, Athletics, or Resist Magic; escape with Physique DC16, 10 normal damage, or 5 fire damage, with excess damage applied to the torso.</p><p><strong>STA:</strong> 14. <strong>Range:</strong> 60m. <strong>Duration:</strong> Active (6). <strong>Defense:</strong> Variable.</p><p>Source: A Tome of Chaos v1.01, p.99.</p>"
+    }
+  },
+  {
+    "_id": "29ea951948de53f4",
+    "name": "Shade of Bleobheris (Bleobheris)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "shade-of-bleobheris",
+        "kind": "invocation",
+        "tier": "hierophant",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "50m Radius",
+          "distance": 50,
+          "unit": "m",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "1 Day",
+          "rounds": 0,
+          "seconds": 86400,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "defenseText": "Resist Magic",
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 50,
+          "angle": null
+        },
+        "effect": {
+          "key": "shade-of-bleobheris",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 100,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Calm animals and remove affected combatants from initiative, preventing hostile actions for a day. Suppress social-standing and monstrous-heritage prejudice. Each turn, a target may spend an action opposing a fresh casting roll with Resist Magic; being attacked also ends its protection.",
+      "description": "<p>Calm animals and remove affected combatants from initiative, preventing hostile actions for a day. Suppress social-standing and monstrous-heritage prejudice. Each turn, a target may spend an action opposing a fresh casting roll with Resist Magic; being attacked also ends its protection.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 50m Radius. <strong>Duration:</strong> 1 Day. <strong>Defense:</strong> Resist Magic.</p><p>Source: A Tome of Chaos v1.01, p.100.</p>"
+    }
+  },
+  {
+    "_id": "394a9429621f2bd5",
+    "name": "Winds of the Taiga (Gwyn Carn)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "winds-of-the-taiga",
+        "kind": "invocation",
+        "tier": "hierophant",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "1 Mile Radius",
+          "distance": 1,
+          "unit": "mile",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "1 Hour",
+          "rounds": 0,
+          "seconds": 3600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 1609.344,
+          "angle": null
+        },
+        "effect": {
+          "key": "winds-of-the-taiga",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 100,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Create a mile-radius blizzard causing blindness and Snow & Ice conditions. Chosen allies ignore both and gain an additional 50% freezing chance on attacks.",
+      "description": "<p>Create a mile-radius blizzard causing blindness and Snow &amp; Ice conditions. Chosen allies ignore both and gain an additional 50% freezing chance on attacks.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 1 Mile Radius. <strong>Duration:</strong> 1 Hour. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.100.</p>"
+    }
+  },
+  {
+    "_id": "078e38e017436106",
+    "name": "Sanctuary of the Black Grove (Caed Myrkvid)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "sanctuary-of-the-black-grove",
+        "kind": "invocation",
+        "tier": "hierophant",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "1 Mile Radius",
+          "distance": 1,
+          "unit": "mile",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "1 Hour",
+          "rounds": 0,
+          "seconds": 3600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 1609.344,
+          "angle": null
+        },
+        "effect": {
+          "key": "sanctuary-of-the-black-grove",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 100,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Link the caster and selected allies to trees within one mile. Touching a tree lets the caster see through every tree in that area; linked allies can travel from one tree to another, but do not share the vision.",
+      "description": "<p>Link the caster and selected allies to trees within one mile. Touching a tree lets the caster see through every tree in that area; linked allies can travel from one tree to another, but do not share the vision.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 1 Mile Radius. <strong>Duration:</strong> 1 Hour. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.100.</p>"
+    }
+  },
+  {
+    "_id": "b7f04e079916f8d6",
+    "name": "Conspiracy of the Mother (Crow Clan)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "conspiracy-of-the-mother",
+        "kind": "invocation",
+        "tier": "hierophant",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "½ Mile",
+          "distance": 0.5,
+          "unit": "mile",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "conspiracy-of-the-mother",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 100,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Permanently bond with up to ten crows: INT, REF, DEX, and Sleight of Hand become 7; claws deal 2d6. They become sapient, obey unless mistreated, know the caster’s location, communicate mentally within 20m, and share memories through touch. At most ten may be bonded.",
+      "description": "<p>Permanently bond with up to ten crows: INT, REF, DEX, and Sleight of Hand become 7; claws deal 2d6. They become sapient, obey unless mistreated, know the caster’s location, communicate mentally within 20m, and share memories through touch. At most ten may be bonded.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> ½ Mile. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.100.</p>"
+    }
+  },
+  {
+    "_id": "5a98ea0aa4db3ca5",
+    "name": "Well of Knowledge (Gedyneith)",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "well-of-knowledge",
+        "kind": "invocation",
+        "tier": "hierophant",
+        "tradition": "druid",
+        "element": "mixed",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "2m",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1 Day",
+          "rounds": 0,
+          "seconds": 86400,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "None",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "well-of-knowledge",
+          "params": {}
+        },
+        "automation": "reference"
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 100,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "invocation",
+      "effectText": "Create a basin on a tree for twenty drinkers. For a day, each gains +4 Initiative and Awareness, immunity to stagger, stun, and hallucinations, and sight through illusions. Those with Vigor1 or more also gain +4 Vigor and −4 Resist Magic. A creature benefits at most once per week.",
+      "description": "<p>Create a basin on a tree for twenty drinkers. For a day, each gains +4 Initiative and Awareness, immunity to stagger, stun, and hallucinations, and sight through illusions. Those with Vigor1 or more also gain +4 Vigor and −4 Resist Magic. A creature benefits at most once per week.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> 2m. <strong>Duration:</strong> 1 Day. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.100.</p>"
+    }
+  }
+]

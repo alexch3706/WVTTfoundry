@@ -1,3 +1,5 @@
+import { hexPassiveModifiers } from './magic-hex-rules.js';
+import { magicModifierSummary, magicEquipmentModifiers } from './magic-effect-hooks.js';
 import { RuleError, locate } from './rules.js';
 
 const verbal = [
@@ -193,7 +195,9 @@ export function combinedModifiers(actor, items = []) {
     actor.statModifiers ?? {},
     ...items.filter((i) => i.type === 'wound').map((i) => woundModifiers(i.wound)),
     ...items.filter((i) => i.equipped).map((i) => i.bonuses),
-    ...(actor.effects ?? []).map((e) => e.modifiers),
+    magicModifierSummary(actor).modifiers,
+    magicEquipmentModifiers(items).modifiers,
+    hexPassiveModifiers(actor, globalThis.game?.time?.worldTime ?? 0),
   ];
   for (const mods of sets)
     for (const [key, value] of Object.entries(mods ?? {})) {

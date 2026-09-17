@@ -7,6 +7,51 @@
   font-family: Georgia, serif;
   color: var(--ink);
 }
+.witcher .witcher-magic .witcher-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px 20px;
+}
+.witcher .witcher-magic .witcher-wound-card {
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 3px;
+  background: #ffffff35;
+}
+.witcher .witcher-magic .witcher-wound-card header,
+.witcher .magic-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.witcher .witcher-magic .witcher-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.witcher .witcher-magic .witcher-actions button {
+  flex: 0 1 auto;
+  width: auto;
+  padding: 2px 10px;
+}
+.witcher .magic-rule-text {
+  line-height: 1.55;
+  white-space: pre-line;
+}
+.witcher .magic-guidance {
+  padding: 10px;
+  border-left: 3px solid var(--accent);
+  background: #ffffff50;
+}
+@media (max-width: 700px) {
+  .witcher .witcher-magic .witcher-grid {
+    grid-template-columns: 1fr;
+  }
+}
 .witcher .window-content {
   background: var(--paper);
   padding: 16px;

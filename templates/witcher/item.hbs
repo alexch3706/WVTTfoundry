@@ -7,7 +7,9 @@
         value='{{item.name}}'
         aria-label='Item name'
       /><p>{{system.source}} · p. {{system.page}}</p></div></header>
-  {{#if isWound}}
+  {{#if isMagic}}
+    {{{magicCard}}}
+  {{else if isWound}}
     {{#with wound}}
       <section class='wound-detail' data-wound-stage='{{stage}}'>
         <div class='wound-heading'><h2>{{severity}} critical wound</h2><strong
@@ -96,6 +98,34 @@
       </section>
     {{/with}}
   {{else}}
+    {{#if ritualUse}}{{#if owned}}<button type='button' data-witcher='ritualUse'>Use ritual artifact</button>{{/if}}{{/if}}
+    {{#if magicGear}}<section class='witcher-wound-card'>
+        <h2>Magical artifact</h2>
+        {{#if magicGear.tableRules}}<p><strong>Requires resolution at the table:</strong>
+            {{magicGear.tableRules}}
+            These special benefits are not yet applied by the system; listed skill modifiers still apply while
+            the trophy is active.</p>{{/if}}
+        {{#if owned}}<div class='action-bar'>{{#with magicGear}}
+              {{#if canConfigure}}<button type='button' data-witcher='magicGear' data-key='configure'>Record
+                  acquired artifact properties (GM)</button>{{/if}}
+              {{#if canActivate}}<button type='button' data-witcher='magicGear' data-key='activate'>Awaken
+                  Crystal Skull</button>{{/if}}
+              {{#if canCommand}}<button type='button' data-witcher='magicGear' data-key='command'>Command
+                  familiar</button>{{/if}}
+              {{#if canRetrieve}}<button type='button' data-witcher='magicGear' data-key='retrieve'>Retrieve
+                  skull</button>{{/if}}
+              {{#if canAttune}}<button type='button' data-witcher='magicGear' data-key='trophy'>Attune trophy</button>{{/if}}
+              {{#if canBurst}}<button type='button' data-witcher='magicGear' data-key='burst'>Resolve pendant
+                  hexes (GM)</button>{{/if}}
+              {{#each amuletSpells}}<button
+                  type='button'
+                  data-witcher='magicGear'
+                  data-key='cast'
+                  data-magic-key='{{key}}'
+                >Cast {{name}}</button>{{/each}}
+            {{/with}}</div>{{else}}<p>Drag the actual acquired artifact onto its bearer’s inventory, then
+            record its properties.</p>{{/if}}
+      </section>{{/if}}
     {{#if system.priceText}}<p class='source-note'>{{system.priceText}}</p>{{/if}}
     {{#if owned}}<div class='action-bar'>{{#with inventoryItem}}
           {{#if canEquip}}<button type='button' data-witcher='equip'>{{#if system.equipped}}Stow / unequip{{else}}Equip{{/if}}</button>{{/if}}

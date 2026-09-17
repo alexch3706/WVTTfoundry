@@ -1,3 +1,8 @@
+import { trophyRulesFor } from './magic-trophies.js';
+import { immuneTo } from './monster-rules.js';
+import { ritualActionRestriction, compressedDeathChanges } from './magic-ritual-effects.js';
+import { activeHexes, hexDiceRules, parseHexManualCheck, resolveHexCheck } from './magic-hex-rules.js';
+import { magicActionRules, magicDamageRules, magicEffectCommit } from './magic-effect-hooks.js';
 import { SYSTEM_ID } from './config.js';
 import { resolveCheck, parseManualCheck, RuleError, reserveAction, attackSequence } from './rules.js';
 import { resolveFoundryUuid } from '../foundry-compat.js';
@@ -44,6 +49,56 @@ function restoreField(source, key) {
 
 /** Await each persistence operation and restore the exact changed fields on failure. */
 export async function commitActor(actor, changes = {}, itemChanges = [], after) {
+  if (Array.isArray(changes['system.conditions']))
+    changes['system.conditions'] = changes['system.conditions'].filter(
+      (condition) => actor.system.conditions.includes(condition) || !immuneTo(actor.system, condition)
+    );
+  const imbuementPath = `flags.${SYSTEM_ID}.amuletImbuement`;
+  if (
+    actor.flags?.[SYSTEM_ID]?.amuletImbuement &&
+    !Object.hasOwn(changes, imbuementPath) &&
+    Object.keys(changes).some(
+      (key) =>
+        key.startsWith('system.combat.') &&
+        !['system.combat.applied', 'system.combat.hitThisRound'].includes(key)
+    )
+  ) {
+    const { amuletImbuementInterruption } = await import('./magic-amulet-crafting.js');
+    Object.assign(changes, amuletImbuementInterruption(actor, 'combat action or defense'));
+  }
+  if (Number.isFinite(changes['system.hp.value']) && changes['system.hp.value'] < actor.system.hp.value) {
+    const protection = magicDamageRules(actor.system, { hpAfter: changes['system.hp.value'] });
+    if (protection.protectionEffectId) {
+      changes['system.hp.value'] = protection.hpAfter;
+      changes['system.effects'] = magicEffectCommit(
+        { ...actor.system, effects: changes['system.effects'] ?? actor.system.effects },
+        { protectionEffectId: protection.protectionEffectId }
+      ).effects;
+      if (changes['system.pendingDeathSaves'] === actor.system.pendingDeathSaves + 1)
+        changes['system.pendingDeathSaves'] = actor.system.pendingDeathSaves;
+    }
+    const { removeMagicEffects } = await import('./magic-state.js');
+    const removed = removeMagicEffects(
+      {
+        effects: changes['system.effects'] ?? actor.system.effects,
+        conditions: changes['system.conditions'] ?? actor.system.conditions,
+      },
+      (effect) => effect.magic?.sleeping || effect.magic?.key === 'axii'
+    );
+    if (removed.removed.length) {
+      changes['system.effects'] = removed.effects;
+      changes['system.conditions'] = removed.conditions;
+    }
+    const compressed = compressedDeathChanges(actor, changes['system.hp.value']);
+    if (compressed['system.conditions'])
+      compressed['system.conditions'] = [
+        ...new Set([
+          ...(changes['system.conditions'] ?? actor.system.conditions),
+          ...compressed['system.conditions'],
+        ]),
+      ];
+    Object.assign(changes, compressed);
+  }
   const before = Object.fromEntries(Object.keys(changes).map((k) => restoreField(actor._source, k)));
   const beforeItems = itemChanges.map((change) => {
     const item = actor.items.get(change._id);
@@ -100,7 +155,7 @@ export function input(
 export function manualCheckInput() {
   return (
     input('manualDice', 'Manual d10 (optional)', { type: 'text' }) +
-    '<p class="notes">Leave empty to roll automatically. Enter dice only, separated by commas: 7; 10,6; or 1,10,4. Include every follow-up die; stats and modifiers are added automatically.</p>'
+    '<p class="notes">Leave empty to roll automatically. Enter dice only, separated by commas: 7; 10,6; or 1,10,4. Include every follow-up die; stats and modifiers are added automatically. With Evil Eye, separate the second fumble chain by a semicolon: 1,5;10,3.</p>'
   );
 }
 export function woundArmInput(actor, { optional = true } = {}) {
@@ -113,8 +168,13 @@ export function woundArmInput(actor, { optional = true } = {}) {
     '<p class="notes">The selected arm determines injury penalties. Two-handed weapons always use both arms.</p>'
   );
 }
-export function validateManualCheck(values) {
-  const dice = parseManualCheck(values.manualDice);
+export function validateManualCheck(values, actor = null, context = {}) {
+  const dice = actor
+    ? parseHexManualCheck(
+        values.manualDice,
+        hexDiceRules(actor.system, { stressed: !!globalThis.game?.combat?.started, ...context })
+      )
+    : parseManualCheck(values.manualDice);
   if (dice && values.defense === 'passive')
     throw new RuleError('Passive DC does not roll a die. Clear Manual d10 or choose an active defense.');
 }
@@ -133,7 +193,7 @@ export function prompt(title, content, { button = 'Roll', width = 480, validate 
           const form = element?.querySelector('form');
           if (form?.reportValidity() === false) return;
           try {
-            if (form && validate) validate(formValues(form));
+            if (form && validate) await validate(formValues(form));
           } catch (error) {
             ui.notifications.error(error.message);
             return;
@@ -171,23 +231,28 @@ export async function dice(formula) {
   if (!Number.isFinite(roll.total)) throw new RuleError('The dice did not produce a number.');
   return roll;
 }
-export async function check(base, { manualDice } = {}) {
-  const entered = parseManualCheck(manualDice);
-  if (entered) return { ...resolveCheck(base, entered), rolls: [], source: 'manual' };
-  const rolls = [await dice('1d10')];
-  if ([1, 10].includes(rolls[0].total))
+export async function check(base, { manualDice, actor = null, context = {} } = {}) {
+  const rules = hexDiceRules(actor?.system, { stressed: !!globalThis.game?.combat?.started, ...context });
+  const entered = parseHexManualCheck(manualDice, rules);
+  if (entered)
+    return { ...resolveHexCheck(base, entered.dice, entered.second, rules), rolls: [], source: 'manual' };
+  const rolls = [await dice('1d10')],
+    first = [rolls[0].total];
+  const continueChain = async () => {
+    const chain = [];
     do {
-      rolls.push(await dice('1d10'));
-    } while (rolls.at(-1).total === 10);
-  return {
-    ...resolveCheck(
-      base,
-      rolls.map((r) => r.total)
-    ),
-    rolls,
-    source: 'automatic',
+      const roll = await dice('1d10');
+      rolls.push(roll);
+      chain.push(roll.total);
+    } while (chain.at(-1) === 10);
+    return chain;
   };
+  const fumble = rules.fumbleFaces.includes(first[0]);
+  if (fumble || first[0] === 10) first.push(...(await continueChain()));
+  const second = fumble && rules.twice ? await continueChain() : null;
+  return { ...resolveHexCheck(base, first, second, rules), rolls, source: 'automatic' };
 }
+
 export async function chat(actor, title, content, { rolls = [], flags = {}, whisper, id } = {}) {
   const data = {
     ...(id ? { _id: id } : {}),
@@ -201,7 +266,7 @@ export async function chat(actor, title, content, { rolls = [], flags = {}, whis
   return ChatMessage.create(data, { keepId: !!id });
 }
 export function checkHTML(result) {
-  return `<p class="witcher-total">${result.total}</p><p>Base ${result.base}; d10: ${result.dice.join(', ')}${result.source === 'manual' ? ' <strong>(manual entry)</strong>' : ''}${result.fumble ? '; fumble ' + result.fumble : ''}</p>`;
+  return `<p class="witcher-total">${result.total}</p><p>Base ${result.base}; d10: ${result.dice.join(', ')}${result.source === 'manual' ? ' <strong>(manual entry)</strong>' : ''}${result.fumble ? '; fumble ' + result.fumble : ''}${result.fumbleDice?.length > 1 ? `; Evil Eye: ${result.fumbleDice.map((chain) => chain.join(', ')).join(' / ')} (worse result used)` : ''}</p>`;
 }
 export function turnIdentity() {
   const combat = game.combat;
@@ -209,6 +274,27 @@ export function turnIdentity() {
 }
 export function actionPlan(actor, options = {}) {
   owner(actor);
+  if (
+    actor.system.effects?.some(
+      (effect) => effect.magic?.healingRest && !effect.disabled && !effect.magic.suppressed
+    )
+  )
+    throw new RuleError(
+      'Healing Rest keeps this living creature in a coma for one full day. It cannot take actions or make active defenses.'
+    );
+  if (!options.defense && actor.system.magic?.leyConnection?.pending?.length)
+    throw new RuleError(
+      'Resolve the mandatory Ley Line consequence on the magic card before taking another action.'
+    );
+  const ritualRestriction = ritualActionRestriction(actor, options.actionKey ?? 'action');
+  if (ritualRestriction) throw new RuleError(ritualRestriction);
+  const restriction = magicActionRules(actor.system, {
+    action:
+      options.actionKey ||
+      (options.weapon ? 'attack' : options.defense ? 'defense' : options.recovery ? 'recover' : 'action'),
+    movementActionsUsed: actor.system.combat.movementActions || 0,
+  });
+  if (restriction.blocked) throw new RuleError(restriction.reasons.join(' '));
   const conditions = actor.system.conditions;
   if (conditions.includes('dead')) throw new RuleError('A dead actor cannot act.');
   if (!options.recovery && conditions.some((c) => ['stunned', 'unconscious', 'pinned'].includes(c)))
@@ -263,7 +349,7 @@ export function actionPlan(actor, options = {}) {
 export async function skillRoll(
   actor,
   key,
-  { modifier = 0, stat, dialog = true, title, arm = '', sight = false } = {}
+  { modifier = 0, stat, dialog = true, title, arm = '', sight = false, context = {} } = {}
 ) {
   owner(actor);
   let luck = 0;
@@ -273,6 +359,30 @@ export async function skillRoll(
       input('modifier', 'Situational modifier', { value: modifier }) +
         input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value }) +
         woundArmInput(actor) +
+        (key === 'seduction' && activeHexes(actor.system).has('the-eternal-itch')
+          ? input('intimacy', 'Intimate contact (Eternal Itch)', { type: 'checkbox' })
+          : '') +
+        (key === 'wildernessSurvival' && activeHexes(actor.system).has('the-hex-of-the-beast')
+          ? input('animalHandling', 'Handling an animal (Hex of the Beast)', { type: 'checkbox' })
+          : '') +
+        (['seduction', 'charisma', 'persuasion', 'leadership'].includes(key) &&
+        activeHexes(actor.system).has('the-odious-hex')
+          ? input(
+              'socialStanding',
+              'Standing before Odious Hex (including own race); resulting social penalty is included',
+              {
+                options: {
+                  equal: 'Equal → Tolerated (−1)',
+                  tolerated: 'Tolerated → Hated (−2)',
+                  hated: 'Hated (−2)',
+                },
+              }
+            )
+          : '') +
+        (activeHexes(actor.system).has('the-devils-luck')
+          ? input('stressed', 'High stress or deadline (Devil’s Luck)', { type: 'checkbox' }) +
+            input('dc', 'Known difficulty, if applicable', { value: '', min: 0 })
+          : '') +
         (key === 'awareness' &&
         actor.items.some((i) => i.type === 'wound' && woundModifiers(i.system.wound)?.sightAwareness)
           ? input('sight', 'Visual Awareness (apply eye injury)', { type: 'checkbox', checked: true })
@@ -283,10 +393,21 @@ export async function skillRoll(
     luck = Number(values.luck);
     arm = resolveWoundArm(actor.system, [...actor.items], values.woundArm);
     sight = !!values.sight;
+    context = {
+      ...context,
+      intimacy: !!values.intimacy,
+      animalHandling: !!values.animalHandling,
+      socialStanding: values.socialStanding,
+      stressed: !!values.stressed || !!game.combat?.started,
+      dc: values.dc === '' ? undefined : Number(values.dc),
+    };
   }
   if (!Number.isInteger(luck) || luck < 0 || luck > actor.system.luck.value)
     throw new RuleError('Invalid Luck expenditure.');
-  const result = await check(actor.skillBase(key, { stat, modifier: modifier + luck, arm, sight }).total);
+  const result = await check(
+    actor.skillBase(key, { stat, modifier: modifier + luck, arm, sight, context }).total,
+    { actor, context: { ...context, skill: key } }
+  );
   if (luck) await actor.update({ 'system.luck.value': actor.system.luck.value - luck });
   await chat(actor, title ?? key, checkHTML(result), { rolls: result.rolls });
   return result;
@@ -299,6 +420,16 @@ export async function save(actor, kind, { modifier = 0, luck = 0, receipt } = {}
   if (luck && kind !== 'death') throw new RuleError('Luck can only modify a Death save.');
   if (!Number.isInteger(luck) || luck < 0 || luck > actor.system.luck.value)
     throw new RuleError('Invalid Luck expenditure.');
+  const { magicalStunRecovery, magicStunSavePlan } = await import('./magic-lifecycle.js');
+  const magicalRecovery = kind === 'stun' ? magicalStunRecovery(actor.system) : null;
+  if (kind === 'stun' && (magicalRecovery.blocked || actor.system.magic?.exhaustedRecovery > 0)) {
+    await chat(
+      actor,
+      'Stun recovery',
+      `<p>${escapeHTML(magicalRecovery.reason || `Recover ${actor.system.magic.exhaustedRecovery} more STA using Recovery Actions before the Stun save.`)}</p>`
+    );
+    return false;
+  }
   const threshold =
     (kind === 'death'
       ? actor.system.derived.deathTarget - actor.system.deathSaves
@@ -306,6 +437,8 @@ export async function save(actor, kind, { modifier = 0, luck = 0, receipt } = {}
         ? actor.system.derived.stun
         : actor.system.derived.stats.body) +
     modifier +
+    (magicalRecovery?.modifier ?? 0) +
+    (kind === 'stun' && trophyRulesFor(actor.system).stunWithoutPenaltyBonus ? 1 : 0) +
     luck;
   const roll = await dice('1d10');
   const success = roll.total < threshold;
@@ -321,6 +454,8 @@ export async function save(actor, kind, { modifier = 0, luck = 0, receipt } = {}
     else if (!conditions.has('unconscious') || actor.system.unconsciousRecovery >= 20) {
       conditions.delete('stunned');
       conditions.delete('unconscious');
+      const ended = magicStunSavePlan(actor.system, { success: true });
+      if (ended.removed.length) changes['system.effects'] = ended.effects;
     }
   }
   changes['system.conditions'] = [...conditions];

@@ -128,6 +128,7 @@ export const ITEM_TYPES = [
   'mount',
   'enhancement',
   'ability',
+  'magic',
 ];
 export const SPECIAL_ACTIONS = [
   'normal',

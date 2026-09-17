@@ -99,6 +99,8 @@ async function runtimeFiles(root, relative, extensions = /\.(?:js|hbs)$/) {
 
 export async function collectReleaseFiles(root, manifest) {
   const files = new Set(FIXED_FILES);
+  for (const file of await runtimeFiles(root, 'docs/witcher', /\.md$/))
+    if (/^docs\/witcher\/magic-[a-z-]+\.md$/.test(file)) files.add(file);
   for (const directory of RUNTIME_ROOTS)
     for (const file of await runtimeFiles(root, directory)) files.add(file);
   for (const file of await runtimeFiles(root, 'assets/bestiary', /\.(?:webp|png|jpg|svg)$/)) files.add(file);

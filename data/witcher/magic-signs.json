@@ -1,0 +1,765 @@
+[
+  {
+    "_id": "6c603b3729a6b7cc",
+    "name": "Yrden",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 1,
+          "max": 7,
+          "step": 1,
+          "options": []
+        },
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 3,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "yrden",
+        "tier": "basic",
+        "element": "mixed",
+        "range": {
+          "text": "3m radius",
+          "distance": 3,
+          "unit": "m",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "5 rounds",
+          "rounds": 5,
+          "seconds": 15,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "effect": {
+          "key": "yrden",
+          "params": {
+            "penaltyBase": 1,
+            "additionalSTAPerPenalty": 2,
+            "maxPenalty": 4,
+            "corporeal": true,
+            "stationary": true
+          }
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 114,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "Create a circle around the caster. Creatures inside lose 1 SPD and REF, with a further −1 for each full 2 STA above the first, to a maximum of −4. These penalties end on leaving. Incorporeal creatures become corporeal while inside.",
+      "description": "<p>Create a circle around the caster. Creatures inside lose 1 SPD and REF, with a further −1 for each full 2 STA above the first, to a maximum of −4. These penalties end on leaving. Incorporeal creatures become corporeal while inside.</p><p><strong>STA:</strong> 1–7. <strong>Range:</strong> 3m radius. <strong>Duration:</strong> 5 rounds. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.114.</p>"
+    }
+  },
+  {
+    "_id": "671d55cbdd627c10",
+    "name": "Quen",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 1,
+          "max": 7,
+          "step": 1,
+          "options": []
+        },
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "quen",
+        "tier": "basic",
+        "element": "earth",
+        "range": {
+          "text": "Self",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "self"
+        },
+        "duration": {
+          "text": "10 rounds or until depleted",
+          "rounds": 10,
+          "seconds": 30,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "effect": {
+          "key": "quen",
+          "params": {
+            "shieldHPPerSTA": 5,
+            "absorbsLethal": true,
+            "absorbsNonlethal": true,
+            "armorAfterShield": true,
+            "preventsRecast": true
+          }
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 114,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "Gain a shield with 5 HP per STA invested. Incoming lethal or nonlethal damage first depletes this shield; overflow then resolves against the wearer’s armor and resistances. It protects against blockable spells, but not unblockable magic, ongoing poison or disease, or oxygen deprivation. Recasting requires the previous shield to end.",
+      "description": "<p>Gain a shield with 5 HP per STA invested. Incoming lethal or nonlethal damage first depletes this shield; overflow then resolves against the wearer’s armor and resistances. It protects against blockable spells, but not unblockable magic, ongoing poison or disease, or oxygen deprivation. Recasting requires the previous shield to end.</p><p><strong>STA:</strong> 1–7. <strong>Range:</strong> Self. <strong>Duration:</strong> 10 rounds or until depleted. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.114.</p>"
+    }
+  },
+  {
+    "_id": "dc72a6ce04f94031",
+    "name": "Aard",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 1,
+          "max": 7,
+          "step": 1,
+          "options": []
+        },
+        "area": {
+          "shape": "cone",
+          "distance": 2,
+          "radius": 0,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "aard",
+        "tier": "basic",
+        "element": "air",
+        "range": {
+          "text": "2m cone",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "dodge"
+        ],
+        "effect": {
+          "key": "aard",
+          "params": {
+            "stagger": true,
+            "proneChanceBase": 10,
+            "proneChancePerSTA": 10
+          }
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 114,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "A cone of force staggers affected creatures. Its base knockdown chance is 10%, increased by 10 percentage points per STA invested (20% at 1 STA). The printed wording does not say that only STA beyond the first increases this chance.",
+      "description": "<p>A cone of force staggers affected creatures. Its base knockdown chance is 10%, increased by 10 percentage points per STA invested (20% at 1 STA). The printed wording does not say that only STA beyond the first increases this chance.</p><p><strong>STA:</strong> 1–7. <strong>Range:</strong> 2m cone. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> Dodge.</p><p>Source: The Witcher Core Rulebook v1.35, p.114.</p>"
+    }
+  },
+  {
+    "_id": "aa9ec59d1756de1b",
+    "name": "Igni",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 1,
+          "max": 7,
+          "step": 1,
+          "options": []
+        },
+        "area": {
+          "shape": "cone",
+          "distance": 2,
+          "radius": 0,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "igni",
+        "tier": "basic",
+        "element": "fire",
+        "range": {
+          "text": "2m cone",
+          "distance": 2,
+          "unit": "m",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "dodge",
+          "block"
+        ],
+        "effect": {
+          "key": "igni",
+          "damageType": "fire",
+          "damageFormula": "@power d6",
+          "blockable": true,
+          "physicalCritical": false,
+          "params": {
+            "fireChance": 50,
+            "location": "torso",
+            "aimedAtPointBlank": true
+          }
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 114,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "The cone deals 1d6 fire damage per STA invested and has a 50% ignition chance. Damage hits the torso. At point-blank range the caster may instead aim at a body location.",
+      "description": "<p>The cone deals 1d6 fire damage per STA invested and has a 50% ignition chance. Damage hits the torso. At point-blank range the caster may instead aim at a body location.</p><p><strong>STA:</strong> 1–7. <strong>Range:</strong> 2m cone. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> Dodge or Block.</p><p>Source: The Witcher Core Rulebook v1.35, p.114.</p>"
+    }
+  },
+  {
+    "_id": "7783cec9ad77456b",
+    "name": "Axii",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 1,
+          "max": 7,
+          "step": 1,
+          "options": []
+        },
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "axii",
+        "tier": "basic",
+        "element": "water",
+        "range": {
+          "text": "8m",
+          "distance": 8,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Until the target succeeds on its Stun save",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "effect": {
+          "key": "axii",
+          "params": {
+            "stunSavePenaltyBase": 1,
+            "additionalSTAPerPenalty": 2,
+            "persuasionAlternative": true
+          }
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 114,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "A target that fails its defense is stunned. Its recovery Stun save takes −1, with another −1 for each full 2 STA invested above the first. Axii may also replace Persuasion with Spell Casting opposed by Resist Magic; the visible magical glow reveals this interference to observers.",
+      "description": "<p>A target that fails its defense is stunned. Its recovery Stun save takes −1, with another −1 for each full 2 STA invested above the first. Axii may also replace Persuasion with Spell Casting opposed by Resist Magic; the visible magical glow reveals this interference to observers.</p><p><strong>STA:</strong> 1–7. <strong>Range:</strong> 8m. <strong>Duration:</strong> Until the target succeeds on its Stun save. <strong>Defense:</strong> Resist Magic.</p><p>Source: The Witcher Core Rulebook v1.35, p.114.</p>"
+    }
+  },
+  {
+    "_id": "2b58fb6a84edc3ca",
+    "name": "Magic Trap",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 1,
+          "max": 7,
+          "step": 1,
+          "options": []
+        },
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 3,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "magic-trap",
+        "tier": "alternate",
+        "element": "mixed",
+        "range": {
+          "text": "3m radius",
+          "distance": 3,
+          "unit": "m",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "1 round per STA invested",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "dodge",
+          "block"
+        ],
+        "effect": {
+          "key": "magic-trap",
+          "damageFormula": "3d6",
+          "blockable": true,
+          "physicalCritical": false,
+          "params": {
+            "preparationRounds": 1,
+            "durationRoundsPerSTA": 1,
+            "attacksPerRound": 1,
+            "target": "closestEnemy",
+            "stationary": true
+          }
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 115,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "Prepare a trap over one round. For each round of its lifetime it attacks the nearest enemy in its area once, using the caster’s WILL and Spell Casting and dealing 3d6 damage on a hit. It does not attack allies.",
+      "description": "<p>Prepare a trap over one round. For each round of its lifetime it attacks the nearest enemy in its area once, using the caster’s WILL and Spell Casting and dealing 3d6 damage on a hit. It does not attack allies.</p><p><strong>STA:</strong> 1–7. <strong>Range:</strong> 3m radius. <strong>Duration:</strong> 1 round per STA invested. <strong>Defense:</strong> Dodge or Block.</p><p>Source: The Witcher Core Rulebook v1.35, p.115.</p>"
+    }
+  },
+  {
+    "_id": "8cc3125a67f296ad",
+    "name": "Active Shield",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 1,
+          "max": 7,
+          "step": 1,
+          "options": []
+        },
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "active-shield",
+        "tier": "alternate",
+        "element": "earth",
+        "range": {
+          "text": "Self",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "self"
+        },
+        "duration": {
+          "text": "Active; maintain for the initial STA cost each subsequent round",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "initial"
+        },
+        "defenses": [],
+        "effect": {
+          "key": "active-shield",
+          "damageFormula": "1d6",
+          "physicalCritical": false,
+          "params": {
+            "shieldHPPerSTA": 10,
+            "cannotRun": true,
+            "tangibleBarrier": true,
+            "additionalOccupants": 1,
+            "burstDistance": 2,
+            "burstLocation": "torso",
+            "pushMaxWeight": 226,
+            "burstAffectsAllies": true
+          }
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 115,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "A shield gains 10 HP per STA invested. Maintain it each round after the first for the original STA cost. Nothing tangible crosses the intact shield in either direction, and the caster cannot run. One companion may fit if pressed against the caster. When it ends, adjacent creatures and objects take 1d6 torso damage and are pushed 2m; rooted targets and objects heavier than 226kg still take damage but do not move.",
+      "description": "<p>A shield gains 10 HP per STA invested. Maintain it each round after the first for the original STA cost. Nothing tangible crosses the intact shield in either direction, and the caster cannot run. One companion may fit if pressed against the caster. When it ends, adjacent creatures and objects take 1d6 torso damage and are pushed 2m; rooted targets and objects heavier than 226kg still take damage but do not move.</p><p><strong>STA:</strong> 1–7. <strong>Range:</strong> Self. <strong>Duration:</strong> Active; maintain for the initial STA cost each subsequent round. <strong>Defense:</strong> None.</p><p>Source: The Witcher Core Rulebook v1.35, p.115.</p>"
+    }
+  },
+  {
+    "_id": "b4c54b29e1333ec3",
+    "name": "Aard Sweep",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 1,
+          "max": 7,
+          "step": 1,
+          "options": []
+        },
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 4,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "aard-sweep",
+        "tier": "alternate",
+        "element": "air",
+        "range": {
+          "text": "4m radius, spherical burst",
+          "distance": 4,
+          "unit": "m",
+          "targeting": "area"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "dodge"
+        ],
+        "effect": {
+          "key": "aard-sweep",
+          "params": {
+            "staggerAndProneChancePerSTA": 10,
+            "affectsFlying": true,
+            "sphere": true
+          }
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 115,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "A spherical burst gives each affected target a 10% chance per STA invested of being both staggered and knocked prone. Flying creatures caught by the effect are also knocked out of the air.",
+      "description": "<p>A spherical burst gives each affected target a 10% chance per STA invested of being both staggered and knocked prone. Flying creatures caught by the effect are also knocked out of the air.</p><p><strong>STA:</strong> 1–7. <strong>Range:</strong> 4m radius, spherical burst. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> Dodge.</p><p>Source: The Witcher Core Rulebook v1.35, p.115.</p>"
+    }
+  },
+  {
+    "_id": "077536e57a74dc12",
+    "name": "Fire Stream",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 1,
+          "max": 7,
+          "step": 1,
+          "options": []
+        },
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "fire-stream",
+        "tier": "alternate",
+        "element": "fire",
+        "range": {
+          "text": "3m",
+          "distance": 3,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "Active; maintain each round for half the initial STA cost",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "half"
+        },
+        "defenses": [
+          "dodge",
+          "block"
+        ],
+        "effect": {
+          "key": "fire-stream",
+          "damageType": "fire",
+          "damageFormula": "@power d6",
+          "blockable": true,
+          "physicalCritical": false,
+          "params": {
+            "fireChance": 75,
+            "aimed": true,
+            "maySwitchTargetOnTurn": true
+          }
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 115,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "A continuous stream deals 1d6 fire damage per STA invested, with a 75% ignition chance. It can target specific body locations. Maintain the stream each round for half its original STA cost, and choose another target on the caster’s turn.",
+      "description": "<p>A continuous stream deals 1d6 fire damage per STA invested, with a 75% ignition chance. It can target specific body locations. Maintain the stream each round for half its original STA cost, and choose another target on the caster’s turn.</p><p><strong>STA:</strong> 1–7. <strong>Range:</strong> 3m. <strong>Duration:</strong> Active; maintain each round for half the initial STA cost. <strong>Defense:</strong> Dodge or Block.</p><p>Source: The Witcher Core Rulebook v1.35, p.115.</p>"
+    }
+  },
+  {
+    "_id": "ae2afd6e1878da20",
+    "name": "Puppet",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 1,
+          "max": 7,
+          "step": 1,
+          "options": []
+        },
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "puppet",
+        "tier": "alternate",
+        "element": "water",
+        "range": {
+          "text": "8m",
+          "distance": 8,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "1 round per STA invested, or until resisted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "effect": {
+          "key": "puppet",
+          "params": {
+            "durationRoundsPerSTA": 1,
+            "allegiance": "casterAlly",
+            "repeatDefense": "resistMagic",
+            "repeatDefenseAgainst": "initialCastingTotal"
+          }
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 115,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "The target becomes the caster’s ally for one round per STA invested. Every round it may attempt Resist Magic against the initial Spell Casting result to end the control early.",
+      "description": "<p>The target becomes the caster’s ally for one round per STA invested. Every round it may attempt Resist Magic against the initial Spell Casting result to end the control early.</p><p><strong>STA:</strong> 1–7. <strong>Range:</strong> 8m. <strong>Duration:</strong> 1 round per STA invested, or until resisted. <strong>Defense:</strong> Resist Magic.</p><p>Source: The Witcher Core Rulebook v1.35, p.115.</p>"
+    }
+  },
+  {
+    "_id": "2a5001e6b37cd2a0",
+    "name": "Somne",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 2,
+          "max": 7,
+          "step": 1,
+          "options": [
+            2,
+            4,
+            6,
+            7
+          ]
+        },
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "somne",
+        "tier": "advanced",
+        "element": "unspecified",
+        "range": {
+          "text": "8m",
+          "distance": 8,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "8 hours, or until awakened",
+          "rounds": 0,
+          "seconds": 28800,
+          "maintenance": "none"
+        },
+        "defenses": [
+          "resistMagic"
+        ],
+        "effect": {
+          "key": "somne",
+          "params": {
+            "stunnedWhileAsleep": true,
+            "waking": {
+              "2": [
+                "damage",
+                "wakeAction",
+                "loudNoise"
+              ],
+              "4": [
+                "damage",
+                "wakeAction"
+              ],
+              "6": [
+                "damage",
+                "wakeFullRound"
+              ],
+              "7": [
+                "damage"
+              ]
+            }
+          }
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 101,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "A failed defense puts the target to sleep for eight hours; it counts as stunned while sleeping. Damage always wakes it. At 2 STA, a loud noise or someone waking it also suffices; at 4 STA an action is required; at 6 STA waking takes a full-round action; at 7 STA only damage wakes it. Without prior reason to suspect magic, the target does not recognize the magical cause on waking. The book specifies these four power levels and does not specify an element.",
+      "description": "<p>A failed defense puts the target to sleep for eight hours; it counts as stunned while sleeping. Damage always wakes it. At 2 STA, a loud noise or someone waking it also suffices; at 4 STA an action is required; at 6 STA waking takes a full-round action; at 7 STA only damage wakes it. Without prior reason to suspect magic, the target does not recognize the magical cause on waking. The book specifies these four power levels and does not specify an element.</p><p><strong>STA:</strong> 2 / 4 / 6 / 7. <strong>Range:</strong> 8m. <strong>Duration:</strong> 8 hours, or until awakened. <strong>Defense:</strong> Resist Magic.</p><p>Source: A Tome of Chaos v1.01, p.101.</p>"
+    }
+  },
+  {
+    "_id": "c331e3f2e92e756e",
+    "name": "Supirre",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "kind": "sign",
+        "cost": {
+          "min": 1,
+          "max": 7,
+          "step": 1,
+          "options": []
+        },
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "automation": "reference",
+        "key": "supirre",
+        "tier": "advanced",
+        "element": "unspecified",
+        "range": {
+          "text": "2m per STA invested",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "direct"
+        },
+        "duration": {
+          "text": "10 minutes",
+          "rounds": 0,
+          "seconds": 600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "effect": {
+          "key": "supirre",
+          "params": {
+            "rangePerSTA": 2,
+            "requiresSurface": true,
+            "stationary": true,
+            "listeningPoints": 1,
+            "noAwarenessCheckForConversation": true
+          }
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 101,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "sign",
+      "effectText": "Draw the sign on a surface and link it to one point within 2m per STA invested. Hear sounds there as if nearby, choosing a particular conversation and filtering other noise; hearing that conversation requires no Awareness check. Moving the listening point requires casting the sign again. The book does not specify an element.",
+      "description": "<p>Draw the sign on a surface and link it to one point within 2m per STA invested. Hear sounds there as if nearby, choosing a particular conversation and filtering other noise; hearing that conversation requires no Awareness check. Moving the listening point requires casting the sign again. The book does not specify an element.</p><p><strong>STA:</strong> 1–7. <strong>Range:</strong> 2m per STA invested. <strong>Duration:</strong> 10 minutes. <strong>Defense:</strong> None.</p><p>Source: A Tome of Chaos v1.01, p.101.</p>"
+    }
+  }
+]

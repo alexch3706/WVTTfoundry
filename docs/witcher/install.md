@@ -76,8 +76,10 @@ reproduction steps and browser-console errors when something fails.
 
 The current focus is ordinary attacks and defenses, fast/strong strikes and
 STA, equipment and ammunition, creature attacks, hit locations, armor, silver,
-resistances and Witcher equipment. Magic and signs, mounted combat, profession
-abilities and active creature abilities are outside the current completion
-target. Presence of a rule description or button does not certify automation.
+resistances and Witcher equipment. Alpha.6 adds an initial magic implementation;
+use the [magic play guide](magic-play-guide.md) and [support matrix](magic-progress.md)
+for the available casting, ritual and hex procedures. Mounted combat and broader
+profession/creature abilities remain outside the current priority. Presence of
+a rule description or button does not certify automation.
 The included `docs/witcher/implementation-status.md` and `docs/witcher/bestiary.md`
 record scope, source interpretations and remaining limitations.

@@ -1,5 +1,9 @@
+import { magicRecoveryRules, magicEnvironmentRules, magicActionRules } from './magic-effect-hooks.js';
+import { forgottenRecipe } from './magic-hex-runtime.js';
+import { hasCursedIllness } from './magic-recovery.js';
 import { SYSTEM_ID, CONDITIONS } from './config.js';
-import { RuleError, beats, hitLocations, resolveDamage } from './rules.js';
+import { RuleError, beats, hitLocations, resolveDamage, resolveDamageSequence } from './rules.js';
+import { activeShieldFor, magicDamageSnapshot, commitDamage } from './magic-shields.js';
 import { immuneTo, creatureRegeneration } from './monster-rules.js';
 import { allocateMaterials, craftingRecovery, repairDifficulty, materialKey } from './crafting.js';
 import { actorSnapshot, itemSnapshot } from './documents.js';
@@ -69,6 +73,7 @@ export async function turnAction(actor, key, item, options = {}) {
 }
 
 async function performTurnAction(actor, key, item, options, user) {
+  if (key === 'run' && activeShieldFor(actor)) throw new RuleError('Active Shield prevents running.');
   if (key === 'tick') {
     if (!user.isGM) throw new RuleError('The active GM processes recurring effects.');
     return tickActor(actor, `manual:${foundry.utils.randomID()}`);
@@ -92,6 +97,7 @@ async function performTurnAction(actor, key, item, options, user) {
   }
   if (key === 'endCondition') return endCondition(actor, options.condition, options);
   const plan = actionPlan(actor, {
+    actionKey: key,
     full: ['recover', 'aim', 'activeDodge', 'run', 'unjam'].includes(key),
     recovery: key === 'recover',
     extra: !!options.extra,
@@ -108,6 +114,11 @@ async function performTurnAction(actor, key, item, options, user) {
       )
     );
     changes['system.sta.value'] = Math.min(actor.system.sta.max, actor.system.sta.value + recovered);
+    if (actor.system.magic?.exhaustedRecovery > 0)
+      changes['system.magic.exhaustedRecovery'] = Math.max(
+        0,
+        actor.system.magic.exhaustedRecovery - recovered
+      );
     if (has(actor, 'unconscious'))
       changes['system.unconsciousRecovery'] = actor.system.unconsciousRecovery + recovered;
     text = `Recover ${recovered} STA.`;
@@ -138,6 +149,10 @@ async function performTurnAction(actor, key, item, options, user) {
 }
 
 async function endCondition(actor, key, options = {}) {
+  if (hasCursedIllness(actor.system, key))
+    throw new RuleError(
+      'Use Cursed Illness’s Endurance recovery on the Magic tab against its original casting total.'
+    );
   const woundSources = woundConditionSources([...actor.items], key);
   if (!has(actor, key) && !woundSources.length)
     throw new RuleError('This actor no longer has the chosen condition.');
@@ -167,7 +182,7 @@ async function endCondition(actor, key, options = {}) {
   if (!specs[key] && !['fire', 'blinded'].includes(key))
     throw new RuleError('Use the corresponding escape, recovery, or treatment action for this condition.');
   const result = specs[key]
-    ? await check(actor.skillBase(specs[key][0], { modifier: plan.modifier }).total)
+    ? await check(actor.skillBase(specs[key][0], { modifier: plan.modifier }).total, { actor: actor })
     : null;
   const changes = { ...plan.changes };
   const itemChanges = [];
@@ -232,14 +247,17 @@ export async function treat(patient, woundItem) {
       dc = Math.abs(patient.system.hp.value);
     }
     const result = await check(
-      healer.skillBase(skill, { stat: 'cra', modifier: Number(values.modifier) + plan.modifier }).total
+      healer.skillBase(skill, { stat: 'cra', modifier: Number(values.modifier) + plan.modifier }).total,
+      { actor: healer }
     );
     await commitActor(healer, plan.changes);
     const success = beats(result.total, dc);
     if (success) {
-      if (kind === 'death')
+      if (kind === 'death') {
+        if (!magicRecoveryRules(patient.system, { source: 'natural' }).hpAllowed)
+          throw new RuleError('Brand of Withering prevents HP recovery.');
         await patient.update({ 'system.hp.value': 1, 'system.deathSaves': 0, 'system.pendingDeathSaves': 0 });
-      else
+      } else
         await patient.update({
           'system.healingEnabled': true,
           'system.healingBonus': kind === 'healingHands' ? 3 : 0,
@@ -289,9 +307,14 @@ async function craftAttempt(actor, diagram, { repairItem = null } = {}) {
   if (metal && !values.forge) throw new RuleError('Recipes with metal components require a forge (p.127).');
   if (!values.written && !d.memorized)
     throw new RuleError('The recipe must be memorized or physically available.');
+  if (!values.written && forgottenRecipe(actor.system, diagram.id))
+    throw new RuleError(
+      'Hex of Forgetfulness removed this recipe from memory; use an actual written recipe or lift the hex.'
+    );
   const dc = repairItem ? repairDifficulty(d, repairItem.system.attachments.length) : d.craftDC;
   const result = await check(
-    actor.skillBase(d.skill, { modifier: (values.written ? 2 : 0) + Number(values.modifier) }).total
+    actor.skillBase(d.skill, { modifier: (values.written ? 2 : 0) + Number(values.modifier) }).total,
+    { actor: actor }
   );
   const success = beats(result.total, dc);
   const updates = used.map((i) => ({ _id: i.id, 'system.quantity': i.after }));
@@ -335,7 +358,7 @@ async function craftAttempt(actor, diagram, { repairItem = null } = {}) {
       button: 'Recovery roll',
     });
     if (!recover) return;
-    const roll = await check(actor.skillBase(d.skill).total);
+    const roll = await check(actor.skillBase(d.skill).total, { actor: actor });
     const recovered = craftingRecovery(used, { alchemy, success: beats(roll.total, dc) });
     if (alchemy && recovered.length) {
       const choice = await prompt(
@@ -420,7 +443,8 @@ export async function enhance(actor, enhancement) {
     const result =
       !rune && !glyph
         ? await check(
-            actor.skillBase('crafting', { modifier: Number(values.modifier) + plan.modifier }).total
+            actor.skillBase('crafting', { modifier: Number(values.modifier) + plan.modifier }).total,
+            { actor: actor }
           )
         : null;
     if (result && !beats(result.total, 14)) {
@@ -581,7 +605,7 @@ async function performMutagen(actor, target, item) {
     if (effects.filter((entry) => entry.mutagen).length >= 2)
       throw new RuleError('A witcher already has two permanent mutagens; they cannot be removed (p.251).');
     const modifiers = mutagenModifiers(item);
-    const result = await check(actor.skillBase('alchemy').total);
+    const result = await check(actor.skillBase('alchemy').total, { actor: actor });
     rolls.push(...result.rolls);
     const success = beats(result.total, item.system.craftDC);
     // A repeated source occupies another slot: never replace a previous permanent mutation.
@@ -634,7 +658,7 @@ async function performCrushEssence(actor, item) {
   const product = await resolveFoundryUuid(s.productUuid);
   if (!product || product.type !== 'component')
     throw new RuleError('The Infused Dust compendium entry is unavailable.');
-  const result = await check(actor.skillBase('crafting').total);
+  const result = await check(actor.skillBase('crafting').total, { actor: actor });
   const success = beats(result.total, s.craftDC);
   if (success) {
     const data = product.toObject();
@@ -679,7 +703,7 @@ async function applyItem(actor, target, item) {
     else effects.push(value);
   };
   const resist = async (skill, dc) => {
-    const r = await check(target.skillBase(skill).total);
+    const r = await check(target.skillBase(skill).total, { actor: target });
     rolls.push(...r.rolls);
     return beats(r.total, dc);
   };
@@ -733,7 +757,7 @@ async function applyItem(actor, target, item) {
         { button: 'Complete preparation' }
       );
       if (!prepared) return;
-      const r = await check(actor.skillBase('alchemy').total);
+      const r = await check(actor.skillBase('alchemy').total, { actor: actor });
       rolls.push(...r.rolls);
       if (beats(r.total, s.craftDC))
         effects.push(
@@ -817,7 +841,7 @@ async function applyItem(actor, target, item) {
       detail = 'One dose of acid neutralized; Torn Stomach acid damage stopped.';
     } else if (name === 'Fisstech') {
       if (!(await resist('endurance', 18))) addEffect('Fisstech Addiction', 0, { addiction: true });
-      const r = await check(target.skillBase('endurance').total);
+      const r = await check(target.skillBase('endurance').total, { actor: target });
       rolls.push(...r.rolls);
       if (r.total <= 16) {
         conditions.add('stunned');
@@ -866,19 +890,21 @@ async function applyItem(actor, target, item) {
 export async function tickActor(actor, key) {
   if (!isPrimaryActiveGm()) return;
   if (actor.system.combat.lastEffectTurn === key || has(actor, 'dead')) return;
-  const state = actorSnapshot(actor),
-    results = [];
+  const state = magicDamageSnapshot(actor);
+  const results = has(actor, 'fire')
+    ? resolveDamageSequence(
+        hitLocations(state).map((location) => ({
+          raw: 5,
+          type: 'fire',
+          location: location.id,
+          properties: { fixedAblation: 1, damageSource: 'fire' },
+        })),
+        state,
+        hitLocations(state),
+        state.items
+      )
+    : [];
   let direct = 0;
-  if (has(actor, 'fire'))
-    for (const location of hitLocations(state))
-      results.push(
-        resolveDamage(
-          { raw: 5, type: 'fire', properties: { fixedAblation: 1 } },
-          state,
-          location,
-          state.items
-        )
-      );
   const fromWounds = woundConditions([...actor.items]);
   const suffering = (key) => has(actor, key) || fromWounds.includes(key);
   const poisonImmune = active(actor, 'Golden Oriole') || immuneTo(state, 'poison');
@@ -890,7 +916,24 @@ export async function tickActor(actor, key) {
       state.items.some((i) => i.type === 'armor' && i.equipped && i.resistances.includes('bleeding'));
     direct += Math.floor((2 + (actor.system.derived.mods.bleedingDamage ?? 0)) * (resistant ? 0.5 : 1));
   }
-  if (suffering('suffocating') && !immuneTo(state, 'suffocating')) direct += 3;
+  const spellSuffocation = actor.system.effects.filter(
+    (effect) => effect.conditions?.includes('suffocating') && effect.magic && !effect.magic.suppressed
+  );
+  const spellHandlesSuffocation =
+    spellSuffocation.some((effect) => effect.magic.operation?.damageHandledBySpell) &&
+    spellSuffocation.every((effect) => effect.magic.operation?.damageHandledBySpell) &&
+    spellSuffocation.some((effect) => effect.magic.addedConditions?.includes('suffocating'));
+  const protectedAir = magicEnvironmentRules(state, {
+    medium: state.environment?.underwater ? 'water' : 'air',
+    cause: state.environment?.suffocationCause,
+  }).blockedSuffocation;
+  if (
+    suffering('suffocating') &&
+    !immuneTo(state, 'suffocating') &&
+    (!spellHandlesSuffocation || fromWounds.includes('suffocating')) &&
+    (!protectedAir || fromWounds.includes('suffocating') || spellSuffocation.length)
+  )
+    direct += 3;
   const woundUpdates = [];
   let saves = 0;
   for (const item of actor.items.filter((i) => i.type === 'wound')) {
@@ -908,8 +951,7 @@ export async function tickActor(actor, key) {
     if (period && age % period === 0) saves++;
     woundUpdates.push({ _id: item.id, 'system.wound.ageRounds': age });
   }
-  const planned = planDamageChanges(actor, results);
-  planned.actor['system.hp.value'] -= direct;
+  const planned = planDamageChanges(actor, results, [], { directHP: direct });
   // Being on fire also damages held weapons every round, even if armor stopped it.
   if (has(actor, 'fire'))
     for (const i of actor.items.filter(
@@ -919,6 +961,8 @@ export async function tickActor(actor, key) {
   let regen = (active(actor, 'Troll Decoction') ? 5 : 0) + creatureRegeneration(state);
   if (active(actor, 'Swallow') && !actor.system.combat.hitThisRound) regen += 3;
   if (active(actor, 'Grave Hag Decoction')) regen += active(actor, 'Grave Hag Decoction').kills * 2 || 0;
+  regen = magicRecoveryRules(actor.system, { source: 'magical', amount: regen }).hpAmount;
+  if (actor.system.conditions.includes('dead')) regen = 0;
   planned.actor['system.hp.value'] = Math.min(actor.system.hp.max, planned.actor['system.hp.value'] + regen);
   if (actor.system.hp.value <= 0 || planned.actor['system.hp.value'] <= 0)
     planned.actor['system.pendingDeathSaves'] = actor.system.pendingDeathSaves + 1;
@@ -926,7 +970,7 @@ export async function tickActor(actor, key) {
   planned.actor['system.combat.hitThisRound'] = false;
   // Tick damage does not free a stunned victim unless an actual damaging effect hit them.
   if (!results.length && !direct) planned.actor['system.conditions'] = actor.system.conditions;
-  await commitActor(actor, planned.actor, [...planned.items, ...woundUpdates]);
+  await commitDamage(actor, planned, [...planned.items, ...woundUpdates]);
   if (direct || results.length || regen)
     await chat(
       actor,
@@ -937,7 +981,7 @@ export async function tickActor(actor, key) {
   await expireEffects(actor);
 }
 export async function expireEffects(actor) {
-  const expired = actor.system.effects.filter((x) => x.expires && x.expires <= now());
+  const expired = actor.system.effects.filter((x) => !x.magic && x.expires && x.expires <= now());
   if (!expired.length) return;
   const effects = actor.system.effects.filter((x) => !expired.some((e) => e.id === x.id));
   const conditions = new Set(actor.system.conditions);

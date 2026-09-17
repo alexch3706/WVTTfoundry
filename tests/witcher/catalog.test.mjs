@@ -9,7 +9,10 @@ const packs = Object.fromEntries(
     manifest.packs
       .filter(
         (pack) =>
-          pack.type === 'Item' && !pack.name.startsWith('supplement-') && pack.name !== 'critical-wounds'
+          pack.type === 'Item' &&
+          !pack.name.startsWith('magic-') &&
+          !pack.name.startsWith('supplement-') &&
+          pack.name !== 'critical-wounds'
       )
       .map(async (pack) => {
         const file = new URL(`../../data/witcher/${pack.name}.json`, import.meta.url);

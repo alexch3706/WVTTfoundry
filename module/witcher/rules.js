@@ -1,7 +1,15 @@
+import {
+  magicDerivedRules,
+  magicMovementDerived,
+  magicRuleEntries,
+  magicDamageRules,
+  magicEnvironmentRules,
+} from './magic-effect-hooks.js';
 import { HUMANOID_LOCATIONS, MONSTER_LOCATIONS, STATS } from './config.js';
 import { combinedModifiers } from './wounds.js';
 import { heatFactor } from './advanced-rules.js';
 import { immuneTo, isIncorporeal, suppressed } from './monster-rules.js';
+import { absorbQuen } from './magic-rules.js';
 
 export class RuleError extends Error {}
 const n = (v, fallback = 0) => (Number.isFinite(Number(v)) ? Number(v) : fallback);
@@ -192,7 +200,40 @@ export function resolveDamage(
   const isSilverTarget = target.silverVulnerable === true;
   const rolled = Math.max(0, (raw + (isSilverTarget ? silver : 0)) * multiplier);
   const afterCover = Math.max(0, rolled - Math.max(0, cover));
-  const afterArmor = Math.max(0, afterCover - sp);
+  const magicDamage = magicDamageRules(target, {
+    damageType: type,
+    element: properties.element,
+    source: properties.damageSource,
+    fireId: properties.fireId,
+    separateAttack: properties.separateAttack,
+    activeAtLanding: properties.activeAtLanding,
+  });
+  const ward =
+    !magicDamage.preventDamage &&
+    !properties.ignoreShield &&
+    target.effects?.find((e) => ['quen', 'active-shield'].includes(e.magic?.key) && e.shieldHP > 0);
+  const absorption = ward
+    ? absorbQuen({
+        raw: afterCover,
+        shieldHP: ward.shieldHP,
+        magic: !!properties.magic,
+        defenses: properties.magicBlockable ? ['block'] : [],
+        source: properties.damageSource ?? 'attack',
+      })
+    : null;
+  const shield = absorption?.absorbed
+    ? {
+        id: ward.id,
+        ownerUuid: ward.ownerActorUuid || '',
+        before: ward.shieldHP,
+        after: absorption.shieldHP,
+        absorbed: absorption.absorbed,
+        fullyAbsorbed: absorption.remaining === 0,
+        active: ward.magic.key === 'active-shield',
+      }
+    : null;
+  const afterShield = magicDamage.preventDamage ? 0 : (absorption?.remaining ?? afterCover);
+  const afterArmor = Math.max(0, afterShield - sp + magicDamage.adjustment);
   let resisted = afterArmor;
   const armorResistant = [...layers.flatMap((l) => l.resistances), ...natural.resistances].includes(type);
   // p.154: repeated resistance to the same damage type does not stack. The
@@ -202,12 +243,14 @@ export function resolveDamage(
     !properties.armorPiercing &&
     !properties.improvedArmorPiercing &&
     !properties.bypassArmor;
-  if (resistedByArmor || target.resistances?.includes(type)) resisted /= 2;
-  const immune = immuneTo(target, type) || (nonlethal && target.traits?.infiniteStamina);
+  if (resistedByArmor || target.resistances?.includes(type) || magicDamage.resistant) resisted /= 2;
+  const immune =
+    magicDamage.preventDamage || immuneTo(target, type) || (nonlethal && target.traits?.infiniteStamina);
   if (immune) resisted = 0;
   else {
     if (
       isSilverTarget &&
+      !properties.magic &&
       !properties.silver &&
       type !== 'fire' &&
       !(properties.meteorite && target.meteoriteVulnerable)
@@ -216,22 +259,28 @@ export function resolveDamage(
     if (target.vulnerabilities?.includes(type)) resisted *= 2;
   }
   const mods = combinedModifiers(target, items);
-  const locationMultiplier =
-    (location.group === 'head' || /head/i.test(location.id)) && mods.headMultiplier
+  const locationMultiplier = properties.ignoreLocationMultiplier
+    ? 1
+    : (location.group === 'head' || /head/i.test(location.id)) && mods.headMultiplier
       ? Math.max(location.multiplier, mods.headMultiplier)
       : location.multiplier;
-  const localized = Math.max(0, Math.floor(resisted * locationMultiplier));
+  const armorNegatedDamage =
+    !immune && afterShield > 0 && afterArmor === 0 && sp > 0
+      ? Math.max(0, n(properties.armorNegatedDamage))
+      : 0;
+  const localized = Math.max(0, Math.floor(resisted * locationMultiplier)) + armorNegatedDamage;
   // A critical's separate bonus can bypass intact armor, but cannot itself
   // trigger staged penetration. The wearer must take damage through the armor.
   const penetrated = afterArmor > 0 && localized > 0 && !immune;
   const wear =
-    properties.bypassArmor || isIncorporeal(target)
+    properties.bypassArmor || isIncorporeal(target) || shield?.fullyAbsorbed
       ? 0
       : properties.fixedAblation !== undefined
         ? n(properties.fixedAblation)
         : ((penetrated ? 1 + n(properties.ablation) : 0) + n(properties.alwaysAblate)) *
           n(properties.wearMultiplier, 1);
   return {
+    source: properties.damageSource || 'attack',
     location: { ...location, multiplier: locationMultiplier },
     raw,
     silver: isSilverTarget ? silver : 0,
@@ -239,13 +288,15 @@ export function resolveDamage(
     rolled,
     cover,
     afterCover,
+    afterShield,
+    shield,
     sp,
     afterArmor,
     resisted,
     localized,
     immune,
-    criticalBonus: immune ? 0 : criticalBonus,
-    damage: immune ? 0 : localized + criticalBonus,
+    criticalBonus: immune || shield?.fullyAbsorbed ? 0 : criticalBonus,
+    damage: immune || shield?.fullyAbsorbed ? 0 : localized + criticalBonus,
     nonlethal,
     armorChanges: layers
       .map((l) => ({ id: l.id, location: location.id, before: l.sp, after: Math.max(0, l.sp - wear) }))
@@ -257,8 +308,27 @@ export function resolveDamage(
       after: Math.max(0, natural.sp - wear),
     },
     penetrated,
-    clearsStun: !immune && localized + criticalBonus > 0,
+    clearsStun: !immune && !shield?.fullyAbsorbed && localized + criticalBonus > 0,
   };
+}
+
+/** Carry a shield's remaining HP across locations in one multi-location hit. */
+export function afterDamageShield(state, result) {
+  if (!result.shield) return state;
+  return {
+    ...state,
+    effects: state.effects.map((e) =>
+      e.id === result.shield.id ? { ...e, shieldHP: result.shield.after } : e
+    ),
+  };
+}
+export function resolveDamageSequence(requests, target, table = hitLocations(target), items = []) {
+  let state = target;
+  return requests.map((r) => {
+    const result = resolveDamage(r, state, locate(table, r.location), items);
+    state = afterDamageShield(state, result);
+    return result;
+  });
 }
 
 export function meleeBonus(body) {
@@ -276,8 +346,9 @@ export function meleeBonus(body) {
               ? 6
               : 8;
 }
-export function derivedStats(actor, items = []) {
+export function derivedStats(actor, items = [], { movementBaseline = false } = {}) {
   const mods = combinedModifiers(actor, items);
+  const magic = magicDerivedRules(actor);
   const base = Object.fromEntries(
     STATS.map((k) => [k, Math.max(k === 'luck' ? 0 : 1, n(actor.stats?.[k], 5))])
   );
@@ -305,6 +376,12 @@ export function derivedStats(actor, items = []) {
     mods.allActions = n(mods.allActions) + n(actor.traits?.moonlightPenalty);
   if (actor.category === 'elementa' && suppressed(actor, 'Dimeritium'))
     for (const k of STATS) mods[k] = n(mods[k]) - 2;
+  for (const key of STATS) {
+    const adjustment = n(magic.baseAdjustments[key]);
+    base[key] += adjustment;
+    mods[key] = n(mods[key]) - adjustment;
+    if (Number.isFinite(magic.statOverrides[key])) base[key] = magic.statOverrides[key];
+  }
   const physical = Math.floor((base.body + base.will) / 2);
   const hpMax = (n(actor.overrides?.hp) || physical * 5) + n(mods.hp);
   const staMax = actor.traits?.infiniteStamina
@@ -312,7 +389,7 @@ export function derivedStats(actor, items = []) {
     : Math.floor(
         ((n(actor.overrides?.sta) || physical * 5) + n(mods.sta)) *
           n(mods.staMultiplier, 1) *
-          (actor.environment?.heat ? heatFactor(items) : 1)
+          (actor.environment?.heat && !magicEnvironmentRules(actor).immuneToHeat ? heatFactor(items) : 1)
       );
   const enc = Math.max(
     0,
@@ -340,11 +417,16 @@ export function derivedStats(actor, items = []) {
       key === 'luck' ? 0 : 1,
       Math.floor(
         ((base[key] + modifier) * n(mods[key + 'Multiplier'], 1)) /
-          (dying ? 3 : wound && ['ref', 'dex', 'int', 'will'].includes(key) ? 2 : 1)
+          (dying && !magic.ignoreDeathPenalties
+            ? 3
+            : wound && !magic.ignoreWoundPenalties && ['ref', 'dex', 'int', 'will'].includes(key)
+              ? 2
+              : 1)
       )
     );
   }
-  return {
+  for (const [key, cap] of Object.entries(magic.statCaps)) current[key] = Math.min(current[key], cap);
+  const derived = {
     base,
     stats: current,
     mods,
@@ -352,13 +434,17 @@ export function derivedStats(actor, items = []) {
     staMax,
     stun: Math.max(
       1,
-      Math.floor(((n(actor.overrides?.stun) || Math.min(10, physical)) + n(mods.stun)) / (dying ? 3 : 1))
+      Math.floor(
+        ((n(actor.overrides?.stun) || Math.min(10, physical)) + n(mods.stun)) /
+          (dying && !magic.ignoreDeathPenalties ? 3 : 1)
+      )
     ),
     deathTarget: n(actor.overrides?.stun) || Math.min(10, physical),
     rec: Math.max(
       1,
       Math.floor(
-        (((n(actor.overrides?.rec) || physical) + n(mods.rec)) * n(mods.recMultiplier, 1)) / (dying ? 3 : 1)
+        (((n(actor.overrides?.rec) || physical) + n(mods.rec)) * n(mods.recMultiplier, 1)) /
+          (dying && !magic.ignoreDeathPenalties ? 3 : 1)
       )
     ),
     enc,
@@ -384,6 +470,21 @@ export function derivedStats(actor, items = []) {
     kick: `1d6+${4 + meleeBonus(current.body)}`,
     woundThreshold: Math.floor(hpMax / 5),
   };
+  if (!movementBaseline && magicRuleEntries(actor).some(({ operation }) => operation.avoidDoubleDerivation)) {
+    const baseline = structuredClone(actor);
+    for (const effect of baseline.effects ?? []) {
+      const operations =
+        effect.magic?.operations ?? (effect.magic?.operation ? [effect.magic.operation] : []);
+      for (const operation of operations)
+        if (operation.avoidDoubleDerivation) {
+          delete operation.modifiers?.spd;
+          delete effect.modifiers?.spd;
+          delete operation.derivedOverrides;
+        }
+    }
+    return magicMovementDerived(actor, derived, derivedStats(baseline, items, { movementBaseline: true }));
+  }
+  return derived;
 }
 
 export function rangeBracket(distance, range) {

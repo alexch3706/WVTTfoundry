@@ -1,9 +1,9 @@
 # The Witcher TTRPG — Foundry V14
 
 Independent Witcher implementation based on the owner's Cyberpunk V14 history
-and the supplied **Core Rulebook v1.35**. System ID: `witcher-rilerena`.
+and the supplied **Core Rulebook v1.35**, **A Tome of Chaos v1.01**, and equipment supplements. System ID: `witcher-rilerena`.
 
-**Installable alpha for the agreed ordinary-combat scope. Live Forge acceptance is pending.**
+**Installable alpha with ordinary combat, critical wounds and an initial magic implementation. Live Forge acceptance is pending.**
 No runtime code from another Witcher system is included. Two general Foundry
 compatibility helpers are retained from Cyberpunk.
 
@@ -25,14 +25,16 @@ compatibility helpers are retained from Cyberpunk.
   8 use generated originals. Existing imported placeholders update on GM startup;
   custom images are preserved. See [art sources and preview](docs/witcher/art-sources.md).
 
+- **238 magic references** across five compendiums, plus **45 magical artifact/material records**. Casting is enabled for **12 Signs, 34 spells and 20 invocations**; other spell/invocation records are clearly marked as references. Rituals and hexes use separate workflows. See the [magic player guide](docs/witcher/magic-play-guide.md) and [support matrix](docs/witcher/magic-progress.md).
+
 See [implementation status](docs/witcher/implementation-status.md) for remaining
 work and [bestiary coverage](docs/witcher/bestiary.md) for adaptations and limits.
-Signs/magic, mounted combat and active creature/profession abilities are deferred.
+Magic coverage and remaining work are listed in the [magic support matrix](docs/witcher/magic-progress.md). Mounted combat and broader active creature/profession abilities remain outside the current priority.
 
 ## Install on The Forge
 
-Use the [v0.1.0-alpha.5 manifest](https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.5/system.json) in **Install from Manifest**.
-See [installation instructions](docs/witcher/install.md) and [release assets](https://github.com/alexch3706/WVTTfoundry/releases/tag/v0.1.0-alpha.5).
+Use the [v0.1.0-alpha.6 manifest](https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.6/system.json) in **Install from Manifest**.
+See [installation instructions](docs/witcher/install.md) and [release assets](https://github.com/alexch3706/WVTTfoundry/releases/tag/v0.1.0-alpha.6).
 Create a new Witcher world; use a 2 m grid and an active GM for combat commands.
 
 ## Validation
@@ -41,6 +43,7 @@ Create a new Witcher world; use a 2 m grid and an active GM for combat commands.
 npm ci
 npm test
 npm run build:wounds
+npm run build:magic
 npm run build:packs
 npm run validate
 ```

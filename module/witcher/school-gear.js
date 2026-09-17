@@ -123,7 +123,7 @@ function choices(key) {
           label: 'Cast a Sign',
           action: 'sign',
           cost: 'signOnly',
-          deferred: true,
+          deferred: false,
           targetConstraint: 'normal',
         },
       ];
@@ -171,7 +171,7 @@ export function schoolReactions(state, context = {}) {
       additionalStamina: 0,
       additionalPenalty: 0,
       spendAction: false,
-      deferred: perk.key === 'criticalSpellcasting',
+      deferred: false,
       choices: choices(perk.key),
     }));
 }

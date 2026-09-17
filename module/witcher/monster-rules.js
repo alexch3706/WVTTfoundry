@@ -1,3 +1,4 @@
+import { magicConditionRules, magicRecoveryRules } from './magic-effect-hooks.js';
 /** Pure creature rules from the Core Bestiary (printed pp.270–313). */
 export const PHYSICAL_DAMAGE = ['slashing', 'piercing', 'bludgeoning'];
 export function monsterEffect(state, key) {
@@ -12,6 +13,7 @@ export function isIncorporeal(state) {
 }
 export function immuneTo(state, type) {
   return (
+    magicConditionRules(state, type).immune ||
     state.immunities?.includes(type) ||
     (isIncorporeal(state) && [...PHYSICAL_DAMAGE, 'bleeding', 'poison'].includes(type)) ||
     (state.traits?.amphibious && type === 'suffocating')
@@ -25,7 +27,7 @@ export function creatureRegeneration(state) {
   if (points && t.sunlightRegeneration && ['daylight', 'bright'].includes(state.environment?.light))
     points = t.sunlightRegeneration;
   if (t.furyThreshold && state.hp.value < t.furyThreshold) points += t.furyRegeneration;
-  return points;
+  return magicRecoveryRules(state, { source: 'natural', amount: points }).hpAmount;
 }
 export function staminaCost(state, cost) {
   return state.traits?.infiniteStamina ? 0 : cost;

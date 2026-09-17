@@ -1,3 +1,6 @@
+import { activeHexes, hexSkillModifier, hexRestPlan, hexCriticalWound } from './magic-hex-rules.js';
+import { woundItemData } from './wound-catalog.js';
+import { magicModifierSummary, magicSkillRules, magicRecoveryRules } from './magic-effect-hooks.js';
 import { STATS, SKILLS, HUMANOID_LOCATIONS, MONSTER_LOCATIONS, CONDITIONS, SYSTEM_ID } from './config.js';
 import {
   derivedStats,
@@ -8,9 +11,9 @@ import {
   beats,
 } from './rules.js';
 import { immuneTo } from './monster-rules.js';
-import { woundModifiers } from './wounds.js';
+import { woundModifiers, WOUNDS } from './wounds.js';
 import { advanceWoundDays, woundCheckModifier, recoveryClockChanged } from './wound-rules.js';
-import { commitActor } from './runtime.js';
+import { commitActor, check, checkHTML, chat } from './runtime.js';
 
 const f = foundry.data.fields;
 const num = (initial = 0, options = {}) =>
@@ -59,6 +62,25 @@ export class WitcherActorData extends foundry.abstract.TypeDataModel {
       page: num(),
       category: str('humanoid'),
       vigor: num(),
+      magic: new f.SchemaField({
+        tradition: str(),
+        roundKey: str(),
+        spent: num(0, { min: 0 }),
+        exhaustedRecovery: num(0, { min: 0 }),
+        dimeritiumUnits: num(0, { min: 0 }),
+        dimeritiumContact: bool(),
+        speech: bool(true),
+        gestures: bool(true),
+        minorGestures: bool(true),
+        coneAngle: num(90, { min: 1, max: 360 }),
+        lastTurn: str(),
+        learning: new f.ArrayField(new f.ObjectField()),
+        magicIP: num(0, { min: 0 }),
+        powerUses: new f.ArrayField(new f.ObjectField()),
+        powerFocus: new f.ObjectField({ initial: {} }),
+        leyConnection: new f.ObjectField({ initial: {} }),
+        birthEligible: new f.BooleanField({ initial: null, nullable: true }),
+      }),
       bestiary: new f.ObjectField({ initial: {} }),
       traits: new f.SchemaField({
         feralInt: num(),
@@ -129,6 +151,7 @@ export class WitcherActorData extends foundry.abstract.TypeDataModel {
         swamp: bool(),
         ice: bool(),
         heat: bool(),
+        suffocationCause: str('unspecified'),
       }),
       notes: str(),
       reputation: num(),
@@ -167,6 +190,7 @@ export class WitcherMonsterData extends WitcherActorData {
 export class WitcherItemData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
+      magic: new f.ObjectField({ initial: {} }),
       description: new f.HTMLField({ initial: '' }),
       source: str(),
       page: num(),
@@ -300,6 +324,7 @@ export class WitcherItemData extends foundry.abstract.TypeDataModel {
         recoveryPending: bool(),
         recoveryContext: str(),
         separateConditions: bool(),
+        bonesOfGlass: bool(),
         endedConditions: strings(),
         extraResult: num(),
         notes: str(),
@@ -341,7 +366,13 @@ export class WitcherItemData extends foundry.abstract.TypeDataModel {
 }
 
 export function itemSnapshot(item) {
-  return { id: item.id, type: item.type, name: item.name, ...(item.system.toObject?.() ?? item.system) };
+  return {
+    id: item.id,
+    type: item.type,
+    name: item.name,
+    flags: foundry.utils.deepClone(item.flags ?? {}),
+    ...(item.system.toObject?.() ?? item.system),
+  };
 }
 export function actorSnapshot(actor) {
   const state = {
@@ -349,6 +380,7 @@ export function actorSnapshot(actor) {
     type: actor.type,
     id: actor.id,
     uuid: actor.uuid,
+    flags: foundry.utils.deepClone(actor.flags ?? {}),
     items: actor.items.map(itemSnapshot),
   };
   if (state.effects.some((x) => x.key === 'Golden Oriole'))
@@ -427,14 +459,22 @@ export class WitcherActor extends Actor {
       if (!Object.hasOwn(expanded.system, 'pendingDeathSaves')) changes['system.pendingDeathSaves'] = 0;
     }
   }
-  skillBase(key, { stat, modifier = 0, arm = '', sight = false } = {}) {
+  skillBase(key, { stat, modifier = 0, arm = '', sight = false, context = {}, substituted = false } = {}) {
+    const magical = magicSkillRules(this.system, key, context);
+    if (!substituted && magical.substitutions.length) {
+      const choices = magical.substitutions.map(({ skill }) =>
+        this.skillBase(skill, { modifier, arm, sight, context, substituted: true })
+      );
+      choices.push(this.skillBase(key, { stat, modifier, arm, sight, context, substituted: true }));
+      return choices.sort((a, b) => b.total - a.total)[0];
+    }
     const skill = SKILLS[key];
     const custom = this.system.customSkills.find(
       (s) => s.id === key || s.name.replace(/\s/g, '').toLowerCase() === key.toLowerCase()
     );
     const attribute = stat ?? skill?.[1] ?? custom?.stat ?? 'int';
     const rank = skill ? this.system.skills[key] : (custom?.rank ?? this.system.professionRanks[key] ?? 0);
-    let bonus = 0;
+    let bonus = hexSkillModifier(this.system, key, context);
     if (
       this.system.race === 'witcher' &&
       key === 'awareness' &&
@@ -443,7 +483,7 @@ export class WitcherActor extends Actor {
       bonus++;
     if (this.system.race === 'elf') bonus += key === 'archery' ? 2 : key === 'fineArts' ? 1 : 0;
     if (this.system.race === 'dwarf') bonus += ['business', 'physique'].includes(key) ? 1 : 0;
-    for (const effect of this.system.effects) bonus += Number(effect.modifiers?.[key] ?? 0);
+    bonus += Number(magicModifierSummary(this.system, context).modifiers[key] ?? 0) + magical.bonus;
     if (key === 'awareness') {
       const light = this.system.environment.light;
       const cat = this.system.effects.some((x) => x.key === 'Cat');
@@ -515,14 +555,47 @@ export class WitcherActor extends Actor {
     if (this.system.ip < cost) throw new RuleError(`Improvement requires ${cost} IP`);
     await this.update({ [`system.skills.${key}`]: current + 1, 'system.ip': this.system.ip - cost });
   }
-  async rest({ days = 1, strenuous = false } = {}) {
+  async rest({ days = 1, strenuous = false, sleepHours = 8, meals = 3, nightmareDice = {} } = {}) {
     if (!Number.isInteger(days) || days < 1) throw new RuleError('Enter a positive whole number of days');
+    const hexes = activeHexes(this.system);
+    if (days !== 1 && (hexes.has('the-nightmare') || hexes.has('unending-need')))
+      throw new RuleError('Resolve one night at a time while this rest-affecting hex is active.');
+    const nightmareTotals = {},
+      nightmareRolls = [];
+    for (const effect of this.system.effects.filter(
+      (effect) => effect.magic?.key === 'the-nightmare' && activeHexes({ effects: [effect] }).size
+    )) {
+      const roll = await check(this.skillBase('resistCoercion').total, {
+        actor: this,
+        manualDice: nightmareDice[effect.id],
+        context: { dc: effect.magic.castingTotal, skill: 'resistCoercion' },
+      });
+      nightmareTotals[effect.id] = roll.total;
+      nightmareRolls.push({ effect, roll });
+    }
+    const hexRest = hexRestPlan(this.system.toObject(), {
+      sleepHours,
+      meals,
+      time: game.time.worldTime,
+      nightmareTotals,
+    });
+    const projected = { ...actorSnapshot(this), effects: hexRest.effects };
+    const after = derivedStats(projected, projected.items);
     const heal = this.system.healingEnabled
       ? Math.floor((this.system.derived.rec + this.system.healingBonus) * (strenuous ? 0.5 : 1)) * days
       : 0;
     const changes = {
-      'system.hp.value': Math.min(this.system.hp.max, this.system.hp.value + heal),
-      'system.sta.value': this.system.sta.max,
+      'system.hp.value': Math.min(
+        this.system.hp.max,
+        this.system.hp.value +
+          (hexRest.recoveryAllowed
+            ? magicRecoveryRules(this.system, { source: 'natural', amount: heal }).hpAmount
+            : 0)
+      ),
+      'system.sta.value': hexRest.recoveryAllowed
+        ? after.staMax
+        : Math.min(this.system.sta.value, after.staMax),
+      'system.effects': hexRest.effects,
     };
     const updates = [];
     const recoveryState = actorSnapshot(this);
@@ -548,13 +621,38 @@ export class WitcherActor extends Actor {
         });
       }
     }
-    await commitActor(this, changes, updates);
+    await commitActor(this, changes, updates, async () => {
+      if (nightmareRolls.length)
+        return chat(
+          this,
+          'Nightmare: nightly resistance',
+          nightmareRolls
+            .map(
+              ({ effect, roll }) =>
+                checkHTML(roll) +
+                `<p>DC ${effect.magic.castingTotal}: ${roll.total > effect.magic.castingTotal ? 'Sleep and recovery allowed.' : 'No HP or STA recovered tonight.'}</p>`
+            )
+            .join(''),
+          { rolls: nightmareRolls.flatMap(({ roll }) => roll.rolls) }
+        );
+    });
   }
 }
 
 export class WitcherItem extends Item {
   async _preCreate(data, options, user) {
     await super._preCreate(data, options, user);
+    if (this.type === 'wound' && this.parent?.system) {
+      const upgraded = hexCriticalWound(this.parent.system, data.system?.wound, WOUNDS);
+      if (upgraded !== data.system?.wound) {
+        const canonical = woundItemData(upgraded);
+        this.updateSource({
+          name: canonical.name,
+          'system.wound': canonical.system.wound,
+          'system.description': canonical.system.description,
+        });
+      }
+    }
     if (!data.img || data.img === 'icons/svg/item-bag.svg')
       this.updateSource({
         img:

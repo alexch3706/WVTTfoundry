@@ -11,7 +11,7 @@ const snapshot = (entry) => ({
   type: entry.type,
   ...(entry.system?.toObject ? entry.system.toObject() : system(entry)),
 });
-const isHeld = (entry) => ['weapon', 'shield'].includes(entry.type);
+const isHeld = (entry) => ['weapon', 'shield'].includes(entry.type) || system(entry).properties?.focus > 0;
 
 /** Zero means use the printed grip. Natural attacks never occupy a hand. */
 export function handsUsed(item) {

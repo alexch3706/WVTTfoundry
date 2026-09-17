@@ -1,3 +1,9 @@
+import { magicLearningDisplay, magicLearningAction } from './magic-learning.js';
+import { canGlide, glide } from './magic-movement.js';
+import { requestMagicRecovery } from './magic-recovery.js';
+import { trophyRulesFor } from './magic-trophies.js';
+import { magicGearDisplay, magicGearAction } from './magic-gear.js';
+import { useRitualArtifact } from './magic-ritual-effects.js';
 import {
   SYSTEM_ID,
   STATS,
@@ -12,12 +18,14 @@ import { armorLocationRows, actorArmorRows } from './armor-display.js';
 import { woundDisplay } from './wound-display.js';
 import { woundConditions } from './wounds.js';
 import { woundAction, addWound, woundFingerprint } from './wound-actions.js';
+import { magicActorDisplay, magicItemDisplay, castMagic, applyUIaction } from './magic-ui.js';
 import { actorSnapshot, itemSnapshot } from './documents.js';
 import { attack } from './combat.js';
 import { skillRoll, input, prompt, escapeHTML as e, errorNotice, serial, turnIdentity } from './runtime.js';
 import { setInventory, handsUsed } from './inventory.js';
 import { runCommand } from './authority.js';
 import { prepareActorSheetRenderOptions } from '../actor/actor-sheet-render.js';
+import { renderFoundryTemplate } from '../foundry-compat.js';
 import { turnAction, treat, craft, useItem, enhance, repair } from './activities.js';
 import { controlMount, fall } from './transport.js';
 import {
@@ -189,6 +197,8 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
     data.isMonster = actor.type === 'monster';
     data.isNpc = actor.type !== 'character';
     data.combatBudget = combatBudget(actor);
+    data.canGlide = canGlide(s);
+    data.trophyReputation = trophyRulesFor(actorSnapshot(actor)).reputation;
     data.skillMaximum = actor.type === 'character' ? 10 : 100;
     data.statRows = STATS.map((key) => ({
       key,
@@ -206,7 +216,7 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
       base: actor.skillBase(key).total,
     }));
     data.inventory = actor.items
-      .filter((i) => !['wound', 'ability'].includes(i.type))
+      .filter((i) => !['wound', 'ability', 'magic'].includes(i.type))
       .map((item) => inventoryRow(item, actor));
     data.weapons = data.inventory.filter((item) => item.isWeapon);
     data.creatureAbilities = actor.items
@@ -226,18 +236,27 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
       }));
     data.hasBestiary = !!s.source || data.creatureAbilities.length > 0;
     data.inWeb = s.effects.some((x) => x.key === 'Webbing');
-    data.effectRows = s.effects.map((x) => ({
-      id: x.id,
-      name: x.key,
-      expires: x.expires
-        ? Math.max(0, Math.ceil((x.expires - game.time.worldTime) / 3)) + ' rounds'
-        : x.untilTurn
-          ? 'Until next turn'
-          : '',
-    }));
+    data.effectRows = s.effects
+      .filter((effect) => !effect.magic)
+      .map((x) => ({
+        id: x.id,
+        name: x.key,
+        expires: x.expires
+          ? Math.max(0, Math.ceil((x.expires - game.time.worldTime) / 3)) + ' rounds'
+          : x.untilTurn
+            ? 'Until next turn'
+            : '',
+      }));
     data.wounds = actor.items
       .filter((i) => i.type === 'wound')
       .map((item) => woundDisplay(item, { actor, isGM: game.user.isGM }));
+    data.magic = magicActorDisplay(actor);
+    data.magicLearning = magicLearningDisplay(actor);
+    data.magicPanel = await renderFoundryTemplate(`systems/${SYSTEM_ID}/templates/witcher/magic.hbs`, {
+      magic: data.magic,
+      magicLearning: data.magicLearning,
+      canGlide: canGlide(actor.system),
+    });
     data.woundConditions = woundConditions([...actor.items])
       .map((key) => CONDITIONS[key])
       .join(', ');
@@ -322,6 +341,21 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
         pathInput('trait.' + key, title(key) + ' (comma-separated)', s[key].join(', '), { type: 'text' })
       )
       .join('');
+    data.environment += pathInput(
+      'system.environment.suffocationCause',
+      'Cause of environmental suffocation',
+      s.environment.suffocationCause ?? 'unspecified',
+      {
+        options: {
+          unspecified: 'Unspecified / physical choking',
+          drowning: 'Drowning',
+          airless: 'Lack of breathable air',
+          smoke: 'Smoke',
+          airbornePoison: 'Airborne poison',
+          taintedAir: 'Tainted air',
+        },
+      }
+    );
     return data;
   }
   async _onDropItemCreate(itemData, event) {
@@ -364,7 +398,7 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
       })
     );
   }
-  async _action({ witcher: action, key, itemId, style }) {
+  async _action({ witcher: action, key, itemId, effectId, style }) {
     const actor = this.actor,
       item = actor.items.get(itemId);
     if (action === 'skill')
@@ -375,6 +409,13 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
     if (action === 'unarmed') return attack(actor, null, { action: key });
     if (action === 'item') return item?.sheet.render(true);
     if (action === 'wound') return woundAction(actor, item, key);
+    if (action === 'magicLearning') return magicLearningAction(actor, key, effectId);
+    if (action === 'magicCast') return castMagic(actor, item);
+    if (action === 'magicEffect') {
+      const effect = actor.system.effects.find((entry) => entry.id === effectId);
+      if (!effect) throw new Error('This magical effect no longer exists.');
+      return applyUIaction(actor, effect, key);
+    }
     if (action === 'delete') {
       const result = await prompt('Delete item', `<p>Delete ${e(item.name)} from ${e(actor.name)}?</p>`, {
         button: 'Delete',
@@ -407,16 +448,38 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
     if (action === 'repair') return repair(actor, item);
     if (action === 'control') return controlMount(actor);
     if (action === 'fall') return fall(actor);
+    if (action === 'glide') return glide(actor);
+    if (action === 'magicRecovery') return requestMagicRecovery(actor, effectId);
     if (action === 'ability') return useCreatureAbility(actor, item);
     if (action === 'loot') return rollCreatureLoot(actor);
     if (action === 'escapeWeb') return escapeWeb(actor);
     if (action === 'endEffect')
       return actor.update({ 'system.effects': actor.system.effects.filter((x) => x.id !== key) });
     if (action === 'rest') {
+      const restHexes = actor.system.effects.filter(
+        (effect) => effect.magic?.kind === 'hex' && !effect.magic.suppressed && !effect.disabled
+      );
+      const need = restHexes.some((effect) => effect.magic.key === 'unending-need');
+      const nightmares = restHexes.filter((effect) => effect.magic.key === 'the-nightmare');
       const values = await prompt(
         'Rest',
         input('days', 'Days', { value: 1, min: 1 }) +
-          input('strenuous', 'Strenuous activity: half healing', { type: 'checkbox' }),
+          input('strenuous', 'Strenuous activity: half healing', { type: 'checkbox' }) +
+          (need
+            ? input('sleepHours', 'Uninterrupted sleep hours (Unending Need requires 10)', {
+                value: 8,
+                min: 0,
+              }) + input('meals', 'Meals eaten (Unending Need requires 5)', { value: 3, min: 0 })
+            : '') +
+          nightmares
+            .map((effect) =>
+              input(
+                `nightmare_${effect.id}`,
+                `Nightmare DC ${effect.magic.castingTotal}: manual d10, optional`,
+                { type: 'text' }
+              )
+            )
+            .join(''),
         { button: 'Rest' }
       );
       if (values)
@@ -426,6 +489,11 @@ export class WitcherActorSheet extends foundry.appv1.sheets.ActorSheet {
             actorUuid: actor.uuid,
             days: Number(values.days),
             strenuous: !!values.strenuous,
+            sleepHours: Number(values.sleepHours ?? 8),
+            meals: Number(values.meals ?? 3),
+            nightmareDice: Object.fromEntries(
+              nightmares.map((effect) => [effect.id, values[`nightmare_${effect.id}`]])
+            ),
           },
           { label: `${actor.name}: rest` }
         );
@@ -544,11 +612,24 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
     data.owned = !!item.actor;
     data.ownerName = item.actor?.name ?? '';
     data.isWound = item.type === 'wound';
+    data.isMagic = item.type === 'magic';
+    if (data.isMagic) {
+      data.magic = magicItemDisplay(item);
+      data.magicCard = await renderFoundryTemplate(`systems/${SYSTEM_ID}/templates/witcher/magic-item.hbs`, {
+        magic: data.magic,
+        system: s,
+      });
+      return data;
+    }
     if (data.isWound) {
       data.wound = woundDisplay(item, { isGM: game.user.isGM });
       return data;
     }
     data.inventoryItem = inventoryRow(item, item.actor);
+    data.magicGear = magicGearDisplay(item);
+    data.ritualUse = ['magical-message', 'magical-guestbook', 'spell-jar'].includes(
+      item.flags?.[SYSTEM_ID]?.ritualArtifact?.key
+    );
     const num = (key, label = title(key)) =>
       pathInput('system.' + key, label, foundry.utils.getProperty(s, key));
     const str = (key, label = title(key), choices) =>
@@ -713,6 +794,15 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
         button.disabled = true;
         try {
           switch (button.dataset.witcher) {
+            case 'magicGear':
+              await magicGearAction(actor, item, button.dataset.key, button.dataset.magicKey);
+              break;
+            case 'ritualUse':
+              await useRitualArtifact(actor, item);
+              break;
+            case 'magicCast':
+              await castMagic(actor, item);
+              break;
             case 'wound':
               await woundAction(actor, item, button.dataset.key);
               break;
@@ -742,6 +832,13 @@ export class WitcherItemSheet extends foundry.appv1.sheets.ItemSheet {
   }
   async _updateObject(event, formData) {
     const data = foundry.utils.expandObject(formData);
+    if (this.item.type === 'magic') {
+      const patch = {};
+      if (Object.hasOwn(data, 'name')) patch.name = data.name;
+      if (Object.hasOwn(data, 'img')) patch.img = data.img;
+      if (Object.hasOwn(data.system ?? {}, 'notes')) patch['system.notes'] = data.system.notes;
+      return this.item.update(patch);
+    }
     // Wound state and timers change through validated actions, never a generic form submission.
     if (this.item.type === 'wound') {
       const patch = {};

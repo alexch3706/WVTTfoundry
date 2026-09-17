@@ -1,3 +1,17 @@
+import { trophyRulesFor } from './magic-trophies.js';
+import { magicCreatureDefenseAdjustment } from './magic-creature-profiles.js';
+import { hexCriticalWound } from './magic-hex-rules.js';
+import {
+  magicAttackRules,
+  magicDefenseRules,
+  magicWeaponModifiers,
+  magicDamageRules,
+  magicEffectCommit,
+  magicAttackEffectChance,
+  magicIgnitionChance,
+  magicModifierSummary,
+} from './magic-effect-hooks.js';
+import { ritualTargetingBlock } from './magic-ritual-effects.js';
 import { SYSTEM_ID, SKILLS, SPECIAL_ACTIONS } from './config.js';
 import {
   RuleError,
@@ -11,18 +25,22 @@ import {
   defenseModifier,
   criticalSeverity,
   resolveDamage,
+  resolveDamageSequence,
+  afterDamageShield,
   beats,
 } from './rules.js';
 import { adjustSchoolCritical, schoolReactions } from './school-gear.js';
 import { registerCommand, runCommand, authorizedActor } from './authority.js';
 import { validateWeaponGrip } from './inventory.js';
-import { criticalWound, fumbleText } from './wounds.js';
+import { criticalWound, fumbleText, WOUNDS } from './wounds.js';
 import { woundItemData } from './wound-catalog.js';
 import { resolveWoundArm, woundCheckModifier } from './wound-rules.js';
 import { rangeDifficulty } from './advanced-rules.js';
 import { immuneTo, locationChoices, crushingForce, suppressed, isIncorporeal } from './monster-rules.js';
 import { actorSnapshot, itemSnapshot, staminaCapChanges } from './documents.js';
 import { measureTokenDistance, isPrimaryActiveGm } from '../foundry-compat.js';
+import { activeShieldFor, magicDamageSnapshot, shieldOwner, commitDamage } from './magic-shields.js';
+import { removeMagicEffects } from './magic-state.js';
 import {
   owner,
   prompt,
@@ -57,8 +75,12 @@ const snapshotRoll = (result) => ({
 const has = (actor, status) => actor.system.conditions.includes(status);
 const tokenFor = (actor) => actor.token?.object ?? actor.getActiveTokens()?.[0];
 
-function combatModifier(actor, { defense = false, melee = false } = {}) {
-  let result = 0;
+export function combatModifier(actor, { defense = false, melee = false, context = {} } = {}) {
+  const magic = defense
+    ? magicDefenseRules(actor.system, { ...context, melee })
+    : magicAttackRules(actor.system, { ...context, melee });
+  if (magic.blocked) throw new RuleError(magic.reasons.join(' '));
+  let result = magic.bonus;
   const reasons = [];
   for (const [status, value] of [
     ['prone', -2],
@@ -78,7 +100,7 @@ function combatModifier(actor, { defense = false, melee = false } = {}) {
     result -= 3;
     reasons.push('facing bright light -3');
   }
-  if (env.underwater && melee && !actor.system.traits.amphibious) {
+  if (env.underwater && melee && !actor.system.traits.amphibious && !magic.ignoreUnderwaterPenalty) {
     result -= 2;
     reasons.push('underwater -2');
   }
@@ -239,7 +261,7 @@ export async function attack(actor, item, options = {}) {
     (await prompt('Attack', fields, {
       button: continuing ? 'Next strike' : 'Attack',
       width: 510,
-      validate: validateManualCheck,
+      validate: (values) => validateManualCheck(values, actor),
     }));
   if (!values) return;
   return runCommand(
@@ -268,7 +290,15 @@ async function executeAttack(payload, context) {
   const weapon = weaponFor(actor, item, values.action);
   const sourceToken = await tokenFromUuid(payload.sourceTokenUuid, actor);
   const targetToken = await tokenFromUuid(payload.targetTokenUuid, target);
+  const ritualBarrier = ritualTargetingBlock(
+    sourceToken?.document ?? sourceToken,
+    targetToken?.document ?? targetToken,
+    { solidEffect: true, weapon }
+  );
+  if (ritualBarrier) throw new RuleError(ritualBarrier.reason);
   const minor = actor.type !== 'character' && !actor.system.majorNpc;
+  if (activeShieldFor(actor))
+    throw new RuleError('End Active Shield before making a tangible attack through it.');
   const table = hitLocations(actorSnapshot(target));
   const distance = RANGED.includes(weapon.category)
     ? measureTokenDistance(sourceToken, targetToken)
@@ -364,6 +394,8 @@ async function executeAttack(payload, context) {
   const luck = Number(values.luck);
   if (!Number.isInteger(luck) || luck < 0 || luck > actor.system.luck.value)
     throw new RuleError('Invalid Luck expenditure.');
+  const magicalAttack = magicAttackRules(actor.system, { melee: !RANGED.includes(w.category) });
+  const rust = magicWeaponModifiers(item);
   const situational = combatModifier(actor, { melee: !RANGED.includes(w.category) });
   let modifier =
     Number(values.modifier) +
@@ -372,7 +404,8 @@ async function executeAttack(payload, context) {
     plan.modifier +
     Number(w.accuracy ?? 0) +
     grip.modifier +
-    situational.modifier;
+    situational.modifier +
+    rust.attackBonus;
   const reasons = [
     ...situational.reasons,
     `accuracy ${w.accuracy ?? 0}`,
@@ -397,13 +430,19 @@ async function executeAttack(payload, context) {
   if (target.system.effects.some((x) => x.key === 'Invisibility')) modifier -= 3;
   if (actor.system.effects.some((x) => x.key === 'Hypnosis' && x.sourceUuid === target.uuid)) modifier -= 4;
   if (action === 'takeWeapon') modifier -= 3;
+  if (action === 'escape') modifier += trophyRulesFor(target.system).grappleVictimEscapeModifier ?? 0;
   let range = null;
   if (RANGED.includes(w.category)) {
     if (w.category === 'naturalRanged' && Number(values.distance) > w.range)
       throw new RuleError(`This ability reaches at most ${w.range} m.`);
     const rangeValue =
-      (w.rangeBodyMultiplier ? w.rangeBodyMultiplier * actor.system.derived.stats.body : w.range) /
-      (actor.system.environment.underwater && w.category !== 'naturalRanged' ? 4 : 1);
+      (w.rangeBodyMultiplier
+        ? (w.rangeBodyMultiplier +
+            (['thrown', 'bomb'].includes(w.category)
+              ? (trophyRulesFor(actor.system).thrownRangeMultiplierBonus ?? 0)
+              : 0)) *
+          actor.system.derived.stats.body
+        : w.range) / (actor.system.environment.underwater && w.category !== 'naturalRanged' ? 4 : 1);
     const measuredRange = distance ?? Number(values.distance);
     if (!Number.isFinite(measuredRange) || measuredRange < 0)
       throw new RuleError('Enter a valid target distance.');
@@ -451,7 +490,7 @@ async function executeAttack(payload, context) {
       modifier,
       arm: injuryArm,
     }).total,
-    { manualDice: values.manualDice }
+    { ...{ manualDice: values.manualDice }, actor: actor }
   );
   changes['system.luck.value'] = actor.system.luck.value - luck;
   changes['system.combat.aim'] = 0;
@@ -461,6 +500,7 @@ async function executeAttack(payload, context) {
     operationId: context.id,
     sourceTokenUuid: payload.sourceTokenUuid ?? '',
     targetTokenUuid: payload.targetTokenUuid ?? '',
+    magicAttack: magicalAttack,
     schoolOnHit: reactionChoice?.onHit ?? null,
     nonlethal: w.id === 'unarmed' || (!!w.properties?.nonlethal && !!values.nonlethal),
     damageFormula: weaponDamageFormula(w, {
@@ -568,7 +608,7 @@ export async function defend(message, quick = {}) {
         input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value }) +
         woundArmInput(actor) +
         manualCheckInput(),
-    { validate: validateManualCheck }
+    { validate: (values) => validateManualCheck(values, actor) }
   );
   if (!values) return;
   return runCommand(
@@ -587,7 +627,7 @@ async function executeDefense(payload, context) {
   const values = payload.values;
   const defense = values.defense,
     passive = defense === 'passive';
-  validateManualCheck(values);
+  validateManualCheck(values, actor);
   if (
     !['dodge', 'reposition', 'blockWeapon', 'blockShield', 'blockArm', 'parry', 'passive'].includes(defense)
   )
@@ -597,6 +637,11 @@ async function executeDefense(payload, context) {
     if (!Number.isFinite(Number(values[key] ?? 0))) throw new RuleError('Invalid defense modifier.');
   if (!passive && (has(actor, 'stunned') || has(actor, 'unconscious')))
     throw new RuleError('A stunned actor is defended at DC 10.');
+  if (
+    defense === 'parry' &&
+    !magicDefenseRules(actor.system, { attackRules: attackData.magicAttack }).canParry
+  )
+    throw new RuleError('Blood of the Mountain prevents parrying this melee attack.');
   const w = actor.items.get(values.weapon);
   const armed = ['blockWeapon', 'blockShield'].includes(defense) || (defense === 'parry' && !!values.weapon);
   if (
@@ -660,6 +705,7 @@ async function executeDefense(payload, context) {
                 ? 'melee'
                 : w?.system.skill;
   modifier += combatModifier(actor, { defense: true, melee: armed }).modifier;
+  modifier += magicCreatureDefenseAdjustment(actor.system, defense);
   if (attackData.invisible) modifier -= 3;
   if (actor.system.effects.some((x) => x.key === 'Hypnosis' && x.sourceUuid === attackData.actorUuid))
     modifier -= 4;
@@ -696,7 +742,10 @@ async function executeDefense(payload, context) {
         actor.skillBase(skill, { modifier: modifier + luck, arm: injuryArm, sight: skill === 'awareness' })
           .total,
         {
-          manualDice: values.manualDice,
+          ...{
+            manualDice: values.manualDice,
+          },
+          actor: actor,
         }
       );
   const attackRef = message.uuid;
@@ -786,7 +835,8 @@ export async function resolveDefense(message, internal = false) {
                   'system.reliability': Math.max(
                     0,
                     w.system.reliability -
-                      (crushingForce(attacker.system) ? a.weapon.properties?.wearMultiplier || 1 : 1)
+                      (crushingForce(attacker.system) ? a.weapon.properties?.wearMultiplier || 1 : 1) *
+                        (a.magicAttack?.ablationMultiplier || 1)
                   ),
                 },
               ]
@@ -899,8 +949,11 @@ async function resolveSpecial(attacker, target, a, defense) {
   const rolls = [];
   let text = '';
   if (a.action === 'trip') {
-    await target.setCondition('prone');
-    text = 'Target is prone.';
+    if (immuneTo(target.system, 'prone')) text = 'The target is protected against being knocked prone.';
+    else {
+      await target.setCondition('prone');
+      text = 'Target is prone.';
+    }
   }
   if (a.action === 'grapple') {
     await target.update({
@@ -980,8 +1033,8 @@ async function resolveSpecial(attacker, target, a, defense) {
 }
 
 export async function prepareDamage(attacker, target, a, defense = {}) {
-  const state = actorSnapshot(target),
-    table = hitLocations(state),
+  let state = magicDamageSnapshot(target);
+  const table = hitLocations(state),
     rolls = [];
   const w = a.weapon,
     ammo = a.ammunition;
@@ -995,10 +1048,13 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
     bonus = 0,
     location;
   if (!crushingForce(attacker.system)) properties.wearMultiplier = 1;
+  properties.wearMultiplier = (properties.wearMultiplier || 1) * (a.magicAttack?.ablationMultiplier || 1);
+  if (!properties.environmental)
+    properties.armorNegatedDamage = trophyRulesFor(attacker.system).armorNegatedDamage ?? 0;
   const zeroDamage = ['0', '0d6'].includes(w.damage);
   const immune = immuneTo(state, a.type);
   const rolledSeverity =
-    !immune && !zeroDamage && a.check && defense.check
+    !immune && !zeroDamage && a.check && defense.check && a.physicalCritical !== false
       ? criticalSeverity(a.check.total - defense.check.total)
       : null;
   const severity = adjustSchoolCritical(actorSnapshot(attacker), w, rolledSeverity);
@@ -1015,9 +1071,38 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
       balanced: properties.balanced ? (a.aimed ? 1 : properties.balancedBonus || 2) : 0,
       organless: target.system.organless,
     });
-    wound = result.wound;
-    bonus = result.bonus;
-    location = result.location;
+    let selectedCritical = result;
+    if (trophyRulesFor(attacker.system).chooseCriticalResult) {
+      const second = await dice(a.aimed ? '1d6' : '2d6');
+      rolls.push(second);
+      const alternative = criticalWound(severity.level, table, {
+        roll: a.aimed ? cr.total : second.total,
+        aimed: a.aimed?.replace(/:weak$/, ''),
+        greater: a.aimed ? second.total : greater.total,
+        side: side.total,
+        balanced: properties.balanced ? (a.aimed ? 1 : properties.balancedBonus || 2) : 0,
+        organless: target.system.organless,
+      });
+      const choices = [result, alternative];
+      const answer = await prompt(
+        'Griffin trophy: attacker chooses critical result',
+        input('critical', 'Keep the selected rolled result', {
+          options: Object.fromEntries(
+            choices.map((choice, index) => [
+              index,
+              `${choice.wound?.name ?? 'Organless: damage bonus'} · ${choice.location.label}`,
+            ])
+          ),
+        }),
+        { button: 'Keep result' }
+      );
+      if (!answer || !['0', '1'].includes(String(answer.critical)))
+        throw new RuleError('Record the attacker’s chosen critical result before resolving this hit.');
+      selectedCritical = choices[Number(answer.critical)];
+    }
+    wound = hexCriticalWound(target.system, selectedCritical.wound, WOUNDS);
+    bonus = selectedCritical.bonus;
+    location = selectedCritical.location;
     if (wound?.stunEveryFormula) {
       const r = await dice(wound.stunEveryFormula);
       rolls.push(r);
@@ -1108,8 +1193,14 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
     const result = resolveDamage(request, state, loc, state.items);
     requests.push(request);
     results.push(result);
+    state = afterDamageShield(state, result);
   }
-  if (results.some((r) => r.penetrated) || (zeroDamage && !isIncorporeal(state))) {
+  if (results.every((r) => r.shield?.fullyAbsorbed)) wound = null;
+  if (
+    results.some((r) => r.penetrated) ||
+    (properties.magic && results.some((r) => r.afterShield > 0 && !r.immune)) ||
+    (zeroDamage && !isIncorporeal(state))
+  ) {
     for (const [property, condition] of [
       ['bleeding', 'bleeding'],
       ['poison', 'poison'],
@@ -1120,8 +1211,36 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
       if (properties[property] && !immuneTo(state, condition)) {
         const r = await dice('1d100');
         rolls.push(r);
-        if (r.total <= properties[property]) conditions.push(condition);
+        const bonusChance = magicAttackEffectChance(attacker.system, property, properties[property], {
+          spell: !!properties.magic,
+          castingRules: a.castingRules,
+        }).chance;
+        const chance =
+          condition === 'fire'
+            ? magicIgnitionChance(state, bonusChance, { separateAttack: true }).chance
+            : bonusChance;
+        if (r.total <= chance) conditions.push(condition);
       }
+  }
+  if (
+    !immune &&
+    !properties.environmental &&
+    results.some((result) => result.afterShield > 0 && !result.immune)
+  ) {
+    const bonuses = trophyRulesFor(attacker.system, {
+      hit: true,
+      hpDamage: results.filter((result) => !result.nonlethal).reduce((sum, result) => sum + result.damage, 0),
+    });
+    for (const effect of bonuses.attackEffects) {
+      if (immuneTo(state, effect.condition)) continue;
+      const roll = await dice('1d100');
+      rolls.push(roll);
+      const chance =
+        effect.condition === 'fire'
+          ? magicIgnitionChance(state, effect.chance, { separateAttack: true }).chance
+          : effect.chance;
+      if (roll.total <= chance) conditions.push(effect.condition);
+    }
   }
   const effects = [];
   if (!isIncorporeal(state) && properties.webbing) {
@@ -1152,7 +1271,15 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
     }),
     conditions,
     effects,
-    stun: severity ? 0 : properties.stunWeapon ? properties.stun : a.action === 'throw' ? -1 : null,
+    stun: results.every((r) => r.shield?.fullyAbsorbed)
+      ? null
+      : severity
+        ? 0
+        : properties.stunWeapon
+          ? properties.stun
+          : a.action === 'throw'
+            ? -1
+            : null,
     state: damageState(target),
   };
 }
@@ -1174,11 +1301,12 @@ export function damageState(actor) {
     silverVulnerable: actor.system.silverVulnerable,
     meteoriteVulnerable: actor.system.meteoriteVulnerable,
     traits: actor.system.traits,
-    effects: actor.system.effects,
+    trophy: trophyRulesFor(actorSnapshot(actor)),
+    effects: magicDamageSnapshot(actor).effects,
   });
 }
 export function damageHTML(damage) {
-  return `<table><thead><tr><th>Location</th><th>Rolled</th><th>Cover</th><th>SP</th><th>After armor</th><th>× location</th><th>Critical</th><th>Damage</th></tr></thead><tbody>${damage.results.map((r) => `<tr><td>${e(r.location.label)}</td><td>${r.rolled}</td><td>${r.cover}</td><td>${r.sp}</td><td>${r.resisted}</td><td>${r.location.multiplier}</td><td>${r.criticalBonus}</td><td><strong>${r.damage} ${r.nonlethal ? 'STA' : 'HP'}</strong></td></tr>`).join('')}</tbody></table>${damage.wound ? `<p>Critical wound: <strong>${e(damage.wound.name)}</strong></p>` : ''}${damage.schoolAdjustment ? `<p>${e(damage.schoolAdjustment.from)} → ${e(damage.schoolAdjustment.to)}: Critical Decimation. ${e(damage.schoolAdjustment.note)}</p>` : ''}${damage.conditions?.length ? `<p>${e(damage.conditions.join(', '))}</p>` : ''}`;
+  return `<table><thead><tr><th>Location</th><th>Rolled</th><th>Cover</th><th>Shield</th><th>SP</th><th>After armor</th><th>× location</th><th>Critical</th><th>Damage</th></tr></thead><tbody>${damage.results.map((r) => `<tr><td>${e(r.location.label)}</td><td>${r.rolled}</td><td>${r.cover}</td><td>${r.shield ? `${r.shield.absorbed} absorbed; ${r.shield.after} left` : '—'}</td><td>${r.sp}</td><td>${r.resisted}</td><td>${r.location.multiplier}</td><td>${r.criticalBonus}</td><td><strong>${r.damage} ${r.nonlethal ? 'STA' : 'HP'}</strong></td></tr>`).join('')}</tbody></table>${damage.wound ? `<p>Critical wound: <strong>${e(damage.wound.name)}</strong></p>` : ''}${damage.schoolAdjustment ? `<p>${e(damage.schoolAdjustment.from)} → ${e(damage.schoolAdjustment.to)}: Critical Decimation. ${e(damage.schoolAdjustment.note)}</p>` : ''}${damage.conditions?.length ? `<p>${e(damage.conditions.join(', '))}</p>` : ''}`;
 }
 
 export async function applyDamage(message, internal = false) {
@@ -1193,14 +1321,13 @@ export async function applyDamage(message, internal = false) {
     if (data.applied) throw new RuleError('This damage has already been applied.');
     if (target.system.combat.applied.includes(receipt)) return finalizeDamage(message, target, data);
     if (damageState(target) !== data.state) {
-      const state = actorSnapshot(target);
-      const results = data.request.map((r) =>
-        resolveDamage(r, state, locate(hitLocations(state), r.location), state.items)
-      );
+      const state = magicDamageSnapshot(target);
+      const results = resolveDamageSequence(data.request, state, hitLocations(state), state.items);
       const canAffect = data.request.some((r) => !immuneTo(state, r.type));
       const conditions = (data.conditions ?? []).filter((c) => canAffect && !immuneTo(state, c));
-      const wound = canAffect ? data.wound : null;
-      const stun = canAffect ? data.stun : null;
+      const shielded = results.every((r) => r.shield?.fullyAbsorbed);
+      const wound = canAffect && !shielded ? data.wound : null;
+      const stun = canAffect && !shielded ? data.stun : null;
       const effects = canAffect ? data.effects : [];
       await message.update({
         [`flags.${SYSTEM_ID}.conditions`]: conditions,
@@ -1233,7 +1360,7 @@ export async function applyDamage(message, internal = false) {
           changes.actor['system.pendingDeathSaves'] =
             (changes.actor['system.pendingDeathSaves'] ?? target.system.pendingDeathSaves) + 1;
       }
-      await commitActor(target, changes.actor, changes.items);
+      await commitDamage(target, changes);
     } catch (error) {
       if (created.length)
         await target.deleteEmbeddedDocuments(
@@ -1247,6 +1374,36 @@ export async function applyDamage(message, internal = false) {
 }
 
 async function finalizeDamage(message, target, data) {
+  // Suffocate ends when its caster is actually struck by a weapon, even if armor
+  // absorbs the hit. A completely absorbed Quen hit does not reach that caster.
+  if (
+    !data.magicCastId &&
+    data.request?.some((request) => !request.properties?.environmental) &&
+    data.summary.some((result) => result.afterShield > 0 && !result.immune)
+  ) {
+    const actors = [
+      ...new Map(
+        [
+          ...(game.actors ?? []),
+          ...[...(game.scenes ?? [])].flatMap((scene) =>
+            [...scene.tokens].map((token) => token.actor).filter(Boolean)
+          ),
+          target,
+        ].map((actor) => [actor.uuid, actor])
+      ).values(),
+    ];
+    const casts = new Set(
+      actors.flatMap((actor) =>
+        actor.system.effects
+          .filter((effect) => effect.magic?.key === 'suffocate' && effect.magic.casterUuid === target.uuid)
+          .map((effect) => effect.magic.castId)
+      )
+    );
+    if (casts.size) {
+      const { endMagicCast } = await import('./magic-runtime.js');
+      for (const castId of casts) await endMagicCast(castId);
+    }
+  }
   if (data.wound && data.reactions?.length) {
     const attacker = await actorFromUuid(data.actorUuid);
     if (attacker)
@@ -1334,16 +1491,30 @@ async function shieldKnockback(message, data) {
   });
 }
 
-export function planDamageChanges(actor, results, addConditions = []) {
+export function planDamageChanges(actor, results, addConditions = [], { directHP = 0 } = {}) {
+  const damaged = directHP > 0 || results.some((r) => r.damage > 0);
+  const ending = magicDamageRules(actor.system, {
+    attackHit: results.some((r) => !r.source || r.source === 'attack'),
+  }).endOnAttackHit;
+  const waking =
+    damaged || ending.length
+      ? removeMagicEffects(
+          actor.system,
+          (effect) =>
+            ending.includes(effect.id) ||
+            (damaged && (effect.magic?.sleeping || effect.magic?.key === 'axii'))
+        )
+      : null;
   const conditions = new Set([
-    ...actor.system.conditions,
+    ...(waking?.conditions ?? actor.system.conditions),
     ...addConditions.filter((c) => !immuneTo(actor.system, c)),
   ]);
-  if (results.some((r) => r.damage > 0)) conditions.delete('stunned');
-  let hp = actor.system.hp.value,
+  if (damaged && !(actor.system.magic?.exhaustedRecovery > 0)) conditions.delete('stunned');
+  let hp = actor.system.hp.value - directHP,
     sta = actor.system.sta.value;
   const locations = foundry.utils.deepClone(actor.system.locations),
-    items = new Map();
+    items = new Map(),
+    wards = new Map();
   for (const result of results) {
     if (result.nonlethal) {
       if (!actor.system.traits.infiniteStamina) sta -= result.damage;
@@ -1356,9 +1527,37 @@ export function planDamageChanges(actor, results, addConditions = []) {
     const loc = locations.find((l) => l.id === result.naturalChange.location);
     if (loc) loc[result.naturalChange.field ?? 'sp'] = result.naturalChange.after;
   }
+  const protection = magicDamageRules(actor.system, { hpAfter: hp });
+  hp = protection.hpAfter;
   const changes = { 'system.hp.value': hp, 'system.sta.value': sta, 'system.locations': locations };
   if (results.some((r) => r.damage > 0)) changes['system.combat.hitThisRound'] = true;
-  const effects = foundry.utils.deepClone(actor.system.effects);
+  const effects = protection.protectionEffectId
+    ? magicEffectCommit(
+        { ...actor.system, effects: waking?.effects ?? actor.system.effects },
+        { protectionEffectId: protection.protectionEffectId }
+      ).effects
+    : foundry.utils.deepClone(waking?.effects ?? actor.system.effects);
+  if (waking?.removed.length || protection.protectionEffectId) changes['system.effects'] = effects;
+  for (const result of results) {
+    if (!result.shield) continue;
+    if (result.shield.ownerUuid && result.shield.ownerUuid !== actor.uuid) {
+      const owner = shieldOwner(result.shield.ownerUuid);
+      if (!owner) throw new RuleError('The shared Active Shield owner is missing.');
+      const ownerEffects = wards.get(owner.uuid) ?? foundry.utils.deepClone(owner.system.effects);
+      const shared = ownerEffects.find((effect) => effect.id === result.shield.id);
+      if (!shared) throw new RuleError('The shared Active Shield changed; recalculate the damage.');
+      shared.shieldHP = result.shield.after;
+      if (shared.shieldHP === 0) shared.magic.pendingCollapse = true;
+      wards.set(owner.uuid, ownerEffects);
+      continue;
+    }
+    const ward = effects.find((effect) => effect.id === result.shield.id);
+    if (ward) {
+      ward.shieldHP = result.shield.after;
+      if (ward.shieldHP === 0 && ward.magic.key === 'active-shield') ward.magic.pendingCollapse = true;
+    }
+    changes['system.effects'] = effects;
+  }
   const fullMoon = effects.find((x) => x.temporaryHp > 0);
   if (fullMoon) {
     fullMoon.temporaryHp = Math.max(
@@ -1372,11 +1571,11 @@ export function planDamageChanges(actor, results, addConditions = []) {
     conditions.add('unconscious');
     changes['system.unconsciousRecovery'] = 0;
   }
-  if (hp <= 0 && results.some((r) => !r.nonlethal && r.damage > 0))
+  if (hp <= 0 && (directHP > 0 || results.some((r) => !r.nonlethal && r.damage > 0)))
     changes['system.pendingDeathSaves'] = actor.system.pendingDeathSaves + 1;
   if (actor.system.conditions.includes('unconscious')) conditions.add('stunned');
   changes['system.conditions'] = [...conditions];
-  return { actor: changes, items: [...items.values()] };
+  return { actor: changes, items: [...items.values()], wards };
 }
 
 async function grantSchoolReactions(actor, descriptors, eventId, opponentUuid, tokens = {}) {
@@ -1426,6 +1625,22 @@ async function chooseSchoolReaction(message, reactionId, choiceId) {
   const choice = reaction?.choices.find((c) => c.key === choiceId);
   if (!choice || reaction.turn !== turnIdentity())
     throw new RuleError('This immediate reaction is no longer available.');
+  if (choice.key === 'sign') {
+    const { castMagic } = await import('./magic-ui.js');
+    const signs = actor.items.filter((item) => item.type === 'magic' && item.system.magic?.kind === 'sign');
+    if (!signs.length)
+      throw new RuleError('Learn a Sign by dragging it from the Signs compendium onto the actor.');
+    const answer = await prompt(
+      reaction.name,
+      input('sign', 'Learned Sign', {
+        options: Object.fromEntries(signs.map((item) => [item.id, item.name])),
+      }),
+      { button: 'Choose Sign' }
+    );
+    return answer
+      ? castMagic(actor, actor.items.get(answer.sign), { reactionId, tokenUuid: reaction.sourceTokenUuid })
+      : null;
+  }
   const weapons = actor.items.filter(
     (i) =>
       ['weapon', 'shield'].includes(i.type) &&

@@ -1,0 +1,734 @@
+[
+  {
+    "_id": "8ab9cd62733da97c",
+    "name": "The Hex of Shadows",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "the-hex-of-shadows",
+        "kind": "hex",
+        "tier": "low",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 4,
+          "max": 4,
+          "step": 1,
+          "options": [],
+          "text": "4"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "the-hex-of-shadows",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "low",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 121,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "Surround the victim with illusory glimpses and whispers, provoking pointless Awareness checks. Lift it under a crescent moon with clear water, ink, and a white-myrtle branch, sprinkling a circle while holding breath at the moon’s highest point.",
+      "description": "<p>Surround the victim with illusory glimpses and whispers, provoking pointless Awareness checks. Lift it under a crescent moon with clear water, ink, and a white-myrtle branch, sprinkling a circle while holding breath at the moon’s highest point.</p><p><strong>STA:</strong> 4. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: The Witcher Core Rulebook v1.35, p.121.</p>"
+    }
+  },
+  {
+    "_id": "da5ed5de9ed1d251",
+    "name": "The Eternal Itch",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "the-eternal-itch",
+        "kind": "hex",
+        "tier": "low",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 4,
+          "max": 4,
+          "step": 1,
+          "options": [],
+          "text": "4"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "the-eternal-itch",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "low",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 121,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "An incessant intimate itch causes −1 to all tasks and an additional −5 to Seduction during intimacy. Lift it by burning scleroderm, fool’s parsley, and bryonia and applying their ashes while reciting the prescribed words.",
+      "description": "<p>An incessant intimate itch causes −1 to all tasks and an additional −5 to Seduction during intimacy. Lift it by burning scleroderm, fool’s parsley, and bryonia and applying their ashes while reciting the prescribed words.</p><p><strong>STA:</strong> 4. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: The Witcher Core Rulebook v1.35, p.121.</p>"
+    }
+  },
+  {
+    "_id": "1d23a8148289806c",
+    "name": "The Devil’s Luck",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "the-devils-luck",
+        "kind": "hex",
+        "tier": "medium",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 8,
+          "max": 8,
+          "step": 1,
+          "options": [],
+          "text": "8"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "the-devils-luck",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "medium",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 121,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "Under pressure, deadlines, or a task DC above 15, the victim fumbles on natural 1 or 2. Lift it beneath a silver nail in a doorframe by burning two units of wolfsbane tied with virgin hair and inhaling the smoke.",
+      "description": "<p>Under pressure, deadlines, or a task DC above 15, the victim fumbles on natural 1 or 2. Lift it beneath a silver nail in a doorframe by burning two units of wolfsbane tied with virgin hair and inhaling the smoke.</p><p><strong>STA:</strong> 8. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: The Witcher Core Rulebook v1.35, p.121.</p>"
+    }
+  },
+  {
+    "_id": "80455fcabf848ff8",
+    "name": "The Nightmare",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "the-nightmare",
+        "kind": "hex",
+        "tier": "medium",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 8,
+          "max": 8,
+          "step": 1,
+          "options": [],
+          "text": "8"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "the-nightmare",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "medium",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 121,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "Each night, resist recurring nightmares with Resist Coercion against the original Hex Weaving total. Failure prevents overnight HP and STA recovery. Three consecutive failures halve STA and impose −2 to actions until proper sleep. Lift it by sleeping within five candles linked by five units of beast bones, with glowing ore beneath the head.",
+      "description": "<p>Each night, resist recurring nightmares with Resist Coercion against the original Hex Weaving total. Failure prevents overnight HP and STA recovery. Three consecutive failures halve STA and impose −2 to actions until proper sleep. Lift it by sleeping within five candles linked by five units of beast bones, with glowing ore beneath the head.</p><p><strong>STA:</strong> 8. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: The Witcher Core Rulebook v1.35, p.121.</p>"
+    }
+  },
+  {
+    "_id": "40fce3aea6ce86ed",
+    "name": "The Pesta’s Kiss",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "the-pestas-kiss",
+        "kind": "hex",
+        "tier": "high",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 12,
+          "max": 12,
+          "step": 1,
+          "options": [],
+          "text": "12"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "the-pestas-kiss",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "high",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 121,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "Contact with a sick person has a 75% chance to transmit the illness; unpleasant smells require Endurance DC16 to avoid nausea. Lift it using a clay, resin, infused-dust, and coal totem made with Fine Arts DC14, empowered with words, then shattered; consume its powdered coal eyes.",
+      "description": "<p>Contact with a sick person has a 75% chance to transmit the illness; unpleasant smells require Endurance DC16 to avoid nausea. Lift it using a clay, resin, infused-dust, and coal totem made with Fine Arts DC14, empowered with words, then shattered; consume its powdered coal eyes.</p><p><strong>STA:</strong> 12. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: The Witcher Core Rulebook v1.35, p.121.</p>"
+    }
+  },
+  {
+    "_id": "60577b7218106109",
+    "name": "The Hex of the Beast",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "the-hex-of-the-beast",
+        "kind": "hex",
+        "tier": "high",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 12,
+          "max": 12,
+          "step": 1,
+          "options": [],
+          "text": "12"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "the-hex-of-the-beast",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "high",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 121,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "Animals within 10m react badly: animal-handling Wilderness Survival suffers −3 and each encounter has a 50% attack chance. Lift it at full moon by sacrificing a small animal, drinking its blood, burning it with mistletoe, crow’s eye, mandrake, and phosphorus, then wearing its bones for a day.",
+      "description": "<p>Animals within 10m react badly: animal-handling Wilderness Survival suffers −3 and each encounter has a 50% attack chance. Lift it at full moon by sacrificing a small animal, drinking its blood, burning it with mistletoe, crow’s eye, mandrake, and phosphorus, then wearing its bones for a day.</p><p><strong>STA:</strong> 12. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: The Witcher Core Rulebook v1.35, p.121.</p>"
+    }
+  },
+  {
+    "_id": "fdb444db3a771f8f",
+    "name": "Curse of Temperance",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "curse-of-temperance",
+        "kind": "hex",
+        "tier": "low",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 4,
+          "max": 4,
+          "step": 1,
+          "options": [],
+          "text": "4"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "curse-of-temperance",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "low",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 105,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "Any intoxicating drink or substance immediately causes both intoxication and nausea. Lift it by immersing the victim’s head in a bucket containing 40 crowns of alcohol until the in-game suffocation effect begins, then removing it.",
+      "description": "<p>Any intoxicating drink or substance immediately causes both intoxication and nausea. Lift it by immersing the victim’s head in a bucket containing 40 crowns of alcohol until the in-game suffocation effect begins, then removing it.</p><p><strong>STA:</strong> 4. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: A Tome of Chaos v1.01, p.105.</p>"
+    }
+  },
+  {
+    "_id": "1755e8508086ab47",
+    "name": "The Odious Hex",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "the-odious-hex",
+        "kind": "hex",
+        "tier": "low",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 4,
+          "max": 4,
+          "step": 1,
+          "options": [],
+          "text": "4"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "the-odious-hex",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "low",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 105,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "Lower the victim’s social standing by one category, never below Hated, even among its own race. Lift it by making a personal effigy from han fiber, barley, and fool’s parsley, insulting it until no insults remain, and burning it.",
+      "description": "<p>Lower the victim’s social standing by one category, never below Hated, even among its own race. Lift it by making a personal effigy from han fiber, barley, and fool’s parsley, insulting it until no insults remain, and burning it.</p><p><strong>STA:</strong> 4. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: A Tome of Chaos v1.01, p.105.</p>"
+    }
+  },
+  {
+    "_id": "1cda8f504e672946",
+    "name": "The Evil Eye",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "the-evil-eye",
+        "kind": "hex",
+        "tier": "medium",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 8,
+          "max": 8,
+          "step": 1,
+          "options": [],
+          "text": "8"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "the-evil-eye",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "medium",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 106,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "Roll fumble severity twice and take the worse result; the GM is encouraged to choose the victim when assigning random threats. Lift it with a Great Sea coral amulet made at Fine Arts DC14 and worn throughout a full moon; it breaks at sunrise.",
+      "description": "<p>Roll fumble severity twice and take the worse result; the GM is encouraged to choose the victim when assigning random threats. Lift it with a Great Sea coral amulet made at Fine Arts DC14 and worn throughout a full moon; it breaks at sunrise.</p><p><strong>STA:</strong> 8. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: A Tome of Chaos v1.01, p.106.</p>"
+    }
+  },
+  {
+    "_id": "5e02ecd9b84a35e5",
+    "name": "Unending Need",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "unending-need",
+        "kind": "hex",
+        "tier": "medium",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 8,
+          "max": 8,
+          "step": 1,
+          "options": [],
+          "text": "8"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "unending-need",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "medium",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 106,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "Require ten hours of uninterrupted sleep to avoid the −3 sleep-deprivation penalty, and five meals a day to avoid halving the next day’s STA. Lift it through a three-day-and-night water-only fast while sleeping over uneaten sweets; it ends the fourth morning.",
+      "description": "<p>Require ten hours of uninterrupted sleep to avoid the −3 sleep-deprivation penalty, and five meals a day to avoid halving the next day’s STA. Lift it through a three-day-and-night water-only fast while sleeping over uneaten sweets; it ends the fourth morning.</p><p><strong>STA:</strong> 8. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: A Tome of Chaos v1.01, p.106.</p>"
+    }
+  },
+  {
+    "_id": "dcfc0206a6a6398b",
+    "name": "Bones of Glass",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "bones-of-glass",
+        "kind": "hex",
+        "tier": "high",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 12,
+          "max": 12,
+          "step": 1,
+          "options": [],
+          "text": "12"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "bones-of-glass",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "high",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 106,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "Upgrade Cracked Ribs to Broken Ribs, fractured arms or legs to compound fractures, and Minor Head Wound to Skull Fracture. Stabilizing or treating these injuries takes −3. Lift it using the book’s warhorse-blood stew ritual with troll liver, wolf meat, balisse leaves, and spirits, including its three-hour cooking and one-hour consumption limits.",
+      "description": "<p>Upgrade Cracked Ribs to Broken Ribs, fractured arms or legs to compound fractures, and Minor Head Wound to Skull Fracture. Stabilizing or treating these injuries takes −3. Lift it using the book’s warhorse-blood stew ritual with troll liver, wolf meat, balisse leaves, and spirits, including its three-hour cooking and one-hour consumption limits.</p><p><strong>STA:</strong> 12. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: A Tome of Chaos v1.01, p.106.</p>"
+    }
+  },
+  {
+    "_id": "02ae51a93675a8d9",
+    "name": "Hex of Forgetfulness",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "hex-of-forgetfulness",
+        "kind": "hex",
+        "tier": "high",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 12,
+          "max": 12,
+          "step": 1,
+          "options": [],
+          "text": "12"
+        },
+        "range": {
+          "text": "As specified by hex rules",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until lifted",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "hex-of-forgetfulness",
+          "params": {}
+        },
+        "automation": "reference",
+        "hex": {
+          "danger": "high",
+          "duration": "Until lifted"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 106,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "hex",
+      "effectText": "Prevent teaching, learning new magic, and earning IP through study, practice, or instruction. Once daily the GM may call Resist Magic DC20 or temporarily suppress chosen knowledge until the hex ends. Lift it with the prescribed shaved-scalp clay-and-water sigils and optima matter held through a silent day and night; afterward the grayed matter becomes Focus2 usable only for hexes, goetia, and necromancy.",
+      "description": "<p>Prevent teaching, learning new magic, and earning IP through study, practice, or instruction. Once daily the GM may call Resist Magic DC20 or temporarily suppress chosen knowledge until the hex ends. Lift it with the prescribed shaved-scalp clay-and-water sigils and optima matter held through a silent day and night; afterward the grayed matter becomes Focus2 usable only for hexes, goetia, and necromancy.</p><p><strong>STA:</strong> 12. <strong>Range:</strong> As specified by hex rules. <strong>Duration:</strong> Until lifted. <strong>Defense:</strong> See casting rules.</p><p>Source: A Tome of Chaos v1.01, p.106.</p>"
+    }
+  }
+]

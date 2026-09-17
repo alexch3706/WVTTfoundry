@@ -1,0 +1,221 @@
+<section class='witcher-magic'>
+  <h2>Magic</h2>
+  {{#if canGlide}}<button type='button' data-witcher='glide'>Glide: choose destination</button>{{/if}}
+  <p><strong>STA {{magic.sta}} / {{magic.staMax}}</strong>
+    · Vigor
+    {{magic.vigor}}
+    · Magic spent this round
+    {{magic.spent}}
+    · Safe capacity remaining
+    {{magic.remainingVigor}}</p>
+  {{#if magic.preparationHint}}<p class='notes'>{{magic.preparationHint}}</p>{{/if}}
+  <div class='witcher-grid'>
+    <label class='witcher-field'><span>Magical tradition</span><select name='system.magic.tradition'>{{#each
+          magic.traditions
+        }}<option value='{{key}}' {{selectedAttribute}}>{{label}}</option>{{/each}}</select></label>
+    <label class='witcher-field'><span>Base Vigor</span><input
+        type='number'
+        name='system.vigor'
+        value='{{magic.baseVigor}}'
+        min='0'
+        step='1'
+      /></label>
+    <label class='witcher-field'><span>Can speak incantations</span><input
+        type='checkbox'
+        name='system.magic.speech'
+        {{checked magic.speech}}
+      /></label>
+    <label class='witcher-field'><span>Can make hand gestures</span><input
+        type='checkbox'
+        name='system.magic.gestures'
+        {{checked magic.gestures}}
+      /></label>
+    <label class='witcher-field'><span>Can make minor body gestures</span><input
+        type='checkbox'
+        name='system.magic.minorGestures'
+        {{checked magic.minorGestures}}
+      /></label>
+    <label class='witcher-field'><span>Touching dimeritium</span><input
+        type='checkbox'
+        name='system.magic.dimeritiumContact'
+        {{checked magic.dimeritiumContact}}
+      /></label>
+    <label class='witcher-field'><span>Dimeritium units within 5m</span><input
+        type='number'
+        name='system.magic.dimeritiumUnits'
+        value='{{magic.dimeritiumUnits}}'
+        min='0'
+        step='1'
+      /></label>
+    <label class='witcher-field'><span>Cone angle (table convention)</span><input
+        type='number'
+        name='system.magic.coneAngle'
+        value='{{magic.coneAngle}}'
+        min='1'
+        max='360'
+        step='1'
+      /></label>
+  </div>
+  <label class='witcher-field'><span>Heliotrope profession skill rank</span><input
+      type='number'
+      name='system.professionRanks.heliotrope'
+      value='{{magic.heliotrope}}'
+      min='0'
+      max='10'
+      step='1'
+    /></label>
+  <p class='notes'>The books specify cone reach but no angle. Use the angle agreed for this table. Only one
+    eligible held focus applies to a casting.</p>
+  {{#if magic.focuses}}<p>Available focuses:
+      {{#each magic.focuses}}{{name}} ({{value}}){{#unless @last}}; {{/unless}}{{/each}}.</p>{{/if}}
+  <details><summary>Learning and sources of power</summary>
+    <p>Ordinary IP: {{magicLearning.ip}} · Magic-only IP: {{magicLearning.magicIP}}</p>
+    <div class='witcher-actions'>
+      <button type='button' data-witcher='magicLearning' data-key='learn'>Begin study (GM)</button>
+      <button type='button' data-witcher='magicLearning' data-key='improve'>Improve magical skill</button>
+      <button type='button' data-witcher='magicLearning' data-key='configure'>Configure source Region (GM)</button>
+      <button type='button' data-witcher='magicLearning' data-key='power'>Draw from Place of Power</button>
+      <button type='button' data-witcher='magicLearning' data-key='connect'>Connect to Ley Line</button>
+      {{#if magicLearning.leyConnection.active}}<button
+          type='button'
+          data-witcher='magicLearning'
+          data-key='disconnect'
+        >Disconnect {{magicLearning.leyConnection.element}} Ley Line</button>{{/if}}
+    </div>
+    {{#each magicLearning.projects}}<article class='witcher-wound-card'>
+        <header><strong>{{name}}</strong> · {{status}}</header>
+        <p>{{successes}}
+          /
+          {{requirements.checks}}
+          successful checks ·
+          {{remainingSeconds}}
+          seconds of study remaining</p>
+        <p>{{source.description}}</p>
+        {{#if canCheck}}<button
+            type='button'
+            data-witcher='magicLearning'
+            data-key='study'
+            data-effect-id='{{id}}'
+          >Study check</button>{{/if}}
+        {{#if canFinish}}<button
+            type='button'
+            data-witcher='magicLearning'
+            data-key='finish'
+            data-effect-id='{{id}}'
+          >Complete learning</button>{{/if}}
+      </article>{{/each}}
+  </details>
+  <h3>Learned magic</h3>
+  {{#each magic.known}}
+    <article class='witcher-wound-card' data-magic-key='{{key}}'>
+      <header><strong>{{name}}</strong> <span>{{kind}} · {{tier}}</span></header>
+      <p>{{costLabel}} · {{rangeLabel}} · {{durationLabel}}</p>
+      <p>Defense: {{defenseLabel}}</p>
+      <p class='notes'>{{hint}}</p>
+      <div class='witcher-actions'>{{#if canCast}}<button
+            type='button'
+            data-witcher='magicCast'
+            data-item-id='{{id}}'
+          >Cast</button>{{/if}}<button type='button' data-witcher='item' data-item-id='{{id}}'>Open card</button>{{#if
+          canRemove
+        }}<button type='button' data-witcher='delete' data-item-id='{{id}}'>Remove</button>{{/if}}</div>
+    </article>
+  {{else}}<p>Drag Signs or supported magic from the magic compendiums onto this actor.</p>{{/each}}
+  <h3>Active magical effects</h3>
+  {{#each magic.effects}}
+    <article class='witcher-wound-card' data-magic-effect='{{id}}'>
+      <header><strong>{{name}}</strong>{{#if hasShield}}
+          <span>Current shield HP: {{shieldHP}}</span>{{/if}}</header>
+      <p>{{durationLabel}}{{#if maintenance}}
+          · Maintain for
+          {{maintenance}}
+          STA per
+          {{maintenanceUnit}}{{/if}}</p>
+      {{#if notes}}<p>{{notes}}</p>{{/if}}
+      <div class='witcher-actions'>
+        {{#if canRecoverIllness}}<button
+            type='button'
+            data-witcher='magicRecovery'
+            data-effect-id='{{id}}'
+          >Endurance recovery</button>{{/if}}
+        {{#if canMaintain}}<button
+            type='button'
+            data-witcher='magicEffect'
+            data-effect-id='{{id}}'
+            data-key='maintain'
+          >Maintain</button>{{/if}}
+        {{#if canResist}}<button
+            type='button'
+            data-witcher='magicEffect'
+            data-effect-id='{{id}}'
+            data-key='resist'
+          >Attempt recovery</button>{{/if}}
+        {{#if canWake}}<button
+            type='button'
+            data-witcher='magicEffect'
+            data-effect-id='{{id}}'
+            data-key='wake'
+          >Wake with another actor</button>{{/if}}
+        {{#if canEnd}}<button
+            type='button'
+            data-witcher='magicEffect'
+            data-effect-id='{{id}}'
+            data-key='end'
+          >End effect</button>{{/if}}
+        {{#if canCollapse}}<button
+            type='button'
+            data-witcher='magicEffect'
+            data-effect-id='{{id}}'
+            data-key='collapse'
+          >Resolve shield collapse (GM)</button>{{/if}}
+        {{#if canFall}}<button
+            type='button'
+            data-witcher='magicEffect'
+            data-effect-id='{{id}}'
+            data-key='fall'
+          >Resolve fall (GM)</button>{{/if}}
+        {{#if canProtect}}<button
+            type='button'
+            data-witcher='magicEffect'
+            data-effect-id='{{id}}'
+            data-key='protect'
+          >Protect companion</button>{{/if}}
+        {{#if canManageHex}}<button
+            type='button'
+            data-witcher='magicEffect'
+            data-effect-id='{{id}}'
+            data-key='manageHex'
+          >Identify / lift hex</button>{{/if}}
+        {{#if canHexEvent}}<button
+            type='button'
+            data-witcher='magicEffect'
+            data-effect-id='{{id}}'
+            data-key='hexEvent'
+          >Resolve hex event (GM)</button>{{/if}}
+        {{#if canDispel}}<button
+            type='button'
+            data-witcher='magicEffect'
+            data-effect-id='{{id}}'
+            data-key='dispel'
+          >Counter / Dispel</button>{{/if}}
+      </div>
+      {{#if canTrap}}<p class='notes'>Use this round’s Magic Trap attack card in chat to attack the nearest
+          enemy.</p>{{/if}}
+    </article>
+  {{else}}<p>No active magical effects.</p>{{/each}}
+  {{#if magic.references}}
+    <details><summary>Book references without effect automation ({{magic.references.length}})</summary>
+      {{#each magic.references}}<article class='witcher-wound-card'><strong>{{name}}</strong><p>{{status}}
+            ·
+            {{source}}, p.{{page}}</p><p>{{costLabel}} · {{rangeLabel}}</p><button
+            type='button'
+            data-witcher='item'
+            data-item-id='{{id}}'
+          >Open reference</button>{{#if canRemove}}<button
+              type='button'
+              data-witcher='delete'
+              data-item-id='{{id}}'
+            >Remove</button>{{/if}}</article>{{/each}}
+    </details>
+  {{/if}}
+</section>

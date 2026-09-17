@@ -1,0 +1,2132 @@
+[
+  {
+    "_id": "c67db4ee641b90f2",
+    "name": "Cleansing Ritual",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "cleansing-ritual",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 3,
+          "max": 3,
+          "step": 1,
+          "options": [],
+          "text": "3"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "cleansing-ritual",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "5 Rounds",
+          "dc": "Variable",
+          "components": "Chalk (x2), Spirits (x1), Mistletoe (x2), Crow’s Eye (x1), Balisse Leaves (x1)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 117,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Remove alcohol or drugs at Ritual Crafting DC12, poisons or oils at DC15, or major illnesses at DC18. Plagues such as Catriona cannot be cured.",
+      "description": "<p>Remove alcohol or drugs at Ritual Crafting DC12, poisons or oils at DC15, or major illnesses at DC18. Plagues such as Catriona cannot be cured.</p><p><strong>STA:</strong> 3. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 5 Rounds. <strong>Ritual Crafting DC:</strong> Variable.</p><p><strong>Components:</strong> Chalk (x2), Spirits (x1), Mistletoe (x2), Crow’s Eye (x1), Balisse Leaves (x1).</p><p>Source: The Witcher Core Rulebook v1.35, p.117.</p>"
+    }
+  },
+  {
+    "_id": "b743f2ca7025f6df",
+    "name": "Hydromancy",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "hydromancy",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 5,
+          "max": 5,
+          "step": 1,
+          "options": [],
+          "text": "5"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Active (2 STA)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 2,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "hydromancy",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "5 Rounds",
+          "dc": "15 (18)",
+          "components": "A Small Body of Water or a Bowl of Water, Fifth Essence (x2), White Myrtle Petals (x2), Pearl (x2), Lunar Shards (x1), Berbercane Fruit (x1)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 117,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Scry an event from the previous two days at DC15, or a current event at DC18, through water. A mage being observed can detect the scrying by beating the ritual total with Magic Training.",
+      "description": "<p>Scry an event from the previous two days at DC15, or a current event at DC18, through water. A mage being observed can detect the scrying by beating the ritual total with Magic Training.</p><p><strong>STA:</strong> 5. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Active (2 STA). <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 5 Rounds. <strong>Ritual Crafting DC:</strong> 15 (18).</p><p><strong>Components:</strong> A Small Body of Water or a Bowl of Water, Fifth Essence (x2), White Myrtle Petals (x2), Pearl (x2), Lunar Shards (x1), Berbercane Fruit (x1).</p><p>Source: The Witcher Core Rulebook v1.35, p.117.</p>"
+    }
+  },
+  {
+    "_id": "5c9d812a8e7b48fa",
+    "name": "Magical Message",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "magical-message",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 3,
+          "max": 3,
+          "step": 1,
+          "options": [],
+          "text": "3"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Permanent",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "magical-message",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "5 Rounds",
+          "dc": "12",
+          "components": "Glass (x1), Fifth Essence (x1), Quicksilver Solution (x1)",
+          "alternateComponents": "Perfect Gemstone (x1)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 117,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Record a message up to five minutes long in marked glass or a gem, with up to three triggers. It repeatedly displays an image of the speaker when triggered; a perfect gemstone produces a lifelike image.",
+      "description": "<p>Record a message up to five minutes long in marked glass or a gem, with up to three triggers. It repeatedly displays an image of the speaker when triggered; a perfect gemstone produces a lifelike image.</p><p><strong>STA:</strong> 3. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Permanent. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 5 Rounds. <strong>Ritual Crafting DC:</strong> 12.</p><p><strong>Components:</strong> Glass (x1), Fifth Essence (x1), Quicksilver Solution (x1). Alternative: Perfect Gemstone (x1).</p><p>Source: The Witcher Core Rulebook v1.35, p.117.</p>"
+    }
+  },
+  {
+    "_id": "8c102a9bc51c4a56",
+    "name": "Pyromancy",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "pyromancy",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 5,
+          "max": 5,
+          "step": 1,
+          "options": [],
+          "text": "5"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Active (4 STA)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 4,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "pyromancy",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "5 Rounds",
+          "dc": "15",
+          "components": "A Small Fire, Fifth Essence (x2), Ashes (x2), Calcium Equum (x5), Crow’s Eye (x2), Wax (x2)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 117,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Scry present events through fire. A mage at the observed event may detect it by beating the ritual total with Magic Training. It cannot reveal the past.",
+      "description": "<p>Scry present events through fire. A mage at the observed event may detect it by beating the ritual total with Magic Training. It cannot reveal the past.</p><p><strong>STA:</strong> 5. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Active (4 STA). <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 5 Rounds. <strong>Ritual Crafting DC:</strong> 15.</p><p><strong>Components:</strong> A Small Fire, Fifth Essence (x2), Ashes (x2), Calcium Equum (x5), Crow’s Eye (x2), Wax (x2).</p><p>Source: The Witcher Core Rulebook v1.35, p.117.</p>"
+    }
+  },
+  {
+    "_id": "b49c71126c120740",
+    "name": "Ritual of Life",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "ritual-of-life",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 5,
+          "max": 5,
+          "step": 1,
+          "options": [],
+          "text": "5"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "One Use",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "ritual-of-life",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "5 Rounds",
+          "dc": "15",
+          "components": "Chalk (x2), Ashes (x2), Wax (x2), Mandrake Root (x2)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 117,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Create a healing circle that restores 3 HP per turn for ten rounds to one occupant. Leaving ends the circle.",
+      "description": "<p>Create a healing circle that restores 3 HP per turn for ten rounds to one occupant. Leaving ends the circle.</p><p><strong>STA:</strong> 5. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> One Use. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 5 Rounds. <strong>Ritual Crafting DC:</strong> 15.</p><p><strong>Components:</strong> Chalk (x2), Ashes (x2), Wax (x2), Mandrake Root (x2).</p><p>Source: The Witcher Core Rulebook v1.35, p.117.</p>"
+    }
+  },
+  {
+    "_id": "a4e2f71dfb86029a",
+    "name": "Ritual of Magic",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "ritual-of-magic",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 3,
+          "max": 3,
+          "step": 1,
+          "options": [],
+          "text": "3"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "One Use",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "ritual-of-magic",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "5 Rounds",
+          "dc": "15",
+          "components": "Chalk (x2), Glass (x2), Sulfur (x2), Infused Dust (x1)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 117,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "A magic circle grants its first magically capable user a Vigor bonus equal to half the caster’s Ritual Crafting skill for five hours. Alternatively, expend it to produce 1d6/2 units of Fifth Essence.",
+      "description": "<p>A magic circle grants its first magically capable user a Vigor bonus equal to half the caster’s Ritual Crafting skill for five hours. Alternatively, expend it to produce 1d6/2 units of Fifth Essence.</p><p><strong>STA:</strong> 3. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> One Use. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 5 Rounds. <strong>Ritual Crafting DC:</strong> 15.</p><p><strong>Components:</strong> Chalk (x2), Glass (x2), Sulfur (x2), Infused Dust (x1).</p><p>Source: The Witcher Core Rulebook v1.35, p.117.</p>"
+    }
+  },
+  {
+    "_id": "cf81d446d1a467d9",
+    "name": "Spell Jar",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "spell-jar",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 5,
+          "max": 5,
+          "step": 1,
+          "options": [],
+          "text": "5"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "1d6 Days",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none",
+          "formula": "1d6"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "spell-jar",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "5 Rounds",
+          "dc": "15",
+          "components": "River Clay (x5), Fifth Essence (x1), Thread (x2), Chalk (x1), Wax (x1), Han Fiber (x2), Infused Dust (x1)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 118,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Seal magic in a clay jar for 1d6 days. Breaking it triggers a random spell from Talfryn’s Prison, Zephyr, Tanio Ilchar, Dormyn’s Fog, or Static Storm, selected with 1d10/2.",
+      "description": "<p>Seal magic in a clay jar for 1d6 days. Breaking it triggers a random spell from Talfryn’s Prison, Zephyr, Tanio Ilchar, Dormyn’s Fog, or Static Storm, selected with 1d10/2.</p><p><strong>STA:</strong> 5. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> 1d6 Days. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 5 Rounds. <strong>Ritual Crafting DC:</strong> 15.</p><p><strong>Components:</strong> River Clay (x5), Fifth Essence (x1), Thread (x2), Chalk (x1), Wax (x1), Han Fiber (x2), Infused Dust (x1).</p><p>Source: The Witcher Core Rulebook v1.35, p.118.</p>"
+    }
+  },
+  {
+    "_id": "d2502e6cc68194d2",
+    "name": "Spirit Seance",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "spirit-seance",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 5,
+          "max": 5,
+          "step": 1,
+          "options": [],
+          "text": "5"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Permanent",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "spirit-seance",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "5 Rounds",
+          "dc": "12",
+          "components": "Some Blood of the Deceased or a Relative, Mandrake Root (x1), Sewant Mushrooms (x2), Wolfsbane (x2), Sulfur (x2)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 118,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Summon a dead person as a sentient specter at its burial place, retaining memories including its death. Related spirits within 20m also appear. A spirit remains unless it chooses to depart or is destroyed; summoned specters use the possession rules.",
+      "description": "<p>Summon a dead person as a sentient specter at its burial place, retaining memories including its death. Related spirits within 20m also appear. A spirit remains unless it chooses to depart or is destroyed; summoned specters use the possession rules.</p><p><strong>STA:</strong> 5. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Permanent. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 5 Rounds. <strong>Ritual Crafting DC:</strong> 12.</p><p><strong>Components:</strong> Some Blood of the Deceased or a Relative, Mandrake Root (x1), Sewant Mushrooms (x2), Wolfsbane (x2), Sulfur (x2).</p><p>Source: The Witcher Core Rulebook v1.35, p.118.</p>"
+    }
+  },
+  {
+    "_id": "abc63cbef3aee172",
+    "name": "Telecommunication",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "telecommunication",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 3,
+          "max": 3,
+          "step": 1,
+          "options": [],
+          "text": "3"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "1 Hour",
+          "rounds": 0,
+          "seconds": 3600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "telecommunication",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "5 Rounds",
+          "dc": "None",
+          "components": "A Telecommunicator"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 118,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Two participants each perform the ritual with a telecommunicator to converse across the known Continent. The telecommunicators are reusable.",
+      "description": "<p>Two participants each perform the ritual with a telecommunicator to converse across the known Continent. The telecommunicators are reusable.</p><p><strong>STA:</strong> 3. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> 1 Hour. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 5 Rounds. <strong>Ritual Crafting DC:</strong> None.</p><p><strong>Components:</strong> A Telecommunicator.</p><p>Source: The Witcher Core Rulebook v1.35, p.118.</p>"
+    }
+  },
+  {
+    "_id": "e7315959153db5f9",
+    "name": "Consecrate",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "consecrate",
+        "kind": "ritual",
+        "tier": "journeyman",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 12,
+          "max": 12,
+          "step": 1,
+          "options": [],
+          "text": "12"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until Dispelled",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 10,
+          "angle": null
+        },
+        "effect": {
+          "key": "consecrate",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "18",
+          "components": "Fifth Essence (x5), Infused Dust (x2), Chalk (x4), Silver or Meteorite (x5)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 118,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Create a circle up to 10m radius. Monsters must beat the ritual total with Resist Magic to enter or leave. Their magical effects are blocked, but ordinary thrown projectiles pass through. Traditional vulnerabilities require the appropriate silver or meteorite components.",
+      "description": "<p>Create a circle up to 10m radius. Monsters must beat the ritual total with Resist Magic to enter or leave. Their magical effects are blocked, but ordinary thrown projectiles pass through. Traditional vulnerabilities require the appropriate silver or meteorite components.</p><p><strong>STA:</strong> 12. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Until Dispelled. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 18.</p><p><strong>Components:</strong> Fifth Essence (x5), Infused Dust (x2), Chalk (x4), Silver or Meteorite (x5).</p><p>Source: The Witcher Core Rulebook v1.35, p.118.</p>"
+    }
+  },
+  {
+    "_id": "6dd4d94b70e60908",
+    "name": "Magic Barrier",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "magic-barrier",
+        "kind": "ritual",
+        "tier": "journeyman",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 10,
+          "max": 10,
+          "step": 1,
+          "options": [],
+          "text": "10"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Active (2 STA)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 2,
+          "maintenanceUnit": "round"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 5,
+          "angle": null
+        },
+        "effect": {
+          "key": "magic-barrier",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "18",
+          "components": "Fifth Essence (x5), Infused Dust (x2), Chalk (x4)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 118,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Create a 10m-diameter solid barrier with 50 HP. Additional STA restores 5 barrier HP per point. It normally replenishes air; stopping this leaves 20 rounds of air minus one per additional occupant. Incorporeal creatures and teleportation can cross it.",
+      "description": "<p>Create a 10m-diameter solid barrier with 50 HP. Additional STA restores 5 barrier HP per point. It normally replenishes air; stopping this leaves 20 rounds of air minus one per additional occupant. Incorporeal creatures and teleportation can cross it.</p><p><strong>STA:</strong> 10. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Active (2 STA). <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 18.</p><p><strong>Components:</strong> Fifth Essence (x5), Infused Dust (x2), Chalk (x4).</p><p>Source: The Witcher Core Rulebook v1.35, p.118.</p>"
+    }
+  },
+  {
+    "_id": "0587db120a654ff9",
+    "name": "Oneiromancy",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "oneiromancy",
+        "kind": "ritual",
+        "tier": "journeyman",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 8,
+          "max": 8,
+          "step": 1,
+          "options": [],
+          "text": "8"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "1d10 Rounds",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none",
+          "formula": "1d10"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "oneiromancy",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "15 (18)",
+          "components": "A Place to Sleep"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 118,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Share a revelatory dream of past events at DC15 or present events at DC18, alone or with up to Ritual Crafting skill value bonded participants. Bonding requires truthful personal answers. Detection follows Hydromancy.",
+      "description": "<p>Share a revelatory dream of past events at DC15 or present events at DC18, alone or with up to Ritual Crafting skill value bonded participants. Bonding requires truthful personal answers. Detection follows Hydromancy.</p><p><strong>STA:</strong> 8. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> 1d10 Rounds. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 15 (18).</p><p><strong>Components:</strong> A Place to Sleep.</p><p>Source: The Witcher Core Rulebook v1.35, p.118.</p>"
+    }
+  },
+  {
+    "_id": "6684d14fe99eb181",
+    "name": "Artifact Compression",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "artifact-compression",
+        "kind": "ritual",
+        "tier": "master",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until Reversed",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "artifact-compression",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "18",
+          "components": "Perfect Gemstone (x1), Fifth Essence (x5), Infused Dust (x2), River Clay (x4)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 119,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Compress a creature within 10m into a jade statuette at one tenth size. It is unconscious and does not age; Endurance DC15 avoids 6d6 torso damage on compression. Its HP becomes one fifth normal, rounded up. Broken limbs remain severed; beheading or zero HP kills. On release, it remains stunned until a successful Stun save.",
+      "description": "<p>Compress a creature within 10m into a jade statuette at one tenth size. It is unconscious and does not age; Endurance DC15 avoids 6d6 torso damage on compression. Its HP becomes one fifth normal, rounded up. Broken limbs remain severed; beheading or zero HP kills. On release, it remains stunned until a successful Stun save.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Until Reversed. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 18.</p><p><strong>Components:</strong> Perfect Gemstone (x1), Fifth Essence (x5), Infused Dust (x2), River Clay (x4).</p><p>Source: The Witcher Core Rulebook v1.35, p.119.</p>"
+    }
+  },
+  {
+    "_id": "945d78b315b18755",
+    "name": "Golem Crafting",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "golem-crafting",
+        "kind": "ritual",
+        "tier": "master",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 15,
+          "max": 15,
+          "step": 1,
+          "options": [],
+          "text": "15"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Permanent",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "golem-crafting",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "20",
+          "components": "Chalk (x2), A Perfect Gemstone (x1), Hardened Timber (x10), Stone (x10), Infused Dust (x5), Fifth Essence (x2)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 119,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Create a permanently obedient golem. It follows orders literally, cannot perform fine manipulation, and repeats ongoing or failed tasks until ordered otherwise or destroyed.",
+      "description": "<p>Create a permanently obedient golem. It follows orders literally, cannot perform fine manipulation, and repeats ongoing or failed tasks until ordered otherwise or destroyed.</p><p><strong>STA:</strong> 15. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Permanent. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 20.</p><p><strong>Components:</strong> Chalk (x2), A Perfect Gemstone (x1), Hardened Timber (x10), Stone (x10), Infused Dust (x5), Fifth Essence (x2).</p><p>Source: The Witcher Core Rulebook v1.35, p.119.</p>"
+    }
+  },
+  {
+    "_id": "31c9cd798587039f",
+    "name": "Interactive Illusion",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "interactive-illusion",
+        "kind": "ritual",
+        "tier": "master",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 12,
+          "max": 12,
+          "step": 1,
+          "options": [],
+          "text": "12"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until Dispelled",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 20,
+          "angle": null
+        },
+        "effect": {
+          "key": "interactive-illusion",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "18",
+          "components": "Perfect Gemstone (x1), Fifth Essence (x5), Infused Shard (x1), Glass, (x2), Ducal Water (x3)"
+        }
+      },
+      "source": "The Witcher Core Rulebook v1.35",
+      "page": 119,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Create a controllable illusion within 20m that imitates sight, sound, smell, and touch. Illusory hazards allow Resist Magic or Endurance DC12; failure requires a Stun save. The illusion cannot inflict lethal damage.",
+      "description": "<p>Create a controllable illusion within 20m that imitates sight, sound, smell, and touch. Illusory hazards allow Resist Magic or Endurance DC12; failure requires a Stun save. The illusion cannot inflict lethal damage.</p><p><strong>STA:</strong> 12. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Until Dispelled. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 18.</p><p><strong>Components:</strong> Perfect Gemstone (x1), Fifth Essence (x5), Infused Shard (x1), Glass, (x2), Ducal Water (x3).</p><p>Source: The Witcher Core Rulebook v1.35, p.119.</p>"
+    }
+  },
+  {
+    "_id": "dd092ef2af5dbb3d",
+    "name": "Imbue Trophy",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "imbue-trophy",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 3,
+          "max": 3,
+          "step": 1,
+          "options": [],
+          "text": "3"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "imbue-trophy",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "12",
+          "components": "Monster Trophy, Fifth Essence (x1), Infused Dust (x1), Tanning Herbs (x10), Ogre Wax (x1), Ester Grease (x2)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 102,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Permanently enchant one prepared, previously nonmagical monster trophy. It grants its species’ trophy benefit to a carrier who helped kill that monster; trophy effects are listed on Tome p.124.",
+      "description": "<p>Permanently enchant one prepared, previously nonmagical monster trophy. It grants its species’ trophy benefit to a carrier who helped kill that monster; trophy effects are listed on Tome p.124.</p><p><strong>STA:</strong> 3. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 12.</p><p><strong>Components:</strong> Monster Trophy, Fifth Essence (x1), Infused Dust (x1), Tanning Herbs (x10), Ogre Wax (x1), Ester Grease (x2).</p><p>Source: A Tome of Chaos v1.01, p.102.</p>"
+    }
+  },
+  {
+    "_id": "51194e14d983d25d",
+    "name": "Create Crystal Skull",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "create-crystal-skull",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 5,
+          "max": 5,
+          "step": 1,
+          "options": [],
+          "text": "5"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "create-crystal-skull",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "14",
+          "components": "Animal Skull, Fifth Essence (x5)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 102,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Turn a cat, dog, bird, or serpent skull into a Crystal Skull capable of producing that animal. Recharging after the animal dies needs the inactive skull and only two units of Fifth Essence.",
+      "description": "<p>Turn a cat, dog, bird, or serpent skull into a Crystal Skull capable of producing that animal. Recharging after the animal dies needs the inactive skull and only two units of Fifth Essence.</p><p><strong>STA:</strong> 5. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 14.</p><p><strong>Components:</strong> Animal Skull, Fifth Essence (x5).</p><p>Source: A Tome of Chaos v1.01, p.102.</p>"
+    }
+  },
+  {
+    "_id": "7dd07d7c29947a2d",
+    "name": "Tyromancy",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "tyromancy",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 2,
+          "max": 2,
+          "step": 1,
+          "options": [],
+          "text": "2"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Immediate",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "tyromancy",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "5 Rounds",
+          "dc": "13 +/- 1d6",
+          "components": "Cheese (x2)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 103,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Divine whether an intended course has a positive or negative immediate outcome. The GM secretly sets DC13+1d6 for ordinary cheese or DC13−1d6 for high-quality cheese. Success gives the truth; failure gives a negative false answer on an odd d6 and positive false answer on an even d6.",
+      "description": "<p>Divine whether an intended course has a positive or negative immediate outcome. The GM secretly sets DC13+1d6 for ordinary cheese or DC13−1d6 for high-quality cheese. Success gives the truth; failure gives a negative false answer on an odd d6 and positive false answer on an even d6.</p><p><strong>STA:</strong> 2. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Immediate. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 5 Rounds. <strong>Ritual Crafting DC:</strong> 13 +/- 1d6.</p><p><strong>Components:</strong> Cheese (x2).</p><p>Source: A Tome of Chaos v1.01, p.103.</p>"
+    }
+  },
+  {
+    "_id": "5c1aab47a9730196",
+    "name": "Animate Armor",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "animate-armor",
+        "kind": "ritual",
+        "tier": "journeyman",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 14,
+          "max": 14,
+          "step": 1,
+          "options": [],
+          "text": "14"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Permanent",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "animate-armor",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "18",
+          "components": "Head Armor (x1), Torso Armor (x1), Leg Armor (x1), Fifth Essence (x3), Infused Dust (x3), Golem Heart (x1)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 103,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Animate a complete suit of armor around a golem heart as loyal, nonsapient Living Armor. Use its monster statistics with SP determined by the armor supplied.",
+      "description": "<p>Animate a complete suit of armor around a golem heart as loyal, nonsapient Living Armor. Use its monster statistics with SP determined by the armor supplied.</p><p><strong>STA:</strong> 14. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Permanent. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 18.</p><p><strong>Components:</strong> Head Armor (x1), Torso Armor (x1), Leg Armor (x1), Fifth Essence (x3), Infused Dust (x3), Golem Heart (x1).</p><p>Source: A Tome of Chaos v1.01, p.103.</p>"
+    }
+  },
+  {
+    "_id": "faf77933e774e1ed",
+    "name": "Wagerer’s Pendant",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "wagerers-pendant",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 6,
+          "max": 6,
+          "step": 1,
+          "options": [],
+          "text": "6"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "1 Week",
+          "rounds": 0,
+          "seconds": 604800,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "wagerers-pendant",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "14",
+          "components": "Glass (x2), Beast Bones (x1), Wolfsbane (x2), Leather (x2), Chalk (x2), Etching Acid (x5), Ashes (x2)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 103,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Create a pendant that suppresses the wearer’s hexes for one week. Removing it immediately restores them. If any remain when the week ends, it breaks and afflicts the wearer and creatures within 2m with GM-selected hexes.",
+      "description": "<p>Create a pendant that suppresses the wearer’s hexes for one week. Removing it immediately restores them. If any remain when the week ends, it breaks and afflicts the wearer and creatures within 2m with GM-selected hexes.</p><p><strong>STA:</strong> 6. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> 1 Week. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 14.</p><p><strong>Components:</strong> Glass (x2), Beast Bones (x1), Wolfsbane (x2), Leather (x2), Chalk (x2), Etching Acid (x5), Ashes (x2).</p><p>Source: A Tome of Chaos v1.01, p.103.</p>"
+    }
+  },
+  {
+    "_id": "a1c67c92e6b974cf",
+    "name": "Beacon of the Unnatural",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "beacon-of-the-unnatural",
+        "kind": "ritual",
+        "tier": "journeyman",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 12,
+          "max": 12,
+          "step": 1,
+          "options": [],
+          "text": "12"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Until Destroyed",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "beacon-of-the-unnatural",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "15 Rounds",
+          "dc": "18",
+          "components": "Hardened Timber (x4), A Mutagen, Rope, Beast Bones (x5), Fifth Essence (x1)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 103,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Build a 2m totem with 20 HP that attracts monsters to nest nearby. Its initial one-mile attraction range increases by another mile each year.",
+      "description": "<p>Build a 2m totem with 20 HP that attracts monsters to nest nearby. Its initial one-mile attraction range increases by another mile each year.</p><p><strong>STA:</strong> 12. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Until Destroyed. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 15 Rounds. <strong>Ritual Crafting DC:</strong> 18.</p><p><strong>Components:</strong> Hardened Timber (x4), A Mutagen, Rope, Beast Bones (x5), Fifth Essence (x1).</p><p>Source: A Tome of Chaos v1.01, p.103.</p>"
+    }
+  },
+  {
+    "_id": "e3e70e4565517541",
+    "name": "Fog of the Past",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "fog-of-the-past",
+        "kind": "ritual",
+        "tier": "journeyman",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 10,
+          "max": 10,
+          "step": 1,
+          "options": [],
+          "text": "10"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "20 Minutes",
+          "rounds": 0,
+          "seconds": 1200,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "fog-of-the-past",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "18",
+          "components": "Glass (x5), Lunar Shard (x1), Candles (x5), Essence of Wraith (x2)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 104,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Project the most emotionally significant event ever occurring nearby, up to five minutes long, repeatedly for twenty minutes.",
+      "description": "<p>Project the most emotionally significant event ever occurring nearby, up to five minutes long, repeatedly for twenty minutes.</p><p><strong>STA:</strong> 10. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> 20 Minutes. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 18.</p><p><strong>Components:</strong> Glass (x5), Lunar Shard (x1), Candles (x5), Essence of Wraith (x2).</p><p>Source: A Tome of Chaos v1.01, p.104.</p>"
+    }
+  },
+  {
+    "_id": "42bb4eb4f3b6840e",
+    "name": "Magical Guestbook",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "magical-guestbook",
+        "kind": "ritual",
+        "tier": "journeyman",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 8,
+          "max": 8,
+          "step": 1,
+          "options": [],
+          "text": "8"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "1 Day",
+          "rounds": 0,
+          "seconds": 86400,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "magical-guestbook",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "16",
+          "components": "Chalk (x2), Coal (x2), River Clay (x1), Fifth Essence (x1)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 104,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Record faces passing through a marked doorway. Within 100m, the caster can read the record mentally and receive alerts for chosen people. After one day the record persists in an intact clay icon, viewable by anyone with Vigor1 or higher.",
+      "description": "<p>Record faces passing through a marked doorway. Within 100m, the caster can read the record mentally and receive alerts for chosen people. After one day the record persists in an intact clay icon, viewable by anyone with Vigor1 or higher.</p><p><strong>STA:</strong> 8. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> 1 Day. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 16.</p><p><strong>Components:</strong> Chalk (x2), Coal (x2), River Clay (x1), Fifth Essence (x1).</p><p>Source: A Tome of Chaos v1.01, p.104.</p>"
+    }
+  },
+  {
+    "_id": "ce9500001d389f4c",
+    "name": "Create Place of Power",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "create-place-of-power",
+        "kind": "ritual",
+        "tier": "master",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 18,
+          "max": 18,
+          "step": 1,
+          "options": [],
+          "text": "18"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Permanent",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "create-place-of-power",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "20 Rounds",
+          "dc": "20",
+          "components": "Stone (x40), Runewright’s Tools"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 104,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Create a permanent Place of Power on a standing stone where two same-element ley lines meet. A fumble always has severity10 and explodes the stone for 7d6 damage in a 6m radius.",
+      "description": "<p>Create a permanent Place of Power on a standing stone where two same-element ley lines meet. A fumble always has severity10 and explodes the stone for 7d6 damage in a 6m radius.</p><p><strong>STA:</strong> 18. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Permanent. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 20 Rounds. <strong>Ritual Crafting DC:</strong> 20.</p><p><strong>Components:</strong> Stone (x40), Runewright’s Tools.</p><p>Source: A Tome of Chaos v1.01, p.104.</p>"
+    }
+  },
+  {
+    "_id": "43a4702d8cabaec5",
+    "name": "Enchant Amulet",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "enchant-amulet",
+        "kind": "ritual",
+        "tier": "master",
+        "tradition": "",
+        "element": "unspecified",
+        "cost": {
+          "min": 0,
+          "max": 0,
+          "step": 1,
+          "options": [],
+          "text": "Costs of all stored spells, plus four rounds of their maintenance",
+          "formula": "sum(spellCosts + 4 * maintenanceCosts)"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Permanent",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "enchant-amulet",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "15 Rounds",
+          "dc": "18",
+          "components": "Simple Amulet (x1), Perfect Gemstone (1 Per Spell/Invocation), Fifth Essence (x2), Runewright’s Tools"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 104,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Store spells or invocations in a gemmed amulet. Pay each spell’s full cost, plus four rounds of maintenance for active spells. Focus cannot reduce these costs, and all stored spells must be cast consecutively without intervening actions.",
+      "description": "<p>Store spells or invocations in a gemmed amulet. Pay each spell’s full cost, plus four rounds of maintenance for active spells. Focus cannot reduce these costs, and all stored spells must be cast consecutively without intervening actions.</p><p><strong>STA:</strong> Costs of all stored spells, plus four rounds of their maintenance. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Permanent. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 15 Rounds. <strong>Ritual Crafting DC:</strong> 18.</p><p><strong>Components:</strong> Simple Amulet (x1), Perfect Gemstone (1 Per Spell/Invocation), Fifth Essence (x2), Runewright’s Tools.</p><p>Source: A Tome of Chaos v1.01, p.104.</p>"
+    }
+  },
+  {
+    "_id": "024f6286a7145573",
+    "name": "Cadfan’s Synthesis",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "cadfans-synthesis",
+        "kind": "ritual",
+        "tier": "master",
+        "tradition": "necromancy",
+        "element": "unspecified",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Permanent",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "cadfans-synthesis",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "15 Rounds",
+          "dc": "22",
+          "components": "10 Corpses (from creatures killed within the last 24 hours), Chalk (x5), Tanning Herbs (x10), Lunar Shards (x1), Hellebore Petals (x2), Ducal Water (x3), Fifth Essence (x10), Candles (x10), Crow’s Eye (x5), Specter Dust (x5), Essence of Wraith (x5)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 132,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Combine ten recent corpses into a Corpse Amalgam that follows the caster’s literal commands without higher reasoning.",
+      "description": "<p>Combine ten recent corpses into a Corpse Amalgam that follows the caster’s literal commands without higher reasoning.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Permanent. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 15 Rounds. <strong>Ritual Crafting DC:</strong> 22.</p><p><strong>Components:</strong> 10 Corpses (from creatures killed within the last 24 hours), Chalk (x5), Tanning Herbs (x10), Lunar Shards (x1), Hellebore Petals (x2), Ducal Water (x3), Fifth Essence (x10), Candles (x10), Crow’s Eye (x5), Specter Dust (x5), Essence of Wraith (x5).</p><p>Source: A Tome of Chaos v1.01, p.132.</p>"
+    }
+  },
+  {
+    "_id": "ef577a21b25a69ba",
+    "name": "Create Soul Beacon",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "create-soul-beacon",
+        "kind": "ritual",
+        "tier": "journeyman",
+        "tradition": "necromancy",
+        "element": "unspecified",
+        "cost": {
+          "min": 10,
+          "max": 10,
+          "step": 1,
+          "options": [],
+          "text": "10"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "1 Day",
+          "rounds": 0,
+          "seconds": 86400,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "circle",
+          "distance": 0,
+          "radius": 6,
+          "angle": null
+        },
+        "effect": {
+          "key": "create-soul-beacon",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "16",
+          "components": "A Skull (from a creature killed within the last 24 hours), Ashes (x10), Fifth Essence (x2), Infused Dust (x3), Timber (x5), Stone (x2), Leather (x3), Specter Dust (x2)"
+        },
+        "pages": [
+          132,
+          133
+        ]
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 132,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Build a 1m Soul Beacon with 10 HP, benefiting necromancy within 6m; only one applies. A human or elderfolk skull reduces necromantic ritual DC and STA by 3 and changes Restless Spirits rolls to 1d10−2. A beast or monster skull grants necromantic creations +2 attacks and defenses and adds scent tracking and night vision to Hanmarvyn’s Blue Dream.",
+      "description": "<p>Build a 1m Soul Beacon with 10 HP, benefiting necromancy within 6m; only one applies. A human or elderfolk skull reduces necromantic ritual DC and STA by 3 and changes Restless Spirits rolls to 1d10−2. A beast or monster skull grants necromantic creations +2 attacks and defenses and adds scent tracking and night vision to Hanmarvyn’s Blue Dream.</p><p><strong>STA:</strong> 10. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> 1 Day. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 16.</p><p><strong>Components:</strong> A Skull (from a creature killed within the last 24 hours), Ashes (x10), Fifth Essence (x2), Infused Dust (x3), Timber (x5), Stone (x2), Leather (x3), Specter Dust (x2).</p><p>Source: A Tome of Chaos v1.01, p.132.</p>"
+    }
+  },
+  {
+    "_id": "6bf9ee59b52d6951",
+    "name": "Hanmarvyn’s Blue Dream",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "hanmarvyns-blue-dream",
+        "kind": "ritual",
+        "tier": "master",
+        "tradition": "necromancy",
+        "element": "unspecified",
+        "cost": {
+          "min": 16,
+          "max": 16,
+          "step": 1,
+          "options": [],
+          "text": "16"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "10 Minutes",
+          "rounds": 0,
+          "seconds": 600,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "hanmarvyns-blue-dream",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "18",
+          "components": "A Corpse, Fifth Essence (x10), Lunar Shards (x2), Essence of Wraith (x3), Ginatia Petals (x2), Quicksilver Solution (x1), Green Mold (x2), Mandrake Root (x1), Phosphorus (x3), Specter Dust (x2)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 133,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "A chosen person within 4m experiences a corpse’s final ten minutes, unconscious and sharing its feelings. Endurance DC24 avoids immediate Death state; either result still starts the experience. Hallucinogens extend the vision to twenty minutes.",
+      "description": "<p>A chosen person within 4m experiences a corpse’s final ten minutes, unconscious and sharing its feelings. Endurance DC24 avoids immediate Death state; either result still starts the experience. Hallucinogens extend the vision to twenty minutes.</p><p><strong>STA:</strong> 16. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> 10 Minutes. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 18.</p><p><strong>Components:</strong> A Corpse, Fifth Essence (x10), Lunar Shards (x2), Essence of Wraith (x3), Ginatia Petals (x2), Quicksilver Solution (x1), Green Mold (x2), Mandrake Root (x1), Phosphorus (x3), Specter Dust (x2).</p><p>Source: A Tome of Chaos v1.01, p.133.</p>"
+    }
+  },
+  {
+    "_id": "58a2d97838ba3c49",
+    "name": "Reanimate Corpse",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "reanimate-corpse",
+        "kind": "ritual",
+        "tier": "journeyman",
+        "tradition": "necromancy",
+        "element": "unspecified",
+        "cost": {
+          "min": 10,
+          "max": 10,
+          "step": 1,
+          "options": [],
+          "text": "10"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Active (3 STA per Minute)",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "fixed",
+          "maintenanceCost": 3,
+          "maintenanceUnit": "minute"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "reanimate-corpse",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "18",
+          "components": "A corpse (with working vocal cords, lungs, brain, and a mouth), Chalk (x4), Fifth Essence (x5), Candles (x5), Crow’s Eye (x2), Specter Dust (x5), Essence of Wraith (x2)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 133,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Bind a soul back into its corpse for questioning. It cannot move and suffers −3 Resist Coercion; at least half the brain and all speech organs must remain. Torture and Torment do not work in verbal combat because its pain is already overwhelming.",
+      "description": "<p>Bind a soul back into its corpse for questioning. It cannot move and suffers −3 Resist Coercion; at least half the brain and all speech organs must remain. Torture and Torment do not work in verbal combat because its pain is already overwhelming.</p><p><strong>STA:</strong> 10. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Active (3 STA per Minute). <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 18.</p><p><strong>Components:</strong> A corpse (with working vocal cords, lungs, brain, and a mouth), Chalk (x4), Fifth Essence (x5), Candles (x5), Crow’s Eye (x2), Specter Dust (x5), Essence of Wraith (x2).</p><p>Source: A Tome of Chaos v1.01, p.133.</p>"
+    }
+  },
+  {
+    "_id": "7d76c7b1ed6e5f78",
+    "name": "Uncontrolled Summoning",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "uncontrolled-summoning",
+        "kind": "ritual",
+        "tier": "novice",
+        "tradition": "goetia",
+        "element": "unspecified",
+        "cost": {
+          "min": 0,
+          "max": 0,
+          "step": 1,
+          "options": [],
+          "text": "0"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Instant",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "uncontrolled-summoning",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "10 Rounds",
+          "dc": "10",
+          "components": "Chalk x1"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 142,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Summon an uncontrolled demon of any species or strength. It has no obligation to honor bargains or refrain from attacking; the ritual grants neither protection nor command.",
+      "description": "<p>Summon an uncontrolled demon of any species or strength. It has no obligation to honor bargains or refrain from attacking; the ritual grants neither protection nor command.</p><p><strong>STA:</strong> 0. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Instant. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 10 Rounds. <strong>Ritual Crafting DC:</strong> 10.</p><p><strong>Components:</strong> Chalk x1.</p><p>Source: A Tome of Chaos v1.01, p.142.</p>"
+    }
+  },
+  {
+    "_id": "30d63d3509893dcd",
+    "name": "Controlled Summoning",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "controlled-summoning",
+        "kind": "ritual",
+        "tier": "journeyman",
+        "tradition": "goetia",
+        "element": "unspecified",
+        "cost": {
+          "min": 0,
+          "max": 0,
+          "step": 1,
+          "options": [],
+          "text": "0"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Instant",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "controlled-summoning",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "15 Rounds",
+          "dc": "16",
+          "components": "Candle (x5), Essence of Wraith (x2), Infused Dust (x3), Oil (x2)"
+        },
+        "pages": [
+          142,
+          143
+        ]
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 142,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Summon a chosen demon species and strength using the corresponding offering; a known true name specifies the individual. Without additional protections, the summoned demon remains dangerous and uncontrolled.",
+      "description": "<p>Summon a chosen demon species and strength using the corresponding offering; a known true name specifies the individual. Without additional protections, the summoned demon remains dangerous and uncontrolled.</p><p><strong>STA:</strong> 0. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Instant. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 15 Rounds. <strong>Ritual Crafting DC:</strong> 16.</p><p><strong>Components:</strong> Candle (x5), Essence of Wraith (x2), Infused Dust (x3), Oil (x2).</p><p>Source: A Tome of Chaos v1.01, p.142.</p>"
+    }
+  },
+  {
+    "_id": "8c73baa283e59dec",
+    "name": "Ritual of Naming",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "ritual-of-naming",
+        "kind": "ritual",
+        "tier": "journeyman",
+        "tradition": "goetia",
+        "element": "unspecified",
+        "cost": {
+          "min": 0,
+          "max": 0,
+          "step": 1,
+          "options": [],
+          "text": "0"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Instant",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "ritual-of-naming",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "20 Rounds",
+          "dc": "18 (DC: 24 for Greater Demons)",
+          "components": "Coal (x10), Hardened Timber (x20), Beast Bones (x10), Infused Dust (x3), Your Own Blood",
+          "greaterDemonDC": 24
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 143,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Discover a specific demon’s true name using the ritual fire and protective paste. A failed check burns its name into the caster as a Lucifuge mark, revealing the caster’s location to that demon indefinitely while the mark remains.",
+      "description": "<p>Discover a specific demon’s true name using the ritual fire and protective paste. A failed check burns its name into the caster as a Lucifuge mark, revealing the caster’s location to that demon indefinitely while the mark remains.</p><p><strong>STA:</strong> 0. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Instant. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 20 Rounds. <strong>Ritual Crafting DC:</strong> 18 (DC: 24 for Greater Demons).</p><p><strong>Components:</strong> Coal (x10), Hardened Timber (x20), Beast Bones (x10), Infused Dust (x3), Your Own Blood.</p><p>Source: A Tome of Chaos v1.01, p.143.</p>"
+    }
+  },
+  {
+    "_id": "4194b388cd1a1ad3",
+    "name": "Ritual of Binding",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "ritual-of-binding",
+        "kind": "ritual",
+        "tier": "master",
+        "tradition": "goetia",
+        "element": "unspecified",
+        "cost": {
+          "min": 0,
+          "max": 0,
+          "step": 1,
+          "options": [],
+          "text": "0"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "24 Hours",
+          "rounds": 0,
+          "seconds": 86400,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "ritual-of-binding",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "30 Rounds",
+          "dc": "20 (DC: 27 for Greater Demons)",
+          "components": "Candle (x5), Essence of Wraith (x2), Infused Dust (x3), Oil (x1), Coal (x10), Silver (x6), A Jug of Your Own Blood, True Staff of Binding",
+          "greaterDemonDC": 27
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 144,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Summon a true-named demon into a cage for twenty-four hours and bargain through verbal combat. Only a True Staff of Binding can attack through the barrier. Agreements bind the demon indefinitely, with a secret Resist Magic attempt against the original ritual total every two weeks to escape. While bound, it can be called without Controlled Summoning.",
+      "description": "<p>Summon a true-named demon into a cage for twenty-four hours and bargain through verbal combat. Only a True Staff of Binding can attack through the barrier. Agreements bind the demon indefinitely, with a secret Resist Magic attempt against the original ritual total every two weeks to escape. While bound, it can be called without Controlled Summoning.</p><p><strong>STA:</strong> 0. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> 24 Hours. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 30 Rounds. <strong>Ritual Crafting DC:</strong> 20 (DC: 27 for Greater Demons).</p><p><strong>Components:</strong> Candle (x5), Essence of Wraith (x2), Infused Dust (x3), Oil (x1), Coal (x10), Silver (x6), A Jug of Your Own Blood, True Staff of Binding.</p><p>Source: A Tome of Chaos v1.01, p.144.</p>"
+    }
+  },
+  {
+    "_id": "b968c2072c60e302",
+    "name": "Ritual of the Goat Skin",
+    "type": "magic",
+    "img": "icons/svg/book.svg",
+    "system": {
+      "magic": {
+        "key": "ritual-of-the-goat-skin",
+        "kind": "ritual",
+        "tier": "unspecified",
+        "tradition": "goetia",
+        "element": "unspecified",
+        "cost": {
+          "min": 0,
+          "max": 0,
+          "step": 1,
+          "options": [],
+          "text": "0"
+        },
+        "range": {
+          "text": "See ritual effect",
+          "distance": 0,
+          "unit": "m",
+          "targeting": "special"
+        },
+        "duration": {
+          "text": "Permanent",
+          "rounds": 0,
+          "seconds": 0,
+          "maintenance": "none"
+        },
+        "defenses": [],
+        "defenseText": "See casting rules",
+        "area": {
+          "shape": "none",
+          "distance": 0,
+          "radius": 0,
+          "angle": null
+        },
+        "effect": {
+          "key": "ritual-of-the-goat-skin",
+          "params": {}
+        },
+        "automation": "reference",
+        "ritual": {
+          "preparation": "30 Rounds",
+          "dc": "16",
+          "components": "Goat (x1), Oil (x5), Coal (x1), Bloodstone Dagger, Ginitia Petals (x2), Hellebore Petals (x3), Tanning Herbs (x3), Verbena (x4), Timber (x10), Beast Bones (x3), Silk (x1)"
+        }
+      },
+      "source": "A Tome of Chaos v1.01",
+      "page": 146,
+      "quantity": 1,
+      "weight": 0,
+      "cost": 0,
+      "equipped": false,
+      "carried": false,
+      "category": "ritual",
+      "effectText": "Create a Goat Skin Mantle through the prescribed protective rite, following a fortnight of fasting and abstinence. The mantle provides the species-specific protections described in the goetic equipment section.",
+      "description": "<p>Create a Goat Skin Mantle through the prescribed protective rite, following a fortnight of fasting and abstinence. The mantle provides the species-specific protections described in the goetic equipment section.</p><p><strong>STA:</strong> 0. <strong>Range:</strong> See ritual effect. <strong>Duration:</strong> Permanent. <strong>Defense:</strong> See casting rules.</p><p><strong>Preparation:</strong> 30 Rounds. <strong>Ritual Crafting DC:</strong> 16.</p><p><strong>Components:</strong> Goat (x1), Oil (x5), Coal (x1), Bloodstone Dagger, Ginitia Petals (x2), Hellebore Petals (x3), Tanning Herbs (x3), Verbena (x4), Timber (x10), Beast Bones (x3), Silk (x1).</p><p>Source: A Tome of Chaos v1.01, p.146.</p>"
+    }
+  }
+]

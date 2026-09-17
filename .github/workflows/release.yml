@@ -45,6 +45,10 @@ jobs:
         run: |
           npm run build:wounds
           git diff --quiet -- data/witcher/critical-wounds.json
+      - name: Verify committed magic compendium sources
+        run: |
+          npm run build:magic
+          git diff --quiet -- data/witcher/magic-*.json
       - run: npm run build:packs
       - run: npm run validate
       - name: Build and inspect installable archive

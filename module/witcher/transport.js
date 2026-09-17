@@ -1,4 +1,5 @@
 import { SYSTEM_ID } from './config.js';
+import { magicDamageRules } from './magic-effect-hooks.js';
 import { RuleError, beats } from './rules.js';
 import { mountedControlLoss, vehicleControlLoss, fallingDice } from './advanced-rules.js';
 import { owner, prompt, input, check, dice, chat, checkHTML, escapeHTML as e, save } from './runtime.js';
@@ -59,7 +60,7 @@ export async function getMount(rider) {
   };
 }
 async function checkAthletics(actor, dc, title = 'Athletics') {
-  const result = await check(actor.skillBase('athletics').total);
+  const result = await check(actor.skillBase('athletics').total, { actor, context: { dc } });
   await chat(
     actor,
     title,
@@ -249,6 +250,13 @@ export async function fall(actor) {
       input('dc', 'Ledge Athletics DC (set by GM)', { value: 15, min: 0 })
   );
   if (!values) return;
+  const protection = magicDamageRules(actor.system, { source: 'falling', activeAtLanding: !values.grab });
+  if (protection.preventDamage)
+    return chat(
+      actor,
+      'Adenydd · landing',
+      '<p>The active glide spell prevents falling damage on landing.</p>'
+    );
   let location = 'torso';
   if (values.grab && (await checkAthletics(actor, Number(values.dc), 'Grab ledge'))) location = 'rightArm';
   const count = fallingDice(Number(values.height));
@@ -260,7 +268,12 @@ export async function fall(actor) {
       name: 'Falling damage',
       damage: count ? `${count}d6` : '0',
       damageTypes: ['bludgeoning'],
-      properties: { natural: true, environmental: true },
+      properties: {
+        natural: true,
+        environmental: true,
+        damageSource: 'falling',
+        activeAtLanding: location === 'torso',
+      },
     },
     { location }
   );

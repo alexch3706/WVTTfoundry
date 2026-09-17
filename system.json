@@ -1,8 +1,8 @@
 {
   "id": "witcher-rilerena",
-  "title": "The Witcher TTRPG — Rilerena",
-  "description": "Witcher TTRPG for Foundry V14: character and creature sheets, ordinary combat, core bestiary, equipment and Witcher school gear. Magic and active creature/profession abilities are deferred.",
-  "version": "0.1.0-alpha.5",
+  "title": "The Witcher TTRPG \u2014 Rilerena",
+  "description": "Witcher TTRPG for Foundry V14: character, NPC and monster sheets, location combat, equipment, critical injuries and an initial Core/Tome magic implementation. See the support guide for available magic and remaining references.",
+  "version": "0.1.0-alpha.6",
   "compatibility": {
     "minimum": "14",
     "maximum": "14"
@@ -12,9 +12,17 @@
       "name": "alexch3706"
     }
   ],
-  "esmodules": ["module/witcher/main.js"],
-  "styles": ["css/witcher.css"],
+  "esmodules": [
+    "module/witcher/main.js"
+  ],
+  "styles": [
+    "css/witcher.css"
+  ],
   "documentTypes": {
+    "RegionBehavior": {
+      "witcher-rilerena.magicArea": {},
+      "witcher-rilerena.ritualArea": {}
+    },
     "Actor": {
       "character": {},
       "npc": {},
@@ -33,7 +41,8 @@
       "wound": {},
       "mount": {},
       "enhancement": {},
-      "ability": {}
+      "ability": {},
+      "magic": {}
     }
   },
   "packs": [
@@ -138,7 +147,7 @@
     },
     {
       "name": "supplement-tools",
-      "label": "A Witcher’s Tools — School Gear & Diagrams",
+      "label": "A Witcher\u2019s Tools \u2014 School Gear & Diagrams",
       "path": "packs/witcher/supplement-tools",
       "type": "Item",
       "system": "witcher-rilerena",
@@ -149,7 +158,7 @@
     },
     {
       "name": "supplement-journal",
-      "label": "A Witcher’s Journal — Components & Mutagens",
+      "label": "A Witcher\u2019s Journal \u2014 Components & Mutagens",
       "path": "packs/witcher/supplement-journal",
       "type": "Item",
       "system": "witcher-rilerena",
@@ -168,6 +177,72 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "magic-signs",
+      "label": "Magic \u2014 Witcher Signs",
+      "path": "packs/witcher/magic-signs",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "magic-spells",
+      "label": "Magic \u2014 Mage Spells",
+      "path": "packs/witcher/magic-spells",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "magic-invocations",
+      "label": "Magic \u2014 Priest & Druid Invocations",
+      "path": "packs/witcher/magic-invocations",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "magic-rituals",
+      "label": "Magic \u2014 Rituals",
+      "path": "packs/witcher/magic-rituals",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "magic-hexes",
+      "label": "Magic \u2014 Hexes",
+      "path": "packs/witcher/magic-hexes",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "magic-gear",
+      "label": "Magic \u2014 Artifacts and Trophies",
+      "path": "packs/witcher/magic-gear",
+      "type": "Item",
+      "system": "witcher-rilerena",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
     }
   ],
   "grid": {
@@ -179,6 +254,6 @@
   "primaryTokenAttribute": "hp",
   "secondaryTokenAttribute": "sta",
   "url": "https://github.com/alexch3706/WVTTfoundry",
-  "manifest": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.5/system.json",
-  "download": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.5/witcher-rilerena.zip"
+  "manifest": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.6/system.json",
+  "download": "https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.6/witcher-rilerena.zip"
 }

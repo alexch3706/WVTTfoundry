@@ -47,10 +47,11 @@
     >Below wound threshold: REF, DEX, INT and WILL are halved.</p>{{/if}}
   <nav class='sheet-tabs tabs' data-group='primary'><a data-tab='combat'>Combat</a><a
       data-tab='skills'
-    >Skills</a><a data-tab='inventory'>Equipment</a>{{#if hasBestiary}}<a
+    >Skills</a><a data-tab='inventory'>Equipment</a><a data-tab='magic'>Magic</a>{{#if hasBestiary}}<a
         data-tab='bestiary'
       >Creature</a>{{/if}}<a data-tab='story'>Character</a><a data-tab='setup'>Anatomy & settings</a></nav>
   <section class='sheet-body'>
+    <div class='tab' data-group='primary' data-tab='magic'>{{{magicPanel}}}</div>
     <div class='tab' data-group='primary' data-tab='combat'>
       <div class='action-bar'><button type='button' data-witcher='unarmed' data-key='punch'>Punch
           {{system.derived.punch}}</button><button type='button' data-witcher='unarmed' data-key='kick'>Kick
@@ -363,7 +364,11 @@
           name='system.reputation'
           type='number'
           value='{{system.reputation}}'
-        /></label><button type='button' data-witcher='refreshLuck'>Refresh Luck for a new session</button></div>
+        /></label>{{#if trophyReputation}}<p>Monster-slayer reputation: +{{trophyReputation}}
+          from carried magical trophies (maximum +4).</p>{{/if}}<button
+        type='button'
+        data-witcher='refreshLuck'
+      >Refresh Luck for a new session</button></div>
     <div class='tab' data-group='primary' data-tab='setup'><h2>Actor & anatomy</h2><div
         class='field-grid'
       >{{{setup}}}</div><div class='action-bar'><button type='button' data-witcher='editAnatomy'>Edit hit

@@ -1,12 +1,12 @@
 # Witcher V14 implementation status
 
-Release candidate: **0.1.0-alpha.5**. This ledger distinguishes implemented code
+Release candidate: **0.1.0-alpha.6**. This ledger distinguishes implemented code
 from live acceptance. No Foundry server has been launched in this environment;
 the owner will test the installable release on The Forge.
 
 ## Agreed scope for this release
 
-The owner narrowed the current work to ordinary combat and equipment:
+Ordinary combat and equipment remain the established foundation:
 
 - PC, NPC and monster sheets; inventory and compendium drag/drop; equipping,
   usable hands, ammunition and crossbow loading.
@@ -21,8 +21,11 @@ The owner narrowed the current work to ordinary combat and equipment:
 - Core equipment and bestiary, plus all equipment in A Witcher’s Tools and the
   components/mutagens in A Witcher’s Journal.
 
-Magic/signs, mounted combat, active creature and profession abilities are
-**deferred by the owner**. Advanced maneuvers, area/scatter bombs and contextual
+The owner subsequently approved magic. Alpha.6 adds 12 Signs, 34 spells and
+20 invocations, with separate ritual/hex workflows. **126 spells/invocations
+remain references without automated casting.** See the [support matrix](magic-progress.md)
+and [play guide](magic-play-guide.md). Mounted combat and broader active creature
+and profession abilities remain lower priority. Advanced maneuvers, area/scatter bombs and contextual
 potion/decoction automation have incomplete paths inherited from the first
 implementation pass; they are not claims of completed ordinary combat and are
 not the primary attack controls. Critical Flurry's Disarm/Trip and school armor

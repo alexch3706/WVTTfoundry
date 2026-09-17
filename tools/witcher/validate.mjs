@@ -19,7 +19,9 @@ for (const file of await fs.readdir(path.join(root, 'module/witcher'))) {
   for (const match of text.matchAll(/from\s+['"]([^'"]+)['"]/g))
     if (match[1].startsWith('.')) await fs.access(path.resolve(root, 'module/witcher', match[1]));
 }
-for (const file of ['actor.hbs', 'item.hbs'])
+for (const file of (await fs.readdir(path.join(root, 'templates/witcher'))).filter((file) =>
+  file.endsWith('.hbs')
+))
   Handlebars.precompile(await fs.readFile(path.join(root, 'templates/witcher', file), 'utf8'));
 for (const pack of manifest.packs) {
   assert.equal(pack.system, manifest.id);

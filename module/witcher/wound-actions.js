@@ -1,3 +1,4 @@
+import { hexTreatmentModifier, hexCriticalWound } from './magic-hex-rules.js';
 import { RuleError, beats } from './rules.js';
 import { WOUNDS } from './wounds.js';
 import { woundInfo, woundItemData } from './wound-catalog.js';
@@ -87,6 +88,28 @@ function startRecovery(actor, item, options, user) {
     daysRemaining: days ?? 0,
     recoveryContext: recoveryContext(state, projected),
     recoveryPending: days === null && !w.permanent && w.severity !== 'deadly',
+  };
+}
+
+/** A successful Healing spell advances one critical-treatment use, never HP. */
+export function magicalWoundTreatment(actor, item, checkTotal) {
+  if (item?.type !== 'wound') throw new RuleError('Choose an existing critical wound.');
+  const w = woundData(item),
+    req = requirements(w);
+  if (!['untreated', 'stabilized'].includes(w.treatment))
+    throw new RuleError('This injury is already treated.');
+  if (!beats(checkTotal, req.magicDC)) return { success: false, dc: req.magicDC, changes: {}, items: [] };
+  const uses = Number(w.magicUses || 0) + 1;
+  if (uses > req.magicUses) throw new RuleError('The wound has already received all required healing uses.');
+  const fields =
+    uses === req.magicUses ? { ...startRecovery(actor, item, {}, {}), magicUses: uses } : { magicUses: uses };
+  return {
+    success: true,
+    dc: req.magicDC,
+    uses,
+    required: req.magicUses,
+    changes: woundStaminaChanges(actor, item, fields),
+    items: [updateFields(item, fields)],
   };
 }
 
@@ -193,7 +216,7 @@ async function performWoundAction(actor, item, action, options, user) {
       throw new RuleError('The healer needs the Doctor’s Healing Hands skill.');
     if (!Number.isFinite(options.modifier)) throw new RuleError('Invalid treatment modifier.');
     // Validate physical dice even if this action only advances the treatment rounds.
-    validateManualCheck({ manualDice: options.manualDice });
+    validateManualCheck({ manualDice: options.manualDice }, healer, { dc: req.dc });
     const arm = resolveWoundArm(healer.system, [...healer.items], options.woundArm, 'one');
     const plan = actionPlan(healer);
     let ready = true;
@@ -210,8 +233,12 @@ async function performWoundAction(actor, item, action, options, user) {
     }
     if (ready) {
       const result = await check(
-        healer.skillBase(skill, { stat: 'cra', modifier: options.modifier + plan.modifier, arm }).total,
-        { manualDice: options.manualDice }
+        healer.skillBase(skill, {
+          stat: 'cra',
+          modifier: options.modifier + plan.modifier + hexTreatmentModifier(actor.system, w),
+          arm,
+        }).total,
+        { manualDice: options.manualDice, actor: healer, context: { dc: req.dc, skill } }
       );
       rolls = result.rolls;
       const success = beats(result.total, req.dc);
@@ -348,7 +375,11 @@ export async function woundAction(actor, item, action) {
   else throw new RuleError('Unknown wound action.');
   const values = await prompt('Critical wound: ' + item.name, content, {
     button,
-    validate: action === 'medical' ? validateManualCheck : undefined,
+    validate:
+      action === 'medical'
+        ? async (values) =>
+            validateManualCheck(values, await resolveFoundryUuid(values.healerUuid), { dc: req.dc })
+        : undefined,
   });
   if (!values) return;
   if (action === 'medical') {
@@ -435,14 +466,18 @@ export function registerWoundActions() {
       info = woundInfo({ key });
     if (!info) throw new RuleError('Unknown critical wound template.');
     const index = Number(info.key.split('-')[1]);
-    const w = {
-      ...structuredClone(WOUNDS[info.severity][index]),
-      key: info.key,
-      severity: info.severity,
-      group: info.group,
-      location,
-      treatment: 'untreated',
-    };
+    const w = hexCriticalWound(
+      actor.system,
+      {
+        ...structuredClone(WOUNDS[info.severity][index]),
+        key: info.key,
+        severity: info.severity,
+        group: info.group,
+        location,
+        treatment: 'untreated',
+      },
+      WOUNDS
+    );
     const state = actorSnapshot(actor);
     if (w.organ && state.organless)
       throw new RuleError('Organless creatures cannot receive this organ injury.');
@@ -485,11 +520,17 @@ export function registerWoundActions() {
     }
     return item;
   });
-  registerCommand('woundRest', async ({ actorUuid, days, strenuous = false }, { user }) => {
-    const actor = await authorizedActor(actorUuid, user);
-    if (game.combat?.started) throw new RuleError('End combat before advancing days of rest.');
-    whole(days);
-    if (typeof strenuous !== 'boolean') throw new RuleError('Invalid rest activity.');
-    return actor.rest({ days, strenuous });
-  });
+  registerCommand(
+    'woundRest',
+    async (
+      { actorUuid, days, strenuous = false, sleepHours = 8, meals = 3, nightmareDice = {} },
+      { user }
+    ) => {
+      const actor = await authorizedActor(actorUuid, user);
+      if (game.combat?.started) throw new RuleError('End combat before advancing days of rest.');
+      whole(days);
+      if (typeof strenuous !== 'boolean') throw new RuleError('Invalid rest activity.');
+      return actor.rest({ days, strenuous, sleepHours, meals, nightmareDice });
+    }
+  );
 }

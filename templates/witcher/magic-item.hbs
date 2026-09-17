@@ -1,0 +1,18 @@
+<section class='witcher-magic-card' data-magic-key='{{magic.key}}'>
+  <div class='magic-heading'><h2>{{magic.kind}} · {{magic.tier}}</h2><strong>{{magic.status}}</strong></div>
+  <p class='source-note'>{{magic.element}}</p>
+  <dl class='wound-requirements'>
+    <dt>Stamina</dt><dd>{{magic.costLabel}}</dd>
+    <dt>Range</dt><dd>{{magic.rangeLabel}}</dd>
+    <dt>Duration</dt><dd>{{magic.durationLabel}}</dd>
+    <dt>Defense</dt><dd>{{magic.defenseLabel}}</dd>
+  </dl>
+  <h3>Effect</h3>
+  <p class='magic-rule-text'>{{magic.text}}</p>
+  <p class='source-note'>{{magic.source}}, printed p.{{magic.page}}</p>
+  <p class='magic-guidance'>{{magic.hint}}</p>
+  {{#if magic.canCast}}<button type='button' data-witcher='magicCast'>Cast {{magic.name}}</button>{{/if}}
+  {{#if magic.reference}}<p class='witcher-warning'>This entry is a reference. Casting, expenditure and effect
+      application are not automated for it.</p>{{/if}}
+  <label>Personal notes<textarea name='system.notes' rows='5'>{{system.notes}}</textarea></label>
+</section>

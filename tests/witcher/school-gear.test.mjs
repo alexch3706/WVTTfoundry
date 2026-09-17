@@ -145,14 +145,14 @@ test('Manticore Block/Parry grants one shield attack whose hit pushes the attack
   assert.equal(schoolReactions(state, defense()).length, 0);
 });
 
-test('Wolf gives one held-weapon strike; Griffin preserves the later Sign cost instead of casting magic', () => {
+test('Wolf gives one held-weapon strike; Griffin grants a Sign reaction with its normal magic cost', () => {
   const [wolf] = schoolReactions(wearer(armor('criticalMomentum')), critical());
   assert.equal(wolf.choices.length, 1);
   assert.equal(wolf.choices[0].singleStrike, true);
   assert.equal(wolf.choices[0].style, 'normal');
   assert.equal(wolf.choices[0].weaponRequirement, 'held');
   const [griffin] = schoolReactions(wearer(armor('criticalSpellcasting')), critical());
-  assert.equal(griffin.deferred, true);
+  assert.equal(griffin.deferred, false);
   assert.equal(griffin.choices[0].cost, 'signOnly');
   assert.equal(griffin.additionalStamina, 0);
   assert.equal(griffin.additionalPenalty, 0);

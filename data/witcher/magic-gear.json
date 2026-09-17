@@ -1,0 +1,1334 @@
+[
+  {
+    "_id": "4c636b40ce5c7b0d",
+    "name": "Crystal Skull (cat)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 700,
+      "weight": 0,
+      "description": "<p>Speak the activation word to create the same physical animal. Mental commands reach50m. On death it reverts to an inert skull; the Create Crystal Skull ritual recharges it using2 Fifth Essence.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 119,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "create-crystal-skull",
+          "animal": "cat",
+          "charged": true,
+          "active": false,
+          "animalActorUuid": "",
+          "tokenUuid": ""
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "01af2b50ee0d6561",
+    "name": "Crystal Skull (dog)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 700,
+      "weight": 0,
+      "description": "<p>Speak the activation word to create the same physical animal. Mental commands reach50m. On death it reverts to an inert skull; the Create Crystal Skull ritual recharges it using2 Fifth Essence.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 119,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "create-crystal-skull",
+          "animal": "dog",
+          "charged": true,
+          "active": false,
+          "animalActorUuid": "",
+          "tokenUuid": ""
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "350c1d2637a332a2",
+    "name": "Crystal Skull (bird)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 700,
+      "weight": 0,
+      "description": "<p>Speak the activation word to create the same physical animal. Mental commands reach50m. On death it reverts to an inert skull; the Create Crystal Skull ritual recharges it using2 Fifth Essence.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 119,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "create-crystal-skull",
+          "animal": "bird",
+          "charged": true,
+          "active": false,
+          "animalActorUuid": "",
+          "tokenUuid": ""
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "f079ab7f4cf46d02",
+    "name": "Crystal Skull (serpent)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 700,
+      "weight": 0,
+      "description": "<p>Speak the activation word to create the same physical animal. Mental commands reach50m. On death it reverts to an inert skull; the Create Crystal Skull ritual recharges it using2 Fifth Essence.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 119,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "create-crystal-skull",
+          "animal": "serpent",
+          "charged": true,
+          "active": false,
+          "animalActorUuid": "",
+          "tokenUuid": ""
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "710ba95943944317",
+    "name": "Botchling Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Become Feared; if already Feared, double its bonuses.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "botchling",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "ba40b0dc02944f58",
+    "name": "Vendigo Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Immune to disease.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "vendigo",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "016ec682eba1fcc0",
+    "name": "Werewolf Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>+2 Physique and Wilderness Survival.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "werewolf",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "3fbbb12647d5242f",
+    "name": "Cockatrice Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Attacks have a10% chance to stagger.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "cockatrice",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "cf2202e5d94635f3",
+    "name": "Phoenix Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Reduce chances to catch fire by50 percentage points, minimum0.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "phoenix",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "9dcb85494d092f85",
+    "name": "Slyzard Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>+2 Spell Casting for fire spells and signs.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "slyzard",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "7627d1e4e05415d7",
+    "name": "Wyvern Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Creatures damaged by your attacks have a25% chance to be poisoned.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "wyvern",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "153c432773c61842",
+    "name": "Earth Elemental Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Attacks deal double ablation to weapons, shields and armor.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "earth-elemental",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "ac1521c7ec345024",
+    "name": "Fire Elemental Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Creatures damaged by your attacks have a25% chance to catch fire.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "fire-elemental",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "9d5f59aa22eb1cb5",
+    "name": "Golem Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Immune to bleeding.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "golem",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "5df668dfc53c032a",
+    "name": "Ice Elemental Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Creatures damaged by your attacks have a25% chance to freeze.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "ice-elemental",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "b779996b9e43d42f",
+    "name": "Griffin Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Roll the critical-wound result twice and choose one.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "griffin",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "c5d63db3bcac3f74",
+    "name": "Manticore Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Poisons you use have+2 DC to resist or remove them.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "manticore",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "97e5c4e3d2172f0a",
+    "name": "Succubus Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Social standing improves by one step.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 124,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "succubus",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "9bbe28731951a3fd",
+    "name": "Arachasae Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Immune to poison.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "arachasae",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "797ccb7c6728fd7c",
+    "name": "Frightener Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Choose one physical damage resistance; may change each day.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "frightener",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "53df4eac97a69135",
+    "name": "Bullvore Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>A Necrophage chooses another target in range instead of you, if one exists.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "bullvore",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "2e103a8178f97286",
+    "name": "Foglet Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>+2 Stealth and Sleight of Hand.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "foglet",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "cccd5d1efc71ccb7",
+    "name": "Grave Hag Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>+2 Ritual Crafting and Hex Weaving.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "grave-hag",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "ee3fcdab25423fba",
+    "name": "Fiend Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>+2 Spell Casting and Resist Magic.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "fiend",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "9a614f8c64e04c19",
+    "name": "Leshen Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Animals and beasts understand your speech and can be approached through verbal combat; they will not do what they would refuse for themselves.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "leshen",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "c9b67023384db368",
+    "name": "Shaelmaar Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>+2 Spell Casting for earth spells and signs.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "shaelmaar",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "d51be5c4469596e4",
+    "name": "Hym Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>When armor negates your attack damage, deal4 damage through that armor.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "hym",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "694f45ba48cd9d88",
+    "name": "Noonwraith Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Immune to fear.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "noonwraith",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "66fda92739734f5e",
+    "name": "Pesta Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Melee opponents suffer−2 to actions and have a10% disease chance. The flies also impose−2 Seduction, Persuasion and Grooming and Style.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "pesta",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "7bc745bd5bdd3f3f",
+    "name": "Bruxa Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Communicate telepathically within20m.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "bruxa",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "cff7fbd42dcfc2a7",
+    "name": "Garkain Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Reduce a Stun-save penalty by1; without a penalty, Stun counts1 higher.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "garkain",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "2eb824ced8c439ff",
+    "name": "Katakan Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Creatures damaged by your attacks have a25% chance to bleed.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "katakan",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "4b3b446b1274bfcc",
+    "name": "Cyclops Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>When a spell would stun you, you may attack the nearest living target to resist the stun; other spell effects still apply.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "cyclops",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "6c93c57a7770f619",
+    "name": "Rock Trolls Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Add1 to the range multiplier of thrown weapons.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "rock-troll",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "dc5ad4248f23334b",
+    "name": "Troll Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Alcohol needs twice as much to intoxicate you; no hangover.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "troll",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "b5a7d7ab9c77d8e8",
+    "name": "Bear Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Creatures you grapple have−2 to escape your grapple.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "bear",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "dbe210a74bfb4d49",
+    "name": "Panther Trophy",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>Double climbing speed.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 125,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "imbue-trophy",
+          "helpedKillActorUuids": [],
+          "activeActorUuid": "",
+          "species": "panther",
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "be64f059a07ec00b",
+    "name": "Wagerer’s Pendant",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "description": "<p>While worn, suppress all hex effects. Removing it restores them. At the end of one week, if the wearer still has any hex, the pendant breaks and afflicts the wearer and everyone within2m with hexes chosen by the GM.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 103,
+      "properties": {}
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "wagerers-pendant",
+          "broken": false,
+          "expiresAt": 0,
+          "pendingSetup": true
+        },
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "5e909d54f164de57",
+    "name": "Enchanted Amulet (1 spell)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 550,
+      "weight": 0,
+      "description": "<p>Focus2. Cast its stored magic using the wearer’s STA and sufficient Vigor, using only the amulet as focus. Priests and druids can use it to cast mage spells. The chosen multi-spell drawback persists while worn and for24hours after removal.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 118,
+      "properties": {
+        "focus": 2
+      }
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "enchant-amulet",
+          "storedMagic": [],
+          "complete": false,
+          "drawback": null,
+          "slots": 1,
+          "pendingSetup": true
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "2c7c63cd7df47c23",
+    "name": "Enchanted Amulet (2 spells)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 750,
+      "weight": 0,
+      "description": "<p>Focus2. Cast its stored magic using the wearer’s STA and sufficient Vigor, using only the amulet as focus. Priests and druids can use it to cast mage spells. The chosen multi-spell drawback persists while worn and for24hours after removal.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 118,
+      "properties": {
+        "focus": 2
+      }
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "enchant-amulet",
+          "storedMagic": [],
+          "complete": false,
+          "drawback": null,
+          "slots": 2,
+          "pendingSetup": true
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "ce39761f698aaa0b",
+    "name": "Enchanted Amulet (3 spells)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 950,
+      "weight": 0,
+      "description": "<p>Focus2. Cast its stored magic using the wearer’s STA and sufficient Vigor, using only the amulet as focus. Priests and druids can use it to cast mage spells. The chosen multi-spell drawback persists while worn and for24hours after removal.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 118,
+      "properties": {
+        "focus": 2
+      }
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "enchant-amulet",
+          "storedMagic": [],
+          "complete": false,
+          "drawback": null,
+          "slots": 3,
+          "pendingSetup": true
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "9027e9dfaad0e282",
+    "name": "Enchanted Amulet (4 spells)",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 1150,
+      "weight": 0,
+      "description": "<p>Focus2. Cast its stored magic using the wearer’s STA and sufficient Vigor, using only the amulet as focus. Priests and druids can use it to cast mage spells. The chosen multi-spell drawback persists while worn and for24hours after removal.</p>",
+      "source": "A Tome of Chaos v1.01",
+      "page": 118,
+      "properties": {
+        "focus": 2
+      }
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "ritualArtifact": {
+          "key": "enchant-amulet",
+          "storedMagic": [],
+          "complete": false,
+          "drawback": null,
+          "slots": 4,
+          "pendingSetup": true
+        },
+        "weightUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "09fa21a85988f0e4",
+    "name": "Simple Amulet",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "source": "A Tome of Chaos v1.01",
+      "page": 104,
+      "description": "<p>Actual simple amulet required by the Enchant Amulet ritual. Consumed during imbuement.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "8c53cf7274f0e645",
+    "name": "Perfect Gemstone",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 0,
+      "weight": 0,
+      "source": "A Tome of Chaos v1.01",
+      "page": 104,
+      "description": "<p>Actual perfect gemstone required by the Enchant Amulet ritual. Consumed during imbuement.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "weightUnspecified": true,
+        "priceUnspecified": true
+      }
+    }
+  },
+  {
+    "_id": "4e8c14113c32f907",
+    "name": "Runewright’s Tools",
+    "type": "gear",
+    "img": "icons/svg/item-bag.svg",
+    "system": {
+      "quantity": 1,
+      "carried": true,
+      "equipped": false,
+      "cost": 550,
+      "weight": 0,
+      "source": "A Tome of Chaos v1.01",
+      "page": 120,
+      "description": "<p>Actual runewright’s tools required by the Enchant Amulet ritual. Reusable tools are retained after the ritual.</p>"
+    },
+    "flags": {
+      "witcher-rilerena": {
+        "weightUnspecified": true
+      }
+    }
+  }
+]
