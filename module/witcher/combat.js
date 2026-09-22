@@ -1,3 +1,13 @@
+import {
+  manualCombatEnabled,
+  manualDamageSession,
+  manualCriticalWound,
+  manualDamageIO,
+  ManualDamageRequest,
+  manualDamageHTML,
+  enterManualDamage,
+  submitManualDamage,
+} from './manual-combat.js';
 import { trophyRulesFor } from './magic-trophies.js';
 import { activeAlchemy, reconcileAlchemyToxicity } from './alchemy-rules.js';
 import { alchemyAttackPlan, alchemyCriticalBonus, alchemyDamageEffects } from './alchemy-combat-rules.js';
@@ -282,13 +292,14 @@ export async function attack(actor, item, options = {}) {
     input('rear', 'You are outside the defender’s vision cone (+3)', { type: 'checkbox' }) +
     input('ambush', 'Successful ambush in the first round (+5, p.153)', { type: 'checkbox' }) +
     woundArmInput(actor, { optional: !!weapon.properties?.natural }) +
-    manualCheckInput();
+    manualCheckInput({ required: manualCombatEnabled(actor) });
   const values =
     options.values ??
     (await prompt('Attack', fields, {
       button: continuing ? 'Next strike' : 'Attack',
       width: 510,
-      validate: (values) => validateManualCheck(values, actor),
+      validate: (values) =>
+        validateManualCheck(values, actor, { manualRequired: manualCombatEnabled(actor) }),
     }));
   if (!values) return;
   return runCommand(
@@ -314,6 +325,9 @@ async function executeAttack(payload, context) {
   const item = payload.itemId ? actor.items.get(payload.itemId) : null;
   if (payload.itemId && !item) throw new RuleError('The weapon is no longer in your inventory.');
   const values = payload.values;
+  validateManualCheck({ ...values, defense: undefined }, actor, {
+    manualRequired: manualCombatEnabled(actor),
+  });
   const weapon = weaponFor(actor, item, values.action);
   const sourceToken = await tokenFromUuid(payload.sourceTokenUuid, actor);
   const targetToken = await tokenFromUuid(payload.targetTokenUuid, target);
@@ -539,6 +553,7 @@ async function executeAttack(payload, context) {
   }
   const packet = {
     kind: 'attack',
+    manualCombat: manualCombatEnabled(actor),
     authorId: context.user.id,
     operationId: context.id,
     sourceTokenUuid: payload.sourceTokenUuid ?? '',
@@ -615,7 +630,7 @@ export async function defend(message, quick = {}) {
       input('gang', 'Assailants in melee reach', { value: 1, min: 1 }) +
       input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value }) +
       woundArmInput(actor) +
-      manualCheckInput()
+      manualCheckInput({ required: manualCombatEnabled(actor) })
     : null;
   const values = await prompt(
     `${actor.name}: defense`,
@@ -656,8 +671,11 @@ export async function defend(message, quick = {}) {
         }) +
         input('luck', 'Luck spent', { value: 0, min: 0, max: actor.system.luck.value }) +
         woundArmInput(actor) +
-        manualCheckInput(),
-    { validate: (values) => validateManualCheck(values, actor) }
+        manualCheckInput({ required: manualCombatEnabled(actor) }),
+    {
+      validate: (values) =>
+        validateManualCheck(values, actor, { manualRequired: manualCombatEnabled(actor) }),
+    }
   );
   if (!values) return;
   return runCommand(
@@ -676,7 +694,7 @@ async function executeDefense(payload, context) {
   const values = payload.values;
   const defense = values.defense,
     passive = defense === 'passive';
-  validateManualCheck(values, actor);
+  validateManualCheck(values, actor, { manualRequired: manualCombatEnabled(actor) });
   if (
     !['dodge', 'reposition', 'blockWeapon', 'blockShield', 'blockArm', 'parry', 'passive'].includes(defense)
   )
@@ -980,54 +998,107 @@ export async function resolveDefense(message, internal = false) {
       await attackMessage.update({ [`flags.${SYSTEM_ID}.resolved`]: true });
       return;
     }
-    // A completed card may exist if the final attack-message write failed.
-    const existing = game.messages.find(
-      (m) => m.flags[SYSTEM_ID]?.kind === 'damage' && m.flags[SYSTEM_ID].attackRef === attackMessage.uuid
-    );
-    if (existing) {
-      await attackMessage.update({
-        [`flags.${SYSTEM_ID}.resolved`]: true,
-        [`flags.${SYSTEM_ID}.damageRef`]: existing.uuid,
-      });
-      return existing;
-    }
-    const damage = await prepareDamage(attacker, target, a, { ...defense, blockSucceeded: !hit });
-    const result = await chat(
-      attacker,
-      `${a.weapon.name}: damage to ${target.name}`,
-      damageHTML(damage) + `<button type="button" data-witcher-action="apply">Apply damage (GM)</button>`,
-      {
-        rolls: damage.rolls,
-        flags: {
-          kind: 'damage',
-          attackRef: attackMessage.uuid,
-          combatId: a.combatId ?? '',
-          actorUuid: attacker.uuid,
-          targetUuid: target.uuid,
-          request: damage.request,
-          wound: damage.wound,
-          criticalLevel: damage.criticalLevel,
-          adrenalineRetained: damage.adrenalineRetained,
-          schoolAdjustment: damage.schoolAdjustment,
-          reactions: damage.reactions,
-          schoolOnHit: a.schoolOnHit,
-          sourceTokenUuid: a.sourceTokenUuid,
-          targetTokenUuid: a.targetTokenUuid,
-          conditions: damage.conditions,
-          effects: damage.effects,
-          stun: damage.stun,
-          summary: damage.results,
-          state: damage.state,
-          applied: false,
-        },
-      }
-    );
+    return finishWeaponDamage(attackMessage, { ...defense, blockSucceeded: !hit });
+  })();
+}
+
+/** Finishes once after defense, or resumes saved physical dice without spending another action. */
+export async function finishWeaponDamage(attackMessage, defense) {
+  const a = attackMessage.flags[SYSTEM_ID];
+  const attacker = await actorFromUuid(a.actorUuid),
+    target = await actorFromUuid(a.targetUuid);
+  if (!attacker || !target) throw new RuleError('The attacker or target no longer exists.');
+  // A completed card may exist if the final attack-message write failed.
+  const existing = game.messages.find(
+    (m) => m.flags[SYSTEM_ID]?.kind === 'damage' && m.flags[SYSTEM_ID].attackRef === attackMessage.uuid
+  );
+  if (existing) {
     await attackMessage.update({
       [`flags.${SYSTEM_ID}.resolved`]: true,
-      [`flags.${SYSTEM_ID}.damageRef`]: result.uuid,
+      [`flags.${SYSTEM_ID}.damageRef`]: existing.uuid,
+      ...(a.manualDamage
+        ? {
+            [`flags.${SYSTEM_ID}.manualDamage.status`]: 'complete',
+            content: a.manualDamage.baseContent + manualDamageHTML(a.manualDamage, { complete: true }),
+          }
+        : {}),
     });
-    return result;
-  })();
+    return existing;
+  }
+  let damage;
+  let session;
+  if (a.manualCombat) {
+    session =
+      foundry.utils.deepClone(a.manualDamage) ??
+      manualDamageSession(attacker, target, defense, damageState(target), attackMessage.content);
+    if (session.result) damage = session.result;
+    else {
+      const io = manualDamageIO(session);
+      try {
+        damage = await prepareDamage(attacker, target, a, session.defense, io);
+      } catch (error) {
+        if (!(error instanceof ManualDamageRequest)) throw error;
+        session.history = io.history;
+        session.request = error.request;
+        await attackMessage.update({
+          [`flags.${SYSTEM_ID}.manualDamage`]: session,
+          content: session.baseContent + manualDamageHTML(session),
+        });
+        return attackMessage;
+      }
+      session.history = io.history;
+      damage.manualRolls = session.history;
+      session.result = damage;
+      session.request = null;
+      session.status = 'ready';
+      await attackMessage.update({
+        [`flags.${SYSTEM_ID}.manualDamage`]: session,
+        content: session.baseContent + manualDamageHTML(session),
+      });
+    }
+  } else damage = await prepareDamage(attacker, target, a, defense);
+  const result = await chat(
+    attacker,
+    `${a.weapon.name}: damage to ${target.name}`,
+    damageHTML(damage) + `<button type="button" data-witcher-action="apply">Apply damage (GM)</button>`,
+    {
+      rolls: damage.rolls.filter((roll) => !roll.manual),
+      flags: {
+        kind: 'damage',
+        ...(session ? { manualRolls: session.history } : {}),
+        attackRef: attackMessage.uuid,
+        combatId: a.combatId ?? '',
+        actorUuid: attacker.uuid,
+        targetUuid: target.uuid,
+        request: damage.request,
+        wound: damage.wound,
+        criticalLevel: damage.criticalLevel,
+        adrenalineRetained: damage.adrenalineRetained,
+        schoolAdjustment: damage.schoolAdjustment,
+        reactions: damage.reactions,
+        schoolOnHit: a.schoolOnHit,
+        sourceTokenUuid: a.sourceTokenUuid,
+        targetTokenUuid: a.targetTokenUuid,
+        conditions: damage.conditions,
+        effects: damage.effects,
+        stun: damage.stun,
+        summary: damage.results,
+        state: damage.state,
+        applied: false,
+      },
+    }
+  );
+  await attackMessage.update({
+    [`flags.${SYSTEM_ID}.resolved`]: true,
+    [`flags.${SYSTEM_ID}.damageRef`]: result.uuid,
+    ...(session
+      ? {
+          [`flags.${SYSTEM_ID}.manualDamage.status`]: 'complete',
+          content: session.baseContent + manualDamageHTML(session, { complete: true }),
+        }
+      : {}),
+  });
+  return result;
 }
 
 async function resolveSpecial(attacker, target, a, defense) {
@@ -1117,8 +1188,11 @@ async function resolveSpecial(attacker, target, a, defense) {
   await chat(attacker, titleCase(a.action), `<p>${e(text)}</p>`, { rolls });
 }
 
-export async function prepareDamage(attacker, target, a, defense = {}) {
-  let state = magicDamageSnapshot(target);
+export async function prepareDamage(attacker, target, a, defense = {}, io = {}) {
+  const source = io.source ?? { ...actorSnapshot(attacker), derived: attacker.system.derived };
+  let state = foundry.utils.deepClone(io.target ?? magicDamageSnapshot(target));
+  const targetSource = io.target ?? target.system;
+  const rollDice = io.roll ?? dice;
   const table = hitLocations(state),
     rolls = [];
   const w = a.weapon,
@@ -1136,78 +1210,102 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
   let wound = null,
     bonus = 0,
     location;
-  if (!crushingForce(attacker.system)) properties.wearMultiplier = 1;
+  if (!crushingForce(source)) properties.wearMultiplier = 1;
   properties.wearMultiplier = (properties.wearMultiplier || 1) * (a.magicAttack?.ablationMultiplier || 1);
   if (!properties.environmental)
-    properties.armorNegatedDamage = trophyRulesFor(attacker.system).armorNegatedDamage ?? 0;
+    properties.armorNegatedDamage = trophyRulesFor(source).armorNegatedDamage ?? 0;
   const zeroDamage = ['0', '0d6'].includes(w.damage);
   const immune = immuneTo(state, a.type);
   const rolledSeverity =
     !immune && !zeroDamage && a.check && defense.check && a.physicalCritical !== false
       ? criticalSeverity(a.check.total - defense.check.total)
       : null;
-  const severity = adjustSchoolCritical(actorSnapshot(attacker), w, rolledSeverity);
+  const severity = adjustSchoolCritical(source, w, rolledSeverity);
   if (severity && !NO_DAMAGE.includes(a.action) && !properties.allLocations) {
-    const cr = await dice('2d6'),
-      greater = await dice('1d6'),
-      side = await dice('1d6');
-    rolls.push(cr, greater, side);
-    const result = criticalWound(severity.level, table, {
-      roll: cr.total,
+    const criticalOptions = {
       aimed: a.aimed?.replace(/:weak$/, ''),
-      greater: greater.total,
-      side: side.total,
       balanced:
         (properties.balanced ? (a.aimed ? 1 : properties.balancedBonus || 2) : 0) +
-        alchemyCriticalBonus(attacker.system),
-      organless: target.system.organless,
-    });
-    let selectedCritical = result;
-    if (trophyRulesFor(attacker.system).chooseCriticalResult) {
-      const second = await dice(a.aimed ? '1d6' : '2d6');
-      rolls.push(second);
-      const alternative = criticalWound(severity.level, table, {
-        roll: a.aimed ? cr.total : second.total,
-        aimed: a.aimed?.replace(/:weak$/, ''),
-        greater: a.aimed ? second.total : greater.total,
+        alchemyCriticalBonus(source),
+      organless: targetSource.organless,
+    };
+    const choose = trophyRulesFor(source).chooseCriticalResult;
+    let result, alternative;
+    if (io.manual) {
+      result = await manualCriticalWound(severity.level, table, criticalOptions, { roll: rollDice, rolls });
+      if (choose)
+        alternative = await manualCriticalWound(severity.level, table, criticalOptions, {
+          roll: rollDice,
+          rolls,
+          key: 'critical-alternative',
+        });
+    } else {
+      const cr = await dice('2d6'),
+        greater = await dice('1d6'),
+        side = await dice('1d6');
+      rolls.push(cr, greater, side);
+      result = criticalWound(severity.level, table, {
+        ...criticalOptions,
+        roll: cr.total,
+        greater: greater.total,
         side: side.total,
-        balanced:
-          (properties.balanced ? (a.aimed ? 1 : properties.balancedBonus || 2) : 0) +
-          alchemyCriticalBonus(attacker.system),
-        organless: target.system.organless,
       });
+      if (choose) {
+        const second = await dice(a.aimed ? '1d6' : '2d6');
+        rolls.push(second);
+        alternative = criticalWound(severity.level, table, {
+          ...criticalOptions,
+          roll: a.aimed ? cr.total : second.total,
+          greater: a.aimed ? second.total : greater.total,
+          side: side.total,
+        });
+      }
+    }
+    let selectedCritical = result;
+    if (choose) {
       const choices = [result, alternative];
-      const answer = await prompt(
-        'Griffin trophy: attacker chooses critical result',
-        input('critical', 'Keep the selected rolled result', {
-          options: Object.fromEntries(
-            choices.map((choice, index) => [
-              index,
-              `${choice.wound?.name ?? 'Organless: damage bonus'} · ${choice.location.label}`,
-            ])
-          ),
-        }),
-        { button: 'Keep result' }
-      );
+      const answer = io.chooseCritical
+        ? await io.chooseCritical(choices)
+        : await prompt(
+            'Griffin trophy: attacker chooses critical result',
+            input('critical', 'Keep the selected rolled result', {
+              options: Object.fromEntries(
+                choices.map((choice, index) => [
+                  index,
+                  `${choice.wound?.name ?? 'Organless: damage bonus'} · ${choice.location.label}`,
+                ])
+              ),
+            }),
+            { button: 'Keep result' }
+          );
       if (!answer || !['0', '1'].includes(String(answer.critical)))
         throw new RuleError('Record the attacker’s chosen critical result before resolving this hit.');
       selectedCritical = choices[Number(answer.critical)];
     }
-    wound = hexCriticalWound(target.system, selectedCritical.wound, WOUNDS);
+    wound = hexCriticalWound(targetSource, selectedCritical.wound, WOUNDS);
     bonus = selectedCritical.bonus;
     location = selectedCritical.location;
     if (wound?.stunEveryFormula) {
-      const r = await dice(wound.stunEveryFormula);
+      const r = await rollDice(
+        wound.stunEveryFormula,
+        'critical-stun-interval',
+        'Critical injury: Stun interval'
+      );
       rolls.push(r);
       wound.stunEvery = r.total;
     }
     if (wound?.extraRoll) {
-      const r = await dice(wound.extraRoll);
+      const r = await rollDice(wound.extraRoll, 'critical-extra', 'Critical injury: teeth lost');
       rolls.push(r);
       wound.extraResult = r.total;
       wound.notes = `Teeth lost: ${r.total}`;
     }
   } else if (a.aimed) location = locate(table, a.aimed);
+  else if (io.manual && defense.defense === 'blockArm' && defense.blockSucceeded)
+    location = locate(table, defense.arm);
+  else if (io.manual && ['pushKick', 'throw'].includes(a.action)) location = locate(table, 'torso');
+  else if (io.manual && properties.allLocations) location = table[0];
+  else if (io.location) location = await io.location(table);
   else {
     const r = await dice('1d10');
     rolls.push(r);
@@ -1220,7 +1318,7 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
   let adrenalineDamage = 0;
   let adrenalineRetained = 0;
   if (a.adrenalineDice > 0) {
-    const adrenalineRoll = await dice(`${a.adrenalineDice}d6`);
+    const adrenalineRoll = await rollDice(`${a.adrenalineDice}d6`, 'adrenaline', 'Adrenaline damage');
     rolls.push(adrenalineRoll);
     adrenalineDamage = adrenalineRoll.total;
     if (enhancementBenefits(w).adrenalineRetainOne)
@@ -1234,21 +1332,23 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
   if (a.action === 'throw') conditions.push('prone');
   if (!immune && a.schoolOnHit?.conditions) conditions.push(...a.schoolOnHit.conditions);
   for (const loc of chosen) {
-    const roll = await dice(
+    const roll = await rollDice(
       a.damageFormula ??
         weaponDamageFormula(w, {
-          punch: attacker.system.derived.punch,
-          body: attacker.system.derived.stats.body,
+          punch: source.derived.punch,
+          body: source.derived.stats.body,
         }) ??
-        '0'
+        '0',
+      `damage-${loc.id}`,
+      `Weapon damage: ${loc.label}`
     );
     rolls.push(roll);
     let raw = Math.max(0, roll.total + weaponDamageBonus(w, a.meleeBonus));
-    if (!w.properties?.environmental && !zeroDamage) raw += Number(attacker.system.derived.mods.damage ?? 0);
+    if (!w.properties?.environmental && !zeroDamage) raw += Number(source.derived.mods.damage ?? 0);
     if (!properties.magic && !properties.environmental && !zeroDamage)
-      raw += (a.alchemyAttack?.damage ?? alchemyAttackPlan(attacker.system).damage) + adrenalineDamage;
+      raw += (a.alchemyAttack?.damage ?? alchemyAttackPlan(source).damage) + adrenalineDamage;
     const oil = w.oil;
-    if (oil?.expires > game.time.worldTime) {
+    if (oil?.expires > (io.time ?? game.time.worldTime)) {
       const categories = {
         'Beast Oil': 'beast',
         'Cursed Oil': 'cursed',
@@ -1263,23 +1363,23 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
         'Specter Oil': 'specter',
         'Vampire Oil': 'vampire',
       };
-      const category = target.system.category || 'humanoid';
+      const category = targetSource.category || 'humanoid';
       if (categories[oil.name] === category) raw += 5;
     }
     if (a.underwater && ['bow', 'crossbow'].includes(w.category)) raw /= 2;
     let silver = 0;
     if (properties.silverDamage) {
-      const r = await dice(properties.silverDamage);
+      const r = await rollDice(properties.silverDamage, `silver-${loc.id}`, `Silver damage: ${loc.label}`);
       rolls.push(r);
       silver = r.total;
     }
     if (properties.ablating) {
-      const r = await dice('1d6');
+      const r = await rollDice('1d6', `ablation-${loc.id}`, `Armor ablation: ${loc.label}`);
       rolls.push(r);
       properties.ablation = Math.floor(r.total / 2);
     }
     if (properties.contactAblation) {
-      const r = await dice('1d6');
+      const r = await rollDice('1d6', `contact-ablation-${loc.id}`, `Contact ablation: ${loc.label}`);
       rolls.push(r);
       properties.fixedAblation = Math.floor(r.total / 2);
     }
@@ -1295,8 +1395,8 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
       criticalBonus: chosen.length === 1 ? bonus : 0,
       location: loc.id + (loc.weakSpot ? ':weak' : ''),
     };
-    if (loc.id === 'head' && target.system.derived.mods.headMultiplier)
-      loc.multiplier = target.system.derived.mods.headMultiplier;
+    if (loc.id === 'head' && targetSource.derived.mods.headMultiplier)
+      loc.multiplier = targetSource.derived.mods.headMultiplier;
     const result = resolveDamage(request, state, loc, state.items);
     requests.push(request);
     results.push(result);
@@ -1317,9 +1417,9 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
       ['prone', 'prone'],
     ])
       if (properties[property] && !immuneTo(state, condition)) {
-        const r = await dice('1d100');
+        const r = await rollDice('1d100', `effect-${property}`, `Weapon effect: ${condition}`);
         rolls.push(r);
-        const bonusChance = magicAttackEffectChance(attacker.system, property, properties[property], {
+        const bonusChance = magicAttackEffectChance(source, property, properties[property], {
           spell: !!properties.magic,
           castingRules: a.castingRules,
         }).chance;
@@ -1327,7 +1427,7 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
           condition === 'fire'
             ? magicIgnitionChance(state, bonusChance, { separateAttack: true }).chance
             : condition === 'bleeding'
-              ? Math.max(0, bonusChance - actorEnhancementBenefits(target.items).bleedingReduction)
+              ? Math.max(0, bonusChance - actorEnhancementBenefits(state.items).bleedingReduction)
               : bonusChance;
         if (r.total <= chance) conditions.push(condition);
       }
@@ -1337,13 +1437,17 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
     !properties.environmental &&
     results.some((result) => result.afterShield > 0 && !result.immune)
   ) {
-    const bonuses = trophyRulesFor(attacker.system, {
+    const bonuses = trophyRulesFor(source, {
       hit: true,
       hpDamage: results.filter((result) => !result.nonlethal).reduce((sum, result) => sum + result.damage, 0),
     });
     for (const effect of bonuses.attackEffects) {
       if (immuneTo(state, effect.condition)) continue;
-      const roll = await dice('1d100');
+      const roll = await rollDice(
+        '1d100',
+        `trophy-${effect.condition}`,
+        `Trophy effect: ${effect.condition}`
+      );
       rolls.push(roll);
       const chance =
         effect.condition === 'fire'
@@ -1358,13 +1462,13 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
     effects.push({ id: foundry.utils.randomID(), key: 'Webbing', sourceUuid: attacker.uuid, hp: 10, dc: 16 });
   }
   if (properties.blindRounds) {
-    const roll = await dice(properties.blindRounds);
+    const roll = await rollDice(properties.blindRounds, 'blind-rounds', 'Blindness duration');
     rolls.push(roll);
     conditions.push('blinded');
     effects.push({
       id: foundry.utils.randomID(),
       key: 'Dust Devil',
-      expires: game.time.worldTime + roll.total * 3,
+      expires: (io.time ?? game.time.worldTime) + roll.total * 3,
       removeCondition: 'blinded',
     });
   }
@@ -1378,7 +1482,7 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
       : null,
     adrenalineRetained,
     schoolAdjustment: severity?.schoolAdjustment ?? null,
-    reactions: schoolReactions(actorSnapshot(attacker), {
+    reactions: schoolReactions(source, {
       trigger: 'critical',
       weapon: w,
       criticalCaused: !!wound,
@@ -1394,7 +1498,7 @@ export async function prepareDamage(attacker, target, a, defense = {}) {
           : a.action === 'throw'
             ? -1
             : null,
-    state: damageState(target),
+    state: io.fingerprint ?? damageState(target),
   };
 }
 
@@ -1421,7 +1525,7 @@ export function damageState(actor) {
   });
 }
 export function damageHTML(damage) {
-  return `<table><thead><tr><th>Location</th><th>Rolled</th><th>Cover</th><th>Shield</th><th>SP</th><th>After armor</th><th>× location</th><th>Critical</th><th>Damage</th></tr></thead><tbody>${damage.results.map((r) => `<tr><td>${e(r.location.label)}</td><td>${r.rolled}</td><td>${r.cover}</td><td>${r.shield ? `${r.shield.absorbed} absorbed; ${r.shield.after} left` : '—'}</td><td>${r.sp}</td><td>${r.resisted}</td><td>${r.location.multiplier}</td><td>${r.criticalBonus}</td><td><strong>${r.damage} ${r.nonlethal ? 'STA' : 'HP'}</strong></td></tr>`).join('')}</tbody></table>${damage.wound ? `<p>Critical wound: <strong>${e(damage.wound.name)}</strong></p>` : ''}${damage.schoolAdjustment ? `<p>${e(damage.schoolAdjustment.from)} → ${e(damage.schoolAdjustment.to)}: Critical Decimation. ${e(damage.schoolAdjustment.note)}</p>` : ''}${damage.conditions?.length ? `<p>${e(damage.conditions.join(', '))}</p>` : ''}`;
+  return `${damage.manualRolls?.length ? manualDamageHTML({ history: damage.manualRolls }, { complete: true }) : ''}<table><thead><tr><th>Location</th><th>Rolled</th><th>Cover</th><th>Shield</th><th>SP</th><th>After armor</th><th>× location</th><th>Critical</th><th>Damage</th></tr></thead><tbody>${damage.results.map((r) => `<tr><td>${e(r.location.label)}</td><td>${r.rolled}</td><td>${r.cover}</td><td>${r.shield ? `${r.shield.absorbed} absorbed; ${r.shield.after} left` : '—'}</td><td>${r.sp}</td><td>${r.resisted}</td><td>${r.location.multiplier}</td><td>${r.criticalBonus}</td><td><strong>${r.damage} ${r.nonlethal ? 'STA' : 'HP'}</strong></td></tr>`).join('')}</tbody></table>${damage.wound ? `<p>Critical wound: <strong>${e(damage.wound.name)}</strong></p>` : ''}${damage.schoolAdjustment ? `<p>${e(damage.schoolAdjustment.from)} → ${e(damage.schoolAdjustment.to)}: Critical Decimation. ${e(damage.schoolAdjustment.note)}</p>` : ''}${damage.conditions?.length ? `<p>${e(damage.conditions.join(', '))}</p>` : ''}`;
 }
 
 export async function applyDamage(message, internal = false) {
@@ -1821,6 +1925,7 @@ export function registerCombatChat() {
       throw new RuleError('No death save is pending.');
     return save(actor, p.kind, { luck: Number(p.luck ?? 0) });
   });
+  registerCommand('manualDamage', submitManualDamage);
   registerCommand('attack', executeAttack);
   registerCommand('defend', executeDefense);
   registerCommand('resolveDefense', async (p, c) => {
@@ -1832,6 +1937,16 @@ export function registerCombatChat() {
     return applyDamage(await foundry.utils.fromUuid(p.messageUuid), true);
   });
   Hooks.on('renderChatMessageHTML', (message, html) => {
+    const data = message.flags?.[SYSTEM_ID];
+    if (data?.defenseRef || data?.resolved)
+      html.querySelectorAll('[data-witcher-action=defend]').forEach((button) => {
+        button.hidden = true;
+      });
+    const manualButton = html.querySelector('[data-witcher-action=manualDamage]');
+    if (manualButton)
+      actorFromUuid(data.actorUuid).then((actor) => {
+        manualButton.hidden = !actor?.isOwner;
+      });
     html.querySelectorAll('[data-witcher-action]').forEach((button) =>
       button.addEventListener('click', async (event) => {
         event.preventDefault();
@@ -1847,6 +1962,7 @@ export function registerCombatChat() {
             });
           if (action === 'defend')
             await defend(message, { defense: button.dataset.defense, weapon: button.dataset.weapon });
+          if (action === 'manualDamage') await enterManualDamage(message);
           if (action === 'resolve') await resolveDefense(message);
           if (action === 'apply') await applyDamage(message);
           if (action === 'death') {

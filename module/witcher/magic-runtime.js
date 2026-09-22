@@ -1128,7 +1128,10 @@ async function executeDefense({ messageUuid, targetUuid, values = {}, turn }, { 
   if (!row || row.status !== 'pending') throw new RuleError('This target already has a defense result.');
   const actor = await authorizedActor(row.actorUuid, user);
   if (turn !== turnIdentity()) throw new RuleError('The combat turn changed. Reopen the defense.');
-  validateManualCheck(values, actor);
+  validateManualCheck(values, actor, {
+    manualRequired:
+      actor.system.manualCombat === true && ['dodge', 'athletics', 'block'].includes(values.defense),
+  });
   const defense = values.defense,
     allowed = magicDefenses(data.magic, { includeCounters: false });
   if (defense === 'accept') {

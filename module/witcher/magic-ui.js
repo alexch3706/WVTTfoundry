@@ -310,12 +310,12 @@ async function chooseTarget(api, source, providedUuids) {
   return result ? candidates.find((token) => token.uuid === result.targetUuid) : null;
 }
 
-function rollFields(actor, { arm = true } = {}) {
+function rollFields(actor, { arm = true, manualRequired = false } = {}) {
   return (
     input('modifier', 'Circumstance modifier', { value: 0 }) +
     input('luck', 'Luck to spend', { value: 0, min: 0, max: actor.system.luck?.value ?? 0 }) +
     (arm ? woundArmInput(actor) : '') +
-    manualCheckInput()
+    manualCheckInput({ required: manualRequired })
   );
 }
 function elementField(magic) {
@@ -606,10 +606,23 @@ export async function defendMagic(message, targetUuid, options = {}) {
     });
   if (defenses.includes('passive'))
     content += input('dc', 'Passive DC (stunned/unconscious always 10)', { value: 10, min: 0 });
-  content += rollFields(actor);
+  content += rollFields(actor, {
+    manualRequired:
+      actor.system.manualCombat === true &&
+      defenses.some((key) => ['dodge', 'athletics', 'block'].includes(key)),
+  });
+  if (actor.system.manualCombat)
+    content +=
+      '<p class="notes">Physical combat dice: a manual d10 is required for Dodge, Reposition and Block. Accepting magic needs no die.</p>';
   const values = await api.prompt(`Defend against ${data.name}`, content, {
     button: 'Resolve defense',
-    validate: (values) => validateRoll(values, actor),
+    validate: (values) => {
+      validateRoll(values, actor);
+      validateManualCheck(values, actor, {
+        manualRequired:
+          actor.system.manualCombat === true && ['dodge', 'athletics', 'block'].includes(values.defense),
+      });
+    },
   });
   if (!values) return null;
   return api.runCommand(

@@ -1063,3 +1063,25 @@ test('a non-damaging invocation still applies Depletion after a failed actual de
   assert(w.target.system.conditions.includes('stunned'));
   assert(w.target.system.conditions.includes('staggered'));
 });
+
+test('manual combat mode also requires physical Dodge, Athletics and Block dice against magic', async (t) => {
+  const w = await magicWorkflow(t);
+  await w.attacker.update({ 'system.race': 'human', 'system.magic.tradition': 'mage' });
+  await w.target.update({ 'system.manualCombat': true });
+  const spell = await w.learn('aenye'),
+    card = await w.cast(spell, { power: 5, manualDice: '7' });
+  const defend = (values) =>
+    runCommand('magicDefense', {
+      messageUuid: card.uuid,
+      targetUuid: w.targetToken.uuid,
+      turn: w.turnIdentity(),
+      values,
+    });
+  const before = structuredClone(w.target._source);
+  for (const defense of ['dodge', 'athletics', 'block'])
+    await assert.rejects(() => defend({ defense }), /physical combat dice/);
+  assert.deepEqual(w.target._source, before);
+  await defend({ defense: 'dodge', manualDice: '8' });
+  assert.equal(card.flags[SYSTEM_ID].targets[0].defense.check.source, 'manual');
+  assert.equal(card.flags[SYSTEM_ID].targets[0].status, 'defended');
+});

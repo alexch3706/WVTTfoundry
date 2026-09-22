@@ -44,6 +44,7 @@ const locationField = () =>
 export class WitcherActorData extends foundry.abstract.TypeDataModel {
   static defineSchema() {
     return {
+      manualCombat: bool(),
       stats: numericObject(STATS, 5),
       statModifiers: numericObject(STATS),
       skills: numericObject(Object.keys(SKILLS)),

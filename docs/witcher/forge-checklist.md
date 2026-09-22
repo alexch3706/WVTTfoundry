@@ -84,3 +84,10 @@ Version: **0.1.0-alpha.5**. **Live run pending.**
 Report the release version, failing step, reproduction and console error. Tests
 of deferred magic, profession/creature active powers, mounted combat and area
 bombs are outside this acceptance pass.
+
+## Alpha.8: per-Actor manual combat dice
+
+Run the [manual combat acceptance steps](manual-combat.md#проверка-на-forge)
+with separate GM and player clients. Check both directions of automatic/manual
+combat, the attacker's ownership of damage entry, actual monster locations,
+armor ablation and cancellation/reload/resume without duplicate resource costs.

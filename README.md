@@ -31,6 +31,16 @@ See [implementation status](docs/witcher/implementation-status.md) for remaining
 work and [bestiary coverage](docs/witcher/bestiary.md) for adaptations and limits.
 Magic coverage and remaining work are listed in the [magic support matrix](docs/witcher/magic-progress.md). Mounted combat and broader active creature/profession abilities remain outside the current priority.
 
+## Added in alpha.8
+
+- Per-Actor **Combat → Manual combat dice** toggle, off by default.
+- Required physical attack/defense d10 chains, target-specific hit locations and
+  individual damage dice, with automatic bonuses, armor and multipliers.
+- Saved chat prompts for the attacker’s owner or GM; cancellation, stale forms
+  and retries preserve dice without spending another action.
+
+See the [manual combat guide](docs/witcher/manual-combat.md).
+
 ## Added in alpha.7
 
 - Held/worn Focus and Greater Focus with actual hand usage, STA savings and separate defensive DCs.
@@ -43,8 +53,8 @@ See the [alpha.7 play guide](docs/witcher/alpha7-play-guide.md), [alchemy detail
 
 ## Install on The Forge
 
-Use the [v0.1.0-alpha.7 manifest](https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.7/system.json) in **Install from Manifest**.
-See [installation instructions](docs/witcher/install.md) and [release assets](https://github.com/alexch3706/WVTTfoundry/releases/tag/v0.1.0-alpha.7).
+Use the [v0.1.0-alpha.8 manifest](https://github.com/alexch3706/WVTTfoundry/releases/download/v0.1.0-alpha.8/system.json) in **Install from Manifest**.
+See [installation instructions](docs/witcher/install.md) and [release assets](https://github.com/alexch3706/WVTTfoundry/releases/tag/v0.1.0-alpha.8).
 Create a new Witcher world; use a 2 m grid and an active GM for combat commands.
 
 ## Validation

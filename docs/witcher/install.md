@@ -77,6 +77,7 @@ reproduction steps and browser-console errors when something fails.
 The current focus is ordinary attacks and defenses, fast/strong strikes and
 STA, equipment and ammunition, creature attacks, hit locations, armor, silver,
 resistances and Witcher equipment. Alpha.6 adds an initial magic implementation;
+alpha.8 adds [per-Actor physical combat dice](manual-combat.md);
 alpha.7 adds Focus, potions/decoctions/elixirs, enhancements and Verbal Combat ([new controls](alpha7-play-guide.md)). Use the [magic play guide](magic-play-guide.md) and [support matrix](magic-progress.md)
 for the available casting, ritual and hex procedures. Mounted combat and broader
 profession/creature abilities remain outside the current priority. Presence of

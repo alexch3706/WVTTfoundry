@@ -1,6 +1,6 @@
 # Witcher V14 implementation status
 
-Release: **0.1.0-alpha.7**. This ledger distinguishes implemented code
+Release: **0.1.0-alpha.8**. This ledger distinguishes implemented code
 from live acceptance. No Foundry server has been launched in this environment;
 the owner will test the installable release on The Forge.
 
@@ -73,18 +73,21 @@ UUID; older imports require book/page markers and an exact name. Unlinked token
 portrait inheritance is repaired without changing combat data. Failed writes
 remain retryable through `game.witcher.updateBestiaryArt()` or a world restart.
 
-## Manual combat dice in alpha.3
+## Manual combat dice in alpha.8
 
-Attack and defense dialogs, including quick defenses, offer an optional **Manual d10**
-field. Blank uses automatic dice. Enter the complete comma-separated sequence, such
-as `7`, `10,10,6` or `1,10,4`; Core p.57 critical/fumble math is shared with automatic
-checks. Stats, skills, situational modifiers, Luck and resource expenditure still
-use the ordinary combat workflow. Chat and saved check flags identify manual input.
+Alpha.8 adds a persisted **Combat → Manual combat dice** Actor toggle, off by
+default for PCs, NPCs and monsters. It requires complete physical d10 chains for
+ordinary attacks and physical defenses, including defenses against magic.
+Successful manual attacks persist a chat workflow for target-specific hit
+locations, individual damage dice and critical/proc rolls. The attacker's owner
+or GM can resume without spending another action; saved results survive
+cancellation and publication retries. Aimed/critical locations retain their
+existing rules. Armor changes trigger the existing GM damage review without
+rerolling. See the [manual combat guide](manual-combat.md).
 
-Invalid or incomplete input keeps the dialog open. GM command handlers validate
-the sequence again before spending resources. Passive DC rejects dice; damage,
-hit-location, critical-table and save dice remain automatic. No data migration is
-needed. General skill-check dialogs are outside this change.
+Without the toggle, optional Manual d10 entry still works. Passive DCs do not
+roll. General skill checks, spell casting/damage, saves, social combat and
+separate fumble consequences retain their existing procedures.
 
 ## Armor display in alpha.2
 
@@ -130,14 +133,14 @@ These views read existing saved wear; this release does not change damage rules.
 
 ## Validation and remaining acceptance
 
-**820 automated tests pass.** They cover wound cards, treatment and recovery, contextual injury
+**845 automated tests pass.** They cover wound cards, treatment and recovery, contextual injury
 effects, authority and rollback, plus art provenance, packaged asset references,
 default-image migration, custom image preservation, retry safety, manual attack/defense entry and validation,
 book examples, imported creature attacks and school gear,
 turn/STA accounting, persistence failure recovery and package contents. Syntax,
 module imports and Handlebars compilation are checked. A separate check uses the
 genuine public Foundry V14.365 data layer: **36 Actors and 1420 Items** preserve
-all supplied fields during model cleaning. The new alpha.7 checks also cover Focus, potion lifecycle/crafting, glyph/word consumers and Verbal Combat. Native AmbientLight data passes V14 validation; actual sheet templates render without overflow at 600/1000px.
+all supplied fields during model cleaning. Alpha.8 also checks per-Actor modes, saved damage entry, critical rerolls and publication retries. The alpha.7 checks cover Focus, potion lifecycle/crafting, glyph/word consumers and Verbal Combat. Native AmbientLight data passes V14 validation; actual sheet templates render without overflow at 600/1000px.
 
 All 36 portraits and 36 token images decode and render to canvas in Chromium;
 round tokens have transparent corners. The entire gallery was visually reviewed.

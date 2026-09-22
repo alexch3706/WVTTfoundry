@@ -250,10 +250,12 @@ export function input(
       : `<input name="${e(name)}" type="${e(type)}" value="${e(value)}" ${min !== undefined ? `min="${min}"` : ''} ${max !== undefined ? `max="${max}"` : ''} step="${step}">`;
   return `<label class="witcher-field"><span>${e(label)}</span>${element}</label>`;
 }
-export function manualCheckInput() {
+export function manualCheckInput({ required = false } = {}) {
   return (
-    input('manualDice', 'Manual d10 (optional)', { type: 'text' }) +
-    '<p class="notes">Leave empty to roll automatically. Enter dice only, separated by commas: 7; 10,6; or 1,10,4. Include every follow-up die; stats and modifiers are added automatically. With Evil Eye, separate the second fumble chain by a semicolon: 1,5;10,3.</p>'
+    input('manualDice', required ? 'Physical d10 (required for active checks)' : 'Manual d10 (optional)', {
+      type: 'text',
+    }) +
+    `<p class="notes">${required ? 'This actor uses physical combat dice. Passive DCs need no die.' : 'Leave empty to roll automatically.'} Enter dice only, separated by commas: 7; 10,6; or 1,10,4. Include every follow-up die; stats and modifiers are added automatically. With Evil Eye, separate the second fumble chain by a semicolon: 1,5;10,3.</p>`
   );
 }
 export function woundArmInput(actor, { optional = true } = {}) {
@@ -267,6 +269,10 @@ export function woundArmInput(actor, { optional = true } = {}) {
   );
 }
 export function validateManualCheck(values, actor = null, context = {}) {
+  if (context.manualRequired && values.defense !== 'passive' && !String(values.manualDice ?? '').trim())
+    throw new RuleError(
+      'This actor uses physical combat dice. Enter the complete d10 result before submitting.'
+    );
   const dice = actor
     ? parseHexManualCheck(
         values.manualDice,

@@ -101,7 +101,7 @@ export async function collectReleaseFiles(root, manifest) {
   const files = new Set(FIXED_FILES);
   for (const file of await runtimeFiles(root, 'docs/witcher', /\.md$/))
     if (
-      /^docs\/witcher\/(?:magic-[a-z-]+|alchemy-[a-z-]+|enhancements(?:-audit)?|social-combat(?:-audit)?|tome-alchemy-catalog|alpha7-play-guide)\.md$/.test(
+      /^docs\/witcher\/(?:magic-[a-z-]+|alchemy-[a-z-]+|enhancements(?:-audit)?|social-combat(?:-audit)?|tome-alchemy-catalog|alpha7-play-guide|manual-combat)\.md$/.test(
         file
       )
     )

@@ -22,6 +22,9 @@ const { HUMANOID_LOCATIONS, MONSTER_LOCATIONS } = await import('../../module/wit
 const actor = new WitcherActorData({ locations: HUMANOID_LOCATIONS }, { strict: true });
 assert.equal(actor.stats.ref, 5);
 assert.equal(actor.hp.value, 25);
+assert.equal(actor.manualCombat, false);
+for (const Model of [WitcherActorData, WitcherMonsterData])
+  assert.equal(new Model({ manualCombat: true }, { strict: true }).toObject().manualCombat, true);
 assert.equal(new WitcherMonsterData({ locations: MONSTER_LOCATIONS }, { strict: true }).anatomy, 'monster');
 const manifest = JSON.parse(await fs.readFile(new URL('../../system.json', import.meta.url), 'utf8'));
 let count = 0,

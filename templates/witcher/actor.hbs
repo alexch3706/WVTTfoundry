@@ -80,6 +80,13 @@
     </div>
     <div class='tab' data-group='primary' data-tab='magic'>{{{magicPanel}}}</div>
     <div class='tab' data-group='primary' data-tab='combat'>
+      <label class='witcher-field'><span>Manual combat dice</span><input
+          type='checkbox'
+          name='system.manualCombat'
+          {{checked system.manualCombat}}
+        /></label>
+      {{#if system.manualCombat}}<p class='notes'>Enter physical attack and defense d10s. Successful attacks
+          wait for hit location and damage dice in chat; the attacker’s owner or GM can continue them.</p>{{/if}}
       <div class='action-bar'><button type='button' data-witcher='unarmed' data-key='punch'>Punch
           {{system.derived.punch}}</button><button type='button' data-witcher='unarmed' data-key='kick'>Kick
           {{system.derived.kick}}</button><button
